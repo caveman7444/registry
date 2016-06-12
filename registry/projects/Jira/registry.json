@@ -1,12 +1,14 @@
 {"apis": [
     {
         "name": "Jira",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Jira/production/api.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Jira/production/api.json"
     },
     {
         "name": "Jira Authorization API",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Jira/production/authApi.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Jira/production/authApi.json"
     }
 ]}

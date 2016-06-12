@@ -1,12 +1,14 @@
 {"apis": [
     {
         "name": "Xero.com API",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Xero/master/xeroAPI.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Xero/master/xeroAPI.json"
     },
     {
         "name": "Xero.com API",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Xero/staging/xeroAPI.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Xero/staging/xeroAPI.json"
     }
 ]}

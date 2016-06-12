@@ -1,12 +1,14 @@
 {"apis": [
     {
         "name": "MediaWiki",
+        "RAMLVersion": "1.0",
         "location": "https://raw.githubusercontent.com/raml-apis/MediaWiki/master/api.raml",
-        "RAMLVersion": "1.0"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/MediaWiki/master/api.json"
     },
     {
         "name": "MediaWiki",
+        "RAMLVersion": "1.0",
         "location": "https://raw.githubusercontent.com/raml-apis/MediaWiki/raml1.0/api.raml",
-        "RAMLVersion": "1.0"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/MediaWiki/raml1.0/api.json"
     }
 ]}

@@ -1,12 +1,14 @@
 {"apis": [
     {
         "name": "Meetup",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Meetup/master/meetup.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Meetup/master/meetup.json"
     },
     {
         "name": "Meetup",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Meetup/staging/meetup.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Meetup/staging/meetup.json"
     }
 ]}

@@ -1,12 +1,14 @@
 {"apis": [
     {
         "name": "Get Started with the Freebase API",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Freebase/master/api.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Freebase/master/api.json"
     },
     {
         "name": "Get Started with the Freebase API",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Freebase/staging/api.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Freebase/staging/api.json"
     }
 ]}

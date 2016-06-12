@@ -1,12 +1,14 @@
 {"apis": [
     {
         "name": "Grooveshark API",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/GrooveShark/master/grooveshark.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GrooveShark/master/grooveshark.json"
     },
     {
         "name": "Grooveshark API",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/GrooveShark/staging/grooveshark.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GrooveShark/staging/grooveshark.json"
     }
 ]}

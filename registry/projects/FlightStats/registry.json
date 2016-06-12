@@ -1,12 +1,14 @@
 {"apis": [
     {
         "name": "FlightStats",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/FlightStats/production/api.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/FlightStats/production/api.json"
     },
     {
         "name": "Flight Status And Track",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/FlightStats/production/flightStatusAndTrack.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/FlightStats/production/flightStatusAndTrack.json"
     }
 ]}

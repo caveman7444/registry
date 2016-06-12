@@ -1,12 +1,14 @@
 {"apis": [
     {
         "name": "Postmark",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Postmark/master/api.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Postmark/master/api.json"
     },
     {
         "name": "Postmark",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Postmark/staging/api.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Postmark/staging/api.json"
     }
 ]}

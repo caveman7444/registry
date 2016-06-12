@@ -1,12 +1,14 @@
 {"apis": [
     {
         "name": "Twitter API",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Twitter/production/api.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Twitter/production/api.json"
     },
     {
         "name": "Twitter Streaming API",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Twitter/production/userstreamApi.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Twitter/production/userstreamApi.json"
     }
 ]}

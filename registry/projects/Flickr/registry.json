@@ -1,12 +1,14 @@
 {"apis": [
     {
         "name": "Flickr API",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Flickr/master/flickr.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Flickr/master/flickr.json"
     },
     {
         "name": "Flickr API",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Flickr/staging/flickr.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Flickr/staging/flickr.json"
     }
 ]}

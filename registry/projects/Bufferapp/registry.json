@@ -1,17 +1,20 @@
 {"apis": [
     {
         "name": "Bufferapp",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Bufferapp/production/api.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Bufferapp/production/api.json"
     },
     {
         "name": "Bufferapp",
+        "RAMLVersion": "1.0",
         "location": "https://raw.githubusercontent.com/raml-apis/Bufferapp/raml1.0/api.raml",
-        "RAMLVersion": "1.0"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Bufferapp/raml1.0/api.json"
     },
     {
         "name": "",
+        "RAMLVersion": "1.0 Library",
         "location": "https://raw.githubusercontent.com/raml-apis/Bufferapp/raml1.0/types.raml",
-        "RAMLVersion": "1.0 Library"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Bufferapp/raml1.0/types.json"
     }
 ]}

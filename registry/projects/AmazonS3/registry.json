@@ -1,12 +1,14 @@
 {"apis": [
     {
         "name": "Amazon S3 Buckets",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/AmazonS3/production/amazonS3Bucket.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/AmazonS3/production/amazonS3Bucket.json"
     },
     {
         "name": "Amazon S3 Services",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/AmazonS3/production/amazonS3Services.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/AmazonS3/production/amazonS3Services.json"
     }
 ]}

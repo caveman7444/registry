@@ -1,12 +1,14 @@
 {"apis": [
     {
         "name": "23andMe",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/23andMe/staging/api.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/23andMe/staging/api.json"
     },
     {
         "name": "23andMe Reseller",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/23andMe/staging/reseller.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/23andMe/staging/reseller.json"
     }
 ]}

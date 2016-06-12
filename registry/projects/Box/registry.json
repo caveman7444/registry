@@ -1,22 +1,26 @@
 {"apis": [
     {
         "name": "Box",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Box/production/boxAPI.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Box/production/boxAPI.json"
     },
     {
         "name": "Box.com upload API",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Box/production/boxUploadAPI.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Box/production/boxUploadAPI.json"
     },
     {
         "name": "Box",
+        "RAMLVersion": "1.0",
         "location": "https://raw.githubusercontent.com/raml-apis/Box/raml1.0/boxAPI.raml",
-        "RAMLVersion": "1.0"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Box/raml1.0/boxAPI.json"
     },
     {
         "name": "Box.com upload API",
+        "RAMLVersion": "1.0",
         "location": "https://raw.githubusercontent.com/raml-apis/Box/raml1.0/boxUploadAPI.raml",
-        "RAMLVersion": "1.0"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Box/raml1.0/boxUploadAPI.json"
     }
 ]}

@@ -1,12 +1,14 @@
 {"apis": [
     {
         "name": "Rapid API",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/EwayRapid/master/api.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/EwayRapid/master/api.json"
     },
     {
         "name": "Rapid API",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/EwayRapid/staging/api.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/EwayRapid/staging/api.json"
     }
 ]}

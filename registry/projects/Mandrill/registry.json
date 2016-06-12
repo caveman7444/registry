@@ -1,12 +1,14 @@
 {"apis": [
     {
         "name": "\"Mandrill API\"",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Mandrill/master/api.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Mandrill/master/api.json"
     },
     {
         "name": "\"Mandrill API\"",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Mandrill/staging/api.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Mandrill/staging/api.json"
     }
 ]}

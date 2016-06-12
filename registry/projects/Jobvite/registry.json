@@ -1,12 +1,14 @@
 {"apis": [
     {
         "name": "Jobvite API v1",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Jobvite/master/api.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Jobvite/master/api.json"
     },
     {
         "name": "Jobvite API v1",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Jobvite/staging/api.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Jobvite/staging/api.json"
     }
 ]}

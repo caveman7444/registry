@@ -1,12 +1,14 @@
 {"apis": [
     {
         "name": "Weather Underground",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/WeatherUnderground/production/wunderground.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/WeatherUnderground/production/wunderground.json"
     },
     {
         "name": "Weather Underground AutoComplete",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/WeatherUnderground/production/wundergroundAutocompleteApi.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/WeatherUnderground/production/wundergroundAutocompleteApi.json"
     }
 ]}

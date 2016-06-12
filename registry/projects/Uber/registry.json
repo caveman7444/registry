@@ -1,27 +1,32 @@
 {"apis": [
     {
         "name": "Uber",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Uber/production/api.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Uber/production/api.json"
     },
     {
         "name": "Uber user activity",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Uber/production/userActivity.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Uber/production/userActivity.json"
     },
     {
         "name": "Uber",
+        "RAMLVersion": "1.0",
         "location": "https://raw.githubusercontent.com/raml-apis/Uber/raml1.0/api.raml",
-        "RAMLVersion": "1.0"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Uber/raml1.0/api.json"
     },
     {
         "name": "",
+        "RAMLVersion": "1.0 Library",
         "location": "https://raw.githubusercontent.com/raml-apis/Uber/raml1.0/types.raml",
-        "RAMLVersion": "1.0 Library"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Uber/raml1.0/types.json"
     },
     {
         "name": "Uber user activity",
+        "RAMLVersion": "1.0",
         "location": "https://raw.githubusercontent.com/raml-apis/Uber/raml1.0/userActivity.raml",
-        "RAMLVersion": "1.0"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Uber/raml1.0/userActivity.json"
     }
 ]}

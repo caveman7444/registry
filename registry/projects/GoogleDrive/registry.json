@@ -1,12 +1,14 @@
 {"apis": [
     {
         "name": "Google Drive",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/GoogleDrive/production/api.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GoogleDrive/production/api.json"
     },
     {
         "name": "Google Drive Upload",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/GoogleDrive/production/uploadApi.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GoogleDrive/production/uploadApi.json"
     }
 ]}

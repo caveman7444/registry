@@ -1,12 +1,14 @@
 {"apis": [
     {
         "name": "\"Fitbit API\"",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Fitbit/master/api.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Fitbit/master/api.json"
     },
     {
         "name": "\"Fitbit API\"",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Fitbit/staging/api.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Fitbit/staging/api.json"
     }
 ]}

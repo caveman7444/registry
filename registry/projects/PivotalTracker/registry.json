@@ -1,12 +1,14 @@
 {"apis": [
     {
         "name": "Pivotal Tracker",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/PivotalTracker/production/api.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/PivotalTracker/production/api.json"
     },
     {
         "name": "PivotalTracker Attachment Download",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/PivotalTracker/production/attachmentDownload.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/PivotalTracker/production/attachmentDownload.json"
     }
 ]}

@@ -1,12 +1,14 @@
 {"apis": [
     {
         "name": "WordPress API",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Wordpress/master/wordpress.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Wordpress/master/wordpress.json"
     },
     {
         "name": "WordPress API",
+        "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Wordpress/staging/wordpress.raml",
-        "RAMLVersion": "0.8"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Wordpress/staging/wordpress.json"
     }
 ]}
