@@ -1,0 +1,647 @@
+{
+    "title": "Postmark",
+    "baseUri": "http://api.postmarkapp.com",
+    "protocols": [
+        "HTTP"
+    ],
+    "schemas": [
+        {
+            "mail": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"From\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"To\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Cc\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Bcc\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Subject\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Tag\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"HtmlBody\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"TextBody\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ReplyTo\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Headers\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"Name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"Value\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    } ,\n    \"Attachments\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : {\n        \"type\" : \"object\" ,\n        \"properties\" : {\n          \"Name\" : {\n            \"type\" : \"string\" ,\n            \"required\" : false\n          } ,\n          \"Content\" : {\n            \"type\" : \"string\" ,\n            \"required\" : false\n          } ,\n          \"ContentType\" : {\n            \"type\" : \"string\" ,\n            \"required\" : false\n          } ,\n          \"ContentID\" : {\n            \"type\" : \"string\" ,\n            \"required\" : false\n          }\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+            "sendResponse": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"ErrorCode\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"Message\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"MessageID\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"SubmittedAt\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"To\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "emails": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"object\" ,\n      \"properties\" : {\n        \"From\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"To\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Cc\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Bcc\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Subject\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Tag\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"HtmlBody\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"TextBody\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"ReplyTo\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Headers\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"object\" ,\n              \"properties\" : {\n                \"Name\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"Value\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            }\n          ]\n        } ,\n        \"Attachments\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"object\" ,\n              \"properties\" : {\n                \"Name\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"Content\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"ContentType\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            } , {\n              \"type\" : \"object\" ,\n              \"properties\" : {\n                \"Name\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"Content\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"ContentType\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"ContentID\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            }\n          ]\n        }\n      }\n    }\n  ]\n}"
+        },
+        {
+            "sendEmailsResponse": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"object\" ,\n      \"properties\" : {\n        \"ErrorCode\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"Message\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"MessageID\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"SubmittedAt\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"To\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  ]\n}"
+        },
+        {
+            "bounces": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"TotalCount\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"Bounces\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"ID\" : {\n              \"type\" : \"array\" ,\n              \"required\" : false ,\n              \"items\" : [\n                {\n                  \"type\" : \"string\"\n                }\n              ]\n            } ,\n            \"Type\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"MessageID\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"TypeCode\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"Details\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"Email\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"BouncedAt\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"DumpAvailable\" : {\n              \"type\" : \"boolean\" ,\n              \"required\" : false\n            } ,\n            \"Inactive\" : {\n              \"type\" : \"boolean\" ,\n              \"required\" : false\n            } ,\n            \"CanActivate\" : {\n              \"type\" : \"boolean\" ,\n              \"required\" : false\n            } ,\n            \"Content\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"Subject\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+        },
+        {
+            "bounce": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"ID\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"Type\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"MessageID\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"TypeCode\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"Details\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Email\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"BouncedAt\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"DumpAvailable\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    } ,\n    \"Inactive\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    } ,\n    \"CanActivate\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    } ,\n    \"Content\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Subject\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "bounceDump": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"Body\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "tags": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"string\"\n    }\n  ]\n}"
+        },
+        {
+            "bounceAndStatus": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"Message\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Bounce\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"ID\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"Type\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"MessageID\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"TypeCode\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"Details\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Email\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"BouncedAt\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"DumpAvailable\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"Inactive\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"CanActivate\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"Content\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Subject\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+            "inboundServerInfo": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"Name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Color\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"InboundHash\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"SmtpApiActivated\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    }\n  }\n}"
+        }
+    ],
+    "resources": [
+        {
+            "relativeUri": "/email",
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "sendResponse",
+                                    "example": "{\n  \"ErrorCode\" : 0 ,\n  \"Message\" : \"OK\" ,\n  \"MessageID\" : \"b7bc2f4a-e38e-4336-af7d-e6c392c2f817\" ,\n  \"SubmittedAt\" : \"2010-11-26T12:01:05.1794748-05:00\" ,\n  \"To\" : \"receiver@example.com\"\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"ErrorCode\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"Message\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"MessageID\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"SubmittedAt\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"To\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                }
+                            }
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "mail",
+                            "example": "{\n  \"From\" : \"sender@example.com\" ,\n  \"To\" : \"receiver@example.com\" ,\n  \"Cc\" : \"copied@example.com\" ,\n  \"Bcc\" : \"blank-copied@example.com\" ,\n  \"Subject\" : \"Test\" ,\n  \"Tag\" : \"Invitation\" ,\n  \"HtmlBody\" : \"<b>Hello</b>\" ,\n  \"TextBody\" : \"Hello\" ,\n  \"ReplyTo\" : \"reply@example.com\" ,\n  \"Headers\" : [\n    {\n      \"Name\" : \"CUSTOM-HEADER\" ,\n      \"Value\" : \"value\"\n    }\n  ] ,\n  \"Attachments\" : [\n    {\n      \"Name\" : \"readme.txt\" ,\n      \"Content\" : \"dGVzdCBjb250ZW50\" ,\n      \"ContentType\" : \"text/plain\"\n    } , {\n      \"Name\" : \"report.pdf\" ,\n      \"Content\" : \"dGVzdCBjb250ZW50\" ,\n      \"ContentType\" : \"application/octet-stream\"\n    } , {\n      \"Name\" : \"bacon.jpg\" ,\n      \"Content\" : \"/9j/4AAQSkZJRgABAgEAAAAAAAD/4\" ,\n      \"ContentType\" : \"image/jpeg\" ,\n      \"ContentID\" : \"cid:part1.01030607.06070005@gmail.com\"\n    }\n  ]\n}",
+                            "schemaContent": "mail"
+                        }
+                    },
+                    "protocols": [
+                        "HTTP"
+                    ],
+                    "description": "Sending mails through Postmark is as simple as sending HTTP Post request to the service. \n\nCurrently Postmark supports JSON message format.\n\nYou should pass the json encoded message in the body of the request. Both from and to accept name, in the format of John Doe <email@example.com>. You can provide HtmlBody for html formatted messages, TextBody for plain text, or both for multipart. Multipart sends html with a text version for clients that don't support html. Passing headers is optional.\n\nYou should have a registered and confirmed sender signature with the sender email. Otherwise you will receive HTTP Response 422 (Unprocessable Entity).\nIt is possible to override the Name in the sender signature through the API. This is useful if you want to use member's information in the email while keeping your from email address. just pass the name in the From parameter, From: \"John Smith <sender@example.com>\".\n\nYou can pass multiple recipient addresses in the 'To' field and the optional 'Cc' and 'Bcc' fields. Separate multiple addresses with a comma. Note that Postmark has a limit of twenty recipients per message in total. You need to take care not to exceed that limit. Otherwise you will get an error.\nYou can categorize outgoing email using the optional Tag property. If you use different tags for the different types of emails your application generates, you will be able to get detailed statistics for them through the Postmark user interface.\n\n*Limitations:*\n\nOnly allowed file types can be sent as attachments. The message will be rejected (or you will get an SMTP API bounce if using SMTP) with a description of the rejected file, if you try to send a file with a disallowed extension.\n\nAttachment size can be 10 MB at most. That means you can send three attachments weighing at three megabytes each, but you won't be able to send a single 11MB attachment. Don't worry about base64 encoding making your data larger than it really is. Attachment size is calculated using the real binary data (after base64-decoding it).\n\nMany applications can get away with sending email as a response to a user action and do that right in the same web request handler. Sending attachments changes that. Message size can and will get bigger and the time to submit it to the Postmark servers will get longer. That is why we recommend that you send email with attachments from a background job. Your users will love you for that!\n",
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "resources": [
+                {
+                    "relativeUri": "/batch",
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "sendEmailsResponse",
+                                            "example": "[\n  {\n    \"ErrorCode\" : 0 ,\n    \"Message\" : \"OK\" ,\n    \"MessageID\" : \"b7bc2f4a-e38e-4336-af7d-e6c392c2f817\" ,\n    \"SubmittedAt\" : \"2010-11-26T12:01:05.1794748-05:00\" ,\n    \"To\" : \"receiver1@example.com\"\n  } , {\n    \"ErrorCode\" : 0 ,\n    \"Message\" : \"OK\" ,\n    \"MessageID\" : \"e2ecbbfc-fe12-463d-b933-9fe22915106d\" ,\n    \"SubmittedAt\" : \"2010-11-26T12:01:05.1794748-05:00\" ,\n    \"To\" : \"receiver2@example.com\"\n  }\n]",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"object\" ,\n      \"properties\" : {\n        \"ErrorCode\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"Message\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"MessageID\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"SubmittedAt\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"To\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  ]\n}"
+                                        }
+                                    }
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "emails",
+                                    "example": "[\n  {\n    \"From\" : \"sender@example.com\" ,\n    \"To\" : \"receiver@example.com\" ,\n    \"Cc\" : \"copied@example.com\" ,\n    \"Bcc\" : \"blank-copied@example.com\" ,\n    \"Subject\" : \"Test\" ,\n    \"Tag\" : \"Invitation\" ,\n    \"HtmlBody\" : \"<b>Hello</b>\" ,\n    \"TextBody\" : \"Hello\" ,\n    \"ReplyTo\" : \"reply@example.com\" ,\n    \"Headers\" : [\n      {\n        \"Name\" : \"CUSTOM-HEADER\" ,\n        \"Value\" : \"value\"\n      }\n    ] ,\n    \"Attachments\" : [\n      {\n        \"Name\" : \"readme.txt\" ,\n        \"Content\" : \"dGVzdCBjb250ZW50\" ,\n        \"ContentType\" : \"text/plain\"\n      } , {\n        \"Name\" : \"report.pdf\" ,\n        \"Content\" : \"dGVzdCBjb250ZW50\" ,\n        \"ContentType\" : \"application/octet-stream\"\n      } , {\n        \"Name\" : \"bacon.jpg\" ,\n        \"Content\" : \"/9j/4AAQSkZJRgABAgEAAAAAAAD/4\" ,\n        \"ContentType\" : \"image/jpeg\" ,\n        \"ContentID\" : \"cid:part1.01030607.06070005@gmail.com\"\n      }\n    ]\n  }\n]",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"object\" ,\n      \"properties\" : {\n        \"From\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"To\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Cc\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Bcc\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Subject\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Tag\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"HtmlBody\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"TextBody\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"ReplyTo\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Headers\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"object\" ,\n              \"properties\" : {\n                \"Name\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"Value\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            }\n          ]\n        } ,\n        \"Attachments\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"object\" ,\n              \"properties\" : {\n                \"Name\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"Content\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"ContentType\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            } , {\n              \"type\" : \"object\" ,\n              \"properties\" : {\n                \"Name\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"Content\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"ContentType\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"ContentID\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            }\n          ]\n        }\n      }\n    }\n  ]\n}"
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "description": "While Postmark is focused on transactional email, we understand that developers with higher volumes or processing time constraints need to send their messages in batches. To facilitate this we provide a batching endpoint that permits you to send up to 500 well-formed Postmark messages in a single API call.\n\nThe format of the batched message is a JSON array containing multiple message requests.\n",
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/batch",
+                    "description": "Batching messages",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "batch"
+                    ]
+                }
+            ],
+            "displayName": "/email",
+            "description": "Sending email through Postmark",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "email"
+            ]
+        },
+        {
+            "relativeUri": "/deliverystats",
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTP"
+                    ],
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/deliverystats",
+            "description": "Returns a summary of inactive emails and bounces by type over the entire history of the server.",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "deliverystats"
+            ]
+        },
+        {
+            "relativeUri": "/bounces",
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "bounces",
+                                    "example": "{\n  \"TotalCount\" : 500 ,\n  \"Bounces\" : [\n    {\n      \"ID\" : [\n        \"ID\"\n      ] ,\n      \"Type\" : \"HardBounce\" ,\n      \"MessageID\" : \"d12c2f1c-60f3-4258-b163-d17052546ae4\" ,\n      \"TypeCode\" : 1 ,\n      \"Details\" : \"test bounce\" ,\n      \"Email\" : \"jim@test.com\" ,\n      \"BouncedAt\" : \"[YESTERDAY]\" ,\n      \"DumpAvailable\" : true ,\n      \"Inactive\" : true ,\n      \"CanActivate\" : true ,\n      \"Content\" : \"Return-Path:....\" ,\n      \"Subject\" : \"Hello from our app!\"\n    }\n  ]\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"TotalCount\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"Bounces\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"ID\" : {\n              \"type\" : \"array\" ,\n              \"required\" : false ,\n              \"items\" : [\n                {\n                  \"type\" : \"string\"\n                }\n              ]\n            } ,\n            \"Type\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"MessageID\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"TypeCode\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"Details\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"Email\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"BouncedAt\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"DumpAvailable\" : {\n              \"type\" : \"boolean\" ,\n              \"required\" : false\n            } ,\n            \"Inactive\" : {\n              \"type\" : \"boolean\" ,\n              \"required\" : false\n            } ,\n            \"CanActivate\" : {\n              \"type\" : \"boolean\" ,\n              \"required\" : false\n            } ,\n            \"Content\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"Subject\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTP"
+                    ],
+                    "queryParameters": {
+                        "type": {
+                            "name": "type",
+                            "displayName": "type",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "filter by bounce type",
+                            "enum": [
+                                "Transient",
+                                "HardBounce",
+                                "DnsError",
+                                "SMTPApiError",
+                                "BadEmailAddress",
+                                "Unknown",
+                                "AddressChange",
+                                "Blocked",
+                                "SpamNotification",
+                                "InboundError",
+                                "ManuallyDeactivated",
+                                "SoftBounce",
+                                "ChallengeVerification",
+                                "Unconfirmed",
+                                "SpamComplaint",
+                                "OpenRelayTest",
+                                "AutoResponder",
+                                "VirusNotification",
+                                "Subscribe",
+                                "Unsubscribe"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "inactive": {
+                            "name": "inactive",
+                            "displayName": "inactive",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "filter by active/inactive status.",
+                            "enum": [
+                                "true",
+                                "false",
+                                "null"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "emailFilter": {
+                            "name": "emailFilter",
+                            "displayName": "emailFilter",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": " return only bounces whose recipient address contains the provided string.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "messageID": {
+                            "name": "messageID",
+                            "displayName": "messageID",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "return only bounces that match the messageID in the query string. (count and offset not required for this search)",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "count": {
+                            "name": "count",
+                            "displayName": "count",
+                            "type": "integer",
+                            "required": false,
+                            "default": 25,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "offset": {
+                            "name": "offset",
+                            "displayName": "offset",
+                            "type": "integer",
+                            "required": false,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "Note:  the count and offset parameters are mandatory except of  messageID search.",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "resources": [
+                {
+                    "relativeUri": "/{bounceID}",
+                    "uriParameters": {
+                        "bounceID": {
+                            "name": "bounceID",
+                            "displayName": "bounceID",
+                            "type": "number",
+                            "required": true,
+                            "repeat": false,
+                            "description": "Note that the bounce ID is a numeric value that you typically obtain after a getting a list of bounces.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "bounce",
+                                            "example": "{\n  \"ID\" : 2 ,\n  \"Type\" : \"HardBounce\" ,\n  \"MessageID\" : \"d12c2f1c-60f3-4258-b163-d17052546ae4\" ,\n  \"TypeCode\" : 1 ,\n  \"Details\" : \"test bounce\" ,\n  \"Email\" : \"jim@test.com\" ,\n  \"BouncedAt\" : \"[YESTERDAY]\" ,\n  \"DumpAvailable\" : true ,\n  \"Inactive\" : true ,\n  \"CanActivate\" : true ,\n  \"Content\" : \"Return-Path:....\" ,\n  \"Subject\" : \"Hello from our app!\"\n}",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"ID\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"Type\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"MessageID\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"TypeCode\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"Details\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Email\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"BouncedAt\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"DumpAvailable\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    } ,\n    \"Inactive\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    } ,\n    \"CanActivate\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    } ,\n    \"Content\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Subject\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "resources": [
+                        {
+                            "relativeUri": "/dump",
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "bounceDump",
+                                                    "example": "{\n  \"Body\" : \"Some SMTP gibberish\"\n}",
+                                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"Body\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTP"
+                                    ],
+                                    "description": "Returns the raw source of the bounce we accepted. If Postmark does not have a dump for that bounce, it will return an empty string.",
+                                    "method": "get",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "displayName": "/dump",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "dump"
+                            ]
+                        },
+                        {
+                            "relativeUri": "/activate",
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "bounceAndStatus",
+                                                    "example": "{\n  \"Message\" : \"OK\" ,\n  \"Bounce\" : {\n    \"ID\" : 2 ,\n    \"Type\" : \"HardBounce\" ,\n    \"MessageID\" : \"d12c2f1c-60f3-4258-b163-d17052546ae4\" ,\n    \"TypeCode\" : 1 ,\n    \"Details\" : \"test bounce\" ,\n    \"Email\" : \"jim@test.com\" ,\n    \"BouncedAt\" : \"[YESTERDAY]\" ,\n    \"DumpAvailable\" : true ,\n    \"Inactive\" : true ,\n    \"CanActivate\" : true ,\n    \"Content\" : \"Return-Path:....\" ,\n    \"Subject\" : \"Hello from our app!\"\n  }\n}",
+                                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"Message\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Bounce\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"ID\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"Type\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"MessageID\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"TypeCode\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"Details\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Email\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"BouncedAt\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"DumpAvailable\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"Inactive\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"CanActivate\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"Content\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Subject\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTP"
+                                    ],
+                                    "method": "put",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "displayName": "/activate",
+                            "description": "Activates a deactivated bounce. Note that you do not need to send anything in the request body.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "activate"
+                            ]
+                        }
+                    ],
+                    "displayName": "/{bounceID}",
+                    "description": "Get details about a single bounce. Note that the bounce ID is a numeric value that you typically obtain after a getting a list of bounces.",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{bounceID}"
+                    ]
+                },
+                {
+                    "relativeUri": "/tags",
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "tags",
+                                            "example": "[\n  \"Signup\" ,\n  \"Commit Notification\"\n]",
+                                            "schemaContent": "tags"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "description": "[\n  \"Signup\",\n  \"Commit Notification\"\n]\n",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/tags",
+                    "description": "Returns a list of tags used for the current server.",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "tags"
+                    ]
+                }
+            ],
+            "displayName": "/bounces",
+            "description": "Fetches a portion of bounces according to the specified input criteria. Supported filters: type, inactive, email like, tag. Paging: page_size (count), page_start (offset). Bounces are sorted by BouncedAt in a descending order.",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "bounces"
+            ]
+        },
+        {
+            "relativeUri": "/server",
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "inboundServerInfo",
+                                    "example": "{\n  \"Name\" : \"Kermit\" ,\n  \"Color\" : \"green\" ,\n  \"InboundHash\" : \"451d9b70cf9364d6f9d51sdf34343sdf343\" ,\n  \"SmtpApiActivated\" : false\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"Name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Color\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"InboundHash\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"SmtpApiActivated\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTP"
+                    ],
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/server",
+            "description": "Configuring Postmark's Inbound API Server",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "server"
+            ]
+        }
+    ],
+    "documentation": [
+        {
+            "title": "Headline",
+            "content": "Postmark helps deliver and track transactional emails for web applications. In a nutshell, the service replaces SMTP (or Sendmail) with a far more reliable, scalable and care-free environment. In addition, you can track statistics such as number of emails sent or processed, opens, bounces and spam complaints."
+        }
+    ],
+    "__METADATA__": {
+        "primitiveValuesMeta": {
+            "protocols": {
+                "calculated": true
+            }
+        }
+    }
+}

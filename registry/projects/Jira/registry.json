@@ -1,0 +1,12 @@
+{"apis": [
+    {
+        "name": "Jira",
+        "location": "https://raw.githubusercontent.com/raml-apis/Jira/production/api.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "Jira Authorization API",
+        "location": "https://raw.githubusercontent.com/raml-apis/Jira/production/authApi.raml",
+        "RAMLVersion": "0.8"
+    }
+]}

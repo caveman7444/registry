@@ -1,0 +1,5 @@
+{"apis": [{
+    "name": "Elasticsearch",
+    "location": "https://raw.githubusercontent.com/raml-apis/Elasticsearch/production/api.raml",
+    "RAMLVersion": "0.8"
+}]}

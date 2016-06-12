@@ -1,0 +1,12 @@
+{"apis": [
+    {
+        "name": "Jobvite API v1",
+        "location": "https://raw.githubusercontent.com/raml-apis/Jobvite/master/api.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "Jobvite API v1",
+        "location": "https://raw.githubusercontent.com/raml-apis/Jobvite/staging/api.raml",
+        "RAMLVersion": "0.8"
+    }
+]}

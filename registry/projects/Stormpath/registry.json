@@ -1,0 +1,5 @@
+{"apis": [{
+    "name": "StormPath",
+    "location": "https://raw.githubusercontent.com/raml-apis/Stormpath/production/api.raml",
+    "RAMLVersion": "0.8"
+}]}

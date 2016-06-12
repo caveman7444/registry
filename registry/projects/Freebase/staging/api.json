@@ -1,0 +1,1272 @@
+{
+    "title": "Get Started with the Freebase API",
+    "version": "v1",
+    "baseUri": "https://www.googleapis.com/freebase/{version}",
+    "baseUriParameters": {
+        "version": {
+            "name": "version",
+            "displayName": "version",
+            "type": "string",
+            "required": true,
+            "repeat": false,
+            "enum": [
+                "v1"
+            ],
+            "__METADATA__": {
+                "calculated": true,
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    },
+                    "type": {
+                        "insertedAsDefault": true
+                    },
+                    "required": {
+                        "insertedAsDefault": true
+                    },
+                    "repeat": {
+                        "insertedAsDefault": true
+                    },
+                    "enum": {
+                        "calculated": true
+                    }
+                }
+            }
+        }
+    },
+    "protocols": [
+        "HTTPS"
+    ],
+    "schemas": [
+        {
+            "search": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"status\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"result\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"mid\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"notable\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"name\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"id\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            } ,\n            \"lang\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"score\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            }\n          }\n        } , {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"mid\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"lang\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"score\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    } ,\n    \"cursor\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"cost\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"hits\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "reconcile": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"candidate\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"mid\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"confidence\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"notable\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"name\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"id\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            } ,\n            \"lang\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    } ,\n    \"costs\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"ms\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"hits\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+            "mqlread": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"result\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"type\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"artist\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+            "error": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"error\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"errors\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"object\" ,\n              \"properties\" : {\n                \"domain\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"reason\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"message\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"locationType\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"location\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            }\n          ]\n        } ,\n        \"code\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"message\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+            "topic": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"valuetype\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"values\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"text\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"lang\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"creator\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"timestamp\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"property\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"/people/marriage/from\" : {\n                  \"type\" : \"object\" ,\n                  \"required\" : false ,\n                  \"properties\" : {\n                    \"valuetype\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"values\" : {\n                      \"type\" : \"array\" ,\n                      \"required\" : false ,\n                      \"items\" : [\n                        {\n                          \"type\" : \"object\" ,\n                          \"properties\" : {\n                            \"text\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"lang\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"value\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"creator\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"timestamp\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            }\n                          }\n                        }\n                      ]\n                    } ,\n                    \"count\" : {\n                      \"type\" : \"number\" ,\n                      \"required\" : false\n                    }\n                  }\n                } ,\n                \"/people/marriage/spouse\" : {\n                  \"type\" : \"object\" ,\n                  \"required\" : false ,\n                  \"properties\" : {\n                    \"valuetype\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"values\" : {\n                      \"type\" : \"array\" ,\n                      \"required\" : false ,\n                      \"items\" : [\n                        {\n                          \"type\" : \"object\" ,\n                          \"properties\" : {\n                            \"text\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"lang\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"id\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"creator\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"timestamp\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            }\n                          }\n                        }\n                      ]\n                    } ,\n                    \"count\" : {\n                      \"type\" : \"number\" ,\n                      \"required\" : false\n                    }\n                  }\n                } ,\n                \"/people/marriage/type_of_union\" : {\n                  \"type\" : \"object\" ,\n                  \"required\" : false ,\n                  \"properties\" : {\n                    \"valuetype\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"values\" : {\n                      \"type\" : \"array\" ,\n                      \"required\" : false ,\n                      \"items\" : [\n                        {\n                          \"type\" : \"object\" ,\n                          \"properties\" : {\n                            \"text\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"lang\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"id\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"creator\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"timestamp\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            }\n                          }\n                        }\n                      ]\n                    } ,\n                    \"count\" : {\n                      \"type\" : \"number\" ,\n                      \"required\" : false\n                    }\n                  }\n                } ,\n                \"/type/object/attribution\" : {\n                  \"type\" : \"object\" ,\n                  \"required\" : false ,\n                  \"properties\" : {\n                    \"valuetype\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"values\" : {\n                      \"type\" : \"array\" ,\n                      \"required\" : false ,\n                      \"items\" : [\n                        {\n                          \"type\" : \"object\" ,\n                          \"properties\" : {\n                            \"text\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"lang\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"id\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"creator\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"timestamp\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            }\n                          }\n                        }\n                      ]\n                    } ,\n                    \"count\" : {\n                      \"type\" : \"number\" ,\n                      \"required\" : false\n                    }\n                  }\n                } ,\n                \"/type/object/type\" : {\n                  \"type\" : \"object\" ,\n                  \"required\" : false ,\n                  \"properties\" : {\n                    \"valuetype\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"values\" : {\n                      \"type\" : \"array\" ,\n                      \"required\" : false ,\n                      \"items\" : [\n                        {\n                          \"type\" : \"object\" ,\n                          \"properties\" : {\n                            \"text\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"lang\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"id\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"creator\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"timestamp\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            }\n                          }\n                        }\n                      ]\n                    } ,\n                    \"count\" : {\n                      \"type\" : \"number\" ,\n                      \"required\" : false\n                    }\n                  }\n                }\n              }\n            }\n          }\n        }\n      ]\n    } ,\n    \"count\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    }\n  }\n}"
+        }
+    ],
+    "traits": [
+        {
+            "dataBaseAccessable": {
+                "queryParameters": {
+                    "callback": {
+                        "name": "callback",
+                        "displayName": "callback",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "JS method name for JSONP callbacks.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "indent": {
+                        "name": "indent",
+                        "displayName": "indent",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Whether to indent the JSON results or not.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "query": {
+                        "name": "query",
+                        "displayName": "query",
+                        "type": "string",
+                        "required": false,
+                        "example": "query=bob",
+                        "repeat": false,
+                        "description": "Query term to search for.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "name": "dataBaseAccessable"
+            }
+        },
+        {
+            "limitable": {
+                "queryParameters": {
+                    "limit": {
+                        "name": "limit",
+                        "displayName": "limit",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Maximum number of candidates to return. Defaults to 3.\nThe maximum number of property values to return for each property. Must be a positive integer. Default is 10.\nMaximum number of results to return. By default, 20 matches in decreasing order of relevance are returned, if that many exist. Fewer or more matches may be requested by using the limit parameter with a different value. (Example.)\n",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "name": "limitable"
+            }
+        },
+        {
+            "languageSupportable": {
+                "queryParameters": {
+                    "lang": {
+                        "name": "lang",
+                        "displayName": "lang",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "The code of the language with which to run the query. Default is 'en'.\nThe language you'd like the content in - a Freebase /type/lang language key. \nLanguages for names and values. First language is used for display. Default is 'en'.\n",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "name": "languageSupportable"
+            }
+        }
+    ],
+    "resourceTypes": [
+        {
+            "base": {
+                "name": "base",
+                "get": {
+                    "responses": {
+                        "401": {
+                            "code": "401",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "error",
+                                    "example": "{\n  \"error\" : {\n    \"errors\" : [\n      {\n        \"domain\" : \"global\" ,\n        \"reason\" : \"required\" ,\n        \"message\" : \"Login Required\" ,\n        \"locationType\" : \"header\" ,\n        \"location\" : \"Authorization\"\n      }\n    ] ,\n    \"code\" : 401 ,\n    \"message\" : \"Login Required\"\n  }\n}",
+                                    "schemaContent": "error"
+                                }
+                            }
+                        }
+                    },
+                    "method": "get",
+                    "__METADATA__": {
+                        "optional": true
+                    }
+                }
+            }
+        }
+    ],
+    "resources": [
+        {
+            "relativeUri": "/search",
+            "type": "base",
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "search",
+                                    "example": "{\n  \"status\" : \"200 OK\" ,\n  \"result\" : [\n    {\n      \"mid\" : \"/m/0bkf4\" ,\n      \"id\" : \"/en/bob_marley\" ,\n      \"name\" : \"Bob Marley\" ,\n      \"notable\" : {\n        \"name\" : \"Musical Artist\" ,\n        \"id\" : \"/music/artist\"\n      } ,\n      \"lang\" : \"en\" ,\n      \"score\" : 78.634216\n    } , {\n      \"mid\" : \"/m/01vrncs\" ,\n      \"id\" : \"/en/bob_dylan\" ,\n      \"name\" : \"Bob Dylan\" ,\n      \"notable\" : {\n        \"name\" : \"Folk rock Artist\" ,\n        \"id\" : \"/m/016jny\"\n      } ,\n      \"lang\" : \"en\" ,\n      \"score\" : 75.307129\n    } , {\n      \"mid\" : \"/m/015cbq\" ,\n      \"id\" : \"/en/bob_hope\" ,\n      \"name\" : \"Bob Hope\" ,\n      \"notable\" : {\n        \"name\" : \"Comedian\" ,\n        \"id\" : \"/m/018gz8\"\n      } ,\n      \"lang\" : \"en\" ,\n      \"score\" : 60.908581\n    } , {\n      \"mid\" : \"/m/01pbxb\" ,\n      \"id\" : \"/en/bob_seger\" ,\n      \"name\" : \"Bob Seger\" ,\n      \"notable\" : {\n        \"name\" : \"Heartland rock Artist\" ,\n        \"id\" : \"/m/05hs4r\"\n      } ,\n      \"lang\" : \"en\" ,\n      \"score\" : 55.450382\n    } , {\n      \"mid\" : \"/m/09wz9\" ,\n      \"id\" : \"/en/bobsleigh\" ,\n      \"name\" : \"Bobsleigh\" ,\n      \"notable\" : {\n        \"name\" : \"Sport\" ,\n        \"id\" : \"/sports/sport\"\n      } ,\n      \"lang\" : \"en\" ,\n      \"score\" : 53.285572\n    } , {\n      \"mid\" : \"/m/02fj27\" ,\n      \"id\" : \"/en/bob_cut\" ,\n      \"name\" : \"Bob cut\" ,\n      \"lang\" : \"en\" ,\n      \"score\" : 51.77486\n    } , {\n      \"mid\" : \"/m/0fhkx\" ,\n      \"id\" : \"/en/bob_dole\" ,\n      \"name\" : \"Bob Dole\" ,\n      \"notable\" : {\n        \"name\" : \"U.S. Congressperson\" ,\n        \"id\" : \"/government/u_s_congressperson\"\n      } ,\n      \"lang\" : \"en\" ,\n      \"score\" : 49.349247\n    } , {\n      \"mid\" : \"/m/01z_dc\" ,\n      \"id\" : \"/en/bob_the_builder\" ,\n      \"name\" : \"Bob the Builder\" ,\n      \"notable\" : {\n        \"name\" : \"Children's TV Program\" ,\n        \"id\" : \"/m/0pr6f\"\n      } ,\n      \"lang\" : \"en\" ,\n      \"score\" : 48.611294\n    } , {\n      \"mid\" : \"/m/0fl08s\" ,\n      \"id\" : \"/en/the_bob_tom_show\" ,\n      \"name\" : \"The Bob & Tom Show\" ,\n      \"notable\" : {\n        \"name\" : \"Broadcast Content\" ,\n        \"id\" : \"/broadcast/content\"\n      } ,\n      \"lang\" : \"en\" ,\n      \"score\" : 45.752556\n    } , {\n      \"mid\" : \"/m/03xhfk\" ,\n      \"id\" : \"/en/bob_holly\" ,\n      \"name\" : \"Hardcore Holly\" ,\n      \"notable\" : {\n        \"name\" : \"Wrestler\" ,\n        \"id\" : \"/m/02nx2gc\"\n      } ,\n      \"lang\" : \"en\" ,\n      \"score\" : 40.662376\n    } , {\n      \"mid\" : \"/m/01kk3lb\" ,\n      \"id\" : \"/en/bob_wills\" ,\n      \"name\" : \"Bob Wills\" ,\n      \"notable\" : {\n        \"name\" : \"Western swing Artist\" ,\n        \"id\" : \"/m/02wydx\"\n      } ,\n      \"lang\" : \"en\" ,\n      \"score\" : 38.773483\n    } , {\n      \"mid\" : \"/m/01l87db\" ,\n      \"id\" : \"/en/bob_geldof\" ,\n      \"name\" : \"Bob Geldof\" ,\n      \"notable\" : {\n        \"name\" : \"Rock Artist\" ,\n        \"id\" : \"/m/06by7\"\n      } ,\n      \"lang\" : \"en\" ,\n      \"score\" : 37.039284\n    } , {\n      \"mid\" : \"/m/02ht0ln\" ,\n      \"id\" : \"/en/bob_marley_the_wailers\" ,\n      \"name\" : \"Bob Marley & The Wailers\" ,\n      \"notable\" : {\n        \"name\" : \"Ska Artist\" ,\n        \"id\" : \"/m/06rqw\"\n      } ,\n      \"lang\" : \"en\" ,\n      \"score\" : 35.457142\n    } , {\n      \"mid\" : \"/m/05kkq7\" ,\n      \"id\" : \"/en/bob_orton_jr\" ,\n      \"name\" : \"Bob Orton, Jr.\" ,\n      \"notable\" : {\n        \"name\" : \"Wrestler\" ,\n        \"id\" : \"/m/02nx2gc\"\n      } ,\n      \"lang\" : \"en\" ,\n      \"score\" : 35.056168\n    } , {\n      \"mid\" : \"/m/071hsq\" ,\n      \"id\" : \"/en/bob_sinclar\" ,\n      \"name\" : \"Bob Sinclar\" ,\n      \"notable\" : {\n        \"name\" : \"Remixer\" ,\n        \"id\" : \"/m/05c9vcp\"\n      } ,\n      \"lang\" : \"en\" ,\n      \"score\" : 35.027836\n    } , {\n      \"mid\" : \"/m/09dvvy\" ,\n      \"id\" : \"/en/bob_mcdonnell\" ,\n      \"name\" : \"Bob McDonnell\" ,\n      \"notable\" : {\n        \"name\" : \"Politician\" ,\n        \"id\" : \"/government/politician\"\n      } ,\n      \"lang\" : \"en\" ,\n      \"score\" : 34.240498\n    } , {\n      \"mid\" : \"/m/012gq6\" ,\n      \"id\" : \"/en/bob_newhart\" ,\n      \"name\" : \"Bob Newhart\" ,\n      \"notable\" : {\n        \"name\" : \"Comedian\" ,\n        \"id\" : \"/m/018gz8\"\n      } ,\n      \"lang\" : \"en\" ,\n      \"score\" : 33.925415\n    } , {\n      \"mid\" : \"/m/047ymw\" ,\n      \"id\" : \"/en/bob_casey_jr\" ,\n      \"name\" : \"Bob Casey, Jr.\" ,\n      \"notable\" : {\n        \"name\" : \"U.S. Congressperson\" ,\n        \"id\" : \"/government/u_s_congressperson\"\n      } ,\n      \"lang\" : \"en\" ,\n      \"score\" : 33.472374\n    } , {\n      \"mid\" : \"/m/019yt\" ,\n      \"id\" : \"/en/bob_hawke\" ,\n      \"name\" : \"Bob Hawke\" ,\n      \"notable\" : {\n        \"name\" : \"Politician\" ,\n        \"id\" : \"/government/politician\"\n      } ,\n      \"lang\" : \"en\" ,\n      \"score\" : 33.388203\n    } , {\n      \"mid\" : \"/m/0gw5_q\" ,\n      \"id\" : \"/en/bob_jane\" ,\n      \"name\" : \"Bob Jane\" ,\n      \"notable\" : {\n        \"name\" : \"Racing driver\" ,\n        \"id\" : \"/m/02h6nn_\"\n      } ,\n      \"lang\" : \"en\" ,\n      \"score\" : 32.523479\n    }\n  ] ,\n  \"cursor\" : 20 ,\n  \"cost\" : 29 ,\n  \"hits\" : 177617\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"status\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"result\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"mid\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"notable\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"name\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"id\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            } ,\n            \"lang\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"score\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            }\n          }\n        } , {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"mid\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"lang\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"score\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    } ,\n    \"cursor\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"cost\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"hits\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "queryParameters": {
+                        "as_of_time  ": {
+                            "name": "as_of_time  ",
+                            "displayName": "as_of_time  ",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "A MQL as_of_time value to use with mql_output queries.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "cursor": {
+                            "name": "cursor",
+                            "displayName": "cursor",
+                            "type": "integer",
+                            "required": false,
+                            "example": "cursor=0",
+                            "repeat": false,
+                            "description": "The cursor parameter along with the limit parameter allows you to page through a defined number of results at a time. For example, to present 3 pages of successive 10 results, use  limit=10 and cursor=0, then cursor=10, and cursor=20.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "domain": {
+                            "name": "domain",
+                            "displayName": "domain",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Restrict to topics with this Freebase domain ID.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "encode": {
+                            "name": "encode",
+                            "displayName": "encode",
+                            "type": "string",
+                            "required": false,
+                            "default": "off",
+                            "repeat": false,
+                            "description": "The encoding of the response. You can use this parameter to enable HTML encoding.",
+                            "enum": [
+                                "off",
+                                "html"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "exact": {
+                            "name": "exact",
+                            "displayName": "exact",
+                            "type": "boolean",
+                            "required": false,
+                            "example": "",
+                            "repeat": false,
+                            "description": "Query on exact name and keys only.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "format": {
+                            "name": "format",
+                            "displayName": "format",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Structural format of the JSON response.",
+                            "enum": [
+                                "ids",
+                                "entity",
+                                "mids"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "mql_output": {
+                            "name": "mql_output",
+                            "displayName": "mql_output",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The MQL query to run againist the results to extract more data. After the query is run, the matching documents' IDs are passed to the mql_output MQL query to retrieve actual data about the matches. The MQL results are sorted by decreasing relevance score. ",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "prefixed": {
+                            "name": "prefixed",
+                            "displayName": "prefixed",
+                            "type": "boolean",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Prefix match against names and aliases.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "scoring": {
+                            "name": "scoring",
+                            "displayName": "scoring",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Relevance scoring algorithm to use.",
+                            "enum": [
+                                "schema",
+                                "entity",
+                                "freebase"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "spell": {
+                            "name": "spell",
+                            "displayName": "spell",
+                            "type": "string",
+                            "required": false,
+                            "default": "no_spelling",
+                            "repeat": false,
+                            "description": "Request 'did you mean' suggestions",
+                            "enum": [
+                                "no_results",
+                                "no_spelling",
+                                "always"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "stemmed": {
+                            "name": "stemmed",
+                            "displayName": "stemmed",
+                            "type": "boolean",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Query on stemmed names and aliases. May not be used with prefixed.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "type": {
+                            "name": "type",
+                            "displayName": "type",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Restrict to topics with this Freebase type id.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "with": {
+                            "name": "with",
+                            "displayName": "with",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "A filter rule to match against.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "without": {
+                            "name": "without",
+                            "displayName": "without",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "A filter rule to not match against.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "The Search API provides access to Freebase data given a free text query. Please consult Search Overview and the Search Cookbook for more information on how to construct detailed search queries.",
+                    "method": "get",
+                    "is": [
+                        "languageSupportable",
+                        "limitable",
+                        "dataBaseAccessable"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/search",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "search"
+            ]
+        },
+        {
+            "relativeUri": "/reconcile",
+            "type": "base",
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "reconcile",
+                                    "example": "{\n  \"candidate\" : [\n    {\n      \"mid\" : \"/m/02ktj7\" ,\n      \"confidence\" : 0.8762683 ,\n      \"name\" : \"King Kong\" ,\n      \"notable\" : {\n        \"name\" : \"Film\" ,\n        \"id\" : \"/film/film\"\n      } ,\n      \"lang\" : \"en\"\n    } , {\n      \"mid\" : \"/m/02dr9j\" ,\n      \"confidence\" : 0.058297582 ,\n      \"name\" : \"King Kong\" ,\n      \"notable\" : {\n        \"name\" : \"Film\" ,\n        \"id\" : \"/film/film\"\n      } ,\n      \"lang\" : \"en\"\n    } , {\n      \"mid\" : \"/m/0gzlzqq\" ,\n      \"confidence\" : 0.022297567 ,\n      \"name\" : \"King Kong\" ,\n      \"notable\" : {\n        \"name\" : \"Film\" ,\n        \"id\" : \"/film/film\"\n      } ,\n      \"lang\" : \"en\"\n    }\n  ] ,\n  \"costs\" : {\n    \"ms\" : 11 ,\n    \"hits\" : 24\n  }\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"candidate\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"mid\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"confidence\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"notable\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"name\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"id\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            } ,\n            \"lang\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    } ,\n    \"costs\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"ms\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"hits\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "queryParameters": {
+                        "kind": {
+                            "name": "kind",
+                            "displayName": "kind",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "Classifications of entity e.g. type, category, title. Should be a type id if possible.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "name": {
+                            "name": "name",
+                            "displayName": "name",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The name of root entity to reconcile.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "prop": {
+                            "name": "prop",
+                            "displayName": "prop",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Property values for entity formatted as <predicate>:<value>",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "confidence": {
+                            "name": "confidence",
+                            "displayName": "confidence",
+                            "type": "number",
+                            "required": false,
+                            "default": 0.99,
+                            "repeat": false,
+                            "description": "Required confidence for a candidate to match. Must be between .5 and 1.0 and defaults to .99",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "The Reconciliation API matches structured data about entities against potential matching entiities in Freebase. Please consult Reconciliation Overview for more information on how to reconcile your data.",
+                    "method": "get",
+                    "is": [
+                        "languageSupportable",
+                        "limitable"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/reconcile",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "reconcile"
+            ]
+        },
+        {
+            "relativeUri": "/mqlread",
+            "type": "base",
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "mqlread",
+                                    "example": "{\n  \"result\" : {\n    \"type\" : \"/music/album\" ,\n    \"id\" : \"/en/keep_it_turned_on\" ,\n    \"artist\" : \"Rick Astley\"\n  }\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"result\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"type\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"artist\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "queryParameters": {
+                        "as_of_time  ": {
+                            "name": "as_of_time  ",
+                            "displayName": "as_of_time  ",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "A MQL as_of_time value to use with mql_output queries.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "cursor": {
+                            "name": "cursor",
+                            "displayName": "cursor",
+                            "type": "integer",
+                            "required": false,
+                            "example": "cursor=0",
+                            "repeat": false,
+                            "description": "The cursor parameter along with the limit parameter allows you to page through a defined number of results at a time. For example, to present 3 pages of successive 10 results, use  limit=10 and cursor=0, then cursor=10, and cursor=20.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "cost": {
+                            "name": "cost",
+                            "displayName": "cost",
+                            "type": "boolean",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Toggles whether or not to show the costs. (Default: false)",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "dateline": {
+                            "name": "dateline",
+                            "displayName": "dateline",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The dateline that you get in a mqlwrite response to ensure consistent results.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "html_escape": {
+                            "name": "html_escape",
+                            "displayName": "html_escape",
+                            "type": "boolean",
+                            "required": false,
+                            "default": true,
+                            "repeat": false,
+                            "description": "Whether or not to escape entities. (Default: true)",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "uniqueness_failure": {
+                            "name": "uniqueness_failure",
+                            "displayName": "uniqueness_failure",
+                            "type": "string",
+                            "required": false,
+                            "default": "hard",
+                            "repeat": false,
+                            "description": "How MQL responds to uniqueness failures.",
+                            "enum": [
+                                "hard",
+                                "soft"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "The mqlread API provides access to the Freebase database using the Metaweb query language (MQL).",
+                    "method": "get",
+                    "is": [
+                        "languageSupportable",
+                        "dataBaseAccessable"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/mqlread",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "mqlread"
+            ]
+        },
+        {
+            "relativeUri": "/mqlwrite",
+            "type": "base",
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "queryParameters": {
+                        "dateline": {
+                            "name": "dateline",
+                            "displayName": "dateline",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The dateline that you get in a mqlwrite response to ensure consistent results.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "use_permission_of": {
+                            "name": "use_permission_of",
+                            "displayName": "use_permission_of",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Use the same permission node of the object with the specified id.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "The mqlwrite API provides access to the Freebase database using the Metaweb query language (MQL).",
+                    "method": "get",
+                    "is": [
+                        "dataBaseAccessable"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/mqlwrite",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "mqlwrite"
+            ]
+        },
+        {
+            "relativeUri": "/rdf{/id}",
+            "type": "base",
+            "uriParameters": {
+                "/id": {
+                    "name": "/id",
+                    "displayName": "/id",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "The Freebase RDF API is a web service that will return all the known facts for a given topic including images and text blurbs. You can apply filters to the Topic API so that it only returns the property values that you're interested. This is ideal for building topic pages and short summaries of an entity.\nThe RDF API returns an Turtle serialization of the first 100 values for each predicate for a given Freebase topic.\n",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/rdf{/id}",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "rdf{",
+                "id}"
+            ]
+        },
+        {
+            "relativeUri": "/topic{/id}",
+            "type": "base",
+            "uriParameters": {
+                "/id": {
+                    "name": "/id",
+                    "displayName": "/id",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "topic",
+                                    "example": "\"/people/person/spouse_s\": {\n  \"valuetype\" : \"compound\" ,\n  \"values\" : [\n    {\n      \"text\" : \"1992-10-03 - Michelle Obama - Marriage - alexander - Marriage\" ,\n      \"lang\" : \"en\" ,\n      \"id\" : \"/m/02nqglv\" ,\n      \"creator\" : \"/user/spencermountain\" ,\n      \"timestamp\" : \"2010-02-11T23:02:42.001Z\" ,\n      \"property\" : {\n        \"/people/marriage/from\" : {\n          \"valuetype\" : \"datetime\" ,\n          \"values\" : [\n            {\n              \"text\" : \"1992-10-03\" ,\n              \"lang\" : \"\" ,\n              \"value\" : \"1992-10-03\" ,\n              \"creator\" : \"/user/aquebral\" ,\n              \"timestamp\" : \"2012-04-05T03:17:42.000Z\"\n            }\n          ] ,\n          \"count\" : 1\n        } ,\n        \"/people/marriage/spouse\" : {\n          \"valuetype\" : \"object\" ,\n          \"values\" : [\n            {\n              \"text\" : \"Michelle Obama\" ,\n              \"lang\" : \"en\" ,\n              \"id\" : \"/m/025s5v9\" ,\n              \"creator\" : \"/user/alexander\" ,\n              \"timestamp\" : \"2007-07-11T18:34:23.000Z\"\n            }\n          ] ,\n          \"count\" : 2\n        } ,\n        \"/people/marriage/type_of_union\" : {\n          \"valuetype\" : \"object\" ,\n          \"values\" : [\n            {\n              \"text\" : \"Marriage\" ,\n              \"lang\" : \"en\" ,\n              \"id\" : \"/m/04ztj\" ,\n              \"creator\" : \"/user/faye\" ,\n              \"timestamp\" : \"2008-10-03T07:10:49.000Z\"\n            }\n          ] ,\n          \"count\" : 1\n        } ,\n        \"/type/object/attribution\" : {\n          \"valuetype\" : \"object\" ,\n          \"values\" : [\n            {\n              \"text\" : \"alexander\" ,\n              \"lang\" : \"en\" ,\n              \"id\" : \"/m/022q403\" ,\n              \"creator\" : \"/user/alexander\" ,\n              \"timestamp\" : \"2007-07-11T18:34:23.000Z\"\n            }\n          ] ,\n          \"count\" : 1\n        } ,\n        \"/type/object/type\" : {\n          \"valuetype\" : \"object\" ,\n          \"values\" : [\n            {\n              \"text\" : \"Marriage\" ,\n              \"lang\" : \"en\" ,\n              \"id\" : \"/people/marriage\" ,\n              \"creator\" : \"/user/alexander\" ,\n              \"timestamp\" : \"2007-07-11T18:34:23.000Z\"\n            }\n          ] ,\n          \"count\" : 1\n        }\n      }\n    }\n  ] ,\n  \"count\" : 1\n}",
+                                    "schemaContent": "topic"
+                                }
+                            },
+                            "description": ""
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "queryParameters": {
+                        "dateline": {
+                            "name": "dateline",
+                            "displayName": "dateline",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Determines how up-to-date the data returned is. A UNIX epoch time, a guid or now.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "filter": {
+                            "name": "filter",
+                            "displayName": "filter",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "A Freebase domain, type or property ID. suggest, commons, or all. Filter the results and return only appropriate properties. See filters parameter details for more information.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "raw": {
+                            "name": "raw",
+                            "displayName": "raw",
+                            "type": "boolean",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Do not apply any constraints, or get any names. (Default: false)",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "If successful, this method returns a response body that depends on the query. Please see Topic API Responses for an overview of the response format and types of responses.",
+                    "method": "get",
+                    "is": [
+                        "languageSupportable",
+                        "limitable"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/topic{/id}",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "topic{",
+                "id}"
+            ]
+        }
+    ],
+    "documentation": [
+        {
+            "title": "Headline",
+            "content": "Freebase is a large collaborative knowledge base consisting of metadata composed mainly by its community members."
+        }
+    ],
+    "__METADATA__": {
+        "primitiveValuesMeta": {
+            "protocols": {
+                "calculated": true
+            }
+        }
+    }
+}

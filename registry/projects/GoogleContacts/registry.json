@@ -1,0 +1,5 @@
+{"apis": [{
+    "name": "Google Contacts API",
+    "location": "https://raw.githubusercontent.com/raml-apis/GoogleContacts/production/gc.raml",
+    "RAMLVersion": "0.8"
+}]}

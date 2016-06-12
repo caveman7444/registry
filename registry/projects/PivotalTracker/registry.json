@@ -1,0 +1,12 @@
+{"apis": [
+    {
+        "name": "Pivotal Tracker",
+        "location": "https://raw.githubusercontent.com/raml-apis/PivotalTracker/production/api.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "PivotalTracker Attachment Download",
+        "location": "https://raw.githubusercontent.com/raml-apis/PivotalTracker/production/attachmentDownload.raml",
+        "RAMLVersion": "0.8"
+    }
+]}

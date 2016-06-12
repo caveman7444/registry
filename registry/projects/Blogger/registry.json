@@ -1,0 +1,5 @@
+{"apis": [{
+    "name": "Blogger",
+    "location": "https://raw.githubusercontent.com/raml-apis/Blogger/production/api.raml",
+    "RAMLVersion": "0.8"
+}]}

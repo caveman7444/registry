@@ -1,0 +1,5 @@
+{"apis": [{
+    "name": "Bitly",
+    "location": "https://raw.githubusercontent.com/raml-apis/Bitly/production/api.raml",
+    "RAMLVersion": "0.8"
+}]}

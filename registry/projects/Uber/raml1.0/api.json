@@ -1,0 +1,1554 @@
+{
+    "uses": [
+        {
+            "key": "types",
+            "value": "types.raml"
+        }
+    ],
+    "traits": [
+        {
+            "points": {
+                "queryParameters": {
+                    "end_latitude": {
+                        "name": "end_latitude",
+                        "displayName": "end_latitude",
+                        "type": [
+                            "string"
+                        ],
+                        "repeat": false,
+                        "required": true,
+                        "description": "Latitude component of end location.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "end_longitude": {
+                        "name": "end_longitude",
+                        "displayName": "end_longitude",
+                        "type": [
+                            "string"
+                        ],
+                        "repeat": false,
+                        "required": true,
+                        "description": "Longitude component of end location.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "start_latitude": {
+                        "name": "start_latitude",
+                        "displayName": "start_latitude",
+                        "type": [
+                            "string"
+                        ],
+                        "repeat": false,
+                        "required": true,
+                        "description": "Latitude component of start location.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "start_longitude": {
+                        "name": "start_longitude",
+                        "displayName": "start_longitude",
+                        "type": [
+                            "string"
+                        ],
+                        "repeat": false,
+                        "required": true,
+                        "description": "Longitude component of start location.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "securedBy": [
+                    "oauth_2_0"
+                ],
+                "name": "points",
+                "__METADATA__": {
+                    "primitiveValuesMeta": {
+                        "securedBy": {
+                            "calculated": true
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "securitySchemes": [
+        {
+            "oauth_2_0": {
+                "name": "oauth_2_0",
+                "type": "OAuth 2.0",
+                "description": "Google recommend using OAuth 2.0 to authorize requests.\n",
+                "describedBy": {
+                    "queryParameters": {
+                        "access_token": {
+                            "name": "access_token",
+                            "displayName": "access_token",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Used to send a valid OAuth 2 access token\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "headers": {
+                        "Authorization": {
+                            "name": "Authorization",
+                            "displayName": "Authorization",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Used to send a valid OAuth 2 access token.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": [
+                        {
+                            "code": "401",
+                            "description": "Authorization error.\n"
+                        }
+                    ]
+                },
+                "settings": {
+                    "accessTokenUri": "https://login.uber.com/oauth/token",
+                    "authorizationUri": "https://login.uber.com/oauth/authorize",
+                    "authorizationGrants": [
+                        "code"
+                    ],
+                    "scopes": [
+                        "profile",
+                        "history",
+                        "history_lite",
+                        "request",
+                        "request_receipt"
+                    ]
+                }
+            }
+        },
+        {
+            "bearer": {
+                "name": "bearer",
+                "type": "x-bearer",
+                "description": "Basically, you need to set the header 'Authorization' to 'Bearer <API_KEY>'. If you're having trouble with this, email support@stripe.com\n",
+                "describedBy": {
+                    "headers": {
+                        "Authorization": {
+                            "name": "Authorization",
+                            "displayName": "Authorization",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "title": "Uber",
+    "version": "v1",
+    "baseUri": "https://{apiMode}.uber.com/{version}",
+    "baseUriParameters": {
+        "apiMode": {
+            "name": "apiMode",
+            "displayName": "apiMode",
+            "type": [
+                "string"
+            ],
+            "repeat": false,
+            "required": true,
+            "description": "In order to use the Sandbox environment set 'sandbox-api'. Otherwise set 'api'.",
+            "enum": [
+                "sandbox-api",
+                "api"
+            ],
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    },
+                    "type": {
+                        "insertedAsDefault": true
+                    },
+                    "repeat": {
+                        "insertedAsDefault": true
+                    },
+                    "required": {
+                        "insertedAsDefault": true
+                    }
+                }
+            }
+        },
+        "version": {
+            "name": "version",
+            "displayName": "version",
+            "type": [
+                "string"
+            ],
+            "repeat": false,
+            "required": true,
+            "enum": [
+                "v1"
+            ],
+            "__METADATA__": {
+                "calculated": true,
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    },
+                    "type": {
+                        "insertedAsDefault": true
+                    },
+                    "repeat": {
+                        "insertedAsDefault": true
+                    },
+                    "required": {
+                        "insertedAsDefault": true
+                    },
+                    "enum": {
+                        "calculated": true
+                    }
+                }
+            }
+        }
+    },
+    "protocols": [
+        "HTTPS"
+    ],
+    "securedBy": [
+        "oauth_2_0"
+    ],
+    "resources": [
+        {
+            "methods": [
+                {
+                    "queryParameters": {
+                        "latitude": {
+                            "name": "latitude",
+                            "displayName": "latitude",
+                            "type": [
+                                "number"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Latitude component of location.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "longitude": {
+                            "name": "longitude",
+                            "displayName": "longitude",
+                            "type": [
+                                "number"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Longitude component of location.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "types.ProductsResponse"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "description": "The Products endpoint returns information about the Uber products offered at a given location. The response includes the display name and other details about each product, and lists the products in the proper display order.\n\nSome Products, such as experiments or promotions such as UberPOOL and UberFRESH, will not be returned by this endpoint.\n",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "relativeUri": "/products",
+            "displayName": "/products",
+            "resources": [
+                {
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "displayName": "application/json",
+                                            "type": [
+                                                "types.ProductResponse"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "Returns information about the Uber product.",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "product_id": {
+                            "name": "product_id",
+                            "displayName": "product_id",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "relativeUri": "/{product_id}",
+                    "displayName": "/{product_id}",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{product_id}"
+                    ]
+                }
+            ],
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "products"
+            ]
+        },
+        {
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "relativeUri": "/estimates",
+            "displayName": "/estimates",
+            "resources": [
+                {
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "displayName": "application/json",
+                                            "type": [
+                                                "types.PriceResponse"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "is": [
+                                "points"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "The Price Estimates endpoint returns an estimated price range for each product offered at a given location. The price estimate is provided as a formatted string with the full price range and the localized currency symbol.\n\nThe response also includes low and high estimates, and the ISO 4217 currency code for situations requiring currency conversion. When surge is active for a particular product, its surge_multiplier will be greater than 1, but the price estimate already factors in this multiplier.\n",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "relativeUri": "/price",
+                    "displayName": "/price",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "price"
+                    ]
+                },
+                {
+                    "methods": [
+                        {
+                            "queryParameters": {
+                                "start_latitude": {
+                                    "name": "start_latitude",
+                                    "displayName": "start_latitude",
+                                    "type": [
+                                        "number"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "description": "Latitude component.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "start_longitude": {
+                                    "name": "start_longitude",
+                                    "displayName": "start_longitude",
+                                    "type": [
+                                        "number"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "description": "Longitude component.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "customer_uuid": {
+                                    "name": "customer_uuid",
+                                    "displayName": "customer_uuid",
+                                    "type": [
+                                        "string"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "description": "Unique customer identifier to be used for experience customization.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "product_id": {
+                                    "name": "product_id",
+                                    "displayName": "product_id",
+                                    "type": [
+                                        "string"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "description": "Unique identifier representing a specific product for a given latitude & longitude.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "displayName": "application/json",
+                                            "type": [
+                                                "types.TimeResponse"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "The Time Estimates endpoint returns ETAs for all products offered at a given location, with the responses expressed as integers in seconds. We recommend that this endpoint be called every minute to provide the most accurate, up-to-date ETAs.",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "relativeUri": "/time",
+                    "displayName": "/time",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "time"
+                    ]
+                }
+            ],
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "estimates"
+            ]
+        },
+        {
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "types.PromotionsResponse"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "is": [
+                        "points"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "description": "The Promotions endpoint returns information about the promotion that will be available to a new user based on their activity's location. These promotions do not apply for existing users.",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "relativeUri": "/promotions",
+            "displayName": "/promotions",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "promotions"
+            ]
+        },
+        {
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "types.UserResponse"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "description": "The User Profile endpoint returns information about the Uber user that has authorized with the application.",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "relativeUri": "/me",
+            "displayName": "/me",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "me"
+            ]
+        },
+        {
+            "methods": [
+                {
+                    "queryParameters": {
+                        "product_id": {
+                            "name": "product_id",
+                            "displayName": "product_id",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The unique ID of the product being requested.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "surge_confirmation_id": {
+                            "name": "surge_confirmation_id",
+                            "displayName": "surge_confirmation_id",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The unique identifier of the surge session for a user. Required when returned from a 409 Conflict response on previous POST attempt.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "types.RequestResponse"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "209": {
+                            "code": "209",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "types.RequestsConflictResponse"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "is": [
+                        "points"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "description": "The Request endpoint allows a ride to be requested on behalf of an Uber user given their desired product, start, and end locations.",
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "relativeUri": "/requests",
+            "displayName": "/requests",
+            "resources": [
+                {
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "displayName": "application/json",
+                                            "type": [
+                                                "types.RequestResponse"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "Get the real time status of an ongoing trip that was created using the Ride Request endpoint.",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "204": {
+                                    "code": "204"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "Cancel an ongoing Request on behalf of a rider.",
+                            "method": "delete",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "request_id": {
+                            "name": "request_id",
+                            "displayName": "request_id",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "relativeUri": "/{request_id}",
+                    "displayName": "/{request_id}",
+                    "resources": [
+                        {
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "displayName": "application/json",
+                                                    "type": [
+                                                        "types.ReceiptRequestResponse"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Get the receipt information of the completed request.",
+                                    "method": "get",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "relativeUri": "/receipt",
+                            "displayName": "/receipt",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "securedBy": {
+                                        "calculated": true
+                                    },
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "receipt"
+                            ]
+                        },
+                        {
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "displayName": "application/json",
+                                                    "type": [
+                                                        "types.MapRequestResponse"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Get a map with a visual representation of a Request.",
+                                    "method": "get",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "relativeUri": "/map",
+                            "displayName": "/map",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "securedBy": {
+                                        "calculated": true
+                                    },
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "map"
+                            ]
+                        }
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{request_id}"
+                    ]
+                },
+                {
+                    "methods": [
+                        {
+                            "queryParameters": {
+                                "product_id": {
+                                    "name": "product_id",
+                                    "displayName": "product_id",
+                                    "type": [
+                                        "string"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "description": "The unique ID of the product being requested.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "start_latitude": {
+                                    "name": "start_latitude",
+                                    "displayName": "start_latitude",
+                                    "type": [
+                                        "number"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "description": "The beginning or \"pickup\" latitude.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "start_longitude": {
+                                    "name": "start_longitude",
+                                    "displayName": "start_longitude",
+                                    "type": [
+                                        "number"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "description": "The beginning or \"pickup\" longitude.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "end_latitude": {
+                                    "name": "end_latitude",
+                                    "displayName": "end_latitude",
+                                    "type": [
+                                        "number"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "description": "The final or destination latitude. If not included, only the pickup ETA and details of surge pricing will be included.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "end_longitude": {
+                                    "name": "end_longitude",
+                                    "displayName": "end_longitude",
+                                    "type": [
+                                        "number"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "description": "The final or destination longitude. If not included, only the pickup ETA and details of surge pricing will be included.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "displayName": "application/json",
+                                            "type": [
+                                                "types.RequestEstimateResponse"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "The Request Estimate endpoint allows a ride to be estimated given the desired product, start, and end locations. If the end location is not provided, only the pickup ETA and details of surge pricing information are provided. If the pickup ETA is null, there are no cars available, but an estimate may still be given to the user.\n\nYou can use this endpoint to determine if surge pricing is in effect. Do this before attempting to make a request so that you can preemptively have a user confirm surge by sending them to the surge_confirmation_href provided in the response.\n",
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "relativeUri": "/estimate",
+                    "displayName": "/estimate",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "estimate"
+                    ]
+                }
+            ],
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "requests"
+            ]
+        }
+    ],
+    "documentation": [
+        {
+            "title": "Headline",
+            "content": "can not resolve docs/api/headline.md"
+        }
+    ],
+    "__METADATA__": {
+        "primitiveValuesMeta": {
+            "protocols": {
+                "calculated": true
+            }
+        }
+    }
+}

@@ -1,0 +1,1669 @@
+{
+    "uses": [
+        {
+            "key": "types",
+            "value": "types.raml"
+        }
+    ],
+    "traits": [
+        {
+            "hasVclass": {
+                "queryParameters": {
+                    "vclass": {
+                        "name": "vclass",
+                        "displayName": "vclass",
+                        "type": [
+                            "string"
+                        ],
+                        "repeat": false,
+                        "required": true,
+                        "description": "",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "name": "hasVclass"
+            }
+        },
+        {
+            "hasYear": {
+                "queryParameters": {
+                    "year": {
+                        "name": "year",
+                        "displayName": "year",
+                        "type": [
+                            "string"
+                        ],
+                        "example": "year=2012",
+                        "repeat": false,
+                        "required": true,
+                        "description": "Year of production",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        },
+                        "structuredExample": {
+                            "value": "year=2012",
+                            "strict": true,
+                            "name": null,
+                            "structuredValue": "year=2012"
+                        }
+                    }
+                },
+                "name": "hasYear"
+            }
+        },
+        {
+            "hasMake": {
+                "queryParameters": {
+                    "make": {
+                        "name": "make",
+                        "displayName": "make",
+                        "type": [
+                            "string"
+                        ],
+                        "example": "make=Honda",
+                        "repeat": false,
+                        "required": true,
+                        "description": "Manufacturer",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        },
+                        "structuredExample": {
+                            "value": "make=Honda",
+                            "strict": true,
+                            "name": null,
+                            "structuredValue": "make=Honda"
+                        }
+                    }
+                },
+                "name": "hasMake"
+            }
+        },
+        {
+            "hasModel": {
+                "queryParameters": {
+                    "model": {
+                        "name": "model",
+                        "displayName": "model",
+                        "type": [
+                            "string"
+                        ],
+                        "repeat": false,
+                        "required": true,
+                        "description": "Model of a car",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "name": "hasModel"
+            }
+        }
+    ],
+    "title": "Fuel Economy",
+    "baseUri": "http://www.fueleconomy.gov/ws/rest",
+    "protocols": [
+        "HTTP"
+    ],
+    "mediaType": "application/xml",
+    "resources": [
+        {
+            "relativeUri": "/vehicle",
+            "displayName": "/vehicle",
+            "resources": [
+                {
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml",
+                                            "displayName": "application/xml",
+                                            "type": [
+                                                "types.Vehicle"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "description": "Return a specific vehicle record",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "uriParameters": {
+                        "id": {
+                            "name": "id",
+                            "displayName": "id",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "relativeUri": "/{id}",
+                    "displayName": "/{id}",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{id}"
+                    ]
+                },
+                {
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml",
+                                            "displayName": "application/xml",
+                                            "type": [
+                                                "types.EmissionsInfoes"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "description": "Return a list of emission records for specific vehicle record",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "uriParameters": {
+                        "id": {
+                            "name": "id",
+                            "displayName": "id",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "relativeUri": "/emissions/{id}",
+                    "displayName": "/emissions/{id}",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "emissions",
+                        "{id}"
+                    ]
+                },
+                {
+                    "relativeUri": "/menu",
+                    "displayName": "/menu",
+                    "resources": [
+                        {
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "displayName": "application/xml",
+                                                    "type": [
+                                                        "types.Menu"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTP"
+                                    ],
+                                    "description": "Returns a list of model years",
+                                    "method": "get",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "relativeUri": "/year",
+                            "displayName": "/year",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "year"
+                            ]
+                        },
+                        {
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "displayName": "application/xml",
+                                                    "type": [
+                                                        "types.Menu"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTP"
+                                    ],
+                                    "is": [
+                                        "hasYear"
+                                    ],
+                                    "description": "Return a list of makes for a particular year",
+                                    "method": "get",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "relativeUri": "/make",
+                            "displayName": "/make",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "make"
+                            ]
+                        },
+                        {
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "displayName": "application/xml",
+                                                    "type": [
+                                                        "types.Menu"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTP"
+                                    ],
+                                    "is": [
+                                        "hasMake",
+                                        "hasYear"
+                                    ],
+                                    "description": "Return a list of models for a particular year and make",
+                                    "method": "get",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "relativeUri": "/model",
+                            "displayName": "/model",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "model"
+                            ]
+                        },
+                        {
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "displayName": "application/xml",
+                                                    "type": [
+                                                        "types.Menu"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTP"
+                                    ],
+                                    "is": [
+                                        "hasModel",
+                                        "hasMake",
+                                        "hasYear"
+                                    ],
+                                    "description": "Return a list of model options and the associated vehicle ID for a particular year, make and model",
+                                    "method": "get",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "relativeUri": "/options",
+                            "displayName": "/options",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "options"
+                            ]
+                        }
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "menu"
+                    ]
+                },
+                {
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml",
+                                            "displayName": "application/xml",
+                                            "type": [
+                                                "object"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "displayName": "application/json",
+                                            "type": [
+                                                "object"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "relativeUri": "/export/all",
+                    "displayName": "/export/all",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "export",
+                        "all"
+                    ]
+                }
+            ],
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "vehicle"
+            ]
+        },
+        {
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/xml": {
+                                    "name": "application/xml",
+                                    "displayName": "application/xml",
+                                    "type": [
+                                        "types.FuelPrices"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTP"
+                    ],
+                    "description": "Return the current fuel prices",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "relativeUri": "/fuelprices",
+            "displayName": "/fuelprices",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "fuelprices"
+            ]
+        },
+        {
+            "relativeUri": "/ympg/shared",
+            "displayName": "/ympg/shared",
+            "resources": [
+                {
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml",
+                                            "displayName": "application/xml",
+                                            "type": [
+                                                "types.YourMpgVehicle"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "description": "Return a summary of shared user MPG data for a specific vehicle ID",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "uriParameters": {
+                        "id": {
+                            "name": "id",
+                            "displayName": "id",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "relativeUri": "/ympgVehicle/{id}",
+                    "displayName": "/ympgVehicle/{id}",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "ympgVehicle",
+                        "{id}"
+                    ]
+                },
+                {
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml",
+                                            "displayName": "application/xml",
+                                            "type": [
+                                                "types.YourMpgDriverVehicles"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "description": "Return a list of user MPG records for a specific vehicle ID",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "uriParameters": {
+                        "id": {
+                            "name": "id",
+                            "displayName": "id",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "relativeUri": "/ympgDriverVehicle/{id}",
+                    "displayName": "/ympgDriverVehicle/{id}",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "ympgDriverVehicle",
+                        "{id}"
+                    ]
+                },
+                {
+                    "relativeUri": "/menu",
+                    "displayName": "/menu",
+                    "resources": [
+                        {
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "displayName": "application/xml",
+                                                    "type": [
+                                                        "types.Menu"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTP"
+                                    ],
+                                    "description": "Menu of shared make",
+                                    "method": "get",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "relativeUri": "/make",
+                            "displayName": "/make",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "make"
+                            ]
+                        },
+                        {
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "displayName": "application/xml",
+                                                    "type": [
+                                                        "types.Menu"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTP"
+                                    ],
+                                    "is": [
+                                        "hasMake"
+                                    ],
+                                    "description": "Menu of shared models for the specified make",
+                                    "method": "get",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "relativeUri": "/model",
+                            "displayName": "/model",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "model"
+                            ]
+                        }
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "menu"
+                    ]
+                },
+                {
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml",
+                                            "displayName": "application/xml",
+                                            "type": [
+                                                "types.Vehicles"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "is": [
+                                "hasModel",
+                                "hasMake"
+                            ],
+                            "description": "List of vehicles with shared Your MPG data",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "relativeUri": "/vehicles",
+                    "displayName": "/vehicles",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "vehicles"
+                    ]
+                }
+            ],
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "ympg",
+                "shared"
+            ]
+        },
+        {
+            "methods": [
+                {
+                    "queryParameters": {
+                        "id1": {
+                            "name": "id1",
+                            "displayName": "id1",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "id2": {
+                            "name": "id2",
+                            "displayName": "id2",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "id3": {
+                            "name": "id3",
+                            "displayName": "id3",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/xml": {
+                                    "name": "application/xml",
+                                    "displayName": "application/xml",
+                                    "type": [
+                                        "object"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "types.RecommendationSet"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTP"
+                    ],
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "relativeUri": "/recommendation/byid",
+            "displayName": "/recommendation/byid",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "recommendation",
+                "byid"
+            ]
+        },
+        {
+            "methods": [
+                {
+                    "queryParameters": {
+                        "state": {
+                            "name": "state",
+                            "displayName": "state",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "callback": {
+                            "name": "callback",
+                            "displayName": "callback",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/xml": {
+                                    "name": "application/xml",
+                                    "displayName": "application/xml",
+                                    "type": [
+                                        "object"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "object"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "application/x-javascript": {
+                                    "name": "application/x-javascript",
+                                    "displayName": "application/x-javascript",
+                                    "type": [
+                                        "object"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTP"
+                    ],
+                    "is": [
+                        "hasVclass"
+                    ],
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "is": [
+                "hasYear"
+            ],
+            "relativeUri": "/smartway/vehicles",
+            "displayName": "/smartway/vehicles",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "smartway",
+                "vehicles"
+            ]
+        },
+        {
+            "methods": [
+                {
+                    "queryParameters": {
+                        "ffv": {
+                            "name": "ffv",
+                            "displayName": "ffv",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "year1": {
+                            "name": "year1",
+                            "displayName": "year1",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "year2": {
+                            "name": "year2",
+                            "displayName": "year2",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/xml": {
+                                    "name": "application/xml",
+                                    "displayName": "application/xml",
+                                    "type": [
+                                        "object"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "object"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTP"
+                    ],
+                    "is": [
+                        "hasVclass"
+                    ],
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "relativeUri": "/fleet/eisa141",
+            "displayName": "/fleet/eisa141",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "fleet",
+                "eisa141"
+            ]
+        }
+    ],
+    "documentation": [
+        {
+            "title": "Headline",
+            "content": "The oficial US government source for fuel economy information."
+        }
+    ],
+    "__METADATA__": {
+        "primitiveValuesMeta": {
+            "protocols": {
+                "calculated": true
+            }
+        }
+    }
+}

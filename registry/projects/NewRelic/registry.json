@@ -1,0 +1,5 @@
+{"apis": [{
+    "name": "NewRelic",
+    "location": "https://raw.githubusercontent.com/raml-apis/NewRelic/production/newRelic.raml",
+    "RAMLVersion": "0.8"
+}]}

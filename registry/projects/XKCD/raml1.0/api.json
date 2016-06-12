@@ -1,0 +1,171 @@
+{
+    "uses": [
+        {
+            "key": "types",
+            "value": "types.raml"
+        }
+    ],
+    "title": "XKCD",
+    "baseUri": "http://xkcd.com",
+    "protocols": [
+        "HTTP"
+    ],
+    "resources": [
+        {
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "types.comic"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTP"
+                    ],
+                    "description": "Fetch comics and metadata  by comic id.\n",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "uriParameters": {
+                "comicId": {
+                    "name": "comicId",
+                    "displayName": "comicId",
+                    "type": [
+                        "number"
+                    ],
+                    "repeat": false,
+                    "required": true,
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "relativeUri": "/{comicId}/info.0.json",
+            "displayName": "/{comicId}/info.0.json",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "{comicId}",
+                "info.0.json"
+            ]
+        },
+        {
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "types.comic"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTP"
+                    ],
+                    "description": "Fetch current comic and metadata.\n",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "relativeUri": "/info.0.json",
+            "displayName": "/info.0.json",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "info.0.json"
+            ]
+        }
+    ],
+    "documentation": [
+        {
+            "title": "Headline",
+            "content": "A webcomic of romance, sarcasm, math, and language."
+        }
+    ],
+    "__METADATA__": {
+        "primitiveValuesMeta": {
+            "protocols": {
+                "calculated": true
+            }
+        }
+    }
+}

@@ -1,0 +1,5 @@
+{"apis": [{
+    "name": "Azure Table Storage",
+    "location": "https://raw.githubusercontent.com/raml-apis/AzureTableStorage/production/tablestorage.raml",
+    "RAMLVersion": "0.8"
+}]}

@@ -1,0 +1,1366 @@
+{
+    "title": "Uber",
+    "version": "v1",
+    "baseUri": "https://{apiMode}.uber.com/{version}",
+    "baseUriParameters": {
+        "apiMode": {
+            "name": "apiMode",
+            "displayName": "apiMode",
+            "type": "string",
+            "required": true,
+            "repeat": false,
+            "description": "In order to use the Sandbox environment set 'sandbox-api'. Otherwise set 'api'.",
+            "enum": [
+                "sandbox-api",
+                "api"
+            ],
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    },
+                    "type": {
+                        "insertedAsDefault": true
+                    },
+                    "required": {
+                        "insertedAsDefault": true
+                    },
+                    "repeat": {
+                        "insertedAsDefault": true
+                    }
+                }
+            }
+        },
+        "version": {
+            "name": "version",
+            "displayName": "version",
+            "type": "string",
+            "required": true,
+            "repeat": false,
+            "enum": [
+                "v1"
+            ],
+            "__METADATA__": {
+                "calculated": true,
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    },
+                    "type": {
+                        "insertedAsDefault": true
+                    },
+                    "required": {
+                        "insertedAsDefault": true
+                    },
+                    "repeat": {
+                        "insertedAsDefault": true
+                    },
+                    "enum": {
+                        "calculated": true
+                    }
+                }
+            }
+        }
+    },
+    "protocols": [
+        "HTTPS"
+    ],
+    "schemas": [
+        {
+            "productsResponse": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"products\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"capacity\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"description\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"price_details\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"distance_unit\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"cost_per_minute\" : {\n                  \"type\" : \"number\" ,\n                  \"required\" : false\n                } ,\n                \"service_fees\" : {\n                  \"type\" : \"array\" ,\n                  \"required\" : false ,\n                  \"items\" : [\n                    {\n                      \"type\" : \"object\" ,\n                      \"properties\" : {\n                        \"fee\" : {\n                          \"type\" : \"number\" ,\n                          \"required\" : false\n                        } ,\n                        \"name\" : {\n                          \"type\" : \"string\" ,\n                          \"required\" : false\n                        }\n                      }\n                    }\n                  ]\n                } ,\n                \"minimum\" : {\n                  \"type\" : \"number\" ,\n                  \"required\" : false\n                } ,\n                \"cost_per_distance\" : {\n                  \"type\" : \"number\" ,\n                  \"required\" : false\n                } ,\n                \"base\" : {\n                  \"type\" : \"number\" ,\n                  \"required\" : false\n                } ,\n                \"cancellation_fee\" : {\n                  \"type\" : \"number\" ,\n                  \"required\" : false\n                } ,\n                \"currency_code\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            } ,\n            \"image\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"display_name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"product_id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        } , {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"capacity\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"description\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"price_details\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false\n            } ,\n            \"image\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"display_name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"product_id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+        },
+        {
+            "productResponse": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"capacity\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"description\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"price_details\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"distance_unit\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"cost_per_minute\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"service_fees\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n          ]\n        } ,\n        \"minimum\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"cost_per_distance\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"base\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"cancellation_fee\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"currency_code\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"image\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"display_name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"product_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "priceResponse": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"prices\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"product_id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"currency_code\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"display_name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"estimate\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"low_estimate\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"high_estimate\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"surge_multiplier\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"duration\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"distance\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            }\n          }\n        } , {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"product_id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"currency_code\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false\n            } ,\n            \"display_name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"estimate\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"low_estimate\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false\n            } ,\n            \"high_estimate\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false\n            } ,\n            \"surge_multiplier\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"duration\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"distance\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+        },
+        {
+            "timeResponse": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"times\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"product_id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"display_name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"estimate\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+        },
+        {
+            "promotionsResponse": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"display_text\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"localized_value\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"type\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "userResponse": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"first_name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"last_name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"email\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"picture\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"promo_code\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"uuid\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "reguestsResponse": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"request_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"status\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"vehicle\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"driver\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"location\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"eta\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"surge_multiplier\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "requestsConflictResponse": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"meta\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"surge_confirmation\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"href\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"surge_confirmation_id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      }\n    } ,\n    \"errors\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"status\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"code\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"title\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+        },
+        {
+            "requestResponse": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"status\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"driver\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"phone_number\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"rating\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"picture_url\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"name\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"eta\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"location\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"latitude\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"longitude\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"bearing\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"vehicle\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"make\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"model\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"license_plate\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"picture_url\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"surge_multiplier\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"request_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "requestEstimateResponse": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"price\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"surge_confirmation_href\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"high_estimate\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"surge_confirmation_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"minimum\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"low_estimate\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"surge_multiplier\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"display\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"currency_code\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"trip\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"distance_unit\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"duration_estimate\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"distance_estimate\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"pickup_estimate\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "mapRequestResponse": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"request_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"href\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "receiptRequestResponse": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"request_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"charges\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"amount\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"type\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    } ,\n    \"surge_charge\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"name\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"amount\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"type\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"charge_adjustments\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"amount\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"type\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    } ,\n    \"normal_fare\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"subtotal\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"total_charged\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"total_owed\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"currency_code\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"duration\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"distance\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"distance_label\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        }
+    ],
+    "traits": [
+        {
+            "points": {
+                "securedBy": [
+                    "oauth_2_0"
+                ],
+                "queryParameters": {
+                    "end_latitude": {
+                        "name": "end_latitude",
+                        "displayName": "end_latitude",
+                        "type": "string",
+                        "required": true,
+                        "repeat": false,
+                        "description": "Latitude component of end location.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "end_longitude": {
+                        "name": "end_longitude",
+                        "displayName": "end_longitude",
+                        "type": "string",
+                        "required": true,
+                        "repeat": false,
+                        "description": "Longitude component of end location.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "start_latitude": {
+                        "name": "start_latitude",
+                        "displayName": "start_latitude",
+                        "type": "string",
+                        "required": true,
+                        "repeat": false,
+                        "description": "Latitude component of start location.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "start_longitude": {
+                        "name": "start_longitude",
+                        "displayName": "start_longitude",
+                        "type": "string",
+                        "required": true,
+                        "repeat": false,
+                        "description": "Longitude component of start location.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "name": "points",
+                "__METADATA__": {
+                    "primitiveValuesMeta": {
+                        "securedBy": {
+                            "calculated": true
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "securedBy": [
+        "oauth_2_0"
+    ],
+    "securitySchemes": [
+        {
+            "oauth_2_0": {
+                "name": "oauth_2_0",
+                "type": "OAuth 2.0",
+                "description": "Google recommend using OAuth 2.0 to authorize requests.\n",
+                "describedBy": {
+                    "responses": {
+                        "401": {
+                            "code": "401",
+                            "description": "Authorization error.\n"
+                        }
+                    },
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "queryParameters": {
+                        "access_token": {
+                            "name": "access_token",
+                            "displayName": "access_token",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Used to send a valid OAuth 2 access token\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "headers": {
+                        "Authorization": {
+                            "name": "Authorization",
+                            "displayName": "Authorization",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Used to send a valid OAuth 2 access token.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                "settings": {
+                    "accessTokenUri": "https://login.uber.com/oauth/token",
+                    "authorizationUri": "https://login.uber.com/oauth/authorize",
+                    "authorizationGrants": [
+                        "code"
+                    ],
+                    "scopes": [
+                        "profile",
+                        "history",
+                        "history_lite",
+                        "request",
+                        "request_receipt"
+                    ]
+                }
+            }
+        },
+        {
+            "bearer": {
+                "name": "bearer",
+                "type": "x-bearer",
+                "description": "Basically, you need to set the header 'Authorization' to 'Bearer <API_KEY>'. If you're having trouble with this, email support@stripe.com\n",
+                "describedBy": {
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "headers": {
+                        "Authorization": {
+                            "name": "Authorization",
+                            "displayName": "Authorization",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "resources": [
+        {
+            "relativeUri": "/products",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "productsResponse",
+                                    "example": "{\r\n  \"products\": [\r\n    {\r\n       \"capacity\": 4,\r\n       \"description\": \"The low-cost Uber\",\r\n       \"price_details\": {\r\n          \"distance_unit\": \"mile\",\r\n          \"cost_per_minute\": 0.26,\r\n          \"service_fees\": [\r\n             {\r\n                \"fee\": 1.0,\r\n                \"name\": \"Safe Rides Fee\"\r\n             }\r\n          ],\r\n          \"minimum\": 5.0,\r\n          \"cost_per_distance\": 1.3,\r\n          \"base\": 2.2,\r\n          \"cancellation_fee\": 5.0,\r\n          \"currency_code\": \"USD\"\r\n       },\r\n       \"image\": \"http://d1a3f4spazzrp4.cloudfront.net/car.jpg\",\r\n       \"display_name\": \"uberX\",\r\n       \"product_id\": \"a1111c8c-c720-46c3-8534-2fcdd730040d\"\r\n    },\r\n    {\r\n       \"capacity\": 6,\r\n       \"description\": \"low-cost rides for large groups\",\r\n       \"price_details\": {\r\n          \"distance_unit\": \"mile\",\r\n          \"cost_per_minute\": 0.45,\r\n          \"service_fees\": [\r\n             {\r\n                \"fee\": 1.0,\r\n                \"name\": \"Safe Rides Fee\"\r\n             }\r\n          ],\r\n          \"minimum\": 8.0,\r\n          \"cost_per_distance\": 2.15,\r\n          \"base\": 5.0,\r\n          \"cancellation_fee\": 5.0,\r\n          \"currency_code\": \"USD\"\r\n       },\r\n       \"image\": \"http://d1a3f4spazzrp4.cloudfront.net/car.jpg\",\r\n       \"display_name\": \"uberXL\",\r\n       \"product_id\": \"821415d8-3bd5-4e27-9604-194e4359a449\"\r\n    },\r\n    {\r\n       \"capacity\": 4,\r\n       \"description\": \"The original Uber\",\r\n       \"price_details\": {\r\n          \"distance_unit\": \"mile\",\r\n          \"cost_per_minute\": 0.65,\r\n          \"service_fees\": [],\r\n          \"minimum\": 15.0,\r\n          \"cost_per_distance\": 3.75,\r\n          \"base\": 8.0,\r\n          \"cancellation_fee\": 10.0,\r\n          \"currency_code\": \"USD\"\r\n       },\r\n       \"image\": \"http://d1a3f4spazzrp4.cloudfront.net/car.jpg\",\r\n       \"display_name\": \"UberBLACK\",\r\n       \"product_id\": \"d4abaae7-f4d6-4152-91cc-77523e8165a4\"\r\n    },\r\n    {\r\n       \"capacity\": 6,\r\n       \"description\": \"Room for everyone\",\r\n       \"price_details\": {\r\n          \"distance_unit\": \"mile\",\r\n          \"cost_per_minute\": 0.9,\r\n          \"service_fees\": [],\r\n          \"minimum\": 25.0,\r\n          \"cost_per_distance\": 3.75,\r\n          \"base\": 15.0,\r\n          \"cancellation_fee\": 10.0,\r\n          \"currency_code\": \"USD\"\r\n       },\r\n       \"image\": \"http://d1a3f4spazzrp4.cloudfront.net/car.jpg\",\r\n       \"display_name\": \"UberSUV\",\r\n       \"product_id\": \"8920cb5e-51a4-4fa4-acdf-dd86c5e18ae0\"\r\n    },\r\n    {\r\n       \"capacity\": 4,\r\n       \"description\": \"Taxi without the hassle\",\r\n       \"price_details\": null,\r\n       \"image\": \"http://d1a3f4spazzrp4.cloudfront.net/car.jpg\",\r\n       \"display_name\": \"uberTAXI\",\r\n       \"product_id\": \"3ab64887-4842-4c8e-9780-ccecd3a0391d\"\r\n    }\r\n  ]\r\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"products\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"capacity\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"description\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"price_details\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"distance_unit\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"cost_per_minute\" : {\n                  \"type\" : \"number\" ,\n                  \"required\" : false\n                } ,\n                \"service_fees\" : {\n                  \"type\" : \"array\" ,\n                  \"required\" : false ,\n                  \"items\" : [\n                    {\n                      \"type\" : \"object\" ,\n                      \"properties\" : {\n                        \"fee\" : {\n                          \"type\" : \"number\" ,\n                          \"required\" : false\n                        } ,\n                        \"name\" : {\n                          \"type\" : \"string\" ,\n                          \"required\" : false\n                        }\n                      }\n                    }\n                  ]\n                } ,\n                \"minimum\" : {\n                  \"type\" : \"number\" ,\n                  \"required\" : false\n                } ,\n                \"cost_per_distance\" : {\n                  \"type\" : \"number\" ,\n                  \"required\" : false\n                } ,\n                \"base\" : {\n                  \"type\" : \"number\" ,\n                  \"required\" : false\n                } ,\n                \"cancellation_fee\" : {\n                  \"type\" : \"number\" ,\n                  \"required\" : false\n                } ,\n                \"currency_code\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            } ,\n            \"image\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"display_name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"product_id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        } , {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"capacity\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"description\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"price_details\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false\n            } ,\n            \"image\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"display_name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"product_id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "queryParameters": {
+                        "latitude": {
+                            "name": "latitude",
+                            "displayName": "latitude",
+                            "type": "number",
+                            "required": true,
+                            "repeat": false,
+                            "description": "Latitude component of location.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "longitude": {
+                            "name": "longitude",
+                            "displayName": "longitude",
+                            "type": "number",
+                            "required": true,
+                            "repeat": false,
+                            "description": "Longitude component of location.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "The Products endpoint returns information about the Uber products offered at a given location. The response includes the display name and other details about each product, and lists the products in the proper display order.\n\nSome Products, such as experiments or promotions such as UberPOOL and UberFRESH, will not be returned by this endpoint.\n",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "resources": [
+                {
+                    "relativeUri": "/{product_id}",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "product_id": {
+                            "name": "product_id",
+                            "displayName": "product_id",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "productResponse",
+                                            "example": "{\n  \"capacity\" : 4 ,\n  \"description\" : \"The original Uber\" ,\n  \"price_details\" : {\n    \"distance_unit\" : \"mile\" ,\n    \"cost_per_minute\" : 0.65 ,\n    \"service_fees\" : [\n    ] ,\n    \"minimum\" : 15 ,\n    \"cost_per_distance\" : 3.75 ,\n    \"base\" : 8 ,\n    \"cancellation_fee\" : 10 ,\n    \"currency_code\" : \"USD\"\n  } ,\n  \"image\" : \"http: //d1a3f4spazzrp4.cloudfront.net/car.jpg\" ,\n  \"display_name\" : \"UberBLACK\" ,\n  \"product_id\" : \"d4abaae7-f4d6-4152-91cc-77523e8165a4\"\n}",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"capacity\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"description\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"price_details\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"distance_unit\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"cost_per_minute\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"service_fees\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n          ]\n        } ,\n        \"minimum\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"cost_per_distance\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"base\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"cancellation_fee\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"currency_code\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"image\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"display_name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"product_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "Returns information about the Uber product.",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/{product_id}",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{product_id}"
+                    ]
+                }
+            ],
+            "displayName": "/products",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "products"
+            ]
+        },
+        {
+            "relativeUri": "/estimates",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "resources": [
+                {
+                    "relativeUri": "/price",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "priceResponse",
+                                            "example": "{\n  \"prices\" : [\n    {\n      \"product_id\" : \"08f17084-23fd-4103-aa3e-9b660223934b\" ,\n      \"currency_code\" : \"USD\" ,\n      \"display_name\" : \"UberBLACK\" ,\n      \"estimate\" : \"$23-29\" ,\n      \"low_estimate\" : 23 ,\n      \"high_estimate\" : 29 ,\n      \"surge_multiplier\" : 1 ,\n      \"duration\" : 640 ,\n      \"distance\" : 5.34\n    } , {\n      \"product_id\" : \"9af0174c-8939-4ef6-8e91-1a43a0e7c6f6\" ,\n      \"currency_code\" : \"USD\" ,\n      \"display_name\" : \"UberSUV\" ,\n      \"estimate\" : \"$36-44\" ,\n      \"low_estimate\" : 36 ,\n      \"high_estimate\" : 44 ,\n      \"surge_multiplier\" : 1.25 ,\n      \"duration\" : 640 ,\n      \"distance\" : 5.34\n    } , {\n      \"product_id\" : \"aca52cea-9701-4903-9f34-9a2395253acb\" ,\n      \"currency_code\" : null ,\n      \"display_name\" : \"uberTAXI\" ,\n      \"estimate\" : \"Metered\" ,\n      \"low_estimate\" : null ,\n      \"high_estimate\" : null ,\n      \"surge_multiplier\" : 1 ,\n      \"duration\" : 640 ,\n      \"distance\" : 5.34\n    } , {\n      \"product_id\" : \"a27a867a-35f4-4253-8d04-61ae80a40df5\" ,\n      \"currency_code\" : \"USD\" ,\n      \"display_name\" : \"uberX\" ,\n      \"estimate\" : \"$15\" ,\n      \"low_estimate\" : 15 ,\n      \"high_estimate\" : 15 ,\n      \"surge_multiplier\" : 1 ,\n      \"duration\" : 640 ,\n      \"distance\" : 5.34\n    }\n  ]\n}",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"prices\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"product_id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"currency_code\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"display_name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"estimate\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"low_estimate\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"high_estimate\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"surge_multiplier\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"duration\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"distance\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            }\n          }\n        } , {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"product_id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"currency_code\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false\n            } ,\n            \"display_name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"estimate\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"low_estimate\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false\n            } ,\n            \"high_estimate\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false\n            } ,\n            \"surge_multiplier\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"duration\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"distance\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "The Price Estimates endpoint returns an estimated price range for each product offered at a given location. The price estimate is provided as a formatted string with the full price range and the localized currency symbol.\n\nThe response also includes low and high estimates, and the ISO 4217 currency code for situations requiring currency conversion. When surge is active for a particular product, its surge_multiplier will be greater than 1, but the price estimate already factors in this multiplier.\n",
+                            "method": "get",
+                            "is": [
+                                "points"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/price",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "price"
+                    ]
+                },
+                {
+                    "relativeUri": "/time",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "timeResponse",
+                                            "example": "{\r\n  \"times\": [\r\n    {\r\n      \"product_id\": \"5f41547d-805d-4207-a297-51c571cf2a8c\",\r\n      \"display_name\": \"UberBLACK\",\r\n      \"estimate\": 410\r\n    },\r\n    {\r\n      \"product_id\": \"694558c9-b34b-4836-855d-821d68a4b944\",\r\n      \"display_name\": \"UberSUV\",\r\n      \"estimate\": 535\r\n    },\r\n    {\r\n      \"product_id\": \"65af3521-a04f-4f80-8ce2-6d88fb6648bc\",\r\n      \"display_name\": \"uberTAXI\",\r\n      \"estimate\": 294\r\n    },\r\n    {\r\n      \"product_id\": \"17b011d3-65be-421d-adf6-a5480a366453\",\r\n      \"display_name\": \"uberX\",\r\n      \"estimate\": 288\r\n    }\r\n  ]\r\n}",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"times\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"product_id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"display_name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"estimate\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "queryParameters": {
+                                "start_latitude": {
+                                    "name": "start_latitude",
+                                    "displayName": "start_latitude",
+                                    "type": "number",
+                                    "required": true,
+                                    "repeat": false,
+                                    "description": "Latitude component.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "start_longitude": {
+                                    "name": "start_longitude",
+                                    "displayName": "start_longitude",
+                                    "type": "number",
+                                    "required": true,
+                                    "repeat": false,
+                                    "description": "Longitude component.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "customer_uuid ": {
+                                    "name": "customer_uuid ",
+                                    "displayName": "customer_uuid ",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Unique customer identifier to be used for experience customization.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "product_id ": {
+                                    "name": "product_id ",
+                                    "displayName": "product_id ",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Unique identifier representing a specific product for a given latitude & longitude.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "description": "The Time Estimates endpoint returns ETAs for all products offered at a given location, with the responses expressed as integers in seconds. We recommend that this endpoint be called every minute to provide the most accurate, up-to-date ETAs.",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/time",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "time"
+                    ]
+                }
+            ],
+            "displayName": "/estimates",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "estimates"
+            ]
+        },
+        {
+            "relativeUri": "/promotions",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "promotionsResponse",
+                                    "example": "{\n  \"display_text\" : \"Free ride up to $30\" ,\n  \"localized_value\" : \"$30\" ,\n  \"type\" : \"trip_credit\"\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"display_text\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"localized_value\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"type\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "description": "The Promotions endpoint returns information about the promotion that will be available to a new user based on their activity's location. These promotions do not apply for existing users.",
+                    "method": "get",
+                    "is": [
+                        "points"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/promotions",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "promotions"
+            ]
+        },
+        {
+            "relativeUri": "/me",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "userResponse",
+                                    "example": "{\n  \"first_name\" : \"Uber\" ,\n  \"last_name\" : \"Developer\" ,\n  \"email\" : \"developer@uber.com\" ,\n  \"picture\" : \"https://...\" ,\n  \"promo_code\" : \"teypo\" ,\n  \"uuid\" : \"91d81273-45c2-4b57-8124-d0165f8240c0\"\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"first_name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"last_name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"email\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"picture\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"promo_code\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"uuid\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "description": "The User Profile endpoint returns information about the Uber user that has authorized with the application.",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/me",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "me"
+            ]
+        },
+        {
+            "relativeUri": "/requests",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "reguestsResponse",
+                                    "example": "{\n  \"request_id\" : \"852b8fdd-4369-4659-9628-e122662ad257\" ,\n  \"status\" : \"processing\" ,\n  \"vehicle\" : null ,\n  \"driver\" : null ,\n  \"location\" : null ,\n  \"eta\" : 5 ,\n  \"surge_multiplier\" : null\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"request_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"status\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"vehicle\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"driver\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"location\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"eta\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"surge_multiplier\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                }
+                            }
+                        },
+                        "209": {
+                            "code": "209",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "requestsConflictResponse",
+                                    "example": "{\n  \"meta\" : {\n    \"surge_confirmation\" : {\n      \"href\" : \"https://api.uber.com/v1/surge-confirmations/e100a670\" ,\n      \"surge_confirmation_id\" : \"e100a670\"\n    }\n  } ,\n  \"errors\" : [\n    {\n      \"status\" : 409 ,\n      \"code\" : \"surge\" ,\n      \"title\" : \"Surge pricing is currently in effect for this product.\"\n    }\n  ]\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"meta\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"surge_confirmation\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"href\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"surge_confirmation_id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      }\n    } ,\n    \"errors\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"status\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"code\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"title\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "queryParameters": {
+                        "product_id": {
+                            "name": "product_id",
+                            "displayName": "product_id",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "The unique ID of the product being requested.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "surge_confirmation_id": {
+                            "name": "surge_confirmation_id",
+                            "displayName": "surge_confirmation_id",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The unique identifier of the surge session for a user. Required when returned from a 409 Conflict response on previous POST attempt.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "The Request endpoint allows a ride to be requested on behalf of an Uber user given their desired product, start, and end locations.",
+                    "method": "post",
+                    "is": [
+                        "points"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "resources": [
+                {
+                    "relativeUri": "/{request_id}",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "request_id": {
+                            "name": "request_id",
+                            "displayName": "request_id",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "requestResponse",
+                                            "example": "{\n  \"status\" : \"accepted\" ,\n  \"driver\" : {\n    \"phone_number\" : \"(555)555-5555\" ,\n    \"rating\" : 5 ,\n    \"picture_url\" : \"https://d1w2poirtb3as9.cloudfront.net/img.jpeg\" ,\n    \"name\" : \"Bob\"\n  } ,\n  \"eta\" : 4 ,\n  \"location\" : {\n    \"latitude\" : 37.776033 ,\n    \"longitude\" : -122.418143 ,\n    \"bearing\" : 33\n  } ,\n  \"vehicle\" : {\n    \"make\" : \"Bugatti\" ,\n    \"model\" : \"Veyron\" ,\n    \"license_plate\" : \"I<3Uber\" ,\n    \"picture_url\" : \"https://d1w2poirtb3as9.cloudfront.net/car.jpeg\"\n  } ,\n  \"surge_multiplier\" : 1 ,\n  \"request_id\" : \"b2205127-a334-4df4-b1ba-fc9f28f56c96\"\n}",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"status\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"driver\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"phone_number\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"rating\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"picture_url\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"name\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"eta\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"location\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"latitude\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"longitude\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"bearing\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"vehicle\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"make\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"model\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"license_plate\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"picture_url\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"surge_multiplier\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"request_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "Get the real time status of an ongoing trip that was created using the Ride Request endpoint.",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "204": {
+                                    "code": "204"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "Cancel an ongoing Request on behalf of a rider.",
+                            "method": "delete",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "resources": [
+                        {
+                            "relativeUri": "/receipt",
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "receiptRequestResponse",
+                                                    "example": "{\n  \"request_id\" : \"b5512127-a134-4bf4-b1ba-fe9f48f56d9d\" ,\n  \"charges\" : [\n    {\n      \"name\" : \"Base Fare\" ,\n      \"amount\" : \"2.20\" ,\n      \"type\" : \"base_fare\"\n    } , {\n      \"name\" : \"Distance\" ,\n      \"amount\" : \"2.75\" ,\n      \"type\" : \"distance\"\n    } , {\n      \"name\" : \"Time\" ,\n      \"amount\" : \"3.57\" ,\n      \"type\" : \"time\"\n    }\n  ] ,\n  \"surge_charge\" : {\n    \"name\" : \"Surge x1.5\" ,\n    \"amount\" : \"4.26\" ,\n    \"type\" : \"surge\"\n  } ,\n  \"charge_adjustments\" : [\n    {\n      \"name\" : \"Promotion\" ,\n      \"amount\" : \"-2.43\" ,\n      \"type\" : \"promotion\"\n    } , {\n      \"name\" : \"Safe Rides Fee\" ,\n      \"amount\" : \"1.00\" ,\n      \"type\" : \"safe_ride_fee\"\n    } , {\n      \"name\" : \"Rounding Down\" ,\n      \"amount\" : \"0.78\" ,\n      \"type\" : \"rounding_down\"\n    }\n  ] ,\n  \"normal_fare\" : \"$8.52\" ,\n  \"subtotal\" : \"$12.78\" ,\n  \"total_charged\" : \"$5.92\" ,\n  \"total_owed\" : null ,\n  \"currency_code\" : \"USD\" ,\n  \"duration\" : \"00:11:35\" ,\n  \"distance\" : \"1.49\" ,\n  \"distance_label\" : \"miles\"\n}",
+                                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"request_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"charges\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"amount\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"type\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    } ,\n    \"surge_charge\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"name\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"amount\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"type\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"charge_adjustments\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"amount\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"type\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    } ,\n    \"normal_fare\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"subtotal\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"total_charged\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"total_owed\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"currency_code\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"duration\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"distance\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"distance_label\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Get the receipt information of the completed request.",
+                                    "method": "get",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "displayName": "/receipt",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "securedBy": {
+                                        "calculated": true
+                                    },
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "receipt"
+                            ]
+                        },
+                        {
+                            "relativeUri": "/map",
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "mapRequestResponse",
+                                                    "example": "{\n  \"request_id\" : \"b5512127-a134-4bf4-b1ba-fe9f48f56d9d\" ,\n  \"href\" : \"https://trip.uber.com/abc123\"\n}",
+                                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"request_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"href\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Get a map with a visual representation of a Request.",
+                                    "method": "get",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "displayName": "/map",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "securedBy": {
+                                        "calculated": true
+                                    },
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "map"
+                            ]
+                        }
+                    ],
+                    "displayName": "/{request_id}",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{request_id}"
+                    ]
+                },
+                {
+                    "relativeUri": "/estimate",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "requestEstimateResponse",
+                                            "example": "{\r\n   \"price\":{\r\n      \"surge_confirmation_href\": \"https:\\/\\/api.uber.com\\/v1\\/surge-confirmations\\/7d604f5e\",\r\n      \"high_estimate\": 6,\r\n      \"surge_confirmation_id\": \"7d604f5e\",\r\n      \"minimum\": 5,\r\n      \"low_estimate\": 5,\r\n      \"surge_multiplier\": 1.2,\r\n      \"display\": \"$5-6\",\r\n      \"currency_code\": \"USD\"\r\n   },\r\n   \"trip\":{\r\n      \"distance_unit\": \"mile\",\r\n      \"duration_estimate\": 9,\r\n      \"distance_estimate\": 2.1\r\n   },\r\n   \"pickup_estimate\":2\r\n}",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"price\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"surge_confirmation_href\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"high_estimate\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"surge_confirmation_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"minimum\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"low_estimate\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"surge_multiplier\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"display\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"currency_code\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"trip\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"distance_unit\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"duration_estimate\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"distance_estimate\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"pickup_estimate\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "queryParameters": {
+                                "product_id": {
+                                    "name": "product_id",
+                                    "displayName": "product_id",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "description": "The unique ID of the product being requested.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "start_latitude": {
+                                    "name": "start_latitude",
+                                    "displayName": "start_latitude",
+                                    "type": "number",
+                                    "required": true,
+                                    "repeat": false,
+                                    "description": "The beginning or \"pickup\" latitude.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "start_longitude": {
+                                    "name": "start_longitude",
+                                    "displayName": "start_longitude",
+                                    "type": "number",
+                                    "required": true,
+                                    "repeat": false,
+                                    "description": "The beginning or \"pickup\" longitude.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "end_latitude": {
+                                    "name": "end_latitude",
+                                    "displayName": "end_latitude",
+                                    "type": "number",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The final or destination latitude. If not included, only the pickup ETA and details of surge pricing will be included.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "end_longitude": {
+                                    "name": "end_longitude",
+                                    "displayName": "end_longitude",
+                                    "type": "number",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The final or destination longitude. If not included, only the pickup ETA and details of surge pricing will be included.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "description": "The Request Estimate endpoint allows a ride to be estimated given the desired product, start, and end locations. If the end location is not provided, only the pickup ETA and details of surge pricing information are provided. If the pickup ETA is null, there are no cars available, but an estimate may still be given to the user.\n\nYou can use this endpoint to determine if surge pricing is in effect. Do this before attempting to make a request so that you can preemptively have a user confirm surge by sending them to the surge_confirmation_href provided in the response.\n",
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/estimate",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "estimate"
+                    ]
+                }
+            ],
+            "displayName": "/requests",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "requests"
+            ]
+        }
+    ],
+    "documentation": [
+        {
+            "title": "Headline",
+            "content": "can not resolve docs/api/headline.md"
+        }
+    ],
+    "__METADATA__": {
+        "primitiveValuesMeta": {
+            "protocols": {
+                "calculated": true
+            }
+        }
+    }
+}

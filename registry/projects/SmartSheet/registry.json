@@ -1,0 +1,5 @@
+{"apis": [{
+    "name": "Smartsheet",
+    "location": "https://raw.githubusercontent.com/raml-apis/SmartSheet/production/api.raml",
+    "RAMLVersion": "0.8"
+}]}

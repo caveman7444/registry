@@ -1,0 +1,326 @@
+{
+    "title": "Uber user activity",
+    "version": "v1.2",
+    "baseUri": "https://{apiMode}.uber.com/{version}",
+    "baseUriParameters": {
+        "apiMode": {
+            "name": "apiMode",
+            "displayName": "apiMode",
+            "type": "string",
+            "required": true,
+            "repeat": false,
+            "description": "In order to use the Sandbox environment set 'sandbox-api'. Otherwise set 'api'.",
+            "enum": [
+                "sandbox-api",
+                "api"
+            ],
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    },
+                    "type": {
+                        "insertedAsDefault": true
+                    },
+                    "required": {
+                        "insertedAsDefault": true
+                    },
+                    "repeat": {
+                        "insertedAsDefault": true
+                    }
+                }
+            }
+        },
+        "version": {
+            "name": "version",
+            "displayName": "version",
+            "type": "string",
+            "required": true,
+            "repeat": false,
+            "enum": [
+                "v1.2"
+            ],
+            "__METADATA__": {
+                "calculated": true,
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    },
+                    "type": {
+                        "insertedAsDefault": true
+                    },
+                    "required": {
+                        "insertedAsDefault": true
+                    },
+                    "repeat": {
+                        "insertedAsDefault": true
+                    },
+                    "enum": {
+                        "calculated": true
+                    }
+                }
+            }
+        }
+    },
+    "protocols": [
+        "HTTPS"
+    ],
+    "schemas": [
+        {
+            "userHistoryResponse": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"offset\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"limit\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"count\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"history\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"status\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"distance\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"request_time\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"start_time\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"start_city\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"latitude\" : {\n                  \"type\" : \"number\" ,\n                  \"required\" : false\n                } ,\n                \"display_name\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"longitude\" : {\n                  \"type\" : \"number\" ,\n                  \"required\" : false\n                }\n              }\n            } ,\n            \"end_time\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"request_id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"currency_code\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"product_id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+        }
+    ],
+    "securedBy": [
+        "oauth_2_0"
+    ],
+    "securitySchemes": [
+        {
+            "oauth_2_0": {
+                "name": "oauth_2_0",
+                "type": "OAuth 2.0",
+                "description": "Google recommend using OAuth 2.0 to authorize requests.\n",
+                "describedBy": {
+                    "responses": {
+                        "401": {
+                            "code": "401",
+                            "description": "Authorization error.\n"
+                        }
+                    },
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "queryParameters": {
+                        "access_token": {
+                            "name": "access_token",
+                            "displayName": "access_token",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Used to send a valid OAuth 2 access token\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "headers": {
+                        "Authorization": {
+                            "name": "Authorization",
+                            "displayName": "Authorization",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Used to send a valid OAuth 2 access token.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                "settings": {
+                    "accessTokenUri": "https://login.uber.com/oauth/token",
+                    "authorizationUri": "https://login.uber.com/oauth/authorize",
+                    "authorizationGrants": [
+                        "code"
+                    ],
+                    "scopes": [
+                        "profile",
+                        "history",
+                        "history_lite",
+                        "request",
+                        "request_receipt"
+                    ]
+                }
+            }
+        },
+        {
+            "bearer": {
+                "name": "bearer",
+                "type": "x-bearer",
+                "description": "Basically, you need to set the header 'Authorization' to 'Bearer <API_KEY>'. If you're having trouble with this, email support@stripe.com\n",
+                "describedBy": {
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "headers": {
+                        "Authorization": {
+                            "name": "Authorization",
+                            "displayName": "Authorization",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "resources": [
+        {
+            "relativeUri": "/history",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "userHistoryResponse",
+                                    "example": "{\n  \"offset\" : 0 ,\n  \"limit\" : 1 ,\n  \"count\" : 5 ,\n  \"history\" : [\n    {\n      \"status\" : \"completed\" ,\n      \"distance\" : 1.64691465 ,\n      \"request_time\" : 1428876188 ,\n      \"start_time\" : 1428876374 ,\n      \"start_city\" : {\n        \"latitude\" : 37.7749295 ,\n        \"display_name\" : \"San Francisco\" ,\n        \"longitude\" : -122.4194155\n      } ,\n      \"end_time\" : 1428876927 ,\n      \"request_id\" : \"37d57a99-2647-4114-9dd2-c43bccf4c30b\" ,\n      \"currency_code\" : \"USD\" ,\n      \"product_id\" : \"a1111c8c-c720-46c3-8534-2fcdd730040d\"\n    }\n  ]\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"offset\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"limit\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"count\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"history\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"status\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"distance\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"request_time\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"start_time\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"start_city\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"latitude\" : {\n                  \"type\" : \"number\" ,\n                  \"required\" : false\n                } ,\n                \"display_name\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"longitude\" : {\n                  \"type\" : \"number\" ,\n                  \"required\" : false\n                }\n              }\n            } ,\n            \"end_time\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"request_id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"currency_code\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"product_id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "queryParameters": {
+                        "offset": {
+                            "name": "offset",
+                            "displayName": "offset",
+                            "type": "integer",
+                            "required": true,
+                            "default": 0,
+                            "example": "2",
+                            "repeat": false,
+                            "description": "Offset the list of returned results by this amount. Default is zero.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "limit": {
+                            "name": "limit",
+                            "displayName": "limit",
+                            "type": "integer",
+                            "required": true,
+                            "default": 5,
+                            "example": "20",
+                            "repeat": false,
+                            "description": "Number of items to retrieve. Default is 5, maximum is 50.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "The User Activity endpoint returns a limited amount of data about a user's lifetime activity with Uber. The response will include pickup and dropoff times, the city the trips took place in, the distance of past requests, and information about which products were requested.\n\nThe history array in the response will have a maximum length based on the limit parameter. The response value count may exceed limit, therefore subsequent API requests may be necessary.\n",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/history",
+            "description": "The User Activity endpoint returns a limited amount of data about a user's lifetime activity with Uber. The response will include pickup and dropoff times, the city the trips took place in, the distance of past requests, and information about which products were requested.\n\nThe history array in the response will have a maximum length based on the limit parameter. The response value count may exceed limit, therefore subsequent API requests may be necessary.\n",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "history"
+            ]
+        }
+    ],
+    "documentation": [
+        {
+            "title": "Headline",
+            "content": "can not resolve docs/userActivity/headline.md"
+        }
+    ],
+    "__METADATA__": {
+        "primitiveValuesMeta": {
+            "protocols": {
+                "calculated": true
+            }
+        }
+    }
+}

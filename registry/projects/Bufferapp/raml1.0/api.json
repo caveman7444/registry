@@ -1,0 +1,3043 @@
+{
+    "uses": [
+        {
+            "key": "types",
+            "value": "types.raml"
+        }
+    ],
+    "resourceTypes": [
+        {
+            "standardResource": {
+                "securedBy": [
+                    "oauth_2_0"
+                ],
+                "name": "standardResource",
+                "get": {
+                    "responses": {
+                        "400": {
+                            "code": "400",
+                            "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                        },
+                        "403": {
+                            "code": "403",
+                            "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                        },
+                        "404": {
+                            "code": "404",
+                            "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                        },
+                        "405": {
+                            "code": "405",
+                            "description": "405  Method not allowed.\n"
+                        },
+                        "406": {
+                            "code": "406",
+                            "description": "1005  Unsupported response format.\n"
+                        },
+                        "500": {
+                            "code": "500",
+                            "description": "An unknown error occurred.\n"
+                        }
+                    },
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "method": "get",
+                    "__METADATA__": {
+                        "optional": true,
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                "post": {
+                    "responses": {
+                        "400": {
+                            "code": "400",
+                            "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                        },
+                        "403": {
+                            "code": "403",
+                            "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                        },
+                        "404": {
+                            "code": "404",
+                            "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                        },
+                        "405": {
+                            "code": "405",
+                            "description": "405  Method not allowed.\n"
+                        },
+                        "406": {
+                            "code": "406",
+                            "description": "1005  Unsupported response format.\n"
+                        },
+                        "500": {
+                            "code": "500",
+                            "description": "An unknown error occurred."
+                        }
+                    },
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "method": "post",
+                    "__METADATA__": {
+                        "optional": true,
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "securitySchemes": [
+        {
+            "oauth_2_0": {
+                "name": "oauth_2_0",
+                "type": "OAuth 2.0",
+                "description": "Body example for authorisation request:\n\nclient_id=...&\nredirect_uri=...&\nresponse_type=code\n\nBidy example for token request:\n\nPOST Data\nclient_id=...&\nclient_secret=...&\nredirect_uri=...&\ncode=...&\ngrant_type=authorization_code\n\nAll requests to the Buffer API must be made using HTTPS, with the access token provided in the HTTP Authorization header, request body or query string.\n",
+                "describedBy": {
+                    "queryParameters": {
+                        "access_token": {
+                            "name": "access_token",
+                            "displayName": "access_token",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "settings": {
+                    "accessTokenUri": "https://api.bufferapp.com/1/oauth2/token.json",
+                    "authorizationUri": "https://bufferapp.com/oauth2/authorize",
+                    "authorizationGrants": [
+                        "code"
+                    ]
+                }
+            }
+        }
+    ],
+    "title": "Bufferapp",
+    "version": "1",
+    "baseUri": "https://api.bufferapp.com/{version}/",
+    "baseUriParameters": {
+        "version": {
+            "name": "version",
+            "displayName": "version",
+            "type": [
+                "string"
+            ],
+            "repeat": false,
+            "required": true,
+            "enum": [
+                "1"
+            ],
+            "__METADATA__": {
+                "calculated": true,
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    },
+                    "type": {
+                        "insertedAsDefault": true
+                    },
+                    "repeat": {
+                        "insertedAsDefault": true
+                    },
+                    "required": {
+                        "insertedAsDefault": true
+                    },
+                    "enum": {
+                        "calculated": true
+                    }
+                }
+            }
+        }
+    },
+    "protocols": [
+        "HTTPS"
+    ],
+    "mediaType": "application/json",
+    "securedBy": [
+        "oauth_2_0"
+    ],
+    "resources": [
+        {
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "types.User"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "description": "Returns a single user.",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "type": "standardResource",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "uriParameters": {
+                "mediaTypeExtension": {
+                    "name": "mediaTypeExtension",
+                    "displayName": "mediaTypeExtension",
+                    "type": [
+                        "string"
+                    ],
+                    "repeat": false,
+                    "required": true,
+                    "enum": [
+                        ".json"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "relativeUri": "/user{mediaTypeExtension}",
+            "displayName": "/user{mediaTypeExtension}",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "user{mediaTypeExtension}"
+            ]
+        },
+        {
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "types.Profiles"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "description": "Returns an array of social media profiles connected to a users account.",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "type": "standardResource",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "uriParameters": {
+                "mediaTypeExtension": {
+                    "name": "mediaTypeExtension",
+                    "displayName": "mediaTypeExtension",
+                    "type": [
+                        "string"
+                    ],
+                    "repeat": false,
+                    "required": true,
+                    "enum": [
+                        ".json"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "relativeUri": "/profiles{mediaTypeExtension}",
+            "displayName": "/profiles{mediaTypeExtension}",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "profiles{mediaTypeExtension}"
+            ]
+        },
+        {
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "relativeUri": "/profiles",
+            "displayName": "/profiles",
+            "resources": [
+                {
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "displayName": "application/json",
+                                            "type": [
+                                                "types.Profile"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "Returns details of the single specified social media profile.",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "type": "standardResource",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "id": {
+                            "name": "id",
+                            "displayName": "id",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "mediaTypeExtension": {
+                            "name": "mediaTypeExtension",
+                            "displayName": "mediaTypeExtension",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "enum": [
+                                ".json"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "relativeUri": "/{id}{mediaTypeExtension}",
+                    "displayName": "/{id}{mediaTypeExtension}",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{id}{mediaTypeExtension}"
+                    ]
+                },
+                {
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "id": {
+                            "name": "id",
+                            "displayName": "id",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "relativeUri": "/{id}",
+                    "displayName": "/{id}",
+                    "resources": [
+                        {
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "displayName": "application/json",
+                                                    "type": [
+                                                        "types.Schedules"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Returns details of the posting schedules associated with a social media profile.",
+                                    "method": "get",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "type": "standardResource",
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "uriParameters": {
+                                "mediaTypeExtension": {
+                                    "name": "mediaTypeExtension",
+                                    "displayName": "mediaTypeExtension",
+                                    "type": [
+                                        "string"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "enum": [
+                                        ".json"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "relativeUri": "/schedules{mediaTypeExtension}",
+                            "displayName": "/schedules{mediaTypeExtension}",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "securedBy": {
+                                        "calculated": true
+                                    },
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "schedules{mediaTypeExtension}"
+                            ]
+                        },
+                        {
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "displayName": "application/json",
+                                                    "type": [
+                                                        "types.Schedules-update"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "body": {
+                                        "application/x-www-form-urlencoded": {
+                                            "name": "application/x-www-form-urlencoded",
+                                            "displayName": "application/x-www-form-urlencoded",
+                                            "type": [
+                                                "object"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "properties": {
+                                                "schedules": {
+                                                    "name": "schedules",
+                                                    "displayName": "schedules",
+                                                    "type": [
+                                                        "string"
+                                                    ],
+                                                    "example": "schedules[0][days][]=mon&",
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "description": "Each item in the array is an individual posting schedule which consists of days and times to match the format return by the above method.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    },
+                                                    "structuredExample": {
+                                                        "value": "schedules[0][days][]=mon&",
+                                                        "strict": true,
+                                                        "name": null,
+                                                        "structuredValue": "schedules[0][days][]=mon&"
+                                                    }
+                                                }
+                                            },
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "\"Set the posting schedules for the specified social media profile.\n",
+                                    "method": "post",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "type": "standardResource",
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "uriParameters": {
+                                "mediaTypeExtension": {
+                                    "name": "mediaTypeExtension",
+                                    "displayName": "mediaTypeExtension",
+                                    "type": [
+                                        "string"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "enum": [
+                                        ".json"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "relativeUri": "/schedules/update{mediaTypeExtension}",
+                            "displayName": "/schedules/update{mediaTypeExtension}",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "securedBy": {
+                                        "calculated": true
+                                    },
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "schedules",
+                                "update{mediaTypeExtension}"
+                            ]
+                        },
+                        {
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "relativeUri": "/updates",
+                            "displayName": "/updates",
+                            "resources": [
+                                {
+                                    "methods": [
+                                        {
+                                            "queryParameters": {
+                                                "page": {
+                                                    "name": "page",
+                                                    "displayName": "page",
+                                                    "type": [
+                                                        "integer"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "description": "Specifies the page of status updates to receive. If not specified the first page of results will be returned.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "count": {
+                                                    "name": "count",
+                                                    "displayName": "count",
+                                                    "type": [
+                                                        "integer"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "description": "Specifies the number of status updates to receive. If provided, must be between 1 and 100.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "since": {
+                                                    "name": "since",
+                                                    "displayName": "since",
+                                                    "type": [
+                                                        "datetime"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "description": "Specifies a unix timestamp which only status updates created after this time will be retrieved.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "utc": {
+                                                    "name": "utc",
+                                                    "displayName": "utc",
+                                                    "type": [
+                                                        "boolean"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "description": "If utc is set times will be returned relative to UTC rather than the users associated timezone.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "responses": {
+                                                "200": {
+                                                    "code": "200",
+                                                    "body": {
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "displayName": "application/json",
+                                                            "type": [
+                                                                "types.Updates-array"
+                                                            ],
+                                                            "repeat": false,
+                                                            "required": true,
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "protocols": [
+                                                "HTTPS"
+                                            ],
+                                            "securedBy": [
+                                                "oauth_2_0"
+                                            ],
+                                            "description": "\"Returns an array of updates that are currently in the buffer for an individual social media profile.\n",
+                                            "method": "get",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "protocols": {
+                                                        "calculated": true
+                                                    },
+                                                    "securedBy": {
+                                                        "calculated": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "type": "standardResource",
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "uriParameters": {
+                                        "mediaTypeExtension": {
+                                            "name": "mediaTypeExtension",
+                                            "displayName": "mediaTypeExtension",
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "enum": [
+                                                ".json"
+                                            ],
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "relativeUri": "/pending{mediaTypeExtension}",
+                                    "displayName": "/pending{mediaTypeExtension}",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "securedBy": {
+                                                "calculated": true
+                                            },
+                                            "displayName": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    },
+                                    "relativeUriPathSegments": [
+                                        "pending{mediaTypeExtension}"
+                                    ]
+                                },
+                                {
+                                    "methods": [
+                                        {
+                                            "queryParameters": {
+                                                "page": {
+                                                    "name": "page",
+                                                    "displayName": "page",
+                                                    "type": [
+                                                        "integer"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "description": "Specifies the page of status updates to receive. If not specified the first page of results will be returned.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "count": {
+                                                    "name": "count",
+                                                    "displayName": "count",
+                                                    "type": [
+                                                        "integer"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "description": "Specifies the number of status updates to receive. If provided, must be between 1 and 100.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "since": {
+                                                    "name": "since",
+                                                    "displayName": "since",
+                                                    "type": [
+                                                        "datetime"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "description": "Specifies a unix timestamp which only status updates created after this time will be retrieved.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "utc": {
+                                                    "name": "utc",
+                                                    "displayName": "utc",
+                                                    "type": [
+                                                        "boolean"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "description": "If utc is set times will be returned relative to UTC rather than the users associated timezone.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "responses": {
+                                                "200": {
+                                                    "code": "200",
+                                                    "body": {
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "displayName": "application/json",
+                                                            "type": [
+                                                                "types.Updates-array"
+                                                            ],
+                                                            "repeat": false,
+                                                            "required": true,
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "protocols": [
+                                                "HTTPS"
+                                            ],
+                                            "securedBy": [
+                                                "oauth_2_0"
+                                            ],
+                                            "description": "Returns an array of updates that have been sent from the buffer for an individual social media profile.\n",
+                                            "method": "get",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "protocols": {
+                                                        "calculated": true
+                                                    },
+                                                    "securedBy": {
+                                                        "calculated": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "type": "standardResource",
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "uriParameters": {
+                                        "mediaTypeExtension": {
+                                            "name": "mediaTypeExtension",
+                                            "displayName": "mediaTypeExtension",
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "enum": [
+                                                ".json"
+                                            ],
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "relativeUri": "/sent{mediaTypeExtension}",
+                                    "displayName": "/sent{mediaTypeExtension}",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "securedBy": {
+                                                "calculated": true
+                                            },
+                                            "displayName": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    },
+                                    "relativeUriPathSegments": [
+                                        "sent{mediaTypeExtension}"
+                                    ]
+                                },
+                                {
+                                    "methods": [
+                                        {
+                                            "responses": {
+                                                "200": {
+                                                    "code": "200",
+                                                    "body": {
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "displayName": "application/json",
+                                                            "type": [
+                                                                "types.Reorder"
+                                                            ],
+                                                            "repeat": false,
+                                                            "required": true,
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "body": {
+                                                "application/x-www-form-urlencoded": {
+                                                    "name": "application/x-www-form-urlencoded",
+                                                    "displayName": "application/x-www-form-urlencoded",
+                                                    "type": [
+                                                        "object"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "properties": {
+                                                        "order": {
+                                                            "name": "order",
+                                                            "displayName": "order",
+                                                            "type": [
+                                                                "integer"
+                                                            ],
+                                                            "repeat": false,
+                                                            "required": true,
+                                                            "description": "An ordered array of status update id's. This can be a partial array in combination with the offset parameter or a full array of every update in the profiles Buffer.",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "offset": {
+                                                            "name": "offset",
+                                                            "displayName": "offset",
+                                                            "type": [
+                                                                "integer"
+                                                            ],
+                                                            "repeat": false,
+                                                            "required": true,
+                                                            "description": "Specifies the number of status updates to receive. If provided, must be between 1 and 100.",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "utc": {
+                                                            "name": "utc",
+                                                            "displayName": "utc",
+                                                            "type": [
+                                                                "boolean"
+                                                            ],
+                                                            "repeat": false,
+                                                            "required": true,
+                                                            "description": "If utc is set times will be returned relative to UTC rather than the users associated timezone",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "protocols": [
+                                                "HTTPS"
+                                            ],
+                                            "securedBy": [
+                                                "oauth_2_0"
+                                            ],
+                                            "description": "Edit the order at which statuses for the specified social media profile will be sent out of the buffer.\n",
+                                            "method": "post",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "protocols": {
+                                                        "calculated": true
+                                                    },
+                                                    "securedBy": {
+                                                        "calculated": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "type": "standardResource",
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "uriParameters": {
+                                        "mediaTypeExtension": {
+                                            "name": "mediaTypeExtension",
+                                            "displayName": "mediaTypeExtension",
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "enum": [
+                                                ".json"
+                                            ],
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "relativeUri": "/reorder{mediaTypeExtension}",
+                                    "displayName": "/reorder{mediaTypeExtension}",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "securedBy": {
+                                                "calculated": true
+                                            },
+                                            "displayName": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    },
+                                    "relativeUriPathSegments": [
+                                        "reorder{mediaTypeExtension}"
+                                    ]
+                                },
+                                {
+                                    "methods": [
+                                        {
+                                            "responses": {
+                                                "200": {
+                                                    "code": "200",
+                                                    "body": {
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "displayName": "application/json",
+                                                            "type": [
+                                                                "types.Reorder"
+                                                            ],
+                                                            "repeat": false,
+                                                            "required": true,
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "body": {
+                                                "application/x-www-form-urlencoded": {
+                                                    "name": "application/x-www-form-urlencoded",
+                                                    "displayName": "application/x-www-form-urlencoded",
+                                                    "type": [
+                                                        "object"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "properties": {
+                                                        "count": {
+                                                            "name": "count",
+                                                            "displayName": "count",
+                                                            "type": [
+                                                                "integer"
+                                                            ],
+                                                            "repeat": false,
+                                                            "required": true,
+                                                            "description": "Specifies the number of status updates to receive. If provided, must be between 1 and 100.",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "utc": {
+                                                            "name": "utc",
+                                                            "displayName": "utc",
+                                                            "type": [
+                                                                "boolean"
+                                                            ],
+                                                            "repeat": false,
+                                                            "required": true,
+                                                            "description": "If utc is set times will be returned relative to UTC rather than the users associated timezone",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "protocols": [
+                                                "HTTPS"
+                                            ],
+                                            "securedBy": [
+                                                "oauth_2_0"
+                                            ],
+                                            "description": "Randomize the order at which statuses for the specified social media profile will be sent out of the buffer.\n",
+                                            "method": "post",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "protocols": {
+                                                        "calculated": true
+                                                    },
+                                                    "securedBy": {
+                                                        "calculated": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "type": "standardResource",
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "uriParameters": {
+                                        "mediaTypeExtension": {
+                                            "name": "mediaTypeExtension",
+                                            "displayName": "mediaTypeExtension",
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "enum": [
+                                                ".json"
+                                            ],
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "relativeUri": "/shuffle{mediaTypeExtension}",
+                                    "displayName": "/shuffle{mediaTypeExtension}",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "securedBy": {
+                                                "calculated": true
+                                            },
+                                            "displayName": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    },
+                                    "relativeUriPathSegments": [
+                                        "shuffle{mediaTypeExtension}"
+                                    ]
+                                }
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "securedBy": {
+                                        "calculated": true
+                                    },
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "updates"
+                            ]
+                        }
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{id}"
+                    ]
+                }
+            ],
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "profiles"
+            ]
+        },
+        {
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "relativeUri": "/updates",
+            "displayName": "/updates",
+            "resources": [
+                {
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "displayName": "application/json",
+                                            "type": [
+                                                "types.Update"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "Returns a single social media update.",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "type": "standardResource",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "id": {
+                            "name": "id",
+                            "displayName": "id",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "mediaTypeExtension": {
+                            "name": "mediaTypeExtension",
+                            "displayName": "mediaTypeExtension",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "enum": [
+                                ".json"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "relativeUri": "/{id}{mediaTypeExtension}",
+                    "displayName": "/{id}{mediaTypeExtension}",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{id}{mediaTypeExtension}"
+                    ]
+                },
+                {
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "id": {
+                            "name": "id",
+                            "displayName": "id",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "relativeUri": "/{id}",
+                    "displayName": "/{id}",
+                    "resources": [
+                        {
+                            "methods": [
+                                {
+                                    "queryParameters": {
+                                        "event": {
+                                            "name": "event",
+                                            "displayName": "event",
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "Specifies a type of event to be retrieved, for example \"retweet\", \"like\", \"comment\", \"mention\" or \"reshare\". They can also be plural (e.g., \"reshares\"). Plurality has no effect other than visual semantics. See /info/configuration for more information on supported interaction events.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "page": {
+                                            "name": "page",
+                                            "displayName": "page",
+                                            "type": [
+                                                "integer"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "Specifies the page of status updates to receive. If not specified the first page of results will be returned.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "name": "count",
+                                            "displayName": "count",
+                                            "type": [
+                                                "integer"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "Specifies the number of status updates to receive. If provided, must be between 1 and 100.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "displayName": "application/json",
+                                                    "type": [
+                                                        "types.Interactions"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Returns the detailed information on individual interactions with the social media update such as favorites, retweets and likes.\n",
+                                    "method": "get",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "type": "standardResource",
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "uriParameters": {
+                                "mediaTypeExtension": {
+                                    "name": "mediaTypeExtension",
+                                    "displayName": "mediaTypeExtension",
+                                    "type": [
+                                        "string"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "enum": [
+                                        ".json"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "relativeUri": "/interactions{mediaTypeExtension}",
+                            "displayName": "/interactions{mediaTypeExtension}",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "securedBy": {
+                                        "calculated": true
+                                    },
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "interactions{mediaTypeExtension}"
+                            ]
+                        },
+                        {
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "displayName": "application/json",
+                                                    "type": [
+                                                        "types.Individual-update"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "body": {
+                                        "application/x-www-form-urlencoded": {
+                                            "name": "application/x-www-form-urlencoded",
+                                            "displayName": "application/x-www-form-urlencoded",
+                                            "type": [
+                                                "object"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "properties": {
+                                                "text": {
+                                                    "name": "text",
+                                                    "displayName": "text",
+                                                    "type": [
+                                                        "string"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "description": "The status update text.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "now": {
+                                                    "name": "now",
+                                                    "displayName": "now",
+                                                    "type": [
+                                                        "boolean"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "description": "If now is set, this update will be sent immediately to all profiles instead of being added to the buffer.\n",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "media": {
+                                                    "name": "media",
+                                                    "displayName": "media",
+                                                    "type": [
+                                                        "string"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "description": "An associative array of media to be attached to the update, currently accepts link, description, title and picture parameters.\n",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "scheduled_at": {
+                                                    "name": "scheduled_at",
+                                                    "displayName": "scheduled_at",
+                                                    "type": [
+                                                        "string"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "description": "A date describing when the update should be posted. Overrides any top or now parameter.\nWhen using ISO 8601 format, if no UTC offset is specified, UTC is assumed.\n",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "utc": {
+                                                    "name": "utc",
+                                                    "displayName": "utc",
+                                                    "type": [
+                                                        "boolean"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "description": "If utc is set times will be returned relative to UTC rather than the users associated timezone\n",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Edit an existing, individual status update.\n",
+                                    "method": "post",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "type": "standardResource",
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "uriParameters": {
+                                "mediaTypeExtension": {
+                                    "name": "mediaTypeExtension",
+                                    "displayName": "mediaTypeExtension",
+                                    "type": [
+                                        "string"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "enum": [
+                                        ".json"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "relativeUri": "/update{mediaTypeExtension}",
+                            "displayName": "/update{mediaTypeExtension}",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "securedBy": {
+                                        "calculated": true
+                                    },
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "update{mediaTypeExtension}"
+                            ]
+                        },
+                        {
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "displayName": "application/json",
+                                                    "type": [
+                                                        "types.Success"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Immediately shares a single pending update and recalculates times for updates remaining in the queue.",
+                                    "method": "post",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "type": "standardResource",
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "uriParameters": {
+                                "mediaTypeExtension": {
+                                    "name": "mediaTypeExtension",
+                                    "displayName": "mediaTypeExtension",
+                                    "type": [
+                                        "string"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "enum": [
+                                        ".json"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "relativeUri": "/share{mediaTypeExtension}",
+                            "displayName": "/share{mediaTypeExtension}",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "securedBy": {
+                                        "calculated": true
+                                    },
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "share{mediaTypeExtension}"
+                            ]
+                        },
+                        {
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "displayName": "application/json",
+                                                    "type": [
+                                                        "types.Success"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Permanently delete an existing status update.",
+                                    "method": "post",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "type": "standardResource",
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "uriParameters": {
+                                "mediaTypeExtension": {
+                                    "name": "mediaTypeExtension",
+                                    "displayName": "mediaTypeExtension",
+                                    "type": [
+                                        "string"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "enum": [
+                                        ".json"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "relativeUri": "/destroy{mediaTypeExtension}",
+                            "displayName": "/destroy{mediaTypeExtension}",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "securedBy": {
+                                        "calculated": true
+                                    },
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "destroy{mediaTypeExtension}"
+                            ]
+                        },
+                        {
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "displayName": "application/json",
+                                                    "type": [
+                                                        "types.Update"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Move an existing status update to the top of the queue and recalculate times for all updates in the queue. Returns the update with its new posting time.",
+                                    "method": "post",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "type": "standardResource",
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "uriParameters": {
+                                "mediaTypeExtension": {
+                                    "name": "mediaTypeExtension",
+                                    "displayName": "mediaTypeExtension",
+                                    "type": [
+                                        "string"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "enum": [
+                                        ".json"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "relativeUri": "/move_to_top{mediaTypeExtension}",
+                            "displayName": "/move_to_top{mediaTypeExtension}",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "securedBy": {
+                                        "calculated": true
+                                    },
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "move_to_top{mediaTypeExtension}"
+                            ]
+                        }
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{id}"
+                    ]
+                },
+                {
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "displayName": "application/json",
+                                            "type": [
+                                                "types.NewUpdate"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "body": {
+                                "application/x-www-form-urlencoded": {
+                                    "name": "application/x-www-form-urlencoded",
+                                    "displayName": "application/x-www-form-urlencoded",
+                                    "type": [
+                                        "object"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "properties": {
+                                        "text": {
+                                            "name": "text",
+                                            "displayName": "text",
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "The status update text.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "profile_ids[]": {
+                                            "name": "profile_ids[]",
+                                            "displayName": "profile_ids[]",
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "An array of profile id's that the status update should be sent to. Invalid profile_id's will be silently ignored\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "shorten": {
+                                            "name": "shorten",
+                                            "displayName": "shorten",
+                                            "type": [
+                                                "boolean"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "If shorten is false links within the text will not be automatically shortened, otherwise they will\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "now": {
+                                            "name": "now",
+                                            "displayName": "now",
+                                            "type": [
+                                                "boolean"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "If now is set, this update will be sent immediately to all profiles instead of being added to the buffer.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "top": {
+                                            "name": "top",
+                                            "displayName": "top",
+                                            "type": [
+                                                "boolean"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "If top is set, this update will be added to the top of the buffer and will become the next update sent\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "media": {
+                                            "name": "media",
+                                            "displayName": "media",
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "An associative array of media to be attached to the update, currently accepts link, description, title and picture parameters.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "scheduled_at": {
+                                            "name": "scheduled_at",
+                                            "displayName": "scheduled_at",
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "A date describing when the update should be posted. Overrides any top or now parameter.\nWhen using ISO 8601 format, if no UTC offset is specified, UTC is assumed.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "utc": {
+                                            "name": "utc",
+                                            "displayName": "utc",
+                                            "type": [
+                                                "boolean"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "If utc is set times will be returned relative to UTC rather than the users associated timezone\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "Create one or more new status updates.\n",
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "type": "standardResource",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "mediaTypeExtension": {
+                            "name": "mediaTypeExtension",
+                            "displayName": "mediaTypeExtension",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "enum": [
+                                ".json"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "relativeUri": "/create{mediaTypeExtension}",
+                    "displayName": "/create{mediaTypeExtension}",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "create{mediaTypeExtension}"
+                    ]
+                }
+            ],
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "updates"
+            ]
+        },
+        {
+            "methods": [
+                {
+                    "queryParameters": {
+                        "url": {
+                            "name": "url",
+                            "displayName": "url",
+                            "type": [
+                                "string"
+                            ],
+                            "example": "http%3A%2F%2Fbufferapp.com",
+                            "repeat": false,
+                            "required": true,
+                            "description": "URL-encoded URL of the page for which the number of shares is requested.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            },
+                            "structuredExample": {
+                                "value": "http%3A%2F%2Fbufferapp.com",
+                                "strict": true,
+                                "name": null,
+                                "structuredValue": "http%3A%2F%2Fbufferapp.com"
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "types.Shares"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "description": "Returns an object with a the numbers of shares a link has had using Buffer.",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "type": "standardResource",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "uriParameters": {
+                "mediaTypeExtension": {
+                    "name": "mediaTypeExtension",
+                    "displayName": "mediaTypeExtension",
+                    "type": [
+                        "string"
+                    ],
+                    "repeat": false,
+                    "required": true,
+                    "enum": [
+                        ".json"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "relativeUri": "/links/shares{mediaTypeExtension}",
+            "displayName": "/links/shares{mediaTypeExtension}",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "links",
+                "shares{mediaTypeExtension}"
+            ]
+        },
+        {
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "types.Configuration"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "description": "Returns an object with the current configuration that Buffer is using, including supported services, their icons and the varying limits of character and schedules.",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "type": "standardResource",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "uriParameters": {
+                "mediaTypeExtension": {
+                    "name": "mediaTypeExtension",
+                    "displayName": "mediaTypeExtension",
+                    "type": [
+                        "string"
+                    ],
+                    "repeat": false,
+                    "required": true,
+                    "enum": [
+                        ".json"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "relativeUri": "/info/configuration{mediaTypeExtension}",
+            "displayName": "/info/configuration{mediaTypeExtension}",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "info",
+                "configuration{mediaTypeExtension}"
+            ]
+        }
+    ],
+    "documentation": [
+        {
+            "title": "Headline",
+            "content": "Scheduled posting to social profiles."
+        }
+    ],
+    "__METADATA__": {
+        "primitiveValuesMeta": {
+            "protocols": {
+                "calculated": true
+            }
+        }
+    }
+}

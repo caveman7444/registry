@@ -1,0 +1,27 @@
+{"apis": [
+    {
+        "name": "GMail",
+        "location": "https://raw.githubusercontent.com/raml-apis/GoogleMail/production/api.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "GMail Media Upload",
+        "location": "https://raw.githubusercontent.com/raml-apis/GoogleMail/production/uploadApi.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "GMail",
+        "location": "https://raw.githubusercontent.com/raml-apis/GoogleMail/raml1.0/api.raml",
+        "RAMLVersion": "1.0"
+    },
+    {
+        "name": "",
+        "location": "https://raw.githubusercontent.com/raml-apis/GoogleMail/raml1.0/types.raml",
+        "RAMLVersion": "1.0 Library"
+    },
+    {
+        "name": "GMail Media Upload",
+        "location": "https://raw.githubusercontent.com/raml-apis/GoogleMail/raml1.0/uploadApi.raml",
+        "RAMLVersion": "1.0"
+    }
+]}

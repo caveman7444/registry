@@ -1,0 +1,12 @@
+{"apis": [
+    {
+        "name": "Weather Underground",
+        "location": "https://raw.githubusercontent.com/raml-apis/WeatherUnderground/production/wunderground.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "Weather Underground AutoComplete",
+        "location": "https://raw.githubusercontent.com/raml-apis/WeatherUnderground/production/wundergroundAutocompleteApi.raml",
+        "RAMLVersion": "0.8"
+    }
+]}

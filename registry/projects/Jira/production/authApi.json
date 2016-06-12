@@ -1,0 +1,314 @@
+{
+    "title": "Jira Authorization API",
+    "schemas": [
+        {
+            "userSession": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"self\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"loginInfo\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"failedLoginCount\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"loginCount\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"lastFailedLoginTime\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"previousLoginTime\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+            "credentials": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"session\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"name\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"value\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"loginInfo\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"failedLoginCount\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"loginCount\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"lastFailedLoginTime\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"previousLoginTime\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+            "credentialsReq": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"username\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"password\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        }
+    ],
+    "resourceTypes": [
+        {
+            "base": {
+                "name": "base",
+                "delete": {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "Returned if successful."
+                        },
+                        "204": {
+                            "code": "204",
+                            "description": "Returned if successful."
+                        },
+                        "400": {
+                            "code": "400",
+                            "description": "Returned if the the request is invalid."
+                        },
+                        "401": {
+                            "code": "401",
+                            "description": "Returned if the calling user is not authenticated."
+                        },
+                        "403": {
+                            "code": "403",
+                            "description": "Returned if the object is disabled or if you don't have permission to remove."
+                        },
+                        "404": {
+                            "code": "404",
+                            "description": "Returned if the object is not found."
+                        },
+                        "500": {
+                            "code": "500",
+                            "description": "Returned if an error occurs while retrieving."
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json"
+                        }
+                    },
+                    "method": "delete",
+                    "__METADATA__": {
+                        "optional": true
+                    }
+                },
+                "post": {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "Returned if the object was retrieved successful."
+                        },
+                        "201": {
+                            "code": "201",
+                            "description": "Returned if the object was created successful."
+                        },
+                        "400": {
+                            "code": "400",
+                            "description": "Returned if the the request is invalid."
+                        },
+                        "401": {
+                            "code": "401",
+                            "description": "Returned if the calling user is not authenticated."
+                        },
+                        "403": {
+                            "code": "403",
+                            "description": "Returned if the object is disabled or if you don't have permission to retrieve."
+                        },
+                        "404": {
+                            "code": "404",
+                            "description": "Returned if the object is not found."
+                        },
+                        "500": {
+                            "code": "500",
+                            "description": "Returned if an error occurs while retrieving."
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json"
+                        }
+                    },
+                    "method": "post",
+                    "__METADATA__": {
+                        "optional": true
+                    }
+                },
+                "get": {
+                    "responses": {
+                        "200": {
+                            "code": "200"
+                        },
+                        "400": {
+                            "code": "400",
+                            "description": "Returned if the the request is invalid."
+                        },
+                        "401": {
+                            "code": "401",
+                            "description": "Returned if the calling user is not authenticated."
+                        },
+                        "403": {
+                            "code": "403",
+                            "description": "Returned if the object is disabled or if you don't have permission to retrieve."
+                        },
+                        "404": {
+                            "code": "404",
+                            "description": "Returned if the object is not found."
+                        },
+                        "500": {
+                            "code": "500",
+                            "description": "Returned if an error occurs while retrieving."
+                        }
+                    },
+                    "method": "get",
+                    "__METADATA__": {
+                        "optional": true
+                    }
+                },
+                "put": {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "Returned if the object was retrieved successful."
+                        },
+                        "201": {
+                            "code": "201",
+                            "description": "Returned if the object was created successful."
+                        },
+                        "400": {
+                            "code": "400",
+                            "description": "Returned if the the request is invalid."
+                        },
+                        "401": {
+                            "code": "401",
+                            "description": "Returned if the calling user is not authenticated."
+                        },
+                        "403": {
+                            "code": "403",
+                            "description": "Returned if the object is disabled or if you don't have permission to retrieve."
+                        },
+                        "404": {
+                            "code": "404",
+                            "description": "Returned if the object is not found."
+                        },
+                        "500": {
+                            "code": "500",
+                            "description": "Returned if an error occurs while retrieving."
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json"
+                        }
+                    },
+                    "method": "put",
+                    "__METADATA__": {
+                        "optional": true
+                    }
+                }
+            }
+        }
+    ],
+    "resources": [
+        {
+            "relativeUri": "/rest/auth/1",
+            "type": "base",
+            "resources": [
+                {
+                    "relativeUri": "/session",
+                    "type": "base",
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "userSession",
+                                            "example": "{\n  \"self\" : \"http://www.example.com/jira/rest/api/2.0/user/fred\" ,\n  \"name\" : \"fred\" ,\n  \"loginInfo\" : {\n    \"failedLoginCount\" : 10 ,\n    \"loginCount\" : 127 ,\n    \"lastFailedLoginTime\" : \"2014-06-11T07:33:40.865+0000\" ,\n    \"previousLoginTime\" : \"2014-06-11T07:33:40.865+0000\"\n  }\n}",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"self\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"loginInfo\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"failedLoginCount\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"loginCount\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"lastFailedLoginTime\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"previousLoginTime\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+                                        }
+                                    }
+                                },
+                                "401": {
+                                    "code": "401",
+                                    "description": "Returned if the caller is not authenticated."
+                                }
+                            },
+                            "description": "Returns information about the currently authenticated user's session. If the caller is not authenticated they will get a 401 Unauthorized status code.",
+                            "method": "get"
+                        },
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "credentials",
+                                            "example": "{\n  \"session\" : {\n    \"name\" : \"JSESSIONID\" ,\n    \"value\" : \"12345678901234567890\"\n  } ,\n  \"loginInfo\" : {\n    \"failedLoginCount\" : 10 ,\n    \"loginCount\" : 127 ,\n    \"lastFailedLoginTime\" : \"2014-06-11T07:33:40.865+0000\" ,\n    \"previousLoginTime\" : \"2014-06-11T07:33:40.865+0000\"\n  }\n}",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"session\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"name\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"value\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"loginInfo\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"failedLoginCount\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"loginCount\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"lastFailedLoginTime\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"previousLoginTime\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+                                        }
+                                    }
+                                },
+                                "401": {
+                                    "code": "401",
+                                    "description": "Returned if the login fails due to invalid credentials."
+                                },
+                                "403": {
+                                    "code": "403",
+                                    "description": "Returned if the login is denied due to a CAPTCHA requirement, throtting, or any other reason. In case of a 403 status code it is possible that the supplied credentials are valid but the user is not allowed to log in at this point in time."
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "credentialsReq",
+                                    "example": "{\n  \"username\" : \"fred\" ,\n  \"password\" : \"freds_password\"\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"username\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"password\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                }
+                            },
+                            "description": "Creates a new session for a user in JIRA. Once a session has been successfully created it can be used to access any of JIRA's remote APIs and also the web UI by passing the appropriate HTTP Cookie header.\nNote that it is generally preferrable to use HTTP BASIC authentication with the REST API. However, this resource may be used to mimic the behaviour of JIRA's log-in page (e.g. to display log-in errors to a user).\n",
+                            "method": "post"
+                        },
+                        {
+                            "responses": {
+                                "204": {
+                                    "code": "204",
+                                    "description": "Returned if the user was successfully logged out."
+                                },
+                                "401": {
+                                    "code": "401",
+                                    "description": "Returned if the caller is not authenticated."
+                                }
+                            },
+                            "description": "Logs the current user out of JIRA, destroying the existing session, if any.",
+                            "method": "delete"
+                        }
+                    ],
+                    "displayName": "/session",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "session"
+                    ]
+                },
+                {
+                    "relativeUri": "/websudo",
+                    "type": "base",
+                    "methods": [
+                        {
+                            "responses": {
+                                "204": {
+                                    "code": "204",
+                                    "description": "Returned if no error occurs"
+                                }
+                            },
+                            "description": "This method invalidates the any current WebSudo session.",
+                            "method": "delete"
+                        }
+                    ],
+                    "displayName": "/websudo",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "websudo"
+                    ]
+                }
+            ],
+            "displayName": "/rest/auth/1",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "rest",
+                "auth",
+                "1"
+            ]
+        }
+    ],
+    "documentation": [
+        {
+            "title": "Headline",
+            "content": "can not resolve docs/authApi/headline.md"
+        }
+    ]
+}

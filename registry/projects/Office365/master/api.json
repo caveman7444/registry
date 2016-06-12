@@ -1,0 +1,1981 @@
+{
+    "title": "Office 365",
+    "baseUri": "https://outlook.office365.com/ews/odata/Me",
+    "protocols": [
+        "HTTPS"
+    ],
+    "schemas": [
+        {
+            "getFolderById": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"@odata.id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"@odata.editLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ParentFolderId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"DisplayName\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ClassName\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"TotalCount\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"ChildFolderCount\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"UnreadItemCount\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"ChildFolders@odata.navigationLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Messages@odata.navigationLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "addNewMailFolderRequest": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"@odata.type\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"DisplayName\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "updateNewMailFolderRequest": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"DisplayName\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "moveFolder": "moveFolder"
+        },
+        {
+            "copyFolder": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"DestinationId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "specificEmailById": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"@odata.id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"@odata.editLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ChangeKey\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ClassName\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Subject\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"BodyPreview\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Body\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"ContentType\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Content\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"Importance\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Categories\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n      ]\n    } ,\n    \"HasAttachments\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    } ,\n    \"ParentFolderId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"From\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"Name\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Address\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"Sender\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"Name\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Address\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"ToRecipients\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"Name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"Address\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    } ,\n    \"CcRecipients\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n      ]\n    } ,\n    \"BccRecipients\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n      ]\n    } ,\n    \"ReplyTo\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n      ]\n    } ,\n    \"ConversationId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"DateTimeReceived\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"DateTimeSent\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"IsDeliveryReceiptRequested\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    } ,\n    \"IsReadReceiptRequested\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    } ,\n    \"IsDraft\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    } ,\n    \"IsRead\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    } ,\n    \"EventId\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"MeetingMessageType\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"DateTimeCreated\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"LastModifiedTime\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Attachments@odata.navigationLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "newEmail": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"@odata.type\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Subject\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Importance\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Body\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"ContentType\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Content\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"ToRecipients\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"Name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"Address\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+        },
+        {
+            "updateEmail": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"Body\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"ContentType\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Content\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+            "replyComment": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"Comment\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "forwardEmail": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"Comment\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ToRecipients\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "addCalendarGroup": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"@odata.type\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "calendarRepresentation": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"@odata.id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"@odata.editLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ChangeKey\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ClassId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Calendars@odata.navigationLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "updateCalendar": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"Name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "calendar": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"@odata.id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"@odata.editLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ChangeKey\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Events@odata.navigationLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "event": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"@odata.id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"@odata.editLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ChangeKey\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Subject\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"BodyPreview\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Body\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"ContentType\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Content\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"Importance\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Categories\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n      ]\n    } ,\n    \"HasAttachments\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    } ,\n    \"Start\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"End\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Location\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"DisplayName\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"ShowAs\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"IsAllDay\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    } ,\n    \"IsCancelled\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    } ,\n    \"IsOrganizer\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    } ,\n    \"ResponseRequested\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    } ,\n    \"Type\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"SeriesId\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"Attendees\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n      ]\n    } ,\n    \"Recurrence\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"Attachments@odata.navigationLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Calendar@odata.navigationLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "newEvent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"@odata.type\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Subject\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Body\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"ContentType\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Content\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"Start\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"End\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Location\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"DisplayName\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"ShowAs\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Attendees\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"Name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"Address\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"Type\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+        },
+        {
+            "updateEvent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"Location\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"DisplayName\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+            "contacts": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"@odata.id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"@odata.editLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ParentFolderId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"DisplayName\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Contacts@odata.navigationLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ChildFolders@odata.navigationLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "contact": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"@odata.id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"@odata.etag\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"@odata.editLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ChangeKey\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ClassName\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Subject\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"BodyPreview\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Body\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"ContentType\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Content\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"Importance\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Categories\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n      ]\n    } ,\n    \"HasAttachments\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    } ,\n    \"ParentFolderId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Birthday\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"FileAs\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"DisplayName\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"GivenName\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Initials\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"MiddleName\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"NickName\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"Surname\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Title\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"Generation\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"EmailAddress1\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ImAddress1\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"ImAddress2\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"ImAddress3\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"JobTitle\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"CompanyName\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"Department\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"OfficeLocation\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"Profession\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"BusinessHomePage\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"AssistantName\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"Manager\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"HomePhone1\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"HomePhone2\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"BusinessPhone1\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"BusinessPhone2\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"MobilePhone1\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"OtherPhone\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"DateTimeCreated\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"LastModifiedTime\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Attachments@odata.navigationLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "createContact": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"@odata.type\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"GivenName\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Surname\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"EmailAddress1\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"BusinessPhone1\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Birthday\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "updateContact": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"MobilePhone1\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "newAttachment": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"@odata.type\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Item\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"@odata.type\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Subject\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Body\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"ContentType\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"Content\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        } ,\n        \"Importance\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"From\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"Name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"Address\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        } ,\n        \"ToRecipients\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"object\" ,\n              \"properties\" : {\n                \"Name\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"Address\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            }\n          ]\n        }\n      }\n    }\n  }\n}"
+        }
+    ],
+    "resourceTypes": [
+        {
+            "createReply": {
+                "name": "createReply",
+                "post": {
+                    "responses": {
+                        "201": {
+                            "code": "201",
+                            "description": "A successful response contains a JSON representation. The result is located in the Drafts folder."
+                        }
+                    },
+                    "method": "post"
+                }
+            }
+        },
+        {
+            "events": {
+                "name": "events",
+                "post": {
+                    "responses": {
+                        "201": {
+                            "code": "201",
+                            "description": "The request has been fulfilled and resulted in the creation of a new resource."
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "newEvent",
+                            "example": "{\r\n  \"@odata.type\": \"#Microsoft.Exchange.Services.OData.Model.Event\",\r\n  \"Subject\": \"Discuss the Calendar REST API\",\r\n  \"Body\": {\r\n    \"ContentType\": \"HTML\",\r\n    \"Content\": \"I think it will meet our requirements!\"\r\n  },\r\n  \"Start\": \"2014-07-02T18:00:00Z\",\r\n  \"End\": \"2014-07-02T19:00:00Z\",\r\n  \"Location\": {\r\n      \"DisplayName\": \"Conference Room 1\"\r\n    },\r\n  \"ShowAs\": \"Busy\",\r\n  \"Attendees\": [\r\n    {\r\n      \"Name\": \"Alex Darrow\",\r\n      \"Address\": \"alexd@contoso.com\",\r\n      \"Type\": \"Required\"\r\n    },\r\n    {\r\n      \"Name\": \"Anne Wallace\",\r\n      \"Address\": \"annew@contoso.com\",\r\n      \"Type\": \"Optional\"\r\n    },\r\n    {\r\n      \"Name\": \"Conference Room 1\",\r\n      \"Address\": \"conf1@contoso.com\",\r\n      \"Type\": \"Resource\"\r\n    }\r\n  ]\r\n}",
+                            "schemaContent": "newEvent"
+                        }
+                    },
+                    "method": "post"
+                },
+                "get": {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "The request completed successfully."
+                        }
+                    },
+                    "description": "You can request all the events across all calendars (or a filtered list by using the $filter OData query parameter) via the Events property on the User entity, or request all events in a specific calendar via the Events property on the Calendar entity.",
+                    "method": "get"
+                }
+            }
+        },
+        {
+            "action": {
+                "name": "action",
+                "post": {
+                    "responses": {
+                        "201": {
+                            "code": "201",
+                            "description": "A successful response contains a JSON representation."
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "copyFolder",
+                            "example": "{\r\n  \"DestinationId\": <destination_folder_id>\r\n}",
+                            "schemaContent": "copyFolder"
+                        }
+                    },
+                    "method": "post"
+                }
+            }
+        },
+        {
+            "reply": {
+                "name": "reply",
+                "post": {
+                    "responses": {
+                        "201": {
+                            "code": "201",
+                            "description": "The request has been fulfilled and resulted in the creation of a new resource."
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "replyComment",
+                            "example": "{\r\n  \"Comment\": <reply_message>\r\n}",
+                            "schemaContent": "replyComment"
+                        }
+                    },
+                    "method": "post"
+                }
+            }
+        },
+        {
+            "attachments": {
+                "name": "attachments",
+                "get": {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "The request completed successfully."
+                        }
+                    },
+                    "description": "To get attachments, send a GET request to the Attachments property on the entity that contains the attachments.",
+                    "method": "get"
+                },
+                "delete": {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "The request completed successfully."
+                        }
+                    },
+                    "description": "To delete an attachment, send a DELETE request to the URL of the Attachment entity.",
+                    "method": "delete"
+                },
+                "post": {
+                    "responses": {
+                        "201": {
+                            "code": "201",
+                            "description": "The request completed successfully. The server responds with a JSON representation of each attachment. Note that both FileAttachment entities and ItemAttachment entities are returned, as applicable. You can tell them apart by checking the @odata.type property on the attachment entity."
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "newAttachment",
+                            "example": "{\r\n  \"@odata.type\": \"#Microsoft.Exchange.Services.OData.Model.ItemAttachment\",\r\n  \"Name\": \"Test attachment message\",\r\n  \"Item\": {\r\n    \"@odata.type\": \"#Microsoft.Exchange.Services.OData.Model.Message\",\r\n    \"Subject\": \"Test attachment message\",\r\n    \"Body\": {\r\n      \"ContentType\": \"Text\",\r\n      \"Content\": \"Hello!\"\r\n    },\r\n    \"Importance\": \"Normal\",\r\n    \"From\": {\r\n      \"Name\": \"Sadie Daniels\",\r\n      \"Address\": \"sadie@contoso.com\"\r\n    },\r\n    \"ToRecipients\": [\r\n      {\r\n        \"Name\": \"Hope Gross\",\r\n        \"Address\": \"hope@contoso.com\"\r\n      }\r\n    ]\r\n  }\r\n}",
+                            "schemaContent": "newAttachment"
+                        }
+                    },
+                    "description": "To add an attachment to an item, send a POST request to the Attachments property on the item with a JSON representation of the new attachment in the request payload. The following example adds an item attachment to an existing message.",
+                    "method": "post"
+                }
+            }
+        },
+        {
+            "calendars": {
+                "name": "calendars",
+                "post": {
+                    "responses": {
+                        "201": {
+                            "code": "201"
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "addCalendarGroup",
+                            "example": "{\r\n  \"@odata.type\": \"#Microsoft.Exchange.Services.OData.Model.CalendarGroup\",\r\n  \"Name\": <new_calendargroup_name>\r\n}",
+                            "schemaContent": "addCalendarGroup"
+                        }
+                    },
+                    "description": "You can create a calendar by sending a POST request with a JSON representation of a Calendar entity to the Calendars property on a CalendarGroup entity (to create a calendar in that calendar group).",
+                    "method": "post"
+                },
+                "get": {
+                    "responses": {
+                        "200": {
+                            "code": "200"
+                        }
+                    },
+                    "description": "You can request all the user's calendars (or a filtered list by using the $filter OData query parameter) via the Calendars property on the User entity, or request all calendars just in a specific calendar group via the Calendars property on the CalendarGroup entity.",
+                    "method": "get"
+                }
+            }
+        },
+        {
+            "contacts": {
+                "name": "contacts",
+                "post": {
+                    "responses": {
+                        "201": {
+                            "code": "201",
+                            "description": "A successful response contains a JSON representation of the new contact."
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "createContact",
+                            "example": "{\r\n  \"@odata.type\": \"#Microsoft.Exchange.Services.OData.Model.Contact\",\r\n  \"GivenName\": \"Mara\",\r\n  \"Surname\": \"Whitley\",\r\n  \"EmailAddress1\": \"mara@fabrikam.com\",\r\n  \"BusinessPhone1\": \"425-555-1313\",\r\n  \"Birthday\": \"1974-07-22T07:00:00Z\"\r\n}",
+                            "schemaContent": "createContact"
+                        }
+                    },
+                    "description": "You can create a contact by sending a POST request with a JSON representation in the payload of a Contact entity to the Contacts property on either the User entity (to create a contact in the default contact folder), or on the ContactFolder entity (to create a contact in that contact folder).",
+                    "method": "post"
+                },
+                "get": {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "The request completed successfully."
+                        }
+                    },
+                    "description": "You can request all contacts (or a filtered set by using the $filter OData query parameter) in the user's default contact folder via the Contacts property on the User entity. To request contacts in a non-default contact folder, use the Contacts property on the corresponding ContactFolder entity.",
+                    "method": "get"
+                }
+            }
+        }
+    ],
+    "resources": [
+        {
+            "relativeUri": "/Folders{folder_id}",
+            "uriParameters": {
+                "folder_id": {
+                    "name": "folder_id",
+                    "displayName": "folder_id",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "The request completed successfully."
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "To delete a folder, send a DELETE request to the URL of the folder.",
+                    "method": "delete",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "The request completed successfully."
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "updateNewMailFolderRequest",
+                            "example": "{\r\n  \"DisplayName\": <updated_folder_name>\r\n}",
+                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"DisplayName\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "You can update a folder by sending a PATCH request with a JSON payload that contains the properties to update to the URL of the folder.",
+                    "method": "patch",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "getFolderById",
+                                    "example": "{\r\n  \"@odata.id\": \"https://outlook.office365.com/EWS/OData/Users('sadie@contoso.com')/Folders('AAMkAGI3...')\",\r\n  \"@odata.editLink\": \"https://outlook.office365.com/EWS/OData/Users('sadie@contoso.com')/Folders('AAMkAGI3...')\",\r\n  \"Id\": \"AAMkAGI3...\",\r\n  \"ParentFolderId\": \"AQMkAGI3...\",\r\n  \"DisplayName\": \"Inbox\",\r\n  \"ClassName\": \"IPF.Note\",\r\n  \"TotalCount\": 0,\r\n  \"ChildFolderCount\": 0,\r\n  \"UnreadItemCount\": 0,\r\n  \"ChildFolders@odata.navigationLink\": \"https://outlook.office365.com/EWS/OData/Users('sadie@contoso.com')/Folders('AAMkAGI3...')/ChildFolders\",\r\n  \"Messages@odata.navigationLink\": \"https://outlook.office365.com/EWS/OData/Users('sadie@contoso.com')/Folders('AAMkAGI3...')/Messages\"\r\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"@odata.id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"@odata.editLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ParentFolderId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"DisplayName\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ClassName\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"TotalCount\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"ChildFolderCount\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"UnreadItemCount\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"ChildFolders@odata.navigationLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Messages@odata.navigationLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                }
+                            },
+                            "description": "The server responds with a JSON representation of the folder."
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "You can retrieve information about other folders by using the Id property on the Folder entity via the Folders property on the User entity.",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "201": {
+                            "code": "201",
+                            "description": "The request has been fulfilled and resulted in the creation of a new resource.\nA successful response contains a JSON representation of the new folder.\n"
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "addNewMailFolderRequest",
+                            "example": "{\r\n  \"@odata.type\": \"#Microsoft.Exchange.Services.OData.Model.Folder\",\r\n  \"DisplayName\": <new_folder_name>\r\n}",
+                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"@odata.type\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"DisplayName\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "You can create a folder by sending a POST request with a JSON representation of the new folder to the parent folder's ChildFolders property.",
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "resources": [
+                {
+                    "relativeUri": "/Move",
+                    "type": "action",
+                    "displayName": "/Move",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "Move"
+                    ]
+                },
+                {
+                    "relativeUri": "/Copy",
+                    "type": "action",
+                    "displayName": "/Copy",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "Copy"
+                    ]
+                },
+                {
+                    "relativeUri": "/Messages",
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "You can request all the emails and meeting requests in a folder (or a filtered list by using the $filter OData query parameter) via the Messages property on the Folder entity.",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201",
+                                    "description": "The request has been fulfilled and resulted in the creation of a new resource.\nA successful response contains a JSON representation of the new email.\n"
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "newEmail",
+                                    "example": "{\r\n  \"@odata.type\": \"#Microsoft.Exchange.Services.OData.Model.Message\",\r\n  \"Subject\": \"Have you seen this new Mail REST API?\",\r\n  \"Importance\": \"High\",\r\n  \"Body\": {\r\n    \"ContentType\": \"HTML\",\r\n    \"Content\": \"It looks awesome!\"\r\n  },\r\n  \"ToRecipients\": [\r\n    {\r\n      \"Name\": \"Hope Gross\",\r\n      \"Address\": \"hope@contoso.com\"\r\n    }\r\n  ]\r\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"@odata.type\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Subject\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Importance\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Body\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"ContentType\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Content\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"ToRecipients\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"Name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"Address\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "queryParameters": {
+                                "MessageDisposition": {
+                                    "name": "MessageDisposition",
+                                    "displayName": "MessageDisposition",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "MessageDisposition=SendAndSaveCopy",
+                                    "repeat": false,
+                                    "description": "When sending a POST request to create an email, there is an optional MessageDisposition query parameter that controls what happens to the message as it is created. The behavior and the default value depends on whether you are sending the POST request to the Messages property on a Folder entity or on the User entity.",
+                                    "enum": [
+                                        "SaveOnly",
+                                        "SendOnly",
+                                        "SendAndSaveCopy"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "description": "You can create an email by sending a POST request with a JSON representation of a Message entity to the Messages property on the Folder entity for the folder that you want to create the email in. Alternatively, you can send the POST request to the Messages property on the User entity.",
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/Messages",
+                    "description": "",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "Messages"
+                    ]
+                }
+            ],
+            "displayName": "/Folders{folder_id}",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "Folders{folder_id}"
+            ]
+        },
+        {
+            "relativeUri": "/Messages{message_id}",
+            "uriParameters": {
+                "message_id": {
+                    "name": "message_id",
+                    "displayName": "message_id",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "specificEmailById",
+                                    "example": "{\r\n  \"@odata.id\": \"https://outlook.office365.com/EWS/OData/Users('sadie@contoso.com')/Messages('AAMkAGI3...')\",\r\n  \"@odata.editLink\": \"https://outlook.office365.com/EWS/OData/Users('sadie@contoso.com')/Messages('AAMkAGI3...')\",\r\n  \"Id\": \"AAMkAGI3...\",\r\n  \"ChangeKey\": \"CQAAABYAAABH0JWDyeM4R4EU8sjWq9C6AAAEcqJs\",\r\n  \"ClassName\": \"IPM.Note\",\r\n  \"Subject\": \"Sent with REST\",\r\n  \"BodyPreview\": \"This message was created and sent with the Mail REST API!\",\r\n  \"Body\": {\r\n    \"ContentType\": \"HTML\",\r\n    \"Content\": \"This message was created and sent with the Mail REST API!\"\r\n  },\r\n  \"Importance\": \"Low\",\r\n  \"Categories\": [],\r\n  \"HasAttachments\": false,\r\n  \"ParentFolderId\": \"AQMkAGIP...\",\r\n  \"From\": {\r\n    \"Name\": \"Hope Gross\",\r\n    \"Address\": \"hope@contoso.com\"\r\n  },\r\n  \"Sender\": {\r\n    \"Name\": \" Hope Gross \",\r\n    \"Address\": \"hope@contoso.com\"\r\n  },\r\n  \"ToRecipients\": [\r\n    {\r\n      \"Name\": \"Sadie Daniels\",\r\n      \"Address\": \"sadie@contoso.com\"\r\n    }\r\n  ],\r\n  \"CcRecipients\": [],\r\n  \"BccRecipients\": [],\r\n  \"ReplyTo\": [],\r\n  \"ConversationId\": \"AAQkAGI3...\",\r\n  \"DateTimeReceived\": \"2014-02-10T16:29:27Z\",\r\n  \"DateTimeSent\": \"2014-02-10T16:29:24Z\",\r\n  \"IsDeliveryReceiptRequested\": false,\r\n  \"IsReadReceiptRequested\": false,\r\n  \"IsDraft\": false,\r\n  \"IsRead\": true,\r\n  \"EventId\": null,\r\n  \"MeetingMessageType\": \"None\",\r\n  \"DateTimeCreated\": \"2014-02-10T16:29:27Z\",\r\n  \"LastModifiedTime\": \"2014-02-10T16:29:27Z\",\r\n  \"Attachments@odata.navigationLink\": \"https://outlook.office365.com/EWS/OData/Users('sadie@contoso.com')/Messages('AAMkAGI3...')/Attachments\"\r\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"@odata.id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"@odata.editLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ChangeKey\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ClassName\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Subject\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"BodyPreview\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Body\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"ContentType\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Content\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"Importance\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Categories\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n      ]\n    } ,\n    \"HasAttachments\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    } ,\n    \"ParentFolderId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"From\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"Name\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Address\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"Sender\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"Name\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Address\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"ToRecipients\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"Name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"Address\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    } ,\n    \"CcRecipients\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n      ]\n    } ,\n    \"BccRecipients\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n      ]\n    } ,\n    \"ReplyTo\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n      ]\n    } ,\n    \"ConversationId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"DateTimeReceived\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"DateTimeSent\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"IsDeliveryReceiptRequested\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    } ,\n    \"IsReadReceiptRequested\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    } ,\n    \"IsDraft\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    } ,\n    \"IsRead\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    } ,\n    \"EventId\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"MeetingMessageType\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"DateTimeCreated\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"LastModifiedTime\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Attachments@odata.navigationLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                }
+                            },
+                            "description": "The request completed successfully."
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "You can request information about a specific email or meeting request by using the Id property on the Message entity.",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "A successful response contains a JSON representation of the updated email."
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "updateEmail",
+                            "example": "{\r\n  \"Body\": {\r\n    \"ContentType\": \"HTML\",\r\n    \"Content\": \"It looks awesome! I think it will suit our needs nicely.\"\r\n  }\r\n}",
+                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"Body\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"ContentType\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Content\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "You can update an existing email by sending a PATCH request to the URL for that item. The payload of the PATCH request is a JSON representation of the properties that you want to update. Only the properties that you include in the payload are changed.",
+                    "method": "patch",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "The request completed successfully."
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "You can delete email by simply sending a DELETE request to the URL of the Message entity.",
+                    "method": "delete",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "resources": [
+                {
+                    "relativeUri": "/Move",
+                    "type": "action",
+                    "displayName": "/Move",
+                    "description": "You can move an email by using the Move action on the Message entity.",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "Move"
+                    ]
+                },
+                {
+                    "relativeUri": "/Copy",
+                    "type": "action",
+                    "displayName": "/Copy",
+                    "description": "You can copy an email by using the Copy action on the Message entity.",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "Copy"
+                    ]
+                },
+                {
+                    "relativeUri": "/CreateReply",
+                    "type": "createReply",
+                    "displayName": "/CreateReply",
+                    "description": "You can create a reply to only the sender of an email by using the CreateReply action on the Message entity.",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "CreateReply"
+                    ]
+                },
+                {
+                    "relativeUri": "/CreateReplyAll",
+                    "type": "createReply",
+                    "displayName": "/CreateReplyAll",
+                    "description": "You can create a reply to all recipients of an email by using the CreateReplyAll action on the Message entity.",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "CreateReplyAll"
+                    ]
+                },
+                {
+                    "relativeUri": "/CreateForward",
+                    "type": "createReply",
+                    "displayName": "/CreateForward",
+                    "description": "You can create a forward of an email by using the CreateForward action on the Message entity.",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "CreateForward"
+                    ]
+                },
+                {
+                    "relativeUri": "/Reply",
+                    "type": "reply",
+                    "displayName": "/Reply",
+                    "description": "The server responds with an HTTP status 200 \"OK\" to indicate success. A copy of the reply is saved in the Sent Items folder.",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "Reply"
+                    ]
+                },
+                {
+                    "relativeUri": "/ReplyAll",
+                    "type": "reply",
+                    "displayName": "/ReplyAll",
+                    "description": "The server responds with an HTTP status 200 \"OK\" to indicate success. A copy of the reply is saved in the Sent Items folder.",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "ReplyAll"
+                    ]
+                },
+                {
+                    "relativeUri": "/Forward",
+                    "methods": [
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201",
+                                    "description": "The server responds with an HTTP status 200 \"OK\" to indicate success. A copy of the forward is saved in the Sent Items folder."
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "forwardEmail",
+                                    "example": "{\r\n  \"Comment\": <reply_message>,\r\n  \"ToRecipients\": <recipients_to_forward>\r\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"Comment\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ToRecipients\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "You can forward an email by using the Forward action on the Message entity.",
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/Forward",
+                    "description": "The server responds with an HTTP status 200 \"OK\" to indicate success. A copy of the reply is saved in the Sent Items folder.",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "Forward"
+                    ]
+                }
+            ],
+            "displayName": "/Messages{message_id}",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "Messages{message_id}"
+            ]
+        },
+        {
+            "relativeUri": "/Messages{event_id}",
+            "uriParameters": {
+                "event_id": {
+                    "name": "event_id",
+                    "displayName": "event_id",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "resources": [
+                {
+                    "relativeUri": "/Send",
+                    "methods": [
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201",
+                                    "description": "The server responds with an HTTP status 200 \"OK\" to indicate success. A copy of the email is saved in the Sent Items folder."
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "You can send an existing email that has the IsDraft property set to true by using the Send action on the Message entity.",
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/Send",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "Send"
+                    ]
+                },
+                {
+                    "relativeUri": "/Attachments",
+                    "type": "attachments",
+                    "displayName": "/Attachments",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "Attachments"
+                    ]
+                }
+            ],
+            "displayName": "/Messages{event_id}",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "Messages{event_id}"
+            ]
+        },
+        {
+            "relativeUri": "/CalendarGroups",
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "You can request all the calendar groups in a mailbox (or a filtered list by using the $filter OData query parameter) via the CalendarGroups property on the User entity.",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "201": {
+                            "code": "201",
+                            "description": "A successful response contains a JSON representation of the new calendar group."
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "addCalendarGroup",
+                            "example": "{\r\n  \"@odata.type\": \"#Microsoft.Exchange.Services.OData.Model.CalendarGroup\",\r\n  \"Name\": <new_calendargroup_name>\r\n}",
+                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"@odata.type\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "You can create a calendar group by sending a POST request with a JSON representation of a CalendarGroup entity to the CalendarGroups property on the User entity.",
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/CalendarGroups",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "CalendarGroups"
+            ]
+        },
+        {
+            "relativeUri": "/CalendarGroups{calendargroup_id}",
+            "uriParameters": {
+                "calendargroup_id": {
+                    "name": "calendargroup_id",
+                    "displayName": "calendargroup_id",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "calendarRepresentation",
+                                    "example": "{\n  \"@odata.id\" : \"https://outlook.office365.com/EWS/OData/Users('sadie@contoso.com')/CalendarGroups('AQMkAGI3...')\" ,\n  \"@odata.editLink\" : \"https://outlook.office365.com/EWS/OData/Users('sadie@contoso.com')/CalendarGroups('AQMkAGI3...')\" ,\n  \"Id\" : \"AQMkAGI3...\" ,\n  \"Name\" : \"My Calendars\" ,\n  \"ChangeKey\" : \"R9CVg8njOEeBFPLI1qvQugAAAAAI5A==\" ,\n  \"ClassId\" : \"0006f0b7-0000-0000-c000-000000000046\" ,\n  \"Calendars@odata.navigationLink\" : \"https://outlook.office365.com/EWS/OData/Users('sadie@contoso.com')/CalendarGroups('AQMkAGI3...')/Calendars\"\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"@odata.id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"@odata.editLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ChangeKey\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ClassId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Calendars@odata.navigationLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                }
+                            },
+                            "description": "The server responds with a JSON representation of the calendar group."
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "201": {
+                            "code": "201"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "A successful response contains a JSON representation of the updated calendar group."
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "updateCalendar",
+                            "example": "{\r\n  \"Name\": <updated_calendar_name>\r\n}",
+                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"Name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "You can update a calendar group by sending a PATCH request with a JSON payload that contains the properties to update. The Name property is the only writeable property on a CalendarGroup entity.",
+                    "method": "patch",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "The request completed successfully."
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "Deleting a calendar group is as simple as sending a DELETE request to the URL of the CalendarGroup entity.",
+                    "method": "delete",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "resources": [
+                {
+                    "relativeUri": "/Calendars",
+                    "type": "calendars",
+                    "displayName": "/Calendars",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "Calendars"
+                    ]
+                }
+            ],
+            "displayName": "/CalendarGroups{calendargroup_id}",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "CalendarGroups{calendargroup_id}"
+            ]
+        },
+        {
+            "relativeUri": "/Calendars",
+            "type": "calendars",
+            "displayName": "/Calendars",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "Calendars"
+            ]
+        },
+        {
+            "relativeUri": "/Calendar",
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "calendar",
+                                    "example": "{\r\n  \"@odata.id\": \"https://outlook.office365.com/EWS/OData/Users('sadie@contoso.com')/Calendars('AQMkAGI3...')\",\r\n  \"@odata.editLink\": \"https://outlook.office365.com/EWS/OData/Users('sadie@contoso.com')/Calendars('AQMkAGI3...')\",\r\n  \"Id\": \"AQMkAGI3...\",\r\n  \"Name\": \"Calendar\",\r\n  \"ChangeKey\": \"R9CVg8njOEeBFPLI1qvQugAAAAAI5Q==\",\r\n  \"Events@odata.navigationLink\": \"https://outlook.office365.com/EWS/OData/Users('sadie@contoso.com')/Calendars('AQMkAGI3...')/Events\"\r\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"@odata.id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"@odata.editLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ChangeKey\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Events@odata.navigationLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                }
+                            },
+                            "description": "The request completed successfully."
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "Retrieve information about the default calendar by using the Calendar property on the User entity.",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "resources": [
+                {
+                    "relativeUri": "/Events",
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "description": "The request completed successfully."
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "You can request all the events across all calendars (or a filtered list by using the $filter OData query parameter) via the Events property on the User entity, or request all events in a specific calendar via the Events property on the Calendar entity.",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/Events",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "Events"
+                    ]
+                }
+            ],
+            "displayName": "/Calendar",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "Calendar"
+            ]
+        },
+        {
+            "relativeUri": "/Calendars{calendar_id}",
+            "uriParameters": {
+                "calendar_id": {
+                    "name": "calendar_id",
+                    "displayName": "calendar_id",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "calendar",
+                                    "example": "{\r\n  \"@odata.id\": \"https://outlook.office365.com/EWS/OData/Users('sadie@contoso.com')/Calendars('AQMkAGI3...')\",\r\n  \"@odata.editLink\": \"https://outlook.office365.com/EWS/OData/Users('sadie@contoso.com')/Calendars('AQMkAGI3...')\",\r\n  \"Id\": \"AQMkAGI3...\",\r\n  \"Name\": \"Calendar\",\r\n  \"ChangeKey\": \"R9CVg8njOEeBFPLI1qvQugAAAAAI5Q==\",\r\n  \"Events@odata.navigationLink\": \"https://outlook.office365.com/EWS/OData/Users('sadie@contoso.com')/Calendars('AQMkAGI3...')/Events\"\r\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"@odata.id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"@odata.editLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ChangeKey\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Events@odata.navigationLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "You can also retrieve information about a specific calendar by using the Id property of the Calendar entity.",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "201": {
+                            "code": "201",
+                            "description": "A successful response contains a JSON representation of the updated calendar."
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "updateCalendar",
+                            "example": "{\r\n  \"Name\": <updated_calendar_name>\r\n}",
+                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"Name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "You can update a calendar by sending a PATCH request with a JSON payload containing the properties to update. There's only one writeable property on a Calendar entity, the Name property.",
+                    "method": "patch",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "The request completed successfully."
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "Deleting a calendar is as simple as sending a DELETE request to the URL of the Calendar entity.",
+                    "method": "delete",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "resources": [
+                {
+                    "relativeUri": "/Events",
+                    "type": "events",
+                    "displayName": "/Events",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "Events"
+                    ]
+                }
+            ],
+            "displayName": "/Calendars{calendar_id}",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "Calendars{calendar_id}"
+            ]
+        },
+        {
+            "relativeUri": "/Events",
+            "type": "events",
+            "displayName": "/Events",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "Events"
+            ]
+        },
+        {
+            "relativeUri": "/Events{event_id}",
+            "uriParameters": {
+                "event_id": {
+                    "name": "event_id",
+                    "displayName": "event_id",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "event",
+                                    "example": "{\r\n  \"@odata.id\": \"https://outlook.office365.com/EWS/OData/Users('sadie@contoso.com')/Events('AAMkAGI3...')\",\r\n  \"@odata.editLink\": \"https://outlook.office365.com/EWS/OData/Users('sadie@contoso.com')/Events('AAMkAGI3...')\",\r\n  \"Id\": \"AAMkAGI3...\",\r\n  \"ChangeKey\": \"R9CVg8njOEeBFPLI1qvQugAABHL2eg==\",\r\n  \"Subject\": \"Lunch\",\r\n  \"BodyPreview\": \"Let's meet for lunch and go over the project plan.\",\r\n  \"Body\": {\r\n    \"ContentType\": \"HTML\",\r\n    \"Content\": \"Let's meet for lunch and go over the project plan.\"\r\n  },\r\n  \"Importance\": \"Normal\",\r\n  \"Categories\": [],\r\n  \"HasAttachments\": false,\r\n  \"Start\": \"2014-02-13T20:30:00Z\",\r\n  \"End\": \"2014-02-13T21:00:00Z\",\r\n  \"Location\": {\r\n    \"DisplayName\": \"Cafeteria\"\r\n  },\r\n  \"ShowAs\": \"Tentative\",\r\n  \"IsAllDay\": false,\r\n  \"IsCancelled\": false,\r\n  \"IsOrganizer\": false,\r\n  \"ResponseRequested\": true,\r\n  \"Type\": \"SingleInstance\",\r\n  \"SeriesId\": null,\r\n  \"Attendees\": [],\r\n  \"Recurrence\": null,\r\n  \"Attachments@odata.navigationLink\": \"https://outlook.office365.com/EWS/OData/Users('sadie@contoso.com')/Events('AAMkAGI3...')/Attachments\",\r\n  \"Calendar@odata.navigationLink\": \"https://outlook.office365.com/EWS/OData/Users('sadie@contoso.com')/Events('AAMkAGI3...')/Calendar\"\r\n}",
+                                    "schemaContent": "event"
+                                }
+                            },
+                            "description": "The request completed successfully."
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "You can also retrieve information about a specific event by using the Id property on the Event entity.",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "A successful response contains a JSON representation of the updated event. If any attendees are included in the Attendees property, and the user is the organizer, the server will send meeting updates to all attendees."
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "updateEvent",
+                            "example": "{\r\n  \"Location\": {\r\n    \"DisplayName\": \"Your office\"\r\n  }\r\n}",
+                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"Location\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"DisplayName\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "To update an event, send a PATCH request to the URL of the event with a JSON object that contains the properties to update. Only the properties that you include in the payload are changed.",
+                    "method": "patch",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "The request has been fulfilled and resulted in the creation of a new resource."
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "Upon success, the appointment is moved to the user's Deleted Items folder. If the appointment is a meeting, a cancellation will be sent to all attendees.",
+                    "method": "delete",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "resources": [
+                {
+                    "relativeUri": "/Accept",
+                    "type": "reply",
+                    "displayName": "/Accept",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "Accept"
+                    ]
+                },
+                {
+                    "relativeUri": "/Decline",
+                    "type": "reply",
+                    "displayName": "/Decline",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "Decline"
+                    ]
+                },
+                {
+                    "relativeUri": "/TentativelyAccept",
+                    "type": "reply",
+                    "displayName": "/TentativelyAccept",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "TentativelyAccept"
+                    ]
+                },
+                {
+                    "relativeUri": "/Attachments",
+                    "type": "attachments",
+                    "displayName": "/Attachments",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "Attachments"
+                    ]
+                }
+            ],
+            "displayName": "/Events{event_id}",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "Events{event_id}"
+            ]
+        },
+        {
+            "relativeUri": "/ContactFolders{contact_folder_id}",
+            "uriParameters": {
+                "contact_folder_id": {
+                    "name": "contact_folder_id",
+                    "displayName": "contact_folder_id",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "contacts",
+                                    "example": "{\r\n  \"@odata.id\": \"https://outlook.office365.com/EWS/OData/Users('sadie@contoso.com')/ContactFolders('AAMkADA5...')\",\r\n  \"@odata.editLink\": \"https://outlook.office365.com/EWS/OData/Users('sadie@contoso.com')/ContactFolders('AAMkADA5...')\",\r\n  \"Id\": \"AAMkADA5...\",\r\n  \"ParentFolderId\": \"AAMkADA5...\",\r\n  \"DisplayName\": \"Contacts\",\r\n  \"Contacts@odata.navigationLink\": \"https://outlook.office365.com/EWS/OData/Users('sadie@contoso.com')/ContactFolders('AAMkADA5...')/Contacts\",\r\n  \"ChildFolders@odata.navigationLink\": \"https://outlook.office365.com/EWS/OData/Users('sadie@contoso.com')/ContactFolders('AAMkADA5...')/ChildFolders\"\r\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"@odata.id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"@odata.editLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ParentFolderId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"DisplayName\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Contacts@odata.navigationLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ChildFolders@odata.navigationLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                }
+                            },
+                            "description": "The request completed successfully."
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "You can access the default contact folder by using the constant entity key \"Contacts\" to select a ContactFolder entity from the ContactsFolder property on the User entity. Alternatively, you can access a specific non-default contact folder by using the Id property of the corresponding ContactFolder entity.",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "resources": [
+                {
+                    "relativeUri": "/ChildFolders",
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "description": "The request completed successfully."
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "All non-default contact folders are stored as children of the default contact folder. You can query for all non-default contact folders (or a filtered list by using the $filter OData query parameter) via the ChildFolders property on the default contact folder.",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/ChildFolders",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "ChildFolders"
+                    ]
+                },
+                {
+                    "relativeUri": "/Contacts",
+                    "type": "contacts",
+                    "displayName": "/Contacts",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "Contacts"
+                    ]
+                }
+            ],
+            "displayName": "/ContactFolders{contact_folder_id}",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "ContactFolders{contact_folder_id}"
+            ]
+        },
+        {
+            "relativeUri": "/Contacts",
+            "type": "contacts",
+            "displayName": "/Contacts",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "Contacts"
+            ]
+        },
+        {
+            "relativeUri": "/Contacts{contact_id}",
+            "uriParameters": {
+                "contact_id": {
+                    "name": "contact_id",
+                    "displayName": "contact_id",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "responses": {
+                        "201": {
+                            "code": "201",
+                            "description": "A successful response contains a JSON representation of the new contact."
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "createContact",
+                            "example": "{\r\n  \"@odata.type\": \"#Microsoft.Exchange.Services.OData.Model.Contact\",\r\n  \"GivenName\": \"Mara\",\r\n  \"Surname\": \"Whitley\",\r\n  \"EmailAddress1\": \"mara@fabrikam.com\",\r\n  \"BusinessPhone1\": \"425-555-1313\",\r\n  \"Birthday\": \"1974-07-22T07:00:00Z\"\r\n}",
+                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"@odata.type\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"GivenName\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Surname\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"EmailAddress1\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"BusinessPhone1\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Birthday\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "You can create a contact by sending a POST request with a JSON representation in the payload of a Contact entity to the Contacts property on either the User entity (to create a contact in the default contact folder), or on the ContactFolder entity (to create a contact in that contact folder).",
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "contact",
+                                    "example": "{\r\n  \"@odata.id\": \"https://outlook.office365.com/EWS/OData/Users('sadie@contoso.com')/Contacts('AAMkADA5...')\",\r\n  \"@odata.etag\": \"W/\\\"EQAAABYAAACjVbBbHnDNQZzaeCbB94zAAABkh+ph\\\"\",\r\n  \"@odata.editLink\": \"https://outlook.office365.com/EWS/OData/Users('sadie@contoso.com')/Contacts('AAMkADA5...')\",\r\n  \"Id\": \"AAMkADA5...\",\r\n  \"ChangeKey\": \"EQAAABYAAACjVbBbHnDNQZzaeCbB94zAAABkh+ph\",\r\n  \"ClassName\": \"IPM.Contact\",\r\n  \"Subject\": \"Alex Darrow\",\r\n  \"BodyPreview\": \"\",\r\n  \"Body\": {\r\n    \"ContentType\": \"Text\",\r\n    \"Content\": \"\"\r\n  },\r\n  \"Importance\": \"Normal\",\r\n  \"Categories\": [],\r\n  \"HasAttachments\": false,\r\n  \"ParentFolderId\": \"AAMkADA5...\",\r\n  \"Birthday\": null,\r\n  \"FileAs\": \"Darrow, Alex\",\r\n  \"DisplayName\": \"Alex Darrow\",\r\n  \"GivenName\": \"Alex\",\r\n  \"Initials\": null,\r\n  \"MiddleName\": null,\r\n  \"NickName\": null,\r\n  \"Surname\": \"Darrow\",\r\n  \"Title\": null,\r\n  \"Generation\": null,\r\n  \"EmailAddress1\": \"alex@alpineskihouse.com\",\r\n  \"ImAddress1\": null,\r\n  \"ImAddress2\": null,\r\n  \"ImAddress3\": null,\r\n  \"JobTitle\": null,\r\n  \"CompanyName\": null,\r\n  \"Department\": null,\r\n  \"OfficeLocation\": null,\r\n  \"Profession\": null,\r\n  \"BusinessHomePage\": null,\r\n  \"AssistantName\": null,\r\n  \"Manager\": null,\r\n  \"HomePhone1\": null,\r\n  \"HomePhone2\": null,\r\n  \"BusinessPhone1\": null,\r\n  \"BusinessPhone2\": null,\r\n  \"MobilePhone1\": null,\r\n  \"OtherPhone\": null,\r\n  \"DateTimeCreated\": \"2014-07-01T16:24:09Z\",\r\n  \"LastModifiedTime\": \"2014-07-01T16:24:09Z\",\r\n  \"Attachments@odata.navigationLink\": \"https://outlook.office365.com/EWS/OData/Users('sadie@contoso.com')/Contacts('AAMkADA5...')/Attachments\"\r\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"@odata.id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"@odata.etag\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"@odata.editLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ChangeKey\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ClassName\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Subject\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"BodyPreview\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Body\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"ContentType\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Content\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"Importance\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Categories\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n      ]\n    } ,\n    \"HasAttachments\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    } ,\n    \"ParentFolderId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Birthday\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"FileAs\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"DisplayName\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"GivenName\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Initials\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"MiddleName\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"NickName\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"Surname\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Title\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"Generation\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"EmailAddress1\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ImAddress1\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"ImAddress2\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"ImAddress3\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"JobTitle\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"CompanyName\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"Department\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"OfficeLocation\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"Profession\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"BusinessHomePage\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"AssistantName\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"Manager\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"HomePhone1\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"HomePhone2\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"BusinessPhone1\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"BusinessPhone2\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"MobilePhone1\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"OtherPhone\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"DateTimeCreated\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"LastModifiedTime\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Attachments@odata.navigationLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "You can retrieve information about a specific contact by using the Id property of the Contact entity.",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "The request completed successfully."
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "updateContact",
+                            "example": "{\n  \"MobilePhone1\" : \"425-555-1414\"\n}",
+                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"MobilePhone1\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "To update a contact, send a PATCH request to the URL of the contact with a JSON object that contains the properties to update. Only the properties that you include in the payload are changed.",
+                    "method": "patch",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "The request completed successfully."
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "You can delete a contact by simply sending a DELETE request to the URL of the Contact entity.",
+                    "method": "delete",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "resources": [
+                {
+                    "relativeUri": "/Attachments",
+                    "type": "attachments",
+                    "displayName": "/Attachments",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "Attachments"
+                    ]
+                }
+            ],
+            "displayName": "/Contacts{contact_id}",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "Contacts{contact_id}"
+            ]
+        },
+        {
+            "relativeUri": "/FirstSignIn",
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/FirstSignIn",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "FirstSignIn"
+            ]
+        },
+        {
+            "relativeUri": "/Services",
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/Services",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "Services"
+            ]
+        },
+        {
+            "relativeUri": "/AllServices",
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/AllServices",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "AllServices"
+            ]
+        }
+    ],
+    "documentation": [
+        {
+            "title": "Headline",
+            "content": "can not resolve docs/api/headline.md"
+        }
+    ],
+    "__METADATA__": {
+        "primitiveValuesMeta": {
+            "protocols": {
+                "calculated": true
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{"apis": [
+    {
+        "name": "PagerDuty Integration",
+        "location": "https://raw.githubusercontent.com/raml-apis/PagerDuty/production/integration.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "PagerDuty",
+        "location": "https://raw.githubusercontent.com/raml-apis/PagerDuty/production/pagerDuty.raml",
+        "RAMLVersion": "0.8"
+    }
+]}

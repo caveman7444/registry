@@ -1,0 +1,168 @@
+{
+    "title": "PagerDuty Integration",
+    "version": "2010-04-15",
+    "baseUri": "https://events.pagerduty.com/generic/{version}/",
+    "baseUriParameters": {
+        "version": {
+            "name": "version",
+            "displayName": "version",
+            "type": "string",
+            "required": true,
+            "repeat": false,
+            "enum": [
+                "2010-04-15"
+            ],
+            "__METADATA__": {
+                "calculated": true,
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    },
+                    "type": {
+                        "insertedAsDefault": true
+                    },
+                    "required": {
+                        "insertedAsDefault": true
+                    },
+                    "repeat": {
+                        "insertedAsDefault": true
+                    },
+                    "enum": {
+                        "calculated": true
+                    }
+                }
+            }
+        }
+    },
+    "protocols": [
+        "HTTPS"
+    ],
+    "schemas": [
+        {
+            "integrationResponse": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"status\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"incident_key\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"message\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}\n"
+        },
+        {
+            "integrationRequest": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"service_key\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"incident_key\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"event_type\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"description\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"client\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"client_url\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"details\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n      }\n    }\n  }\n}\n"
+        }
+    ],
+    "securitySchemes": [
+        {
+            "basic": {
+                "name": "basic",
+                "type": "Basic Authentication"
+            }
+        },
+        {
+            "tokenSchema": {
+                "name": "tokenSchema",
+                "type": "x-token-schema",
+                "description": "Schema which requires Application ID and REST API Key",
+                "describedBy": {
+                    "headers": {
+                        "Authorization": {
+                            "name": "Authorization",
+                            "displayName": "Authorization",
+                            "type": "string",
+                            "required": true,
+                            "example": "Token token=E7px6VVr3PVHZPJq51oa",
+                            "repeat": false,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "resources": [
+        {
+            "relativeUri": "/create_event.json",
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "integrationResponse",
+                                    "example": "{\n  \"status\" : \"success\" ,\n  \"incident_key\" : \"My Incident Key\" ,\n  \"message\" : \"Event processed\"\n}\n",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"status\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"incident_key\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"message\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}\n"
+                                }
+                            },
+                            "description": "OK - The event has been accepted by PagerDuty. See below for details."
+                        },
+                        "400": {
+                            "code": "400",
+                            "description": "Bad Request - Check that the JSON is valid. See below for details."
+                        },
+                        "403": {
+                            "code": "403",
+                            "description": "Forbidden - Too many API calls at a time."
+                        },
+                        "500": {
+                            "code": "500",
+                            "description": "Or other 5XX\nInternal Server Error - the PagerDuty server experienced an error while processing the event.\n"
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "integrationRequest",
+                            "example": "{\n  \"service_key\" : \"e93facc04764012d7bfb002500d5d1a6\" ,\n  \"incident_key\" : \"srv01/HTTP\" ,\n  \"event_type\" : \"trigger\" ,\n  \"description\" : \"FAILURE for production/HTTP on machine srv01.acme.com\" ,\n  \"client\" : \"Sample Monitoring Service\" ,\n  \"client_url\" : \"https://monitoring.service.com\" ,\n  \"details\" : {\n    \"ping time\" : \"1500ms\" ,\n    \"load avg\" : 0.75\n  }\n}\n",
+                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"service_key\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"incident_key\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"event_type\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"description\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"client\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"client_url\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"details\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n      }\n    }\n  }\n}\n"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "Send one of the desired events.\n\nTRIGGER\nYour monitoring tools should send PagerDuty a trigger event to report a new or ongoing problem. When PagerDuty receives a trigger event, it will either open a new incident, or add a new trigger log entry to an existing incident, depending on the provided 'incident_key'.\n\nTrigger object params\n|Name|Type|Required|Description|\n|---|---|---|---|\n|service_key|String|Yes|The GUID of one of your \"Generic API\" services. This is the \"service key\" listed on a Generic API's service detail page.|\n|event_type|String|Yes|Set this to \"trigger\".|\n|description|String|Yes|A short description of the problem that led to this trigger. This field (or a truncated version) will be used when generating phone calls, SMS messages and alert emails. It will also appear on the incidents tables in the PagerDuty UI. The maximum length is 1024 characters.|\n|incident_key|String|No|Identifies the incident to which this trigger event should be applied. If there's no open (i.e. unresolved) incident with this key, a new one will be created. If there's already an open incident with a matching key, this event will be appended to that incident's log. The event key provides an easy way to \"de-dup\" problem reports. If this field isn't provided, PagerDuty will automatically open a new incident with a unique key.|\n|client|String|No|The name of the monitoring client that is triggering this event.|\n|client_url|String|No|The URL of the monitoring client that is triggering this event.|\n|details|Object|No|An arbitrary JSON object containing any data you'd like included in the incident log.|\n\nACKNOWLEDGE\nAcknowledge events cause the referenced incident to enter the acknowledged state. While an incident is acknowledged, it won't generate any additional notifications, even if it receives new trigger events. Your monitoring tools should send PagerDuty an acknowledge event when they know someone is presently working on the problem.\n\nAcknowledge object params      \n|Name|Type|Required| Description|\n|---|---|---|---|\n|service_key|String|Yes|The GUID of one of your \"Generic API\" services. This is the \"service key\" listed on a Generic API's service detail page.|\n|event_type|String|Yes|Set this to \"acknowledge\".|\n|incident_key|String|Yes|Identifies the incident to acknowledge. This should be the incident_key you received back when the incident was first opened by a trigger event. Acknowledge events referencing resolved or nonexistent incidents will be discarded.|\n|description|String|No|Text that will appear in the incident's log associated with this event.|\n|details|Object|No|An arbitrary JSON object containing any data you'd like included in the incident log.|\n\nRESOLVE\nResolve events cause the referenced incident to enter the resolved state. Once an incident is resolved, it won't generate any additional notifications. New trigger events with the same 'incident_key' as a resolved incident won't re-open the incident. Instead, a new incident will be created. Your monitoring tools should send PagerDuty a resolve event when the problem that caused the initial trigger event has been fixed.\n\nResolve object params\n|Name|Type|Required| Description|\n|---|---|---|---|\n|service_key|String|Yes|The GUID of one of your \"Events API\" services. This is the \"service key\" listed on a Generic API's service detail page.|\n|event_type|String|Yes|Set this to \"resolve\".|\n|incident_key|String|Yes|Identifies the incident to resolve. This should be the incident_key you received back when the incident was first opened by a trigger event. Resolve events referencing resolved or nonexistent incidents will be discarded.|\n|description|String|No|Text that will appear in the incident's log associated with this event.|\n|details|Object|No|An arbitrary JSON object containing any data you'd like included in the incident log.|\n",
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/create_event.json",
+            "description": "The API was designed to allow you to easily integrate a monitoring system with a Service in PagerDuty. Monitoring systems generally send out events when problems are detected and when these problems have been resolved (fixed). Some more advanced systems also understand the concept of acknowledgements: problems can be acknowledged by an engineer to signal he or she is working on fixing the issue.\n\nSince monitoring systems emit events, the API is based around accepting events. Incoming events (sent via the API) are routed to a PagerDuty service and processed. They may result in a new incident being created, or an existing incident being acknowledged or resolved.\n\nThe same event-based API can also be used to integrate a PagerDuty service with ticketing systems and various other software tools.\n",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "create_event.json"
+            ]
+        }
+    ],
+    "documentation": [
+        {
+            "title": "Headline",
+            "content": "can not resolve docs/integration/headline.md"
+        }
+    ],
+    "__METADATA__": {
+        "primitiveValuesMeta": {
+            "protocols": {
+                "calculated": true
+            }
+        }
+    }
+}

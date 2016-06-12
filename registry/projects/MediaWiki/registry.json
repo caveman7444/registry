@@ -1,0 +1,12 @@
+{"apis": [
+    {
+        "name": "MediaWiki",
+        "location": "https://raw.githubusercontent.com/raml-apis/MediaWiki/master/api.raml",
+        "RAMLVersion": "1.0"
+    },
+    {
+        "name": "MediaWiki",
+        "location": "https://raw.githubusercontent.com/raml-apis/MediaWiki/raml1.0/api.raml",
+        "RAMLVersion": "1.0"
+    }
+]}

@@ -1,0 +1,1191 @@
+{
+    "uses": [
+        {
+            "key": "types",
+            "value": "types.raml"
+        }
+    ],
+    "traits": [
+        {
+            "uploadMedia": {
+                "queryParameters": {
+                    "uploadType": {
+                        "name": "uploadType",
+                        "displayName": "uploadType",
+                        "type": [
+                            "string"
+                        ],
+                        "repeat": false,
+                        "required": true,
+                        "description": "The type of upload request to the /upload URI. Acceptable values are\n\nmedia - Simple upload. Upload the media only, without any metadata.\n\nmultipart - Multipart upload. Upload both the media and its metadata, in a single request.\n",
+                        "enum": [
+                            "multipart",
+                            "media"
+                        ],
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "securedBy": [
+                    "oauth_2_0"
+                ],
+                "name": "uploadMedia",
+                "__METADATA__": {
+                    "primitiveValuesMeta": {
+                        "securedBy": {
+                            "calculated": true
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "commonParams": {
+                "queryParameters": {
+                    "callback": {
+                        "name": "callback",
+                        "displayName": "callback",
+                        "type": [
+                            "string"
+                        ],
+                        "repeat": false,
+                        "required": true,
+                        "description": "Callback function. Name of the JavaScript callback function that handles the response. Used in JavaScript JSON-P requests.\n",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "fields": {
+                        "name": "fields",
+                        "displayName": "fields",
+                        "type": [
+                            "string"
+                        ],
+                        "repeat": false,
+                        "required": true,
+                        "description": "Selector specifying a subset of fields to include in the response. For more information, see the partial response section in the Performance Tips document. Use for better performance.\n",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "prettyPrint": {
+                        "name": "prettyPrint",
+                        "displayName": "prettyPrint",
+                        "type": [
+                            "boolean"
+                        ],
+                        "default": true,
+                        "repeat": false,
+                        "required": true,
+                        "description": "Returns response with indentations and line breaks. Returns the response in a human-readable format if 'true'. When this is 'false', it can reduce the response payload size, which might lead to better performance in some environments.    \n",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "quotaUser": {
+                        "name": "quotaUser",
+                        "displayName": "quotaUser",
+                        "type": [
+                            "string"
+                        ],
+                        "repeat": false,
+                        "required": true,
+                        "description": "Alternative to 'userIp'. Lets you enforce per-user quotas from a server-side application even in cases when the user's IP address is unknown. This can occur, for example, with applications that run cron jobs on App Engine on a user's behalf. You can choose any arbitrary string that uniquely identifies a user, but it is limited to 40 characters. Overrides 'userIp' if both are provided.\nLearn more about capping usage.\n",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "userIp": {
+                        "name": "userIp",
+                        "displayName": "userIp",
+                        "type": [
+                            "string"
+                        ],
+                        "repeat": false,
+                        "required": true,
+                        "description": "IP address of the end user for whom the API call is being made. Lets you enforce per-user quotas when calling the API from a server-side application. Learn more about capping usage.\n",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "401": {
+                        "code": "401",
+                        "body": {
+                            "application/json": {
+                                "name": "application/json",
+                                "displayName": "application/json",
+                                "schema": [
+                                    "invalidCredentials"
+                                ],
+                                "example": {
+                                    "error": {
+                                        "errors": [
+                                            {
+                                                "domain": "global",
+                                                "reason": "authError",
+                                                "message": "Invalid Credentials",
+                                                "locationType": "header",
+                                                "location": "Authorization"
+                                            }
+                                        ],
+                                        "code": 401,
+                                        "message": "Invalid Credentials"
+                                    }
+                                },
+                                "repeat": false,
+                                "required": true,
+                                "__METADATA__": {
+                                    "primitiveValuesMeta": {
+                                        "displayName": {
+                                            "calculated": true
+                                        },
+                                        "type": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "repeat": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "required": {
+                                            "insertedAsDefault": true
+                                        }
+                                    }
+                                },
+                                "structuredExample": {
+                                    "value": {
+                                        "error": {
+                                            "errors": [
+                                                {
+                                                    "domain": "global",
+                                                    "reason": "authError",
+                                                    "message": "Invalid Credentials",
+                                                    "locationType": "header",
+                                                    "location": "Authorization"
+                                                }
+                                            ],
+                                            "code": 401,
+                                            "message": "Invalid Credentials"
+                                        }
+                                    },
+                                    "strict": true,
+                                    "name": null,
+                                    "structuredValue": {
+                                        "error": {
+                                            "errors": [
+                                                {
+                                                    "domain": "global",
+                                                    "reason": "authError",
+                                                    "message": "Invalid Credentials",
+                                                    "locationType": "header",
+                                                    "location": "Authorization"
+                                                }
+                                            ],
+                                            "code": 401,
+                                            "message": "Invalid Credentials"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "code": "404",
+                        "body": {
+                            "application/json": {
+                                "name": "application/json",
+                                "displayName": "application/json",
+                                "schema": [
+                                    "notFound"
+                                ],
+                                "example": {
+                                    "error": {
+                                        "errors": [
+                                            {
+                                                "domain": "global",
+                                                "reason": "notFound",
+                                                "message": "Not Found"
+                                            }
+                                        ],
+                                        "code": 404,
+                                        "message": "Not Found"
+                                    }
+                                },
+                                "repeat": false,
+                                "required": true,
+                                "__METADATA__": {
+                                    "primitiveValuesMeta": {
+                                        "displayName": {
+                                            "calculated": true
+                                        },
+                                        "type": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "repeat": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "required": {
+                                            "insertedAsDefault": true
+                                        }
+                                    }
+                                },
+                                "structuredExample": {
+                                    "value": {
+                                        "error": {
+                                            "errors": [
+                                                {
+                                                    "domain": "global",
+                                                    "reason": "notFound",
+                                                    "message": "Not Found"
+                                                }
+                                            ],
+                                            "code": 404,
+                                            "message": "Not Found"
+                                        }
+                                    },
+                                    "strict": true,
+                                    "name": null,
+                                    "structuredValue": {
+                                        "error": {
+                                            "errors": [
+                                                {
+                                                    "domain": "global",
+                                                    "reason": "notFound",
+                                                    "message": "Not Found"
+                                                }
+                                            ],
+                                            "code": 404,
+                                            "message": "Not Found"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "securedBy": [
+                    "oauth_2_0"
+                ],
+                "name": "commonParams",
+                "__METADATA__": {
+                    "primitiveValuesMeta": {
+                        "securedBy": {
+                            "calculated": true
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "resourceTypes": [
+        {
+            "baseUpload": {
+                "securedBy": [
+                    "oauth_2_0"
+                ],
+                "name": "baseUpload",
+                "__METADATA__": {
+                    "primitiveValuesMeta": {
+                        "securedBy": {
+                            "calculated": true
+                        }
+                    }
+                },
+                "post": {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "object"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "body": {
+                        "message/rfc822": {
+                            "name": "message/rfc822",
+                            "displayName": "message/rfc822",
+                            "type": [
+                                "object"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "is": [
+                        "uploadMedia",
+                        "commonParams"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "method": "post",
+                    "__METADATA__": {
+                        "optional": true,
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                "put": {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "object"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "body": {
+                        "message/rfc822": {
+                            "name": "message/rfc822",
+                            "displayName": "message/rfc822",
+                            "type": [
+                                "object"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "is": [
+                        "uploadMedia",
+                        "commonParams"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "method": "put",
+                    "__METADATA__": {
+                        "optional": true,
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "securitySchemes": [
+        {
+            "oauth_2_0": {
+                "name": "oauth_2_0",
+                "type": "OAuth 2.0",
+                "description": "",
+                "describedBy": {
+                    "queryParameters": {
+                        "access_token": {
+                            "name": "access_token",
+                            "displayName": "access_token",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "headers": {
+                        "Authorization": {
+                            "name": "Authorization",
+                            "displayName": "Authorization",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"access_token\" queryParameters string parameter.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "settings": {
+                    "accessTokenUri": "https://accounts.google.com/o/oauth2/token",
+                    "authorizationUri": "https://accounts.google.com/o/oauth2/auth",
+                    "authorizationGrants": [
+                        "code"
+                    ],
+                    "scopes": [
+                        "https://mail.google.com/"
+                    ]
+                }
+            }
+        }
+    ],
+    "title": "GMail Media Upload",
+    "version": "v1",
+    "baseUri": "https://www.googleapis.com/upload/gmail/{version}/users",
+    "baseUriParameters": {
+        "version": {
+            "name": "version",
+            "displayName": "version",
+            "type": [
+                "string"
+            ],
+            "repeat": false,
+            "required": true,
+            "enum": [
+                "v1"
+            ],
+            "__METADATA__": {
+                "calculated": true,
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    },
+                    "type": {
+                        "insertedAsDefault": true
+                    },
+                    "repeat": {
+                        "insertedAsDefault": true
+                    },
+                    "required": {
+                        "insertedAsDefault": true
+                    },
+                    "enum": {
+                        "calculated": true
+                    }
+                }
+            }
+        }
+    },
+    "protocols": [
+        "HTTPS"
+    ],
+    "securedBy": [
+        "oauth_2_0"
+    ],
+    "resources": [
+        {
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "uriParameters": {
+                "userId": {
+                    "name": "userId",
+                    "displayName": "userId",
+                    "type": [
+                        "string"
+                    ],
+                    "repeat": false,
+                    "required": true,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "relativeUri": "/{userId}",
+            "displayName": "/{userId}",
+            "resources": [
+                {
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "message/rfc822": {
+                                            "name": "message/rfc822",
+                                            "displayName": "message/rfc822",
+                                            "type": [
+                                                "object"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "Media upload request. Directly inserts a message into only this user's mailbox. Does not send a message.",
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "type": "baseUpload",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "relativeUri": "/messages",
+                    "displayName": "/messages",
+                    "resources": [
+                        {
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "message/rfc822": {
+                                                    "name": "message/rfc822",
+                                                    "displayName": "message/rfc822",
+                                                    "type": [
+                                                        "object"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Media upload request. Sends the specified message to the recipients in the 'To', 'Cc', and 'Bcc' headers.",
+                                    "method": "post",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "type": "baseUpload",
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "relativeUri": "/send",
+                            "displayName": "/send",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "securedBy": {
+                                        "calculated": true
+                                    },
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "send"
+                            ]
+                        },
+                        {
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "message/rfc822": {
+                                                    "name": "message/rfc822",
+                                                    "displayName": "message/rfc822",
+                                                    "type": [
+                                                        "object"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Media upload request. Directly imports a message into only this user's mailbox, similar to receiving via SMTP. Does not send a message.",
+                                    "method": "post",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "type": "baseUpload",
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "relativeUri": "/import",
+                            "displayName": "/import",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "securedBy": {
+                                        "calculated": true
+                                    },
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "import"
+                            ]
+                        }
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "messages"
+                    ]
+                },
+                {
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "message/rfc822": {
+                                            "name": "message/rfc822",
+                                            "displayName": "message/rfc822",
+                                            "type": [
+                                                "object"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "Media upload request. Creates a new draft with the DRAFT label.",
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "type": "baseUpload",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "relativeUri": "/drafts",
+                    "displayName": "/drafts",
+                    "resources": [
+                        {
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "message/rfc822": {
+                                                    "name": "message/rfc822",
+                                                    "displayName": "message/rfc822",
+                                                    "type": [
+                                                        "object"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Media upload request. Replaces a draft's content.",
+                                    "method": "put",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "type": "baseUpload",
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "uriParameters": {
+                                "id": {
+                                    "name": "id",
+                                    "displayName": "id",
+                                    "type": [
+                                        "string"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "calculated": true,
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "relativeUri": "/{id}",
+                            "displayName": "/{id}",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "securedBy": {
+                                        "calculated": true
+                                    },
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "{id}"
+                            ]
+                        },
+                        {
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "message/rfc822": {
+                                                    "name": "message/rfc822",
+                                                    "displayName": "message/rfc822",
+                                                    "type": [
+                                                        "object"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Media upload request. Sends the specified, existing draft to the recipients in the 'To', 'Cc', and 'Bcc' headers. ",
+                                    "method": "post",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "type": "baseUpload",
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "relativeUri": "/send",
+                            "displayName": "/send",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "securedBy": {
+                                        "calculated": true
+                                    },
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "send"
+                            ]
+                        }
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "drafts"
+                    ]
+                }
+            ],
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "{userId}"
+            ]
+        }
+    ],
+    "documentation": [
+        {
+            "title": "Headline",
+            "content": "can not resolve docs/uploadApi/headline.md"
+        }
+    ],
+    "__METADATA__": {
+        "primitiveValuesMeta": {
+            "protocols": {
+                "calculated": true
+            }
+        }
+    }
+}

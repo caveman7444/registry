@@ -1,0 +1,235 @@
+{
+    "title": "PivotalTracker Attachment Download",
+    "version": "v5",
+    "baseUri": "https://www.pivotaltracker.com/",
+    "protocols": [
+        "HTTPS"
+    ],
+    "mediaType": "application/json",
+    "securedBy": [
+        "customSchema"
+    ],
+    "securitySchemes": [
+        {
+            "customSchema": {
+                "name": "customSchema",
+                "type": "x-custom",
+                "describedBy": {
+                    "securedBy": [
+                        "customSchema"
+                    ],
+                    "headers": {
+                        "X-TrackerToken": {
+                            "name": "X-TrackerToken",
+                            "displayName": "X-TrackerToken",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "Specifies the authentication scheme.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "resourceTypes": [
+        {
+            "base": {
+                "name": "base",
+                "securedBy": [
+                    "customSchema"
+                ],
+                "__METADATA__": {
+                    "primitiveValuesMeta": {
+                        "securedBy": {
+                            "calculated": true
+                        }
+                    }
+                },
+                "get": {
+                    "securedBy": [
+                        "customSchema"
+                    ],
+                    "queryParameters": {
+                        "envelope": {
+                            "name": "envelope",
+                            "displayName": "envelope",
+                            "type": "boolean",
+                            "required": false,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "method": "get",
+                    "__METADATA__": {
+                        "optional": true,
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                "delete": {
+                    "responses": {
+                        "204": {
+                            "code": "204"
+                        }
+                    },
+                    "securedBy": [
+                        "customSchema"
+                    ],
+                    "method": "delete",
+                    "__METADATA__": {
+                        "optional": true,
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "resources": [
+        {
+            "relativeUri": "/file_attachments/{file_attachment_id}/download",
+            "type": "base",
+            "securedBy": [
+                "customSchema"
+            ],
+            "uriParameters": {
+                "file_attachment_id": {
+                    "name": "file_attachment_id",
+                    "displayName": "file_attachment_id",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "customSchema"
+                    ],
+                    "queryParameters": {
+                        "inline": {
+                            "name": "inline",
+                            "displayName": "inline",
+                            "type": "boolean",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Determines if server should include response headers that would cause a browser to show the attachment in a new tab or window (inline=true) or show a Save dialog box (inline=false). Default is false.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/file_attachments/{file_attachment_id}/download",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "file_attachments",
+                "{file_attachment_id}",
+                "download"
+            ]
+        }
+    ],
+    "documentation": [
+        {
+            "title": "Headline",
+            "content": "can not resolve docs/attachmentDownload/headline.md"
+        }
+    ],
+    "__METADATA__": {
+        "primitiveValuesMeta": {
+            "protocols": {
+                "calculated": true
+            }
+        }
+    }
+}

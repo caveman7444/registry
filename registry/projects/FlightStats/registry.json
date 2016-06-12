@@ -1,0 +1,12 @@
+{"apis": [
+    {
+        "name": "FlightStats",
+        "location": "https://raw.githubusercontent.com/raml-apis/FlightStats/production/api.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "Flight Status And Track",
+        "location": "https://raw.githubusercontent.com/raml-apis/FlightStats/production/flightStatusAndTrack.raml",
+        "RAMLVersion": "0.8"
+    }
+]}

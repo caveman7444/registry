@@ -1,0 +1,5 @@
+{"apis": [{
+    "name": "Google Predicion",
+    "location": "https://raw.githubusercontent.com/raml-apis/GooglePrediction/staging/api.raml",
+    "RAMLVersion": "0.8"
+}]}

@@ -1,0 +1,12 @@
+{"apis": [
+    {
+        "name": "Get Started with the Freebase API",
+        "location": "https://raw.githubusercontent.com/raml-apis/Freebase/master/api.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "Get Started with the Freebase API",
+        "location": "https://raw.githubusercontent.com/raml-apis/Freebase/staging/api.raml",
+        "RAMLVersion": "0.8"
+    }
+]}

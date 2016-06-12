@@ -1,0 +1,86 @@
+{
+    "title": "Grooveshark API",
+    "version": "3",
+    "baseUri": "http://api.grooveshark.com/ws3.php",
+    "protocols": [
+        "HTTP"
+    ],
+    "schemas": [
+        {
+            "grooveshark": "{\n  \"type\": \"object\",\n  \"$schema\": \"http://json-schema.org/draft-03/schema\",\n  \"required\": true,\n  \"properties\": {\n    \"header\": {\n      \"type\": \"object\",\n      \"required\": true,\n      \"properties\": {\n        \"sessionID\": {\n          \"type\": \"string\",\n          \"required\": true\n        },\n        \"wsKey\": {\n          \"type\": \"string\",\n          \"required\": true\n        }\n      }\n    },\n    \"method\": {\n      \"enum\": [\n        \"addUserLibrarySongs\",\n        \"getUserLibrarySongs\",\n        \"addUserLibrarySongsEx\",\n        \"removeUserLibrarySongs\",\n        \"getUserPlaylistsSubscribed\",\n        \"getUserPlaylists\",\n        \"getUserFavoriteSongs\",\n        \"removeUserFavoriteSongs\",\n        \"logout\",\n        \"authenticateToken\",\n        \"getUserInfo\",\n        \"getUserSubscriptionDetails\",\n        \"addUserFavoriteSong\",\n        \"subscribePlaylist\",\n        \"unsubscribePlaylist\",\n        \"getCountry\",\n        \"getPlaylistInfo\",\n        \"getPopularSongsToday\",\n        \"getPopularSongsMonth\",\n        \"pingService\",\n        \"getServiceDescription\",\n        \"undeletePlaylist\",\n        \"deletePlaylist\",\n        \"getPlaylistSongs\",\n        \"getPlaylist\",\n        \"setPlaylistSongs\",\n        \"createPlaylist\",\n        \"renamePlaylist\",\n        \"authenticate\",\n        \"getUserIDFromUsername\",\n        \"getAlbumsInfo\",\n        \"getAlbumSongs\",\n        \"getArtistsInfo\",\n        \"getSongsInfo\",\n        \"getDoesAlbumExist\",\n        \"getDoesSongExist\",\n        \"getDoesArtistExist\",\n        \"authenticateUser\",\n        \"getArtistVerifiedAlbums\",\n        \"getArtistAlbums\",\n        \"getArtistPopularSongs\",\n        \"getPlaylistSearchResults\",\n        \"getAlbumSearchResults\",\n        \"getSongSearchResults\",\n        \"getArtistSearchResults\",\n        \"getStreamKeyStreamServer\",\n        \"getSongURLFromTinysongBase62\",\n        \"getSongURLFromSongID\",\n        \"getPlaylistURLFromPlaylistID\",\n        \"getTinysongURLFromSongID\",\n        \"getUserPlaylistsByUserID\",\n        \"getUserInfoFromUserID\",\n        \"getSimilarArtists\",\n        \"startSession\",\n        \"getTrialInfo\",\n        \"createTrial\",\n        \"getAutocompleteSearchResults\",\n        \"getSubscriberStreamKey\",\n        \"markStreamKeyOver30Secs\",\n        \"Subscriber streams\",\n        \"markSongComplete\",\n        \"getAutoplaySong\",\n        \"getAutoplayTags\",\n        \"startAutoplayTag\",\n        \"startAutoplay\",\n        \"removeVoteUpAutoplaySong\",\n        \"voteUpAutoplaySong\",\n        \"removeSongFromAutoplay\",\n        \"addSongToAutoplay\",\n        \"voteDownAutoplaySong\",\n        \"removeVoteDownAutoplaySong\",\n        \"getSongIDFromTinysongBase62\",\n        \"registerUser\"\n      ],\n      \"required\": true\n    },\n    \"parameters\": {\n      \"type\": \"object\",\n      \"required\": true,\n      \"properties\": {\n        \"oneOf\": {\n          \"type\": \"array\",\n          \"items\": {\n          }\n        }\n      }\n    }\n  }\n}"
+        }
+    ],
+    "resources": [
+        {
+            "relativeUri": "/",
+            "methods": [
+                {
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "grooveshark",
+                            "schemaContent": "{\n  \"type\": \"object\",\n  \"$schema\": \"http://json-schema.org/draft-03/schema\",\n  \"required\": true,\n  \"properties\": {\n    \"header\": {\n      \"type\": \"object\",\n      \"required\": true,\n      \"properties\": {\n        \"sessionID\": {\n          \"type\": \"string\",\n          \"required\": true\n        },\n        \"wsKey\": {\n          \"type\": \"string\",\n          \"required\": true\n        }\n      }\n    },\n    \"method\": {\n      \"enum\": [\n        \"addUserLibrarySongs\",\n        \"getUserLibrarySongs\",\n        \"addUserLibrarySongsEx\",\n        \"removeUserLibrarySongs\",\n        \"getUserPlaylistsSubscribed\",\n        \"getUserPlaylists\",\n        \"getUserFavoriteSongs\",\n        \"removeUserFavoriteSongs\",\n        \"logout\",\n        \"authenticateToken\",\n        \"getUserInfo\",\n        \"getUserSubscriptionDetails\",\n        \"addUserFavoriteSong\",\n        \"subscribePlaylist\",\n        \"unsubscribePlaylist\",\n        \"getCountry\",\n        \"getPlaylistInfo\",\n        \"getPopularSongsToday\",\n        \"getPopularSongsMonth\",\n        \"pingService\",\n        \"getServiceDescription\",\n        \"undeletePlaylist\",\n        \"deletePlaylist\",\n        \"getPlaylistSongs\",\n        \"getPlaylist\",\n        \"setPlaylistSongs\",\n        \"createPlaylist\",\n        \"renamePlaylist\",\n        \"authenticate\",\n        \"getUserIDFromUsername\",\n        \"getAlbumsInfo\",\n        \"getAlbumSongs\",\n        \"getArtistsInfo\",\n        \"getSongsInfo\",\n        \"getDoesAlbumExist\",\n        \"getDoesSongExist\",\n        \"getDoesArtistExist\",\n        \"authenticateUser\",\n        \"getArtistVerifiedAlbums\",\n        \"getArtistAlbums\",\n        \"getArtistPopularSongs\",\n        \"getPlaylistSearchResults\",\n        \"getAlbumSearchResults\",\n        \"getSongSearchResults\",\n        \"getArtistSearchResults\",\n        \"getStreamKeyStreamServer\",\n        \"getSongURLFromTinysongBase62\",\n        \"getSongURLFromSongID\",\n        \"getPlaylistURLFromPlaylistID\",\n        \"getTinysongURLFromSongID\",\n        \"getUserPlaylistsByUserID\",\n        \"getUserInfoFromUserID\",\n        \"getSimilarArtists\",\n        \"startSession\",\n        \"getTrialInfo\",\n        \"createTrial\",\n        \"getAutocompleteSearchResults\",\n        \"getSubscriberStreamKey\",\n        \"markStreamKeyOver30Secs\",\n        \"Subscriber streams\",\n        \"markSongComplete\",\n        \"getAutoplaySong\",\n        \"getAutoplayTags\",\n        \"startAutoplayTag\",\n        \"startAutoplay\",\n        \"removeVoteUpAutoplaySong\",\n        \"voteUpAutoplaySong\",\n        \"removeSongFromAutoplay\",\n        \"addSongToAutoplay\",\n        \"voteDownAutoplaySong\",\n        \"removeVoteDownAutoplaySong\",\n        \"getSongIDFromTinysongBase62\",\n        \"registerUser\"\n      ],\n      \"required\": true\n    },\n    \"parameters\": {\n      \"type\": \"object\",\n      \"required\": true,\n      \"properties\": {\n        \"oneOf\": {\n          \"type\": \"array\",\n          \"items\": {\n          }\n        }\n      }\n    }\n  }\n}"
+                        }
+                    },
+                    "protocols": [
+                        "HTTP"
+                    ],
+                    "queryParameters": {
+                        "sig": {
+                            "name": "sig",
+                            "displayName": "sig",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "Signature.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "All possible methods are send with this POST request.\n",
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": []
+        }
+    ],
+    "documentation": [
+        {
+            "title": "Headline",
+            "content": "Grooveshark is a Web-based music streaming service. Users upload digital audio files, which can then be streamed and organized in playlists. The Grooveshark website has a search engine, music streaming features, and a music recommendation system."
+        }
+    ],
+    "__METADATA__": {
+        "primitiveValuesMeta": {
+            "protocols": {
+                "calculated": true
+            }
+        }
+    }
+}

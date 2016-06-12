@@ -1,0 +1,12 @@
+{"apis": [
+    {
+        "name": "Google Drive",
+        "location": "https://raw.githubusercontent.com/raml-apis/GoogleDrive/production/api.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "Google Drive Upload",
+        "location": "https://raw.githubusercontent.com/raml-apis/GoogleDrive/production/uploadApi.raml",
+        "RAMLVersion": "0.8"
+    }
+]}

@@ -1,0 +1,1031 @@
+{
+    "title": "Google Drive Upload",
+    "version": "v2",
+    "baseUri": "https://www.googleapis.com/upload/drive/{version}",
+    "baseUriParameters": {
+        "version": {
+            "name": "version",
+            "displayName": "version",
+            "type": "string",
+            "required": true,
+            "repeat": false,
+            "enum": [
+                "v2"
+            ],
+            "__METADATA__": {
+                "calculated": true,
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    },
+                    "type": {
+                        "insertedAsDefault": true
+                    },
+                    "required": {
+                        "insertedAsDefault": true
+                    },
+                    "repeat": {
+                        "insertedAsDefault": true
+                    },
+                    "enum": {
+                        "calculated": true
+                    }
+                }
+            }
+        }
+    },
+    "protocols": [
+        "HTTPS"
+    ],
+    "mediaType": "application/json",
+    "schemas": [
+        {
+            "file": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"kind\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"etag\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"selfLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"webContentLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"webViewLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"alternateLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"embedLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"openWithLinks\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"defaultOpenWithLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"iconLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"thumbnailLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"thumbnail\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"image\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"mimeType\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"title\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"mimeType\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"description\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"labels\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"starred\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"hidden\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"trashed\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"restricted\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"viewed\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"createdDate\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"modifiedDate\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"modifiedByMeDate\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"lastViewedByMeDate\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"markedViewedByMeDate\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"sharedWithMeDate\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"version\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"sharingUser\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"kind\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"displayName\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"picture\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"url\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        } ,\n        \"isAuthenticatedUser\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"permissionId\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"emailAddress\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"parents\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"kind\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"selfLink\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"parentLink\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"isRoot\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    } ,\n    \"downloadUrl\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"exportLinks\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"indexableText\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"text\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"userPermission\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"permissions\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"kind\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"etag\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"selfLink\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"emailAddress\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"domain\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"role\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"additionalRoles\" : {\n              \"type\" : \"array\" ,\n              \"required\" : false ,\n              \"items\" : [\n                {\n                  \"type\" : \"string\"\n                }\n              ]\n            } ,\n            \"type\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"value\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"authKey\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"withLink\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"photoLink\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    } ,\n    \"originalFilename\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"fileExtension\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"md5Checksum\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"fileSize\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"quotaBytesUsed\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ownerNames\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"string\"\n        }\n      ]\n    } ,\n    \"owners\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"kind\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"displayName\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"picture\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"url\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            } ,\n            \"isAuthenticatedUser\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"permissionId\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"emailAddress\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    } ,\n    \"lastModifyingUserName\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"lastModifyingUser\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"kind\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"displayName\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"picture\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"url\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        } ,\n        \"isAuthenticatedUser\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"permissionId\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"emailAddress\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"editable\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"copyable\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"writersCanShare\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"shared\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"explicitlyTrashed\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"appDataContents\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"headRevisionId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"properties\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"kind\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"etag\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"selfLink\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"key\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"visibility\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"value\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    } ,\n    \"folderColorRgb\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"imageMediaMetadata\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"width\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"height\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"rotation\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"location\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"latitude\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"longitude\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"altitude\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        } ,\n        \"date\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"cameraMake\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"cameraModel\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"exposureTime\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"aperture\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"flashUsed\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"focalLength\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"isoSpeed\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"meteringMode\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"sensor\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"exposureMode\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"colorSpace\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"whiteBalance\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"exposureBias\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"maxApertureValue\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"subjectDistance\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"lens\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"videoMediaMetadata\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"width\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"height\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"durationMillis\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+            "newFileRequest": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"title\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        }
+    ],
+    "securedBy": [
+        "oauth_2_0"
+    ],
+    "securitySchemes": [
+        {
+            "oauth_2_0": {
+                "name": "oauth_2_0",
+                "type": "OAuth 2.0",
+                "description": "Google recommend using OAuth 2.0 to authorize requests.\n",
+                "describedBy": {
+                    "responses": {
+                        "401": {
+                            "code": "401",
+                            "description": "Authorization error.\n"
+                        }
+                    },
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "queryParameters": {
+                        "access_token": {
+                            "name": "access_token",
+                            "displayName": "access_token",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Used to send a valid OAuth 2 access token\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "headers": {
+                        "Authorization": {
+                            "name": "Authorization",
+                            "displayName": "Authorization",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Used to send a valid OAuth 2 access token.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                "settings": {
+                    "accessTokenUri": "https://accounts.google.com/o/oauth2/token",
+                    "authorizationUri": "https://accounts.google.com/o/oauth2/auth",
+                    "authorizationGrants": [
+                        "code"
+                    ],
+                    "scopes": [
+                        "https://www.googleapis.com/auth/drive"
+                    ]
+                }
+            }
+        }
+    ],
+    "resources": [
+        {
+            "relativeUri": "/files",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "methods": [
+                {
+                    "responses": {
+                        "201": {
+                            "code": "201",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "file",
+                                    "example": "{\r\n  \"kind\" : \"drive#file\" ,\r\n  \"id\" : \"string\" ,\r\n  \"etag\" : \"etag\" ,\r\n  \"selfLink\" : \"string\" ,\r\n  \"webContentLink\" : \"string\" ,\r\n  \"webViewLink\" : \"string\" ,\r\n  \"alternateLink\" : \"string\" ,\r\n  \"embedLink\" : \"string\" ,\r\n  \"openWithLinks\" : {\r\n  } ,\r\n  \"defaultOpenWithLink\" : \"string\" ,\r\n  \"iconLink\" : \"string\" ,\r\n  \"thumbnailLink\" : \"string\" ,\r\n  \"thumbnail\" : {\r\n    \"image\" : \"bytes\" ,\r\n    \"mimeType\" : \"string\"\r\n  } ,\r\n  \"title\" : \"string\" ,\r\n  \"mimeType\" : \"string\" ,\r\n  \"description\" : \"string\" ,\r\n  \"labels\" : {\r\n    \"starred\" : \"boolean\" ,\r\n    \"hidden\" : \"boolean\" ,\r\n    \"trashed\" : \"boolean\" ,\r\n    \"restricted\" : \"boolean\" ,\r\n    \"viewed\" : \"boolean\"\r\n  } ,\r\n  \"createdDate\" : \"datetime\" ,\r\n  \"modifiedDate\" : \"datetime\" ,\r\n  \"modifiedByMeDate\" : \"datetime\" ,\r\n  \"lastViewedByMeDate\" : \"datetime\" ,\r\n  \"markedViewedByMeDate\" : \"datetime\" ,\r\n  \"sharedWithMeDate\" : \"datetime\" ,\r\n  \"version\" : \"long\" ,\r\n  \"sharingUser\" : {\r\n    \"kind\" : \"drive#user\" ,\r\n    \"displayName\" : \"string\" ,\r\n    \"picture\" : {\r\n      \"url\" : \"string\"\r\n    } ,\r\n    \"isAuthenticatedUser\" : \"boolean\" ,\r\n    \"permissionId\" : \"string\" ,\r\n    \"emailAddress\" : \"string\"\r\n  } ,\r\n  \"parents\" : [\r\n    {\r\n      \"kind\" : \"drive#parentReference\" ,\r\n      \"id\" : \"string\" ,\r\n      \"selfLink\" : \"string\" ,\r\n      \"parentLink\" : \"string\" ,\r\n      \"isRoot\" : \"boolean\"\r\n    }\r\n  ] ,\r\n  \"downloadUrl\" : \"string\" ,\r\n  \"exportLinks\" : {\r\n  } ,\r\n  \"indexableText\" : {\r\n    \"text\" : \"string\"\r\n  } ,\r\n  \"userPermission\" : \"permissions Resource\" ,\r\n  \"permissions\" : [\r\n    {\r\n      \"kind\" : \"drive#permission\" ,\r\n      \"etag\" : \"etag\" ,\r\n      \"id\" : \"string\" ,\r\n      \"selfLink\" : \"string\" ,\r\n      \"name\" : \"string\" ,\r\n      \"emailAddress\" : \"string\" ,\r\n      \"domain\" : \"string\" ,\r\n      \"role\" : \"string\" ,\r\n      \"additionalRoles\" : [\r\n        \"strings\"\r\n      ] ,\r\n      \"type\" : \"string\" ,\r\n      \"value\" : \"string\" ,\r\n      \"authKey\" : \"string\" ,\r\n      \"withLink\" : \"boolean\" ,\r\n      \"photoLink\" : \"string\"\r\n    }\r\n  ] ,\r\n  \"originalFilename\" : \"string\" ,\r\n  \"fileExtension\" : \"string\" ,\r\n  \"md5Checksum\" : \"string\" ,\r\n  \"fileSize\" : \"long\" ,\r\n  \"quotaBytesUsed\" : \"long\" ,\r\n  \"ownerNames\" : [\r\n    \"string\"\r\n  ] ,\r\n  \"owners\" : [\r\n    {\r\n      \"kind\" : \"drive#user\" ,\r\n      \"displayName\" : \"string\" ,\r\n      \"picture\" : {\r\n        \"url\" : \"string\"\r\n      } ,\r\n      \"isAuthenticatedUser\" : \"boolean\" ,\r\n      \"permissionId\" : \"string\" ,\r\n      \"emailAddress\" : \"string\"\r\n    }\r\n  ] ,\r\n  \"lastModifyingUserName\" : \"string\" ,\r\n  \"lastModifyingUser\" : {\r\n    \"kind\" : \"drive#user\" ,\r\n    \"displayName\" : \"string\" ,\r\n    \"picture\" : {\r\n      \"url\" : \"string\"\r\n    } ,\r\n    \"isAuthenticatedUser\" : \"boolean\" ,\r\n    \"permissionId\" : \"string\" ,\r\n    \"emailAddress\" : \"string\"\r\n  } ,\r\n  \"editable\" : \"boolean\" ,\r\n  \"copyable\" : \"boolean\" ,\r\n  \"writersCanShare\" : \"boolean\" ,\r\n  \"shared\" : \"boolean\" ,\r\n  \"explicitlyTrashed\" : \"boolean\" ,\r\n  \"appDataContents\" : \"boolean\" ,\r\n  \"headRevisionId\" : \"string\" ,\r\n  \"properties\" : [\r\n    {\r\n      \"kind\" : \"drive#property\" ,\r\n      \"etag\" : \"etag\" ,\r\n      \"selfLink\" : \"string\" ,\r\n      \"key\" : \"string\" ,\r\n      \"visibility\" : \"string\" ,\r\n      \"value\" : \"string\"\r\n    }\r\n  ] ,\r\n  \"folderColorRgb\" : \"string\" ,\r\n  \"imageMediaMetadata\" : {\r\n    \"width\" : \"integer\" ,\r\n    \"height\" : \"integer\" ,\r\n    \"rotation\" : \"integer\" ,\r\n    \"location\" : {\r\n      \"latitude\" : \"double\" ,\r\n      \"longitude\" : \"double\" ,\r\n      \"altitude\" : \"double\"\r\n    } ,\r\n    \"date\" : \"string\" ,\r\n    \"cameraMake\" : \"string\" ,\r\n    \"cameraModel\" : \"string\" ,\r\n    \"exposureTime\" : \"float\" ,\r\n    \"aperture\" : \"float\" ,\r\n    \"flashUsed\" : \"boolean\" ,\r\n    \"focalLength\" : \"float\" ,\r\n    \"isoSpeed\" : \"integer\" ,\r\n    \"meteringMode\" : \"string\" ,\r\n    \"sensor\" : \"string\" ,\r\n    \"exposureMode\" : \"string\" ,\r\n    \"colorSpace\" : \"string\" ,\r\n    \"whiteBalance\" : \"string\" ,\r\n    \"exposureBias\" : \"float\" ,\r\n    \"maxApertureValue\" : \"float\" ,\r\n    \"subjectDistance\" : \"integer\" ,\r\n    \"lens\" : \"string\"\r\n  } ,\r\n  \"videoMediaMetadata\" : {\r\n    \"width\" : \"integer\" ,\r\n    \"height\" : \"integer\" ,\r\n    \"durationMillis\" : \"long\"\r\n  }\r\n}",
+                                    "schemaContent": "file"
+                                }
+                            }
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "newFileRequest",
+                            "example": "{\r\n  \"title\" : \"string\" ,\r\n  \"description\" : \"string\" ,\r\n  \"labels\" : {\r\n    \"starred\" : \"boolean\" ,\r\n    \"hidden\" : \"boolean\" ,\r\n    \"trashed\" : \"boolean\" ,\r\n    \"restricted\" : \"boolean\" ,\r\n    \"viewed\" : \"boolean\"\r\n  } ,\r\n  \"modifiedDate\" : \"datetime\" ,\r\n  \"lastViewedByMeDate\" : \"datetime\" ,\r\n  \"markedViewedByMeDate\" : \"datetime\" ,\r\n  \"writersCanShare\" : \"boolean\" ,\r\n  \"parents\" : [\r\n    {\r\n      \"kind\" : \"drive#parentReference\" ,\r\n      \"id\" : \"string\" ,\r\n      \"selfLink\" : \"string\" ,\r\n      \"parentLink\" : \"string\" ,\r\n      \"isRoot\" : \"boolean\"\r\n    }\r\n  ] ,\r\n  \"properties\" : [\r\n    {\r\n      \"kind\" : \"drive#property\" ,\r\n      \"etag\" : \"etag\" ,\r\n      \"selfLink\" : \"string\" ,\r\n      \"key\" : \"string\" ,\r\n      \"visibility\" : \"string\" ,\r\n      \"value\" : \"string\"\r\n    }\r\n  ] \r\n}",
+                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"title\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "queryParameters": {
+                        "uploadType": {
+                            "name": "uploadType",
+                            "displayName": "uploadType",
+                            "type": "string",
+                            "required": true,
+                            "example": "multipart",
+                            "repeat": false,
+                            "description": "The type of upload request to the /upload URI. Acceptable values are:\nmedia - Simple upload. Upload the media only, without any metadata.\nmultipart - Multipart upload. Upload both the media and its metadata, in a single request.\nresumable - Resumable upload. Upload the file in a resumable fashion, using a series of at least two requests where the first request includes the metadata.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "convert": {
+                            "name": "convert",
+                            "displayName": "convert",
+                            "type": "boolean",
+                            "required": false,
+                            "default": false,
+                            "example": "false",
+                            "repeat": false,
+                            "description": "Whether to convert this file to the corresponding Google Docs format. (Default: false)",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "ocr": {
+                            "name": "ocr",
+                            "displayName": "ocr",
+                            "type": "boolean",
+                            "required": false,
+                            "default": false,
+                            "example": "false",
+                            "repeat": false,
+                            "description": "Whether to attempt OCR on .jpg, .png, .gif, or .pdf uploads. (Default: false)",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "ocrLanguage": {
+                            "name": "ocrLanguage",
+                            "displayName": "ocrLanguage",
+                            "type": "string",
+                            "required": false,
+                            "example": "ab",
+                            "repeat": false,
+                            "description": "If ocr is true, hints at the language to use. Valid values are ISO 639-1 codes.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "pinned": {
+                            "name": "pinned",
+                            "displayName": "pinned",
+                            "type": "boolean",
+                            "required": false,
+                            "default": false,
+                            "example": "false",
+                            "repeat": false,
+                            "description": "Whether to pin the head revision of the uploaded file. A file can have a maximum of 200 pinned revisions. (Default: false)",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "timedTextLanguage": {
+                            "name": "timedTextLanguage",
+                            "displayName": "timedTextLanguage",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The language of the timed text.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "timedTextTrackName": {
+                            "name": "timedTextTrackName",
+                            "displayName": "timedTextTrackName",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The timed text track name.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "useContentAsIndexableText": {
+                            "name": "useContentAsIndexableText",
+                            "displayName": "useContentAsIndexableText",
+                            "type": "boolean",
+                            "required": false,
+                            "default": false,
+                            "example": "false",
+                            "repeat": false,
+                            "description": "Whether to use the content as indexable text. (Default: false)",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "visibility": {
+                            "name": "visibility",
+                            "displayName": "visibility",
+                            "type": "string",
+                            "required": false,
+                            "example": "DEFAULT",
+                            "repeat": false,
+                            "description": "The visibility of the new file. This parameter is only relevant when convert=false. \n\nAcceptable values are:\n\"DEFAULT\": The visibility of the new file is determined by the user's default visibility/sharing policies. (default)\n\"PRIVATE\": The new file will be visible to only the owner.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "headers": {
+                        "X-Upload-Content-Type": {
+                            "name": "X-Upload-Content-Type",
+                            "displayName": "X-Upload-Content-Type",
+                            "type": "string",
+                            "required": false,
+                            "example": "image/jpeg",
+                            "repeat": false,
+                            "description": "Set to the media MIME type of the upload data to be transferred in subsequent requests.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "X-Upload-Content-Length": {
+                            "name": "X-Upload-Content-Length",
+                            "displayName": "X-Upload-Content-Length",
+                            "type": "string",
+                            "required": false,
+                            "example": "8000000",
+                            "repeat": false,
+                            "description": "Set to the number of bytes of upload data to be transferred in subsequent requests.  If the length is unknown at the time of this request, you can omit this header.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "Insert a new file.",
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "resources": [
+                {
+                    "relativeUri": "/{fileId}",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "fileId": {
+                            "name": "fileId",
+                            "displayName": "fileId",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "file",
+                                            "example": "{\r\n  \"kind\" : \"drive#file\" ,\r\n  \"id\" : \"string\" ,\r\n  \"etag\" : \"etag\" ,\r\n  \"selfLink\" : \"string\" ,\r\n  \"webContentLink\" : \"string\" ,\r\n  \"webViewLink\" : \"string\" ,\r\n  \"alternateLink\" : \"string\" ,\r\n  \"embedLink\" : \"string\" ,\r\n  \"openWithLinks\" : {\r\n  } ,\r\n  \"defaultOpenWithLink\" : \"string\" ,\r\n  \"iconLink\" : \"string\" ,\r\n  \"thumbnailLink\" : \"string\" ,\r\n  \"thumbnail\" : {\r\n    \"image\" : \"bytes\" ,\r\n    \"mimeType\" : \"string\"\r\n  } ,\r\n  \"title\" : \"string\" ,\r\n  \"mimeType\" : \"string\" ,\r\n  \"description\" : \"string\" ,\r\n  \"labels\" : {\r\n    \"starred\" : \"boolean\" ,\r\n    \"hidden\" : \"boolean\" ,\r\n    \"trashed\" : \"boolean\" ,\r\n    \"restricted\" : \"boolean\" ,\r\n    \"viewed\" : \"boolean\"\r\n  } ,\r\n  \"createdDate\" : \"datetime\" ,\r\n  \"modifiedDate\" : \"datetime\" ,\r\n  \"modifiedByMeDate\" : \"datetime\" ,\r\n  \"lastViewedByMeDate\" : \"datetime\" ,\r\n  \"markedViewedByMeDate\" : \"datetime\" ,\r\n  \"sharedWithMeDate\" : \"datetime\" ,\r\n  \"version\" : \"long\" ,\r\n  \"sharingUser\" : {\r\n    \"kind\" : \"drive#user\" ,\r\n    \"displayName\" : \"string\" ,\r\n    \"picture\" : {\r\n      \"url\" : \"string\"\r\n    } ,\r\n    \"isAuthenticatedUser\" : \"boolean\" ,\r\n    \"permissionId\" : \"string\" ,\r\n    \"emailAddress\" : \"string\"\r\n  } ,\r\n  \"parents\" : [\r\n    {\r\n      \"kind\" : \"drive#parentReference\" ,\r\n      \"id\" : \"string\" ,\r\n      \"selfLink\" : \"string\" ,\r\n      \"parentLink\" : \"string\" ,\r\n      \"isRoot\" : \"boolean\"\r\n    }\r\n  ] ,\r\n  \"downloadUrl\" : \"string\" ,\r\n  \"exportLinks\" : {\r\n  } ,\r\n  \"indexableText\" : {\r\n    \"text\" : \"string\"\r\n  } ,\r\n  \"userPermission\" : \"permissions Resource\" ,\r\n  \"permissions\" : [\r\n    {\r\n      \"kind\" : \"drive#permission\" ,\r\n      \"etag\" : \"etag\" ,\r\n      \"id\" : \"string\" ,\r\n      \"selfLink\" : \"string\" ,\r\n      \"name\" : \"string\" ,\r\n      \"emailAddress\" : \"string\" ,\r\n      \"domain\" : \"string\" ,\r\n      \"role\" : \"string\" ,\r\n      \"additionalRoles\" : [\r\n        \"strings\"\r\n      ] ,\r\n      \"type\" : \"string\" ,\r\n      \"value\" : \"string\" ,\r\n      \"authKey\" : \"string\" ,\r\n      \"withLink\" : \"boolean\" ,\r\n      \"photoLink\" : \"string\"\r\n    }\r\n  ] ,\r\n  \"originalFilename\" : \"string\" ,\r\n  \"fileExtension\" : \"string\" ,\r\n  \"md5Checksum\" : \"string\" ,\r\n  \"fileSize\" : \"long\" ,\r\n  \"quotaBytesUsed\" : \"long\" ,\r\n  \"ownerNames\" : [\r\n    \"string\"\r\n  ] ,\r\n  \"owners\" : [\r\n    {\r\n      \"kind\" : \"drive#user\" ,\r\n      \"displayName\" : \"string\" ,\r\n      \"picture\" : {\r\n        \"url\" : \"string\"\r\n      } ,\r\n      \"isAuthenticatedUser\" : \"boolean\" ,\r\n      \"permissionId\" : \"string\" ,\r\n      \"emailAddress\" : \"string\"\r\n    }\r\n  ] ,\r\n  \"lastModifyingUserName\" : \"string\" ,\r\n  \"lastModifyingUser\" : {\r\n    \"kind\" : \"drive#user\" ,\r\n    \"displayName\" : \"string\" ,\r\n    \"picture\" : {\r\n      \"url\" : \"string\"\r\n    } ,\r\n    \"isAuthenticatedUser\" : \"boolean\" ,\r\n    \"permissionId\" : \"string\" ,\r\n    \"emailAddress\" : \"string\"\r\n  } ,\r\n  \"editable\" : \"boolean\" ,\r\n  \"copyable\" : \"boolean\" ,\r\n  \"writersCanShare\" : \"boolean\" ,\r\n  \"shared\" : \"boolean\" ,\r\n  \"explicitlyTrashed\" : \"boolean\" ,\r\n  \"appDataContents\" : \"boolean\" ,\r\n  \"headRevisionId\" : \"string\" ,\r\n  \"properties\" : [\r\n    {\r\n      \"kind\" : \"drive#property\" ,\r\n      \"etag\" : \"etag\" ,\r\n      \"selfLink\" : \"string\" ,\r\n      \"key\" : \"string\" ,\r\n      \"visibility\" : \"string\" ,\r\n      \"value\" : \"string\"\r\n    }\r\n  ] ,\r\n  \"folderColorRgb\" : \"string\" ,\r\n  \"imageMediaMetadata\" : {\r\n    \"width\" : \"integer\" ,\r\n    \"height\" : \"integer\" ,\r\n    \"rotation\" : \"integer\" ,\r\n    \"location\" : {\r\n      \"latitude\" : \"double\" ,\r\n      \"longitude\" : \"double\" ,\r\n      \"altitude\" : \"double\"\r\n    } ,\r\n    \"date\" : \"string\" ,\r\n    \"cameraMake\" : \"string\" ,\r\n    \"cameraModel\" : \"string\" ,\r\n    \"exposureTime\" : \"float\" ,\r\n    \"aperture\" : \"float\" ,\r\n    \"flashUsed\" : \"boolean\" ,\r\n    \"focalLength\" : \"float\" ,\r\n    \"isoSpeed\" : \"integer\" ,\r\n    \"meteringMode\" : \"string\" ,\r\n    \"sensor\" : \"string\" ,\r\n    \"exposureMode\" : \"string\" ,\r\n    \"colorSpace\" : \"string\" ,\r\n    \"whiteBalance\" : \"string\" ,\r\n    \"exposureBias\" : \"float\" ,\r\n    \"maxApertureValue\" : \"float\" ,\r\n    \"subjectDistance\" : \"integer\" ,\r\n    \"lens\" : \"string\"\r\n  } ,\r\n  \"videoMediaMetadata\" : {\r\n    \"width\" : \"integer\" ,\r\n    \"height\" : \"integer\" ,\r\n    \"durationMillis\" : \"long\"\r\n  }\r\n}",
+                                            "schemaContent": "file"
+                                        }
+                                    }
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "newFileRequest",
+                                    "example": "{\r\n  \"title\" : \"string\" ,\r\n  \"description\" : \"string\" ,\r\n  \"labels\" : {\r\n    \"starred\" : \"boolean\" ,\r\n    \"hidden\" : \"boolean\" ,\r\n    \"trashed\" : \"boolean\" ,\r\n    \"restricted\" : \"boolean\" ,\r\n    \"viewed\" : \"boolean\"\r\n  } ,\r\n  \"modifiedDate\" : \"datetime\" ,\r\n  \"lastViewedByMeDate\" : \"datetime\" ,\r\n  \"markedViewedByMeDate\" : \"datetime\" ,\r\n  \"writersCanShare\" : \"boolean\" ,\r\n  \"parents\" : [\r\n    {\r\n      \"kind\" : \"drive#parentReference\" ,\r\n      \"id\" : \"string\" ,\r\n      \"selfLink\" : \"string\" ,\r\n      \"parentLink\" : \"string\" ,\r\n      \"isRoot\" : \"boolean\"\r\n    }\r\n  ] ,\r\n  \"properties\" : [\r\n    {\r\n      \"kind\" : \"drive#property\" ,\r\n      \"etag\" : \"etag\" ,\r\n      \"selfLink\" : \"string\" ,\r\n      \"key\" : \"string\" ,\r\n      \"visibility\" : \"string\" ,\r\n      \"value\" : \"string\"\r\n    }\r\n  ] \r\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"title\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "queryParameters": {
+                                "uploadType": {
+                                    "name": "uploadType",
+                                    "displayName": "uploadType",
+                                    "type": "string",
+                                    "required": true,
+                                    "example": "multipart",
+                                    "repeat": false,
+                                    "description": "The type of upload request to the /upload URI. Acceptable values are:\nmedia - Simple upload. Upload the media only, without any metadata.\nmultipart - Multipart upload. Upload both the media and its metadata, in a single request.\nresumable - Resumable upload. Upload the file in a resumable fashion, using a series of at least two requests where the first request includes the metadata.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "addParents": {
+                                    "name": "addParents",
+                                    "displayName": "addParents",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Comma-separated list of parent IDs to add.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "convert": {
+                                    "name": "convert",
+                                    "displayName": "convert",
+                                    "type": "boolean",
+                                    "required": false,
+                                    "default": false,
+                                    "example": "false",
+                                    "repeat": false,
+                                    "description": "Whether to convert this file to the corresponding Google Docs format. (Default: false)",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "newRevision": {
+                                    "name": "newRevision",
+                                    "displayName": "newRevision",
+                                    "type": "boolean",
+                                    "required": false,
+                                    "default": true,
+                                    "example": "true",
+                                    "repeat": false,
+                                    "description": "Whether a blob upload should create a new revision. If false, the blob data in the current head revision is replaced. If true or not set, a new blob is created as head revision, and previous revisions are preserved (causing increased use of the user's data storage quota). (Default: true)",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "ocr": {
+                                    "name": "ocr",
+                                    "displayName": "ocr",
+                                    "type": "boolean",
+                                    "required": false,
+                                    "default": false,
+                                    "example": "false",
+                                    "repeat": false,
+                                    "description": "Whether to attempt OCR on .jpg, .png, .gif, or .pdf uploads. (Default: false)",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "ocrLanguage": {
+                                    "name": "ocrLanguage",
+                                    "displayName": "ocrLanguage",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "ab",
+                                    "repeat": false,
+                                    "description": "If ocr is true, hints at the language to use. Valid values are ISO 639-1 codes.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "pinned": {
+                                    "name": "pinned",
+                                    "displayName": "pinned",
+                                    "type": "boolean",
+                                    "required": false,
+                                    "default": false,
+                                    "example": "false",
+                                    "repeat": false,
+                                    "description": "Whether to pin the new revision. A file can have a maximum of 200 pinned revisions. (Default: false)",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "removeParents": {
+                                    "name": "removeParents",
+                                    "displayName": "removeParents",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Comma-separated list of parent IDs to remove.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "setModifiedDate": {
+                                    "name": "setModifiedDate",
+                                    "displayName": "setModifiedDate",
+                                    "type": "boolean",
+                                    "required": false,
+                                    "default": false,
+                                    "example": "true",
+                                    "repeat": false,
+                                    "description": "Whether to set the modified date with the supplied modified date. (Default: false)",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "timedTextLanguage": {
+                                    "name": "timedTextLanguage",
+                                    "displayName": "timedTextLanguage",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The language of the timed text.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "timedTextTrackName": {
+                                    "name": "timedTextTrackName",
+                                    "displayName": "timedTextTrackName",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The timed text track name.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "updateViewedDate": {
+                                    "name": "updateViewedDate",
+                                    "displayName": "updateViewedDate",
+                                    "type": "boolean",
+                                    "required": false,
+                                    "default": false,
+                                    "example": "true",
+                                    "repeat": false,
+                                    "description": "Whether to update the view date after successfully updating the file. (Default: true)",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "useContentAsIndexableText": {
+                                    "name": "useContentAsIndexableText",
+                                    "displayName": "useContentAsIndexableText",
+                                    "type": "boolean",
+                                    "required": false,
+                                    "default": false,
+                                    "example": "true",
+                                    "repeat": false,
+                                    "description": "Whether to use the content as indexable text. (Default: false)",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "headers": {
+                                "X-Upload-Content-Type": {
+                                    "name": "X-Upload-Content-Type",
+                                    "displayName": "X-Upload-Content-Type",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "image/jpeg",
+                                    "repeat": false,
+                                    "description": "Set to the media MIME type of the upload data to be transferred in subsequent requests.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "X-Upload-Content-Length": {
+                                    "name": "X-Upload-Content-Length",
+                                    "displayName": "X-Upload-Content-Length",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "8000000",
+                                    "repeat": false,
+                                    "description": "Set to the number of bytes of upload data to be transferred in subsequent requests.  If the length is unknown at the time of this request, you can omit this header.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "description": "Updates file metadata and/or content.",
+                            "method": "put",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "resources": [
+                        {
+                            "relativeUri": "/realtime",
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200"
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "queryParameters": {
+                                        "uploadType": {
+                                            "name": "uploadType",
+                                            "displayName": "uploadType",
+                                            "type": "string",
+                                            "required": true,
+                                            "example": "media",
+                                            "repeat": false,
+                                            "description": "The type of upload request to the /upload URI. Acceptable values are:\nmedia - Simple upload. Upload the media data.\nresumable - Resumable upload. Upload the file in a resumable fashion, using a series of at least two requests.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "baseRevision": {
+                                            "name": "baseRevision",
+                                            "displayName": "baseRevision",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "The revision of the model to diff the uploaded model against. If set, the uploaded model is diffed against the provided revision and those differences are merged with any changes made to the model after the provided revision. If not set, the uploaded model replaces the current model on the server.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "description": "Overwrites the Realtime API data model associated with this file with the provided JSON data model.\n\nThis method supports an /upload URI and accepts uploaded media with the following characteristics:\n\nMaximum file size: 10MB\nAccepted Media MIME types: */*\n\nIf successful, this method returns an empty response body.\n",
+                                    "method": "put",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "displayName": "/realtime",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "securedBy": {
+                                        "calculated": true
+                                    },
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "realtime"
+                            ]
+                        }
+                    ],
+                    "displayName": "/{fileId}",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{fileId}"
+                    ]
+                }
+            ],
+            "displayName": "/files",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "files"
+            ]
+        }
+    ],
+    "documentation": [
+        {
+            "title": "Headline",
+            "content": "can not resolve docs/uploadApi/headline.md"
+        }
+    ],
+    "__METADATA__": {
+        "primitiveValuesMeta": {
+            "protocols": {
+                "calculated": true
+            }
+        }
+    }
+}

@@ -1,0 +1,525 @@
+{
+    "title": "Flickr API",
+    "baseUri": "https://api.flickr.com/services",
+    "protocols": [
+        "HTTPS"
+    ],
+    "schemas": [
+        {
+            "photoPost-xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"ticketid\">\r\n    <xsd:complexType>\r\n      <xsd:sequence/>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+        },
+        {
+            "okResponse-xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"rsp\">\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:element name=\"method\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"format\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"foo\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"api_key\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n      </xsd:sequence>\r\n      <xsd:attribute name=\"stat\" type=\"xsd:normalizedString\" use=\"required\"/>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+        },
+        {
+            "errResponse-xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"rsp\">\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:element name=\"err\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:simpleContent>\r\n              <xsd:extension base=\"xsd:string\">\r\n                <xsd:attribute name=\"code\" type=\"xsd:normalizedString\" use=\"required\"/>\r\n                <xsd:attribute name=\"msg\" type=\"xsd:normalizedString\" use=\"required\"/>\r\n              </xsd:extension>\r\n            </xsd:simpleContent>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n      </xsd:sequence>\r\n      <xsd:attribute name=\"stat\" type=\"xsd:normalizedString\" use=\"required\"/>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+        }
+    ],
+    "resources": [
+        {
+            "relativeUri": "/upload",
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/xml": {
+                                    "name": "application/xml",
+                                    "schema": "photoPost-xml",
+                                    "example": "<ticketid>1234</ticketid>",
+                                    "schemaContent": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"ticketid\">\r\n    <xsd:complexType>\r\n      <xsd:sequence/>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+                                }
+                            }
+                        }
+                    },
+                    "body": {
+                        "multipart/form-data": {
+                            "name": "multipart/form-data",
+                            "formParameters": {
+                                "title": {
+                                    "name": "title",
+                                    "displayName": "title",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The title of the photo.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "photo": {
+                                    "name": "photo",
+                                    "displayName": "photo",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "description": "The file to upload.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "description": {
+                                    "name": "description",
+                                    "displayName": "description",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "A description of the photo. May contain some limited HTML.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "tags ": {
+                                    "name": "tags ",
+                                    "displayName": "tags ",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "A space-seperated list of tags to apply to the photo.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "is_public": {
+                                    "name": "is_public",
+                                    "displayName": "is_public",
+                                    "type": "boolean",
+                                    "required": false,
+                                    "example": "1",
+                                    "repeat": false,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "is_friend": {
+                                    "name": "is_friend",
+                                    "displayName": "is_friend",
+                                    "type": "boolean",
+                                    "required": false,
+                                    "example": "1",
+                                    "repeat": false,
+                                    "description": 0,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "is_family ": {
+                                    "name": "is_family ",
+                                    "displayName": "is_family ",
+                                    "type": "boolean",
+                                    "required": false,
+                                    "example": "1",
+                                    "repeat": false,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "safety_level ": {
+                                    "name": "safety_level ",
+                                    "displayName": "safety_level ",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Set to 1 for Safe, 2 for Moderate, or 3 for Restricted.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "content_type ": {
+                                    "name": "content_type ",
+                                    "displayName": "content_type ",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Set to 1 for Photo, 2 for Screenshot, or 3 for Other.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "hidden ": {
+                                    "name": "hidden ",
+                                    "displayName": "hidden ",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Set to 1 to keep the photo in global search results, 2 to hide from public searches.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "If you're constructing the POST query manually instead of using some sort of service library, it should look something like this. All line endings must be \n.\n",
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/upload",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "upload"
+            ]
+        },
+        {
+            "relativeUri": "/rest",
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/xml": {
+                                    "name": "application/xml",
+                                    "schema": "okResponse-xml",
+                                    "example": "<rsp stat=\"ok\">\r\n<method>flickr.test.echo</method>\r\n<format>rest</format>\r\n<foo>bar</foo>\r\n<api_key>bccf11b5a7b2c299685eb81277294927</api_key>\r\n</rsp>",
+                                    "schemaContent": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"rsp\">\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:element name=\"method\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"format\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"foo\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"api_key\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n      </xsd:sequence>\r\n      <xsd:attribute name=\"stat\" type=\"xsd:normalizedString\" use=\"required\"/>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+                                }
+                            }
+                        },
+                        "400": {
+                            "code": "400",
+                            "body": {
+                                "application/xml": {
+                                    "name": "application/xml",
+                                    "schema": "errResponse-xml",
+                                    "example": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\r\n<rsp stat=\"fail\">\r\n\t<err code=\"error-code\" msg=\"error-message\" />\r\n</rsp>",
+                                    "schemaContent": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"rsp\">\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:element name=\"err\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:simpleContent>\r\n              <xsd:extension base=\"xsd:string\">\r\n                <xsd:attribute name=\"code\" type=\"xsd:normalizedString\" use=\"required\"/>\r\n                <xsd:attribute name=\"msg\" type=\"xsd:normalizedString\" use=\"required\"/>\r\n              </xsd:extension>\r\n            </xsd:simpleContent>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n      </xsd:sequence>\r\n      <xsd:attribute name=\"stat\" type=\"xsd:normalizedString\" use=\"required\"/>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "queryParameters": {
+                        "method": {
+                            "name": "method",
+                            "displayName": "method",
+                            "type": "string",
+                            "required": true,
+                            "example": "flickr.test.echo",
+                            "repeat": false,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "name": {
+                            "name": "name",
+                            "displayName": "name",
+                            "type": "string",
+                            "required": false,
+                            "example": "value",
+                            "repeat": false,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/rest",
+            "description": "REST Request Format\nREST is the simplest request format to use - it's a simple HTTP GET or POST action.\nThe REST Endpoint URL is https://api.flickr.com/services/rest/\n",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "rest"
+            ]
+        },
+        {
+            "relativeUri": "/replace",
+            "methods": [
+                {
+                    "body": {
+                        "multipart/form-data": {
+                            "name": "multipart/form-data",
+                            "formParameters": {
+                                "photo": {
+                                    "name": "photo",
+                                    "displayName": "photo",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "description": "The file to upload.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "photo_id": {
+                                    "name": "photo_id",
+                                    "displayName": "photo_id",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "description": "The ID of the photo to replace.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "async": {
+                                    "name": "async",
+                                    "displayName": "async",
+                                    "type": "boolean",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Photos may be replaced in async mode, for applications that don't want to wait around for an upload to complete, leaving a socket connection open the whole time. Processing photos asynchronously is recommended. Please consult the documentation for details. set to 1 for async mode, 0 for sync mode",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/replace",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "replace"
+            ]
+        }
+    ],
+    "documentation": [
+        {
+            "title": "Headline",
+            "content": "Flickr is an image hosting and video hosting website, and web services suite."
+        }
+    ],
+    "__METADATA__": {
+        "primitiveValuesMeta": {
+            "protocols": {
+                "calculated": true
+            }
+        }
+    }
+}

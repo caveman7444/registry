@@ -1,0 +1,5 @@
+{"apis": [{
+    "name": "Slideshare",
+    "location": "https://raw.githubusercontent.com/raml-apis/SlideShare/production/slideshare.raml",
+    "RAMLVersion": "0.8"
+}]}

@@ -1,0 +1,12 @@
+{"apis": [
+    {
+        "name": "Amazon S3 Buckets",
+        "location": "https://raw.githubusercontent.com/raml-apis/AmazonS3/production/amazonS3Bucket.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "Amazon S3 Services",
+        "location": "https://raw.githubusercontent.com/raml-apis/AmazonS3/production/amazonS3Services.raml",
+        "RAMLVersion": "0.8"
+    }
+]}

@@ -1,0 +1,12 @@
+{"apis": [
+    {
+        "name": "Xero.com API",
+        "location": "https://raw.githubusercontent.com/raml-apis/Xero/master/xeroAPI.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "Xero.com API",
+        "location": "https://raw.githubusercontent.com/raml-apis/Xero/staging/xeroAPI.raml",
+        "RAMLVersion": "0.8"
+    }
+]}

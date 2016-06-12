@@ -1,0 +1,12 @@
+{"apis": [
+    {
+        "name": "Postmark",
+        "location": "https://raw.githubusercontent.com/raml-apis/Postmark/master/api.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "Postmark",
+        "location": "https://raw.githubusercontent.com/raml-apis/Postmark/staging/api.raml",
+        "RAMLVersion": "0.8"
+    }
+]}

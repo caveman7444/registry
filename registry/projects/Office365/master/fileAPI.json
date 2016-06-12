@@ -1,0 +1,783 @@
+{
+    "title": "Files REST API in Office 365",
+    "baseUri": "https://outlook.office365.com/ews/odata/Me",
+    "protocols": [
+        "HTTPS"
+    ],
+    "schemas": [
+        {
+            "newFile": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"__metadata\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"type\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"Name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        }
+    ],
+    "traits": [
+        {
+            "getOption": {
+                "queryParameters": {
+                    "orderby": {
+                        "name": "orderby",
+                        "displayName": "orderby",
+                        "type": "string",
+                        "required": false,
+                        "example": "orderby=<orderbyfield>",
+                        "repeat": false,
+                        "description": "Establishes sort order for a given query result set.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "top": {
+                        "name": "top",
+                        "displayName": "top",
+                        "type": "string",
+                        "required": false,
+                        "example": "top=<row_limit>",
+                        "repeat": false,
+                        "description": "Establishes the number of items returned starting from the top of a given query result set.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "skiptoken": {
+                        "name": "skiptoken",
+                        "displayName": "skiptoken",
+                        "type": "string",
+                        "required": false,
+                        "example": "orderby=<orderbyfield>&skiptoken=<skiptokenvalue>&$take=100",
+                        "repeat": false,
+                        "description": "Skip token",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "name": "getOption"
+            }
+        }
+    ],
+    "resourceTypes": [
+        {
+            "operation": {
+                "name": "operation",
+                "post": {
+                    "responses": {
+                        "201": {
+                            "code": "201",
+                            "description": "The request has been fulfilled and resulted in the creation of a new resource."
+                        }
+                    },
+                    "description": "Working on a file from source location to target location. Note that if the target already exists and you have set overwrite to false, then the operation throws an error.",
+                    "method": "post"
+                }
+            }
+        }
+    ],
+    "resources": [
+        {
+            "relativeUri": "/files",
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "The request completed successfully."
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "Recursively retrieves a list of all files and folder that reside in the default document library.",
+                    "method": "get",
+                    "is": [
+                        "getOption"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "201": {
+                            "code": "201",
+                            "description": "The request has been fulfilled and resulted in the creation of a new resource."
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "newFile",
+                            "example": "{\r\n    '__metadata':\r\n    {\r\n        'type':'MS.FileServices.File'\r\n    },\r\n    Name : ‘<FileName>'\r\n}",
+                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"__metadata\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"type\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"Name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "Creates an empty file and provides it with a name. (If there is no folder in the specified location, the method creates a folder).",
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "resources": [
+                {
+                    "relativeUri": "/Add{name}{overwrite}",
+                    "uriParameters": {
+                        "name": {
+                            "name": "name",
+                            "displayName": "name",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "overwrite": {
+                            "name": "overwrite",
+                            "displayName": "overwrite",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "methods": [
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201",
+                                    "description": "The request has been fulfilled and resulted in the creation of a new resource.\n"
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "Creates a new file and provisions the file with content. Provide the content as a bit stream in the POST body. The body is required. \nUpdates the content in an existing file with content provided as bit stream. Overwriting existing content is optional.\nThe body is required.\n",
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/Add{name}{overwrite}",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "Add{name}{overwrite}"
+                    ]
+                }
+            ],
+            "displayName": "/files",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "files"
+            ]
+        },
+        {
+            "relativeUri": "/files{file_path}",
+            "uriParameters": {
+                "file_path": {
+                    "name": "file_path",
+                    "displayName": "file_path",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "The request completed successfully."
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "Retrieves all of the properties of a specified file.",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "Deletes a specified file",
+                    "method": "delete",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "resources": [
+                {
+                    "relativeUri": "/download",
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "description": "The request completed successfully."
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "Retrieves a file stream comprising the contents of the specified file.",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/download",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "download"
+                    ]
+                },
+                {
+                    "relativeUri": "/{property_name}",
+                    "uriParameters": {
+                        "property_name": {
+                            "name": "property_name",
+                            "displayName": "property_name",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "description": "The request completed successfully."
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "Retrieves a single specified property of the specified file.",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/{property_name}",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{property_name}"
+                    ]
+                },
+                {
+                    "relativeUri": "/MoveTo{file_path}{overwrite}",
+                    "type": "operation",
+                    "uriParameters": {
+                        "file_path": {
+                            "name": "file_path",
+                            "displayName": "file_path",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "overwrite": {
+                            "name": "overwrite",
+                            "displayName": "overwrite",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "displayName": "/MoveTo{file_path}{overwrite}",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "MoveTo{file_path}{overwrite}"
+                    ]
+                },
+                {
+                    "relativeUri": "/CopyTo{file_path}{overwrite}",
+                    "type": "operation",
+                    "uriParameters": {
+                        "file_path": {
+                            "name": "file_path",
+                            "displayName": "file_path",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "overwrite": {
+                            "name": "overwrite",
+                            "displayName": "overwrite",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "displayName": "/CopyTo{file_path}{overwrite}",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "CopyTo{file_path}{overwrite}"
+                    ]
+                }
+            ],
+            "displayName": "/files{file_path}",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "files{file_path}"
+            ]
+        },
+        {
+            "relativeUri": "/files{folder_path}",
+            "uriParameters": {
+                "folder_path": {
+                    "name": "folder_path",
+                    "displayName": "folder_path",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "Returns all of the properties as name/value pairs."
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "Retrieves all of the properties of a specified folder.",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "Deletes a specified folder and all of its contents.",
+                    "method": "delete",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "resources": [
+                {
+                    "relativeUri": "/{property_name}",
+                    "uriParameters": {
+                        "property_name": {
+                            "name": "property_name",
+                            "displayName": "property_name",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "description": "Returns the name/value of the specified property."
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "Retrieves the specified property of a given folder.",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/{property_name}",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{property_name}"
+                    ]
+                },
+                {
+                    "relativeUri": "/Children",
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "description": "Returns all children of the folder."
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "Retrieves the files and/or folders that are direct children of the specified folder.",
+                            "method": "get",
+                            "is": [
+                                "getOption"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/Children",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "Children"
+                    ]
+                }
+            ],
+            "displayName": "/files{folder_path}",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "files{folder_path}"
+            ]
+        }
+    ],
+    "documentation": [
+        {
+            "title": "Headline",
+            "content": "can not resolve docs/fileAPI/headline.md"
+        }
+    ],
+    "__METADATA__": {
+        "primitiveValuesMeta": {
+            "protocols": {
+                "calculated": true
+            }
+        }
+    }
+}

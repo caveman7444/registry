@@ -1,0 +1,12 @@
+{"apis": [
+    {
+        "name": "WordPress API",
+        "location": "https://raw.githubusercontent.com/raml-apis/Wordpress/master/wordpress.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "WordPress API",
+        "location": "https://raw.githubusercontent.com/raml-apis/Wordpress/staging/wordpress.raml",
+        "RAMLVersion": "0.8"
+    }
+]}

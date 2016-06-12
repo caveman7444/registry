@@ -1,0 +1,2520 @@
+{
+    "title": "GMail",
+    "version": "v1",
+    "baseUri": "https://www.googleapis.com/gmail/{version}/users",
+    "baseUriParameters": {
+        "version": {
+            "name": "version",
+            "displayName": "version",
+            "type": "string",
+            "required": true,
+            "repeat": false,
+            "enum": [
+                "v1"
+            ],
+            "__METADATA__": {
+                "calculated": true,
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    },
+                    "type": {
+                        "insertedAsDefault": true
+                    },
+                    "required": {
+                        "insertedAsDefault": true
+                    },
+                    "repeat": {
+                        "insertedAsDefault": true
+                    },
+                    "enum": {
+                        "calculated": true
+                    }
+                }
+            }
+        }
+    },
+    "protocols": [
+        "HTTPS"
+    ],
+    "mediaType": "application/json",
+    "schemas": [
+        {
+            "messageFull": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"threadId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"labelIds\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"string\"\n        }\n      ]\n    } ,\n    \"snippet\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"historyId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"payload\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"mimeType\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"filename\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"headers\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"object\" ,\n              \"properties\" : {\n                \"name\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"value\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            }\n          ]\n        } ,\n        \"body\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"size\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            }\n          }\n        } ,\n        \"parts\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"object\" ,\n              \"properties\" : {\n                \"mimeType\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"filename\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"headers\" : {\n                  \"type\" : \"array\" ,\n                  \"required\" : false ,\n                  \"items\" : [\n                    {\n                      \"type\" : \"object\" ,\n                      \"properties\" : {\n                        \"name\" : {\n                          \"type\" : \"string\" ,\n                          \"required\" : false\n                        } ,\n                        \"value\" : {\n                          \"type\" : \"string\" ,\n                          \"required\" : false\n                        }\n                      }\n                    }\n                  ]\n                } ,\n                \"body\" : {\n                  \"type\" : \"object\" ,\n                  \"required\" : false ,\n                  \"properties\" : {\n                    \"size\" : {\n                      \"type\" : \"number\" ,\n                      \"required\" : false\n                    }\n                  }\n                } ,\n                \"parts\" : {\n                  \"type\" : \"array\" ,\n                  \"required\" : false ,\n                  \"items\" : [\n                  ]\n                }\n              }\n            } , {\n              \"type\" : \"object\" ,\n              \"properties\" : {\n                \"partId\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"mimeType\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"filename\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"headers\" : {\n                  \"type\" : \"array\" ,\n                  \"required\" : false ,\n                  \"items\" : [\n                    {\n                      \"type\" : \"object\" ,\n                      \"properties\" : {\n                        \"name\" : {\n                          \"type\" : \"string\" ,\n                          \"required\" : false\n                        } ,\n                        \"value\" : {\n                          \"type\" : \"string\" ,\n                          \"required\" : false\n                        }\n                      }\n                    }\n                  ]\n                } ,\n                \"body\" : {\n                  \"type\" : \"object\" ,\n                  \"required\" : false ,\n                  \"properties\" : {\n                    \"attachmentId\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"size\" : {\n                      \"type\" : \"number\" ,\n                      \"required\" : false\n                    }\n                  }\n                }\n              }\n            }\n          ]\n        }\n      }\n    } ,\n    \"sizeEstimate\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "invalidCredentials": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"error\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"errors\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"object\" ,\n              \"properties\" : {\n                \"domain\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"reason\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"message\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"locationType\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"location\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            }\n          ]\n        } ,\n        \"code\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"message\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+            "message": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"threadId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"labelIds\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"string\"\n        }\n      ]\n    }\n  }\n}"
+        },
+        {
+            "notFound": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"error\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"errors\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"object\" ,\n              \"properties\" : {\n                \"domain\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"reason\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"message\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            }\n          ]\n        } ,\n        \"code\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"message\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+            "messages": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"messages\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"threadId\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+        },
+        {
+            "messageCreate": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"threadId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"raw\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "messageCreated": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"threadId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }    \n  }\n}"
+        },
+        {
+            "messageImported": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } \n  }\n}"
+        },
+        {
+            "modifyLabels": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"addLabelIds\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"string\"\n        }\n      ]\n    } ,\n    \"removeLabelIds\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"string\"\n        }\n      ]\n    }\n  }\n}"
+        },
+        {
+            "attachment": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"data\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"size\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "drafts": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"drafts\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"message\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"id\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"threadId\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+        },
+        {
+            "draftCreate": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"raw\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "draft": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"message\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"threadId\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"labelIds\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"string\"\n            }\n          ]\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+            "draftSend": "can not resolve schemas/draftSend-schema.json"
+        },
+        {
+            "draftFull": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"message\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"threadId\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"labelIds\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"string\"\n            }\n          ]\n        } ,\n        \"snippet\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"historyId\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"payload\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"mimeType\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"filename\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"headers\" : {\n              \"type\" : \"array\" ,\n              \"required\" : false ,\n              \"items\" : [\n                {\n                  \"type\" : \"object\" ,\n                  \"properties\" : {\n                    \"name\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"value\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    }\n                  }\n                }\n              ]\n            } ,\n            \"body\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"size\" : {\n                  \"type\" : \"number\" ,\n                  \"required\" : false\n                }\n              }\n            } ,\n            \"parts\" : {\n              \"type\" : \"array\" ,\n              \"required\" : false ,\n              \"items\" : [\n                {\n                  \"type\" : \"object\" ,\n                  \"properties\" : {\n                    \"mimeType\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"filename\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"headers\" : {\n                      \"type\" : \"array\" ,\n                      \"required\" : false ,\n                      \"items\" : [\n                        {\n                          \"type\" : \"object\" ,\n                          \"properties\" : {\n                            \"name\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"value\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            }\n                          }\n                        }\n                      ]\n                    } ,\n                    \"body\" : {\n                      \"type\" : \"object\" ,\n                      \"required\" : false ,\n                      \"properties\" : {\n                        \"size\" : {\n                          \"type\" : \"number\" ,\n                          \"required\" : false\n                        }\n                      }\n                    } ,\n                    \"parts\" : {\n                      \"type\" : \"array\" ,\n                      \"required\" : false ,\n                      \"items\" : [\n                        {\n                          \"type\" : \"object\" ,\n                          \"properties\" : {\n                            \"partId\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"mimeType\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"filename\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"headers\" : {\n                              \"type\" : \"array\" ,\n                              \"required\" : false ,\n                              \"items\" : [\n                                {\n                                  \"type\" : \"object\" ,\n                                  \"properties\" : {\n                                    \"name\" : {\n                                      \"type\" : \"string\" ,\n                                      \"required\" : false\n                                    } ,\n                                    \"value\" : {\n                                      \"type\" : \"string\" ,\n                                      \"required\" : false\n                                    }\n                                  }\n                                }\n                              ]\n                            } ,\n                            \"body\" : {\n                              \"type\" : \"object\" ,\n                              \"required\" : false ,\n                              \"properties\" : {\n                                \"size\" : {\n                                  \"type\" : \"number\" ,\n                                  \"required\" : false\n                                } ,\n                                \"data\" : {\n                                  \"type\" : \"string\" ,\n                                  \"required\" : false\n                                }\n                              }\n                            }\n                          }\n                        }\n                      ]\n                    }\n                  }\n                } , {\n                  \"type\" : \"object\" ,\n                  \"properties\" : {\n                    \"partId\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"mimeType\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"filename\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"headers\" : {\n                      \"type\" : \"array\" ,\n                      \"required\" : false ,\n                      \"items\" : [\n                        {\n                          \"type\" : \"object\" ,\n                          \"properties\" : {\n                            \"name\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"value\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            }\n                          }\n                        }\n                      ]\n                    } ,\n                    \"body\" : {\n                      \"type\" : \"object\" ,\n                      \"required\" : false ,\n                      \"properties\" : {\n                        \"attachmentId\" : {\n                          \"type\" : \"string\" ,\n                          \"required\" : false\n                        } ,\n                        \"size\" : {\n                          \"type\" : \"number\" ,\n                          \"required\" : false\n                        }\n                      }\n                    }\n                  }\n                }\n              ]\n            }\n          }\n        } ,\n        \"sizeEstimate\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+            "history": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"history\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"messages\" : {\n              \"type\" : \"array\" ,\n              \"required\" : false ,\n              \"items\" : [\n                {\n                  \"type\" : \"object\" ,\n                  \"properties\" : {\n                    \"id\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"threadId\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    }\n                  }\n                }\n              ]\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+        },
+        {
+            "labels": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"labels\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"messageListVisibility\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"labelListVisibility\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"type\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+        },
+        {
+            "labelCreate": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"labelListVisibility\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"messageListVisibility\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "label": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"labelListVisibility\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"messageListVisibility\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"type\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "threads": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"threads\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"snippet\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"historyId\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+        },
+        {
+            "thread": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"historyId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"messages\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"threadId\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"labelIds\" : {\n              \"type\" : \"array\" ,\n              \"required\" : false ,\n              \"items\" : [\n                {\n                  \"type\" : \"string\"\n                }\n              ]\n            } ,\n            \"snippet\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"historyId\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"payload\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"mimeType\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"filename\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"headers\" : {\n                  \"type\" : \"array\" ,\n                  \"required\" : false ,\n                  \"items\" : [\n                    {\n                      \"type\" : \"object\" ,\n                      \"properties\" : {\n                        \"name\" : {\n                          \"type\" : \"string\" ,\n                          \"required\" : false\n                        } ,\n                        \"value\" : {\n                          \"type\" : \"string\" ,\n                          \"required\" : false\n                        }\n                      }\n                    }\n                  ]\n                } ,\n                \"body\" : {\n                  \"type\" : \"object\" ,\n                  \"required\" : false ,\n                  \"properties\" : {\n                    \"size\" : {\n                      \"type\" : \"number\" ,\n                      \"required\" : false\n                    } ,\n                    \"data\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    }\n                  }\n                }\n              }\n            } ,\n            \"sizeEstimate\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+        },
+        {
+            "profileResponse": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"emailAddress\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"messagesTotal\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"threadsTotal\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"historyId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        }
+    ],
+    "traits": [
+        {
+            "formatted": {
+                "securedBy": [
+                    "oauth_2_0"
+                ],
+                "queryParameters": {
+                    "format": {
+                        "name": "format",
+                        "displayName": "format",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "The format to return the message in. \n\nAcceptable values are\nfull - Returns the parsed email message content in the payload field and the raw field is not used. (default)\n\nminimal - Only returns email message metadata such as identifiers and labels, it does not return the email headers, body, or payload.\n\nraw - Returns the entire email message content in the raw field as a string and the payload field is not used. This includes the identifiers, labels, metadata, MIME structure, and small body parts (typically less than 2KB).\n",
+                        "enum": [
+                            "raw",
+                            "full",
+                            "minimal"
+                        ],
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "name": "formatted",
+                "__METADATA__": {
+                    "primitiveValuesMeta": {
+                        "securedBy": {
+                            "calculated": true
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "query": {
+                "securedBy": [
+                    "oauth_2_0"
+                ],
+                "queryParameters": {
+                    "includeSpamTrash": {
+                        "name": "includeSpamTrash",
+                        "displayName": "includeSpamTrash",
+                        "type": "boolean",
+                        "required": false,
+                        "default": false,
+                        "repeat": false,
+                        "description": "Include <<type|!pluralize>> from SPAM and TRASH in the results.\n",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "labelIds": {
+                        "name": "labelIds",
+                        "displayName": "labelIds",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Only return objects with labels that match all of the specified label IDs.\n",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "q": {
+                        "name": "q",
+                        "displayName": "q",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Only return objects matching the specified query. Supports the same query format as the Gmail search box. For example, \"from:someuser@example.com rfc822msgid: is:unread\".\n",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "name": "query",
+                "__METADATA__": {
+                    "primitiveValuesMeta": {
+                        "securedBy": {
+                            "calculated": true
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "paginated": {
+                "securedBy": [
+                    "oauth_2_0"
+                ],
+                "queryParameters": {
+                    "maxResults": {
+                        "name": "maxResults",
+                        "displayName": "maxResults",
+                        "type": "integer",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Maximum number of <<type|!pluralize>> to return.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "pageToken": {
+                        "name": "pageToken",
+                        "displayName": "pageToken",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Page token to retrieve a specific page of results in the list.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "name": "paginated",
+                "__METADATA__": {
+                    "primitiveValuesMeta": {
+                        "securedBy": {
+                            "calculated": true
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "uploadMetadata": {
+                "securedBy": [
+                    "oauth_2_0"
+                ],
+                "queryParameters": {
+                    "uploadType": {
+                        "name": "uploadType",
+                        "displayName": "uploadType",
+                        "type": "string",
+                        "required": true,
+                        "repeat": false,
+                        "description": "The type of upload request to the /upload URI. Acceptable values are\n\nmultipart - Multipart upload. Upload both the media and its metadata, in a single request.\n\nresumable - Resumable upload. Upload the file in a resumable fashion, using a series of at least two requests where the first request includes the metadata.\n",
+                        "enum": [
+                            "resumable",
+                            "multipart"
+                        ],
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "name": "uploadMetadata",
+                "__METADATA__": {
+                    "primitiveValuesMeta": {
+                        "securedBy": {
+                            "calculated": true
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "commonParams": {
+                "responses": {
+                    "401": {
+                        "code": "401",
+                        "body": {
+                            "application/json": {
+                                "name": "application/json",
+                                "schema": "invalidCredentials",
+                                "example": "{\n  \"error\" : {\n    \"errors\" : [\n      {\n        \"domain\" : \"global\" ,\n        \"reason\" : \"authError\" ,\n        \"message\" : \"Invalid Credentials\" ,\n        \"locationType\" : \"header\" ,\n        \"location\" : \"Authorization\"\n      }\n    ] ,\n    \"code\" : 401 ,\n    \"message\" : \"Invalid Credentials\"\n  }\n}",
+                                "schemaContent": "invalidCredentials"
+                            }
+                        }
+                    },
+                    "404": {
+                        "code": "404",
+                        "body": {
+                            "application/json": {
+                                "name": "application/json",
+                                "schema": "notFound",
+                                "example": "{\n  \"error\" : {\n    \"errors\" : [\n      {\n        \"domain\" : \"global\" ,\n        \"reason\" : \"notFound\" ,\n        \"message\" : \"Not Found\"\n      }\n    ] ,\n    \"code\" : 404 ,\n    \"message\" : \"Not Found\"\n  }\n}",
+                                "schemaContent": "notFound"
+                            }
+                        }
+                    }
+                },
+                "securedBy": [
+                    "oauth_2_0"
+                ],
+                "queryParameters": {
+                    "callback": {
+                        "name": "callback",
+                        "displayName": "callback",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Callback function. Name of the JavaScript callback function that handles the response. Used in JavaScript JSON-P requests.\n",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "fields": {
+                        "name": "fields",
+                        "displayName": "fields",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Selector specifying a subset of fields to include in the response. For more information, see the partial response section in the Performance Tips document. Use for better performance.\n",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "prettyPrint": {
+                        "name": "prettyPrint",
+                        "displayName": "prettyPrint",
+                        "type": "boolean",
+                        "required": false,
+                        "default": true,
+                        "repeat": false,
+                        "description": "Returns response with indentations and line breaks. Returns the response in a human-readable format if 'true'. When this is 'false', it can reduce the response payload size, which might lead to better performance in some environments.    \n",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "quotaUser": {
+                        "name": "quotaUser",
+                        "displayName": "quotaUser",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Alternative to 'userIp'. Lets you enforce per-user quotas from a server-side application even in cases when the user's IP address is unknown. This can occur, for example, with applications that run cron jobs on App Engine on a user's behalf. You can choose any arbitrary string that uniquely identifies a user, but it is limited to 40 characters. Overrides 'userIp' if both are provided.\nLearn more about capping usage.\n",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "userIp": {
+                        "name": "userIp",
+                        "displayName": "userIp",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "IP address of the end user for whom the API call is being made. Lets you enforce per-user quotas when calling the API from a server-side application. Learn more about capping usage.\n",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "name": "commonParams",
+                "__METADATA__": {
+                    "primitiveValuesMeta": {
+                        "securedBy": {
+                            "calculated": true
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "securedBy": [
+        "oauth_2_0"
+    ],
+    "securitySchemes": [
+        {
+            "oauth_2_0": {
+                "name": "oauth_2_0",
+                "type": "OAuth 2.0",
+                "description": "",
+                "describedBy": {
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "queryParameters": {
+                        "access_token": {
+                            "name": "access_token",
+                            "displayName": "access_token",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "headers": {
+                        "Authorization": {
+                            "name": "Authorization",
+                            "displayName": "Authorization",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"access_token\" queryParameters string parameter.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                "settings": {
+                    "accessTokenUri": "https://accounts.google.com/o/oauth2/token",
+                    "authorizationUri": "https://accounts.google.com/o/oauth2/auth",
+                    "authorizationGrants": [
+                        "code"
+                    ],
+                    "scopes": [
+                        "https://mail.google.com/"
+                    ]
+                }
+            }
+        }
+    ],
+    "resourceTypes": [
+        {
+            "base": {
+                "name": "base",
+                "is": [
+                    "commonParams"
+                ],
+                "securedBy": [
+                    "oauth_2_0"
+                ],
+                "__METADATA__": {
+                    "primitiveValuesMeta": {
+                        "securedBy": {
+                            "calculated": true
+                        }
+                    }
+                },
+                "get": {
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "method": "get",
+                    "__METADATA__": {
+                        "optional": true,
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                "post": {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json"
+                                }
+                            }
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json"
+                        }
+                    },
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "method": "post",
+                    "__METADATA__": {
+                        "optional": true,
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                "put": {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json"
+                                }
+                            }
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json"
+                        }
+                    },
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "method": "put",
+                    "__METADATA__": {
+                        "optional": true,
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                "delete": {
+                    "responses": {
+                        "204": {
+                            "code": "204"
+                        }
+                    },
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "method": "delete",
+                    "__METADATA__": {
+                        "optional": true,
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                "patch": {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json"
+                                }
+                            }
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json"
+                        }
+                    },
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "method": "patch",
+                    "__METADATA__": {
+                        "optional": true,
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "resources": [
+        {
+            "relativeUri": "/{userId}",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "uriParameters": {
+                "userId": {
+                    "name": "userId",
+                    "displayName": "userId",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "resources": [
+                {
+                    "relativeUri": "/messages",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "messages",
+                                            "example": "{\n  \"messages\" : [\n    {\n      \"id\" : \"146def0da4f688a4\" ,\n      \"threadId\" : \"146def0d7af53a25\"\n    } , {\n      \"id\" : \"146dee0e3ea27ea7\" ,\n      \"threadId\" : \"146dee0e3ea27ea7\"\n    } , {\n      \"id\" : \"146ded6659787f6a\" ,\n      \"threadId\" : \"146ded6659787f6a\"\n    }\n  ]\n}",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"messages\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"threadId\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "Lists the messages in the user's mailbox.",
+                            "method": "get",
+                            "is": [
+                                {
+                                    "paginated": {
+                                        "type": "message"
+                                    }
+                                },
+                                {
+                                    "query": {
+                                        "type": "message"
+                                    }
+                                }
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "messageCreated",
+                                            "example": "{\r\n  \"id\" : \"146df2af95fffcf2\",\r\n  \"threadId\": \"146deace8d5e7db4\"\r\n}",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"threadId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }    \n  }\n}"
+                                        }
+                                    }
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "messageCreate",
+                                    "example": "{\n  \"threadId\" : \"146df2af95fffcf2\" ,\n  \"raw\" : \"ZXJzaW___NOT_A_VALID_VALUE___zMiB3a\"\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"threadId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"raw\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "Metadata-only request. Directly inserts a message into only this user's mailbox. Does not send a message.",
+                            "method": "post",
+                            "is": [
+                                "uploadMetadata"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "resources": [
+                        {
+                            "relativeUri": "/send",
+                            "type": "base",
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "message",
+                                                    "example": "{\r\n  \"id\" : \"146df2af95fffcf2\" ,\r\n  \"threadId\" : \"146df2af95fffcf2\" ,\r\n  \"labelIds\" : [\r\n    \"SENT\"\r\n  ]\r\n}",
+                                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"threadId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"labelIds\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"string\"\n        }\n      ]\n    }\n  }\n}"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "messageCreate",
+                                            "example": "{\n  \"threadId\" : \"146df2af95fffcf2\" ,\n  \"raw\" : \"ZXJzaW___NOT_A_VALID_VALUE___zMiB3a\"\n}",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"threadId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"raw\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Metadata-only request. Sends the specified message to the recipients in the 'To', 'Cc', and 'Bcc' headers.",
+                                    "method": "post",
+                                    "is": [
+                                        "uploadMetadata"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "displayName": "/send",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "securedBy": {
+                                        "calculated": true
+                                    },
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "send"
+                            ]
+                        },
+                        {
+                            "relativeUri": "/import",
+                            "type": "base",
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "messageImported",
+                                                    "example": "{\r\n  \"id\" : \"146df2af95fffcf2\"\r\n}",
+                                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } \n  }\n}"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "messageCreate",
+                                            "example": "{\n  \"threadId\" : \"146df2af95fffcf2\" ,\n  \"raw\" : \"ZXJzaW___NOT_A_VALID_VALUE___zMiB3a\"\n}",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"threadId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"raw\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Metadata-only request. Directly imports a message into only this user's mailbox, similar to receiving via SMTP. Does not send a message.",
+                                    "method": "post",
+                                    "is": [
+                                        "uploadMetadata"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "displayName": "/import",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "securedBy": {
+                                        "calculated": true
+                                    },
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "import"
+                            ]
+                        },
+                        {
+                            "relativeUri": "/{messageId}",
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "uriParameters": {
+                                "messageId": {
+                                    "name": "messageId",
+                                    "displayName": "messageId",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "__METADATA__": {
+                                        "calculated": true,
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "messageFull",
+                                                    "example": "{\n  \"id\" : \"146df2af95fffcf2\" ,\n  \"threadId\" : \"146df2af95fffcf2\" ,\n  \"labelIds\" : [\n    \"SENT\"\n  ] ,\n  \"snippet\" : \"This message is intended for tests with GMail API Notebooks.\" ,\n  \"historyId\" : \"535336\" ,\n  \"payload\" : {\n    \"mimeType\" : \"multipart/mixed\" ,\n    \"filename\" : \"\" ,\n    \"headers\" : [\n      {\n        \"name\" : \"Received\" ,\n        \"value\" : \"from -0700\"\n      } , {\n        \"name\" : \"MIMEVersion\" ,\n        \"value\" : \"10\"\n      } , {\n        \"name\" : \"Received\" ,\n        \"value\" : \"asdad\"\n      } , {\n        \"name\" : \"Date\" ,\n        \"value\" : \"Fri 27 Jun 2014 14:11:13 -0700\"\n      } , {\n        \"name\" : \"Delivered-To\" ,\n        \"value\" : \"some.other.account@gmail.com\"\n      } , {\n        \"name\" : \"Message-Id\" ,\n        \"value\" : \"003 ___NOT A VALID VALUE__ aTOdfg@mail.gmail.com>\"\n      } , {\n        \"name\" : \"Subject\" ,\n        \"value\" : \"GMail NotebooksTest Message\"\n      } , {\n        \"name\" : \"From\" ,\n        \"value\" : \"some.account@gmail.com\"\n      } , {\n        \"name\" : \"To\" ,\n        \"value\" : \"Jack Jackson <some.other.account@gmail.com>\"\n      } , {\n        \"name\" : \"Content-Type\" ,\n        \"value\" : \"multipart/mixed; boundary=001a11c359f06e359f04fcd5d347\"\n      }\n    ] ,\n    \"body\" : {\n      \"size\" : 0\n    } ,\n    \"parts\" : [\n      {\n        \"mimeType\" : \"multipart/alternative\" ,\n        \"filename\" : \"\" ,\n        \"headers\" : [\n          {\n            \"name\" : \"Content-Type\" ,\n            \"value\" : \"multipart/alternative; boundary=001a11c359f06e358b04fcd5d345\"\n          }\n        ] ,\n        \"body\" : {\n          \"size\" : 0\n        } ,\n        \"parts\" : [\n         \n        ]\n      } , {\n        \"partId\" : \"1\" ,\n        \"mimeType\" : \"text/plain\" ,\n        \"filename\" : \"attachment.txt\" ,\n        \"headers\" : [\n          {\n            \"name\" : \"Content-Type\" ,\n            \"value\" : \"text/plain; charset=US-ASCII; name=attachment.txt\"\n          } , {\n            \"name\" : \"Content-Disposition\" ,\n            \"value\" : \"attachment; filename=attachment.txt\"\n          } , {\n            \"name\" : \"Content-Transfer-Encoding\" ,\n            \"value\" : \"base64\"\n          } , {\n            \"name\" : \"X-Attachment-Id\" ,\n            \"value\" : \"f_hwxuybym0\"\n          }\n        ] ,\n        \"body\" : {\n          \"attachmentId\" : \"ANGj ___NOT A VALID VALUE__ 2pfAA\" ,\n          \"size\" : 82\n        }\n      }\n    ]\n  } ,\n  \"sizeEstimate\" : 1502\n}",
+                                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"threadId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"labelIds\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"string\"\n        }\n      ]\n    } ,\n    \"snippet\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"historyId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"payload\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"mimeType\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"filename\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"headers\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"object\" ,\n              \"properties\" : {\n                \"name\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"value\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            }\n          ]\n        } ,\n        \"body\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"size\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            }\n          }\n        } ,\n        \"parts\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"object\" ,\n              \"properties\" : {\n                \"mimeType\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"filename\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"headers\" : {\n                  \"type\" : \"array\" ,\n                  \"required\" : false ,\n                  \"items\" : [\n                    {\n                      \"type\" : \"object\" ,\n                      \"properties\" : {\n                        \"name\" : {\n                          \"type\" : \"string\" ,\n                          \"required\" : false\n                        } ,\n                        \"value\" : {\n                          \"type\" : \"string\" ,\n                          \"required\" : false\n                        }\n                      }\n                    }\n                  ]\n                } ,\n                \"body\" : {\n                  \"type\" : \"object\" ,\n                  \"required\" : false ,\n                  \"properties\" : {\n                    \"size\" : {\n                      \"type\" : \"number\" ,\n                      \"required\" : false\n                    }\n                  }\n                } ,\n                \"parts\" : {\n                  \"type\" : \"array\" ,\n                  \"required\" : false ,\n                  \"items\" : [\n                  ]\n                }\n              }\n            } , {\n              \"type\" : \"object\" ,\n              \"properties\" : {\n                \"partId\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"mimeType\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"filename\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"headers\" : {\n                  \"type\" : \"array\" ,\n                  \"required\" : false ,\n                  \"items\" : [\n                    {\n                      \"type\" : \"object\" ,\n                      \"properties\" : {\n                        \"name\" : {\n                          \"type\" : \"string\" ,\n                          \"required\" : false\n                        } ,\n                        \"value\" : {\n                          \"type\" : \"string\" ,\n                          \"required\" : false\n                        }\n                      }\n                    }\n                  ]\n                } ,\n                \"body\" : {\n                  \"type\" : \"object\" ,\n                  \"required\" : false ,\n                  \"properties\" : {\n                    \"attachmentId\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"size\" : {\n                      \"type\" : \"number\" ,\n                      \"required\" : false\n                    }\n                  }\n                }\n              }\n            }\n          ]\n        }\n      }\n    } ,\n    \"sizeEstimate\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Gets the specified message.",
+                                    "method": "get",
+                                    "is": [
+                                        "formatted"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Immediately and permanently deletes the specified message. This operation cannot be undone. Prefer 'messages.trash' instead.",
+                                    "method": "delete",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "resources": [
+                                {
+                                    "relativeUri": "/modify",
+                                    "type": "base",
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "methods": [
+                                        {
+                                            "responses": {
+                                                "200": {
+                                                    "code": "200",
+                                                    "body": {
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": "message",
+                                                            "example": "{\r\n  \"id\" : \"146df2af95fffcf2\" ,\r\n  \"threadId\" : \"146df2af95fffcf2\" ,\r\n  \"labelIds\" : [\r\n    \"SENT\"\r\n  ]\r\n}",
+                                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"threadId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"labelIds\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"string\"\n        }\n      ]\n    }\n  }\n}"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "modifyLabels",
+                                                    "example": "{\r\n  \"addLabelIds\" : [\r\n    \"TRASH\"\r\n  ] ,\r\n  \"removeLabelIds\" : [\r\n    \"DRAFT\"\r\n  ]\r\n}",
+                                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"addLabelIds\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"string\"\n        }\n      ]\n    } ,\n    \"removeLabelIds\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"string\"\n        }\n      ]\n    }\n  }\n}"
+                                                }
+                                            },
+                                            "protocols": [
+                                                "HTTPS"
+                                            ],
+                                            "securedBy": [
+                                                "oauth_2_0"
+                                            ],
+                                            "description": "Modifies the labels on the specified message.",
+                                            "method": "post",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "protocols": {
+                                                        "calculated": true
+                                                    },
+                                                    "securedBy": {
+                                                        "calculated": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "displayName": "/modify",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "securedBy": {
+                                                "calculated": true
+                                            },
+                                            "displayName": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    },
+                                    "relativeUriPathSegments": [
+                                        "modify"
+                                    ]
+                                },
+                                {
+                                    "relativeUri": "/untrash",
+                                    "type": "base",
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "methods": [
+                                        {
+                                            "responses": {
+                                                "200": {
+                                                    "code": "200",
+                                                    "body": {
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "example": "{\r\n  \"id\" : \"146df2af95fffcf2\" ,\r\n  \"threadId\" : \"146df2af95fffcf2\" ,\r\n  \"labelIds\" : [\r\n    \"SENT\"\r\n  ]\r\n}"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "protocols": [
+                                                "HTTPS"
+                                            ],
+                                            "securedBy": [
+                                                "oauth_2_0"
+                                            ],
+                                            "description": "Removes the specified message from the trash.",
+                                            "method": "post",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "protocols": {
+                                                        "calculated": true
+                                                    },
+                                                    "securedBy": {
+                                                        "calculated": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "displayName": "/untrash",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "securedBy": {
+                                                "calculated": true
+                                            },
+                                            "displayName": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    },
+                                    "relativeUriPathSegments": [
+                                        "untrash"
+                                    ]
+                                },
+                                {
+                                    "relativeUri": "/trash",
+                                    "type": "base",
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "methods": [
+                                        {
+                                            "responses": {
+                                                "200": {
+                                                    "code": "200",
+                                                    "body": {
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "example": "{\r\n  \"id\" : \"146df2af95fffcf2\" ,\r\n  \"threadId\" : \"146df2af95fffcf2\" ,\r\n  \"labelIds\" : [\r\n    \"SENT\"\r\n  ]\r\n}"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "protocols": [
+                                                "HTTPS"
+                                            ],
+                                            "securedBy": [
+                                                "oauth_2_0"
+                                            ],
+                                            "description": "Moves the specified message to the trash.",
+                                            "method": "post",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "protocols": {
+                                                        "calculated": true
+                                                    },
+                                                    "securedBy": {
+                                                        "calculated": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "displayName": "/trash",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "securedBy": {
+                                                "calculated": true
+                                            },
+                                            "displayName": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    },
+                                    "relativeUriPathSegments": [
+                                        "trash"
+                                    ]
+                                },
+                                {
+                                    "relativeUri": "/attachments/{id}",
+                                    "type": "base",
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "uriParameters": {
+                                        "id": {
+                                            "name": "id",
+                                            "displayName": "id",
+                                            "type": "string",
+                                            "required": true,
+                                            "repeat": false,
+                                            "__METADATA__": {
+                                                "calculated": true,
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "methods": [
+                                        {
+                                            "responses": {
+                                                "200": {
+                                                    "code": "200",
+                                                    "body": {
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": "attachment",
+                                                            "example": "{\n  \"data\" : \"VGhpcy ... va3Mu\" ,\n  \"size\" : 60\n}",
+                                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"data\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"size\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "protocols": [
+                                                "HTTPS"
+                                            ],
+                                            "securedBy": [
+                                                "oauth_2_0"
+                                            ],
+                                            "description": "Gets the specified message attachment.",
+                                            "method": "get",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "protocols": {
+                                                        "calculated": true
+                                                    },
+                                                    "securedBy": {
+                                                        "calculated": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "displayName": "/attachments/{id}",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "securedBy": {
+                                                "calculated": true
+                                            },
+                                            "displayName": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    },
+                                    "relativeUriPathSegments": [
+                                        "attachments",
+                                        "{id}"
+                                    ]
+                                }
+                            ],
+                            "displayName": "/{messageId}",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "securedBy": {
+                                        "calculated": true
+                                    },
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "{messageId}"
+                            ]
+                        }
+                    ],
+                    "displayName": "/messages",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "messages"
+                    ]
+                },
+                {
+                    "relativeUri": "/drafts",
+                    "type": "base",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "drafts",
+                                            "example": "{\n  \"drafts\" : [\n    {\n      \"id\" : \"1471070327411915522\" ,\n      \"message\" : {\n        \"id\" : \"146a4ace3ba42c9a\" ,\n        \"threadId\" : \"14695b233e3e88cf\"\n      }\n    } , {\n      \"id\" : \"1461300452114324943\" ,\n      \"message\" : {\n        \"id\" : \"14479504d6645dcf\" ,\n        \"threadId\" : \"14478e16712ba99e\"\n      }\n    } , {\n      \"id\" : \"1455873611044303806\" ,\n      \"message\" : {\n        \"id\" : \"14344d5701595137\" ,\n        \"threadId\" : \"143393d3242fdf55\"\n      }\n    }\n  ]\n}",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"drafts\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"message\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"id\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"threadId\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "Lists the drafts in the user's mailbox.",
+                            "method": "get",
+                            "is": [
+                                {
+                                    "paginated": {
+                                        "type": "draft"
+                                    }
+                                }
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "draft",
+                                            "example": "{\r\n  \"id\" : \"r3089453976128281045\" ,\r\n  \"message\" : {\r\n    \"id\" : \"146df5663490d72f\" ,\r\n    \"threadId\" : \"146df5663490d72f\" ,\r\n    \"labelIds\" : [\r\n      \"DRAFT\"\r\n    ]\r\n  }\r\n}",
+                                            "schemaContent": "draft"
+                                        }
+                                    }
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "draftCreate",
+                                    "example": "{\r\n  \"raw\" : \"ZXJzaW___NOT_A_VALID_VALUE___zMiB3a\"\r\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"raw\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "Metadata-only request. Creates a new draft with the DRAFT label.",
+                            "method": "post",
+                            "is": [
+                                "uploadMetadata"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "resources": [
+                        {
+                            "relativeUri": "/{id}",
+                            "type": "base",
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "uriParameters": {
+                                "id": {
+                                    "name": "id",
+                                    "displayName": "id",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "__METADATA__": {
+                                        "calculated": true,
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "draftFull",
+                                                    "example": "{\n  \"id\" : \"r3089453976128281045\" ,\n  \"message\" : {\n    \"id\" : \"146df5663490d72f\" ,\n    \"threadId\" : \"146df5663490d72f\" ,\n    \"labelIds\" : [\n      \"DRAFT\"\n    ] ,\n    \"snippet\" : \"This message is intended for tests with GMail API Notebooks.\" ,\n    \"historyId\" : \"535352\" ,\n    \"payload\" : {\n      \"mimeType\" : \"multipart/mixed\" ,\n      \"filename\" : \"\" ,\n      \"headers\" : [\n        {\n          \"name\" : \"Received\" ,\n          \"value\" : \"from 833522106252-kj93b6c68h8dq0438mjuasrvm6bsfjvm.apps.googleusercontent.com named unknown by gmailapi.google.com with HTTPREST; Fri, 27 Jun 2014 14:58:39 -0700\"\n        } , {\n          \"name\" : \"MIME-Version\" ,\n          \"value\" : \"1.0\"\n        } , {\n          \"name\" : \"Received\" ,\n          \"value\" : \"by 10.64.9.232 with HTTP; Fri, 27 Jun 2014 11:53:32 -0700 (PDT)\"\n        } , {\n          \"name\" : \"Date\" ,\n          \"value\" : \"Fri, 27 Jun 2014 14:58:39 -0700\"\n        } , {\n          \"name\" : \"Delivered-To\" ,\n          \"value\" : \"some.other.account@gmail.com\"\n        } , {\n          \"name\" : \"Message-Id\" ,\n          \"value\" : \"<CAEzS4YByT-cDzjGeizmy=zVkgpKnemvvUayfN4EO16tUW9D9Vg@mail.gmail.com>\"\n        } , {\n          \"name\" : \"Subject\" ,\n          \"value\" : \"GMail NotebooksTest Message\"\n        } , {\n          \"name\" : \"From\" ,\n          \"value\" : \"some.account@gmail.com\"\n        } , {\n          \"name\" : \"To\" ,\n          \"value\" : \"Jack Jackson <some.other.account@gmail.com>\"\n        } , {\n          \"name\" : \"Content-Type\" ,\n          \"value\" : \"multipart/mixed; boundary=001a11c359f06e359f04fcd5d347\"\n        }\n      ] ,\n      \"body\" : {\n        \"size\" : 0\n      } ,\n      \"parts\" : [\n        {\n          \"mimeType\" : \"multipart/alternative\" ,\n          \"filename\" : \"\" ,\n          \"headers\" : [\n            {\n              \"name\" : \"Content-Type\" ,\n              \"value\" : \"multipart/alternative; boundary=001a11c359f06e358b04fcd5d345\"\n            }\n          ] ,\n          \"body\" : {\n            \"size\" : 0\n          } ,\n          \"parts\" : [\n            {\n              \"partId\" : \"0.0\" ,\n              \"mimeType\" : \"text/plain\" ,\n              \"filename\" : \"\" ,\n              \"headers\" : [\n                {\n                  \"name\" : \"Content-Type\" ,\n                  \"value\" : \"text/plain; charset=UTF-8\"\n                }\n              ] ,\n              \"body\" : {\n                \"size\" : 62 ,\n                \"data\" : \"VGhpcyBtZXNzYWdlIGlzIGludGVuZGVkIGZvciB0ZXN0cyB3aXRoIEdNYWlsIEFQSSBOb3RlYm9va3MuDQo=\"\n              }\n            } , {\n              \"partId\" : \"0.1\" ,\n              \"mimeType\" : \"text/html\" ,\n              \"filename\" : \"\" ,\n              \"headers\" : [\n                {\n                  \"name\" : \"Content-Type\" ,\n                  \"value\" : \"text/html; charset=UTF-8\"\n                }\n              ] ,\n              \"body\" : {\n                \"size\" : 152 ,\n                \"data\" : \"PGRpdiBkaXI9Imx0ciI-PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OmFyaWFsLHNhbnMtc2VyaWY7Zm9udC1zaXplOjEzcHgiPlRoaXMgbWVzc2FnZSBpcyBpbnRlbmRlZCBmb3IgdGVzdHMgd2l0aCBHTWFpbCBBUEkgTm90ZWJvb2tzLjwvc3Bhbj48YnI-PC9kaXY-DQo=\"\n              }\n            }\n          ]\n        } , {\n          \"partId\" : \"1\" ,\n          \"mimeType\" : \"text/plain\" ,\n          \"filename\" : \"attachment.txt\" ,\n          \"headers\" : [\n            {\n              \"name\" : \"Content-Type\" ,\n              \"value\" : \"text/plain; charset=US-ASCII; name=attachment.txt\"\n            } , {\n              \"name\" : \"Content-Disposition\" ,\n              \"value\" : \"attachment; filename=attachment.txt\"\n            } , {\n              \"name\" : \"Content-Transfer-Encoding\" ,\n              \"value\" : \"base64\"\n            } , {\n              \"name\" : \"X-Attachment-Id\" ,\n              \"value\" : \"f_hwxuybym0\"\n            }\n          ] ,\n          \"body\" : {\n            \"attachmentId\" : \"ANGjdJ-foNW8gRk2isBDOUCrQYihN4d5bI4Ow2XmIc6CbfLMtnolkw654O7JVwdbXrQZ8YHNYlIUfQVsH8ywpGJpaefpFO6imZKemAoDXZjP8NhrUI6aZ9AT89apJYumcxeyK5gGXc0rRnCTo2o8863w2Y0UTww-Vu4O8Ct0OHx5pYsTUF56q3KVaP2zsHI3_4JOr1N7tWFam7gD8sEDDPl17xqKVGJ_4HIJGGq0wAKeS9w4_l_Ssot73zc-_fMaZyCsoWwdguag8m5eFGKEinaEpqrL5vS8K90-H7iEaw\" ,\n            \"size\" : 82\n          }\n        }\n      ]\n    } ,\n    \"sizeEstimate\" : 1502\n  }\n}",
+                                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"message\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"threadId\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"labelIds\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"string\"\n            }\n          ]\n        } ,\n        \"snippet\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"historyId\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"payload\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"mimeType\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"filename\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"headers\" : {\n              \"type\" : \"array\" ,\n              \"required\" : false ,\n              \"items\" : [\n                {\n                  \"type\" : \"object\" ,\n                  \"properties\" : {\n                    \"name\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"value\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    }\n                  }\n                }\n              ]\n            } ,\n            \"body\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"size\" : {\n                  \"type\" : \"number\" ,\n                  \"required\" : false\n                }\n              }\n            } ,\n            \"parts\" : {\n              \"type\" : \"array\" ,\n              \"required\" : false ,\n              \"items\" : [\n                {\n                  \"type\" : \"object\" ,\n                  \"properties\" : {\n                    \"mimeType\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"filename\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"headers\" : {\n                      \"type\" : \"array\" ,\n                      \"required\" : false ,\n                      \"items\" : [\n                        {\n                          \"type\" : \"object\" ,\n                          \"properties\" : {\n                            \"name\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"value\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            }\n                          }\n                        }\n                      ]\n                    } ,\n                    \"body\" : {\n                      \"type\" : \"object\" ,\n                      \"required\" : false ,\n                      \"properties\" : {\n                        \"size\" : {\n                          \"type\" : \"number\" ,\n                          \"required\" : false\n                        }\n                      }\n                    } ,\n                    \"parts\" : {\n                      \"type\" : \"array\" ,\n                      \"required\" : false ,\n                      \"items\" : [\n                        {\n                          \"type\" : \"object\" ,\n                          \"properties\" : {\n                            \"partId\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"mimeType\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"filename\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"headers\" : {\n                              \"type\" : \"array\" ,\n                              \"required\" : false ,\n                              \"items\" : [\n                                {\n                                  \"type\" : \"object\" ,\n                                  \"properties\" : {\n                                    \"name\" : {\n                                      \"type\" : \"string\" ,\n                                      \"required\" : false\n                                    } ,\n                                    \"value\" : {\n                                      \"type\" : \"string\" ,\n                                      \"required\" : false\n                                    }\n                                  }\n                                }\n                              ]\n                            } ,\n                            \"body\" : {\n                              \"type\" : \"object\" ,\n                              \"required\" : false ,\n                              \"properties\" : {\n                                \"size\" : {\n                                  \"type\" : \"number\" ,\n                                  \"required\" : false\n                                } ,\n                                \"data\" : {\n                                  \"type\" : \"string\" ,\n                                  \"required\" : false\n                                }\n                              }\n                            }\n                          }\n                        }\n                      ]\n                    }\n                  }\n                } , {\n                  \"type\" : \"object\" ,\n                  \"properties\" : {\n                    \"partId\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"mimeType\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"filename\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"headers\" : {\n                      \"type\" : \"array\" ,\n                      \"required\" : false ,\n                      \"items\" : [\n                        {\n                          \"type\" : \"object\" ,\n                          \"properties\" : {\n                            \"name\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"value\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            }\n                          }\n                        }\n                      ]\n                    } ,\n                    \"body\" : {\n                      \"type\" : \"object\" ,\n                      \"required\" : false ,\n                      \"properties\" : {\n                        \"attachmentId\" : {\n                          \"type\" : \"string\" ,\n                          \"required\" : false\n                        } ,\n                        \"size\" : {\n                          \"type\" : \"number\" ,\n                          \"required\" : false\n                        }\n                      }\n                    }\n                  }\n                }\n              ]\n            }\n          }\n        } ,\n        \"sizeEstimate\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Gets the specified draft.",
+                                    "method": "get",
+                                    "is": [
+                                        "formatted"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Immediately and permanently deletes the specified draft. Does not simply trash it.",
+                                    "method": "delete",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "draft",
+                                                    "example": "{\r\n  \"id\" : \"r3089453976128281045\" ,\r\n  \"message\" : {\r\n    \"id\" : \"146df5663490d72f\" ,\r\n    \"threadId\" : \"146df5663490d72f\" ,\r\n    \"labelIds\" : [\r\n      \"DRAFT\"\r\n    ]\r\n  }\r\n}",
+                                                    "schemaContent": "draft"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "draftCreate",
+                                            "example": "{\r\n  \"raw\" : \"ZXJzaW___NOT_A_VALID_VALUE___zMiB3a\"\r\n}",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"raw\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Metadata-only request. Replaces a draft's content.",
+                                    "method": "put",
+                                    "is": [
+                                        "uploadMetadata"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "displayName": "/{id}",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "securedBy": {
+                                        "calculated": true
+                                    },
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "{id}"
+                            ]
+                        },
+                        {
+                            "relativeUri": "/send",
+                            "type": "base",
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "draft",
+                                                    "example": "{\r\n  \"id\" : \"r3089453976128281045\" ,\r\n  \"message\" : {\r\n    \"id\" : \"146df5663490d72f\" ,\r\n    \"threadId\" : \"146df5663490d72f\" ,\r\n    \"labelIds\" : [\r\n      \"DRAFT\"\r\n    ]\r\n  }\r\n}",
+                                                    "schemaContent": "draft"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "draftSend",
+                                            "example": "can not resolve examples/draftSend-example.json",
+                                            "schemaContent": "can not resolve schemas/draftSend-schema.json"
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Metadata-only request. Sends the specified, existing draft to the recipients in the 'To', 'Cc', and 'Bcc' headers.",
+                                    "method": "post",
+                                    "is": [
+                                        "uploadMetadata"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "displayName": "/send",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "securedBy": {
+                                        "calculated": true
+                                    },
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "send"
+                            ]
+                        }
+                    ],
+                    "displayName": "/drafts",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "drafts"
+                    ]
+                },
+                {
+                    "relativeUri": "/history",
+                    "type": "base",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "history",
+                                            "example": "{\n  \"history\" : [\n    {\n      \"id\" : \"531980\" ,\n      \"messages\" : [\n        {\n          \"id\" : \"146cdf52784d1e1d\" ,\n          \"threadId\" : \"146cdf1a14adfb6b\"\n        }\n      ]\n    } , {\n      \"id\" : \"532004\" ,\n      \"messages\" : [\n        {\n          \"id\" : \"146cdf6dd2ffc4f4\" ,\n          \"threadId\" : \"146cdf1a14adfb6b\"\n        }\n      ]\n    } , {\n      \"id\" : \"532026\" ,\n      \"messages\" : [\n        {\n          \"id\" : \"146cdf6e37b3df80\" ,\n          \"threadId\" : \"146cdf1a14adfb6b\"\n        }\n      ]\n    }\n  ]\n}",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"history\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"messages\" : {\n              \"type\" : \"array\" ,\n              \"required\" : false ,\n              \"items\" : [\n                {\n                  \"type\" : \"object\" ,\n                  \"properties\" : {\n                    \"id\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"threadId\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    }\n                  }\n                }\n              ]\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "queryParameters": {
+                                "labelId": {
+                                    "name": "labelId",
+                                    "displayName": "labelId",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Only return messages with a label matching the ID.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "startHistoryId": {
+                                    "name": "startHistoryId",
+                                    "displayName": "startHistoryId",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "description": "Returns history records after the specified startHistoryId. The supplied 'startHistoryId' should be obtained from the 'historyId' of a message, thread, or previous 'list' response. History IDs increase chronologically but are not contiguous with random gaps in between valid IDs. Supplying an invalid or out of date 'startHistoryId' typically returns an HTTP 404 error code. A 'historyId' is typically valid for at least a week, but in some circumstances may be valid for only a few hours. If you receive an HTTP 404 error response, your application should perform a full sync. If you receive no 'nextPageToken' in the response, there are no updates to retrieve and you can store the returned 'historyId' for a future request.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "description": "Lists the history of all changes to the given mailbox. History results are returned in chronological order (increasing 'historyId').",
+                            "method": "get",
+                            "is": [
+                                {
+                                    "paginated": {
+                                        "type": "history record"
+                                    }
+                                }
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/history",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "history"
+                    ]
+                },
+                {
+                    "relativeUri": "/labels",
+                    "type": "base",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "labels",
+                                            "example": "{\n  \"labels\" : [\n    {\n      \"id\" : \"DRAFT\" ,\n      \"name\" : \"DRAFT\" ,\n      \"messageListVisibility\" : \"hide\" ,\n      \"labelListVisibility\" : \"labelShow\" ,\n      \"type\" : \"system\"\n    } , {\n      \"id\" : \"CATEGORY_UPDATES\" ,\n      \"name\" : \"CATEGORY_UPDATES\" ,\n      \"type\" : \"system\"\n    } , {\n      \"id\" : \"UNREAD\" ,\n      \"name\" : \"UNREAD\" ,\n      \"type\" : \"system\"\n    }\n  ]\n}",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"labels\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"messageListVisibility\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"labelListVisibility\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"type\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "Lists all labels in the user's mailbox.",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "label",
+                                            "example": "{\r\n  \"id\" : \"Label_4\" ,\r\n  \"labelListVisibility\" : \"labelShow\" ,\r\n  \"messageListVisibility\" : \"show\" ,\r\n  \"name\" : \"API_Notebook\" ,\r\n  \"type\" : \"user\"\r\n}",
+                                            "schemaContent": "label"
+                                        }
+                                    }
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "labelCreate",
+                                    "example": "{\r\n  \"labelListVisibility\" : \"labelShow\" ,\r\n  \"messageListVisibility\" : \"show\" ,\r\n  \"name\" : \"API_Notebook\"\r\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"labelListVisibility\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"messageListVisibility\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "Creates a new label.",
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "resources": [
+                        {
+                            "relativeUri": "/{id}",
+                            "type": "base",
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "uriParameters": {
+                                "id": {
+                                    "name": "id",
+                                    "displayName": "id",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "__METADATA__": {
+                                        "calculated": true,
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "label",
+                                                    "example": "{\r\n  \"id\" : \"Label_4\" ,\r\n  \"labelListVisibility\" : \"labelShow\" ,\r\n  \"messageListVisibility\" : \"show\" ,\r\n  \"name\" : \"API_Notebook\" ,\r\n  \"type\" : \"user\"\r\n}",
+                                                    "schemaContent": "label"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Gets the specified label.",
+                                    "method": "get",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Immediately and permanently deletes the specified label and removes it from any messages and threads that it is applied to.",
+                                    "method": "delete",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "label",
+                                                    "example": "{\r\n  \"id\" : \"Label_4\" ,\r\n  \"labelListVisibility\" : \"labelShow\" ,\r\n  \"messageListVisibility\" : \"show\" ,\r\n  \"name\" : \"API_Notebook\" ,\r\n  \"type\" : \"user\"\r\n}",
+                                                    "schemaContent": "label"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "labelCreate",
+                                            "example": "{\r\n  \"labelListVisibility\" : \"labelShow\" ,\r\n  \"messageListVisibility\" : \"show\" ,\r\n  \"name\" : \"API_Notebook\"\r\n}",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"labelListVisibility\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"messageListVisibility\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Updates the specified label. This method supports patch semantics.",
+                                    "method": "patch",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "label",
+                                                    "example": "{\r\n  \"id\" : \"Label_4\" ,\r\n  \"labelListVisibility\" : \"labelShow\" ,\r\n  \"messageListVisibility\" : \"show\" ,\r\n  \"name\" : \"API_Notebook\" ,\r\n  \"type\" : \"user\"\r\n}",
+                                                    "schemaContent": "label"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "labelCreate",
+                                            "example": "{\r\n  \"labelListVisibility\" : \"labelShow\" ,\r\n  \"messageListVisibility\" : \"show\" ,\r\n  \"name\" : \"API_Notebook\"\r\n}",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"labelListVisibility\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"messageListVisibility\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Updates the specified label.",
+                                    "method": "put",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "displayName": "/{id}",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "securedBy": {
+                                        "calculated": true
+                                    },
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "{id}"
+                            ]
+                        }
+                    ],
+                    "displayName": "/labels",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "labels"
+                    ]
+                },
+                {
+                    "relativeUri": "/threads",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "threads",
+                                            "example": "{\n  \"threads\" : [\n    {\n      \"id\" : \"146df5d64e5cb7dc\" ,\n      \"snippet\" : \"\" ,\n      \"historyId\" : \"535370\"\n    } , {\n      \"id\" : \"146df5663490d72f\" ,\n      \"snippet\" : \"\" ,\n      \"historyId\" : \"535352\"\n    } , {\n      \"id\" : \"146def0d7af53a25\" ,\n      \"snippet\" : \"\" ,\n      \"historyId\" : \"535198\"\n    }\n  ]\n}",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"threads\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"snippet\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"historyId\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "Lists the threads in the user's mailbox.",
+                            "method": "get",
+                            "is": [
+                                {
+                                    "paginated": {
+                                        "type": "thread"
+                                    }
+                                },
+                                {
+                                    "query": {
+                                        "type": "thread"
+                                    }
+                                }
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "resources": [
+                        {
+                            "relativeUri": "/{id}",
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "uriParameters": {
+                                "id": {
+                                    "name": "id",
+                                    "displayName": "id",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "__METADATA__": {
+                                        "calculated": true,
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "thread",
+                                                    "example": "{\r\n  \"id\" : \"146df5d64e5cb7dc\" ,\r\n  \"historyId\" : \"535370\" ,\r\n  \"messages\" : [\r\n    {\r\n      \"id\" : \"146df5d64e5cb7dc\" ,\r\n      \"threadId\" : \"146df5d64e5cb7dc\" ,\r\n      \"labelIds\" : [\r\n        \"SENT\"\r\n      ] ,\r\n      \"snippet\" : \"\" ,\r\n      \"historyId\" : \"535370\" ,\r\n      \"payload\" : {\r\n        \"mimeType\" : \"text/plain\" ,\r\n        \"filename\" : \"\" ,\r\n        \"headers\" : [\r\n          {\r\n            \"name\" : \"Received\" ,\r\n            \"value\" : \"from 833522106252-kj93b6c68h8dq0438mjuasrvm6bsfjvm.apps.googleusercontent.com named unknown by gmailapi.google.com with HTTPREST; Fri, 27 Jun 2014 15:06:18 -0700\"\r\n          } , {\r\n            \"name\" : \"Date\" ,\r\n            \"value\" : \"Fri, 27 Jun 2014 15:06:18 -0700\"\r\n          } , {\r\n            \"name\" : \"Message-Id\" ,\r\n            \"value\" : \"<CAEzS4YC_gro+vJ8aoiccD8emmF=KkBjG12mXOh53+wWsR9YQVQ@mail.gmail.com>\"\r\n          } , {\r\n            \"name\" : \"From\" ,\r\n            \"value\" : \"someaccount@gmail.com\"\r\n          }\r\n        ] ,\r\n        \"body\" : {\r\n          \"size\" : 0 ,\r\n          \"data\" : \"\"\r\n        }\r\n      } ,\r\n      \"sizeEstimate\" : 331\r\n    }\r\n  ]\r\n}",
+                                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"historyId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"messages\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"threadId\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"labelIds\" : {\n              \"type\" : \"array\" ,\n              \"required\" : false ,\n              \"items\" : [\n                {\n                  \"type\" : \"string\"\n                }\n              ]\n            } ,\n            \"snippet\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"historyId\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"payload\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"mimeType\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"filename\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"headers\" : {\n                  \"type\" : \"array\" ,\n                  \"required\" : false ,\n                  \"items\" : [\n                    {\n                      \"type\" : \"object\" ,\n                      \"properties\" : {\n                        \"name\" : {\n                          \"type\" : \"string\" ,\n                          \"required\" : false\n                        } ,\n                        \"value\" : {\n                          \"type\" : \"string\" ,\n                          \"required\" : false\n                        }\n                      }\n                    }\n                  ]\n                } ,\n                \"body\" : {\n                  \"type\" : \"object\" ,\n                  \"required\" : false ,\n                  \"properties\" : {\n                    \"size\" : {\n                      \"type\" : \"number\" ,\n                      \"required\" : false\n                    } ,\n                    \"data\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    }\n                  }\n                }\n              }\n            } ,\n            \"sizeEstimate\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Gets the specified thread.",
+                                    "method": "get",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "description": "Immediately and permanently deletes the specified thread. This operation cannot be undone. Prefer 'threads.trash' instead.",
+                                    "method": "delete",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "resources": [
+                                {
+                                    "relativeUri": "/modify",
+                                    "type": "base",
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "methods": [
+                                        {
+                                            "responses": {
+                                                "200": {
+                                                    "code": "200",
+                                                    "body": {
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": "thread",
+                                                            "example": "{\r\n  \"id\" : \"146df5d64e5cb7dc\" ,\r\n  \"historyId\" : \"535370\" ,\r\n  \"messages\" : [\r\n    {\r\n      \"id\" : \"146df5d64e5cb7dc\" ,\r\n      \"threadId\" : \"146df5d64e5cb7dc\" ,\r\n      \"labelIds\" : [\r\n        \"SENT\"\r\n      ] ,\r\n      \"snippet\" : \"\" ,\r\n      \"historyId\" : \"535370\" ,\r\n      \"payload\" : {\r\n        \"mimeType\" : \"text/plain\" ,\r\n        \"filename\" : \"\" ,\r\n        \"headers\" : [\r\n          {\r\n            \"name\" : \"Received\" ,\r\n            \"value\" : \"from 833522106252-kj93b6c68h8dq0438mjuasrvm6bsfjvm.apps.googleusercontent.com named unknown by gmailapi.google.com with HTTPREST; Fri, 27 Jun 2014 15:06:18 -0700\"\r\n          } , {\r\n            \"name\" : \"Date\" ,\r\n            \"value\" : \"Fri, 27 Jun 2014 15:06:18 -0700\"\r\n          } , {\r\n            \"name\" : \"Message-Id\" ,\r\n            \"value\" : \"<CAEzS4YC_gro+vJ8aoiccD8emmF=KkBjG12mXOh53+wWsR9YQVQ@mail.gmail.com>\"\r\n          } , {\r\n            \"name\" : \"From\" ,\r\n            \"value\" : \"someaccount@gmail.com\"\r\n          }\r\n        ] ,\r\n        \"body\" : {\r\n          \"size\" : 0 ,\r\n          \"data\" : \"\"\r\n        }\r\n      } ,\r\n      \"sizeEstimate\" : 331\r\n    }\r\n  ]\r\n}",
+                                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"historyId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"messages\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"threadId\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"labelIds\" : {\n              \"type\" : \"array\" ,\n              \"required\" : false ,\n              \"items\" : [\n                {\n                  \"type\" : \"string\"\n                }\n              ]\n            } ,\n            \"snippet\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"historyId\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"payload\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"mimeType\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"filename\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"headers\" : {\n                  \"type\" : \"array\" ,\n                  \"required\" : false ,\n                  \"items\" : [\n                    {\n                      \"type\" : \"object\" ,\n                      \"properties\" : {\n                        \"name\" : {\n                          \"type\" : \"string\" ,\n                          \"required\" : false\n                        } ,\n                        \"value\" : {\n                          \"type\" : \"string\" ,\n                          \"required\" : false\n                        }\n                      }\n                    }\n                  ]\n                } ,\n                \"body\" : {\n                  \"type\" : \"object\" ,\n                  \"required\" : false ,\n                  \"properties\" : {\n                    \"size\" : {\n                      \"type\" : \"number\" ,\n                      \"required\" : false\n                    } ,\n                    \"data\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    }\n                  }\n                }\n              }\n            } ,\n            \"sizeEstimate\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "modifyLabels",
+                                                    "example": "{\r\n  \"addLabelIds\" : [\r\n    \"TRASH\"\r\n  ] ,\r\n  \"removeLabelIds\" : [\r\n    \"DRAFT\"\r\n  ]\r\n}",
+                                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"addLabelIds\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"string\"\n        }\n      ]\n    } ,\n    \"removeLabelIds\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"string\"\n        }\n      ]\n    }\n  }\n}"
+                                                }
+                                            },
+                                            "protocols": [
+                                                "HTTPS"
+                                            ],
+                                            "securedBy": [
+                                                "oauth_2_0"
+                                            ],
+                                            "description": "Modifies the labels applied to the thread. This applies to all messages in the thread.",
+                                            "method": "post",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "protocols": {
+                                                        "calculated": true
+                                                    },
+                                                    "securedBy": {
+                                                        "calculated": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "displayName": "/modify",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "securedBy": {
+                                                "calculated": true
+                                            },
+                                            "displayName": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    },
+                                    "relativeUriPathSegments": [
+                                        "modify"
+                                    ]
+                                },
+                                {
+                                    "relativeUri": "/trash",
+                                    "type": "base",
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "methods": [
+                                        {
+                                            "responses": {
+                                                "200": {
+                                                    "code": "200",
+                                                    "body": {
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "example": "{\r\n  \"id\" : \"146df5d64e5cb7dc\" ,\r\n  \"historyId\" : \"535370\" ,\r\n  \"messages\" : [\r\n    {\r\n      \"id\" : \"146df5d64e5cb7dc\" ,\r\n      \"threadId\" : \"146df5d64e5cb7dc\" ,\r\n      \"labelIds\" : [\r\n        \"SENT\"\r\n      ] ,\r\n      \"snippet\" : \"\" ,\r\n      \"historyId\" : \"535370\" ,\r\n      \"payload\" : {\r\n        \"mimeType\" : \"text/plain\" ,\r\n        \"filename\" : \"\" ,\r\n        \"headers\" : [\r\n          {\r\n            \"name\" : \"Received\" ,\r\n            \"value\" : \"from 833522106252-kj93b6c68h8dq0438mjuasrvm6bsfjvm.apps.googleusercontent.com named unknown by gmailapi.google.com with HTTPREST; Fri, 27 Jun 2014 15:06:18 -0700\"\r\n          } , {\r\n            \"name\" : \"Date\" ,\r\n            \"value\" : \"Fri, 27 Jun 2014 15:06:18 -0700\"\r\n          } , {\r\n            \"name\" : \"Message-Id\" ,\r\n            \"value\" : \"<CAEzS4YC_gro+vJ8aoiccD8emmF=KkBjG12mXOh53+wWsR9YQVQ@mail.gmail.com>\"\r\n          } , {\r\n            \"name\" : \"From\" ,\r\n            \"value\" : \"someaccount@gmail.com\"\r\n          }\r\n        ] ,\r\n        \"body\" : {\r\n          \"size\" : 0 ,\r\n          \"data\" : \"\"\r\n        }\r\n      } ,\r\n      \"sizeEstimate\" : 331\r\n    }\r\n  ]\r\n}"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "protocols": [
+                                                "HTTPS"
+                                            ],
+                                            "securedBy": [
+                                                "oauth_2_0"
+                                            ],
+                                            "description": "Moves the specified thread to the trash.",
+                                            "method": "post",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "protocols": {
+                                                        "calculated": true
+                                                    },
+                                                    "securedBy": {
+                                                        "calculated": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "displayName": "/trash",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "securedBy": {
+                                                "calculated": true
+                                            },
+                                            "displayName": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    },
+                                    "relativeUriPathSegments": [
+                                        "trash"
+                                    ]
+                                },
+                                {
+                                    "relativeUri": "/untrash",
+                                    "type": "base",
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "methods": [
+                                        {
+                                            "responses": {
+                                                "200": {
+                                                    "code": "200",
+                                                    "body": {
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "example": "{\r\n  \"id\" : \"146df5d64e5cb7dc\" ,\r\n  \"historyId\" : \"535370\" ,\r\n  \"messages\" : [\r\n    {\r\n      \"id\" : \"146df5d64e5cb7dc\" ,\r\n      \"threadId\" : \"146df5d64e5cb7dc\" ,\r\n      \"labelIds\" : [\r\n        \"SENT\"\r\n      ] ,\r\n      \"snippet\" : \"\" ,\r\n      \"historyId\" : \"535370\" ,\r\n      \"payload\" : {\r\n        \"mimeType\" : \"text/plain\" ,\r\n        \"filename\" : \"\" ,\r\n        \"headers\" : [\r\n          {\r\n            \"name\" : \"Received\" ,\r\n            \"value\" : \"from 833522106252-kj93b6c68h8dq0438mjuasrvm6bsfjvm.apps.googleusercontent.com named unknown by gmailapi.google.com with HTTPREST; Fri, 27 Jun 2014 15:06:18 -0700\"\r\n          } , {\r\n            \"name\" : \"Date\" ,\r\n            \"value\" : \"Fri, 27 Jun 2014 15:06:18 -0700\"\r\n          } , {\r\n            \"name\" : \"Message-Id\" ,\r\n            \"value\" : \"<CAEzS4YC_gro+vJ8aoiccD8emmF=KkBjG12mXOh53+wWsR9YQVQ@mail.gmail.com>\"\r\n          } , {\r\n            \"name\" : \"From\" ,\r\n            \"value\" : \"someaccount@gmail.com\"\r\n          }\r\n        ] ,\r\n        \"body\" : {\r\n          \"size\" : 0 ,\r\n          \"data\" : \"\"\r\n        }\r\n      } ,\r\n      \"sizeEstimate\" : 331\r\n    }\r\n  ]\r\n}"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "protocols": [
+                                                "HTTPS"
+                                            ],
+                                            "securedBy": [
+                                                "oauth_2_0"
+                                            ],
+                                            "description": "Removes the specified thread from the trash.",
+                                            "method": "post",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "protocols": {
+                                                        "calculated": true
+                                                    },
+                                                    "securedBy": {
+                                                        "calculated": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "displayName": "/untrash",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "securedBy": {
+                                                "calculated": true
+                                            },
+                                            "displayName": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    },
+                                    "relativeUriPathSegments": [
+                                        "untrash"
+                                    ]
+                                }
+                            ],
+                            "displayName": "/{id}",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "securedBy": {
+                                        "calculated": true
+                                    },
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "{id}"
+                            ]
+                        }
+                    ],
+                    "displayName": "/threads",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "threads"
+                    ]
+                },
+                {
+                    "relativeUri": "/profile",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "profileResponse",
+                                            "example": "{\n  \"emailAddress\" : \"string\" ,\n  \"messagesTotal\" : \"integer\" ,\n  \"threadsTotal\" : \"integer\" ,\n  \"historyId\" : \"unsigned long\"\n}",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"emailAddress\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"messagesTotal\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"threadsTotal\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"historyId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/profile",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "profile"
+                    ]
+                }
+            ],
+            "displayName": "/{userId}",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "{userId}"
+            ]
+        }
+    ],
+    "documentation": [
+        {
+            "title": "Headline",
+            "content": "can not resolve docs/api/headline.md"
+        }
+    ],
+    "__METADATA__": {
+        "primitiveValuesMeta": {
+            "protocols": {
+                "calculated": true
+            }
+        }
+    }
+}

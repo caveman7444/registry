@@ -1,0 +1,5 @@
+{"apis": [{
+    "name": "BlockScore",
+    "location": "https://raw.githubusercontent.com/raml-apis/BlockScore/staging/api.raml",
+    "RAMLVersion": "0.8"
+}]}

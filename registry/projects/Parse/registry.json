@@ -1,0 +1,5 @@
+{"apis": [{
+    "name": "Parse",
+    "location": "https://raw.githubusercontent.com/raml-apis/Parse/production/parse.raml",
+    "RAMLVersion": "0.8"
+}]}

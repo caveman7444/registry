@@ -1,0 +1,17 @@
+{"apis": [
+    {
+        "name": "Google Calendar",
+        "location": "https://raw.githubusercontent.com/raml-apis/GoogleCalendar/production/api.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "Google Calendar",
+        "location": "https://raw.githubusercontent.com/raml-apis/GoogleCalendar/raml1.0/api.raml",
+        "RAMLVersion": "1.0"
+    },
+    {
+        "name": "",
+        "location": "https://raw.githubusercontent.com/raml-apis/GoogleCalendar/raml1.0/types.raml",
+        "RAMLVersion": "1.0 Library"
+    }
+]}

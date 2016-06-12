@@ -1,0 +1,5 @@
+{"apis": [{
+    "name": "Stripe",
+    "location": "https://raw.githubusercontent.com/raml-apis/Stripe/production/stripe.raml",
+    "RAMLVersion": "0.8"
+}]}

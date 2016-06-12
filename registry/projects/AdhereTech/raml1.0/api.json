@@ -1,0 +1,4074 @@
+{
+    "uses": [
+        {
+            "key": "types",
+            "value": "types/types.raml"
+        }
+    ],
+    "securitySchemes": [
+        {
+            "auth": {
+                "name": "auth",
+                "type": "Basic Authentication"
+            }
+        }
+    ],
+    "title": "AdhereTech External API",
+    "description": "An API designed to expose AdhereTech server's data to clients and other services.",
+    "version": "v1",
+    "baseUri": "adheretech.com/api/{version}",
+    "baseUriParameters": {
+        "version": {
+            "name": "version",
+            "displayName": "version",
+            "type": [
+                "string"
+            ],
+            "repeat": false,
+            "required": true,
+            "enum": [
+                "v1"
+            ],
+            "__METADATA__": {
+                "calculated": true,
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    },
+                    "type": {
+                        "insertedAsDefault": true
+                    },
+                    "repeat": {
+                        "insertedAsDefault": true
+                    },
+                    "required": {
+                        "insertedAsDefault": true
+                    },
+                    "enum": {
+                        "calculated": true
+                    }
+                }
+            }
+        }
+    },
+    "protocols": [
+        "HTTPS"
+    ],
+    "resources": [
+        {
+            "methods": [
+                {
+                    "queryParameters": {
+                        "isActive": {
+                            "name": "isActive",
+                            "displayName": "isActive",
+                            "type": [
+                                "boolean"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Flag that indicates if bottle is active.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "remindersActive": {
+                            "name": "remindersActive",
+                            "displayName": "remindersActive",
+                            "type": [
+                                "boolean"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Flag that indicates if reminders are active.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "onBottleLights": {
+                            "name": "onBottleLights",
+                            "displayName": "onBottleLights",
+                            "type": [
+                                "boolean"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Flag that indicates if visual alarms are active.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "onBottleSounds": {
+                            "name": "onBottleSounds",
+                            "displayName": "onBottleSounds",
+                            "type": [
+                                "boolean"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Flag that indicates if auditory alarms are active.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "feedbackActive": {
+                            "name": "feedbackActive",
+                            "displayName": "feedbackActive",
+                            "type": [
+                                "boolean"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Flag that indicates if feedback requests are active.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "patientUid": {
+                            "name": "patientUid",
+                            "displayName": "patientUid",
+                            "type": [
+                                "integer"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The ID of the patient using this bottle.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "page": {
+                            "name": "page",
+                            "displayName": "page",
+                            "type": [
+                                "integer"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Current front-end page number; required for pagination.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "itemsPerPage": {
+                            "name": "itemsPerPage",
+                            "displayName": "itemsPerPage",
+                            "type": [
+                                "integer"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Current front-end items per page value; required for pagination.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "sort": {
+                            "name": "sort",
+                            "displayName": "sort",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Attribute(s) and order(s) to sort by in the following example format - \"uid desc, timeoccurred asc\" etc. Attribute names are case-sensitive. Omit to sort by 'uid' ascending as default.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "types.Bottle[]"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "description": "Query completed; results returned."
+                        },
+                        "400": {
+                            "code": "400",
+                            "description": "Incomplete or invalid pagination or sort parameters."
+                        },
+                        "405": {
+                            "code": "405",
+                            "description": "Validation exception."
+                        }
+                    },
+                    "protocols": [
+                        "HTTP"
+                    ],
+                    "securedBy": [
+                        "auth"
+                    ],
+                    "description": "Get a list of bottles filtered by status and/or patient(s).",
+                    "displayName": "getBottlesByValues",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "relativeUri": "/bottles",
+            "displayName": "/bottles",
+            "resources": [
+                {
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "displayName": "application/json",
+                                            "type": [
+                                                "types.Bottle"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "description": "Bottle found and returned"
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "Bottle not found."
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "securedBy": [
+                                "auth"
+                            ],
+                            "description": "Get a bottle by its UID.",
+                            "displayName": "getBottle",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "description": "Bottle found and modified."
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "Bottle not found."
+                                },
+                                "405": {
+                                    "code": "405",
+                                    "description": "Validation exception."
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "securedBy": [
+                                "auth"
+                            ],
+                            "description": "Modify a bottle by its UID.",
+                            "displayName": "updateBottle",
+                            "method": "put",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "uriParameters": {
+                        "bottleUid": {
+                            "name": "bottleUid",
+                            "displayName": "bottleUid",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Bottle UID",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "relativeUri": "/{bottleUid}",
+                    "displayName": "/{bottleUid}",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{bottleUid}"
+                    ]
+                }
+            ],
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "bottles"
+            ]
+        },
+        {
+            "methods": [
+                {
+                    "queryParameters": {
+                        "firstName": {
+                            "name": "firstName",
+                            "displayName": "firstName",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Patient's first name.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "lastName": {
+                            "name": "lastName",
+                            "displayName": "lastName",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Patient's last name.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "phoneNumber": {
+                            "name": "phoneNumber",
+                            "displayName": "phoneNumber",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Patient's phone number.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "programName": {
+                            "name": "programName",
+                            "displayName": "programName",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "A string to search within the program's name.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "contactMethod": {
+                            "name": "contactMethod",
+                            "displayName": "contactMethod",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The contact method used to reach the patient (phone, sms or email).",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "emailAddress": {
+                            "name": "emailAddress",
+                            "displayName": "emailAddress",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Patient's email address.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "page": {
+                            "name": "page",
+                            "displayName": "page",
+                            "type": [
+                                "integer"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Current front-end page number; required for pagination.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "itemsPerPage": {
+                            "name": "itemsPerPage",
+                            "displayName": "itemsPerPage",
+                            "type": [
+                                "integer"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Current front-end items per page value; required for pagination.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "sort": {
+                            "name": "sort",
+                            "displayName": "sort",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Attribute(s) and order(s) to sort by in the following example format - \"uid desc, timeoccurred asc\" etc. Attribute names are case-sensitive. Omit to sort by 'uid' ascending as default.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "types.Patient[]"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "description": "Query completed; results returned."
+                        },
+                        "400": {
+                            "code": "400",
+                            "description": "Incomplete or invalid pagination or sort parameters."
+                        },
+                        "405": {
+                            "code": "405",
+                            "description": "Validation exception."
+                        }
+                    },
+                    "protocols": [
+                        "HTTP"
+                    ],
+                    "securedBy": [
+                        "auth"
+                    ],
+                    "description": "Get a list of patients filtered by their values.",
+                    "displayName": "getPatientsByValues",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "queryParameters": {
+                        "bottleUids,": {
+                            "name": "bottleUids,",
+                            "displayName": "bottleUids,",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Comma separated list of bottleUids for this bottle. Removing from this list will remove it from the patient. Adding bottles must be done through Bottle endpoint",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "Patient created."
+                        },
+                        "404": {
+                            "code": "404",
+                            "description": "Address not found."
+                        },
+                        "405": {
+                            "code": "405",
+                            "description": "Validation error."
+                        }
+                    },
+                    "protocols": [
+                        "HTTP"
+                    ],
+                    "securedBy": [
+                        "auth"
+                    ],
+                    "description": "Add a new patient to the database.",
+                    "displayName": "addPatient",
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "relativeUri": "/patients",
+            "displayName": "/patients",
+            "resources": [
+                {
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "displayName": "application/json",
+                                            "type": [
+                                                "types.Patient[]"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "description": "Patient found and returned."
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "Patient not found."
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "securedBy": [
+                                "auth"
+                            ],
+                            "description": "Get a patient by UID.",
+                            "displayName": "getPatient",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "description": "Patient found and modified."
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "Patient not found."
+                                },
+                                "405": {
+                                    "code": "405",
+                                    "description": "Validation exception."
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "securedBy": [
+                                "auth"
+                            ],
+                            "description": "Modify a Patient using a patient UID number.",
+                            "displayName": "updatePatient",
+                            "method": "put",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "404": {
+                                    "code": "404",
+                                    "description": "Patient not found."
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "securedBy": [
+                                "auth"
+                            ],
+                            "description": "Delete a patient by UID.",
+                            "displayName": "deletePatient",
+                            "method": "delete",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "uriParameters": {
+                        "patientUid": {
+                            "name": "patientUid",
+                            "displayName": "patientUid",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Patient UID",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "relativeUri": "/{patientUid}",
+                    "displayName": "/{patientUid}",
+                    "resources": [
+                        {
+                            "methods": [
+                                {
+                                    "queryParameters": {
+                                        "endDate": {
+                                            "name": "endDate",
+                                            "displayName": "endDate",
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "repeat": false,
+                                            "required": false,
+                                            "description": "effective endDate for disenrollment (default is now). Dates in future not allowed. (UTC).",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "notes": {
+                                            "name": "notes",
+                                            "displayName": "notes",
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "repeat": false,
+                                            "required": false,
+                                            "description": "notes to include with disenrollment action",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "description": "Patient found and disenrolled. All bottles and reminders disabled"
+                                        },
+                                        "400": {
+                                            "code": "400",
+                                            "description": "Patient not found. Or patient already disenrolled. Or invalid parameter"
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTP"
+                                    ],
+                                    "securedBy": [
+                                        "auth"
+                                    ],
+                                    "description": "Disenroll a patient by UID.",
+                                    "displayName": "disenrollPatient",
+                                    "method": "post",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "relativeUri": "/disenroll",
+                            "displayName": "/disenroll",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "disenroll"
+                            ]
+                        },
+                        {
+                            "methods": [
+                                {
+                                    "queryParameters": {
+                                        "notes": {
+                                            "name": "notes",
+                                            "displayName": "notes",
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "repeat": false,
+                                            "required": false,
+                                            "description": "Notes to be included with reenrollment event",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "description": "Patient found and reenrolled"
+                                        },
+                                        "404": {
+                                            "code": "404",
+                                            "description": "Patient not found. Or patient already enrolled"
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTP"
+                                    ],
+                                    "securedBy": [
+                                        "auth"
+                                    ],
+                                    "description": "Reenroll a patient.",
+                                    "displayName": "reenrollpatient",
+                                    "method": "post",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "relativeUri": "/reenroll",
+                            "displayName": "/reenroll",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "reenroll"
+                            ]
+                        },
+                        {
+                            "methods": [
+                                {
+                                    "queryParameters": {
+                                        "page": {
+                                            "name": "page",
+                                            "displayName": "page",
+                                            "type": [
+                                                "integer"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "Current front-end page number; required for pagination.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "itemsPerPage": {
+                                            "name": "itemsPerPage",
+                                            "displayName": "itemsPerPage",
+                                            "type": [
+                                                "integer"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "Current front-end items per page value; required for pagination.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "sort": {
+                                            "name": "sort",
+                                            "displayName": "sort",
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "Attribute(s) and order(s) to sort by in the following example format - \"uid desc, timeoccurred asc\" etc. Attribute names are case-sensitive. Omit to sort by 'timesent' descending as default.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "displayName": "application/json",
+                                                    "type": [
+                                                        "types.FeedbackRequest[]"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "description": "Query completed; results returned."
+                                        },
+                                        "400": {
+                                            "code": "400",
+                                            "description": "Incomplete or invalid pagination or sort parameters."
+                                        },
+                                        "405": {
+                                            "code": "405",
+                                            "description": "Validation exception."
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTP"
+                                    ],
+                                    "securedBy": [
+                                        "auth"
+                                    ],
+                                    "description": "Get all active (scheduled but unsent) feedback requests for a patient.",
+                                    "displayName": "getFeedbackRequests",
+                                    "method": "get",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "description": "Feedback request created."
+                                        },
+                                        "404": {
+                                            "code": "404",
+                                            "description": "Patient not found."
+                                        },
+                                        "405": {
+                                            "code": "405",
+                                            "description": "Validation error."
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTP"
+                                    ],
+                                    "securedBy": [
+                                        "auth"
+                                    ],
+                                    "description": "Add a new feedback request for a patient.",
+                                    "displayName": "addFeedbackRequest",
+                                    "method": "post",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "responses": {
+                                        "404": {
+                                            "code": "404",
+                                            "description": "Patient not found."
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTP"
+                                    ],
+                                    "securedBy": [
+                                        "auth"
+                                    ],
+                                    "description": "Delete all active feedback requests for a patient.",
+                                    "displayName": "deleteFeedbackRequests",
+                                    "method": "delete",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "relativeUri": "/feedbackrequests",
+                            "displayName": "/feedbackrequests",
+                            "resources": [
+                                {
+                                    "methods": [
+                                        {
+                                            "responses": {
+                                                "200": {
+                                                    "code": "200",
+                                                    "body": {
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "displayName": "application/json",
+                                                            "type": [
+                                                                "types.FeedbackRequest"
+                                                            ],
+                                                            "repeat": false,
+                                                            "required": true,
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "description": "Feedback request found and returned"
+                                                },
+                                                "404": {
+                                                    "code": "404",
+                                                    "description": "Feedback request not found."
+                                                }
+                                            },
+                                            "protocols": [
+                                                "HTTP"
+                                            ],
+                                            "securedBy": [
+                                                "auth"
+                                            ],
+                                            "description": "Get a feedback request by its ID.",
+                                            "displayName": "getFeedbackRequest",
+                                            "method": "get",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "protocols": {
+                                                        "calculated": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "responses": {
+                                                "200": {
+                                                    "code": "200",
+                                                    "description": "Feedback request found and modified."
+                                                },
+                                                "404": {
+                                                    "code": "404",
+                                                    "description": "Feedback request not found."
+                                                },
+                                                "405": {
+                                                    "code": "405",
+                                                    "description": "Validation exception."
+                                                }
+                                            },
+                                            "protocols": [
+                                                "HTTP"
+                                            ],
+                                            "securedBy": [
+                                                "auth"
+                                            ],
+                                            "description": "Modify a feedback request by its ID.",
+                                            "displayName": "updateFeedbackRequest",
+                                            "method": "put",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "protocols": {
+                                                        "calculated": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "responses": {
+                                                "404": {
+                                                    "code": "404",
+                                                    "description": "Feedback request not found."
+                                                }
+                                            },
+                                            "protocols": [
+                                                "HTTP"
+                                            ],
+                                            "securedBy": [
+                                                "auth"
+                                            ],
+                                            "description": "Delete a feedback request by ID.",
+                                            "displayName": "deleteFeedbackRequest",
+                                            "method": "delete",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "protocols": {
+                                                        "calculated": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "uriParameters": {
+                                        "feedbackId": {
+                                            "name": "feedbackId",
+                                            "displayName": "feedbackId",
+                                            "type": [
+                                                "integer"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "Feedback request ID",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "relativeUri": "/{feedbackId}",
+                                    "displayName": "/{feedbackId}",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    },
+                                    "relativeUriPathSegments": [
+                                        "{feedbackId}"
+                                    ]
+                                }
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "feedbackrequests"
+                            ]
+                        }
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{patientUid}"
+                    ]
+                }
+            ],
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "patients"
+            ]
+        },
+        {
+            "methods": [
+                {
+                    "queryParameters": {
+                        "programName": {
+                            "name": "programName",
+                            "displayName": "programName",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "A string to search within the program's name.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "programDescription": {
+                            "name": "programDescription",
+                            "displayName": "programDescription",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "A string to search within an program's description.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "startDate": {
+                            "name": "startDate",
+                            "displayName": "startDate",
+                            "type": [
+                                "datetime"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The start date for the date range filter. It filters by only returning programs which were or should be active in the given date range.",
+                            "format": "rfc2616",
+                            "fixedFacets": {
+                                "format": "rfc2616"
+                            },
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "endDatetime": {
+                            "name": "endDatetime",
+                            "displayName": "endDatetime",
+                            "type": [
+                                "datetime"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The end date for the date range filter. It filters by only returning programs which were or should be active in the given date range.",
+                            "format": "rfc2616",
+                            "fixedFacets": {
+                                "format": "rfc2616"
+                            },
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "patientUids": {
+                            "name": "patientUids",
+                            "displayName": "patientUids",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Filters programs so that the results include only programs with the given patients (semicolon separated list).",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "page": {
+                            "name": "page",
+                            "displayName": "page",
+                            "type": [
+                                "integer"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Current front-end page number; required for pagination.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "itemsPerPage": {
+                            "name": "itemsPerPage",
+                            "displayName": "itemsPerPage",
+                            "type": [
+                                "integer"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Current front-end items per page value; required for pagination.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "sort": {
+                            "name": "sort",
+                            "displayName": "sort",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Attribute(s) and order(s) to sort by in the following example format - \"uid desc, timeoccurred asc\" etc. Attribute names are case-sensitive. Omit to sort by 'name' ascending as default.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "types.Program[]"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "description": "Query completed; results returned."
+                        },
+                        "400": {
+                            "code": "400",
+                            "description": "Incomplete or invalid pagination or sort parameters."
+                        },
+                        "405": {
+                            "code": "405",
+                            "description": "Validation exception."
+                        }
+                    },
+                    "protocols": [
+                        "HTTP"
+                    ],
+                    "securedBy": [
+                        "auth"
+                    ],
+                    "description": "Get a list of programs filtered by their values.",
+                    "displayName": "getPrograms",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "Program created."
+                        },
+                        "404": {
+                            "code": "404",
+                            "description": "Address not found."
+                        },
+                        "405": {
+                            "code": "405",
+                            "description": "Validation error."
+                        }
+                    },
+                    "protocols": [
+                        "HTTP"
+                    ],
+                    "securedBy": [
+                        "auth"
+                    ],
+                    "description": "Add a new program to the database.",
+                    "displayName": "addProgram",
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "relativeUri": "/programs",
+            "displayName": "/programs",
+            "resources": [
+                {
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "displayName": "application/json",
+                                            "type": [
+                                                "types.Program"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "description": "Program found and returned."
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "Program not found."
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "securedBy": [
+                                "auth"
+                            ],
+                            "description": "Get a program by programName.",
+                            "displayName": "getProgram",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "description": "Program found and modified."
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "Program not found."
+                                },
+                                "405": {
+                                    "code": "405",
+                                    "description": "Validation exception."
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "securedBy": [
+                                "auth"
+                            ],
+                            "description": "Modify a program by programName.",
+                            "displayName": "updateProgram",
+                            "method": "put",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "404": {
+                                    "code": "404",
+                                    "description": "Program not found."
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "securedBy": [
+                                "auth"
+                            ],
+                            "description": "Delete a program by programName.",
+                            "displayName": "deleteProgram",
+                            "method": "delete",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "uriParameters": {
+                        "programName": {
+                            "name": "programName",
+                            "displayName": "programName",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Program name.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "relativeUri": "/{programName}",
+                    "displayName": "/{programName}",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{programName}"
+                    ]
+                }
+            ],
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "programs"
+            ]
+        },
+        {
+            "methods": [
+                {
+                    "queryParameters": {
+                        "username": {
+                            "name": "username",
+                            "displayName": "username",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Login username.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "emailAddress": {
+                            "name": "emailAddress",
+                            "displayName": "emailAddress",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "User's email address.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "role": {
+                            "name": "role",
+                            "displayName": "role",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "User's permission roles as a comma separated String.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "page": {
+                            "name": "page",
+                            "displayName": "page",
+                            "type": [
+                                "integer"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Current front-end page number; required for pagination.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "itemsPerPage": {
+                            "name": "itemsPerPage",
+                            "displayName": "itemsPerPage",
+                            "type": [
+                                "integer"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Current front-end items per page value; required for pagination.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "sort": {
+                            "name": "sort",
+                            "displayName": "sort",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Attribute(s) and order(s) to sort by in the following example format - \"uid desc, timeoccurred asc\" etc. Attribute names are case-sensitive. Omit to sort by 'username' ascending as default.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "types.User[]"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "description": "Query completed; results returned."
+                        },
+                        "400": {
+                            "code": "400",
+                            "description": "Incomplete or invalid pagination or sort parameters."
+                        },
+                        "405": {
+                            "code": "405",
+                            "description": "Validation exception."
+                        }
+                    },
+                    "protocols": [
+                        "HTTP"
+                    ],
+                    "securedBy": [
+                        "auth"
+                    ],
+                    "description": "Get a list of users filtered by their values.",
+                    "displayName": "getUsersByValues",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "User created."
+                        },
+                        "405": {
+                            "code": "405",
+                            "description": "Validation error."
+                        }
+                    },
+                    "protocols": [
+                        "HTTP"
+                    ],
+                    "securedBy": [
+                        "auth"
+                    ],
+                    "description": "Add a new user to the database.",
+                    "displayName": "addUser",
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "relativeUri": "/users",
+            "displayName": "/users",
+            "resources": [
+                {
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "displayName": "application/json",
+                                            "type": [
+                                                "types.User"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "description": "User found and returned."
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "User not found."
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "securedBy": [
+                                "auth"
+                            ],
+                            "description": "Get a user by username.",
+                            "displayName": "getUser",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "description": "User found and modified."
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "User not found."
+                                },
+                                "405": {
+                                    "code": "405",
+                                    "description": "Validation exception."
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "securedBy": [
+                                "auth"
+                            ],
+                            "description": "Modify a user using its username.",
+                            "displayName": "updateUser",
+                            "method": "put",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "404": {
+                                    "code": "404",
+                                    "description": "User not found."
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "securedBy": [
+                                "auth"
+                            ],
+                            "description": "Delete a user by username.",
+                            "displayName": "deleteUser",
+                            "method": "delete",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "uriParameters": {
+                        "username": {
+                            "name": "username",
+                            "displayName": "username",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "username",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "relativeUri": "/{username}",
+                    "displayName": "/{username}",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{username}"
+                    ]
+                }
+            ],
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "users"
+            ]
+        },
+        {
+            "methods": [
+                {
+                    "queryParameters": {
+                        "bottleReadingId": {
+                            "name": "bottleReadingId",
+                            "displayName": "bottleReadingId",
+                            "type": [
+                                "integer"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The ID of the bottle reading.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "bottleUid": {
+                            "name": "bottleUid",
+                            "displayName": "bottleUid",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The bottle UID.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "checkinType": {
+                            "name": "checkinType",
+                            "displayName": "checkinType",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The type of check-in for this reading.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "startDatetime": {
+                            "name": "startDatetime",
+                            "displayName": "startDatetime",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The start date for the date range filter. It filters by receivedDateTime.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "endDatetime": {
+                            "name": "endDatetime",
+                            "displayName": "endDatetime",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The end date for the date range filter. It filters by receivedDateTime.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "batteryLevel": {
+                            "name": "batteryLevel",
+                            "displayName": "batteryLevel",
+                            "type": [
+                                "integer"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The numerical representation of the battery level.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "batteryStatus": {
+                            "name": "batteryStatus",
+                            "displayName": "batteryStatus",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The text representation of the battery status.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "cellServiceLevel": {
+                            "name": "cellServiceLevel",
+                            "displayName": "cellServiceLevel",
+                            "type": [
+                                "integer"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The numerical representation of the cell signal level.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "cellServiceStatus": {
+                            "name": "cellServiceStatus",
+                            "displayName": "cellServiceStatus",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The text representation of the cell signal status.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "page": {
+                            "name": "page",
+                            "displayName": "page",
+                            "type": [
+                                "integer"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Current front-end page number; required for pagination.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "itemsPerPage": {
+                            "name": "itemsPerPage",
+                            "displayName": "itemsPerPage",
+                            "type": [
+                                "integer"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Current front-end items per page value; required for pagination.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "sort": {
+                            "name": "sort",
+                            "displayName": "sort",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Attribute(s) and order(s) to sort by in the following example format - \"uid desc, timeoccurred asc\" etc. Attribute names are case-sensitive. Omit to sort by 'timereceived' descending as default.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "types.BottleReading[]"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "description": "Query completed; results returned."
+                        },
+                        "400": {
+                            "code": "400",
+                            "description": "Incomplete or invalid pagination or sort parameters."
+                        },
+                        "405": {
+                            "code": "405",
+                            "description": "Validation exception."
+                        }
+                    },
+                    "protocols": [
+                        "HTTP"
+                    ],
+                    "securedBy": [
+                        "auth"
+                    ],
+                    "description": "Get a list of bottle readings filtered by status, bottle or date.",
+                    "displayName": "getBottleReadingsByValues",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "relativeUri": "/bottlereadings",
+            "displayName": "/bottlereadings",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "bottlereadings"
+            ]
+        },
+        {
+            "methods": [
+                {
+                    "queryParameters": {
+                        "patientUid": {
+                            "name": "patientUid",
+                            "displayName": "patientUid",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The UID of the patient.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "bottleUid": {
+                            "name": "bottleUid",
+                            "displayName": "bottleUid",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The UID of the bottle.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "bottleReadingId": {
+                            "name": "bottleReadingId",
+                            "displayName": "bottleReadingId",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The ID of the bottle reading.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "reminderSent": {
+                            "name": "reminderSent",
+                            "displayName": "reminderSent",
+                            "type": [
+                                "boolean"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "If a reminder was sent for this dose.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "doseStatus": {
+                            "name": "doseStatus",
+                            "displayName": "doseStatus",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The status of the dose (missed, early, ontime).",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "deadline": {
+                            "name": "deadline",
+                            "displayName": "deadline",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The deadline of the dose.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "startDatetime": {
+                            "name": "startDatetime",
+                            "displayName": "startDatetime",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Start date for the date range filter.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "endDatetime": {
+                            "name": "endDatetime",
+                            "displayName": "endDatetime",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "End date for the date range filter.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "page": {
+                            "name": "page",
+                            "displayName": "page",
+                            "type": [
+                                "integer"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Current front-end page number; required for pagination.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "itemsPerPage": {
+                            "name": "itemsPerPage",
+                            "displayName": "itemsPerPage",
+                            "type": [
+                                "integer"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Current front-end items per page value; required for pagination.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "sort": {
+                            "name": "sort",
+                            "displayName": "sort",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Attribute(s) and order(s) to sort by in the following example format - \"uid desc, timeoccurred asc\" etc. Attribute names are case-sensitive. Omit to sort by 'timerecorded' descending as default.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "types.Dose[]"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "description": "Query completed; results returned."
+                        },
+                        "400": {
+                            "code": "400",
+                            "description": "Incomplete or invalid pagination or sort parameters."
+                        },
+                        "405": {
+                            "code": "405",
+                            "description": "Validation exception."
+                        }
+                    },
+                    "protocols": [
+                        "HTTP"
+                    ],
+                    "securedBy": [
+                        "auth"
+                    ],
+                    "description": "Get a list of doses filtered by status, bottle, patient or date.",
+                    "displayName": "getDosesByValues",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "relativeUri": "/doses",
+            "displayName": "/doses",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "doses"
+            ]
+        },
+        {
+            "methods": [
+                {
+                    "queryParameters": {
+                        "patientUid": {
+                            "name": "patientUid",
+                            "displayName": "patientUid",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Patient UID.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "bottleUid": {
+                            "name": "bottleUid",
+                            "displayName": "bottleUid",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Bottle UID for filtering.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "eventType": {
+                            "name": "eventType",
+                            "displayName": "eventType",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The type of event to select.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "bottleReadingId": {
+                            "name": "bottleReadingId",
+                            "displayName": "bottleReadingId",
+                            "type": [
+                                "integer"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Bottle Reading ID for filtering.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "startDatetime": {
+                            "name": "startDatetime",
+                            "displayName": "startDatetime",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The start date for the date range filter. It filters by timeOccurred.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "endDatetime": {
+                            "name": "endDatetime",
+                            "displayName": "endDatetime",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The end date for the date range filter. It filters by timeOccurred.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "page": {
+                            "name": "page",
+                            "displayName": "page",
+                            "type": [
+                                "integer"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Current front-end page number; required for pagination.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "itemsPerPage": {
+                            "name": "itemsPerPage",
+                            "displayName": "itemsPerPage",
+                            "type": [
+                                "integer"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Current front-end items per page value; required for pagination.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "sort": {
+                            "name": "sort",
+                            "displayName": "sort",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Attribute(s) and order(s) to sort by in the following example format - \"uid desc, timeoccurred asc\" etc. Attribute names are case-sensitive. Omit to sort by 'timeoccurred' descending as default.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "types.Event[]"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "description": "Query completed; results returned."
+                        },
+                        "400": {
+                            "code": "400",
+                            "description": "Incomplete or invalid pagination or sort parameters."
+                        },
+                        "405": {
+                            "code": "405",
+                            "description": "Validation exception."
+                        }
+                    },
+                    "protocols": [
+                        "HTTP"
+                    ],
+                    "securedBy": [
+                        "auth"
+                    ],
+                    "description": "Get a list of events.",
+                    "displayName": "getEvents",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "relativeUri": "/events",
+            "displayName": "/events",
+            "resources": [
+                {
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "displayName": "application/json",
+                                            "type": [
+                                                "types.EventSubscription[]"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "description": "Subscriptions returned."
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "securedBy": [
+                                "auth"
+                            ],
+                            "description": "Get every subscription.",
+                            "displayName": "getSubscriptions",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "description": "Subscription created."
+                                },
+                                "405": {
+                                    "code": "405",
+                                    "description": "Validation error."
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "securedBy": [
+                                "auth"
+                            ],
+                            "description": "Add a new event subscription.",
+                            "displayName": "addSubscription",
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "relativeUri": "/subscriptions",
+                    "displayName": "/subscriptions",
+                    "resources": [
+                        {
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "displayName": "application/json",
+                                                    "type": [
+                                                        "types.EventSubscription"
+                                                    ],
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "description": "Subscription found and returned."
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTP"
+                                    ],
+                                    "securedBy": [
+                                        "auth"
+                                    ],
+                                    "description": "Get a subscription by ID.",
+                                    "displayName": "getSubscription",
+                                    "method": "get",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "protocols": [
+                                        "HTTP"
+                                    ],
+                                    "securedBy": [
+                                        "auth"
+                                    ],
+                                    "description": "Delete a subscription by ID.",
+                                    "displayName": "deleteSubscription",
+                                    "method": "delete",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "uriParameters": {
+                                "subscriptionId": {
+                                    "name": "subscriptionId",
+                                    "displayName": "subscriptionId",
+                                    "type": [
+                                        "integer"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "description": "Subscription ID",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "relativeUri": "/{subscriptionId}",
+                            "displayName": "/{subscriptionId}",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "{subscriptionId}"
+                            ]
+                        }
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "subscriptions"
+                    ]
+                }
+            ],
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "events"
+            ]
+        },
+        {
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "Query completed; results returned."
+                        }
+                    },
+                    "protocols": [
+                        "HTTP"
+                    ],
+                    "securedBy": [
+                        "auth"
+                    ],
+                    "description": "Get the available types of server events.",
+                    "displayName": "getEventTypes",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "relativeUri": "/eventtypes",
+            "displayName": "/eventtypes",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "eventtypes"
+            ]
+        },
+        {
+            "methods": [
+                {
+                    "queryParameters": {
+                        "patientUid": {
+                            "name": "patientUid",
+                            "displayName": "patientUid",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Patient UID.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "bottleUid": {
+                            "name": "bottleUid",
+                            "displayName": "bottleUid",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Bottle UID for filtering.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "alertType": {
+                            "name": "alertType",
+                            "displayName": "alertType",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The type of alert to select.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "bottleReadingId": {
+                            "name": "bottleReadingId",
+                            "displayName": "bottleReadingId",
+                            "type": [
+                                "integer"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Bottle Reading ID for filtering.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "state": {
+                            "name": "state",
+                            "displayName": "state",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "State for filtering.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "priority": {
+                            "name": "priority",
+                            "displayName": "priority",
+                            "type": [
+                                "integer"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "minimum priority for filtering. The request will return every alert with a priority higher than this number.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "startDatetime": {
+                            "name": "startDatetime",
+                            "displayName": "startDatetime",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The start date for the date range filter. It filters by timeOccurred.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "endDatetime": {
+                            "name": "endDatetime",
+                            "displayName": "endDatetime",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The end date for the date range filter. It filters by timeOccurred.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "page": {
+                            "name": "page",
+                            "displayName": "page",
+                            "type": [
+                                "integer"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Current front-end page number; required for pagination.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "itemsPerPage": {
+                            "name": "itemsPerPage",
+                            "displayName": "itemsPerPage",
+                            "type": [
+                                "integer"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Current front-end items per page value; required for pagination.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "sort": {
+                            "name": "sort",
+                            "displayName": "sort",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Attribute(s) and order(s) to sort by in the following example format - \"uid desc, timeoccurred asc\" etc. Attribute names are case-sensitive. Omit to sort by 'timeoccurred' descending as default.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "types.Alert[]"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "description": "Query completed; results returned."
+                        },
+                        "400": {
+                            "code": "400",
+                            "description": "Incomplete or invalid pagination or sort parameters."
+                        },
+                        "405": {
+                            "code": "405",
+                            "description": "Validation exception."
+                        }
+                    },
+                    "protocols": [
+                        "HTTP"
+                    ],
+                    "securedBy": [
+                        "auth"
+                    ],
+                    "description": "Get a list of alerts.",
+                    "displayName": "getAlerts",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "relativeUri": "/alerts",
+            "displayName": "/alerts",
+            "resources": [
+                {
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "displayName": "application/json",
+                                            "type": [
+                                                "types.Alert"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "description": "Query completed; results returned."
+                                },
+                                "405": {
+                                    "code": "405",
+                                    "description": "Validation exception."
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "securedBy": [
+                                "auth"
+                            ],
+                            "description": "Get a specific alert.",
+                            "displayName": "getAlert",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "description": "Alert found and modified."
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "Alert not found."
+                                },
+                                "405": {
+                                    "code": "405",
+                                    "description": "Validation exception."
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "securedBy": [
+                                "auth"
+                            ],
+                            "description": "Modify an alert record.",
+                            "displayName": "updateAlert",
+                            "method": "put",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "uriParameters": {
+                        "alertId": {
+                            "name": "alertId",
+                            "displayName": "alertId",
+                            "type": [
+                                "integer"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Alert ID.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "relativeUri": "/{alertId}",
+                    "displayName": "/{alertId}",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{alertId}"
+                    ]
+                }
+            ],
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "alerts"
+            ]
+        },
+        {
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "Query completed; results returned."
+                        }
+                    },
+                    "protocols": [
+                        "HTTP"
+                    ],
+                    "securedBy": [
+                        "auth"
+                    ],
+                    "description": "Get the available types of server alerts.",
+                    "displayName": "getAlertTypes",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "relativeUri": "/alerttypes",
+            "displayName": "/alerttypes",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "alerttypes"
+            ]
+        },
+        {
+            "methods": [
+                {
+                    "queryParameters": {
+                        "q": {
+                            "name": "q",
+                            "displayName": "q",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The search query.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "types.SearchResult[]"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "description": "Query completed; results returned."
+                        }
+                    },
+                    "protocols": [
+                        "HTTP"
+                    ],
+                    "securedBy": [
+                        "auth"
+                    ],
+                    "description": "Get search results for a query.",
+                    "displayName": "getSearch",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "relativeUri": "/search",
+            "displayName": "/search",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "search"
+            ]
+        },
+        {
+            "methods": [
+                {
+                    "queryParameters": {
+                        "patientUid": {
+                            "name": "patientUid",
+                            "displayName": "patientUid",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Patient UID.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "status": {
+                            "name": "status",
+                            "displayName": "status",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Pause status for filtering.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "startdateBefore": {
+                            "name": "startdateBefore",
+                            "displayName": "startdateBefore",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The maximum start date for the date range filter.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "startdateAfter": {
+                            "name": "startdateAfter",
+                            "displayName": "startdateAfter",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The minimum start date for the date range filter.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "enddateBefore": {
+                            "name": "enddateBefore",
+                            "displayName": "enddateBefore",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The maximum end date for the date range filter.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "enddateAfter": {
+                            "name": "enddateAfter",
+                            "displayName": "enddateAfter",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The minimum end date for the date range filter.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "page": {
+                            "name": "page",
+                            "displayName": "page",
+                            "type": [
+                                "integer"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Current front-end page number; required for pagination.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "itemsPerPage": {
+                            "name": "itemsPerPage",
+                            "displayName": "itemsPerPage",
+                            "type": [
+                                "integer"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Current front-end items per page value; required for pagination.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "sort": {
+                            "name": "sort",
+                            "displayName": "sort",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Attribute(s) and order(s) to sort by in the following example format - \"uid desc, timeoccurred asc\" etc. Attribute names are case-sensitive. Omit to sort by 'startdate' descending as default.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "types.Pause[]"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "description": "Query completed; results returned."
+                        },
+                        "400": {
+                            "code": "400",
+                            "description": "Incomplete or invalid pagination or sort parameters."
+                        },
+                        "405": {
+                            "code": "405",
+                            "description": "Validation exception."
+                        }
+                    },
+                    "protocols": [
+                        "HTTP"
+                    ],
+                    "securedBy": [
+                        "auth"
+                    ],
+                    "description": "Get a list of pauses.",
+                    "displayName": "getPauses",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "types.Pause"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "description": "Pause created."
+                        },
+                        "400": {
+                            "code": "400",
+                            "description": "Patient not found or invalid parameters."
+                        },
+                        "405": {
+                            "code": "405",
+                            "description": "Validation error."
+                        }
+                    },
+                    "protocols": [
+                        "HTTP"
+                    ],
+                    "securedBy": [
+                        "auth"
+                    ],
+                    "description": "Add a new pause for a patient to the database.",
+                    "displayName": "addPause",
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "relativeUri": "/pauses",
+            "displayName": "/pauses",
+            "resources": [
+                {
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "displayName": "application/json",
+                                            "type": [
+                                                "types.Pause"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "description": "Query completed; results returned."
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "Pause not found."
+                                },
+                                "405": {
+                                    "code": "405",
+                                    "description": "Validation exception."
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "securedBy": [
+                                "auth"
+                            ],
+                            "description": "Get a specific pause.",
+                            "displayName": "getPause",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "queryParameters": {
+                                "endnow": {
+                                    "name": "endnow",
+                                    "displayName": "endnow",
+                                    "type": [
+                                        "boolean"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "description": "Set true to end an active pause.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "displayName": "application/json",
+                                            "type": [
+                                                "types.Pause"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "description": "Pause found and updated."
+                                },
+                                "400": {
+                                    "code": "400",
+                                    "description": "Invalid parameters / arguments."
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "Pause not found."
+                                },
+                                "405": {
+                                    "code": "405",
+                                    "description": "Validation exception."
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "securedBy": [
+                                "auth"
+                            ],
+                            "description": "Update a pause by id.",
+                            "displayName": "updatePause",
+                            "method": "put",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "displayName": "application/json",
+                                            "type": [
+                                                "types.Pause"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "description": "Pause found and deleted."
+                                },
+                                "400": {
+                                    "code": "400",
+                                    "description": "Pause cannot be deleted."
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "Pause not found."
+                                },
+                                "405": {
+                                    "code": "405",
+                                    "description": "Validation exception."
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "securedBy": [
+                                "auth"
+                            ],
+                            "description": "Delete a future pause.",
+                            "displayName": "deletePause",
+                            "method": "delete",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "uriParameters": {
+                        "pauseId": {
+                            "name": "pauseId",
+                            "displayName": "pauseId",
+                            "type": [
+                                "integer"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Pause ID.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "relativeUri": "/{pauseId}",
+                    "displayName": "/{pauseId}",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{pauseId}"
+                    ]
+                }
+            ],
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "pauses"
+            ]
+        }
+    ],
+    "documentation": [
+        {
+            "title": "AdhereTech External API",
+            "content": "An API designed to expose AdhereTech server's data to clients and other services."
+        }
+    ]
+}

@@ -1,0 +1,519 @@
+{
+    "title": "Twitter Streaming API",
+    "version": "1.1",
+    "baseUri": "https://{userstream}.twitter.com/{version}",
+    "baseUriParameters": {
+        "userstream": {
+            "name": "userstream",
+            "displayName": "userstream",
+            "type": "string",
+            "required": true,
+            "repeat": false,
+            "__METADATA__": {
+                "calculated": true,
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    },
+                    "type": {
+                        "insertedAsDefault": true
+                    },
+                    "required": {
+                        "insertedAsDefault": true
+                    },
+                    "repeat": {
+                        "insertedAsDefault": true
+                    }
+                }
+            }
+        },
+        "version": {
+            "name": "version",
+            "displayName": "version",
+            "type": "string",
+            "required": true,
+            "repeat": false,
+            "enum": [
+                "1.1"
+            ],
+            "__METADATA__": {
+                "calculated": true,
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    },
+                    "type": {
+                        "insertedAsDefault": true
+                    },
+                    "required": {
+                        "insertedAsDefault": true
+                    },
+                    "repeat": {
+                        "insertedAsDefault": true
+                    },
+                    "enum": {
+                        "calculated": true
+                    }
+                }
+            }
+        }
+    },
+    "protocols": [
+        "HTTPS"
+    ],
+    "mediaType": "application/json",
+    "securedBy": [
+        "oauth_1_0"
+    ],
+    "securitySchemes": [
+        {
+            "oauth_1_0": {
+                "name": "oauth_1_0",
+                "type": "OAuth 1.0",
+                "description": "Twitter offers applications the ability to issue authenticated requests on\nbehalf of the application itself (as opposed to on behalf of a specific user).\n",
+                "settings": {
+                    "requestTokenUri": "https://api.twitter.com/oauth/request_token",
+                    "authorizationUri": "https://api.twitter.com/oauth/authorize",
+                    "tokenCredentialsUri": "https://api.twitter.com/oauth/access_token"
+                }
+            }
+        }
+    ],
+    "resourceTypes": [
+        {
+            "base": {
+                "name": "base",
+                "securedBy": [
+                    "oauth_1_0"
+                ],
+                "uriParameters": [
+                    {
+                        "name": "mediaTypeExtension",
+                        "displayName": "mediaTypeExtension",
+                        "type": "string",
+                        "required": true,
+                        "repeat": false,
+                        "description": "Use .json to specify application/json media type.",
+                        "enum": [
+                            ".json"
+                        ],
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                ],
+                "__METADATA__": {
+                    "primitiveValuesMeta": {
+                        "securedBy": {
+                            "calculated": true
+                        }
+                    }
+                },
+                "post": {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "Success!"
+                        },
+                        "304": {
+                            "code": "304",
+                            "description": "There was no new data to return."
+                        },
+                        "400": {
+                            "code": "400",
+                            "description": "The request was invalid or cannot be otherwise served. An accompanying\nerror message will explain further. In API v1.1, requests withou\nauthentication are considered invalid and will yield this response.\n"
+                        },
+                        "401": {
+                            "code": "401",
+                            "description": "Authentication credentials were missing or incorrect."
+                        },
+                        "403": {
+                            "code": "403",
+                            "description": "The request is understood, but it has been refused or access is no\nallowed. An accompanying error message will explain why. This code is\nused when requests are being denied due to update limits.\n"
+                        },
+                        "404": {
+                            "code": "404",
+                            "description": "The URI requested is invalid or the resource requested, such as a user,\ndoes not exists. Also returned when the requested format is not supported\nby the requested method.\n"
+                        },
+                        "406": {
+                            "code": "406",
+                            "description": "Returned by the Search API when an invalid format is specified in the\nrequest.\n"
+                        },
+                        "410": {
+                            "code": "410",
+                            "description": "This resource is gone. Used to indicate that an API endpoint has been\nturned off. For example: \"The Twitter REST API v1 will soon stop\nfunctioning. Please migrate to API v1.1.\"\n"
+                        },
+                        "420": {
+                            "code": "420",
+                            "description": "Returned by the version 1 Search and Trends APIs when you are being rate\nlimited.\n"
+                        },
+                        "422": {
+                            "code": "422",
+                            "description": "Returned when an image uploaded to POST account/update_profile_banner is\nunable to be processed.\n"
+                        },
+                        "429": {
+                            "code": "429",
+                            "description": "Returned in API v1.1 when a request cannot be served due to the\napplication's rate limit having been exhausted for the resource. See Rate\nLimiting in API v1.1.\n"
+                        },
+                        "500": {
+                            "code": "500",
+                            "description": "Something is broken. Please post to the group so the Twitter team can\ninvestigate.\n"
+                        },
+                        "502": {
+                            "code": "502",
+                            "description": "Twitter is down or being upgraded."
+                        },
+                        "503": {
+                            "code": "503",
+                            "description": "The Twitter servers are up, but overloaded with requests. Try again later.\n"
+                        },
+                        "504": {
+                            "code": "504",
+                            "description": "The Twitter servers are up, but the request couldn't be serviced due to\nsome failure within our stack. Try again later.\n"
+                        }
+                    },
+                    "securedBy": [
+                        "oauth_1_0"
+                    ],
+                    "method": "post",
+                    "__METADATA__": {
+                        "optional": true,
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                "get": {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "Success!"
+                        },
+                        "304": {
+                            "code": "304",
+                            "description": "There was no new data to return."
+                        },
+                        "400": {
+                            "code": "400",
+                            "description": "The request was invalid or cannot be otherwise served. An accompanying\nerror message will explain further. In API v1.1, requests withou\nauthentication are considered invalid and will yield this response.\n"
+                        },
+                        "401": {
+                            "code": "401",
+                            "description": "Authentication credentials were missing or incorrect."
+                        },
+                        "403": {
+                            "code": "403",
+                            "description": "The request is understood, but it has been refused or access is no\nallowed. An accompanying error message will explain why. This code is\nused when requests are being denied due to update limits.\n"
+                        },
+                        "404": {
+                            "code": "404",
+                            "description": "The URI requested is invalid or the resource requested, such as a user,\ndoes not exists. Also returned when the requested format is not supported\nby the requested method.\n"
+                        },
+                        "406": {
+                            "code": "406",
+                            "description": "Returned by the Search API when an invalid format is specified in the\nrequest.\n"
+                        },
+                        "410": {
+                            "code": "410",
+                            "description": "This resource is gone. Used to indicate that an API endpoint has been\nturned off. For example: \"The Twitter REST API v1 will soon stop\nfunctioning. Please migrate to API v1.1.\"\n"
+                        },
+                        "420": {
+                            "code": "420",
+                            "description": "Returned by the version 1 Search and Trends APIs when you are being rate\nlimited.\n"
+                        },
+                        "422": {
+                            "code": "422",
+                            "description": "Returned when an image uploaded to POST account/update_profile_banner is\nunable to be processed.\n"
+                        },
+                        "429": {
+                            "code": "429",
+                            "description": "Returned in API v1.1 when a request cannot be served due to the\napplication's rate limit having been exhausted for the resource. See Rate\nLimiting in API v1.1.\n"
+                        },
+                        "500": {
+                            "code": "500",
+                            "description": "Something is broken. Please post to the group so the Twitter team can\ninvestigate.\n"
+                        },
+                        "502": {
+                            "code": "502",
+                            "description": "Twitter is down or being upgraded."
+                        },
+                        "503": {
+                            "code": "503",
+                            "description": "The Twitter servers are up, but overloaded with requests. Try again later.\n"
+                        },
+                        "504": {
+                            "code": "504",
+                            "description": "The Twitter servers are up, but the request couldn't be serviced due to\nsome failure within our stack. Try again later.\n"
+                        }
+                    },
+                    "securedBy": [
+                        "oauth_1_0"
+                    ],
+                    "method": "get",
+                    "__METADATA__": {
+                        "optional": true,
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "resources": [
+        {
+            "relativeUri": "/user{mediaTypeExtension}",
+            "type": "base",
+            "securedBy": [
+                "oauth_1_0"
+            ],
+            "uriParameters": {
+                "mediaTypeExtension": {
+                    "name": "mediaTypeExtension",
+                    "displayName": "mediaTypeExtension",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "Example is not provided by twitter docs."
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_1_0"
+                    ],
+                    "queryParameters": {
+                        "delimited": {
+                            "name": "delimited",
+                            "displayName": "delimited",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Specifies whether messages should be length-delimited. See the delimited\nparameter documentation for more information.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "stall_warnings": {
+                            "name": "stall_warnings",
+                            "displayName": "stall_warnings",
+                            "type": "boolean",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Specifies whether stall warnings should be delivered. See the stall_warnings\nparameter documentation for more information.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "with": {
+                            "name": "with",
+                            "displayName": "with",
+                            "type": "boolean",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Specifies whether to return information for just the authenticating user,\nor include messages from accounts the user follows. See the with parameter\ndocumentation the with parameter documentation for more information.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "replies": {
+                            "name": "replies",
+                            "displayName": "replies",
+                            "type": "boolean",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Specifies whether to return additional @replies. See the replies parameter\ndocumentation for more information.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "track": {
+                            "name": "track",
+                            "displayName": "track",
+                            "type": "boolean",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Includes additional Tweets matching the specified keywords. Phrases of\nkeywords are specified by a comma-separated list. See the track parameter\ndocumentation the track parameter documentation for more information.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "locations": {
+                            "name": "locations",
+                            "displayName": "locations",
+                            "type": "boolean",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Includes additional Tweets falling within the specified bounding boxes.\nSee the locations parameter documentation for more information.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "stringify_friend_ids": {
+                            "name": "stringify_friend_ids",
+                            "displayName": "stringify_friend_ids",
+                            "type": "boolean",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Specifies whether to send the friends list preamble as an array of integers\nor an array of strings. See the stringify_friend_ids parameter documentation\nfor more information.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "Streams messages for a single user, as described in 'User streams'\n( https://dev.twitter.com/docs/streaming-apis/streams/user ).\n",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/user{mediaTypeExtension}",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "user{mediaTypeExtension}"
+            ]
+        }
+    ],
+    "documentation": [
+        {
+            "title": "Headline",
+            "content": "can not resolve docs/userstreamApi/headline.md"
+        }
+    ],
+    "__METADATA__": {
+        "primitiveValuesMeta": {
+            "protocols": {
+                "calculated": true
+            }
+        }
+    }
+}

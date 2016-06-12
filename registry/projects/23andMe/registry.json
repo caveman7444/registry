@@ -1,0 +1,12 @@
+{"apis": [
+    {
+        "name": "23andMe",
+        "location": "https://raw.githubusercontent.com/raml-apis/23andMe/staging/api.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "23andMe Reseller",
+        "location": "https://raw.githubusercontent.com/raml-apis/23andMe/staging/reseller.raml",
+        "RAMLVersion": "0.8"
+    }
+]}

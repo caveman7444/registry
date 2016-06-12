@@ -1,0 +1,5 @@
+{"apis": [{
+    "name": "AccuWeather API",
+    "location": "https://raw.githubusercontent.com/raml-apis/AccuWeather/production/accuWeather.raml",
+    "RAMLVersion": "0.8"
+}]}

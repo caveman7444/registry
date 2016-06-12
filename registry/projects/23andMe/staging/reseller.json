@@ -1,0 +1,269 @@
+{
+    "title": "23andMe Reseller",
+    "version": "2",
+    "baseUri": "https://api.23andme.com/{version}",
+    "baseUriParameters": {
+        "version": {
+            "name": "version",
+            "displayName": "version",
+            "type": "string",
+            "required": true,
+            "repeat": false,
+            "enum": [
+                "2"
+            ],
+            "__METADATA__": {
+                "calculated": true,
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    },
+                    "type": {
+                        "insertedAsDefault": true
+                    },
+                    "required": {
+                        "insertedAsDefault": true
+                    },
+                    "repeat": {
+                        "insertedAsDefault": true
+                    },
+                    "enum": {
+                        "calculated": true
+                    }
+                }
+            }
+        }
+    },
+    "protocols": [
+        "HTTPS"
+    ],
+    "schemas": [
+        {
+            "placeorderRequest": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"first_name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"last_name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"address_line1\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"city\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"state\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"country\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"email\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"phone\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"shipping_method\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"product_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"postal_code\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"personalizations\" : {\n      \"type\" : \"array\" ,\n      \"required\" : true ,\n      \"items\" : [\n        {\n          \"type\" : \"string\"\n        }\n      ]\n    }\n  }\n}"
+        },
+        {
+            "placeorderResponse": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"order_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "verifyaddressResponse": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"city\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"first_name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"last_name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"country\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"address2\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"state\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"postal_code\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"address\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "verifyaddressRequest": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"first_name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"last_name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"address_line1\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"city\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"state\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"country\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"product_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"postal_code\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"shipping_method\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    }\n  }\n}"
+        }
+    ],
+    "securedBy": [
+        "oauth_2_0"
+    ],
+    "securitySchemes": [
+        {
+            "oauth_2_0": {
+                "name": "oauth_2_0",
+                "type": "OAuth 2.0",
+                "describedBy": {
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "queryParameters": {
+                        "access_token": {
+                            "name": "access_token",
+                            "displayName": "access_token",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                "settings": {
+                    "accessTokenUri": "https://api.23andme.com/token/",
+                    "authorizationUri": "https://api.23andme.com/authorize/",
+                    "authorizationGrants": [
+                        "code"
+                    ],
+                    "scopes": [
+                        "genomes",
+                        "basic",
+                        "names",
+                        "email",
+                        "haplogroups",
+                        "ancestry",
+                        "family_tree",
+                        "relatives",
+                        "relatives:write",
+                        "analyses",
+                        "profile:read",
+                        "profile:write",
+                        "publish",
+                        "introduction:read",
+                        "introduction:write",
+                        "phenotypes:write:sex"
+                    ]
+                }
+            }
+        }
+    ],
+    "resources": [
+        {
+            "relativeUri": "/placeorder",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "methods": [
+                {
+                    "responses": {
+                        "201": {
+                            "code": "201",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "placeorderResponse",
+                                    "example": "{\n  \"order_id\" : \"order_id\"\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"order_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                }
+                            }
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "placeorderRequest",
+                            "example": "{\n  \"first_name\" : \"Barack\" ,\n  \"last_name\" : \"Obama\" ,\n  \"address_line1\" : \"1600 Pennsylvania Avenue\" ,\n  \"city\" : \"Washington\" ,\n  \"state\" : \"DC\" ,\n  \"country\" : \"US\" ,\n  \"email\" : \"test@example.com\" ,\n  \"phone\" : \"12123644576\" ,\n  \"shipping_method\" : \"Standard\" ,\n  \"product_id\" : \"product_id\" ,\n  \"postal_code\" : \"20500\" ,\n  \"personalizations\" : [\n    \"Barack\" ,\n    \"Michelle\"\n  ]\n}",
+                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"first_name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"last_name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"address_line1\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"city\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"state\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"country\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"email\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"phone\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"shipping_method\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"product_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"postal_code\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"personalizations\" : {\n      \"type\" : \"array\" ,\n      \"required\" : true ,\n      \"items\" : [\n        {\n          \"type\" : \"string\"\n        }\n      ]\n    }\n  }\n}"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "description": "Places an order for kits.\n\nThe minimum parameters are \"first_name\", \"last_name\", \"address_line1\", \"city\", \"country\", \"email\", \"phone\", \"shipping_method\", \"product_id\", \"personalizations\". All other parameters are optional but may become mandatory. For example, a state or postal code isn't necessary to ship to Ireland but are both necessary to ship to the US. \n\nThe optional parameters are \"state\", \"postal_code\", \"gift_message\" and \"address_line2\". \n\n\"shipping_method\" is one of \"Standard\" or \"Express\". \n\n\"personalizations\" is a list of personalization strings. The amount of kits in this order is based on the number of personalizations. [\"Barack\", \"Michelle\"] will place an order for 2 kits.\n",
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/placeorder",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "placeorder"
+            ]
+        },
+        {
+            "relativeUri": "/verifyaddress",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "methods": [
+                {
+                    "responses": {
+                        "201": {
+                            "code": "201",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "verifyaddressResponse",
+                                    "example": "{\n  \"city\" : \"WASHINGTON\" ,\n  \"first_name\" : \"Barack\" ,\n  \"last_name\" : \"Obama\" ,\n  \"country\" : \"US\" ,\n  \"address2\" : \"\" ,\n  \"state\" : \"DC\" ,\n  \"postal_code\" : \"20500-0003\" ,\n  \"address\" : \"1600 PENNSYLVANIA AVE NW\"\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"city\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"first_name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"last_name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"country\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"address2\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"state\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"postal_code\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"address\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                }
+                            }
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "verifyaddressRequest",
+                            "example": "{\n  \"first_name\" : \"Barack\" ,\n  \"last_name\" : \"Obama\" ,\n  \"address_line1\" : \"1600 Pennsylvania Avenue\" ,\n  \"city\" : \"Washington\" ,\n  \"state\" : \"DC\" ,\n  \"country\" : \"US\" ,\n  \"product_id\" : \"product_id\" ,\n  \"postal_code\" : \"20500\" ,\n  \"shipping_method\" : \"Standard\"\n}",
+                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"first_name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"last_name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"address_line1\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"city\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"state\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"country\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"product_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    } ,\n    \"postal_code\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"shipping_method\" : {\n      \"type\" : \"string\" ,\n      \"required\" : true\n    }\n  }\n}"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "description": "Verify's that we are allowed to ship to this address for you.\n\nThe minimum parameters are \"address_line1\", \"city\", \"country\", \"shipping_method\", \"product_id\". All other parameters are optional but may become mandatory. For example, a state or postal code isn't necessary to ship to Ireland but are both necessary to ship to the US. \n\nThe optional parameters are \"state\", \"postal_code\" and \"address_line2\".\n",
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/verifyaddress",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "verifyaddress"
+            ]
+        }
+    ],
+    "documentation": [
+        {
+            "title": "Headline",
+            "content": "can not resolve docs/reseller/headline.md"
+        }
+    ],
+    "__METADATA__": {
+        "primitiveValuesMeta": {
+            "protocols": {
+                "calculated": true
+            }
+        }
+    }
+}

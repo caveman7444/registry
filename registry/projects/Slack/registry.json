@@ -1,0 +1,17 @@
+{"apis": [
+    {
+        "name": "Slack",
+        "location": "https://raw.githubusercontent.com/raml-apis/Slack/production/slack.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "Slack",
+        "location": "https://raw.githubusercontent.com/raml-apis/Slack/raml1.0/slack.raml",
+        "RAMLVersion": "1.0"
+    },
+    {
+        "name": "\"Slack for Android Upload\"",
+        "location": "https://raw.githubusercontent.com/raml-apis/Slack/raml1.0/types.raml",
+        "RAMLVersion": "1.0 Library"
+    }
+]}

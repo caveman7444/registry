@@ -1,0 +1,2056 @@
+{
+    "title": "Parse",
+    "version": "1",
+    "baseUri": "https://api.parse.com/{version}",
+    "baseUriParameters": {
+        "version": {
+            "name": "version",
+            "displayName": "version",
+            "type": "string",
+            "required": true,
+            "repeat": false,
+            "enum": [
+                "1"
+            ],
+            "__METADATA__": {
+                "calculated": true,
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    },
+                    "type": {
+                        "insertedAsDefault": true
+                    },
+                    "required": {
+                        "insertedAsDefault": true
+                    },
+                    "repeat": {
+                        "insertedAsDefault": true
+                    },
+                    "enum": {
+                        "calculated": true
+                    }
+                }
+            }
+        }
+    },
+    "protocols": [
+        "HTTPS"
+    ],
+    "mediaType": "application/json",
+    "schemas": [
+        {
+            "classesQuery": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : true ,\n\t\"properties\" : {\n\t\t\"results\" : {\n\t\t\t\"type\" : \"array\" ,\n\t\t\t\"required\" : true ,\n\t\t\t\"items\" : {\n\t\t\t\t\"type\" : \"object\" ,\n\t\t\t\t\"required\" : false ,\n\t\t\t\t\"properties\" : {\n\t\t\t\t\t\"createdAt\" : {\n\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t} ,\n\t\t\t\t\t\"objectId\" : {\n\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t} ,\n\t\t\t\t\t\"updatedAt\" : {\n\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t}\n\t\t\t\t} ,\n\t\t\t\t\"patternProperties\" : {\n\t\t\t\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\t\t\t\"type\" : \"any\" ,\n\t\t\t\t\t\t\"required\" : false\n\t\t\t\t\t}\n\t\t\t\t} ,\n\t\t\t\t\"additionalProperties\" : false\n\t\t\t}\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}\n"
+        },
+        {
+            "classPost": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : false ,\n\t\"patternProperties\" : {\n\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\"type\" : \"any\" ,\n\t\t\t\"required\" : false\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}"
+        },
+        {
+            "classGet": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : true ,\n\t\"properties\" : {\n\t\t\"objectId\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"createdAt\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"updatedAt\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t}\n\t} ,\n\t\"patternProperties\" : {\n\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\"type\" : \"any\" ,\n\t\t\t\"required\" : false\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}\n"
+        },
+        {
+            "classPut": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : false ,\n\t\"patternProperties\" : {\n\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\"type\" : \"any\" ,\n\t\t\t\"required\" : false\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}"
+        },
+        {
+            "usersQuery": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : true ,\n\t\"properties\" : {\n\t\t\"results\" : {\n\t\t\t\"type\" : \"array\" ,\n\t\t\t\"required\" : true ,\n\t\t\t\"items\" : {\n\t\t\t\t\"type\" : \"object\" ,\n\t\t\t\t\"required\" : false ,\n\t\t\t\t\"properties\" : {\n\t\t\t\t\t\"username\" : {\n\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t} ,\n\t\t\t\t\t\"createdAt\" : {\n\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t} ,\n\t\t\t\t\t\"objectId\" : {\n\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t} ,\n\t\t\t\t\t\"updatedAt\" : {\n\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t}\n\t\t\t\t} ,\n\t\t\t\t\"patternProperties\" : {\n\t\t\t\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\t\t\t\"type\" : \"any\" ,\n\t\t\t\t\t\t\"required\" : false\n\t\t\t\t\t}\n\t\t\t\t} ,\n\t\t\t\t\"additionalProperties\" : false\n\t\t\t}\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}\n"
+        },
+        {
+            "userPost": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : false ,\n\t\"properties\" : {\n\t\t\"username\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t},\n\t\t\"password\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t}\n\t},\n\t\"patternProperties\" : {\n\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\"type\" : \"any\" ,\n\t\t\t\"required\" : false\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}"
+        },
+        {
+            "userGet": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : true ,\n\t\"properties\" : {\n\t\t\"username\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"email\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : false\n\t\t} ,\n\t\t\"phone\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : false\n\t\t} ,\n\t\t\"objectId\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"createdAt\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\t\t\n\t\t\"updatedAt\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t}\n\t},\n\t\"patternProperties\" : {\n\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\"type\" : \"any\" ,\n\t\t\t\"required\" : false\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}\n"
+        },
+        {
+            "userPut": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : false ,\n\t\"patternProperties\" : {\n\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\"type\" : \"any\" ,\n\t\t\t\"required\" : false\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\t\n}"
+        },
+        {
+            "usersPostResponse": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : true ,\n\t\"properties\" : {\n\t\t\"createdAt\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"objectId\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"sessionToken\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t}\n\t},\n\t\"additionalProperties\": false\n}"
+        },
+        {
+            "userLogin": "can not resolve schemas/userLogin.json"
+        },
+        {
+            "rolePost": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : false ,\n\t\"properties\" : {\n\t\t\"ACL\" : {\n\t\t\t\"type\" : \"object\" ,\n\t\t\t\"required\" : true ,\n\t\t\t\"properties\" : {\n\t\t\t\t\"*\" : {\n\t\t\t\t\t\"type\" : \"object\" ,\n\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\"properties\" : {\n\t\t\t\t\t\t\"read\" : {\n\t\t\t\t\t\t\t\"type\" : \"boolean\" ,\n\t\t\t\t\t\t\t\"required\" : false\n\t\t\t\t\t\t} ,\n\t\t\t\t\t\t\"write\" : {\n\t\t\t\t\t\t\t\"type\" : \"boolean\" ,\n\t\t\t\t\t\t\t\"required\" : false\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t} ,\n\t\t\"name\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"roles\" : {\n\t\t\t\"type\" : \"object\" ,\n\t\t\t\"required\" : false ,\n\t\t\t\"properties\" : {\n\t\t\t\t\"__op\" : {\n\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\"pattern\" : \"^AddRelation$\"\n\t\t\t\t} ,\n\t\t\t\t\"objects\" : {\n\t\t\t\t\t\"type\" : \"array\" ,\n\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\"items\" : {\n\t\t\t\t\t\t\"type\" : \"object\" ,\n\t\t\t\t\t\t\"required\" : false ,\n\t\t\t\t\t\t\"properties\" : {\n\t\t\t\t\t\t\t\"__type\" : {\n\t\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\t\t\t\"pattern\" : \"^_Role$\"\n\t\t\t\t\t\t\t} ,\n\t\t\t\t\t\t\t\"className\" : {\n\t\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t\t\t} ,\n\t\t\t\t\t\t\t\"objectId\" : {\n\t\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t} ,\n\t\t\"users\" : {\n\t\t\t\"type\" : \"object\" ,\n\t\t\t\"required\" : false ,\n\t\t\t\"properties\" : {\n\t\t\t\t\"__op\" : {\n\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\"pattern\" : \"^AddRelation$\"\n\t\t\t\t} ,\n\t\t\t\t\"objects\" : {\n\t\t\t\t\t\"type\" : \"array\" ,\n\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\"items\" : {\n\t\t\t\t\t\t\"type\" : \"object\" ,\n\t\t\t\t\t\t\"required\" : false ,\n\t\t\t\t\t\t\"properties\" : {\n\t\t\t\t\t\t\t\"__type\" : {\n\t\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\t\t\t\"pattern\" : \"^_User$\"\n\t\t\t\t\t\t\t} ,\n\t\t\t\t\t\t\t\"className\" : {\n\t\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t\t\t} ,\n\t\t\t\t\t\t\t\"objectId\" : {\n\t\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t},\n\t\"patternProperties\" : {\n\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\"type\" : \"any\" ,\n\t\t\t\"required\" : false\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}\n"
+        },
+        {
+            "roleGet": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : true ,\n\t\"properties\" : {\n\t\t\"name\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"ACL\" : {\n\t\t\t\"type\" : \"object\" ,\n\t\t\t\"required\" : true ,\n\t\t\t\"properties\" : {\n\t\t\t\t\"*\" : {\n\t\t\t\t\t\"type\" : \"object\" ,\n\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\"properties\" : {\n\t\t\t\t\t\t\"read\" : {\n\t\t\t\t\t\t\t\"type\" : \"boolean\" ,\n\t\t\t\t\t\t\t\"required\" : false\n\t\t\t\t\t\t} ,\n\t\t\t\t\t\t\"write\" : {\n\t\t\t\t\t\t\t\"type\" : \"boolean\" ,\n\t\t\t\t\t\t\t\"required\" : false\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t} ,\n\t\t\t\"patternProperties\" : {\n\t\t\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\t\t\"type\" : \"object\" ,\n\t\t\t\t\t\"required\" : false ,\n\t\t\t\t\t\"properties\" : {\n\t\t\t\t\t\t\"read\" : {\n\t\t\t\t\t\t\t\"type\" : \"boolean\" ,\n\t\t\t\t\t\t\t\"required\" : false\n\t\t\t\t\t\t} ,\n\t\t\t\t\t\t\"write\" : {\n\t\t\t\t\t\t\t\"type\" : \"boolean\" ,\n\t\t\t\t\t\t\t\"required\" : false\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t} ,\n\t\t\t\"additionalProperties\" : false\n\t\t},\n\t\t\"objectId\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"createdAt\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\t\t\n\t\t\"updatedAt\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t}\n\t},\n\t\"patternProperties\" : {\n\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\"type\" : \"any\" ,\n\t\t\t\"required\" : false\n\t\t}\n\t}\n}"
+        },
+        {
+            "rolePut": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : false ,\n\t\"properties\" : {\n\t\t\"roles\" : {\n\t\t\t\"type\" : \"object\" ,\n\t\t\t\"required\" : false ,\n\t\t\t\"properties\" : {\n\t\t\t\t\"__op\" : {\n\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\"pattern\" : \"^AddRelation$\"\n\t\t\t\t} ,\n\t\t\t\t\"objects\" : {\n\t\t\t\t\t\"type\" : \"array\" ,\n\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\"items\" : {\n\t\t\t\t\t\t\"type\" : \"object\" ,\n\t\t\t\t\t\t\"required\" : false ,\n\t\t\t\t\t\t\"properties\" : {\n\t\t\t\t\t\t\t\"__type\" : {\n\t\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\t\t\t\"pattern\" : \"^_Role$\"\n\t\t\t\t\t\t\t} ,\n\t\t\t\t\t\t\t\"className\" : {\n\t\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t\t\t} ,\n\t\t\t\t\t\t\t\"objectId\" : {\n\t\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t} ,\n\t\t\"users\" : {\n\t\t\t\"type\" : \"object\" ,\n\t\t\t\"required\" : false ,\n\t\t\t\"properties\" : {\n\t\t\t\t\"__op\" : {\n\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\"pattern\" : \"^AddRelation$\"\n\t\t\t\t} ,\n\t\t\t\t\"objects\" : {\n\t\t\t\t\t\"type\" : \"array\" ,\n\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\"items\" : {\n\t\t\t\t\t\t\"type\" : \"object\" ,\n\t\t\t\t\t\t\"required\" : false ,\n\t\t\t\t\t\t\"properties\" : {\n\t\t\t\t\t\t\t\"__type\" : {\n\t\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\t\t\t\"pattern\" : \"^_User$\"\n\t\t\t\t\t\t\t} ,\n\t\t\t\t\t\t\t\"className\" : {\n\t\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t\t\t} ,\n\t\t\t\t\t\t\t\"objectId\" : {\n\t\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t},\n\t\"patternProperties\" : {\n\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\"type\" : \"any\" ,\n\t\t\t\"required\" : false\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}\n"
+        },
+        {
+            "rolesQuery": "can not resolve schemas/rolesQuery.json"
+        },
+        {
+            "installationsQuery": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : true ,\n\t\"properties\" : {\n\t\t\"results\" : {\n\t\t\t\"type\" : \"array\" ,\n\t\t\t\"required\" : true ,\n\t\t\t\"items\" : {\n\t\t\t\t\"type\" : \"object\" ,\n\t\t\t\t\"required\" : false ,\n\t\t\t\t\"properties\" : {\n\t\t\t\t\t\"devicetype\" : {\n\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t} ,\n\t\t\t\t\t\"createdAt\" : {\n\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t} ,\n\t\t\t\t\t\"objectId\" : {\n\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t} ,\n\t\t\t\t\t\"updatedAt\" : {\n\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t}\n\t\t\t\t} ,\n\t\t\t\t\"patternProperties\" : {\n\t\t\t\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\t\t\t\"type\" : \"any\" ,\n\t\t\t\t\t\t\"required\" : false\n\t\t\t\t\t}\n\t\t\t\t} ,\n\t\t\t\t\"additionalProperties\" : false\n\t\t\t}\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}\n"
+        },
+        {
+            "installationPost": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : true ,\n\t\"properties\" : {\n\t\t\"deviceType\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"enum\": [ \"ios\", \"android\" ],\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"installationId\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : false\n\t\t} ,\n\t\t\"deviceToken\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : false\n\t\t} ,\n\t\t\"badge\" : {\n\t\t\t\"type\" : \"number\" ,\n\t\t\t\"required\" : false\n\t\t} ,\n\t\t\"timeZone\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : false\n\t\t} ,\n\t\t\"channels\" : {\n\t\t\t\"type\" : \"array\" ,\n\t\t\t\"items\": { \"type\": \"string\" } ,\n\t\t\t\"required\" : false\n\t\t}\n\t},\n\t\"patternProperties\" : {\n\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\"type\" : \"any\" ,\n\t\t\t\"required\" : false\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}\n"
+        },
+        {
+            "installationGet": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : true ,\n\t\"properties\" : {\n\t\t\"deviceType\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"enum\": [ \"ios\", \"android\" ],\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"installationId\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : false\n\t\t} ,\n\t\t\"deviceToken\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : false\n\t\t} ,\n\t\t\"badge\" : {\n\t\t\t\"type\" : \"number\" ,\n\t\t\t\"required\" : false\n\t\t} ,\n\t\t\"timeZone\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : false\n\t\t} ,\n\t\t\"channels\" : {\n\t\t\t\"type\" : \"array\" ,\n\t\t\t\"items\": { \"type\": \"string\" } ,\n\t\t\t\"required\" : false\n\t\t} ,\n\t\t\"objectId\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"createdAt\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\t\t\n\t\t\"updatedAt\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t}\n\t},\n\t\"patternProperties\" : {\n\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\"type\" : \"any\" ,\n\t\t\t\"required\" : false\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}\n"
+        },
+        {
+            "installationPut": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : false ,\n\t\"patternProperties\" : {\n\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\"type\" : \"any\" ,\n\t\t\t\"required\" : false\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}"
+        },
+        {
+            "collectionPostResponse": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : true ,\n\t\"properties\" : {\n\t\t\"createdAt\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"objectId\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t}\n\t},\n\t\"additionalProperties\": false\n}"
+        },
+        {
+            "collectionPutResponse": "{\n\t\"type\":\"object\",\n\t\"$schema\": \"http://json-schema.org/draft-03/schema\",\n\t\"required\":true,\n\t\"properties\":{\n\t\t\"updatedAt\": {\n\t\t\t\"type\":\"string\",\n\t\t\t\"required\":true\n\t\t}\n\t}\n}\n"
+        },
+        {
+            "batchPost": "\n{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : false ,\n\t\"properties\" : {\n\t\t\"requests\" : {\n\t\t\t\"type\" : \"array\" ,\n\t\t\t\"required\" : false ,\n\t\t\t\"items\" : {\n\t\t\t\t\"type\" : \"object\" ,\n\t\t\t\t\"required\" : false ,\n\t\t\t\t\"properties\" : {\n\t\t\t\t\t\"body\" : {\n\t\t\t\t\t\t\"type\" : \"object\" ,\n\t\t\t\t\t\t\"required\" : false \n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"method\" : {\n\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\"required\" : true,\n\t\t\t\t\t\t\t\"enum\" : [\"POST\", \"GET\", \"PUT\", \"DELETE\"]\n\t\t\t\t\t\t} ,\n\t\t\t\t\t\t\"path\" : {\n\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n"
+        },
+        {
+            "batchResponse": "{\n  \"type\": \"array\",\n  \"$schema\": \"http://json-schema.org/draft-03/schema\",\n  \"required\": false,\n  \"items\": {\n    \"type\": \"array\",\n    \"items\": {\n      \"type\": \"object\",\n      \"required\": false,\n      \"properties\": {\n        \"success\": {\n          \"type\": \"object\",\n          \"required\": true,\n          \"properties\": {\n            \"createdAt\": {\n              \"type\": \"string\",\n              \"required\": true\n            },\n            \"objectId\": {\n              \"type\": \"string\",\n              \"required\": true\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+            "fileResponse": "{\n\t\"type\":\"object\",\n\t\"$schema\": \"http://json-schema.org/draft-03/schema\",\n\t\"required\":true,\n\t\"properties\":{\n\t\t\"url\": {\n\t\t\t\"type\":\"string\",\n\t\t\t\"required\":true\n\t\t},\n\t\t\"name\": {\n\t\t\t\"type\":\"string\",\n\t\t\t\"required\":true\n\t\t}\n\t}\n}\n"
+        },
+        {
+            "analyticsAppOpened": "{\n\t\"type\":\"object\",\n\t\"$schema\": \"http://json-schema.org/draft-03/schema\",\n\t\"required\":false,\n\t\"properties\":{\n\t\t\"at\": {\n\t\t\t\"type\":\"object\",\n\t\t\t\"required\":false,\n\t\t\t\"properties\":{\n\t\t\t\t\"__type\": {\n\t\t\t\t\t\"type\":\"string\",\n\t\t\t\t\t\"required\":true\n\t\t\t\t},\n\t\t\t\t\"iso\": {\n\t\t\t\t\t\"type\":\"string\",\n\t\t\t\t\t\"required\":true\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t},\n\t\"additionalProperties\" : false\n}"
+        },
+        {
+            "analytics": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : false ,\n\t\"properties\" : {\n\t\t\"at\" : {\n\t\t\t\"type\" : \"object\" ,\n\t\t\t\"required\" : false ,\n\t\t\t\"properties\" : {\n\t\t\t\t\"__type\" : {\n\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\"required\" : true\n\t\t\t\t} ,\n\t\t\t\t\"iso\" : {\n\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\"required\" : true\n\t\t\t\t}\n\t\t\t}\n\t\t} ,\n\t\t\"dimensions\" : {\n\t\t\t\"type\" : \"object\" ,\n\t\t\t\"required\" : false \t\t\t\n\t\t}\n\t}\n}\n"
+        },
+        {
+            "functions": "{\n\t\"patternProperties\" : {\n\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\"type\" : \"any\" ,\n\t\t\t\"required\" : false\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}"
+        },
+        {
+            "requestPasswordReset": "{\n\t\"type\":\"object\",\n\t\"$schema\": \"http://json-schema.org/draft-03/schema\",\n\t\"required\":true,\n\t\"properties\":{\n\t\t\"email\": {\n\t\t\t\"type\":\"string\",\n\t\t\t\"required\":true\n\t\t}\n\t}\n}\n"
+        },
+        {
+            "push": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : false ,\n\t\"properties\" : {\n\t\t\"channels\" : {\n\t\t\t\"type\" : \"array\" ,\n\t\t\t\"required\" : false ,\n\t\t\t\"items\" : {\n\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\"required\" : false\n\t\t\t}\n\t\t} ,\n\t\t\"data\" : {\n\t\t\t\"type\" : \"object\" ,\n\t\t\t\"required\" : false \n\t\t} ,\n\t\t\"expiration_interval\" : {\n\t\t\t\"type\" : \"number\" ,\n\t\t\t\"required\" : false\n\t\t} ,\n\t\t\"push_time\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : false\n\t\t} ,\n\t\t\"where\" : {\n\t\t\t\"type\" : \"object\" ,\n\t\t\t\"required\" : false \n\t\t}\n\t},\n\t\"additionalProperties\" : false\n}"
+        }
+    ],
+    "traits": [
+        {
+            "allowsQuery": {
+                "body": {
+                    "application/x-www-form-urlencoded": {
+                        "name": "application/x-www-form-urlencoded",
+                        "formParameters": {
+                            "where": {
+                                "name": "where",
+                                "displayName": "where",
+                                "type": "string",
+                                "required": false,
+                                "example": "where={\"cheatMode\":false,\"score\":{\"$gte\":1000,\"$lte\":3000}}",
+                                "repeat": false,
+                                "description": "Provides query parameters. The value should be JSON.\n|Key         |Operation                                    |\n|------------|---------------------------------------------|\n|$lt         |Less Than                                    |\n|$lte        |Less Than Or Equal To                        |\n|$gt         |Greater Than                                 |\n|$gte        |Greater Than Or Equal To                     |\n|$ne         |Not Equal To                                 |\n|$in         |Contained In                                 |\n|$nin        |Not Contained in                             |\n|$exists     |A value is set for the key                   |\n|$select     |This matches a value for a key in the result of a different query|\n|$dontSelect |Requires that a key's value not match a value for a key in the result of a different query|\n|$all        |Contains all of the given values             |\n",
+                                "__METADATA__": {
+                                    "primitiveValuesMeta": {
+                                        "displayName": {
+                                            "calculated": true
+                                        },
+                                        "type": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "required": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "repeat": {
+                                            "insertedAsDefault": true
+                                        }
+                                    }
+                                }
+                            },
+                            "order": {
+                                "name": "order",
+                                "displayName": "order",
+                                "type": "string",
+                                "required": false,
+                                "example": "order=score,-name",
+                                "repeat": false,
+                                "description": "Specifies a field to sort by. Use '-' to obtain descending order. Accepts multiple fields.",
+                                "__METADATA__": {
+                                    "primitiveValuesMeta": {
+                                        "displayName": {
+                                            "calculated": true
+                                        },
+                                        "type": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "required": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "repeat": {
+                                            "insertedAsDefault": true
+                                        }
+                                    }
+                                }
+                            },
+                            "limit": {
+                                "name": "limit",
+                                "displayName": "limit",
+                                "type": "integer",
+                                "required": false,
+                                "repeat": false,
+                                "description": "Pagination parameter. Maximal size of the results array.",
+                                "__METADATA__": {
+                                    "primitiveValuesMeta": {
+                                        "displayName": {
+                                            "calculated": true
+                                        },
+                                        "required": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "repeat": {
+                                            "insertedAsDefault": true
+                                        }
+                                    }
+                                }
+                            },
+                            "skip": {
+                                "name": "skip",
+                                "displayName": "skip",
+                                "type": "integer",
+                                "required": false,
+                                "repeat": false,
+                                "description": "Pagination parameter. Offset used to form the results array.",
+                                "__METADATA__": {
+                                    "primitiveValuesMeta": {
+                                        "displayName": {
+                                            "calculated": true
+                                        },
+                                        "required": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "repeat": {
+                                            "insertedAsDefault": true
+                                        }
+                                    }
+                                }
+                            },
+                            "keys": {
+                                "name": "keys",
+                                "displayName": "keys",
+                                "type": "string",
+                                "required": false,
+                                "example": "keys=score,playerName",
+                                "repeat": false,
+                                "description": "Restricts returned fields.",
+                                "__METADATA__": {
+                                    "primitiveValuesMeta": {
+                                        "displayName": {
+                                            "calculated": true
+                                        },
+                                        "type": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "required": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "repeat": {
+                                            "insertedAsDefault": true
+                                        }
+                                    }
+                                }
+                            },
+                            "count": {
+                                "name": "count",
+                                "displayName": "count",
+                                "type": "integer",
+                                "required": false,
+                                "repeat": false,
+                                "description": "If you are limiting your query, or if there are a very large number of results, and you want to\nknow how many total results there are without returning them all, you can use the count parameter.\n",
+                                "__METADATA__": {
+                                    "primitiveValuesMeta": {
+                                        "displayName": {
+                                            "calculated": true
+                                        },
+                                        "required": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "repeat": {
+                                            "insertedAsDefault": true
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "name": "allowsQuery"
+            }
+        },
+        {
+            "allowsBasicAuthentication": {
+                "securedBy": [
+                    "basic"
+                ],
+                "name": "allowsBasicAuthentication"
+            }
+        }
+    ],
+    "securitySchemes": [
+        {
+            "basic": {
+                "name": "basic",
+                "type": "Basic Authentication"
+            }
+        },
+        {
+            "commonSchema": {
+                "name": "commonSchema",
+                "type": "x-header-schema",
+                "description": "Schema which requires Application ID and REST API Key",
+                "describedBy": {
+                    "headers": {
+                        "X-Parse-Application-Id": {
+                            "name": "X-Parse-Application-Id",
+                            "displayName": "X-Parse-Application-Id",
+                            "type": "string",
+                            "required": true,
+                            "example": "GzBxtflDl76RdiZFLujo4uNVxS7MIZXbEy6D3Tle",
+                            "repeat": false,
+                            "description": "Id of the application",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "X-Parse-REST-API-Key": {
+                            "name": "X-Parse-REST-API-Key",
+                            "displayName": "X-Parse-REST-API-Key",
+                            "type": "string",
+                            "required": true,
+                            "example": "UugJz3YVpU0gKgK7OfIYQQAntOxFGKPK615Qmjc9",
+                            "repeat": false,
+                            "description": "REST API key of the application.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "sessionTokenSchema": {
+                "name": "sessionTokenSchema",
+                "type": "x-header-schema",
+                "description": "Schema which requires Application ID, REST API Key and Session Token",
+                "describedBy": {
+                    "headers": {
+                        "X-Parse-Application-Id": {
+                            "name": "X-Parse-Application-Id",
+                            "displayName": "X-Parse-Application-Id",
+                            "type": "string",
+                            "required": true,
+                            "example": "GzBxtflDl76RdiZFLujo4uNVxS7MIZXbEy6D3Tle",
+                            "repeat": false,
+                            "description": "Id of the application",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "X-Parse-REST-API-Key": {
+                            "name": "X-Parse-REST-API-Key",
+                            "displayName": "X-Parse-REST-API-Key",
+                            "type": "string",
+                            "required": true,
+                            "example": "UugJz3YVpU0gKgK7OfIYQQAntOxFGKPK615Qmjc9",
+                            "repeat": false,
+                            "description": "REST API key of the application.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "X-Parse-Session-Token": {
+                            "name": "X-Parse-Session-Token",
+                            "displayName": "X-Parse-Session-Token",
+                            "type": "string",
+                            "required": true,
+                            "example": "pnktnjyb996sj4p156gjtp4im",
+                            "repeat": false,
+                            "description": "Session token",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "masterSchema": {
+                "name": "masterSchema",
+                "type": "x-header-schema",
+                "description": "Schema which requires Application ID and Master Key",
+                "describedBy": {
+                    "headers": {
+                        "X-Parse-Application-Id": {
+                            "name": "X-Parse-Application-Id",
+                            "displayName": "X-Parse-Application-Id",
+                            "type": "string",
+                            "required": true,
+                            "example": "GzBxtflDl76RdiZFLujo4uNVxS7MIZXbEy6D3Tle",
+                            "repeat": false,
+                            "description": "Id of the application",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "X-Parse-Master-Key": {
+                            "name": "X-Parse-Master-Key",
+                            "displayName": "X-Parse-Master-Key",
+                            "type": "string",
+                            "required": true,
+                            "example": "ooE8rNiYKd5FTnT6gGJNXyq5mlXCSk2xLRPMBwZs",
+                            "repeat": false,
+                            "description": "Master key of the application.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "resourceTypes": [
+        {
+            "parseCollection": {
+                "name": "parseCollection",
+                "usage": "This resourceType should be used for any collection of items",
+                "is": [
+                    "allowsBasicAuthentication"
+                ],
+                "description": "The collection of <<resourceName>>",
+                "get": {
+                    "responses": {
+                        "200": {
+                            "code": "200"
+                        }
+                    },
+                    "securedBy": [
+                        "commonSchema"
+                    ],
+                    "description": "Get all <<resourceName>>, optionally filtered",
+                    "method": "get",
+                    "is": [
+                        "allowsQuery"
+                    ]
+                },
+                "post": {
+                    "securedBy": [
+                        "commonSchema"
+                    ],
+                    "description": "Create a new <<resourceName | !singularize>>",
+                    "method": "post"
+                }
+            }
+        },
+        {
+            "parseMember": {
+                "name": "parseMember",
+                "is": [
+                    "allowsBasicAuthentication"
+                ],
+                "get": {
+                    "securedBy": [
+                        "commonSchema"
+                    ],
+                    "description": "Retreive <<objectType>> by objectId",
+                    "method": "get"
+                },
+                "put": {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "collectionPutResponse",
+                                    "example": "{\n\t\"updatedAt\" : \"2011-08-21T18:02:52.248Z\"\n}",
+                                    "schemaContent": "collectionPutResponse"
+                                }
+                            }
+                        }
+                    },
+                    "description": "Update <<objectType>>",
+                    "method": "put"
+                },
+                "delete": {
+                    "responses": {
+                        "200": {
+                            "code": "200"
+                        }
+                    },
+                    "securedBy": [
+                        "commonSchema"
+                    ],
+                    "description": "Delete <<objectType>> by objectId\n",
+                    "method": "delete"
+                }
+            }
+        }
+    ],
+    "resources": [
+        {
+            "relativeUri": "/classes",
+            "resources": [
+                {
+                    "relativeUri": "/{className}",
+                    "type": {
+                        "parseCollection": {
+                            "resourceName": "classes"
+                        }
+                    },
+                    "uriParameters": {
+                        "className": {
+                            "name": "className",
+                            "displayName": "className",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "classesQuery",
+                                            "example": "{\n\t\"results\" : [ {\n\t\t\"playerName\" : \"Jang Min Chul\" ,\n\t\t\"updatedAt\" : \"2011-08-19T02:24:17.787Z\" ,\n\t\t\"cheatMode\" : false ,\n\t\t\"createdAt\" : \"2011-08-19T02:24:17.787Z\" ,\n\t\t\"objectId\" : \"A22v5zRAgd\" ,\n\t\t\"score\" : 80075\n\t} , {\n\t\t\"playerName\" : \"Sean Plott\" ,\n\t\t\"updatedAt\" : \"2011-08-21T18:02:52.248Z\" ,\n\t\t\"cheatMode\" : false ,\n\t\t\"createdAt\" : \"2011-08-20T02:06:57.931Z\" ,\n\t\t\"objectId\" : \"Ed1nuqPvcm\" ,\n\t\t\"score\" : 73453\n\t} ]\n}",
+                                            "schemaContent": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : true ,\n\t\"properties\" : {\n\t\t\"results\" : {\n\t\t\t\"type\" : \"array\" ,\n\t\t\t\"required\" : true ,\n\t\t\t\"items\" : {\n\t\t\t\t\"type\" : \"object\" ,\n\t\t\t\t\"required\" : false ,\n\t\t\t\t\"properties\" : {\n\t\t\t\t\t\"createdAt\" : {\n\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t} ,\n\t\t\t\t\t\"objectId\" : {\n\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t} ,\n\t\t\t\t\t\"updatedAt\" : {\n\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t}\n\t\t\t\t} ,\n\t\t\t\t\"patternProperties\" : {\n\t\t\t\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\t\t\t\"type\" : \"any\" ,\n\t\t\t\t\t\t\"required\" : false\n\t\t\t\t\t}\n\t\t\t\t} ,\n\t\t\t\t\"additionalProperties\" : false\n\t\t\t}\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}\n"
+                                        }
+                                    }
+                                }
+                            },
+                            "body": {
+                                "application/x-www-form-urlencoded": {
+                                    "name": "application/x-www-form-urlencoded",
+                                    "formParameters": {
+                                        "include": {
+                                            "name": "include",
+                                            "displayName": "include",
+                                            "type": "string",
+                                            "required": false,
+                                            "example": "include=game",
+                                            "repeat": false,
+                                            "description": "Fetch child objects pointed to by the key",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "commonSchema"
+                            ],
+                            "description": "Retreives objects. The response body is a JSON object containing all the user-provided fields,\nplus the createdAt, updatedAt, and objectId fields.\n",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "collectionPostResponse",
+                                            "example": "{\n\t\"createdAt\" : \"2013-12-19T17:21:15.147Z\" ,\n\t\"objectId\" : \"4GW66cmAWP\"\n}",
+                                            "schemaContent": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : true ,\n\t\"properties\" : {\n\t\t\"createdAt\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"objectId\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t}\n\t},\n\t\"additionalProperties\": false\n}"
+                                        }
+                                    }
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "classPost",
+                                    "example": "{\n\t\"username\" : \"cooldude6\" ,\n\t\"password\" : \"p_n7!-e8\" ,\n\t\"phone\" : \"415-392-0202\"\n}",
+                                    "schemaContent": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : false ,\n\t\"patternProperties\" : {\n\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\"type\" : \"any\" ,\n\t\t\t\"required\" : false\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "Creates an object. When the creation is successful, the HTTP response is a 201 Created\nand the Location header contains the object URL for the new object.\n",
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "resources": [
+                        {
+                            "relativeUri": "/{objectId}",
+                            "type": {
+                                "parseMember": {
+                                    "objectType": "instance"
+                                }
+                            },
+                            "uriParameters": {
+                                "objectId": {
+                                    "name": "objectId",
+                                    "displayName": "objectId",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "__METADATA__": {
+                                        "calculated": true,
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "classGet",
+                                                    "example": "{\n\t\"score\" : 1337 ,\n\t\"playerName\" : \"Sean Plott\" ,\n\t\"cheatMode\" : false ,\n\t\"skills\" : [ \"pwnage\" , \"flying\" ] ,\n\t\"createdAt\" : \"2011-08-20T02:06:57.931Z\" ,\n\t\"updatedAt\" : \"2011-08-20T02:06:57.931Z\" ,\n\t\"objectId\" : \"Ed1nuqPvcm\"\n}",
+                                                    "schemaContent": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : true ,\n\t\"properties\" : {\n\t\t\"objectId\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"createdAt\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"updatedAt\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t}\n\t} ,\n\t\"patternProperties\" : {\n\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\"type\" : \"any\" ,\n\t\t\t\"required\" : false\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}\n"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "method": "get",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "classPut",
+                                            "example": "{\n\t\"name\" : \"New Name\" ,\n\t\"score\" : {\n\t\t\"__op\" : \"Increment\" ,\n\t\t\"amount\" : 1\n\t} ,\n\t\"skills\" : {\n\t\t\"__op\" : \"AddUnique\" ,\n\t\t\"objects\" : [ \"flying\" , \"kungfu\" ]\n\t} ,\n\t\"opponents\" : {\n\t\t\"__op\" : \"AddRelation\" ,\n\t\t\"objects\" : [ {\n\t\t\t\"__type\" : \"Pointer\" ,\n\t\t\t\"className\" : \"Player\" ,\n\t\t\t\"objectId\" : \"Vx4nudeWn\"\n\t\t} ]\n\t}\n}",
+                                            "schemaContent": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : false ,\n\t\"patternProperties\" : {\n\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\"type\" : \"any\" ,\n\t\t\t\"required\" : false\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}"
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "commonSchema"
+                                    ],
+                                    "description": "Updates an object. Any keys you don't specify will remain unchanged, so you can update just a subset of the object's data.\n",
+                                    "method": "put",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "commonSchema"
+                                    ],
+                                    "method": "delete",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "displayName": "/{objectId}",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "{objectId}"
+                            ]
+                        }
+                    ],
+                    "displayName": "/{className}",
+                    "description": "Collection of class instances",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{className}"
+                    ]
+                }
+            ],
+            "displayName": "/classes",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "classes"
+            ]
+        },
+        {
+            "relativeUri": "/batch",
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "batchResponse",
+                                    "example": "[\n\t{\n\t\t\"success\" : {\n\t\t\t\"createdAt\" : \"2013-12-24T18:58:41.741Z\" ,\n\t\t\t\"objectId\" : \"VaUca0tRMT\"\n\t\t}\n\t} ,\n\t{\n\t\t\"error\" : {\n\t\t\t\"code\" : 101 ,\n\t\t\t\"error\" : \"object not found for delete\"\n\t\t}\n\t}\n]",
+                                    "schemaContent": "{\n  \"type\": \"array\",\n  \"$schema\": \"http://json-schema.org/draft-03/schema\",\n  \"required\": false,\n  \"items\": {\n    \"type\": \"array\",\n    \"items\": {\n      \"type\": \"object\",\n      \"required\": false,\n      \"properties\": {\n        \"success\": {\n          \"type\": \"object\",\n          \"required\": true,\n          \"properties\": {\n            \"createdAt\": {\n              \"type\": \"string\",\n              \"required\": true\n            },\n            \"objectId\": {\n              \"type\": \"string\",\n              \"required\": true\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+                                }
+                            }
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "batchPost",
+                            "example": "{\n\t\"requests\" : [ {\n\t\t\"method\" : \"POST\" ,\n\t\t\"path\" : \"/1/classes/GameScore\" ,\n\t\t\"body\" : {\n\t\t\t\"score\" : 1337 ,\n\t\t\t\"playerName\" : \"Sean Plott\"\n\t\t}\n\t} , {\n\t\t\"method\" : \"POST\" ,\n\t\t\"path\" : \"/1/classes/GameScore\" ,\n\t\t\"body\" : {\n\t\t\t\"score\" : 1338 ,\n\t\t\t\"playerName\" : \"ZeroCool\"\n\t\t}\n\t} ]\n}",
+                            "schemaContent": "\n{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : false ,\n\t\"properties\" : {\n\t\t\"requests\" : {\n\t\t\t\"type\" : \"array\" ,\n\t\t\t\"required\" : false ,\n\t\t\t\"items\" : {\n\t\t\t\t\"type\" : \"object\" ,\n\t\t\t\t\"required\" : false ,\n\t\t\t\t\"properties\" : {\n\t\t\t\t\t\"body\" : {\n\t\t\t\t\t\t\"type\" : \"object\" ,\n\t\t\t\t\t\t\"required\" : false \n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"method\" : {\n\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\"required\" : true,\n\t\t\t\t\t\t\t\"enum\" : [\"POST\", \"GET\", \"PUT\", \"DELETE\"]\n\t\t\t\t\t\t} ,\n\t\t\t\t\t\t\"path\" : {\n\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "basic",
+                        "commonSchema"
+                    ],
+                    "description": "To reduce the amount of time spent on network round trips, you can create, update, or delete up to 50 objects in one call, using the batch endpoint.",
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/batch",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "batch"
+            ]
+        },
+        {
+            "relativeUri": "/users",
+            "type": {
+                "parseCollection": {
+                    "resourceName": "users"
+                }
+            },
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "usersQuery",
+                                    "example": "{\n\t\"results\" : [ {\n\t\t\"username\" : \"bigglesworth\" ,\n\t\t\"phone\" : \"650-253-0000\" ,\n\t\t\"createdAt\" : \"2011-11-07T20:58:06.445Z\" ,\n\t\t\"updatedAt\" : \"2011-11-07T20:58:06.445Z\" ,\n\t\t\"objectId\" : \"3KmCvT7Zsb\"\n\t} , {\n\t\t\"username\" : \"cooldude6\" ,\n\t\t\"phone\" : \"415-369-6201\" ,\n\t\t\"createdAt\" : \"2011-11-07T20:58:34.448Z\" ,\n\t\t\"updatedAt\" : \"2011-11-07T21:25:10.623Z\" ,\n\t\t\"objectId\" : \"g7y9tkhB7O\"\n\t} ]\n}",
+                                    "schemaContent": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : true ,\n\t\"properties\" : {\n\t\t\"results\" : {\n\t\t\t\"type\" : \"array\" ,\n\t\t\t\"required\" : true ,\n\t\t\t\"items\" : {\n\t\t\t\t\"type\" : \"object\" ,\n\t\t\t\t\"required\" : false ,\n\t\t\t\t\"properties\" : {\n\t\t\t\t\t\"username\" : {\n\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t} ,\n\t\t\t\t\t\"createdAt\" : {\n\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t} ,\n\t\t\t\t\t\"objectId\" : {\n\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t} ,\n\t\t\t\t\t\"updatedAt\" : {\n\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t}\n\t\t\t\t} ,\n\t\t\t\t\"patternProperties\" : {\n\t\t\t\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\t\t\t\"type\" : \"any\" ,\n\t\t\t\t\t\t\"required\" : false\n\t\t\t\t\t}\n\t\t\t\t} ,\n\t\t\t\t\"additionalProperties\" : false\n\t\t\t}\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}\n"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "commonSchema"
+                    ],
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "201": {
+                            "code": "201",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "usersPostResponse",
+                                    "example": "{\n\t\"createdAt\": \"2011-11-07T20:58:34.448Z\",\n\t\"objectId\": \"g7y9tkhB7O\",\n\t\"sessionToken\": \"pnktnjyb996sj4p156gjtp4im\"\n}",
+                                    "schemaContent": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : true ,\n\t\"properties\" : {\n\t\t\"createdAt\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"objectId\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"sessionToken\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t}\n\t},\n\t\"additionalProperties\": false\n}"
+                                }
+                            }
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "userPost",
+                            "example": "{\n\t\"username\" : \"cooldude6\" ,\n\t\"password\" : \"p_n7!-e8\" ,\n\t\"phone\" : \"415-392-0202\"\n}",
+                            "schemaContent": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : false ,\n\t\"properties\" : {\n\t\t\"username\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t},\n\t\t\"password\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t}\n\t},\n\t\"patternProperties\" : {\n\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\"type\" : \"any\" ,\n\t\t\t\"required\" : false\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "Signs up a new user.\n",
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "resources": [
+                {
+                    "relativeUri": "/me",
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "userGet",
+                                            "example": "{\n\t\"username\" : \"cooldude6\" ,\n\t\"phone\" : \"415-392-0202\" ,\n\t\"createdAt\" : \"2011-11-07T20:58:34.448Z\" ,\n\t\"updatedAt\" : \"2011-11-07T20:58:34.448Z\" ,\n\t\"objectId\" : \"g7y9tkhB7O\"\n}",
+                                            "schemaContent": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : true ,\n\t\"properties\" : {\n\t\t\"username\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"email\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : false\n\t\t} ,\n\t\t\"phone\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : false\n\t\t} ,\n\t\t\"objectId\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"createdAt\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\t\t\n\t\t\"updatedAt\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t}\n\t},\n\t\"patternProperties\" : {\n\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\"type\" : \"any\" ,\n\t\t\t\"required\" : false\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}\n"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "basic",
+                                "sessionTokenSchema"
+                            ],
+                            "description": "Retrieve the user associated with the session token placed into the 'X-Parse-Session-Token' header.\nIf the session token is not valid, an error object is returned.\n",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/me",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "me"
+                    ]
+                },
+                {
+                    "relativeUri": "/{objectId}",
+                    "type": {
+                        "parseMember": {
+                            "objectType": "user"
+                        }
+                    },
+                    "uriParameters": {
+                        "objectId": {
+                            "name": "objectId",
+                            "displayName": "objectId",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "userGet",
+                                            "example": "{\n\t\"username\" : \"cooldude6\" ,\n\t\"phone\" : \"415-392-0202\" ,\n\t\"createdAt\" : \"2011-11-07T20:58:34.448Z\" ,\n\t\"updatedAt\" : \"2011-11-07T20:58:34.448Z\" ,\n\t\"objectId\" : \"g7y9tkhB7O\"\n}",
+                                            "schemaContent": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : true ,\n\t\"properties\" : {\n\t\t\"username\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"email\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : false\n\t\t} ,\n\t\t\"phone\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : false\n\t\t} ,\n\t\t\"objectId\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"createdAt\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\t\t\n\t\t\"updatedAt\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t}\n\t},\n\t\"patternProperties\" : {\n\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\"type\" : \"any\" ,\n\t\t\t\"required\" : false\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}\n"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "Retreive a user by objectId. Response body is a JSON object containing all the user-provided fields except password.\nIt also contains the createdAt, updatedAt, and objectId fields\n",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "userPut",
+                                    "example": "{\n\t\"phone\" : \"415-369-6201\"\n}",
+                                    "schemaContent": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : false ,\n\t\"patternProperties\" : {\n\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\"type\" : \"any\" ,\n\t\t\t\"required\" : false\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\t\n}"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "sessionTokenSchema",
+                                "masterSchema"
+                            ],
+                            "description": "Updates a user. Any keys you don't specify will remain unchanged, so you can update just a subset of the object's data.\n",
+                            "method": "put",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "sessionTokenSchema",
+                                "masterSchema"
+                            ],
+                            "method": "delete",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/{objectId}",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{objectId}"
+                    ]
+                }
+            ],
+            "displayName": "/users",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "users"
+            ]
+        },
+        {
+            "relativeUri": "/login",
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "userLogin",
+                                    "example": "can not resolve examples/userLogin.json",
+                                    "schemaContent": "can not resolve schemas/userLogin.json"
+                                }
+                            }
+                        }
+                    },
+                    "body": {
+                        "application/x-www-form-urlencoded": {
+                            "name": "application/x-www-form-urlencoded",
+                            "formParameters": {
+                                "username": {
+                                    "name": "username",
+                                    "displayName": "username",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "password": {
+                                    "name": "password",
+                                    "displayName": "password",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "basic",
+                        "commonSchema"
+                    ],
+                    "description": "Logs in a user to his or her account. Response provides a 'sessionToken' which is used to invoke methods with authorized access.",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/login",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "login"
+            ]
+        },
+        {
+            "relativeUri": "/requestPasswordReset",
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200"
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "requestPasswordReset",
+                            "example": "{\n\t\"email\" : \"coolguy@iloveapps.com\"\n}",
+                            "schemaContent": "{\n\t\"type\":\"object\",\n\t\"$schema\": \"http://json-schema.org/draft-03/schema\",\n\t\"required\":true,\n\t\"properties\":{\n\t\t\"email\": {\n\t\t\t\"type\":\"string\",\n\t\t\t\"required\":true\n\t\t}\n\t}\n}\n"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "basic",
+                        "commonSchema"
+                    ],
+                    "description": "Initiates password reset for a users who has email associated with his or her account.",
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/requestPasswordReset",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "requestPasswordReset"
+            ]
+        },
+        {
+            "relativeUri": "/roles",
+            "type": {
+                "parseCollection": {
+                    "resourceName": "roles"
+                }
+            },
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "rolesQuery",
+                                    "example": "can not resolve examples/rolesQuery.json",
+                                    "schemaContent": "can not resolve schemas/rolesQuery.json"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "commonSchema"
+                    ],
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "201": {
+                            "code": "201",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "collectionPostResponse",
+                                    "example": "{\n\t\"createdAt\" : \"2013-12-19T17:21:15.147Z\" ,\n\t\"objectId\" : \"4GW66cmAWP\"\n}",
+                                    "schemaContent": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : true ,\n\t\"properties\" : {\n\t\t\"createdAt\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"objectId\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t}\n\t},\n\t\"additionalProperties\": false\n}"
+                                }
+                            }
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "rolePost",
+                            "example": "{\n\t\"name\" : \"Moderators\" ,\n\t\"ACL\" : {\n\t\t\"*\" : {\n\t\t\t\"read\" : true\n\t\t}\n\t} ,\n\t\"roles\" : {\n\t\t\"__op\" : \"AddRelation\" ,\n\t\t\"objects\" : [ {\n\t\t\t\"__type\" : \"Pointer\" ,\n\t\t\t\"className\" : \"_Role\" ,\n\t\t\t\"objectId\" : \"Ed1nuqPvc\"\n\t\t} ]\n\t} ,\n\t\"users\" : {\n\t\t\"__op\" : \"AddRelation\" ,\n\t\t\"objects\" : [ {\n\t\t\t\"__type\" : \"Pointer\" ,\n\t\t\t\"className\" : \"_User\" ,\n\t\t\t\"objectId\" : \"8TOXdXf3tz\"\n\t\t} ]\n\t}\n}",
+                            "schemaContent": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : false ,\n\t\"properties\" : {\n\t\t\"ACL\" : {\n\t\t\t\"type\" : \"object\" ,\n\t\t\t\"required\" : true ,\n\t\t\t\"properties\" : {\n\t\t\t\t\"*\" : {\n\t\t\t\t\t\"type\" : \"object\" ,\n\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\"properties\" : {\n\t\t\t\t\t\t\"read\" : {\n\t\t\t\t\t\t\t\"type\" : \"boolean\" ,\n\t\t\t\t\t\t\t\"required\" : false\n\t\t\t\t\t\t} ,\n\t\t\t\t\t\t\"write\" : {\n\t\t\t\t\t\t\t\"type\" : \"boolean\" ,\n\t\t\t\t\t\t\t\"required\" : false\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t} ,\n\t\t\"name\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"roles\" : {\n\t\t\t\"type\" : \"object\" ,\n\t\t\t\"required\" : false ,\n\t\t\t\"properties\" : {\n\t\t\t\t\"__op\" : {\n\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\"pattern\" : \"^AddRelation$\"\n\t\t\t\t} ,\n\t\t\t\t\"objects\" : {\n\t\t\t\t\t\"type\" : \"array\" ,\n\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\"items\" : {\n\t\t\t\t\t\t\"type\" : \"object\" ,\n\t\t\t\t\t\t\"required\" : false ,\n\t\t\t\t\t\t\"properties\" : {\n\t\t\t\t\t\t\t\"__type\" : {\n\t\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\t\t\t\"pattern\" : \"^_Role$\"\n\t\t\t\t\t\t\t} ,\n\t\t\t\t\t\t\t\"className\" : {\n\t\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t\t\t} ,\n\t\t\t\t\t\t\t\"objectId\" : {\n\t\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t} ,\n\t\t\"users\" : {\n\t\t\t\"type\" : \"object\" ,\n\t\t\t\"required\" : false ,\n\t\t\t\"properties\" : {\n\t\t\t\t\"__op\" : {\n\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\"pattern\" : \"^AddRelation$\"\n\t\t\t\t} ,\n\t\t\t\t\"objects\" : {\n\t\t\t\t\t\"type\" : \"array\" ,\n\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\"items\" : {\n\t\t\t\t\t\t\"type\" : \"object\" ,\n\t\t\t\t\t\t\"required\" : false ,\n\t\t\t\t\t\t\"properties\" : {\n\t\t\t\t\t\t\t\"__type\" : {\n\t\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\t\t\t\"pattern\" : \"^_User$\"\n\t\t\t\t\t\t\t} ,\n\t\t\t\t\t\t\t\"className\" : {\n\t\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t\t\t} ,\n\t\t\t\t\t\t\t\"objectId\" : {\n\t\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t},\n\t\"patternProperties\" : {\n\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\"type\" : \"any\" ,\n\t\t\t\"required\" : false\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}\n"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "resources": [
+                {
+                    "relativeUri": "/{objectId}",
+                    "type": {
+                        "parseMember": {
+                            "objectType": "role"
+                        }
+                    },
+                    "uriParameters": {
+                        "objectId": {
+                            "name": "objectId",
+                            "displayName": "objectId",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "roleGet",
+                                            "example": "\n{\n\t\"createdAt\" : \"2012-04-28T17:41:09.106Z\" ,\n\t\"objectId\" : \"mrmBZvsErB\" ,\n\t\"updatedAt\" : \"2012-04-28T17:41:09.106Z\" ,\n\t\"ACL\" : {\n\t\t\"*\" : {\n\t\t\t\"read\" : true\n\t\t} ,\n\t\t\"role:Administrators\" : {\n\t\t\t\"write\" : true\n\t\t}\n\t} ,\n\t\"name\" : \"Moderators\"\n}",
+                                            "schemaContent": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : true ,\n\t\"properties\" : {\n\t\t\"name\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"ACL\" : {\n\t\t\t\"type\" : \"object\" ,\n\t\t\t\"required\" : true ,\n\t\t\t\"properties\" : {\n\t\t\t\t\"*\" : {\n\t\t\t\t\t\"type\" : \"object\" ,\n\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\"properties\" : {\n\t\t\t\t\t\t\"read\" : {\n\t\t\t\t\t\t\t\"type\" : \"boolean\" ,\n\t\t\t\t\t\t\t\"required\" : false\n\t\t\t\t\t\t} ,\n\t\t\t\t\t\t\"write\" : {\n\t\t\t\t\t\t\t\"type\" : \"boolean\" ,\n\t\t\t\t\t\t\t\"required\" : false\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t} ,\n\t\t\t\"patternProperties\" : {\n\t\t\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\t\t\"type\" : \"object\" ,\n\t\t\t\t\t\"required\" : false ,\n\t\t\t\t\t\"properties\" : {\n\t\t\t\t\t\t\"read\" : {\n\t\t\t\t\t\t\t\"type\" : \"boolean\" ,\n\t\t\t\t\t\t\t\"required\" : false\n\t\t\t\t\t\t} ,\n\t\t\t\t\t\t\"write\" : {\n\t\t\t\t\t\t\t\"type\" : \"boolean\" ,\n\t\t\t\t\t\t\t\"required\" : false\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t} ,\n\t\t\t\"additionalProperties\" : false\n\t\t},\n\t\t\"objectId\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"createdAt\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\t\t\n\t\t\"updatedAt\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t}\n\t},\n\t\"patternProperties\" : {\n\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\"type\" : \"any\" ,\n\t\t\t\"required\" : false\n\t\t}\n\t}\n}"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "rolePut",
+                                    "example": "{\n\t\"users\" : {\n\t\t\"__op\" : \"AddRelation\" ,\n\t\t\"objects\" : [ {\n\t\t\t\"__type\" : \"Pointer\" ,\n\t\t\t\"className\" : \"_User\" ,\n\t\t\t\"objectId\" : \"8TOXdXf3tz\"\n\t\t} , {\n\t\t\t\"__type\" : \"Pointer\" ,\n\t\t\t\"className\" : \"_User\" ,\n\t\t\t\"objectId\" : \"g7y9tkhB7O\"\n\t\t} ]\n\t} ,\n\t\"roles\" : {\n\t\t\"__op\" : \"RemoveRelation\" ,\n\t\t\"objects\" : [ {\n\t\t\t\"__type\" : \"Pointer\" ,\n\t\t\t\"className\" : \"_Role\" ,\n\t\t\t\"objectId\" : \"Ed1nuqPvc\"\n\t\t} ]\n\t}\n}",
+                                    "schemaContent": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : false ,\n\t\"properties\" : {\n\t\t\"roles\" : {\n\t\t\t\"type\" : \"object\" ,\n\t\t\t\"required\" : false ,\n\t\t\t\"properties\" : {\n\t\t\t\t\"__op\" : {\n\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\"pattern\" : \"^AddRelation$\"\n\t\t\t\t} ,\n\t\t\t\t\"objects\" : {\n\t\t\t\t\t\"type\" : \"array\" ,\n\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\"items\" : {\n\t\t\t\t\t\t\"type\" : \"object\" ,\n\t\t\t\t\t\t\"required\" : false ,\n\t\t\t\t\t\t\"properties\" : {\n\t\t\t\t\t\t\t\"__type\" : {\n\t\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\t\t\t\"pattern\" : \"^_Role$\"\n\t\t\t\t\t\t\t} ,\n\t\t\t\t\t\t\t\"className\" : {\n\t\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t\t\t} ,\n\t\t\t\t\t\t\t\"objectId\" : {\n\t\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t} ,\n\t\t\"users\" : {\n\t\t\t\"type\" : \"object\" ,\n\t\t\t\"required\" : false ,\n\t\t\t\"properties\" : {\n\t\t\t\t\"__op\" : {\n\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\"pattern\" : \"^AddRelation$\"\n\t\t\t\t} ,\n\t\t\t\t\"objects\" : {\n\t\t\t\t\t\"type\" : \"array\" ,\n\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\"items\" : {\n\t\t\t\t\t\t\"type\" : \"object\" ,\n\t\t\t\t\t\t\"required\" : false ,\n\t\t\t\t\t\t\"properties\" : {\n\t\t\t\t\t\t\t\"__type\" : {\n\t\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\t\"required\" : true ,\n\t\t\t\t\t\t\t\t\"pattern\" : \"^_User$\"\n\t\t\t\t\t\t\t} ,\n\t\t\t\t\t\t\t\"className\" : {\n\t\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t\t\t} ,\n\t\t\t\t\t\t\t\"objectId\" : {\n\t\t\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t},\n\t\"patternProperties\" : {\n\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\"type\" : \"any\" ,\n\t\t\t\"required\" : false\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}\n"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "masterSchema"
+                            ],
+                            "method": "put",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "sessionTokenSchema",
+                                "masterSchema"
+                            ],
+                            "description": "Delete role. Allows both authorized and master access.",
+                            "method": "delete",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/{objectId}",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{objectId}"
+                    ]
+                }
+            ],
+            "displayName": "/roles",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "roles"
+            ]
+        },
+        {
+            "relativeUri": "/files",
+            "resources": [
+                {
+                    "relativeUri": "/{fileName}",
+                    "uriParameters": {
+                        "fileName": {
+                            "name": "fileName",
+                            "displayName": "fileName",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "methods": [
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "fileResponse",
+                                            "example": "{\n\t\"url\" :\t\"http://files.parse.com/bc9f32df-2957-4bb1-93c9-ec47d9870a05/db295fb2-8a8b-49f3-aad3-dd911142f64f-hello.txt\" ,\n\t\"name\" : \"db295fb2-8a8b-49f3-aad3-dd911142f64f-hello.txt\"\n}",
+                                            "schemaContent": "{\n\t\"type\":\"object\",\n\t\"$schema\": \"http://json-schema.org/draft-03/schema\",\n\t\"required\":true,\n\t\"properties\":{\n\t\t\"url\": {\n\t\t\t\"type\":\"string\",\n\t\t\t\"required\":true\n\t\t},\n\t\t\"name\": {\n\t\t\t\"type\":\"string\",\n\t\t\t\"required\":true\n\t\t}\n\t}\n}\n"
+                                        }
+                                    }
+                                }
+                            },
+                            "body": {
+                                "*/*": {
+                                    "name": "*/*"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "basic",
+                                "commonSchema"
+                            ],
+                            "description": "To upload a file to Parse, send a POST request to the files URL, postfixed with the name of the file.\nThe request must contain the Content-Type header associated with the file.\nKeep in mind that files are limited to 10 megabytes\n",
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/{fileName}",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{fileName}"
+                    ]
+                }
+            ],
+            "displayName": "/files",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "files"
+            ]
+        },
+        {
+            "relativeUri": "/events",
+            "resources": [
+                {
+                    "relativeUri": "/AppOpened",
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200"
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "analyticsAppOpened",
+                                    "example": "{\n\t\"at\" : {\n\t\t\"__type\" : \"Date\" ,\n\t\t\"iso\" : \"2013-12-21T01:37:25Z\"\n\t}\n}",
+                                    "schemaContent": "{\n\t\"type\":\"object\",\n\t\"$schema\": \"http://json-schema.org/draft-03/schema\",\n\t\"required\":false,\n\t\"properties\":{\n\t\t\"at\": {\n\t\t\t\"type\":\"object\",\n\t\t\t\"required\":false,\n\t\t\t\"properties\":{\n\t\t\t\t\"__type\": {\n\t\t\t\t\t\"type\":\"string\",\n\t\t\t\t\t\"required\":true\n\t\t\t\t},\n\t\t\t\t\"iso\": {\n\t\t\t\t\t\"type\":\"string\",\n\t\t\t\t\t\"required\":true\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t},\n\t\"additionalProperties\" : false\n}"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "basic",
+                                "commonSchema"
+                            ],
+                            "description": "Starts to collect data on when and how often the application is opened.",
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/AppOpened",
+                    "description": "App-Open Analytics",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "AppOpened"
+                    ]
+                },
+                {
+                    "relativeUri": "/{eventName}",
+                    "uriParameters": {
+                        "eventName": {
+                            "name": "eventName",
+                            "displayName": "eventName",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200"
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "analytics",
+                                    "example": "{\n\t\"at\" : {\n\t\t\"__type\" : \"Date\" ,\n\t\t\"iso\" : \"2013-12-21T01:37:25Z\"\n\t} ,\n\t\"dimensions\" : {\n\t\t\"priceRange\" : \"1000-1500\" ,\n\t\t\"source\" : \"craigslist\" ,\n\t\t\"dayType\" : \"weekday\"\n\t}\n}",
+                                    "schemaContent": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : false ,\n\t\"properties\" : {\n\t\t\"at\" : {\n\t\t\t\"type\" : \"object\" ,\n\t\t\t\"required\" : false ,\n\t\t\t\"properties\" : {\n\t\t\t\t\"__type\" : {\n\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\"required\" : true\n\t\t\t\t} ,\n\t\t\t\t\"iso\" : {\n\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\"required\" : true\n\t\t\t\t}\n\t\t\t}\n\t\t} ,\n\t\t\"dimensions\" : {\n\t\t\t\"type\" : \"object\" ,\n\t\t\t\"required\" : false \t\t\t\n\t\t}\n\t}\n}\n"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "basic",
+                                "commonSchema"
+                            ],
+                            "description": "Starts to collect data on how oftern the particular event occurs, with some additional metadata.",
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/{eventName}",
+                    "description": "Custom Analytics",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{eventName}"
+                    ]
+                }
+            ],
+            "displayName": "/events",
+            "description": "Analytics",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "events"
+            ]
+        },
+        {
+            "relativeUri": "/push",
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200"
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "push",
+                            "example": "{\n\t\"channels\" : [ \"Giants\" , \"Mets\" ] ,\n\t\"where\" : {\n\t\t\"deviceType\" : \"android\"\n\t} ,\n\t\"push_time\" : \"2013-12-21T23:47:14Z\" ,\n\t\"expiration_interval\" : 518400 ,\n\t\"data\" : {\n\t\t\"alert\" : \"Season tickets on sale until December 27, 2013\"\n\t}\n}",
+                            "schemaContent": "push"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "basic",
+                        "commonSchema"
+                    ],
+                    "description": "Send a push notification",
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/push",
+            "description": "Push Notifications",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "push"
+            ]
+        },
+        {
+            "relativeUri": "/installations",
+            "type": {
+                "parseCollection": {
+                    "resourceName": "installations"
+                }
+            },
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "installationsQuery",
+                                    "example": "{\n\t\"results\" : [ {\n\t\t\"deviceType\" : \"ios\" ,\n\t\t\"deviceToken\" :\n\t\t\"0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef\" ,\n\t\t\"channels\" : [ \"\" ] ,\n\t\t\"createdAt\" : \"2012-04-28T17:41:09.106Z\" ,\n\t\t\"updatedAt\" : \"2012-04-28T17:41:09.106Z\" ,\n\t\t\"objectId\" : \"mrmBZvsErB\"\n\t} , {\n\t\t\"deviceType\" : \"ios\" ,\n\t\t\"deviceToken\" :\n\t\t\"fedcba9876543210fedcba9876543210fedcba9876543210fedcba9876543210\" ,\n\t\t\"channels\" : [ \"\" ] ,\n\t\t\"createdAt\" : \"2012-04-30T01:52:57.975Z\" ,\n\t\t\"updatedAt\" : \"2012-04-30T01:52:57.975Z\" ,\n\t\t\"objectId\" : \"sGlvypFQcO\"\n\t} ]\n}",
+                                    "schemaContent": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : true ,\n\t\"properties\" : {\n\t\t\"results\" : {\n\t\t\t\"type\" : \"array\" ,\n\t\t\t\"required\" : true ,\n\t\t\t\"items\" : {\n\t\t\t\t\"type\" : \"object\" ,\n\t\t\t\t\"required\" : false ,\n\t\t\t\t\"properties\" : {\n\t\t\t\t\t\"devicetype\" : {\n\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t} ,\n\t\t\t\t\t\"createdAt\" : {\n\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t} ,\n\t\t\t\t\t\"objectId\" : {\n\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t} ,\n\t\t\t\t\t\"updatedAt\" : {\n\t\t\t\t\t\t\"type\" : \"string\" ,\n\t\t\t\t\t\t\"required\" : true\n\t\t\t\t\t}\n\t\t\t\t} ,\n\t\t\t\t\"patternProperties\" : {\n\t\t\t\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\t\t\t\"type\" : \"any\" ,\n\t\t\t\t\t\t\"required\" : false\n\t\t\t\t\t}\n\t\t\t\t} ,\n\t\t\t\t\"additionalProperties\" : false\n\t\t\t}\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}\n"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "masterSchema"
+                    ],
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "201": {
+                            "code": "201",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "collectionPostResponse",
+                                    "example": "{\n\t\"createdAt\" : \"2013-12-19T17:21:15.147Z\" ,\n\t\"objectId\" : \"4GW66cmAWP\"\n}",
+                                    "schemaContent": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : true ,\n\t\"properties\" : {\n\t\t\"createdAt\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"objectId\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t}\n\t},\n\t\"additionalProperties\": false\n}"
+                                }
+                            }
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "installationPost",
+                            "example": "{\n\t\"deviceType\" : \"ios\" ,\n\t\"deviceToken\" : \"0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef\" ,\n\t\"channels\" : [ \"\" ]\n}",
+                            "schemaContent": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : true ,\n\t\"properties\" : {\n\t\t\"deviceType\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"enum\": [ \"ios\", \"android\" ],\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"installationId\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : false\n\t\t} ,\n\t\t\"deviceToken\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : false\n\t\t} ,\n\t\t\"badge\" : {\n\t\t\t\"type\" : \"number\" ,\n\t\t\t\"required\" : false\n\t\t} ,\n\t\t\"timeZone\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : false\n\t\t} ,\n\t\t\"channels\" : {\n\t\t\t\"type\" : \"array\" ,\n\t\t\t\"items\": { \"type\": \"string\" } ,\n\t\t\t\"required\" : false\n\t\t}\n\t},\n\t\"patternProperties\" : {\n\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\"type\" : \"any\" ,\n\t\t\t\"required\" : false\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}\n"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "resources": [
+                {
+                    "relativeUri": "/{objectId}",
+                    "type": {
+                        "parseMember": {
+                            "objectType": "installation"
+                        }
+                    },
+                    "uriParameters": {
+                        "objectId": {
+                            "name": "objectId",
+                            "displayName": "objectId",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "installationGet",
+                                            "example": "{\n\t\"deviceType\" : \"ios\" ,\n\t\"deviceToken\" :\n\t\"0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef\" ,\n\t\"channels\" : [ \"\" ] ,\n\t\"createdAt\" : \"2012-04-28T17:41:09.106Z\" ,\n\t\"updatedAt\" : \"2012-04-28T17:41:09.106Z\" ,\n\t\"objectId\" : \"mrmBZvsErB\"\n}",
+                                            "schemaContent": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : true ,\n\t\"properties\" : {\n\t\t\"deviceType\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"enum\": [ \"ios\", \"android\" ],\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"installationId\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : false\n\t\t} ,\n\t\t\"deviceToken\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : false\n\t\t} ,\n\t\t\"badge\" : {\n\t\t\t\"type\" : \"number\" ,\n\t\t\t\"required\" : false\n\t\t} ,\n\t\t\"timeZone\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : false\n\t\t} ,\n\t\t\"channels\" : {\n\t\t\t\"type\" : \"array\" ,\n\t\t\t\"items\": { \"type\": \"string\" } ,\n\t\t\t\"required\" : false\n\t\t} ,\n\t\t\"objectId\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\n\t\t\"createdAt\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t} ,\t\t\n\t\t\"updatedAt\" : {\n\t\t\t\"type\" : \"string\" ,\n\t\t\t\"required\" : true\n\t\t}\n\t},\n\t\"patternProperties\" : {\n\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\"type\" : \"any\" ,\n\t\t\t\"required\" : false\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}\n"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "installationPut",
+                                    "example": "{\n\t\"deviceType\" : \"ios\" ,\n\t\"deviceToken\" :\t\"0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef\" ,\n\t\"channels\" : [ \"\" , \"foo\" ]\n}",
+                                    "schemaContent": "{\n\t\"type\" : \"object\" ,\n\t\"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n\t\"required\" : false ,\n\t\"patternProperties\" : {\n\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\"type\" : \"any\" ,\n\t\t\t\"required\" : false\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "commonSchema"
+                            ],
+                            "method": "put",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "masterSchema"
+                            ],
+                            "method": "delete",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/{objectId}",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{objectId}"
+                    ]
+                }
+            ],
+            "displayName": "/installations",
+            "description": "An installation object represents an instance of your app being installed on a device.\nThese objects are used to store subscription data for installations which have subscribed to one or more push notification channels.\nInstallations have a flexible schema, except that the special fields below have special type and validation requirements:\n\n'deviceType' is a required string field that must be set to either \"ios\" or \"android\". It may not be changed once the object is created.\n\n'installationId' is a Parse-generated string identifier that is required for devices with a deviceType of \"android\"\nand optional for devices with a deviceType of \"ios\". It may not be changed once the object is created and must be unique across all\nof an app's installations.\n\n'deviceToken' is an Apple-generated string identifier that is required for devices with a deviceType of \"ios\".\nIt may not be changed once the object is created and must be unique across all of an app's installations.\n\n'badge' is a number field representing the last known application badge for iOS installations.\n\n'timeZone' is a string field representing the system time zone of the device running this installation.\n\n'channels' is an optional array of strings representing the subscriptions of this installation object.\n",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "installations"
+            ]
+        },
+        {
+            "relativeUri": "/functions/{functionName}",
+            "uriParameters": {
+                "functionName": {
+                    "name": "functionName",
+                    "displayName": "functionName",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200"
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "functions",
+                            "example": "{\n\t\"movie\" : \"The Matrix\"\n}",
+                            "schemaContent": "{\n\t\"patternProperties\" : {\n\t\t\"^[a-zA-Z0-9_]+$\" : {\n\t\t\t\"type\" : \"any\" ,\n\t\t\t\"required\" : false\n\t\t}\n\t} ,\n\t\"additionalProperties\" : false\n}"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "basic",
+                        "commonSchema"
+                    ],
+                    "description": "Call a function.",
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/functions/{functionName}",
+            "description": "Cloud functions can be called from any of the client SDKs, as well as through the REST API\n(use the drop-down in the example below to switch SDKs).\n",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "functions",
+                "{functionName}"
+            ]
+        }
+    ],
+    "documentation": [
+        {
+            "title": "Headline",
+            "content": "Parse offers developers a backend-as-a-service platform for their mobile applications. Developers can use SDKs for both iOS and Android to persist data and more. The REST API lets developers interact with Parse from computers that aren't mobile devices. With the APIs developers can have their webserver show data from Parse on a website, upload large amounts of data that will later be consumed in a mobile app, download recent data to run their own custom analytics and more."
+        }
+    ],
+    "__METADATA__": {
+        "primitiveValuesMeta": {
+            "protocols": {
+                "calculated": true
+            }
+        }
+    }
+}

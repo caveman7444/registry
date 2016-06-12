@@ -1,0 +1,22 @@
+{"apis": [
+    {
+        "name": "Office 365",
+        "location": "https://raw.githubusercontent.com/raml-apis/Office365/master/api.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "Files REST API in Office 365",
+        "location": "https://raw.githubusercontent.com/raml-apis/Office365/master/fileAPI.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "Office 365",
+        "location": "https://raw.githubusercontent.com/raml-apis/Office365/staging/api.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "Files REST API in Office 365",
+        "location": "https://raw.githubusercontent.com/raml-apis/Office365/staging/fileAPI.raml",
+        "RAMLVersion": "0.8"
+    }
+]}

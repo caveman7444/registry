@@ -1,0 +1,12 @@
+{"apis": [
+    {
+        "name": "Meetup",
+        "location": "https://raw.githubusercontent.com/raml-apis/Meetup/master/meetup.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "Meetup",
+        "location": "https://raw.githubusercontent.com/raml-apis/Meetup/staging/meetup.raml",
+        "RAMLVersion": "0.8"
+    }
+]}

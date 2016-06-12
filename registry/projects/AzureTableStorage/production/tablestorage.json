@@ -1,0 +1,2192 @@
+{
+    "title": "Azure Table Storage",
+    "version": "v1",
+    "baseUri": "https://{accountName}.table.core.windows.net",
+    "baseUriParameters": {
+        "accountName": {
+            "name": "accountName",
+            "displayName": "accountName",
+            "type": "string",
+            "required": true,
+            "repeat": false,
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    },
+                    "type": {
+                        "insertedAsDefault": true
+                    },
+                    "required": {
+                        "insertedAsDefault": true
+                    },
+                    "repeat": {
+                        "insertedAsDefault": true
+                    }
+                }
+            }
+        }
+    },
+    "protocols": [
+        "HTTPS"
+    ],
+    "schemas": [
+        {
+            "atom": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\r\n<xs:schema targetNamespace=\"http://www.w3.org/2005/Atom\" elementFormDefault=\"qualified\" \r\n\tattributeFormDefault=\"unqualified\"\r\n\txmlns:atom=\"http://www.w3.org/2005/Atom\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\r\n\t<xs:annotation>\r\n\t\t<xs:documentation>\r\n\t\t\t\tThis version of the Atom schema is based on version 1.0 of the format specifications,\r\n\t\t\t\tfound here http://www.atomenabled.org/developers/syndication/atom-format-spec.php.\r\n\t\t\t</xs:documentation>\r\n\t</xs:annotation>\r\n\t<xs:import namespace=\"http://www.w3.org/XML/1998/namespace\" schemaLocation=\"http://www.w3.org/2001/03/xml.xsd\" />\r\n\t<xs:annotation>\r\n\t\t<xs:documentation>\r\n\t\t\tAn Atom document may have two root elements, feed and entry, as defined in section 2.\r\n\t\t</xs:documentation>\r\n\t</xs:annotation>\r\n\t<xs:element name=\"feed\" type=\"atom:feedType\"/>\r\n\t<xs:element name=\"entry\" type=\"atom:entryType\"/>\r\n\t<xs:complexType name=\"textType\" mixed=\"true\">\r\n\t\t<xs:annotation>\r\n\t\t\t<xs:documentation>\r\n\t\t\t\tThe Atom text construct is defined in section 3.1 of the format spec.\r\n\t\t\t</xs:documentation>\r\n\t\t</xs:annotation>\r\n\t\t<xs:sequence>\r\n\t\t\t<xs:any namespace=\"http://www.w3.org/1999/xhtml\" minOccurs=\"0\"/>\r\n\t\t</xs:sequence>\r\n\t\t<xs:attribute name=\"type\" >\r\n\t\t\t<xs:simpleType>\r\n\t\t\t\t<xs:restriction base=\"xs:token\">\r\n\t\t\t\t\t<xs:enumeration value=\"text\"/>\r\n\t\t\t\t\t<xs:enumeration value=\"html\"/>\r\n\t\t\t\t\t<xs:enumeration value=\"xhtml\"/>\r\n\t\t\t\t</xs:restriction>\r\n\t\t\t</xs:simpleType>\r\n\t\t</xs:attribute>\r\n\t\t<xs:attributeGroup ref=\"atom:commonAttributes\"/>\r\n\t</xs:complexType>\r\n\t<xs:complexType name=\"personType\">\r\n\t\t<xs:annotation>\r\n\t\t\t<xs:documentation>\r\n\t\t\t\tThe Atom person construct is defined in section 3.2 of the format spec.\r\n\t\t\t</xs:documentation>\r\n\t\t</xs:annotation>\r\n\t\t<xs:choice minOccurs=\"1\" maxOccurs=\"unbounded\">\r\n\t\t\t<xs:element name=\"name\" type=\"xs:string\" minOccurs=\"1\" maxOccurs=\"1\" />\r\n\t\t\t<xs:element name=\"uri\" type=\"atom:uriType\" minOccurs=\"0\" maxOccurs=\"1\" />\r\n\t\t\t<xs:element name=\"email\" type=\"atom:emailType\" minOccurs=\"0\" maxOccurs=\"1\" />\r\n\t\t\t<xs:any namespace=\"##other\"/>\r\n\t\t</xs:choice>\r\n\t\t<xs:attributeGroup ref=\"atom:commonAttributes\"/>\r\n\t</xs:complexType>\r\n\t<xs:simpleType name=\"emailType\">\r\n\t\t<xs:annotation>\r\n\t\t\t<xs:documentation>\r\n\t\t\t\tSchema definition for an email address.\r\n\t\t\t</xs:documentation>\r\n\t\t</xs:annotation>\r\n\t\t<xs:restriction base=\"xs:normalizedString\">\r\n\t\t\t<xs:pattern value=\"\\w+@(\\w+\\.)+\\w+\" />\r\n\t\t</xs:restriction>\r\n\t</xs:simpleType>\r\n\t<xs:complexType name=\"feedType\">\r\n\t\t<xs:annotation>\r\n\t\t\t<xs:documentation>\r\n\t\t\t\tThe Atom feed construct is defined in section 4.1.1 of the format spec.\r\n\t\t\t</xs:documentation>\r\n\t\t</xs:annotation>\r\n\t\t<xs:choice minOccurs=\"3\" maxOccurs=\"unbounded\">\r\n\t\t\t<xs:element name=\"author\" type=\"atom:personType\" minOccurs=\"0\" maxOccurs=\"unbounded\" />\r\n\t\t\t<xs:element name=\"category\" type=\"atom:categoryType\" minOccurs=\"0\" maxOccurs=\"unbounded\" />\r\n\t\t\t<xs:element name=\"contributor\" type=\"atom:personType\" minOccurs=\"0\" maxOccurs=\"unbounded\" />\r\n\t\t\t<xs:element name=\"generator\" type=\"atom:generatorType\" minOccurs=\"0\" maxOccurs=\"1\" />\r\n\t\t\t<xs:element name=\"icon\" type=\"atom:iconType\" minOccurs=\"0\" maxOccurs=\"1\" />\r\n\t\t\t<xs:element name=\"id\" type=\"atom:idType\" minOccurs=\"1\" maxOccurs=\"1\" />\r\n\t\t\t<xs:element name=\"link\" type=\"atom:linkType\" minOccurs=\"0\" maxOccurs=\"unbounded\" />\r\n\t\t\t<xs:element name=\"logo\" type=\"atom:logoType\" minOccurs=\"0\" maxOccurs=\"1\" />\r\n\t\t\t<xs:element name=\"rights\" type=\"atom:textType\" minOccurs=\"0\" maxOccurs=\"1\" />\r\n\t\t\t<xs:element name=\"subtitle\" type=\"atom:textType\" minOccurs=\"0\" maxOccurs=\"1\" />\r\n\t\t\t<xs:element name=\"title\" type=\"atom:textType\" minOccurs=\"1\" maxOccurs=\"1\" />\r\n\t\t\t<xs:element name=\"updated\" type=\"atom:dateTimeType\" minOccurs=\"1\" maxOccurs=\"1\" />\r\n\t\t\t<xs:element name=\"entry\" type=\"atom:entryType\" minOccurs=\"0\" maxOccurs=\"unbounded\" />\r\n\t\t\t<xs:any namespace=\"##other\" minOccurs=\"0\" maxOccurs=\"unbounded\"/>\r\n\t\t</xs:choice>\r\n\t\t<xs:attributeGroup ref=\"atom:commonAttributes\"/>\r\n\t</xs:complexType>\r\n\t<xs:complexType name=\"entryType\">\r\n\t\t<xs:annotation>\r\n\t\t\t<xs:documentation>\r\n\t\t\t\tThe Atom entry construct is defined in section 4.1.2 of the format spec.\r\n\t\t\t</xs:documentation>\r\n\t\t</xs:annotation>\r\n\t\t<xs:choice maxOccurs=\"unbounded\">\r\n\t\t\t<xs:element name=\"author\" type=\"atom:personType\" minOccurs=\"0\" maxOccurs=\"unbounded\" />\r\n\t\t\t<xs:element name=\"category\" type=\"atom:categoryType\" minOccurs=\"0\" maxOccurs=\"unbounded\" />\r\n\t\t\t<xs:element name=\"content\" type=\"atom:contentType\" minOccurs=\"0\" maxOccurs=\"1\" />\r\n\t\t\t<xs:element name=\"contributor\" type=\"atom:personType\" minOccurs=\"0\" maxOccurs=\"unbounded\" />\r\n\t\t\t<xs:element name=\"id\" type=\"atom:idType\" minOccurs=\"1\" maxOccurs=\"1\" />\r\n\t\t\t<xs:element name=\"link\" type=\"atom:linkType\" minOccurs=\"0\" maxOccurs=\"unbounded\" />\r\n\t\t\t<xs:element name=\"published\" type=\"atom:dateTimeType\" minOccurs=\"0\" maxOccurs=\"1\" />\r\n\t\t\t<xs:element name=\"rights\" type=\"atom:textType\" minOccurs=\"0\" maxOccurs=\"1\" />\r\n\t\t\t<xs:element name=\"source\" type=\"atom:textType\" minOccurs=\"0\" maxOccurs=\"1\" />\r\n\t\t\t<xs:element name=\"summary\" type=\"atom:textType\" minOccurs=\"0\" maxOccurs=\"1\" />\r\n\t\t\t<xs:element name=\"title\" type=\"atom:textType\" minOccurs=\"1\" maxOccurs=\"1\" />\r\n\t\t\t<xs:element name=\"updated\" type=\"atom:dateTimeType\" minOccurs=\"1\" maxOccurs=\"1\" />\r\n\t\t\t<xs:any namespace=\"##other\" minOccurs=\"0\" maxOccurs=\"unbounded\"/>\r\n\t\t</xs:choice>\r\n\t\t<xs:attributeGroup ref=\"atom:commonAttributes\"/>\r\n\t</xs:complexType>\r\n\t<xs:complexType name=\"contentType\" mixed=\"true\">\r\n\t\t<xs:annotation>\r\n\t\t\t<xs:documentation>\r\n\t\t\t\tThe Atom content construct is defined in section 4.1.3 of the format spec.\r\n\t\t\t</xs:documentation>\r\n\t\t</xs:annotation>\r\n\t\t<xs:sequence>\r\n\t\t\t<xs:any namespace=\"##other\" minOccurs=\"0\" maxOccurs=\"unbounded\" />\r\n\t\t</xs:sequence>\r\n\t\t<xs:attribute name=\"type\" type=\"xs:string\"/>\r\n\t\t<xs:attribute name=\"src\" type=\"xs:anyURI\"/>\r\n\t\t<xs:attributeGroup ref=\"atom:commonAttributes\"/>\r\n\t</xs:complexType>\r\n\t<xs:complexType name=\"categoryType\">\r\n\t\t<xs:annotation>\r\n\t\t\t<xs:documentation>\r\n\t\t\t\tThe Atom cagegory construct is defined in section 4.2.2 of the format spec.\r\n\t\t\t</xs:documentation>\r\n\t\t</xs:annotation>\r\n\t\t<xs:attribute name=\"term\" type=\"xs:string\" use=\"required\"/>\r\n\t\t<xs:attribute name=\"scheme\" type=\"xs:anyURI\" use=\"optional\"/>\r\n\t\t<xs:attribute name=\"label\" type=\"xs:string\" use=\"optional\"/>\r\n\t\t<xs:attributeGroup ref=\"atom:commonAttributes\" />\r\n\t</xs:complexType>\r\n\t<xs:complexType name=\"generatorType\">\r\n\t\t<xs:annotation>\r\n\t\t\t<xs:documentation>\r\n\t\t\t\tThe Atom generator element is defined in section 4.2.4 of the format spec.\r\n\t\t\t</xs:documentation>\r\n\t\t</xs:annotation>\r\n\t\t<xs:simpleContent>\r\n\t\t\t<xs:extension base=\"xs:string\">\r\n\t\t\t\t<xs:attribute name=\"uri\" use=\"optional\" type=\"xs:anyURI\" />\r\n\t\t\t\t<xs:attribute name=\"version\" use=\"optional\" type=\"xs:string\" />\r\n\t\t\t\t<xs:attributeGroup ref=\"atom:commonAttributes\"/>\r\n\t\t\t</xs:extension>\r\n\t\t</xs:simpleContent>\r\n\t</xs:complexType>\r\n\t<xs:complexType name=\"iconType\">\r\n\t\t<xs:annotation>\r\n\t\t\t<xs:documentation>\r\n\t\t\t\tThe Atom icon construct is defined in section 4.2.5 of the format spec.\r\n\t\t\t</xs:documentation>\r\n\t\t</xs:annotation>\r\n\t\t<xs:simpleContent>\r\n\t\t\t<xs:extension base=\"xs:anyURI\">\r\n\t\t\t\t<xs:attributeGroup ref=\"atom:commonAttributes\"/>\r\n\t\t\t</xs:extension>\r\n\t\t</xs:simpleContent>\r\n\t</xs:complexType>\r\n\t<xs:complexType name=\"idType\">\r\n\t\t<xs:annotation>\r\n\t\t\t<xs:documentation>\r\n\t\t\t\tThe Atom id construct is defined in section 4.2.6 of the format spec.\r\n\t\t\t</xs:documentation>\r\n\t\t</xs:annotation>\r\n\t\t<xs:simpleContent>\r\n\t\t\t<xs:extension base=\"xs:anyURI\">\r\n\t\t\t\t<xs:attributeGroup ref=\"atom:commonAttributes\"/>\r\n\t\t\t</xs:extension>\r\n\t\t</xs:simpleContent>\r\n\t</xs:complexType>\r\n\t<xs:complexType name=\"linkType\" mixed=\"true\">\r\n\t\t<xs:annotation>\r\n\t\t\t<xs:documentation>\r\n\t\t\t\tThe Atom link construct is defined in section 3.4 of the format spec.\r\n\t\t\t</xs:documentation>\r\n\t\t</xs:annotation>\r\n\t\t<xs:attribute name=\"href\" use=\"required\" type=\"xs:anyURI\" />\r\n\t\t<xs:attribute name=\"rel\" type=\"xs:string\" use=\"optional\"/>\r\n\t\t<xs:attribute name=\"type\" use=\"optional\" type=\"xs:string\" />\r\n\t\t<xs:attribute name=\"hreflang\" use=\"optional\" type=\"xs:NMTOKEN\" />\r\n\t\t<xs:attribute name=\"title\" use=\"optional\" type=\"xs:string\" />\r\n\t\t<xs:attribute name=\"length\" use=\"optional\" type=\"xs:positiveInteger\" />\r\n\t\t<xs:attributeGroup ref=\"atom:commonAttributes\"/>\r\n\t</xs:complexType>\r\n\t<xs:complexType name=\"logoType\">\r\n\t\t<xs:annotation>\r\n\t\t\t<xs:documentation>\r\n\t\t\t\tThe Atom logo construct is defined in section 4.2.8 of the format spec.\r\n\t\t\t</xs:documentation>\r\n\t\t</xs:annotation>\r\n\t\t<xs:simpleContent>\r\n\t\t\t<xs:extension base=\"xs:anyURI\">\r\n\t\t\t\t<xs:attributeGroup ref=\"atom:commonAttributes\"/>\r\n\t\t\t</xs:extension>\r\n\t\t</xs:simpleContent>\r\n\t</xs:complexType>\r\n\t<xs:complexType name=\"sourceType\">\r\n\t\t<xs:annotation>\r\n\t\t\t<xs:documentation>\r\n\t\t\t\tThe Atom source construct is defined in section 4.2.11 of the format spec.\r\n\t\t\t</xs:documentation>\r\n\t\t</xs:annotation>\r\n\t\t<xs:choice maxOccurs=\"unbounded\">\r\n\t\t\t<xs:element name=\"author\" type=\"atom:personType\" minOccurs=\"0\" maxOccurs=\"unbounded\"/>\r\n\t\t\t<xs:element name=\"category\" type=\"atom:categoryType\" minOccurs=\"0\" maxOccurs=\"unbounded\"/>\r\n\t\t\t<xs:element name=\"contributor\" type=\"atom:personType\" minOccurs=\"0\" maxOccurs=\"unbounded\"/>\r\n\t\t\t<xs:element name=\"generator\" type=\"atom:generatorType\" minOccurs=\"0\" maxOccurs=\"1\"/>\r\n\t\t\t<xs:element name=\"icon\" type=\"atom:iconType\" minOccurs=\"0\" maxOccurs=\"1\"/>\r\n\t\t\t<xs:element name=\"id\" type=\"atom:idType\" minOccurs=\"0\" maxOccurs=\"1\"/>\r\n\t\t\t<xs:element name=\"link\" type=\"atom:linkType\" minOccurs=\"0\" maxOccurs=\"unbounded\"/>\r\n\t\t\t<xs:element name=\"logo\" type=\"atom:logoType\" minOccurs=\"0\" maxOccurs=\"1\"/>\r\n\t\t\t<xs:element name=\"rights\" type=\"atom:textType\" minOccurs=\"0\" maxOccurs=\"1\"/>\r\n\t\t\t<xs:element name=\"subtitle\" type=\"atom:textType\" minOccurs=\"0\" maxOccurs=\"1\"/>\r\n\t\t\t<xs:element name=\"title\" type=\"atom:textType\" minOccurs=\"0\" maxOccurs=\"1\"/>\r\n\t\t\t<xs:element name=\"updated\" type=\"atom:dateTimeType\" minOccurs=\"0\" maxOccurs=\"1\"/>\r\n\t\t\t<xs:any namespace=\"##other\" minOccurs=\"0\" maxOccurs=\"unbounded\"/>\r\n\t\t</xs:choice>\r\n\t\t<xs:attributeGroup ref=\"atom:commonAttributes\"/>\r\n\t</xs:complexType>\r\n\t<xs:complexType name=\"uriType\">\r\n\t\t<xs:simpleContent>\r\n\t\t\t<xs:extension base=\"xs:anyURI\">\r\n\t\t\t\t<xs:attributeGroup ref=\"atom:commonAttributes\"/>\r\n\t\t\t</xs:extension>\r\n\t\t</xs:simpleContent>\r\n\t</xs:complexType>\r\n\t<xs:complexType name=\"dateTimeType\">\r\n\t\t<xs:simpleContent>\r\n\t\t\t<xs:extension base=\"xs:dateTime\">\r\n\t\t\t\t<xs:attributeGroup ref=\"atom:commonAttributes\"/>\r\n\t\t\t</xs:extension>\r\n\t\t</xs:simpleContent>\r\n\t</xs:complexType>\r\n\t<xs:attributeGroup name=\"commonAttributes\">\r\n\t\t<xs:attribute ref=\"xml:base\" />\r\n\t\t<xs:attribute ref=\"xml:lang\" />\r\n\t\t<xs:anyAttribute namespace=\"##other\"/>\r\n\t</xs:attributeGroup>\r\n</xs:schema>"
+        },
+        {
+            "tableServices-xml": "<xs:schema attributeFormDefault=\"unqualified\" elementFormDefault=\"qualified\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xs:element name=\"StorageServiceProperties\">\r\n    <xs:complexType>\r\n      <xs:sequence>\r\n        <xs:element name=\"Logging\">\r\n          <xs:complexType>\r\n            <xs:sequence>\r\n              <xs:element type=\"xs:string\" name=\"Version\"/>\r\n              <xs:element type=\"xs:string\" name=\"Delete\"/>\r\n              <xs:element type=\"xs:string\" name=\"Read\"/>\r\n              <xs:element type=\"xs:string\" name=\"Write\"/>\r\n              <xs:element name=\"RetentionPolicy\">\r\n                <xs:complexType>\r\n                  <xs:sequence>\r\n                    <xs:element type=\"xs:string\" name=\"Enabled\"/>\r\n                    <xs:element type=\"xs:string\" name=\"Days\"/>\r\n                  </xs:sequence>\r\n                </xs:complexType>\r\n              </xs:element>\r\n            </xs:sequence>\r\n          </xs:complexType>\r\n        </xs:element>\r\n        <xs:element name=\"HourMetrics\">\r\n          <xs:complexType>\r\n            <xs:sequence>\r\n              <xs:element type=\"xs:string\" name=\"Version\"/>\r\n              <xs:element type=\"xs:string\" name=\"Enabled\"/>\r\n              <xs:element type=\"xs:string\" name=\"IncludeAPIs\"/>\r\n              <xs:element name=\"RetentionPolicy\">\r\n                <xs:complexType>\r\n                  <xs:sequence>\r\n                    <xs:element type=\"xs:string\" name=\"Enabled\"/>\r\n                    <xs:element type=\"xs:string\" name=\"Days\"/>\r\n                  </xs:sequence>\r\n                </xs:complexType>\r\n              </xs:element>\r\n            </xs:sequence>\r\n          </xs:complexType>\r\n        </xs:element>\r\n        <xs:element name=\"MinuteMetrics\">\r\n          <xs:complexType>\r\n            <xs:sequence>\r\n              <xs:element type=\"xs:string\" name=\"Version\"/>\r\n              <xs:element type=\"xs:string\" name=\"Enabled\"/>\r\n              <xs:element type=\"xs:string\" name=\"IncludeAPIs\"/>\r\n              <xs:element name=\"RetentionPolicy\">\r\n                <xs:complexType>\r\n                  <xs:sequence>\r\n                    <xs:element type=\"xs:string\" name=\"Enabled\"/>\r\n                    <xs:element type=\"xs:string\" name=\"Days\"/>\r\n                  </xs:sequence>\r\n                </xs:complexType>\r\n              </xs:element>\r\n            </xs:sequence>\r\n          </xs:complexType>\r\n        </xs:element>\r\n        <xs:element name=\"Cors\">\r\n          <xs:complexType>\r\n            <xs:sequence>\r\n              <xs:element name=\"CorsRule\">\r\n                <xs:complexType>\r\n                  <xs:sequence>\r\n                    <xs:element type=\"xs:string\" name=\"AllowedOrigins\"/>\r\n                    <xs:element type=\"xs:string\" name=\"AllowedMethods\"/>\r\n                    <xs:element type=\"xs:string\" name=\"MaxAgeInSeconds\"/>\r\n                    <xs:element type=\"xs:string\" name=\"ExposedHeaders\"/>\r\n                    <xs:element type=\"xs:string\" name=\"AllowedHeaders\"/>\r\n                  </xs:sequence>\r\n                </xs:complexType>\r\n              </xs:element>\r\n            </xs:sequence>\r\n          </xs:complexType>\r\n        </xs:element>\r\n      </xs:sequence>\r\n    </xs:complexType>\r\n  </xs:element>\r\n</xs:schema>"
+        },
+        {
+            "tableAclPut-xml": "<xs:schema attributeFormDefault=\"unqualified\" elementFormDefault=\"qualified\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xs:element name=\"SignedIdentifiers\">\r\n    <xs:complexType>\r\n      <xs:sequence>\r\n        <xs:element name=\"SignedIdentifier\">\r\n          <xs:complexType>\r\n            <xs:sequence>\r\n              <xs:element type=\"xs:string\" name=\"Id\"/>\r\n              <xs:element name=\"AccessPolicy\">\r\n                <xs:complexType>\r\n                  <xs:sequence>\r\n                    <xs:element type=\"xs:dateTime\" name=\"Start\"/>\r\n                    <xs:element type=\"xs:dateTime\" name=\"Expiry\"/>\r\n                    <xs:element type=\"xs:string\" name=\"Permission\"/>\r\n                  </xs:sequence>\r\n                </xs:complexType>\r\n              </xs:element>\r\n            </xs:sequence>\r\n          </xs:complexType>\r\n        </xs:element>\r\n      </xs:sequence>\r\n    </xs:complexType>\r\n  </xs:element>\r\n</xs:schema>"
+        },
+        {
+            "entitiesQueryFull": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"odata.metadata\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"value\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"odata.type\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"odata.id\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"odata.etag\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"odata.editLink\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"PartitionKey\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"RowKey\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"Timestamp@odata.type\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"Timestamp\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"CustomerSince@odata.type\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"CustomerSince\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            }\r\n          }\r\n        }\r\n      \r\n    }\r\n  }\r\n}"
+        },
+        {
+            "entitiesQueryMinimal": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"odata.metadata\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"value\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"PartitionKey\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"RowKey\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"Timestamp\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"CustomerSince@odata.type\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"CustomerSince\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            }\r\n          }\r\n        }\r\n      \r\n    }\r\n  }\r\n}"
+        },
+        {
+            "entitiesQueryNoMeta": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"value\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"PartitionKey\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"RowKey\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"Timestamp\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"CustomerSince\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            }\r\n          }\r\n        }\r\n      \r\n    }\r\n  }\r\n}"
+        },
+        {
+            "entityInsertResponseFull": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"odata.metadata\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"odata.type\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"odata.id\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"odata.etag\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"odata.editLink\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"PartitionKey\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"RowKey\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"Timestamp@odata.type\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"Timestamp\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"Address\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"Age\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"AmountDue\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"CustomerCode@odata.type\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"CustomerCode\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"CustomerSince@odata.type\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"CustomerSince\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"IsActive\" : {\r\n      \"type\" : \"boolean\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"NumberOfOrders@odata.type\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"NumberOfOrders\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    }\r\n  }\r\n}"
+        },
+        {
+            "entityInsertResponseMinimal": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"odata.metadata\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"PartitionKey\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"RowKey\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"Timestamp\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"Address\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"Age\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"AmountDue\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"CustomerCode@odata.type\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"CustomerCode\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"CustomerSince@odata.type\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"CustomerSince\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"IsActive\" : {\r\n      \"type\" : \"boolean\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"NumberOfOrders@odata.type\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"NumberOfOrders\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    }\r\n  }\r\n}"
+        },
+        {
+            "entityInsertResponseNoMeta": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"PartitionKey\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"RowKey\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"Timestamp\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"Address\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"Age\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"AmountDue\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"CustomerCode\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"CustomerSince\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"IsActive\" : {\r\n      \"type\" : \"boolean\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"NumberOfOrders\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    }\r\n  }\r\n}"
+        },
+        {
+            "entityInsert": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"Address\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"Age\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"AmountDue\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"CustomerCode@odata.type\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"CustomerCode\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"CustomerSince@odata.type\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"CustomerSince\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"IsActive\" : {\r\n      \"type\" : \"boolean\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"NumberOfOrders@odata.type\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"NumberOfOrders\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"PartitionKey\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"RowKey\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    }\r\n  }\r\n}"
+        },
+        {
+            "tablesQueryFull": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"odata.metadata\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"value\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"odata.type\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"odata.id\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"odata.editLink\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"TableName\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            }\r\n          }\r\n        }\r\n      \r\n    }\r\n  }\r\n}"
+        },
+        {
+            "tablesQueryMinimal": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"odata.metadata\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"value\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"TableName\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            }\r\n          }\r\n        }\r\n      \r\n    }\r\n  }\r\n}"
+        },
+        {
+            "tablesQueryNoMeta": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"value\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"TableName\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            }\r\n          }\r\n        }\r\n      \r\n    }\r\n  }\r\n}"
+        },
+        {
+            "tablesPost": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"TableName\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    }\r\n  }\r\n}"
+        },
+        {
+            "entitiesPutBody": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"Address\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"Age\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"AmountDue\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"CustomerCode@odata.type\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"CustomerCode\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"CustomerSince@odata.type\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"CustomerSince\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"IsActive\" : {\r\n      \"type\" : \"boolean\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"NumberOfOrders@odata.type\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"NumberOfOrders\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"PartitionKey\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"RowKey\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    }\r\n  }\r\n}"
+        },
+        {
+            "tablePostResponseFull": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"odata.metadata\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"odata.type\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"odata.id\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"odata.editLink\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"TableName\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    }\r\n  }\r\n}"
+        },
+        {
+            "tablePostResponseMinimal": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"odata.metadata\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"TableName\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    }\r\n  }\r\n}"
+        },
+        {
+            "tablePostResponseNoMeta": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"TableName\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    }\r\n  }\r\n}"
+        },
+        {
+            "tableAclGet-xml": "<xs:schema attributeFormDefault=\"unqualified\" elementFormDefault=\"qualified\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xs:element name=\"SignedIdentifiers\">\r\n    <xs:complexType>\r\n      <xs:sequence>\r\n        <xs:element name=\"SignedIdentifier\">\r\n          <xs:complexType>\r\n            <xs:sequence>\r\n              <xs:element type=\"xs:string\" name=\"Id\"/>\r\n              <xs:element name=\"AccessPolicy\">\r\n                <xs:complexType>\r\n                  <xs:sequence>\r\n                    <xs:element type=\"xs:dateTime\" name=\"Start\"/>\r\n                    <xs:element type=\"xs:dateTime\" name=\"Expiry\"/>\r\n                    <xs:element type=\"xs:string\" name=\"Permission\"/>\r\n                  </xs:sequence>\r\n                </xs:complexType>\r\n              </xs:element>\r\n            </xs:sequence>\r\n          </xs:complexType>\r\n        </xs:element>\r\n      </xs:sequence>\r\n    </xs:complexType>\r\n  </xs:element>\r\n</xs:schema>"
+        }
+    ],
+    "traits": [
+        {
+            "basicTrait": {
+                "responses": {
+                    "200": {
+                        "code": "200",
+                        "headers": [
+                            {
+                                "name": "x-ms-version",
+                                "displayName": "x-ms-version",
+                                "type": "string",
+                                "required": false,
+                                "repeat": false,
+                                "description": "Indicates the version of the Table service used to execute the request. This header is returned for requests made against version 2009-09-19 and later.",
+                                "__METADATA__": {
+                                    "primitiveValuesMeta": {
+                                        "displayName": {
+                                            "calculated": true
+                                        },
+                                        "type": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "required": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "repeat": {
+                                            "insertedAsDefault": true
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "name": "x-ms-request-id",
+                                "displayName": "x-ms-request-id",
+                                "type": "string",
+                                "required": false,
+                                "repeat": false,
+                                "description": "This header uniquely identifies the request that was made and can be used for troubleshooting the request. For more information, see Troubleshooting API Operations.",
+                                "__METADATA__": {
+                                    "primitiveValuesMeta": {
+                                        "displayName": {
+                                            "calculated": true
+                                        },
+                                        "type": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "required": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "repeat": {
+                                            "insertedAsDefault": true
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Date",
+                                "displayName": "Date",
+                                "type": "string",
+                                "required": false,
+                                "repeat": false,
+                                "description": "A UTC date/time value generated by the service that indicates the time at which the response was initiated.",
+                                "__METADATA__": {
+                                    "primitiveValuesMeta": {
+                                        "displayName": {
+                                            "calculated": true
+                                        },
+                                        "type": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "required": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "repeat": {
+                                            "insertedAsDefault": true
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "202": {
+                        "code": "202",
+                        "headers": [
+                            {
+                                "name": "x-ms-version",
+                                "displayName": "x-ms-version",
+                                "type": "string",
+                                "required": false,
+                                "repeat": false,
+                                "description": "Indicates the version of the Table service used to execute the request. This header is returned for requests made against version 2009-09-19 and later.",
+                                "__METADATA__": {
+                                    "primitiveValuesMeta": {
+                                        "displayName": {
+                                            "calculated": true
+                                        },
+                                        "type": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "required": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "repeat": {
+                                            "insertedAsDefault": true
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "name": "x-ms-request-id",
+                                "displayName": "x-ms-request-id",
+                                "type": "string",
+                                "required": false,
+                                "repeat": false,
+                                "description": "This header uniquely identifies the request that was made and can be used for troubleshooting the request. For more information, see Troubleshooting API Operations.",
+                                "__METADATA__": {
+                                    "primitiveValuesMeta": {
+                                        "displayName": {
+                                            "calculated": true
+                                        },
+                                        "type": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "required": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "repeat": {
+                                            "insertedAsDefault": true
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Date",
+                                "displayName": "Date",
+                                "type": "string",
+                                "required": false,
+                                "repeat": false,
+                                "description": "A UTC date/time value generated by the service that indicates the time at which the response was initiated.",
+                                "__METADATA__": {
+                                    "primitiveValuesMeta": {
+                                        "displayName": {
+                                            "calculated": true
+                                        },
+                                        "type": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "required": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "repeat": {
+                                            "insertedAsDefault": true
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "204": {
+                        "code": "204",
+                        "headers": [
+                            {
+                                "name": "x-ms-version",
+                                "displayName": "x-ms-version",
+                                "type": "string",
+                                "required": false,
+                                "repeat": false,
+                                "description": "Indicates the version of the Table service used to execute the request. This header is returned for requests made against version 2009-09-19 and later.",
+                                "__METADATA__": {
+                                    "primitiveValuesMeta": {
+                                        "displayName": {
+                                            "calculated": true
+                                        },
+                                        "type": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "required": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "repeat": {
+                                            "insertedAsDefault": true
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "name": "x-ms-request-id",
+                                "displayName": "x-ms-request-id",
+                                "type": "string",
+                                "required": false,
+                                "repeat": false,
+                                "description": "This header uniquely identifies the request that was made and can be used for troubleshooting the request. For more information, see Troubleshooting API Operations.",
+                                "__METADATA__": {
+                                    "primitiveValuesMeta": {
+                                        "displayName": {
+                                            "calculated": true
+                                        },
+                                        "type": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "required": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "repeat": {
+                                            "insertedAsDefault": true
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Date",
+                                "displayName": "Date",
+                                "type": "string",
+                                "required": false,
+                                "repeat": false,
+                                "description": "A UTC date/time value generated by the service that indicates the time at which the response was initiated.",
+                                "__METADATA__": {
+                                    "primitiveValuesMeta": {
+                                        "displayName": {
+                                            "calculated": true
+                                        },
+                                        "type": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "required": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "repeat": {
+                                            "insertedAsDefault": true
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "headers": {
+                    "x-ms-date": {
+                        "name": "x-ms-date",
+                        "displayName": "x-ms-date",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Specifies the Coordinated Universal Time (UTC) for the request.\nFor more information, see Authentication for the Windows Azure Storage Services.\nPresence one of either \"Date\" or \"x-ms-date\" is required.\n",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "Date": {
+                        "name": "Date",
+                        "displayName": "Date",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Same as the \"x-ms-date\" header.\nPresence one of either \"Date\" or \"x-ms-date\" is required.\n",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "x-ms-version": {
+                        "name": "x-ms-version",
+                        "displayName": "x-ms-version",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Specifies the version of the operation to use for this request.\nFor more information, see Versioning for the Blob, Queue, and Table Services in Windows Azure.\n",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "x-ms-client-request-id": {
+                        "name": "x-ms-client-request-id",
+                        "displayName": "x-ms-client-request-id",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Provides a client-generated, opaque value with a 1 KB character limit that\nis recorded in the analytics logs when storage analytics logging is enabled.\nUsing this header is highly recommended for correlating client-side activities\nwith requests received by the server. For more information,\nsee About Storage Analytics Logging and Windows Azure Logging --\nUsing Logs to Track Storage Requests.\n",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "name": "basicTrait"
+            }
+        },
+        {
+            "serviceProperties": {
+                "queryParameters": {
+                    "comp": {
+                        "name": "comp",
+                        "displayName": "comp",
+                        "type": "string",
+                        "required": true,
+                        "repeat": false,
+                        "description": "",
+                        "enum": [
+                            "stats",
+                            "properties"
+                        ],
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "restype": {
+                        "name": "restype",
+                        "displayName": "restype",
+                        "type": "string",
+                        "required": true,
+                        "repeat": false,
+                        "enum": [
+                            "service"
+                        ],
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "timeout": {
+                        "name": "timeout",
+                        "displayName": "timeout",
+                        "type": "integer",
+                        "required": false,
+                        "repeat": false,
+                        "description": "The parameter is expressed in seconds.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "name": "serviceProperties"
+            }
+        },
+        {
+            "acl": {
+                "queryParameters": {
+                    "comp": {
+                        "name": "comp",
+                        "displayName": "comp",
+                        "type": "string",
+                        "required": true,
+                        "repeat": false,
+                        "enum": [
+                            "acl"
+                        ],
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "name": "acl"
+            }
+        },
+        {
+            "complexRequest": {
+                "responses": {
+                    "201": {
+                        "code": "201",
+                        "headers": [
+                            {
+                                "name": "Content-Type",
+                                "displayName": "Content-Type",
+                                "type": "string",
+                                "required": false,
+                                "repeat": false,
+                                "description": "Indicates the content type of the payload. The value depends on the value specified for the Accept request header. For more information about content types, see Payload Format for Table Service Operations.",
+                                "enum": [
+                                    "application/json;odata=nometadata",
+                                    "application/atom+xml",
+                                    "application/json;odata=fullmetadata",
+                                    "application/json;odata=minimalmetadata"
+                                ],
+                                "__METADATA__": {
+                                    "primitiveValuesMeta": {
+                                        "displayName": {
+                                            "calculated": true
+                                        },
+                                        "type": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "required": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "repeat": {
+                                            "insertedAsDefault": true
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Preference-Applied",
+                                "displayName": "Preference-Applied",
+                                "type": "string",
+                                "required": false,
+                                "repeat": false,
+                                "description": "ndicates whether the Prefer request header was honored. If the response does not include this header, then the Prefer header was not honored. If this header is returned, its value will either be return-content or return-no-content.",
+                                "enum": [
+                                    "return-no-content",
+                                    "return-content"
+                                ],
+                                "__METADATA__": {
+                                    "primitiveValuesMeta": {
+                                        "displayName": {
+                                            "calculated": true
+                                        },
+                                        "type": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "required": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "repeat": {
+                                            "insertedAsDefault": true
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "body": {
+                            "application/atom+xml": {
+                                "name": "application/atom+xml"
+                            },
+                            "application/json;odata=nometadata": {
+                                "name": "application/json;odata=nometadata"
+                            },
+                            "application/json;odata=fullmetadata": {
+                                "name": "application/json;odata=fullmetadata"
+                            },
+                            "application/json;odata=minimalmetadata": {
+                                "name": "application/json;odata=minimalmetadata"
+                            }
+                        },
+                        "description": "If the Prefer header is not specified or if it is set to \"return-content\", then a successful operation returns status code 201 (Created)."
+                    },
+                    "204": {
+                        "code": "204",
+                        "headers": [
+                            {
+                                "name": "Content-Type",
+                                "displayName": "Content-Type",
+                                "type": "string",
+                                "required": false,
+                                "repeat": false,
+                                "description": "Indicates the content type of the payload. The value depends on the value specified for the Accept request header. For more information about content types, see Payload Format for Table Service Operations.",
+                                "enum": [
+                                    "application/json;odata=nometadata",
+                                    "application/atom+xml",
+                                    "application/json;odata=fullmetadata",
+                                    "application/json;odata=minimalmetadata"
+                                ],
+                                "__METADATA__": {
+                                    "primitiveValuesMeta": {
+                                        "displayName": {
+                                            "calculated": true
+                                        },
+                                        "type": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "required": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "repeat": {
+                                            "insertedAsDefault": true
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Preference-Applied",
+                                "displayName": "Preference-Applied",
+                                "type": "string",
+                                "required": false,
+                                "repeat": false,
+                                "description": "Indicates whether the Prefer request header was honored. If the response does not include this header, then the Prefer header was not honored. If this header is returned, its value will either be return-content or return-no-content.",
+                                "enum": [
+                                    "return-no-content",
+                                    "return-content"
+                                ],
+                                "__METADATA__": {
+                                    "primitiveValuesMeta": {
+                                        "displayName": {
+                                            "calculated": true
+                                        },
+                                        "type": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "required": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "repeat": {
+                                            "insertedAsDefault": true
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "body": {
+                            "application/atom+xml": {
+                                "name": "application/atom+xml"
+                            },
+                            "application/json;odata=nometadata": {
+                                "name": "application/json;odata=nometadata"
+                            },
+                            "application/json;odata=fullmetadata": {
+                                "name": "application/json;odata=fullmetadata"
+                            },
+                            "application/json;odata=minimalmetadata": {
+                                "name": "application/json;odata=minimalmetadata"
+                            }
+                        },
+                        "description": "The status code depends on the value of the Prefer header. If the Prefer header is set to return-no-content, then a successful operation returns status code 204 (No Content)."
+                    }
+                },
+                "headers": {
+                    "Content-Type": {
+                        "name": "Content-Type",
+                        "displayName": "Content-Type",
+                        "type": "string",
+                        "required": true,
+                        "repeat": false,
+                        "description": "Specifies the content type of the payload.",
+                        "enum": [
+                            "application/atom+xml",
+                            "application/json"
+                        ],
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "Accept": {
+                        "name": "Accept",
+                        "displayName": "Accept",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Specifies the accepted content-type of the response payload.",
+                        "enum": [
+                            "application/json;odata=nometadata",
+                            "application/atom+xml",
+                            "application/json;odata=fullmetadata",
+                            "application/json;odata=minimalmetadata"
+                        ],
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "Content-Length": {
+                        "name": "Content-Length",
+                        "displayName": "Content-Length",
+                        "type": "integer",
+                        "required": true,
+                        "repeat": false,
+                        "description": "The length of the request body.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "Prefer": {
+                        "name": "Prefer",
+                        "displayName": "Prefer",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Specifies whether the response should include the inserted entity in the payload.\nFor more information about this header, see Setting the Prefer Header to Manage\nResponse Echo on Insert Operations.\n",
+                        "enum": [
+                            "return-no-content",
+                            "return-content"
+                        ],
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "name": "complexRequest"
+            }
+        },
+        {
+            "query": {
+                "responses": {
+                    "200": {
+                        "code": "200",
+                        "headers": [
+                            {
+                                "name": "Content-Type",
+                                "displayName": "Content-Type",
+                                "type": "string",
+                                "required": false,
+                                "repeat": false,
+                                "description": "Indicates the content type of the payload. The value depends on the value specified for the Accept request header. For more information about content types, see Payload Format for Table Service Operations.",
+                                "enum": [
+                                    "application/json;odata=nometadata",
+                                    "application/atom+xml",
+                                    "application/json;odata=fullmetadata",
+                                    "application/json;odata=minimalmetadata"
+                                ],
+                                "__METADATA__": {
+                                    "primitiveValuesMeta": {
+                                        "displayName": {
+                                            "calculated": true
+                                        },
+                                        "type": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "required": {
+                                            "insertedAsDefault": true
+                                        },
+                                        "repeat": {
+                                            "insertedAsDefault": true
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "queryParameters": {
+                    "select": {
+                        "name": "select",
+                        "displayName": "select",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Returns the desired properties of an entity from the set. This query option is only supported for requests using version 2011-08-18 or newer. For more information, see Writing LINQ Queries.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "filter": {
+                        "name": "filter",
+                        "displayName": "filter",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Returns only tables or entities that satisfy the specified filter. Note that no more than 15 discrete comparisons are permitted within a $filter string.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "top": {
+                        "name": "top",
+                        "displayName": "top",
+                        "type": "integer",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Returns only the top n tables or entities from the set.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "headers": {
+                    "Accept": {
+                        "name": "Accept",
+                        "displayName": "Accept",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Specifies the accepted content-type of the response payload.",
+                        "enum": [
+                            "application/json;odata=nometadata",
+                            "application/atom+xml",
+                            "application/json;odata=fullmetadata",
+                            "application/json;odata=minimalmetadata"
+                        ],
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "name": "query"
+            }
+        },
+        {
+            "errorResponses": {
+                "responses": {
+                    "304": {
+                        "code": "304",
+                        "description": "Not Modified\n\nCommon errors:\n|Error code|UserMessage|\n|---|---|\n|ConditionNotMet|The condition specified in the conditional header(s) was not met for a read operation.|\n"
+                    },
+                    "400": {
+                        "code": "400",
+                        "description": "Bad Request\n\nTable Service specific errors:\n|Error code|UserMessage|\n|---|---|\n|DuplicatePropertiesSpecified|A property is specified more than one time.|\n|EntityTooLarge|The entity is larger than the maximum size permitted.|\n|HostInformationNotPresent|The required host information is not present in the request. You must send a non-empty Host header or include the absolute URI in the request line.|\n|InvalidValueType|The value specified is invalid.|\n|PropertiesNeedValue|Values have not been specified for all properties in the entity.|\n|PropertyNameInvalid|The property name is invalid.|\n|PropertyNameTooLong|The property name exceeds the maximum allowed length.|\n|PropertyValueTooLarge|The property value is larger than the maximum size permitted.|\n|TooManyProperties|The entity contains more properties than allowed.|\n|XMethodIncorrectCount|More than one X-HTTP-Method is specified.|\n|XMethodIncorrectValue|The specified X-HTTP-Method is invalid.|\n|XMethodNotUsingPost|The request uses X-HTTP-Method with an HTTP verb other than POST.|\n\nCommon errors:\n|Error code|UserMessage|\n|---|---|\n|MissingRequiredHeader|A required HTTP header was not specified.|\n|MissingRequiredXmlNode|A required XML node was not specified in the request body.|\n|UnsupportedHeader|One of the HTTP headers specified in the request is not supported.|\n|UnsupportedXmlNode|One of the XML nodes specified in the request body is not supported.|\n|InvalidHeaderValue|The value provided for one of the HTTP headers was not in the correct format.|\n|InvalidXmlNodeValue|The value provided for one of the XML nodes in the request body was not in the correct format.|\n|MissingRequiredQueryParameter|A required query parameter was not specified for this request.|\n|UnsupportedQueryParameter|One of the query parameters specified in the request URI is not supported.|\n|InvalidQueryParameterValue|An invalid value was specified for one of the query parameters in the request URI.|\n|OutOfRangeQueryParameterValue|A query parameter specified in the request URI is outside the permissible range.|\n|RequestUrlFailedToParse|The url in the request could not be parsed.|\n|InvalidUri|The requested URI does not represent any resource on the server.|\n|InvalidHttpVerb|The HTTP verb specified was not recognized by the server.|\n|EmptyMetadataKey|The key for one of the metadata key-value pairs is empty.|\n|InvalidXmlDocument|The specified XML is not syntactically valid.|\n|Md5Mismatch|The MD5 value specified in the request did not match the MD5 value calculated by the server.|\n|InvalidMd5|The MD5 value specified in the request is invalid. The MD5 value must be 128 bits and Base64-encoded.|\n|OutOfRangeInput|One of the request inputs is out of range.|\n|InvalidAuthenticationInfo|The authentication information was not provided in the correct format. Verify the value of Authorization header.|\n|InvalidInput|One of the request inputs is not valid.|\n|InvalidMetadata|The specified metadata is invalid. It includes characters that are not permitted.|\n|MetadataTooLarge|The size of the specified metadata exceeds the maximum size permitted.|\n"
+                    },
+                    "403": {
+                        "code": "403",
+                        "description": "Forbidden\n\nCommon errors:\n|Error code|UserMessage|\n|---|---|\n|AuthenticationFailed|Server failed to authenticate the request. Make sure the value of the Authorization header is formed correctly including the signature.|\n|InsufficientAccountPermissions|Read-access geo-redundant replication is not enabled for the account.|\n|InsufficientAccountPermissions|Write operations to the secondary location are not allowed.|\n|AccountIsDisabled|The specified account is disabled.|\n|InsufficientAccountPermissions|The account being accessed does not have sufficient permissions to execute this operation.|\n"
+                    },
+                    "404": {
+                        "code": "404",
+                        "description": "Not Found\n\nTable Service specific errors:\n|Error code|UserMessage|\n|---|---|\n|TableNotFound|The table specified does not exist.|\n\nCommon errors:\n|Error code|UserMessage|\n|---|---|\n|ResourceNotFound|The specified resource does not exist.|\n"
+                    },
+                    "405": {
+                        "code": "405",
+                        "description": "Method Not Allowed\n\nTable Service specific errors:\n|Error code|UserMessage|\n|---|---|\n|MethodNotAllowed|The requested method is not allowed on the specified resource.|\n\nCommon errors:\n|Error code|UserMessage|\n|---|---|\n|UnsupportedHttpVerb|The resource doesn't support the specified HTTP verb.|\n"
+                    },
+                    "409": {
+                        "code": "409",
+                        "description": "Conflict\n\nTable Service specific errors:\n|Error code|UserMessage|\n|---|---|\n|EntityAlreadyExists|The specified entity already exists.|\n|TableAlreadyExists|The table specified already exists.|\n|TableBeingDeleted|The specified table is being deleted.|\n\nCommon errors:\n|Error code|UserMessage|\n|---|---|\n|AccountAlreadyExists|The specified account already exists.|\n|AccountBeingCreated|The specified account is in the process of being created.|\n"
+                    },
+                    "411": {
+                        "code": "411",
+                        "description": "Length Required\n\nCommon errors:\n|Error code|UserMessage|\n|---|---|\n|MissingContentLengthHeader|The Content-Length header was not specified.|\n"
+                    },
+                    "412": {
+                        "code": "412",
+                        "description": "Precondition Failed\n\nTable Service specific errors:\n|Error code|UserMessage|\n|---|---|\n|UpdateConditionNotSatisfied|The update condition specified in the request was not satisfied.|\n\nCommon errors:\n|Error code|UserMessage|\n|---|---|\n|ConditionNotMet|The condition specified in the conditional header(s) was not met for a write operation.|\n"
+                    },
+                    "413": {
+                        "code": "413",
+                        "description": "RequestBodyTooLarge\n\nCommon errors:\n|Error code|UserMessage|\n|---|---|\n|RequestBodyTooLarge|The size of the request body exceeds the maximum size permitted.|\n"
+                    },
+                    "415": {
+                        "code": "415",
+                        "description": "Unsupported Media Type\n\nTable Service specific errors:\n|Error code|UserMessage|\n|---|---|\n|JsonFormatNotSupported|JSON format is not supported.|\n"
+                    },
+                    "416": {
+                        "code": "416",
+                        "description": "Requested Range Not Satisfiable\n\nCommon errors:\n|Error code|UserMessage|\n|---|---|\n|InvalidRange|The range specified is invalid for the current size of the resource.|\n"
+                    },
+                    "500": {
+                        "code": "500",
+                        "description": "Internal Server Error\n\nCommon errors:\n|Error code|UserMessage|\n|---|---|\n|InternalError|The server encountered an internal error. Please retry the request.|\n|OperationTimedOut|The operation could not be completed within the permitted time.|\n"
+                    },
+                    "501": {
+                        "code": "501",
+                        "description": "Not Implemented\n\nTable Service specific errors:\n|Error code|UserMessage|\n|---|---|\n|NotImplemented|The requested operation is not implemented on the specified resource.|\n"
+                    },
+                    "503": {
+                        "code": "503",
+                        "description": "Service Unavailable\n\nCommon errors:\n|Error code|UserMessage|\n|---|---|\n|ServerBusy|The server is currently unable to receive requests. Please retry your request.|\n"
+                    }
+                },
+                "securedBy": [
+                    "customSchema"
+                ],
+                "name": "errorResponses"
+            }
+        },
+        {
+            "serviceVersion": {
+                "headers": {
+                    "MaxDataServiceVersion": {
+                        "name": "MaxDataServiceVersion",
+                        "displayName": "MaxDataServiceVersion",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Specifies the maximum data service version.\n|Header Value|Compatible Table Service Versions (x-ms-version Header Values)|\n|---|---|\n|1.0;NetFx|Any version|\n|2.0;NetFx|2011-08-18 or later|\n|3.0;NetFx|2013-08-15 or later|\n",
+                        "enum": [
+                            "2.0;NetFx",
+                            "3.0;NetFx",
+                            "1.0;NetFx"
+                        ],
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "DataServiceVersion": {
+                        "name": "DataServiceVersion",
+                        "displayName": "DataServiceVersion",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Specifies the exact data service version.\n|Header Value|Compatible Table Service Versions (x-ms-version Header Values)|\n|---|---|\n|1.0;NetFx|Any version|\n|2.0;NetFx|2011-08-18 or later|\n|3.0;NetFx|2013-08-15 or later|\n",
+                        "enum": [
+                            "2.0;NetFx",
+                            "3.0;NetFx",
+                            "1.0;NetFx"
+                        ],
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "description": "You must specify the OData data service version, using one of the following request headers:  MaxDataServiceVersion or DataServiceVersion.\n\nIf both headers are present, precedence is given to MaxDataServiceVersion.\n",
+                "name": "serviceVersion"
+            }
+        }
+    ],
+    "securitySchemes": [
+        {
+            "customSchema": {
+                "name": "customSchema",
+                "type": "x-custom",
+                "describedBy": {
+                    "headers": {
+                        "Authorization": {
+                            "name": "Authorization",
+                            "displayName": "Authorization",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "Specifies the authentication scheme, account name, and signature. For more information, see Authentication for the Windows Azure Storage Services.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "resourceTypes": [
+        {
+            "azureResource": {
+                "name": "azureResource",
+                "is": [
+                    "basicTrait",
+                    "errorResponses"
+                ]
+            }
+        }
+    ],
+    "resources": [
+        {
+            "relativeUri": "/",
+            "type": "azureResource",
+            "is": [
+                "serviceProperties"
+            ],
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/xml": {
+                                    "name": "application/xml",
+                                    "schema": "tableServices-xml",
+                                    "example": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<StorageServiceProperties>\r\n    <Logging>\r\n        <Version>version-number</Version>\r\n        <Delete>true|false</Delete>\r\n        <Read>true|false</Read>\r\n        <Write>true|false</Write>\r\n        <RetentionPolicy>\r\n            <Enabled>true|false</Enabled>\r\n            <Days>number-of-days</Days>\r\n        </RetentionPolicy>\r\n    </Logging>\r\n    <HourMetrics>\r\n        <Version>version-number</Version>\r\n        <Enabled>true|false</Enabled>\r\n        <IncludeAPIs>true|false</IncludeAPIs>\r\n        <RetentionPolicy>\r\n            <Enabled>true|false</Enabled>\r\n            <Days>number-of-days</Days>\r\n        </RetentionPolicy>\r\n    </HourMetrics>\r\n    <MinuteMetrics>\r\n        <Version>version-number</Version>\r\n        <Enabled>true|false</Enabled>\r\n        <IncludeAPIs>true|false</IncludeAPIs>\r\n        <RetentionPolicy>\r\n            <Enabled>true|false</Enabled>\r\n            <Days>number-of-days</Days>\r\n        </RetentionPolicy>\r\n    </MinuteMetrics>\r\n    <Cors>\r\n        <CorsRule>\r\n            <AllowedOrigins>comma-separated-list-of-allowed-origins</AllowedOrigins>\r\n            <AllowedMethods>comma-separated-list-of-HTTP-verb</AllowedMethods>\r\n            <MaxAgeInSeconds>max-caching-age-in-seconds</MaxAgeInSeconds>\r\n            <ExposedHeaders>comma-seperated-list-of-response-headers</ExposedHeaders>\r\n            <AllowedHeaders> comma-seperated-list-of-request-headers </AllowedHeaders>\r\n        </CorsRule>\r\n    </Cors>\r\n</StorageServiceProperties>",
+                                    "schemaContent": "<xs:schema attributeFormDefault=\"unqualified\" elementFormDefault=\"qualified\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xs:element name=\"StorageServiceProperties\">\r\n    <xs:complexType>\r\n      <xs:sequence>\r\n        <xs:element name=\"Logging\">\r\n          <xs:complexType>\r\n            <xs:sequence>\r\n              <xs:element type=\"xs:string\" name=\"Version\"/>\r\n              <xs:element type=\"xs:string\" name=\"Delete\"/>\r\n              <xs:element type=\"xs:string\" name=\"Read\"/>\r\n              <xs:element type=\"xs:string\" name=\"Write\"/>\r\n              <xs:element name=\"RetentionPolicy\">\r\n                <xs:complexType>\r\n                  <xs:sequence>\r\n                    <xs:element type=\"xs:string\" name=\"Enabled\"/>\r\n                    <xs:element type=\"xs:string\" name=\"Days\"/>\r\n                  </xs:sequence>\r\n                </xs:complexType>\r\n              </xs:element>\r\n            </xs:sequence>\r\n          </xs:complexType>\r\n        </xs:element>\r\n        <xs:element name=\"HourMetrics\">\r\n          <xs:complexType>\r\n            <xs:sequence>\r\n              <xs:element type=\"xs:string\" name=\"Version\"/>\r\n              <xs:element type=\"xs:string\" name=\"Enabled\"/>\r\n              <xs:element type=\"xs:string\" name=\"IncludeAPIs\"/>\r\n              <xs:element name=\"RetentionPolicy\">\r\n                <xs:complexType>\r\n                  <xs:sequence>\r\n                    <xs:element type=\"xs:string\" name=\"Enabled\"/>\r\n                    <xs:element type=\"xs:string\" name=\"Days\"/>\r\n                  </xs:sequence>\r\n                </xs:complexType>\r\n              </xs:element>\r\n            </xs:sequence>\r\n          </xs:complexType>\r\n        </xs:element>\r\n        <xs:element name=\"MinuteMetrics\">\r\n          <xs:complexType>\r\n            <xs:sequence>\r\n              <xs:element type=\"xs:string\" name=\"Version\"/>\r\n              <xs:element type=\"xs:string\" name=\"Enabled\"/>\r\n              <xs:element type=\"xs:string\" name=\"IncludeAPIs\"/>\r\n              <xs:element name=\"RetentionPolicy\">\r\n                <xs:complexType>\r\n                  <xs:sequence>\r\n                    <xs:element type=\"xs:string\" name=\"Enabled\"/>\r\n                    <xs:element type=\"xs:string\" name=\"Days\"/>\r\n                  </xs:sequence>\r\n                </xs:complexType>\r\n              </xs:element>\r\n            </xs:sequence>\r\n          </xs:complexType>\r\n        </xs:element>\r\n        <xs:element name=\"Cors\">\r\n          <xs:complexType>\r\n            <xs:sequence>\r\n              <xs:element name=\"CorsRule\">\r\n                <xs:complexType>\r\n                  <xs:sequence>\r\n                    <xs:element type=\"xs:string\" name=\"AllowedOrigins\"/>\r\n                    <xs:element type=\"xs:string\" name=\"AllowedMethods\"/>\r\n                    <xs:element type=\"xs:string\" name=\"MaxAgeInSeconds\"/>\r\n                    <xs:element type=\"xs:string\" name=\"ExposedHeaders\"/>\r\n                    <xs:element type=\"xs:string\" name=\"AllowedHeaders\"/>\r\n                  </xs:sequence>\r\n                </xs:complexType>\r\n              </xs:element>\r\n            </xs:sequence>\r\n          </xs:complexType>\r\n        </xs:element>\r\n      </xs:sequence>\r\n    </xs:complexType>\r\n  </xs:element>\r\n</xs:schema>"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "The Get Table Service Properties operation (comp=\"properties\") gets the properties of a storage account's Table service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules.\n\nThe Get Table Service Stats operation (comp=\"stats\") retrieves statistics related to replication for the Table service. It is only available on the secondary location endpoint when read-access geo-redundant replication is enabled for the storage account.\n",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "202": {
+                            "code": "202"
+                        }
+                    },
+                    "body": {
+                        "application/xml": {
+                            "name": "application/xml",
+                            "schema": "tableServices-xml",
+                            "example": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<StorageServiceProperties>\r\n    <Logging>\r\n        <Version>version-number</Version>\r\n        <Delete>true|false</Delete>\r\n        <Read>true|false</Read>\r\n        <Write>true|false</Write>\r\n        <RetentionPolicy>\r\n            <Enabled>true|false</Enabled>\r\n            <Days>number-of-days</Days>\r\n        </RetentionPolicy>\r\n    </Logging>\r\n    <HourMetrics>\r\n        <Version>version-number</Version>\r\n        <Enabled>true|false</Enabled>\r\n        <IncludeAPIs>true|false</IncludeAPIs>\r\n        <RetentionPolicy>\r\n            <Enabled>true|false</Enabled>\r\n            <Days>number-of-days</Days>\r\n        </RetentionPolicy>\r\n    </HourMetrics>\r\n    <MinuteMetrics>\r\n        <Version>version-number</Version>\r\n        <Enabled>true|false</Enabled>\r\n        <IncludeAPIs>true|false</IncludeAPIs>\r\n        <RetentionPolicy>\r\n            <Enabled>true|false</Enabled>\r\n            <Days>number-of-days</Days>\r\n        </RetentionPolicy>\r\n    </MinuteMetrics>\r\n    <Cors>\r\n        <CorsRule>\r\n            <AllowedOrigins>comma-separated-list-of-allowed-origins</AllowedOrigins>\r\n            <AllowedMethods>comma-separated-list-of-HTTP-verb</AllowedMethods>\r\n            <MaxAgeInSeconds>max-caching-age-in-seconds</MaxAgeInSeconds>\r\n            <ExposedHeaders>comma-seperated-list-of-response-headers</ExposedHeaders>\r\n            <AllowedHeaders> comma-seperated-list-of-request-headers </AllowedHeaders>\r\n        </CorsRule>\r\n    </Cors>\r\n</StorageServiceProperties>",
+                            "schemaContent": "<xs:schema attributeFormDefault=\"unqualified\" elementFormDefault=\"qualified\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xs:element name=\"StorageServiceProperties\">\r\n    <xs:complexType>\r\n      <xs:sequence>\r\n        <xs:element name=\"Logging\">\r\n          <xs:complexType>\r\n            <xs:sequence>\r\n              <xs:element type=\"xs:string\" name=\"Version\"/>\r\n              <xs:element type=\"xs:string\" name=\"Delete\"/>\r\n              <xs:element type=\"xs:string\" name=\"Read\"/>\r\n              <xs:element type=\"xs:string\" name=\"Write\"/>\r\n              <xs:element name=\"RetentionPolicy\">\r\n                <xs:complexType>\r\n                  <xs:sequence>\r\n                    <xs:element type=\"xs:string\" name=\"Enabled\"/>\r\n                    <xs:element type=\"xs:string\" name=\"Days\"/>\r\n                  </xs:sequence>\r\n                </xs:complexType>\r\n              </xs:element>\r\n            </xs:sequence>\r\n          </xs:complexType>\r\n        </xs:element>\r\n        <xs:element name=\"HourMetrics\">\r\n          <xs:complexType>\r\n            <xs:sequence>\r\n              <xs:element type=\"xs:string\" name=\"Version\"/>\r\n              <xs:element type=\"xs:string\" name=\"Enabled\"/>\r\n              <xs:element type=\"xs:string\" name=\"IncludeAPIs\"/>\r\n              <xs:element name=\"RetentionPolicy\">\r\n                <xs:complexType>\r\n                  <xs:sequence>\r\n                    <xs:element type=\"xs:string\" name=\"Enabled\"/>\r\n                    <xs:element type=\"xs:string\" name=\"Days\"/>\r\n                  </xs:sequence>\r\n                </xs:complexType>\r\n              </xs:element>\r\n            </xs:sequence>\r\n          </xs:complexType>\r\n        </xs:element>\r\n        <xs:element name=\"MinuteMetrics\">\r\n          <xs:complexType>\r\n            <xs:sequence>\r\n              <xs:element type=\"xs:string\" name=\"Version\"/>\r\n              <xs:element type=\"xs:string\" name=\"Enabled\"/>\r\n              <xs:element type=\"xs:string\" name=\"IncludeAPIs\"/>\r\n              <xs:element name=\"RetentionPolicy\">\r\n                <xs:complexType>\r\n                  <xs:sequence>\r\n                    <xs:element type=\"xs:string\" name=\"Enabled\"/>\r\n                    <xs:element type=\"xs:string\" name=\"Days\"/>\r\n                  </xs:sequence>\r\n                </xs:complexType>\r\n              </xs:element>\r\n            </xs:sequence>\r\n          </xs:complexType>\r\n        </xs:element>\r\n        <xs:element name=\"Cors\">\r\n          <xs:complexType>\r\n            <xs:sequence>\r\n              <xs:element name=\"CorsRule\">\r\n                <xs:complexType>\r\n                  <xs:sequence>\r\n                    <xs:element type=\"xs:string\" name=\"AllowedOrigins\"/>\r\n                    <xs:element type=\"xs:string\" name=\"AllowedMethods\"/>\r\n                    <xs:element type=\"xs:string\" name=\"MaxAgeInSeconds\"/>\r\n                    <xs:element type=\"xs:string\" name=\"ExposedHeaders\"/>\r\n                    <xs:element type=\"xs:string\" name=\"AllowedHeaders\"/>\r\n                  </xs:sequence>\r\n                </xs:complexType>\r\n              </xs:element>\r\n            </xs:sequence>\r\n          </xs:complexType>\r\n        </xs:element>\r\n      </xs:sequence>\r\n    </xs:complexType>\r\n  </xs:element>\r\n</xs:schema>"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "The Set Table Service Properties operation sets properties for a storage account's Table service endpoint, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules. See Cross-Origin Resource Sharing (CORS) Support for the Windows Azure Storage Services for more information on CORS rules.",
+                    "method": "put",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": []
+        },
+        {
+            "relativeUri": "/Tables",
+            "type": "azureResource",
+            "is": [
+                "serviceVersion"
+            ],
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "headers": [
+                                {
+                                    "name": "x-ms-continuation-NextTableName",
+                                    "displayName": "x-ms-continuation-NextTableName",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "If the number of tables to be returned exceeds 1,000 or the query does not complete within the timeout interval, the response header includes the x-ms-continuation-NextTableName continuation header. This header returns the continuation token value. For more information about using the continuation token, see Query Timeout and Pagination.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "body": {
+                                "application/atom+xml": {
+                                    "name": "application/atom+xml",
+                                    "schema": "atom",
+                                    "example": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>\r\n<feed xml:base=\"https://myaccount.table.core.windows.net/\" xmlns:d=\"http://schemas.microsoft.com/ado/2007/08/dataservices\" xmlns:m=\"http://schemas.microsoft.com/ado/2007/08/dataservices/metadata\" xmlns=\"http://www.w3.org/2005/Atom\">\r\n  <title type=\"text\">Tables</title>\r\n  <id>https://myaccount.table.core.windows.net/Tables</id>\r\n  <updated>2009-01-04T17:18:54.7062347Z</updated>\r\n  <link rel=\"self\" title=\"Tables\" href=\"Tables\" />\r\n  <entry>\r\n    <id>https://myaccount.table.core.windows.net/Tables('mytable')</id>\r\n    <title type=\"text\"></title>\r\n    <updated>2009-01-04T17:18:54.7062347Z</updated>\r\n    <author>\r\n      <name />\r\n    </author>\r\n    <link rel=\"edit\" title=\"Tables\" href=\"Tables('mytable')\" />\r\n    <category term=\"myaccount.Tables\" scheme=\"http://schemas.microsoft.com/ado/2007/08/dataservices/scheme\" />\r\n    <content type=\"application/xml\">\r\n      <m:properties>\r\n        <d:TableName>mytable</d:TableName>\r\n      </m:properties>\r\n    </content>\r\n  </entry>\r\n</feed> ",
+                                    "schemaContent": "atom"
+                                },
+                                "application/json;odata=nometadata": {
+                                    "name": "application/json;odata=nometadata",
+                                    "schema": "tablesQueryNoMeta",
+                                    "example": "{\r\n   \"value\":[{\r\n       \"TableName\":\"mytable\"\r\n   }]\r\n}\r\n",
+                                    "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"value\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"TableName\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            }\r\n          }\r\n        }\r\n      \r\n    }\r\n  }\r\n}"
+                                },
+                                "application/json;odata=minimalmetadata": {
+                                    "name": "application/json;odata=minimalmetadata",
+                                    "schema": "tablesQueryMinimal",
+                                    "example": "{\r\n  \"odata.metadata\" : \"https://myaccount.table.core.windows.net/$metadata#Tables\" ,\r\n  \"value\" : [\r\n    {\r\n      \"TableName\" : \"mytable\"\r\n    }\r\n  ]\r\n}",
+                                    "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"odata.metadata\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"value\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"TableName\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            }\r\n          }\r\n        }\r\n      \r\n    }\r\n  }\r\n}"
+                                },
+                                "application/json;odata=fullmetadata": {
+                                    "name": "application/json;odata=fullmetadata",
+                                    "schema": "tablesQueryFull",
+                                    "example": "{\r\n  \"odata.metadata\" : \"https://myaccount.table.core.windows.net/$metadata#Tables\" ,\r\n  \"value\" : [\r\n    {\r\n      \"odata.type\" : \"myaccount.Tables\" ,\r\n      \"odata.id\" : \"https://myaccount.table.core.windows.net/Tables('mytable')\" ,\r\n      \"odata.editLink\" : \"Tables('mytable')\" ,\r\n      \"TableName\" : \"mytable\"\r\n    }\r\n  ]\r\n}",
+                                    "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"odata.metadata\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"value\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"odata.type\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"odata.id\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"odata.editLink\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"TableName\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            }\r\n          }\r\n        }\r\n      \r\n    }\r\n  }\r\n}"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "The Query Tables operation returns a list of tables under the specified account.",
+                    "method": "get",
+                    "is": [
+                        "query"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "201": {
+                            "code": "201",
+                            "body": {
+                                "application/atom+xml": {
+                                    "name": "application/atom+xml",
+                                    "schema": "atom",
+                                    "example": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>\r\n<entry xml:base=\"https://myaccount.table.core.windows.net/\" xmlns:d=\"http://schemas.microsoft.com/ado/2007/08/dataservices\" xmlns:m=\"http://schemas.microsoft.com/ado/2007/08/dataservices/metadata\" xmlns=\"http://www.w3.org/2005/Atom\"> <id>https://myaccount.table.core.windows.net/Tables('mytable')</id>\r\n  <title type=\"text\"></title>\r\n  <updated>2013-10-24T17:18:54.7062347Z</updated>\r\n  <author>\r\n    <name />\r\n  </author>\r\n  <link rel=\"edit\" title=\"Tables\" href=\"Tables('mytable')\" />\r\n  <category term=\"myaccount.Tables\" scheme=\"http://schemas.microsoft.com/ado/2007/08/dataservices/scheme\" />\r\n  <content type=\"application/xml\">\r\n    <m:properties>\r\n      <d:TableName>mytable</d:TableName>\r\n    </m:properties>\r\n  </content>\r\n</entry>",
+                                    "schemaContent": "atom"
+                                },
+                                "application/json;odata=nometadata": {
+                                    "name": "application/json;odata=nometadata",
+                                    "schema": "tablePostResponseNoMeta",
+                                    "example": "{\r\n  \"TableName\" : \"mytable\"\r\n}",
+                                    "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"TableName\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    }\r\n  }\r\n}"
+                                },
+                                "application/json;odata=minimalmetadata": {
+                                    "name": "application/json;odata=minimalmetadata",
+                                    "schema": "tablePostResponseMinimal",
+                                    "example": "{\r\n  \"odata.metadata\" : \"https://myaccount.table.core.windows.net/$metadata#Tables/@Element\" ,\r\n  \"TableName\" : \"mytable\"\r\n}",
+                                    "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"odata.metadata\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"TableName\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    }\r\n  }\r\n}"
+                                },
+                                "application/json;odata=fullmetadata": {
+                                    "name": "application/json;odata=fullmetadata",
+                                    "schema": "tablePostResponseFull",
+                                    "example": "{\r\n  \"odata.metadata\" : \"https://myaccount.table.core.windows.net/$metadata#Tables/@Element\" ,\r\n  \"odata.type\" : \" myaccount.Tables\" ,\r\n  \"odata.id\" : \"https://myaccount.table.core.windows.net/Tables('mytable')\" ,\r\n  \"odata.editLink\" : \"Tables('mytable')\" ,\r\n  \"TableName\" : \"mytable\"\r\n}",
+                                    "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"odata.metadata\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"odata.type\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"odata.id\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"odata.editLink\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"TableName\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    }\r\n  }\r\n}"
+                                }
+                            }
+                        }
+                    },
+                    "body": {
+                        "application/atom+xml": {
+                            "name": "application/atom+xml",
+                            "schema": "atom",
+                            "example": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>   \r\n  <entry xmlns:d=\"http://schemas.microsoft.com/ado/2007/08/dataservices\" \r\n    xmlns:m=\"http://schemas.microsoft.com/ado/2007/08/dataservices/metadata\"\r\n    xmlns=\"http://www.w3.org/2005/Atom\"> \r\n    <title /> \r\n    <updated>2009-03-18T11:48:34.9840639-07:00</updated> \r\n    <author>\r\n      <name/> \r\n    </author> \r\n      <id/> \r\n      <content type=\"application/xml\">\r\n        <m:properties>\r\n          <d:TableName>mytable</d:TableName>\r\n        </m:properties>\r\n      </content> \r\n    </entry>",
+                            "schemaContent": "atom"
+                        },
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "tablesPost",
+                            "example": "{\r\n  \"TableName\" : \"mytable\"\r\n}",
+                            "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"TableName\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    }\r\n  }\r\n}"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "The Create Table operation creates a new table in the storage account.",
+                    "method": "post",
+                    "is": [
+                        "complexRequest"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/Tables",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "Tables"
+            ]
+        },
+        {
+            "relativeUri": "/{myTable}(PartitionKey='{partitionKey}',RowKey='{rowKey}')",
+            "type": "azureResource",
+            "is": [
+                "serviceVersion"
+            ],
+            "uriParameters": {
+                "myTable": {
+                    "name": "myTable",
+                    "displayName": "myTable",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                },
+                "partitionKey": {
+                    "name": "partitionKey",
+                    "displayName": "partitionKey",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                },
+                "rowKey": {
+                    "name": "rowKey",
+                    "displayName": "rowKey",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "headers": [
+                                {
+                                    "name": "x-ms-continuation-NextPartitionKey",
+                                    "displayName": "x-ms-continuation-NextPartitionKey",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The header contains a hash of the next partition key to be returned in a subsequent query against the table.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "x-ms-continuation-NextRowKey",
+                                    "displayName": "x-ms-continuation-NextRowKey",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The header contains a hash of the next row key to be returned in a subsequent query against the table.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "body": {
+                                "application/atom+xml": {
+                                    "name": "application/atom+xml",
+                                    "schema": "atom",
+                                    "schemaContent": "atom"
+                                },
+                                "application/json;odata=nometadata": {
+                                    "name": "application/json;odata=nometadata"
+                                },
+                                "application/json;odata=minimalmetadata": {
+                                    "name": "application/json;odata=minimalmetadata"
+                                },
+                                "application/json;odata=fullmetadata": {
+                                    "name": "application/json;odata=fullmetadata"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "The Query Entities operation queries entities in a table and includes the\"filter\" and \"select\" options.",
+                    "method": "get",
+                    "is": [
+                        "query"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "204": {
+                            "code": "204",
+                            "headers": [
+                                {
+                                    "name": "ETag",
+                                    "displayName": "ETag",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The ETag for the entity.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "description": "Ok. No Content."
+                        }
+                    },
+                    "body": {
+                        "application/atom+xml": {
+                            "name": "application/atom+xml",
+                            "schema": "atom",
+                            "example": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<entry xmlns:d=\"http://schemas.microsoft.com/ado/2007/08/dataservices\" xmlns:m=\"http://schemas.microsoft.com/ado/2007/08/dataservices/metadata\" xmlns=\"http://www.w3.org/2005/Atom\">\r\n  <title />\r\n  <updated>2008-09-18T23:46:37.168836Z</updated>\r\n  <author>\r\n    <name />\r\n  </author>\r\n<id>https://myaccount.table.core.windows.net/mytable(PartitionKey='mypartitionkey',RowKey='myrowkey')</id>\r\n  <content type=\"application/xml\">\r\n    <m:properties>\r\n      <d:Address>Santa Clara</d:Address>\r\n      <d:Age m:type=\"Edm.Int32\">23</d:Age>\r\n      <d:AmountDue m:type=\"Edm.Double\">200.23</d:AmountDue>\r\n      <d:CustomerCode m:type=\"Edm.Guid\">c9da6455-213d-42c9-9a79-3e9149a57833</d:CustomerCode>\r\n      <d:CustomerSince m:type=\"Edm.DateTime\">2008-07-10T00:00:00Z</d:CustomerSince>\r\n      <d:IsActive m:type=\"Edm.Boolean\">false</d:IsActive>\r\n      <d:NumOfOrders m:type=\"Edm.Int64\">255</d:NumOfOrders>\r\n      <d:PartitionKey>mypartitionkey</d:PartitionKey>\r\n      <d:RowKey>myrowkey</d:RowKey>\r\n      <d:Timestamp m:type=\"Edm.DateTime\">2008-09-18T23:46:36.9557508Z</d:Timestamp>\r\n    </m:properties>\r\n  </content>\r\n</entry>",
+                            "schemaContent": "atom"
+                        },
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "entitiesPutBody",
+                            "example": "{\r\n  \"Address\" : \"Santa Clara\" ,\r\n  \"Age\" : 23 ,\r\n  \"AmountDue\" : 200.23 ,\r\n  \"CustomerCode@odata.type\" : \"Edm.Guid\" ,\r\n  \"CustomerCode\" : \"c9da6455-213d-42c9-9a79-3e9149a57833\" ,\r\n  \"CustomerSince@odata.type\" : \"Edm.DateTime\" ,\r\n  \"CustomerSince\" : \"2008-07-10T00:00:00\" ,\r\n  \"IsActive\" : false ,\r\n  \"NumberOfOrders@odata.type\" : \"Edm.Int64\" ,\r\n  \"NumberOfOrders\" : \"255\" ,\r\n  \"PartitionKey\" : \"mypartitionkey\" ,\r\n  \"RowKey\" : \"myrowkey\"\r\n}",
+                            "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"Address\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"Age\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"AmountDue\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"CustomerCode@odata.type\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"CustomerCode\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"CustomerSince@odata.type\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"CustomerSince\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"IsActive\" : {\r\n      \"type\" : \"boolean\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"NumberOfOrders@odata.type\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"NumberOfOrders\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"PartitionKey\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"RowKey\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    }\r\n  }\r\n}"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "headers": {
+                        "Content-Type": {
+                            "name": "Content-Type",
+                            "displayName": "Content-Type",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "Specifies the content type of the payload.",
+                            "enum": [
+                                "application/atom+xml",
+                                "application/json"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "Content-Length": {
+                            "name": "Content-Length",
+                            "displayName": "Content-Length",
+                            "type": "integer",
+                            "required": true,
+                            "repeat": false,
+                            "description": "The length of the request body.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "If-Match": {
+                            "name": "If-Match",
+                            "displayName": "If-Match",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "Specifies the condition for which the update should be performed.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "The Insert Or Replace Entity operation replaces an existing entity or inserts a new entity if it does not exist in the table. Because this operation can insert or update an entity, it is also known as an upsert operation.",
+                    "method": "put",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "204": {
+                            "code": "204"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "headers": {
+                        "If-Match": {
+                            "name": "If-Match",
+                            "displayName": "If-Match",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "Specifies the condition for which the update should be performed.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "The Delete Entity operation deletes an existing entity in a table.",
+                    "method": "delete",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/{myTable}(PartitionKey='{partitionKey}',RowKey='{rowKey}')",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "{myTable}(PartitionKey='{partitionKey}',RowKey='{rowKey}')"
+            ]
+        },
+        {
+            "relativeUri": "/Tables('{myTable}')",
+            "type": "azureResource",
+            "uriParameters": {
+                "myTable": {
+                    "name": "myTable",
+                    "displayName": "myTable",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "responses": {
+                        "204": {
+                            "code": "204"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "headers": {
+                        "Content-Type": {
+                            "name": "Content-Type",
+                            "displayName": "Content-Type",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "The content type of the request body. Currently, this header should be set to application/atom+xml.",
+                            "enum": [
+                                "application/atom+xml"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "The Delete Table operation deletes the specified table and any data it contains.",
+                    "method": "delete",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/Tables('{myTable}')",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "Tables('{myTable}')"
+            ]
+        },
+        {
+            "relativeUri": "/{myTable}",
+            "is": [
+                "errorResponses"
+            ],
+            "uriParameters": {
+                "myTable": {
+                    "name": "myTable",
+                    "displayName": "myTable",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "responses": {
+                        "204": {
+                            "code": "204",
+                            "body": {
+                                "application/xml": {
+                                    "name": "application/xml",
+                                    "schema": "tableAclPut-xml",
+                                    "example": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<SignedIdentifiers>\r\n  <SignedIdentifier> \r\n    <Id>MTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTI=</Id>\r\n    <AccessPolicy>\r\n      <Start>2013-11-26T08:49:37.0000000Z</Start>\r\n      <Expiry>2013-11-27T08:49:37.0000000Z</Expiry>\r\n      <Permission>raud</Permission>\r\n    </AccessPolicy>\r\n  </SignedIdentifier>\r\n</SignedIdentifiers>",
+                                    "schemaContent": "<xs:schema attributeFormDefault=\"unqualified\" elementFormDefault=\"qualified\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xs:element name=\"SignedIdentifiers\">\r\n    <xs:complexType>\r\n      <xs:sequence>\r\n        <xs:element name=\"SignedIdentifier\">\r\n          <xs:complexType>\r\n            <xs:sequence>\r\n              <xs:element type=\"xs:string\" name=\"Id\"/>\r\n              <xs:element name=\"AccessPolicy\">\r\n                <xs:complexType>\r\n                  <xs:sequence>\r\n                    <xs:element type=\"xs:dateTime\" name=\"Start\"/>\r\n                    <xs:element type=\"xs:dateTime\" name=\"Expiry\"/>\r\n                    <xs:element type=\"xs:string\" name=\"Permission\"/>\r\n                  </xs:sequence>\r\n                </xs:complexType>\r\n              </xs:element>\r\n            </xs:sequence>\r\n          </xs:complexType>\r\n        </xs:element>\r\n      </xs:sequence>\r\n    </xs:complexType>\r\n  </xs:element>\r\n</xs:schema>"
+                                }
+                            }
+                        }
+                    },
+                    "body": {
+                        "application/xml": {
+                            "name": "application/xml"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "The Set Table ACL operation sets the stored access policies for the table that may be used with Shared Access Signatures. For more information, see Creating a Shared Access Signature.",
+                    "method": "put",
+                    "is": [
+                        "basicTrait",
+                        "acl"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "201": {
+                            "code": "201",
+                            "body": {
+                                "application/atom+xml": {
+                                    "name": "application/atom+xml",
+                                    "schema": "atom",
+                                    "example": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>\r\n<entry xml:base=\"https://myaccount.table.core.windows.net/\" xmlns:d=\"http://schemas.microsoft.com/ado/2007/08/dataservices\" xmlns:m=\"http://schemas.microsoft.com/ado/2007/08/dataservices/metadata\" m:etag=\"W/&quot;datetime'2008-09-18T23%3A46%3A19.4277424Z'&quot;\" xmlns=\"http://www.w3.org/2005/Atom\">\r\n  <id>https://myaccount.table.core.windows.net/mytable(PartitionKey='mypartitionkey',RowKey='myrowkey1')</id>\r\n  <title type=\"text\"></title>\r\n  <updated>2008-09-18T23:46:19.3857256Z</updated>\r\n  <author>\r\n    <name />\r\n  </author>\r\n  <link rel=\"edit\" title=\"mytable\" href=\"mytable(PartitionKey='mypartitionkey',RowKey='myrowkey1')\" />\r\n  <category term=\"myaccount.Tables\" scheme=\"http://schemas.microsoft.com/ado/2007/08/dataservices/scheme\" />\r\n  <content type=\"application/xml\">\r\n    <m:properties>\r\n      <d:PartitionKey>mypartitionkey</d:PartitionKey>\r\n      <d:RowKey>myrowkey1</d:RowKey>\r\n      <d:Timestamp m:type=\"Edm.DateTime\">2008-09-18T23:46:19.4277424Z</d:Timestamp>\r\n      <d:Address>Mountain View</d:Address>\r\n      <d:Age m:type=\"Edm.Int32\">23</d:Age>\r\n      <d:AmountDue m:type=\"Edm.Double\">200.23</d:AmountDue>\r\n      <d:CustomerCode m:type=\"Edm.Guid\">c9da6455-213d-42c9-9a79-3e9149a57833</d:CustomerCode>\r\n      <d:CustomerSince m:type=\"Edm.DateTime\">2008-07-10T00:00:00</d:CustomerSince>\r\n      <d:IsActive m:type=\"Edm.Boolean\">true</d:IsActive>\r\n      <d:NumOfOrders m:type=\"Edm.Int64\">255</d:NumOfOrders>\r\n    </m:properties>\r\n  </content>\r\n</entry>",
+                                    "schemaContent": "atom"
+                                },
+                                "application/json;odata=nometadata": {
+                                    "name": "application/json;odata=nometadata",
+                                    "example": "{\r\n  \"PartitionKey\" : \"mypartitionkey\" ,\r\n  \"RowKey\" : \"myrowkey\" ,\r\n  \"Timestamp\" : \"2013-08-22T01:12:06.2608595Z\" ,\r\n  \"Address\" : \"Mountain View\" ,\r\n  \"Age\" : 23 ,\r\n  \"AmountDue\" : 200.23 ,\r\n  \"CustomerCode\" : \"c9da6455-213d-42c9-9a79-3e9149a57833\" ,\r\n  \"CustomerSince\" : \"2008-07-10T00:00:00\" ,\r\n  \"IsActive\" : true ,\r\n  \"NumberOfOrders\" : \"255\"\r\n}"
+                                },
+                                "application/json;odata=minimalmetadata": {
+                                    "name": "application/json;odata=minimalmetadata",
+                                    "example": "{\r\n  \"odata.metadata\" : \"https://myaccount.table.core.windows.net/Customer/$metadata#Customers/@Element\" ,\r\n  \"PartitionKey\" : \"mypartitionkey\" ,\r\n  \"RowKey\" : \"myrowkey\" ,\r\n  \"Timestamp\" : \"2013-08-22T01:12:06.2608595Z\" ,\r\n  \"Address\" : \"Mountain View\" ,\r\n  \"Age\" : 23 ,\r\n  \"AmountDue\" : 200.23 ,\r\n  \"CustomerCode@odata.type\" : \"Edm.Guid\" ,\r\n  \"CustomerCode\" : \"c9da6455-213d-42c9-9a79-3e9149a57833\" ,\r\n  \"CustomerSince@odata.type\" : \"Edm.DateTime\" ,\r\n  \"CustomerSince\" : \"2008-07-10T00:00:00\" ,\r\n  \"IsActive\" : true ,\r\n  \"NumberOfOrders@odata.type\" : \"Edm.Int64\" ,\r\n  \"NumberOfOrders\" : \"255\"\r\n}"
+                                },
+                                "application/json;odata=fullmetadata": {
+                                    "name": "application/json;odata=fullmetadata",
+                                    "example": "{\r\n  \"odata.metadata\" : \"https://myaccount.table.core.windows.net/Customer/$metadata#Customers/@Element\" ,\r\n  \"odata.type\" : \"myaccount.Customers\" ,\r\n  \"odata.id\" : \" https://myaccount.table.core.windows.net/Customers(PartitionKey='mypartitionkey',RowKey='myrowkey')\" ,\r\n  \"odata.etag\" : \"W/\\\"datetime'2013-08-22T01%3A12%3A06.2608595Z'\\\"\" ,\r\n  \"odata.editLink\" : \"Customers(PartitionKey='mypartitionkey',RowKey='myrowkey')\" ,\r\n  \"PartitionKey\" : \"mypartitionkey\" ,\r\n  \"RowKey\" : \"myrowkey\" ,\r\n  \"Timestamp@odata.type\" : \"Edm.DateTime\" ,\r\n  \"Timestamp\" : \"2013-08-22T01:12:06.2608595Z\" ,\r\n  \"Address\" : \"Mountain View\" ,\r\n  \"Age\" : 23 ,\r\n  \"AmountDue\" : 200.23 ,\r\n  \"CustomerCode@odata.type\" : \"Edm.Guid\" ,\r\n  \"CustomerCode\" : \"c9da6455-213d-42c9-9a79-3e9149a57833\" ,\r\n  \"CustomerSince@odata.type\" : \"Edm.DateTime\" ,\r\n  \"CustomerSince\" : \"2008-07-10T00:00:00\" ,\r\n  \"IsActive\" : true ,\r\n  \"NumberOfOrders@odata.type\" : \"Edm.Int64\" ,\r\n  \"NumberOfOrders\" : \"255\"\r\n}"
+                                }
+                            }
+                        }
+                    },
+                    "body": {
+                        "application/atom+xml": {
+                            "name": "application/atom+xml",
+                            "schema": "atom",
+                            "example": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>\r\n<entry xmlns:d=\"http://schemas.microsoft.com/ado/2007/08/dataservices\" xmlns:m=\"http://schemas.microsoft.com/ado/2007/08/dataservices/metadata\" xmlns=\"http://www.w3.org/2005/Atom\">\r\n  <title />\r\n  <updated>2013-09-18T23:46:19.3857256Z</updated>\r\n  <author>\r\n    <name />\r\n  </author>\r\n  <id />\r\n  <content type=\"application/xml\">\r\n    <m:properties>\r\n      <d:Address>Mountain View</d:Address>\r\n      <d:Age m:type=\"Edm.Int32\">23</d:Age>\r\n      <d:AmountDue m:type=\"Edm.Double\">200.23</d:AmountDue>\r\n      <d:BinaryData m:type=\"Edm.Binary\" m:null=\"true\" />\r\n      <d:CustomerCode m:type=\"Edm.Guid\">c9da6455-213d-42c9-9a79-3e9149a57833</d:CustomerCode>\r\n      <d:CustomerSince m:type=\"Edm.DateTime\">2008-07-10T00:00:00</d:CustomerSince>\r\n      <d:IsActive m:type=\"Edm.Boolean\">true</d:IsActive>\r\n      <d:NumOfOrders m:type=\"Edm.Int64\">255</d:NumOfOrders>\r\n      <d:PartitionKey>mypartitionkey</d:PartitionKey>\r\n      <d:RowKey>myrowkey1</d:RowKey>\r\n      <d:Timestamp m:type=\"Edm.DateTime\">0001-01-01T00:00:00</d:Timestamp>\r\n    </m:properties>\r\n  </content>\r\n</entry>",
+                            "schemaContent": "atom"
+                        },
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "entityInsert",
+                            "example": "{\r\n  \"Address\" : \"Mountain View\" ,\r\n  \"Age\" : 23 ,\r\n  \"AmountDue\" : 200.23 ,\r\n  \"CustomerCode@odata.type\" : \"Edm.Guid\" ,\r\n  \"CustomerCode\" : \"c9da6455-213d-42c9-9a79-3e9149a57833\" ,\r\n  \"CustomerSince@odata.type\" : \"Edm.DateTime\" ,\r\n  \"CustomerSince\" : \"2008-07-10T00:00:00\" ,\r\n  \"IsActive\" : true ,\r\n  \"NumberOfOrders@odata.type\" : \"Edm.Int64\" ,\r\n  \"NumberOfOrders\" : \"255\" ,\r\n  \"PartitionKey\" : \"mypartitionkey\" ,\r\n  \"RowKey\" : \"myrowkey\"\r\n}",
+                            "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"Address\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"Age\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"AmountDue\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"CustomerCode@odata.type\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"CustomerCode\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"CustomerSince@odata.type\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"CustomerSince\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"IsActive\" : {\r\n      \"type\" : \"boolean\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"NumberOfOrders@odata.type\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"NumberOfOrders\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"PartitionKey\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"RowKey\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    }\r\n  }\r\n}"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "The Insert Entity operation inserts a new entity into a table.",
+                    "method": "post",
+                    "is": [
+                        "basicTrait",
+                        "complexRequest",
+                        "serviceVersion"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "method": "head",
+                    "is": [
+                        "basicTrait",
+                        "acl"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/xml": {
+                                    "name": "application/xml",
+                                    "schema": "tableAclGet-xml",
+                                    "example": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<SignedIdentifiers>\r\n  <SignedIdentifier> \r\n    <Id>MTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTI=</Id>\r\n    <AccessPolicy>\r\n      <Start>2013-11-26T08:49:37.0000000Z</Start>\r\n      <Expiry>2013-11-27T08:49:37.0000000Z</Expiry>\r\n      <Permission>raud</Permission>\r\n    </AccessPolicy>\r\n  </SignedIdentifier>\r\n</SignedIdentifiers>",
+                                    "schemaContent": "<xs:schema attributeFormDefault=\"unqualified\" elementFormDefault=\"qualified\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xs:element name=\"SignedIdentifiers\">\r\n    <xs:complexType>\r\n      <xs:sequence>\r\n        <xs:element name=\"SignedIdentifier\">\r\n          <xs:complexType>\r\n            <xs:sequence>\r\n              <xs:element type=\"xs:string\" name=\"Id\"/>\r\n              <xs:element name=\"AccessPolicy\">\r\n                <xs:complexType>\r\n                  <xs:sequence>\r\n                    <xs:element type=\"xs:dateTime\" name=\"Start\"/>\r\n                    <xs:element type=\"xs:dateTime\" name=\"Expiry\"/>\r\n                    <xs:element type=\"xs:string\" name=\"Permission\"/>\r\n                  </xs:sequence>\r\n                </xs:complexType>\r\n              </xs:element>\r\n            </xs:sequence>\r\n          </xs:complexType>\r\n        </xs:element>\r\n      </xs:sequence>\r\n    </xs:complexType>\r\n  </xs:element>\r\n</xs:schema>"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "The Get Table ACL operation returns details about any stored access policies specified on the table that may be used with Shared Access Signatures. For more information, see Establishing a Stored Access Policy (REST API).",
+                    "method": "get",
+                    "is": [
+                        "basicTrait",
+                        "acl"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/{myTable}",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "{myTable}"
+            ]
+        },
+        {
+            "relativeUri": "/{myTable}()",
+            "type": "azureResource",
+            "is": [
+                "serviceVersion"
+            ],
+            "uriParameters": {
+                "myTable": {
+                    "name": "myTable",
+                    "displayName": "myTable",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "headers": [
+                                {
+                                    "name": "x-ms-continuation-NextPartitionKey",
+                                    "displayName": "x-ms-continuation-NextPartitionKey",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The header contains a hash of the next partition key to be returned in a subsequent query against the table.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "x-ms-continuation-NextRowKey",
+                                    "displayName": "x-ms-continuation-NextRowKey",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The header contains a hash of the next row key to be returned in a subsequent query against the table.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "body": {
+                                "application/atom+xml": {
+                                    "name": "application/atom+xml",
+                                    "schema": "atom",
+                                    "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<feed xmlns=\"http://www.w3.org/2005/Atom\" xmlns:d=\"http://schemas.microsoft.com/ado/2007/08/dataservices\" xmlns:m=\"http://schemas.microsoft.com/ado/2007/08/dataservices/metadata\" xml:base=\"https://myaccount.table.core.windows.net\">\r\n   <id>https://myaccount.table.core.windows.net/Customers</id>\r\n   <title type=\"text\">Customers</title>\r\n   <updated>2013-08-22T00:50:32Z</updated>\r\n   <link rel=\"self\" title=\"Customers\" href=\"Customers\" />\r\n   <entry m:etag=\"W/&quot;datetime'2013-08-22T00%3A20%3A16.3134645Z'&quot;\">\r\n      <id>https://myaccount.table.core.windows.net/Customers(PartitionKey='Customer',RowKey='Name')</id>\r\n      <category term=\"myaccount.Customers\" scheme=\"http://schemas.microsoft.com/ado/2007/08/dataservices/scheme\" />\r\n      <link rel=\"edit\" title=\"Customers\" href=\"Customers(PartitionKey='Customer',RowKey='Name')\" />\r\n      <title />\r\n      <updated>2013-08-22T00:50:32Z</updated>\r\n      <author>\r\n         <name />\r\n      </author>\r\n      <content type=\"application/xml\">\r\n         <m:properties>\r\n            <d:PartitionKey>Customer</d:PartitionKey>\r\n            <d:RowKey>Name</d:RowKey>\r\n            <d:Timestamp m:type=\"Edm.DateTime\">2013-08-22T00:20:16.3134645Z</d:Timestamp>\r\n            <d:CustomerSince m:type=\"Edm.DateTime\">2008-10-01T15:25:05.2852025Z</d:CustomerSince>\r\n         </m:properties>\r\n      </content>\r\n   </entry>\r\n</feed>",
+                                    "schemaContent": "atom"
+                                },
+                                "application/json;odata=nometadata": {
+                                    "name": "application/json;odata=nometadata",
+                                    "schema": "entitiesQueryNoMeta",
+                                    "example": "{\r\n  \"value\" : [\r\n    {\r\n      \"PartitionKey\" : \"Customer\" ,\r\n      \"RowKey\" : \"Name\" ,\r\n      \"Timestamp\" : \"2013-08-22T00:20:16.3134645Z\" ,\r\n      \"CustomerSince\" : \"2008-10-01T15:25:05.2852025Z\"\r\n    }\r\n  ]\r\n}",
+                                    "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"value\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"PartitionKey\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"RowKey\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"Timestamp\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"CustomerSince\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            }\r\n          }\r\n        }\r\n      \r\n    }\r\n  }\r\n}"
+                                },
+                                "application/json;odata=minimalmetadata": {
+                                    "name": "application/json;odata=minimalmetadata",
+                                    "schema": "entitiesQueryMinimal",
+                                    "example": "{\r\n  \"odata.metadata\" : \"https://myaccount.table.core.windows.net/$metadata#Customers\" ,\r\n  \"value\" : [\r\n    {\r\n      \"PartitionKey\" : \"Customer\" ,\r\n      \"RowKey\" : \"Name\" ,\r\n      \"Timestamp\" : \"2013-08-22T00:20:16.3134645Z\" ,\r\n      \"CustomerSince@odata.type\" : \"Edm.DateTime\" ,\r\n      \"CustomerSince\" : \"2008-10-01T15:25:05.2852025Z\"\r\n    }\r\n  ]\r\n}",
+                                    "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"odata.metadata\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"value\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"PartitionKey\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"RowKey\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"Timestamp\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"CustomerSince@odata.type\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"CustomerSince\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            }\r\n          }\r\n        }\r\n      \r\n    }\r\n  }\r\n}"
+                                },
+                                "application/json;odata=fullmetadata": {
+                                    "name": "application/json;odata=fullmetadata",
+                                    "schema": "entitiesQueryFull",
+                                    "example": "{\r\n  \"odata.metadata\" : \" https://myaccount.table.core.windows.net/metadata#Customers\" ,\r\n  \"value\" : [\r\n    {\r\n      \"odata.type\" : \"myaccount.Customers\" ,\r\n      \"odata.id\" : \"https://myaccount.table.core.windows.net/Customers(PartitionKey=Customer',RowKey='Name')\" ,\r\n      \"odata.etag\" : \"W/\\\"datetime'2013-08-22T00%3A20%3A16.3134645Z'\\\"\" ,\r\n      \"odata.editLink\" : \"Customers(PartitionKey=Customer',RowKey='Name')\" ,\r\n      \"PartitionKey\" : \"Customer\" ,\r\n      \"RowKey\" : \"Name\" ,\r\n      \"Timestamp@odata.type\" : \"Edm.DateTime\" ,\r\n      \"Timestamp\" : \"2013-08-22T00:20:16.3134645Z\" ,\r\n      \"CustomerSince@odata.type\" : \"Edm.DateTime\" ,\r\n      \"CustomerSince\" : \"2008-10-01T15:25:05.2852025Z\"\r\n    }\r\n  ]\r\n}",
+                                    "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"odata.metadata\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"value\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"odata.type\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"odata.id\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"odata.etag\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"odata.editLink\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"PartitionKey\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"RowKey\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"Timestamp@odata.type\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"Timestamp\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"CustomerSince@odata.type\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"CustomerSince\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            }\r\n          }\r\n        }\r\n      \r\n    }\r\n  }\r\n}"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "The Query Entities operation queries entities in a table and includes the\"filter\" and \"select\" options.",
+                    "method": "get",
+                    "is": [
+                        "query"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/{myTable}()",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "{myTable}()"
+            ]
+        },
+        {
+            "relativeUri": "/$batch",
+            "type": "azureResource",
+            "is": [
+                "serviceVersion"
+            ],
+            "methods": [
+                {
+                    "responses": {
+                        "202": {
+                            "code": "202",
+                            "body": {
+                                "multipart/mixed": {
+                                    "name": "multipart/mixed",
+                                    "example": "--changesetresponse_8a28b620-b4bb-458c-a177-0959fb14c977\r\nContent-Type: application/http\r\nContent-Transfer-Encoding: binary\r\n\r\nHTTP/1.1 204 No Content\r\nContent-ID: 1\r\nCache-Control: no-cache\r\nPreference-Applied: return-no-content\r\nETag: W/\"datetime'2013-08-30T20%3A44%3A09.5789464Z'\"\r\nLocation: https://myaccount.table.core.windows.net/Blogs(PartitionKey='Channel_19',RowKey='1')\r\nDataServiceVersion: 3.0;\r\n\r\n--changesetresponse_8a28b620-b4bb-458c-a177-0959fb14c977\r\nContent-Type: application/http\r\nContent-Transfer-Encoding: binary\r\n\r\nHTTP/1.1 204 No Content\r\nContent-ID: 2\r\nCache-Control: no-cache\r\nPreference-Applied: return-no-content\r\nETag: W/\"datetime'2013-08-30T20%3A44%3A09.5789464Z'\"\r\nLocation: https://myaccount.table.core.windows.net/Blogs(PartitionKey='Channel_19',RowKey='2')\r\nDataServiceVersion: 3.0;\r\n\r\n--changesetresponse_8a28b620-b4bb-458c-a177-0959fb14c977\r\nContent-Type: application/http\r\nContent-Transfer-Encoding: binary\r\n\r\nHTTP/1.1 204 No Content\r\nContent-ID: 3\r\nCache-Control: no-cache\r\nETag: W/\"datetime'2013-08-30T20%3A44%3A10.0019041Z'\"\r\nDataServiceVersion: 3.0;\r\n\r\n--changesetresponse_8a28b620-b4bb-458c-a177-0959fb14c977--\r\n--batchresponse_4c637ba4-b2f8-40f8-8856-c2d10d163a83--"
+                                }
+                            },
+                            "description": "Accepted."
+                        }
+                    },
+                    "body": {
+                        "multipart/mixed": {
+                            "name": "multipart/mixed",
+                            "example": "--batch_a1e9d677-b28b-435e-a89e-87e6a768a431\r\nContent-Type: multipart/mixed; boundary=changeset_8a28b620-b4bb-458c-a177-0959fb14c977\r\n\r\n--changeset_8a28b620-b4bb-458c-a177-0959fb14c977\r\nContent-Type: application/http\r\nContent-Transfer-Encoding: binary\r\n\r\nPOST https://myaccount.table.core.windows.net/Blogs HTTP/1.1\r\nContent-ID: 1\r\nContent-Type: application/atom+xml;type=entry\r\nContent-Length: ###\r\n\r\n<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>\r\n<entry xmlns:d=\"http://schemas.microsoft.com/ado/2007/08/dataservices\" xmlns:m=\"http://schemas.microsoft.com/ado/2007/08/dataservices/metadata\" xmlns=\"http://www.w3.org/2005/Atom\">\r\n  <title />\r\n  <updated>2013-08-30T20:45:13.7155321Z</updated>\r\n  <author>\r\n    <name />\r\n  </author>\r\n  <id />\r\n  <content type=\"application/xml\">\r\n    <m:properties>\r\n      <d:PartitionKey>Channel_19</d:PartitionKey>\r\n      <d:RowKey>1</d:RowKey>\r\n      <d:Timestamp m:type=\"Edm.DateTime\">0001-01-01T00:00:00</d:Timestamp>\r\n      <d:Rating m:type=\"Edm.Int32\">9</d:Rating>\r\n      <d:Text>.NET...</d:Title>\r\n    </m:properties>\r\n  </content>\r\n</entry>\r\n--changeset_8a28b620-b4bb-458c-a177-0959fb14c977\r\nContent-Type: application/http\r\nContent-Transfer-Encoding: binary\r\n\r\nPOST https://myaccount.table.core.windows.net/Blogs HTTP/1.1\r\nContent-ID: 2\r\nContent-Type: application/atom+xml;type=entry\r\nPrefer: return-no-content\r\nContent-Length: ###\r\n\r\n<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>\r\n<entry xmlns:d=\"http://schemas.microsoft.com/ado/2007/08/dataservices\" xmlns:m=\"http://schemas.microsoft.com/ado/2007/08/dataservices/metadata\" xmlns=\"http://www.w3.org/2005/Atom\">\r\n  <title />\r\n  <updated>2013-08-30T20:45:13.7155321Z</updated>\r\n  <author>\r\n    <name />\r\n  </author>\r\n  <id />\r\n  <content type=\"application/xml\">\r\n    <m:properties>\r\n      <d:PartitionKey>Channel_19</d:PartitionKey>\r\n      <d:RowKey>2</d:RowKey>\r\n      <d:Timestamp m:type=\"Edm.DateTime\">0001-01-01T00:00:00</d:Timestamp>\r\n      <d:Rating m:type=\"Edm.Int32\">9</d:Rating>\r\n      <d:Text>Azure...</d:Title>\r\n    </m:properties>\r\n  </content>\r\n</entry>\r\n--changeset_8a28b620-b4bb-458c-a177-0959fb14c977\r\nContent-Type: application/http\r\nContent-Transfer-Encoding: binary\r\n\r\nMERGE https://myaccount.table.core.windows.net/Blogs(PartitionKey='Channel_19', RowKey='3') HTTP/1.1\r\nContent-ID: 3\r\nContent-Type: application/atom+xml;type=entry\r\nContent-Length: ###\r\n\r\n<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>\r\n<entry xmlns:d=\"http://schemas.microsoft.com/ado/2007/08/dataservices\" xmlns:m=\"http://schemas.microsoft.com/ado/2007/08/dataservices/metadata\" xmlns=\"http://www.w3.org/2005/Atom\">\r\n  <title />\r\n  <updated>2013-08-30T20:44:09.8869156Z</updated>\r\n  <author>\r\n    <name />\r\n  </author>\r\n  <id>https://myaccount.table.core.windows.net/Blogs(PartitionKey='Channel_19',RowKey='3')</id>\r\n\r\n  <content type=\"application/xml\">\r\n    <m:properties>\r\n      <d:PartitionKey>Channel_19</d:PartitionKey>\r\n      <d:RowKey>3</d:RowKey>\r\n      <d:Timestamp m:type=\"Edm.DateTime\">0001-01-01T00:00:00</d:Timestamp>\r\n      <d:Rating m:type=\"Edm.Int32\">9</d:Rating>\r\n      <d:Text>PDC 2008...</d:Title>\r\n    </m:properties>\r\n  </content>\r\n</entry>\r\n--changeset_8a28b620-b4bb-458c-a177-0959fb14c977--\r\n--batch_a1e9d677-b28b-435e-a89e-87e6a768a431--"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/$batch",
+            "description": "The Table service supports batch transactions on entities that are in the same table and belong to the same partition group.\nMultiple Insert Entity (REST API), Update Entity (REST API), Merge Entity (REST API), Delete Entity (REST API),\nInsert Or Replace Entity (REST API), and Insert Or Merge Entity (REST API) operations are supported within a single transaction.\nYou can perform entity group transactions either via REST or by using the .NET Client Library for WCF Data Services.\n",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "$batch"
+            ]
+        }
+    ],
+    "documentation": [
+        {
+            "title": "Headline",
+            "content": "A cloud computing platform and infrastructure, created by Microsoft, for building, deploying and managing applications and services through a global network of Microsoft-managed datacenters."
+        }
+    ],
+    "__METADATA__": {
+        "primitiveValuesMeta": {
+            "protocols": {
+                "calculated": true
+            }
+        }
+    }
+}

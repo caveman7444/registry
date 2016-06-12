@@ -1,0 +1,12 @@
+{"apis": [
+    {
+        "name": "Flickr API",
+        "location": "https://raw.githubusercontent.com/raml-apis/Flickr/master/flickr.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "Flickr API",
+        "location": "https://raw.githubusercontent.com/raml-apis/Flickr/staging/flickr.raml",
+        "RAMLVersion": "0.8"
+    }
+]}

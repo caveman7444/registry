@@ -1,0 +1,1787 @@
+{
+    "title": "OpenStack Identity API extensions",
+    "version": "v3",
+    "baseUri": "http://localhost:35357",
+    "protocols": [
+        "HTTP"
+    ],
+    "schemas": [
+        {
+            "endpoints": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"../xslt/schema.xslt\"?>\n\n<!-- (C) 2011-2013 OpenStack Foundation, All Rights Reserved -->\n\n<schema\n    elementFormDefault=\"qualified\"\n    attributeFormDefault=\"unqualified\"\n    xmlns=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:identity=\"http://docs.openstack.org/identity/api/v3\"\n    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    targetNamespace=\"http://docs.openstack.org/identity/api/v3\"\n>\n   <include schemaLocation=\"/faults.xsd\"/>\n   <include schemaLocation=\"/entity.xsd\"/>\n   <include schemaLocation=\"/users.xsd\"/>\n   <include schemaLocation=\"/domains.xsd\"/>\n   <include schemaLocation=\"/groups.xsd\"/>\n   <include schemaLocation=\"/projects.xsd\"/>\n   <include schemaLocation=\"/roles.xsd\"/>\n   <include schemaLocation=\"/credentials.xsd\"/>\n   <include schemaLocation=\"/endpoints.xsd\"/>\n   <include schemaLocation=\"/auth_request.xsd\"/>\n   <include schemaLocation=\"/auth_response.xsd\"/>\n</schema>"
+        },
+        {
+            "role": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"../xslt/schema.xslt\"?>\n\n<!-- (C) 2011-2013 OpenStack Foundation, All Rights Reserved -->\n\n<schema\n    elementFormDefault=\"qualified\"\n    attributeFormDefault=\"unqualified\"\n    xmlns=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:identity=\"http://docs.openstack.org/identity/api/v3\"\n    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    targetNamespace=\"http://docs.openstack.org/identity/api/v3\"\n>\n   <include schemaLocation=\"/faults.xsd\"/>\n   <include schemaLocation=\"/entity.xsd\"/>\n   <include schemaLocation=\"/users.xsd\"/>\n   <include schemaLocation=\"/domains.xsd\"/>\n   <include schemaLocation=\"/groups.xsd\"/>\n   <include schemaLocation=\"/projects.xsd\"/>\n   <include schemaLocation=\"/roles.xsd\"/>\n   <include schemaLocation=\"/credentials.xsd\"/>\n   <include schemaLocation=\"/endpoints.xsd\"/>\n   <include schemaLocation=\"/auth_request.xsd\"/>\n   <include schemaLocation=\"/auth_response.xsd\"/>\n</schema>"
+        },
+        {
+            "projects": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"../xslt/schema.xslt\"?>\n\n<!-- (C) 2011-2013 OpenStack Foundation, All Rights Reserved -->\n\n<schema\n    elementFormDefault=\"qualified\"\n    attributeFormDefault=\"unqualified\"\n    xmlns=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:identity=\"http://docs.openstack.org/identity/api/v3\"\n    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    targetNamespace=\"http://docs.openstack.org/identity/api/v3\"\n>\n   <include schemaLocation=\"/faults.xsd\"/>\n   <include schemaLocation=\"/entity.xsd\"/>\n   <include schemaLocation=\"/users.xsd\"/>\n   <include schemaLocation=\"/domains.xsd\"/>\n   <include schemaLocation=\"/groups.xsd\"/>\n   <include schemaLocation=\"/projects.xsd\"/>\n   <include schemaLocation=\"/roles.xsd\"/>\n   <include schemaLocation=\"/credentials.xsd\"/>\n   <include schemaLocation=\"/endpoints.xsd\"/>\n   <include schemaLocation=\"/auth_request.xsd\"/>\n   <include schemaLocation=\"/auth_response.xsd\"/>\n</schema>"
+        },
+        {
+            "auth": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"../xslt/schema.xslt\"?>\n\n<!-- (C) 2011-2013 OpenStack Foundation, All Rights Reserved -->\n\n<schema\n    elementFormDefault=\"qualified\"\n    attributeFormDefault=\"unqualified\"\n    xmlns=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:identity=\"http://docs.openstack.org/identity/api/v3\"\n    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    targetNamespace=\"http://docs.openstack.org/identity/api/v3\"\n>\n   <include schemaLocation=\"/faults.xsd\"/>\n   <include schemaLocation=\"/entity.xsd\"/>\n   <include schemaLocation=\"/users.xsd\"/>\n   <include schemaLocation=\"/domains.xsd\"/>\n   <include schemaLocation=\"/groups.xsd\"/>\n   <include schemaLocation=\"/projects.xsd\"/>\n   <include schemaLocation=\"/roles.xsd\"/>\n   <include schemaLocation=\"/credentials.xsd\"/>\n   <include schemaLocation=\"/endpoints.xsd\"/>\n   <include schemaLocation=\"/auth_request.xsd\"/>\n   <include schemaLocation=\"/auth_response.xsd\"/>\n</schema>"
+        },
+        {
+            "credentials": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"../xslt/schema.xslt\"?>\n\n<!-- (C) 2011-2013 OpenStack Foundation, All Rights Reserved -->\n\n<schema\n    elementFormDefault=\"qualified\"\n    attributeFormDefault=\"unqualified\"\n    xmlns=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:identity=\"http://docs.openstack.org/identity/api/v3\"\n    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    targetNamespace=\"http://docs.openstack.org/identity/api/v3\"\n>\n   <include schemaLocation=\"/faults.xsd\"/>\n   <include schemaLocation=\"/entity.xsd\"/>\n   <include schemaLocation=\"/users.xsd\"/>\n   <include schemaLocation=\"/domains.xsd\"/>\n   <include schemaLocation=\"/groups.xsd\"/>\n   <include schemaLocation=\"/projects.xsd\"/>\n   <include schemaLocation=\"/roles.xsd\"/>\n   <include schemaLocation=\"/credentials.xsd\"/>\n   <include schemaLocation=\"/endpoints.xsd\"/>\n   <include schemaLocation=\"/auth_request.xsd\"/>\n   <include schemaLocation=\"/auth_response.xsd\"/>\n</schema>"
+        },
+        {
+            "roles": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"../xslt/schema.xslt\"?>\n\n<!-- (C) 2011-2013 OpenStack Foundation, All Rights Reserved -->\n\n<schema\n    elementFormDefault=\"qualified\"\n    attributeFormDefault=\"unqualified\"\n    xmlns=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:identity=\"http://docs.openstack.org/identity/api/v3\"\n    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    targetNamespace=\"http://docs.openstack.org/identity/api/v3\"\n>\n   <include schemaLocation=\"/faults.xsd\"/>\n   <include schemaLocation=\"/entity.xsd\"/>\n   <include schemaLocation=\"/users.xsd\"/>\n   <include schemaLocation=\"/domains.xsd\"/>\n   <include schemaLocation=\"/groups.xsd\"/>\n   <include schemaLocation=\"/projects.xsd\"/>\n   <include schemaLocation=\"/roles.xsd\"/>\n   <include schemaLocation=\"/credentials.xsd\"/>\n   <include schemaLocation=\"/endpoints.xsd\"/>\n   <include schemaLocation=\"/auth_request.xsd\"/>\n   <include schemaLocation=\"/auth_response.xsd\"/>\n</schema>"
+        },
+        {
+            "link": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"../xslt/schema.xslt\"?>\n\n<!-- (C) 2011-2013 OpenStack Foundation, All Rights Reserved -->\n\n<schema\n    elementFormDefault=\"qualified\"\n    attributeFormDefault=\"unqualified\"\n    xmlns=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:identity=\"http://docs.openstack.org/identity/api/v3\"\n    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    targetNamespace=\"http://docs.openstack.org/identity/api/v3\"\n>\n   <include schemaLocation=\"/faults.xsd\"/>\n   <include schemaLocation=\"/entity.xsd\"/>\n   <include schemaLocation=\"/users.xsd\"/>\n   <include schemaLocation=\"/domains.xsd\"/>\n   <include schemaLocation=\"/groups.xsd\"/>\n   <include schemaLocation=\"/projects.xsd\"/>\n   <include schemaLocation=\"/roles.xsd\"/>\n   <include schemaLocation=\"/credentials.xsd\"/>\n   <include schemaLocation=\"/endpoints.xsd\"/>\n   <include schemaLocation=\"/auth_request.xsd\"/>\n   <include schemaLocation=\"/auth_response.xsd\"/>\n</schema>"
+        },
+        {
+            "Service": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"../xslt/schema.xslt\"?>\n\n<!-- (C) 2011-2013 OpenStack Foundation, All Rights Reserved -->\n\n<schema\n    elementFormDefault=\"qualified\"\n    attributeFormDefault=\"unqualified\"\n    xmlns=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:identity=\"http://docs.openstack.org/identity/api/v3\"\n    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    targetNamespace=\"http://docs.openstack.org/identity/api/v3\"\n>\n   <include schemaLocation=\"/faults.xsd\"/>\n   <include schemaLocation=\"/entity.xsd\"/>\n   <include schemaLocation=\"/users.xsd\"/>\n   <include schemaLocation=\"/domains.xsd\"/>\n   <include schemaLocation=\"/groups.xsd\"/>\n   <include schemaLocation=\"/projects.xsd\"/>\n   <include schemaLocation=\"/roles.xsd\"/>\n   <include schemaLocation=\"/credentials.xsd\"/>\n   <include schemaLocation=\"/endpoints.xsd\"/>\n   <include schemaLocation=\"/auth_request.xsd\"/>\n   <include schemaLocation=\"/auth_response.xsd\"/>\n</schema>"
+        },
+        {
+            "project": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"../xslt/schema.xslt\"?>\n\n<!-- (C) 2011-2013 OpenStack Foundation, All Rights Reserved -->\n\n<schema\n    elementFormDefault=\"qualified\"\n    attributeFormDefault=\"unqualified\"\n    xmlns=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:identity=\"http://docs.openstack.org/identity/api/v3\"\n    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    targetNamespace=\"http://docs.openstack.org/identity/api/v3\"\n>\n   <include schemaLocation=\"/faults.xsd\"/>\n   <include schemaLocation=\"/entity.xsd\"/>\n   <include schemaLocation=\"/users.xsd\"/>\n   <include schemaLocation=\"/domains.xsd\"/>\n   <include schemaLocation=\"/groups.xsd\"/>\n   <include schemaLocation=\"/projects.xsd\"/>\n   <include schemaLocation=\"/roles.xsd\"/>\n   <include schemaLocation=\"/credentials.xsd\"/>\n   <include schemaLocation=\"/endpoints.xsd\"/>\n   <include schemaLocation=\"/auth_request.xsd\"/>\n   <include schemaLocation=\"/auth_response.xsd\"/>\n</schema>"
+        },
+        {
+            "domains": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"../xslt/schema.xslt\"?>\n\n<!-- (C) 2011-2013 OpenStack Foundation, All Rights Reserved -->\n\n<schema\n    elementFormDefault=\"qualified\"\n    attributeFormDefault=\"unqualified\"\n    xmlns=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:identity=\"http://docs.openstack.org/identity/api/v3\"\n    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    targetNamespace=\"http://docs.openstack.org/identity/api/v3\"\n>\n   <include schemaLocation=\"/faults.xsd\"/>\n   <include schemaLocation=\"/entity.xsd\"/>\n   <include schemaLocation=\"/users.xsd\"/>\n   <include schemaLocation=\"/domains.xsd\"/>\n   <include schemaLocation=\"/groups.xsd\"/>\n   <include schemaLocation=\"/projects.xsd\"/>\n   <include schemaLocation=\"/roles.xsd\"/>\n   <include schemaLocation=\"/credentials.xsd\"/>\n   <include schemaLocation=\"/endpoints.xsd\"/>\n   <include schemaLocation=\"/auth_request.xsd\"/>\n   <include schemaLocation=\"/auth_response.xsd\"/>\n</schema>"
+        },
+        {
+            "groups": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"../xslt/schema.xslt\"?>\n\n<!-- (C) 2011-2013 OpenStack Foundation, All Rights Reserved -->\n\n<schema\n    elementFormDefault=\"qualified\"\n    attributeFormDefault=\"unqualified\"\n    xmlns=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:identity=\"http://docs.openstack.org/identity/api/v3\"\n    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    targetNamespace=\"http://docs.openstack.org/identity/api/v3\"\n>\n   <include schemaLocation=\"/faults.xsd\"/>\n   <include schemaLocation=\"/entity.xsd\"/>\n   <include schemaLocation=\"/users.xsd\"/>\n   <include schemaLocation=\"/domains.xsd\"/>\n   <include schemaLocation=\"/groups.xsd\"/>\n   <include schemaLocation=\"/projects.xsd\"/>\n   <include schemaLocation=\"/roles.xsd\"/>\n   <include schemaLocation=\"/credentials.xsd\"/>\n   <include schemaLocation=\"/endpoints.xsd\"/>\n   <include schemaLocation=\"/auth_request.xsd\"/>\n   <include schemaLocation=\"/auth_response.xsd\"/>\n</schema>"
+        },
+        {
+            "error": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"../xslt/schema.xslt\"?>\n\n<!-- (C) 2011-2013 OpenStack Foundation, All Rights Reserved -->\n\n<schema\n    elementFormDefault=\"qualified\"\n    attributeFormDefault=\"unqualified\"\n    xmlns=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:identity=\"http://docs.openstack.org/identity/api/v3\"\n    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    targetNamespace=\"http://docs.openstack.org/identity/api/v3\"\n>\n   <include schemaLocation=\"/faults.xsd\"/>\n   <include schemaLocation=\"/entity.xsd\"/>\n   <include schemaLocation=\"/users.xsd\"/>\n   <include schemaLocation=\"/domains.xsd\"/>\n   <include schemaLocation=\"/groups.xsd\"/>\n   <include schemaLocation=\"/projects.xsd\"/>\n   <include schemaLocation=\"/roles.xsd\"/>\n   <include schemaLocation=\"/credentials.xsd\"/>\n   <include schemaLocation=\"/endpoints.xsd\"/>\n   <include schemaLocation=\"/auth_request.xsd\"/>\n   <include schemaLocation=\"/auth_response.xsd\"/>\n</schema>"
+        },
+        {
+            "users": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"../xslt/schema.xslt\"?>\n\n<!-- (C) 2011-2013 OpenStack Foundation, All Rights Reserved -->\n\n<schema\n    elementFormDefault=\"qualified\"\n    attributeFormDefault=\"unqualified\"\n    xmlns=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:identity=\"http://docs.openstack.org/identity/api/v3\"\n    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    targetNamespace=\"http://docs.openstack.org/identity/api/v3\"\n>\n   <include schemaLocation=\"/faults.xsd\"/>\n   <include schemaLocation=\"/entity.xsd\"/>\n   <include schemaLocation=\"/users.xsd\"/>\n   <include schemaLocation=\"/domains.xsd\"/>\n   <include schemaLocation=\"/groups.xsd\"/>\n   <include schemaLocation=\"/projects.xsd\"/>\n   <include schemaLocation=\"/roles.xsd\"/>\n   <include schemaLocation=\"/credentials.xsd\"/>\n   <include schemaLocation=\"/endpoints.xsd\"/>\n   <include schemaLocation=\"/auth_request.xsd\"/>\n   <include schemaLocation=\"/auth_response.xsd\"/>\n</schema>"
+        },
+        {
+            "token": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"../xslt/schema.xslt\"?>\n\n<!-- (C) 2011-2013 OpenStack Foundation, All Rights Reserved -->\n\n<schema\n    elementFormDefault=\"qualified\"\n    attributeFormDefault=\"unqualified\"\n    xmlns=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:identity=\"http://docs.openstack.org/identity/api/v3\"\n    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    targetNamespace=\"http://docs.openstack.org/identity/api/v3\"\n>\n   <include schemaLocation=\"/faults.xsd\"/>\n   <include schemaLocation=\"/entity.xsd\"/>\n   <include schemaLocation=\"/users.xsd\"/>\n   <include schemaLocation=\"/domains.xsd\"/>\n   <include schemaLocation=\"/groups.xsd\"/>\n   <include schemaLocation=\"/projects.xsd\"/>\n   <include schemaLocation=\"/roles.xsd\"/>\n   <include schemaLocation=\"/credentials.xsd\"/>\n   <include schemaLocation=\"/endpoints.xsd\"/>\n   <include schemaLocation=\"/auth_request.xsd\"/>\n   <include schemaLocation=\"/auth_response.xsd\"/>\n</schema>"
+        },
+        {
+            "Services": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"../xslt/schema.xslt\"?>\n\n<!-- (C) 2011-2013 OpenStack Foundation, All Rights Reserved -->\n\n<schema\n    elementFormDefault=\"qualified\"\n    attributeFormDefault=\"unqualified\"\n    xmlns=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:identity=\"http://docs.openstack.org/identity/api/v3\"\n    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    targetNamespace=\"http://docs.openstack.org/identity/api/v3\"\n>\n   <include schemaLocation=\"/faults.xsd\"/>\n   <include schemaLocation=\"/entity.xsd\"/>\n   <include schemaLocation=\"/users.xsd\"/>\n   <include schemaLocation=\"/domains.xsd\"/>\n   <include schemaLocation=\"/groups.xsd\"/>\n   <include schemaLocation=\"/projects.xsd\"/>\n   <include schemaLocation=\"/roles.xsd\"/>\n   <include schemaLocation=\"/credentials.xsd\"/>\n   <include schemaLocation=\"/endpoints.xsd\"/>\n   <include schemaLocation=\"/auth_request.xsd\"/>\n   <include schemaLocation=\"/auth_response.xsd\"/>\n</schema>"
+        },
+        {
+            "endpoint": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"../xslt/schema.xslt\"?>\n\n<!-- (C) 2011-2013 OpenStack Foundation, All Rights Reserved -->\n\n<schema\n    elementFormDefault=\"qualified\"\n    attributeFormDefault=\"unqualified\"\n    xmlns=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:identity=\"http://docs.openstack.org/identity/api/v3\"\n    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    targetNamespace=\"http://docs.openstack.org/identity/api/v3\"\n>\n   <include schemaLocation=\"/faults.xsd\"/>\n   <include schemaLocation=\"/entity.xsd\"/>\n   <include schemaLocation=\"/users.xsd\"/>\n   <include schemaLocation=\"/domains.xsd\"/>\n   <include schemaLocation=\"/groups.xsd\"/>\n   <include schemaLocation=\"/projects.xsd\"/>\n   <include schemaLocation=\"/roles.xsd\"/>\n   <include schemaLocation=\"/credentials.xsd\"/>\n   <include schemaLocation=\"/endpoints.xsd\"/>\n   <include schemaLocation=\"/auth_request.xsd\"/>\n   <include schemaLocation=\"/auth_response.xsd\"/>\n</schema>"
+        },
+        {
+            "credential": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"../xslt/schema.xslt\"?>\n\n<!-- (C) 2011-2013 OpenStack Foundation, All Rights Reserved -->\n\n<schema\n    elementFormDefault=\"qualified\"\n    attributeFormDefault=\"unqualified\"\n    xmlns=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:identity=\"http://docs.openstack.org/identity/api/v3\"\n    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    targetNamespace=\"http://docs.openstack.org/identity/api/v3\"\n>\n   <include schemaLocation=\"/faults.xsd\"/>\n   <include schemaLocation=\"/entity.xsd\"/>\n   <include schemaLocation=\"/users.xsd\"/>\n   <include schemaLocation=\"/domains.xsd\"/>\n   <include schemaLocation=\"/groups.xsd\"/>\n   <include schemaLocation=\"/projects.xsd\"/>\n   <include schemaLocation=\"/roles.xsd\"/>\n   <include schemaLocation=\"/credentials.xsd\"/>\n   <include schemaLocation=\"/endpoints.xsd\"/>\n   <include schemaLocation=\"/auth_request.xsd\"/>\n   <include schemaLocation=\"/auth_response.xsd\"/>\n</schema>"
+        },
+        {
+            "domain": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"../xslt/schema.xslt\"?>\n\n<!-- (C) 2011-2013 OpenStack Foundation, All Rights Reserved -->\n\n<schema\n    elementFormDefault=\"qualified\"\n    attributeFormDefault=\"unqualified\"\n    xmlns=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:identity=\"http://docs.openstack.org/identity/api/v3\"\n    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    targetNamespace=\"http://docs.openstack.org/identity/api/v3\"\n>\n   <include schemaLocation=\"/faults.xsd\"/>\n   <include schemaLocation=\"/entity.xsd\"/>\n   <include schemaLocation=\"/users.xsd\"/>\n   <include schemaLocation=\"/domains.xsd\"/>\n   <include schemaLocation=\"/groups.xsd\"/>\n   <include schemaLocation=\"/projects.xsd\"/>\n   <include schemaLocation=\"/roles.xsd\"/>\n   <include schemaLocation=\"/credentials.xsd\"/>\n   <include schemaLocation=\"/endpoints.xsd\"/>\n   <include schemaLocation=\"/auth_request.xsd\"/>\n   <include schemaLocation=\"/auth_response.xsd\"/>\n</schema>"
+        },
+        {
+            "links": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"../xslt/schema.xslt\"?>\n\n<!-- (C) 2011-2013 OpenStack Foundation, All Rights Reserved -->\n\n<schema\n    elementFormDefault=\"qualified\"\n    attributeFormDefault=\"unqualified\"\n    xmlns=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:identity=\"http://docs.openstack.org/identity/api/v3\"\n    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    targetNamespace=\"http://docs.openstack.org/identity/api/v3\"\n>\n   <include schemaLocation=\"/faults.xsd\"/>\n   <include schemaLocation=\"/entity.xsd\"/>\n   <include schemaLocation=\"/users.xsd\"/>\n   <include schemaLocation=\"/domains.xsd\"/>\n   <include schemaLocation=\"/groups.xsd\"/>\n   <include schemaLocation=\"/projects.xsd\"/>\n   <include schemaLocation=\"/roles.xsd\"/>\n   <include schemaLocation=\"/credentials.xsd\"/>\n   <include schemaLocation=\"/endpoints.xsd\"/>\n   <include schemaLocation=\"/auth_request.xsd\"/>\n   <include schemaLocation=\"/auth_response.xsd\"/>\n</schema>"
+        },
+        {
+            "user": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"../xslt/schema.xslt\"?>\n\n<!-- (C) 2011-2013 OpenStack Foundation, All Rights Reserved -->\n\n<schema\n    elementFormDefault=\"qualified\"\n    attributeFormDefault=\"unqualified\"\n    xmlns=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:identity=\"http://docs.openstack.org/identity/api/v3\"\n    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    targetNamespace=\"http://docs.openstack.org/identity/api/v3\"\n>\n   <include schemaLocation=\"/faults.xsd\"/>\n   <include schemaLocation=\"/entity.xsd\"/>\n   <include schemaLocation=\"/users.xsd\"/>\n   <include schemaLocation=\"/domains.xsd\"/>\n   <include schemaLocation=\"/groups.xsd\"/>\n   <include schemaLocation=\"/projects.xsd\"/>\n   <include schemaLocation=\"/roles.xsd\"/>\n   <include schemaLocation=\"/credentials.xsd\"/>\n   <include schemaLocation=\"/endpoints.xsd\"/>\n   <include schemaLocation=\"/auth_request.xsd\"/>\n   <include schemaLocation=\"/auth_response.xsd\"/>\n</schema>"
+        },
+        {
+            "group": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"../xslt/schema.xslt\"?>\n\n<!-- (C) 2011-2013 OpenStack Foundation, All Rights Reserved -->\n\n<schema\n    elementFormDefault=\"qualified\"\n    attributeFormDefault=\"unqualified\"\n    xmlns=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:identity=\"http://docs.openstack.org/identity/api/v3\"\n    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    targetNamespace=\"http://docs.openstack.org/identity/api/v3\"\n>\n   <include schemaLocation=\"/faults.xsd\"/>\n   <include schemaLocation=\"/entity.xsd\"/>\n   <include schemaLocation=\"/users.xsd\"/>\n   <include schemaLocation=\"/domains.xsd\"/>\n   <include schemaLocation=\"/groups.xsd\"/>\n   <include schemaLocation=\"/projects.xsd\"/>\n   <include schemaLocation=\"/roles.xsd\"/>\n   <include schemaLocation=\"/credentials.xsd\"/>\n   <include schemaLocation=\"/endpoints.xsd\"/>\n   <include schemaLocation=\"/auth_request.xsd\"/>\n   <include schemaLocation=\"/auth_response.xsd\"/>\n</schema>"
+        },
+        {
+            "accessTokenGetResp": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"access_token\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"consumer_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"expires_at\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"links\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"roles\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"self\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        } ,\n        \"project_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"authorizing_user_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+        },
+        {},
+        {
+            "accessTokensGetResp": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"access_tokens\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"consumer_id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"expires_at\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"links\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"roles\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"self\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            } ,\n            \"project_id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"authorizing_user_id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    } ,\n    \"links\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"next\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false\n        } ,\n        \"previous\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false\n        } ,\n        \"self\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+            "consumerGetResp": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"consumer\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"description\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"links\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"self\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+            "consumerPatchReq": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"consumer\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"description\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+            "consumerPatchResp": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"consumer\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"description\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"links\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"self\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+            "consumersGetResp": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"consumers\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"links\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"self\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            }\n          }\n        } , {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"description\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"links\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"self\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            }\n          }\n        }\n      ]\n    } ,\n    \"links\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"next\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false\n        } ,\n        \"previous\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false\n        } ,\n        \"self\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+            "consumersPostReq": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"consumer\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"description\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+            "consumersPostResp": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"consumer\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"secret\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"description\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"links\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"self\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        },
+        {}
+    ],
+    "resources": [
+        {
+            "relativeUri": "/{version}",
+            "uriParameters": {
+                "version": {
+                    "name": "version",
+                    "displayName": "version",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "resources": [
+                {
+                    "relativeUri": "/OS-OAUTH1",
+                    "resources": [
+                        {
+                            "relativeUri": "/access_token",
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/txt": {
+                                                    "name": "application/txt",
+                                                    "schema": "accessTokenPostResp",
+                                                    "example": "oauth_token=accd36&oauth_token_secret=aa47da&oauth_expires_at=2013-09-11T06:07:51.501805Z"
+                                                }
+                                            }
+                                        },
+                                        "400": {
+                                            "code": "400",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "badRequest",
+                                                    "schemaContent": "badRequest"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": ""
+                                                }
+                                            }
+                                        },
+                                        "401": {
+                                            "code": "401",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "unauthorized",
+                                                    "schemaContent": "unauthorized"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": ""
+                                                }
+                                            }
+                                        },
+                                        "403": {
+                                            "code": "403",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "forbidden",
+                                                    "schemaContent": "forbidden"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": ""
+                                                }
+                                            }
+                                        },
+                                        "405": {
+                                            "code": "405",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "badMethod",
+                                                    "schemaContent": "badMethod"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": ""
+                                                }
+                                            }
+                                        },
+                                        "413": {
+                                            "code": "413",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "overLimit",
+                                                    "schemaContent": "overLimit"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": ""
+                                                }
+                                            }
+                                        },
+                                        "503": {
+                                            "code": "503",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "serviceUnavailable",
+                                                    "schemaContent": "serviceUnavailable"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": ""
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTP"
+                                    ],
+                                    "description": "Create access token",
+                                    "method": "post",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "resources": [
+                                {
+                                    "relativeUri": "/{access_token_key}",
+                                    "uriParameters": {
+                                        "access_token_key": {
+                                            "name": "access_token_key",
+                                            "displayName": "access_token_key",
+                                            "type": "string",
+                                            "required": true,
+                                            "repeat": false,
+                                            "__METADATA__": {
+                                                "calculated": true,
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "displayName": "/{access_token_key}",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    },
+                                    "relativeUriPathSegments": [
+                                        "{access_token_key}"
+                                    ]
+                                }
+                            ],
+                            "displayName": "/access_token",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "access_token"
+                            ]
+                        },
+                        {
+                            "relativeUri": "/consumers",
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "201": {
+                                            "code": "201",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "consumersPostResp",
+                                                    "example": "{\n    \"consumer\": {\n        \"secret\": \"secretsecret\",\n        \"description\": \"My consumer\",\n        \"id\": \"7fea2d\",\n        \"links\": {\n            \"self\": \"http://identity:35357/v3/OS-OAUTH1/consumers/7fea2d\"\n        }\n    }\n}\n",
+                                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"consumer\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"secret\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"description\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"links\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"self\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+                                                }
+                                            }
+                                        },
+                                        "400": {
+                                            "code": "400",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "badRequest",
+                                                    "schemaContent": "badRequest"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": ""
+                                                }
+                                            }
+                                        },
+                                        "401": {
+                                            "code": "401",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "unauthorized",
+                                                    "schemaContent": "unauthorized"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": ""
+                                                }
+                                            }
+                                        },
+                                        "403": {
+                                            "code": "403",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "forbidden",
+                                                    "schemaContent": "forbidden"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": ""
+                                                }
+                                            }
+                                        },
+                                        "405": {
+                                            "code": "405",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "badMethod",
+                                                    "schemaContent": "badMethod"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": ""
+                                                }
+                                            }
+                                        },
+                                        "413": {
+                                            "code": "413",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "overLimit",
+                                                    "schemaContent": "overLimit"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": ""
+                                                }
+                                            }
+                                        },
+                                        "503": {
+                                            "code": "503",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "serviceUnavailable",
+                                                    "schemaContent": "serviceUnavailable"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": ""
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "consumersPostReq",
+                                            "example": "{\n  \"consumer\" : {\n    \"description\" : \"My consumer\"\n  }\n}",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"consumer\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"description\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTP"
+                                    ],
+                                    "description": "Create consumer",
+                                    "method": "post",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "consumersGetResp",
+                                                    "example": "{\n    \"consumers\": [\n        {\n            \"id\": \"0c2a74\",\n            \"links\": {\n                \"self\": \"http://identity:35357/v3/OS-OAUTH1/consumers/0c2a74\"\n            }\n        },\n        {\n            \"description\": \"My consumer\",\n            \"id\": \"7fea2d\",\n            \"links\": {\n                \"self\": \"http://identity:35357/v3/OS-OAUTH1/consumers/7fea2d\"\n            }\n        }\n    ],\n    \"links\": {\n        \"next\": null,\n        \"previous\": null,\n        \"self\": \"http://identity:35357/v3/OS-OAUTH1/consumers\"\n    }\n}",
+                                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"consumers\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"links\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"self\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            }\n          }\n        } , {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"description\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"links\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"self\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            }\n          }\n        }\n      ]\n    } ,\n    \"links\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"next\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false\n        } ,\n        \"previous\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false\n        } ,\n        \"self\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+                                                }
+                                            }
+                                        },
+                                        "400": {
+                                            "code": "400",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "badRequest",
+                                                    "schemaContent": "badRequest"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": ""
+                                                }
+                                            }
+                                        },
+                                        "401": {
+                                            "code": "401",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "unauthorized",
+                                                    "schemaContent": "unauthorized"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": ""
+                                                }
+                                            }
+                                        },
+                                        "403": {
+                                            "code": "403",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "forbidden",
+                                                    "schemaContent": "forbidden"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": ""
+                                                }
+                                            }
+                                        },
+                                        "404": {
+                                            "code": "404",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "itemNotFound",
+                                                    "schemaContent": "itemNotFound"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": ""
+                                                }
+                                            }
+                                        },
+                                        "405": {
+                                            "code": "405",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "badMethod",
+                                                    "schemaContent": "badMethod"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": ""
+                                                }
+                                            }
+                                        },
+                                        "413": {
+                                            "code": "413",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "overLimit",
+                                                    "schemaContent": "overLimit"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": ""
+                                                }
+                                            }
+                                        },
+                                        "503": {
+                                            "code": "503",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "serviceUnavailable",
+                                                    "schemaContent": "serviceUnavailable"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": ""
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTP"
+                                    ],
+                                    "description": "List consumers",
+                                    "method": "get",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "resources": [
+                                {
+                                    "relativeUri": "/{consumer_id}",
+                                    "uriParameters": {
+                                        "consumer_id": {
+                                            "name": "consumer_id",
+                                            "displayName": "consumer_id",
+                                            "type": "string",
+                                            "required": true,
+                                            "repeat": false,
+                                            "__METADATA__": {
+                                                "calculated": true,
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "methods": [
+                                        {
+                                            "responses": {
+                                                "200": {
+                                                    "code": "200",
+                                                    "body": {
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": "consumerGetResp",
+                                                            "example": "{\n    \"consumer\": {\n        \"id\": \"7fea2d\",\n        \"description\": \"My consumer\",\n        \"links\": {\n            \"self\": \"http://identity:35357/v3/OS-OAUTH1/consumers/7fea2d\"\n        }\n    }\n}",
+                                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"consumer\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"description\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"links\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"self\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+                                                        }
+                                                    }
+                                                },
+                                                "400": {
+                                                    "code": "400",
+                                                    "body": {
+                                                        "application/xml": {
+                                                            "name": "application/xml",
+                                                            "schema": "badRequest",
+                                                            "schemaContent": "badRequest"
+                                                        },
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": ""
+                                                        }
+                                                    }
+                                                },
+                                                "401": {
+                                                    "code": "401",
+                                                    "body": {
+                                                        "application/xml": {
+                                                            "name": "application/xml",
+                                                            "schema": "unauthorized",
+                                                            "schemaContent": "unauthorized"
+                                                        },
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": ""
+                                                        }
+                                                    }
+                                                },
+                                                "403": {
+                                                    "code": "403",
+                                                    "body": {
+                                                        "application/xml": {
+                                                            "name": "application/xml",
+                                                            "schema": "forbidden",
+                                                            "schemaContent": "forbidden"
+                                                        },
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": ""
+                                                        }
+                                                    }
+                                                },
+                                                "404": {
+                                                    "code": "404",
+                                                    "body": {
+                                                        "application/xml": {
+                                                            "name": "application/xml",
+                                                            "schema": "itemNotFound",
+                                                            "schemaContent": "itemNotFound"
+                                                        },
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": ""
+                                                        }
+                                                    }
+                                                },
+                                                "405": {
+                                                    "code": "405",
+                                                    "body": {
+                                                        "application/xml": {
+                                                            "name": "application/xml",
+                                                            "schema": "badMethod",
+                                                            "schemaContent": "badMethod"
+                                                        },
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": ""
+                                                        }
+                                                    }
+                                                },
+                                                "413": {
+                                                    "code": "413",
+                                                    "body": {
+                                                        "application/xml": {
+                                                            "name": "application/xml",
+                                                            "schema": "overLimit",
+                                                            "schemaContent": "overLimit"
+                                                        },
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": ""
+                                                        }
+                                                    }
+                                                },
+                                                "503": {
+                                                    "code": "503",
+                                                    "body": {
+                                                        "application/xml": {
+                                                            "name": "application/xml",
+                                                            "schema": "serviceUnavailable",
+                                                            "schemaContent": "serviceUnavailable"
+                                                        },
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": ""
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "protocols": [
+                                                "HTTP"
+                                            ],
+                                            "description": "Show consumer",
+                                            "method": "get",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "protocols": {
+                                                        "calculated": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "responses": {
+                                                "200": {
+                                                    "code": "200",
+                                                    "body": {
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": "consumerPatchResp",
+                                                            "example": "{\n    \"consumer\": {\n        \"description\": \"My new consumer\",\n        \"id\": \"7fea2d\",\n        \"links\": {\n            \"self\": \"http://identity:35357/v3/OS-OAUTH1/consumers/7fea2d\"\n        }\n    }\n}",
+                                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"consumer\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"description\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"links\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"self\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+                                                        }
+                                                    }
+                                                },
+                                                "400": {
+                                                    "code": "400",
+                                                    "body": {
+                                                        "application/xml": {
+                                                            "name": "application/xml",
+                                                            "schema": "badRequest",
+                                                            "schemaContent": "badRequest"
+                                                        },
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": ""
+                                                        }
+                                                    }
+                                                },
+                                                "401": {
+                                                    "code": "401",
+                                                    "body": {
+                                                        "application/xml": {
+                                                            "name": "application/xml",
+                                                            "schema": "unauthorized",
+                                                            "schemaContent": "unauthorized"
+                                                        },
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": ""
+                                                        }
+                                                    }
+                                                },
+                                                "403": {
+                                                    "code": "403",
+                                                    "body": {
+                                                        "application/xml": {
+                                                            "name": "application/xml",
+                                                            "schema": "forbidden",
+                                                            "schemaContent": "forbidden"
+                                                        },
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": ""
+                                                        }
+                                                    }
+                                                },
+                                                "405": {
+                                                    "code": "405",
+                                                    "body": {
+                                                        "application/xml": {
+                                                            "name": "application/xml",
+                                                            "schema": "badMethod",
+                                                            "schemaContent": "badMethod"
+                                                        },
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": ""
+                                                        }
+                                                    }
+                                                },
+                                                "413": {
+                                                    "code": "413",
+                                                    "body": {
+                                                        "application/xml": {
+                                                            "name": "application/xml",
+                                                            "schema": "overLimit",
+                                                            "schemaContent": "overLimit"
+                                                        },
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": ""
+                                                        }
+                                                    }
+                                                },
+                                                "503": {
+                                                    "code": "503",
+                                                    "body": {
+                                                        "application/xml": {
+                                                            "name": "application/xml",
+                                                            "schema": "serviceUnavailable",
+                                                            "schemaContent": "serviceUnavailable"
+                                                        },
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": ""
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "consumerPatchReq",
+                                                    "example": "{\n    \"consumer\": {\n        \"description\": \"My new consumer\"\n    }\n}",
+                                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"consumer\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"description\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+                                                }
+                                            },
+                                            "protocols": [
+                                                "HTTP"
+                                            ],
+                                            "description": "Update consumer",
+                                            "method": "patch",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "protocols": {
+                                                        "calculated": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "responses": {
+                                                "204": {
+                                                    "code": "204"
+                                                },
+                                                "400": {
+                                                    "code": "400",
+                                                    "body": {
+                                                        "application/xml": {
+                                                            "name": "application/xml",
+                                                            "schema": "badRequest",
+                                                            "schemaContent": "badRequest"
+                                                        },
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": ""
+                                                        }
+                                                    }
+                                                },
+                                                "401": {
+                                                    "code": "401",
+                                                    "body": {
+                                                        "application/xml": {
+                                                            "name": "application/xml",
+                                                            "schema": "unauthorized",
+                                                            "schemaContent": "unauthorized"
+                                                        },
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": ""
+                                                        }
+                                                    }
+                                                },
+                                                "403": {
+                                                    "code": "403",
+                                                    "body": {
+                                                        "application/xml": {
+                                                            "name": "application/xml",
+                                                            "schema": "forbidden",
+                                                            "schemaContent": "forbidden"
+                                                        },
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": ""
+                                                        }
+                                                    }
+                                                },
+                                                "405": {
+                                                    "code": "405",
+                                                    "body": {
+                                                        "application/xml": {
+                                                            "name": "application/xml",
+                                                            "schema": "badMethod",
+                                                            "schemaContent": "badMethod"
+                                                        },
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": ""
+                                                        }
+                                                    }
+                                                },
+                                                "413": {
+                                                    "code": "413",
+                                                    "body": {
+                                                        "application/xml": {
+                                                            "name": "application/xml",
+                                                            "schema": "overLimit",
+                                                            "schemaContent": "overLimit"
+                                                        },
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": ""
+                                                        }
+                                                    }
+                                                },
+                                                "503": {
+                                                    "code": "503",
+                                                    "body": {
+                                                        "application/xml": {
+                                                            "name": "application/xml",
+                                                            "schema": "serviceUnavailable",
+                                                            "schemaContent": "serviceUnavailable"
+                                                        },
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": ""
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "protocols": [
+                                                "HTTP"
+                                            ],
+                                            "description": "Delete consumer",
+                                            "method": "delete",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "protocols": {
+                                                        "calculated": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "displayName": "/{consumer_id}",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    },
+                                    "relativeUriPathSegments": [
+                                        "{consumer_id}"
+                                    ]
+                                }
+                            ],
+                            "displayName": "/consumers",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "consumers"
+                            ]
+                        },
+                        {
+                            "relativeUri": "/request_token",
+                            "displayName": "/request_token",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "request_token"
+                            ]
+                        },
+                        {
+                            "relativeUri": "/users",
+                            "resources": [
+                                {
+                                    "relativeUri": "/{user_id}",
+                                    "uriParameters": {
+                                        "user_id": {
+                                            "name": "user_id",
+                                            "displayName": "user_id",
+                                            "type": "string",
+                                            "required": true,
+                                            "repeat": false,
+                                            "__METADATA__": {
+                                                "calculated": true,
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "resources": [
+                                        {
+                                            "relativeUri": "/access_tokens",
+                                            "methods": [
+                                                {
+                                                    "responses": {
+                                                        "200": {
+                                                            "code": "200",
+                                                            "body": {
+                                                                "application/json": {
+                                                                    "name": "application/json",
+                                                                    "schema": "accessTokensGetResp",
+                                                                    "example": "{\n    \"access_tokens\": [\n        {\n            \"consumer_id\": \"7fea2d\",\n            \"id\": \"6be26a\",\n            \"expires_at\": \"2013-09-11T06:07:51.501805Z\",\n            \"links\": {\n                \"roles\": \"http://identity:35357/v3/users/ce9e07/OS-OAUTH1/access_tokens/6be26a/roles\",\n                \"self\": \"http://identity:35357/v3/users/ce9e07/OS-OAUTH1/access_tokens/6be26a\"\n            },\n            \"project_id\": \"b9fca3\",\n            \"authorizing_user_id\": \"ce9e07\"\n        }\n    ],\n    \"links\": {\n        \"next\": null,\n        \"previous\": null,\n        \"self\": \"http://identity:35357/v3/users/ce9e07/OS-OAUTH1/access_tokens\"\n    }\n}",
+                                                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"access_tokens\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"consumer_id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"expires_at\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"links\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"roles\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"self\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            } ,\n            \"project_id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"authorizing_user_id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    } ,\n    \"links\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"next\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false\n        } ,\n        \"previous\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false\n        } ,\n        \"self\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+                                                                }
+                                                            }
+                                                        },
+                                                        "400": {
+                                                            "code": "400",
+                                                            "body": {
+                                                                "application/xml": {
+                                                                    "name": "application/xml",
+                                                                    "schema": "badRequest",
+                                                                    "schemaContent": "badRequest"
+                                                                },
+                                                                "application/json": {
+                                                                    "name": "application/json",
+                                                                    "schema": ""
+                                                                }
+                                                            }
+                                                        },
+                                                        "401": {
+                                                            "code": "401",
+                                                            "body": {
+                                                                "application/xml": {
+                                                                    "name": "application/xml",
+                                                                    "schema": "unauthorized",
+                                                                    "schemaContent": "unauthorized"
+                                                                },
+                                                                "application/json": {
+                                                                    "name": "application/json",
+                                                                    "schema": ""
+                                                                }
+                                                            }
+                                                        },
+                                                        "403": {
+                                                            "code": "403",
+                                                            "body": {
+                                                                "application/xml": {
+                                                                    "name": "application/xml",
+                                                                    "schema": "forbidden",
+                                                                    "schemaContent": "forbidden"
+                                                                },
+                                                                "application/json": {
+                                                                    "name": "application/json",
+                                                                    "schema": ""
+                                                                }
+                                                            }
+                                                        },
+                                                        "405": {
+                                                            "code": "405",
+                                                            "body": {
+                                                                "application/xml": {
+                                                                    "name": "application/xml",
+                                                                    "schema": "badMethod",
+                                                                    "schemaContent": "badMethod"
+                                                                },
+                                                                "application/json": {
+                                                                    "name": "application/json",
+                                                                    "schema": ""
+                                                                }
+                                                            }
+                                                        },
+                                                        "413": {
+                                                            "code": "413",
+                                                            "body": {
+                                                                "application/xml": {
+                                                                    "name": "application/xml",
+                                                                    "schema": "overLimit",
+                                                                    "schemaContent": "overLimit"
+                                                                },
+                                                                "application/json": {
+                                                                    "name": "application/json",
+                                                                    "schema": ""
+                                                                }
+                                                            }
+                                                        },
+                                                        "503": {
+                                                            "code": "503",
+                                                            "body": {
+                                                                "application/xml": {
+                                                                    "name": "application/xml",
+                                                                    "schema": "serviceUnavailable",
+                                                                    "schemaContent": "serviceUnavailable"
+                                                                },
+                                                                "application/json": {
+                                                                    "name": "application/json",
+                                                                    "schema": ""
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "protocols": [
+                                                        "HTTP"
+                                                    ],
+                                                    "description": "List authorized access tokens",
+                                                    "method": "get",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "protocols": {
+                                                                "calculated": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            ],
+                                            "resources": [
+                                                {
+                                                    "relativeUri": "/{access_token_id}",
+                                                    "uriParameters": {
+                                                        "access_token_id": {
+                                                            "name": "access_token_id",
+                                                            "displayName": "access_token_id",
+                                                            "type": "string",
+                                                            "required": true,
+                                                            "repeat": false,
+                                                            "__METADATA__": {
+                                                                "calculated": true,
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "type": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "methods": [
+                                                        {
+                                                            "responses": {
+                                                                "200": {
+                                                                    "code": "200",
+                                                                    "body": {
+                                                                        "application/json": {
+                                                                            "name": "application/json",
+                                                                            "schema": "accessTokenGetResp",
+                                                                            "example": "{\n    \"access_token\": {\n        \"consumer_id\": \"7fea2d\",\n        \"id\": \"6be26a\",\n        \"expires_at\": \"2013-09-11T06:07:51.501805Z\",\n        \"links\": {\n            \"roles\": \"http://identity:35357/v3/users/ce9e07/OS-OAUTH1/access_tokens/6be26a/roles\",\n            \"self\": \"http://identity:35357/v3/users/ce9e07/OS-OAUTH1/access_tokens/6be26a\"\n        },\n        \"project_id\": \"b9fca3\",\n        \"authorizing_user_id\": \"ce9e07\"\n    }\n}",
+                                                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"access_token\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"consumer_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"expires_at\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"links\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"roles\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"self\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        } ,\n        \"project_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"authorizing_user_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                "400": {
+                                                                    "code": "400",
+                                                                    "body": {
+                                                                        "application/xml": {
+                                                                            "name": "application/xml",
+                                                                            "schema": "badRequest",
+                                                                            "schemaContent": "badRequest"
+                                                                        },
+                                                                        "application/json": {
+                                                                            "name": "application/json",
+                                                                            "schema": ""
+                                                                        }
+                                                                    }
+                                                                },
+                                                                "401": {
+                                                                    "code": "401",
+                                                                    "body": {
+                                                                        "application/xml": {
+                                                                            "name": "application/xml",
+                                                                            "schema": "unauthorized",
+                                                                            "schemaContent": "unauthorized"
+                                                                        },
+                                                                        "application/json": {
+                                                                            "name": "application/json",
+                                                                            "schema": ""
+                                                                        }
+                                                                    }
+                                                                },
+                                                                "403": {
+                                                                    "code": "403",
+                                                                    "body": {
+                                                                        "application/xml": {
+                                                                            "name": "application/xml",
+                                                                            "schema": "forbidden",
+                                                                            "schemaContent": "forbidden"
+                                                                        },
+                                                                        "application/json": {
+                                                                            "name": "application/json",
+                                                                            "schema": ""
+                                                                        }
+                                                                    }
+                                                                },
+                                                                "405": {
+                                                                    "code": "405",
+                                                                    "body": {
+                                                                        "application/xml": {
+                                                                            "name": "application/xml",
+                                                                            "schema": "badMethod",
+                                                                            "schemaContent": "badMethod"
+                                                                        },
+                                                                        "application/json": {
+                                                                            "name": "application/json",
+                                                                            "schema": ""
+                                                                        }
+                                                                    }
+                                                                },
+                                                                "413": {
+                                                                    "code": "413",
+                                                                    "body": {
+                                                                        "application/xml": {
+                                                                            "name": "application/xml",
+                                                                            "schema": "overLimit",
+                                                                            "schemaContent": "overLimit"
+                                                                        },
+                                                                        "application/json": {
+                                                                            "name": "application/json",
+                                                                            "schema": ""
+                                                                        }
+                                                                    }
+                                                                },
+                                                                "503": {
+                                                                    "code": "503",
+                                                                    "body": {
+                                                                        "application/xml": {
+                                                                            "name": "application/xml",
+                                                                            "schema": "serviceUnavailable",
+                                                                            "schemaContent": "serviceUnavailable"
+                                                                        },
+                                                                        "application/json": {
+                                                                            "name": "application/json",
+                                                                            "schema": ""
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
+                                                            "protocols": [
+                                                                "HTTP"
+                                                            ],
+                                                            "description": "Get authorized access token",
+                                                            "method": "get",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "protocols": {
+                                                                        "calculated": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "responses": {
+                                                                "204": {
+                                                                    "code": "204"
+                                                                }
+                                                            },
+                                                            "protocols": [
+                                                                "HTTP"
+                                                            ],
+                                                            "description": "Revoke access token",
+                                                            "method": "delete",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "protocols": {
+                                                                        "calculated": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    ],
+                                                    "resources": [
+                                                        {
+                                                            "relativeUri": "/roles",
+                                                            "methods": [
+                                                                {
+                                                                    "responses": {
+                                                                        "200": {
+                                                                            "code": "200"
+                                                                        },
+                                                                        "400": {
+                                                                            "code": "400",
+                                                                            "body": {
+                                                                                "application/xml": {
+                                                                                    "name": "application/xml",
+                                                                                    "schema": "badRequest",
+                                                                                    "schemaContent": "badRequest"
+                                                                                },
+                                                                                "application/json": {
+                                                                                    "name": "application/json",
+                                                                                    "schema": ""
+                                                                                }
+                                                                            }
+                                                                        },
+                                                                        "401": {
+                                                                            "code": "401",
+                                                                            "body": {
+                                                                                "application/xml": {
+                                                                                    "name": "application/xml",
+                                                                                    "schema": "unauthorized",
+                                                                                    "schemaContent": "unauthorized"
+                                                                                },
+                                                                                "application/json": {
+                                                                                    "name": "application/json",
+                                                                                    "schema": ""
+                                                                                }
+                                                                            }
+                                                                        },
+                                                                        "403": {
+                                                                            "code": "403",
+                                                                            "body": {
+                                                                                "application/xml": {
+                                                                                    "name": "application/xml",
+                                                                                    "schema": "forbidden",
+                                                                                    "schemaContent": "forbidden"
+                                                                                },
+                                                                                "application/json": {
+                                                                                    "name": "application/json",
+                                                                                    "schema": ""
+                                                                                }
+                                                                            }
+                                                                        },
+                                                                        "405": {
+                                                                            "code": "405",
+                                                                            "body": {
+                                                                                "application/xml": {
+                                                                                    "name": "application/xml",
+                                                                                    "schema": "badMethod",
+                                                                                    "schemaContent": "badMethod"
+                                                                                },
+                                                                                "application/json": {
+                                                                                    "name": "application/json",
+                                                                                    "schema": ""
+                                                                                }
+                                                                            }
+                                                                        },
+                                                                        "413": {
+                                                                            "code": "413",
+                                                                            "body": {
+                                                                                "application/xml": {
+                                                                                    "name": "application/xml",
+                                                                                    "schema": "overLimit",
+                                                                                    "schemaContent": "overLimit"
+                                                                                },
+                                                                                "application/json": {
+                                                                                    "name": "application/json",
+                                                                                    "schema": ""
+                                                                                }
+                                                                            }
+                                                                        },
+                                                                        "503": {
+                                                                            "code": "503",
+                                                                            "body": {
+                                                                                "application/xml": {
+                                                                                    "name": "application/xml",
+                                                                                    "schema": "serviceUnavailable",
+                                                                                    "schemaContent": "serviceUnavailable"
+                                                                                },
+                                                                                "application/json": {
+                                                                                    "name": "application/json",
+                                                                                    "schema": ""
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "protocols": [
+                                                                        "HTTP"
+                                                                    ],
+                                                                    "description": "List roles for an access token",
+                                                                    "method": "get",
+                                                                    "__METADATA__": {
+                                                                        "primitiveValuesMeta": {
+                                                                            "protocols": {
+                                                                                "calculated": true
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            ],
+                                                            "resources": [
+                                                                {
+                                                                    "relativeUri": "/{role_id}",
+                                                                    "uriParameters": {
+                                                                        "role_id": {
+                                                                            "name": "role_id",
+                                                                            "displayName": "role_id",
+                                                                            "type": "string",
+                                                                            "required": true,
+                                                                            "repeat": false,
+                                                                            "__METADATA__": {
+                                                                                "calculated": true,
+                                                                                "primitiveValuesMeta": {
+                                                                                    "displayName": {
+                                                                                        "calculated": true
+                                                                                    },
+                                                                                    "type": {
+                                                                                        "insertedAsDefault": true
+                                                                                    },
+                                                                                    "required": {
+                                                                                        "insertedAsDefault": true
+                                                                                    },
+                                                                                    "repeat": {
+                                                                                        "insertedAsDefault": true
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "methods": [
+                                                                        {
+                                                                            "responses": {
+                                                                                "200": {
+                                                                                    "code": "200"
+                                                                                },
+                                                                                "400": {
+                                                                                    "code": "400",
+                                                                                    "body": {
+                                                                                        "application/xml": {
+                                                                                            "name": "application/xml",
+                                                                                            "schema": "badRequest",
+                                                                                            "schemaContent": "badRequest"
+                                                                                        },
+                                                                                        "application/json": {
+                                                                                            "name": "application/json",
+                                                                                            "schema": ""
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                "401": {
+                                                                                    "code": "401",
+                                                                                    "body": {
+                                                                                        "application/xml": {
+                                                                                            "name": "application/xml",
+                                                                                            "schema": "unauthorized",
+                                                                                            "schemaContent": "unauthorized"
+                                                                                        },
+                                                                                        "application/json": {
+                                                                                            "name": "application/json",
+                                                                                            "schema": ""
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                "403": {
+                                                                                    "code": "403",
+                                                                                    "body": {
+                                                                                        "application/xml": {
+                                                                                            "name": "application/xml",
+                                                                                            "schema": "forbidden",
+                                                                                            "schemaContent": "forbidden"
+                                                                                        },
+                                                                                        "application/json": {
+                                                                                            "name": "application/json",
+                                                                                            "schema": ""
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                "405": {
+                                                                                    "code": "405",
+                                                                                    "body": {
+                                                                                        "application/xml": {
+                                                                                            "name": "application/xml",
+                                                                                            "schema": "badMethod",
+                                                                                            "schemaContent": "badMethod"
+                                                                                        },
+                                                                                        "application/json": {
+                                                                                            "name": "application/json",
+                                                                                            "schema": ""
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                "413": {
+                                                                                    "code": "413",
+                                                                                    "body": {
+                                                                                        "application/xml": {
+                                                                                            "name": "application/xml",
+                                                                                            "schema": "overLimit",
+                                                                                            "schemaContent": "overLimit"
+                                                                                        },
+                                                                                        "application/json": {
+                                                                                            "name": "application/json",
+                                                                                            "schema": ""
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                "503": {
+                                                                                    "code": "503",
+                                                                                    "body": {
+                                                                                        "application/xml": {
+                                                                                            "name": "application/xml",
+                                                                                            "schema": "serviceUnavailable",
+                                                                                            "schemaContent": "serviceUnavailable"
+                                                                                        },
+                                                                                        "application/json": {
+                                                                                            "name": "application/json",
+                                                                                            "schema": ""
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            },
+                                                                            "protocols": [
+                                                                                "HTTP"
+                                                                            ],
+                                                                            "description": "Get role information for an access token",
+                                                                            "method": "get",
+                                                                            "__METADATA__": {
+                                                                                "primitiveValuesMeta": {
+                                                                                    "protocols": {
+                                                                                        "calculated": true
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    ],
+                                                                    "displayName": "/{role_id}",
+                                                                    "__METADATA__": {
+                                                                        "primitiveValuesMeta": {
+                                                                            "displayName": {
+                                                                                "calculated": true
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "relativeUriPathSegments": [
+                                                                        "{role_id}"
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "displayName": "/roles",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    }
+                                                                }
+                                                            },
+                                                            "relativeUriPathSegments": [
+                                                                "roles"
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "displayName": "/{access_token_id}",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            }
+                                                        }
+                                                    },
+                                                    "relativeUriPathSegments": [
+                                                        "{access_token_id}"
+                                                    ]
+                                                }
+                                            ],
+                                            "displayName": "/access_tokens",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    }
+                                                }
+                                            },
+                                            "relativeUriPathSegments": [
+                                                "access_tokens"
+                                            ]
+                                        }
+                                    ],
+                                    "displayName": "/{user_id}",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    },
+                                    "relativeUriPathSegments": [
+                                        "{user_id}"
+                                    ]
+                                }
+                            ],
+                            "displayName": "/users",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "users"
+                            ]
+                        }
+                    ],
+                    "displayName": "/OS-OAUTH1",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "OS-OAUTH1"
+                    ]
+                },
+                {
+                    "relativeUri": "/auth",
+                    "resources": [
+                        {
+                            "relativeUri": "/tokens",
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": ""
+                                                }
+                                            }
+                                        },
+                                        "400": {
+                                            "code": "400",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "badRequest",
+                                                    "schemaContent": "badRequest"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": ""
+                                                }
+                                            }
+                                        },
+                                        "401": {
+                                            "code": "401",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "unauthorized",
+                                                    "schemaContent": "unauthorized"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": ""
+                                                }
+                                            }
+                                        },
+                                        "403": {
+                                            "code": "403",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "forbidden",
+                                                    "schemaContent": "forbidden"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": ""
+                                                }
+                                            }
+                                        },
+                                        "404": {
+                                            "code": "404",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "itemNotFound",
+                                                    "schemaContent": "itemNotFound"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": ""
+                                                }
+                                            }
+                                        },
+                                        "405": {
+                                            "code": "405",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "badMethod",
+                                                    "schemaContent": "badMethod"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": ""
+                                                }
+                                            }
+                                        },
+                                        "413": {
+                                            "code": "413",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "overLimit",
+                                                    "schemaContent": "overLimit"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": ""
+                                                }
+                                            }
+                                        },
+                                        "503": {
+                                            "code": "503",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "serviceUnavailable",
+                                                    "schemaContent": "serviceUnavailable"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": ""
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": ""
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTP"
+                                    ],
+                                    "description": "Get an Identity Service token",
+                                    "method": "post",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "displayName": "/tokens",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "tokens"
+                            ]
+                        }
+                    ],
+                    "displayName": "/auth",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "auth"
+                    ]
+                }
+            ],
+            "displayName": "/{version}",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "{version}"
+            ]
+        }
+    ],
+    "__METADATA__": {
+        "primitiveValuesMeta": {
+            "protocols": {
+                "calculated": true
+            }
+        }
+    }
+}

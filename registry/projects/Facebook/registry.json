@@ -1,0 +1,12 @@
+{"apis": [
+    {
+        "name": "Facebook",
+        "location": "https://raw.githubusercontent.com/raml-apis/Facebook/production/api.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "Facebook Video Upload",
+        "location": "https://raw.githubusercontent.com/raml-apis/Facebook/production/postVideo.raml",
+        "RAMLVersion": "0.8"
+    }
+]}

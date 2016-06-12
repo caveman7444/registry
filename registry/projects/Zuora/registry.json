@@ -1,0 +1,5 @@
+{"apis": [{
+    "name": "Zuora",
+    "location": "https://raw.githubusercontent.com/raml-apis/Zuora/production/zuora.raml",
+    "RAMLVersion": "0.8"
+}]}

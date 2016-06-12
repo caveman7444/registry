@@ -1,0 +1,12 @@
+{"apis": [
+    {
+        "name": "Pay Pal API",
+        "location": "https://raw.githubusercontent.com/raml-apis/PayPal/master/api.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "Pay Pal API",
+        "location": "https://raw.githubusercontent.com/raml-apis/PayPal/staging/api.raml",
+        "RAMLVersion": "0.8"
+    }
+]}

@@ -1,0 +1,5 @@
+{"apis": [{
+    "name": "StackExchange",
+    "location": "https://raw.githubusercontent.com/raml-apis/StackExchange/production/stackExchange.raml",
+    "RAMLVersion": "0.8"
+}]}

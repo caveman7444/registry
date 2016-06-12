@@ -1,0 +1,5 @@
+{"apis": [{
+    "name": "Zendesk",
+    "location": "https://raw.githubusercontent.com/raml-apis/Zendesk/production/api.raml",
+    "RAMLVersion": "0.8"
+}]}

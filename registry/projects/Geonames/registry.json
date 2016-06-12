@@ -1,0 +1,5 @@
+{"apis": [{
+    "name": "GeoNames",
+    "location": "https://raw.githubusercontent.com/raml-apis/Geonames/production/api.raml",
+    "RAMLVersion": "0.8"
+}]}

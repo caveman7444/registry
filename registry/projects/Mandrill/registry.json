@@ -1,0 +1,12 @@
+{"apis": [
+    {
+        "name": "\"Mandrill API\"",
+        "location": "https://raw.githubusercontent.com/raml-apis/Mandrill/master/api.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "\"Mandrill API\"",
+        "location": "https://raw.githubusercontent.com/raml-apis/Mandrill/staging/api.raml",
+        "RAMLVersion": "0.8"
+    }
+]}

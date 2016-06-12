@@ -1,0 +1,12 @@
+{"apis": [
+    {
+        "name": "Rapid API",
+        "location": "https://raw.githubusercontent.com/raml-apis/EwayRapid/master/api.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "Rapid API",
+        "location": "https://raw.githubusercontent.com/raml-apis/EwayRapid/staging/api.raml",
+        "RAMLVersion": "0.8"
+    }
+]}

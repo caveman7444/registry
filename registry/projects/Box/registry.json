@@ -1,0 +1,22 @@
+{"apis": [
+    {
+        "name": "Box",
+        "location": "https://raw.githubusercontent.com/raml-apis/Box/production/boxAPI.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "Box.com upload API",
+        "location": "https://raw.githubusercontent.com/raml-apis/Box/production/boxUploadAPI.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "Box",
+        "location": "https://raw.githubusercontent.com/raml-apis/Box/raml1.0/boxAPI.raml",
+        "RAMLVersion": "1.0"
+    },
+    {
+        "name": "Box.com upload API",
+        "location": "https://raw.githubusercontent.com/raml-apis/Box/raml1.0/boxUploadAPI.raml",
+        "RAMLVersion": "1.0"
+    }
+]}

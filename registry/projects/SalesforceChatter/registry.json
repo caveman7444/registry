@@ -1,0 +1,5 @@
+{"apis": [{
+    "name": "Chatter",
+    "location": "https://raw.githubusercontent.com/raml-apis/SalesforceChatter/production/api.raml",
+    "RAMLVersion": "0.8"
+}]}

@@ -1,0 +1,1322 @@
+{
+    "title": "OpenStack Telemetry API",
+    "version": "v2",
+    "baseUri": "http://www.example.com",
+    "protocols": [
+        "HTTP"
+    ],
+    "schemas": [
+        {
+            "alarm": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"alarm_actions\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"string\"\n        }\n      ]\n    } ,\n    \"alarm_id\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"combination_rule\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"description\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"enabled\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    } ,\n    \"insufficient_data_actions\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"string\"\n        }\n      ]\n    } ,\n    \"name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"ok_actions\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"string\"\n        }\n      ]\n    } ,\n    \"project_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"repeat_actions\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    } ,\n    \"state\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"state_timestamp\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"threshold_rule\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false\n    } ,\n    \"timestamp\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"type\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"user_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "alarmXML": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"value\">\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:element name=\"alarm_actions\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"item\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:anyURI\"/>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"alarm_id\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:simpleContent>\r\n              <xsd:extension base=\"xsd:string\">\r\n                <xsd:attribute name=\"nil\" type=\"xsd:boolean\" use=\"required\"/>\r\n              </xsd:extension>\r\n            </xsd:simpleContent>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"combination_rule\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:simpleContent>\r\n              <xsd:extension base=\"xsd:string\">\r\n                <xsd:attribute name=\"nil\" type=\"xsd:boolean\" use=\"required\"/>\r\n              </xsd:extension>\r\n            </xsd:simpleContent>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"description\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:string\"/>\r\n        <xsd:element name=\"enabled\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:boolean\"/>\r\n        <xsd:element name=\"insufficient_data_actions\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"item\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:anyURI\"/>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"name\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"ok_actions\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"item\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:anyURI\"/>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"project_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"repeat_actions\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:boolean\"/>\r\n        <xsd:element name=\"state\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"state_timestamp\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"threshold_rule\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:simpleContent>\r\n              <xsd:extension base=\"xsd:string\">\r\n                <xsd:attribute name=\"nil\" type=\"xsd:boolean\" use=\"required\"/>\r\n              </xsd:extension>\r\n            </xsd:simpleContent>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"timestamp\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"type\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"user_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n      </xsd:sequence>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+        },
+        {
+            "listAlarm": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"object\" ,\n      \"properties\" : {\n        \"alarm_actions\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"string\"\n            }\n          ]\n        } ,\n        \"alarm_id\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false\n        } ,\n        \"combination_rule\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false\n        } ,\n        \"description\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"enabled\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"insufficient_data_actions\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"string\"\n            }\n          ]\n        } ,\n        \"name\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"ok_actions\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"string\"\n            }\n          ]\n        } ,\n        \"project_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"repeat_actions\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"state\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"state_timestamp\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"threshold_rule\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false\n        } ,\n        \"timestamp\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"type\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"user_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  ]\n}"
+        },
+        {
+            "listAlarmXML": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"values\">\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"alarm_actions\" minOccurs=\"0\" maxOccurs=\"1\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"item\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:anyURI\"/>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n              <xsd:element name=\"alarm_id\" minOccurs=\"0\" maxOccurs=\"1\">\r\n                <xsd:complexType>\r\n                  <xsd:simpleContent>\r\n                    <xsd:extension base=\"xsd:string\">\r\n                      <xsd:attribute name=\"nil\" type=\"xsd:boolean\" use=\"required\"/>\r\n                    </xsd:extension>\r\n                  </xsd:simpleContent>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n              <xsd:element name=\"combination_rule\" minOccurs=\"0\" maxOccurs=\"1\">\r\n                <xsd:complexType>\r\n                  <xsd:simpleContent>\r\n                    <xsd:extension base=\"xsd:string\">\r\n                      <xsd:attribute name=\"nil\" type=\"xsd:boolean\" use=\"required\"/>\r\n                    </xsd:extension>\r\n                  </xsd:simpleContent>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n              <xsd:element name=\"description\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:string\"/>\r\n              <xsd:element name=\"enabled\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:boolean\"/>\r\n              <xsd:element name=\"insufficient_data_actions\" minOccurs=\"0\" maxOccurs=\"1\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"item\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:anyURI\"/>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n              <xsd:element name=\"name\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"ok_actions\" minOccurs=\"0\" maxOccurs=\"1\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"item\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:anyURI\"/>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n              <xsd:element name=\"project_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"repeat_actions\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:boolean\"/>\r\n              <xsd:element name=\"state\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"state_timestamp\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"threshold_rule\" minOccurs=\"0\" maxOccurs=\"1\">\r\n                <xsd:complexType>\r\n                  <xsd:simpleContent>\r\n                    <xsd:extension base=\"xsd:string\">\r\n                      <xsd:attribute name=\"nil\" type=\"xsd:boolean\" use=\"required\"/>\r\n                    </xsd:extension>\r\n                  </xsd:simpleContent>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n              <xsd:element name=\"timestamp\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"type\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"user_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n      </xsd:sequence>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+        },
+        {
+            "listMeter": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"object\" ,\n      \"properties\" : {\n        \"meter_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"name\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"project_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"resource_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"source\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"type\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"unit\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"user_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  ]\n}"
+        },
+        {
+            "listMeterXML": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"values\">\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"meter_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"name\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"project_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"resource_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"source\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"type\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"unit\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"user_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n      </xsd:sequence>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+        },
+        {
+            "listResource": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"object\" ,\n      \"properties\" : {\n        \"links\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"object\" ,\n              \"properties\" : {\n                \"href\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"rel\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            }\n          ]\n        } ,\n        \"metadata\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"name1\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"name2\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        } ,\n        \"project_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"resource_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"source\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"timestamp\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"user_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  ]\n}"
+        },
+        {
+            "listResourceXML": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"values\">\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"links\" minOccurs=\"0\" maxOccurs=\"1\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"item\" maxOccurs=\"unbounded\">\r\n                      <xsd:complexType>\r\n                        <xsd:sequence>\r\n                          <xsd:element name=\"href\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:anyURI\"/>\r\n                          <xsd:element name=\"rel\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                        </xsd:sequence>\r\n                      </xsd:complexType>\r\n                    </xsd:element>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n              <xsd:element name=\"metadata\" minOccurs=\"0\" maxOccurs=\"1\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"item\" maxOccurs=\"unbounded\">\r\n                      <xsd:complexType>\r\n                        <xsd:sequence>\r\n                          <xsd:element name=\"key\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                          <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                        </xsd:sequence>\r\n                      </xsd:complexType>\r\n                    </xsd:element>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n              <xsd:element name=\"project_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"resource_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"source\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"timestamp\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"user_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n      </xsd:sequence>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+        },
+        {
+            "listSample": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"object\" ,\n      \"properties\" : {\n        \"counter_name\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"counter_type\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"counter_unit\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"counter_volume\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"message_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"project_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"resource_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"resource_metadata\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"name1\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"name2\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        } ,\n        \"source\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"timestamp\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"user_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  ]\n}"
+        },
+        {
+            "listSampleXML": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"values\">\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"counter_name\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"counter_type\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"counter_unit\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"counter_volume\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:decimal\"/>\r\n              <xsd:element name=\"message_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"project_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"resource_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"resource_metadata\" minOccurs=\"0\" maxOccurs=\"1\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"item\" maxOccurs=\"unbounded\">\r\n                      <xsd:complexType>\r\n                        <xsd:sequence>\r\n                          <xsd:element name=\"key\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                          <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                        </xsd:sequence>\r\n                      </xsd:complexType>\r\n                    </xsd:element>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n              <xsd:element name=\"source\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"timestamp\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"user_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n      </xsd:sequence>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+        },
+        {
+            "listSamples": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"object\" ,\n      \"properties\" : {\n        \"id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"metadata\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"name1\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"name2\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        } ,\n        \"meter\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"project_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"recorded_at\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"resource_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"source\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"timestamp\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"type\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"unit\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"user_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"volume\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        }\n      }\n    }\n  ]\n}"
+        },
+        {
+            "listSamplesXML": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"values\">\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"meter\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"type\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"unit\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"volume\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:decimal\"/>\r\n              <xsd:element name=\"user_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"project_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"resource_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"source\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"timestamp\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"recorded_at\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"metadata\" minOccurs=\"0\" maxOccurs=\"1\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"item\" maxOccurs=\"unbounded\">\r\n                      <xsd:complexType>\r\n                        <xsd:sequence>\r\n                          <xsd:element name=\"key\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                          <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                        </xsd:sequence>\r\n                      </xsd:complexType>\r\n                    </xsd:element>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n      </xsd:sequence>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+        },
+        {
+            "listStatistics": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"object\" ,\n      \"properties\" : {\n        \"avg\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"count\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"duration\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"duration_end\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"duration_start\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"max\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"min\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"period\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"period_end\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"period_start\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"sum\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"unit\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  ]\n}"
+        },
+        {
+            "listStatisticsXML": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"values\">\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"avg\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:decimal\"/>\r\n              <xsd:element name=\"count\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:int\"/>\r\n              <xsd:element name=\"duration\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:decimal\"/>\r\n              <xsd:element name=\"duration_end\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"duration_start\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"max\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:decimal\"/>\r\n              <xsd:element name=\"min\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:decimal\"/>\r\n              <xsd:element name=\"period\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:int\"/>\r\n              <xsd:element name=\"period_end\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"period_start\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"sum\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:decimal\"/>\r\n              <xsd:element name=\"unit\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n      </xsd:sequence>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+        },
+        {
+            "newSample": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"metadata\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"name1\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"name2\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"meter\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"project_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"recorded_at\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"resource_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"source\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"timestamp\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"type\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"unit\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"user_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"volume\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "newSampleXML": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"value\">\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:element name=\"id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"meter\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"type\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"unit\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"volume\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:decimal\"/>\r\n        <xsd:element name=\"user_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"project_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"resource_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"source\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"timestamp\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"recorded_at\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"metadata\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"item\" maxOccurs=\"unbounded\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"key\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                    <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n      </xsd:sequence>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+        },
+        {
+            "resource": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"links\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"href\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"rel\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    } ,\n    \"metadata\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"name1\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"name2\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"project_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"resource_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"source\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"timestamp\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"user_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "resourceXML": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"value\">\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:element name=\"links\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"item\" maxOccurs=\"unbounded\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"href\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:anyURI\"/>\r\n                    <xsd:element name=\"rel\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"metadata\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"item\" maxOccurs=\"unbounded\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"key\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                    <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"project_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"resource_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"source\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"timestamp\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"user_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n      </xsd:sequence>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+        },
+        {
+            "storageCapabilities": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"alarm_storage\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"storage:production_ready\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"api\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"alarms:history:query:complex\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"alarms:history:query:simple\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"alarms:query:complex\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"alarms:query:simple\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"events:query:simple\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"meters:pagination\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"meters:query:complex\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"meters:query:metadata\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"meters:query:simple\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"resources:pagination\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"resources:query:complex\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"resources:query:metadata\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"resources:query:simple\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"samples:pagination\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"samples:query:complex\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"samples:query:metadata\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"samples:query:simple\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:aggregation:selectable:avg\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:aggregation:selectable:cardinality\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:aggregation:selectable:count\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:aggregation:selectable:max\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:aggregation:selectable:min\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:aggregation:selectable:quartile\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:aggregation:selectable:stddev\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:aggregation:selectable:sum\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:aggregation:standard\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:groupby\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:pagination\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:query:complex\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:query:metadata\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:query:simple\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"event_storage\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"storage:production_ready\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"storage\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"storage:production_ready\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+            "storageCapabilitiesXML": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"value\">\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:element name=\"api\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"item\" maxOccurs=\"unbounded\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"key\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                    <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:boolean\"/>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"storage\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"item\" minOccurs=\"0\" maxOccurs=\"1\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"key\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                    <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:boolean\"/>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"alarm_storage\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"item\" minOccurs=\"0\" maxOccurs=\"1\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"key\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                    <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:boolean\"/>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"event_storage\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"item\" minOccurs=\"0\" maxOccurs=\"1\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"key\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                    <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:boolean\"/>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n      </xsd:sequence>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+        }
+    ],
+    "resources": [
+        {
+            "relativeUri": "/{version}",
+            "uriParameters": {
+                "version": {
+                    "name": "version",
+                    "displayName": "version",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "resources": [
+                {
+                    "relativeUri": "/alarms",
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml",
+                                            "schema": "listAlarmXML",
+                                            "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<values>\n  <value>\n    <alarm_actions>\n      <item>http://site:8000/alarm</item>\n    </alarm_actions>\n    <alarm_id nil=\"true\" />\n    <combination_rule nil=\"true\" />\n    <description>An alarm</description>\n    <enabled>true</enabled>\n    <insufficient_data_actions>\n      <item>http://site:8000/nodata</item>\n    </insufficient_data_actions>\n    <name>SwiftObjectAlarm</name>\n    <ok_actions>\n      <item>http://site:8000/ok</item>\n    </ok_actions>\n    <project_id>c96c887c216949acbdfbd8b494863567</project_id>\n    <repeat_actions>false</repeat_actions>\n    <state>ok</state>\n    <state_timestamp>2013-11-21T12:33:08.486228</state_timestamp>\n    <threshold_rule nil=\"true\" />\n    <timestamp>2013-11-21T12:33:08.486221</timestamp>\n    <type>threshold</type>\n    <user_id>c96c887c216949acbdfbd8b494863567</user_id>\n  </value>\n</values>",
+                                            "schemaContent": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"values\">\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"alarm_actions\" minOccurs=\"0\" maxOccurs=\"1\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"item\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:anyURI\"/>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n              <xsd:element name=\"alarm_id\" minOccurs=\"0\" maxOccurs=\"1\">\r\n                <xsd:complexType>\r\n                  <xsd:simpleContent>\r\n                    <xsd:extension base=\"xsd:string\">\r\n                      <xsd:attribute name=\"nil\" type=\"xsd:boolean\" use=\"required\"/>\r\n                    </xsd:extension>\r\n                  </xsd:simpleContent>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n              <xsd:element name=\"combination_rule\" minOccurs=\"0\" maxOccurs=\"1\">\r\n                <xsd:complexType>\r\n                  <xsd:simpleContent>\r\n                    <xsd:extension base=\"xsd:string\">\r\n                      <xsd:attribute name=\"nil\" type=\"xsd:boolean\" use=\"required\"/>\r\n                    </xsd:extension>\r\n                  </xsd:simpleContent>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n              <xsd:element name=\"description\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:string\"/>\r\n              <xsd:element name=\"enabled\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:boolean\"/>\r\n              <xsd:element name=\"insufficient_data_actions\" minOccurs=\"0\" maxOccurs=\"1\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"item\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:anyURI\"/>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n              <xsd:element name=\"name\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"ok_actions\" minOccurs=\"0\" maxOccurs=\"1\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"item\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:anyURI\"/>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n              <xsd:element name=\"project_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"repeat_actions\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:boolean\"/>\r\n              <xsd:element name=\"state\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"state_timestamp\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"threshold_rule\" minOccurs=\"0\" maxOccurs=\"1\">\r\n                <xsd:complexType>\r\n                  <xsd:simpleContent>\r\n                    <xsd:extension base=\"xsd:string\">\r\n                      <xsd:attribute name=\"nil\" type=\"xsd:boolean\" use=\"required\"/>\r\n                    </xsd:extension>\r\n                  </xsd:simpleContent>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n              <xsd:element name=\"timestamp\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"type\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"user_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n      </xsd:sequence>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+                                        },
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "listAlarm",
+                                            "example": "[\n  {\n    \"alarm_actions\" : [\n      \"http://site:8000/alarm\"\n    ] ,\n    \"alarm_id\" : null ,\n    \"combination_rule\" : null ,\n    \"description\" : \"An alarm\" ,\n    \"enabled\" : true ,\n    \"insufficient_data_actions\" : [\n      \"http://site:8000/nodata\"\n    ] ,\n    \"name\" : \"SwiftObjectAlarm\" ,\n    \"ok_actions\" : [\n      \"http://site:8000/ok\"\n    ] ,\n    \"project_id\" : \"c96c887c216949acbdfbd8b494863567\" ,\n    \"repeat_actions\" : false ,\n    \"state\" : \"ok\" ,\n    \"state_timestamp\" : \"2013-11-21T12:33:08.486228\" ,\n    \"threshold_rule\" : null ,\n    \"timestamp\" : \"2013-11-21T12:33:08.486221\" ,\n    \"type\" : \"threshold\" ,\n    \"user_id\" : \"c96c887c216949acbdfbd8b494863567\"\n  }\n]",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"object\" ,\n      \"properties\" : {\n        \"alarm_actions\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"string\"\n            }\n          ]\n        } ,\n        \"alarm_id\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false\n        } ,\n        \"combination_rule\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false\n        } ,\n        \"description\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"enabled\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"insufficient_data_actions\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"string\"\n            }\n          ]\n        } ,\n        \"name\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"ok_actions\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"string\"\n            }\n          ]\n        } ,\n        \"project_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"repeat_actions\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"state\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"state_timestamp\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"threshold_rule\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false\n        } ,\n        \"timestamp\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"type\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"user_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  ]\n}"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "queryParameters": {
+                                "q": {
+                                    "name": "q",
+                                    "displayName": "q",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Filter rules for the alarms to be returned.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "description": "List alarms",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml",
+                                            "schema": "alarmXML",
+                                            "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<value>\n  <alarm_actions>\n    <item>http://site:8000/alarm</item>\n  </alarm_actions>\n  <alarm_id nil=\"true\" />\n  <combination_rule nil=\"true\" />\n  <description>An alarm</description>\n  <enabled>true</enabled>\n  <insufficient_data_actions>\n    <item>http://site:8000/nodata</item>\n  </insufficient_data_actions>\n  <name>SwiftObjectAlarm</name>\n  <ok_actions>\n    <item>http://site:8000/ok</item>\n  </ok_actions>\n  <project_id>c96c887c216949acbdfbd8b494863567</project_id>\n  <repeat_actions>false</repeat_actions>\n  <state>ok</state>\n  <state_timestamp>2013-11-21T12:33:08.486228</state_timestamp>\n  <threshold_rule nil=\"true\" />\n  <timestamp>2013-11-21T12:33:08.486221</timestamp>\n  <type>threshold</type>\n  <user_id>c96c887c216949acbdfbd8b494863567</user_id>\n</value>",
+                                            "schemaContent": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"value\">\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:element name=\"alarm_actions\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"item\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:anyURI\"/>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"alarm_id\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:simpleContent>\r\n              <xsd:extension base=\"xsd:string\">\r\n                <xsd:attribute name=\"nil\" type=\"xsd:boolean\" use=\"required\"/>\r\n              </xsd:extension>\r\n            </xsd:simpleContent>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"combination_rule\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:simpleContent>\r\n              <xsd:extension base=\"xsd:string\">\r\n                <xsd:attribute name=\"nil\" type=\"xsd:boolean\" use=\"required\"/>\r\n              </xsd:extension>\r\n            </xsd:simpleContent>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"description\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:string\"/>\r\n        <xsd:element name=\"enabled\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:boolean\"/>\r\n        <xsd:element name=\"insufficient_data_actions\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"item\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:anyURI\"/>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"name\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"ok_actions\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"item\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:anyURI\"/>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"project_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"repeat_actions\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:boolean\"/>\r\n        <xsd:element name=\"state\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"state_timestamp\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"threshold_rule\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:simpleContent>\r\n              <xsd:extension base=\"xsd:string\">\r\n                <xsd:attribute name=\"nil\" type=\"xsd:boolean\" use=\"required\"/>\r\n              </xsd:extension>\r\n            </xsd:simpleContent>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"timestamp\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"type\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"user_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n      </xsd:sequence>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+                                        },
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "alarm",
+                                            "example": "{\n    \"alarm_actions\": [\n        \"http://site:8000/alarm\"\n    ],\n    \"alarm_id\": null,\n    \"combination_rule\": null,\n    \"description\": \"An alarm\",\n    \"enabled\": true,\n    \"insufficient_data_actions\": [\n        \"http://site:8000/nodata\"\n    ],\n    \"name\": \"SwiftObjectAlarm\",\n    \"ok_actions\": [\n        \"http://site:8000/ok\"\n    ],\n    \"project_id\": \"c96c887c216949acbdfbd8b494863567\",\n    \"repeat_actions\": false,\n    \"state\": \"ok\",\n    \"state_timestamp\": \"2013-11-21T12:33:08.486228\",\n    \"threshold_rule\": null,\n    \"timestamp\": \"2013-11-21T12:33:08.486221\",\n    \"type\": \"threshold\",\n    \"user_id\": \"c96c887c216949acbdfbd8b494863567\"\n}",
+                                            "schemaContent": "alarm"
+                                        }
+                                    }
+                                }
+                            },
+                            "body": {
+                                "application/xml": {
+                                    "name": "application/xml",
+                                    "schema": ""
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "queryParameters": {
+                                "data": {
+                                    "name": "data",
+                                    "displayName": "data",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "A alarm within the request body.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "description": "Create alarm",
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "resources": [
+                        {
+                            "relativeUri": "/{alarm_id}",
+                            "uriParameters": {
+                                "alarm_id": {
+                                    "name": "alarm_id",
+                                    "displayName": "alarm_id",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "__METADATA__": {
+                                        "calculated": true,
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "alarmXML",
+                                                    "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<value>\n  <alarm_actions>\n    <item>http://site:8000/alarm</item>\n  </alarm_actions>\n  <alarm_id nil=\"true\" />\n  <combination_rule nil=\"true\" />\n  <description>An alarm</description>\n  <enabled>true</enabled>\n  <insufficient_data_actions>\n    <item>http://site:8000/nodata</item>\n  </insufficient_data_actions>\n  <name>SwiftObjectAlarm</name>\n  <ok_actions>\n    <item>http://site:8000/ok</item>\n  </ok_actions>\n  <project_id>c96c887c216949acbdfbd8b494863567</project_id>\n  <repeat_actions>false</repeat_actions>\n  <state>ok</state>\n  <state_timestamp>2013-11-21T12:33:08.486228</state_timestamp>\n  <threshold_rule nil=\"true\" />\n  <timestamp>2013-11-21T12:33:08.486221</timestamp>\n  <type>threshold</type>\n  <user_id>c96c887c216949acbdfbd8b494863567</user_id>\n</value>",
+                                                    "schemaContent": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"value\">\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:element name=\"alarm_actions\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"item\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:anyURI\"/>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"alarm_id\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:simpleContent>\r\n              <xsd:extension base=\"xsd:string\">\r\n                <xsd:attribute name=\"nil\" type=\"xsd:boolean\" use=\"required\"/>\r\n              </xsd:extension>\r\n            </xsd:simpleContent>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"combination_rule\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:simpleContent>\r\n              <xsd:extension base=\"xsd:string\">\r\n                <xsd:attribute name=\"nil\" type=\"xsd:boolean\" use=\"required\"/>\r\n              </xsd:extension>\r\n            </xsd:simpleContent>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"description\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:string\"/>\r\n        <xsd:element name=\"enabled\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:boolean\"/>\r\n        <xsd:element name=\"insufficient_data_actions\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"item\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:anyURI\"/>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"name\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"ok_actions\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"item\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:anyURI\"/>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"project_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"repeat_actions\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:boolean\"/>\r\n        <xsd:element name=\"state\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"state_timestamp\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"threshold_rule\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:simpleContent>\r\n              <xsd:extension base=\"xsd:string\">\r\n                <xsd:attribute name=\"nil\" type=\"xsd:boolean\" use=\"required\"/>\r\n              </xsd:extension>\r\n            </xsd:simpleContent>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"timestamp\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"type\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"user_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n      </xsd:sequence>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "alarm",
+                                                    "example": "{\n    \"alarm_actions\": [\n        \"http://site:8000/alarm\"\n    ],\n    \"alarm_id\": null,\n    \"combination_rule\": null,\n    \"description\": \"An alarm\",\n    \"enabled\": true,\n    \"insufficient_data_actions\": [\n        \"http://site:8000/nodata\"\n    ],\n    \"name\": \"SwiftObjectAlarm\",\n    \"ok_actions\": [\n        \"http://site:8000/ok\"\n    ],\n    \"project_id\": \"c96c887c216949acbdfbd8b494863567\",\n    \"repeat_actions\": false,\n    \"state\": \"ok\",\n    \"state_timestamp\": \"2013-11-21T12:33:08.486228\",\n    \"threshold_rule\": null,\n    \"timestamp\": \"2013-11-21T12:33:08.486221\",\n    \"type\": \"threshold\",\n    \"user_id\": \"c96c887c216949acbdfbd8b494863567\"\n}",
+                                                    "schemaContent": "alarm"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTP"
+                                    ],
+                                    "description": "Show alarm",
+                                    "method": "get",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "alarmXML",
+                                                    "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<value>\n  <alarm_actions>\n    <item>http://site:8000/alarm</item>\n  </alarm_actions>\n  <alarm_id nil=\"true\" />\n  <combination_rule nil=\"true\" />\n  <description>An alarm</description>\n  <enabled>true</enabled>\n  <insufficient_data_actions>\n    <item>http://site:8000/nodata</item>\n  </insufficient_data_actions>\n  <name>SwiftObjectAlarm</name>\n  <ok_actions>\n    <item>http://site:8000/ok</item>\n  </ok_actions>\n  <project_id>c96c887c216949acbdfbd8b494863567</project_id>\n  <repeat_actions>false</repeat_actions>\n  <state>ok</state>\n  <state_timestamp>2013-11-21T12:33:08.486228</state_timestamp>\n  <threshold_rule nil=\"true\" />\n  <timestamp>2013-11-21T12:33:08.486221</timestamp>\n  <type>threshold</type>\n  <user_id>c96c887c216949acbdfbd8b494863567</user_id>\n</value>",
+                                                    "schemaContent": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"value\">\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:element name=\"alarm_actions\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"item\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:anyURI\"/>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"alarm_id\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:simpleContent>\r\n              <xsd:extension base=\"xsd:string\">\r\n                <xsd:attribute name=\"nil\" type=\"xsd:boolean\" use=\"required\"/>\r\n              </xsd:extension>\r\n            </xsd:simpleContent>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"combination_rule\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:simpleContent>\r\n              <xsd:extension base=\"xsd:string\">\r\n                <xsd:attribute name=\"nil\" type=\"xsd:boolean\" use=\"required\"/>\r\n              </xsd:extension>\r\n            </xsd:simpleContent>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"description\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:string\"/>\r\n        <xsd:element name=\"enabled\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:boolean\"/>\r\n        <xsd:element name=\"insufficient_data_actions\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"item\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:anyURI\"/>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"name\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"ok_actions\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"item\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:anyURI\"/>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"project_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"repeat_actions\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:boolean\"/>\r\n        <xsd:element name=\"state\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"state_timestamp\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"threshold_rule\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:simpleContent>\r\n              <xsd:extension base=\"xsd:string\">\r\n                <xsd:attribute name=\"nil\" type=\"xsd:boolean\" use=\"required\"/>\r\n              </xsd:extension>\r\n            </xsd:simpleContent>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"timestamp\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"type\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"user_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n      </xsd:sequence>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "alarm",
+                                                    "example": "{\n    \"alarm_actions\": [\n        \"http://site:8000/alarm\"\n    ],\n    \"alarm_id\": null,\n    \"combination_rule\": null,\n    \"description\": \"An alarm\",\n    \"enabled\": true,\n    \"insufficient_data_actions\": [\n        \"http://site:8000/nodata\"\n    ],\n    \"name\": \"SwiftObjectAlarm\",\n    \"ok_actions\": [\n        \"http://site:8000/ok\"\n    ],\n    \"project_id\": \"c96c887c216949acbdfbd8b494863567\",\n    \"repeat_actions\": false,\n    \"state\": \"ok\",\n    \"state_timestamp\": \"2013-11-21T12:33:08.486228\",\n    \"threshold_rule\": null,\n    \"timestamp\": \"2013-11-21T12:33:08.486221\",\n    \"type\": \"threshold\",\n    \"user_id\": \"c96c887c216949acbdfbd8b494863567\"\n}",
+                                                    "schemaContent": "alarm"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml",
+                                            "schema": ""
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTP"
+                                    ],
+                                    "queryParameters": {
+                                        "data ": {
+                                            "name": "data ",
+                                            "displayName": "data ",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "a alarm within the request body.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "description": "Update alarm",
+                                    "method": "put",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "responses": {
+                                        "204": {
+                                            "code": "204"
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTP"
+                                    ],
+                                    "description": "Delete alarm",
+                                    "method": "delete",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "resources": [
+                                {
+                                    "relativeUri": "/history",
+                                    "methods": [
+                                        {
+                                            "responses": {
+                                                "200": {
+                                                    "code": "200"
+                                                }
+                                            },
+                                            "protocols": [
+                                                "HTTP"
+                                            ],
+                                            "queryParameters": {
+                                                "q": {
+                                                    "name": "q",
+                                                    "displayName": "q",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "Filter rules for the changes to be described.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "description": "Show alarm history",
+                                            "method": "get",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "protocols": {
+                                                        "calculated": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "displayName": "/history",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    },
+                                    "relativeUriPathSegments": [
+                                        "history"
+                                    ]
+                                },
+                                {
+                                    "relativeUri": "/state",
+                                    "methods": [
+                                        {
+                                            "responses": {
+                                                "200": {
+                                                    "code": "200"
+                                                }
+                                            },
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": ""
+                                                }
+                                            },
+                                            "protocols": [
+                                                "HTTP"
+                                            ],
+                                            "queryParameters": {
+                                                "state ": {
+                                                    "name": "state ",
+                                                    "displayName": "state ",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "example": "alarm",
+                                                    "repeat": false,
+                                                    "description": "An alarm state within the request body. Valid values are ok, alarm, or insufficient data.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "description": "Update alarm state",
+                                            "method": "put",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "protocols": {
+                                                        "calculated": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "responses": {
+                                                "200": {
+                                                    "code": "200"
+                                                }
+                                            },
+                                            "protocols": [
+                                                "HTTP"
+                                            ],
+                                            "description": "Show alarm state",
+                                            "method": "get",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "protocols": {
+                                                        "calculated": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "displayName": "/state",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    },
+                                    "relativeUriPathSegments": [
+                                        "state"
+                                    ]
+                                }
+                            ],
+                            "displayName": "/{alarm_id}",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "{alarm_id}"
+                            ]
+                        }
+                    ],
+                    "displayName": "/alarms",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "alarms"
+                    ]
+                },
+                {
+                    "relativeUri": "/meters",
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml",
+                                            "schema": "listMeterXML",
+                                            "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<values>\n  <value>\n    <meter_id>YmQ5NDMxYzEtOGQ2OS00YWQzLTgwM2EtOGQ0YTZiODlmZDM2K2luc3RhbmNl\n  </meter_id>\n    <name>instance</name>\n    <project_id>35b17138-b364-4e6a-a131-8f3099c5be68</project_id>\n    <resource_id>bd9431c1-8d69-4ad3-803a-8d4a6b89fd36</resource_id>\n    <source>openstack</source>\n    <type>gauge</type>\n    <unit>instance</unit>\n    <user_id>efd87807-12d2-4b38-9c70-5f5c2ac427ff</user_id>\n  </value>\n</values>",
+                                            "schemaContent": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"values\">\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"meter_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"name\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"project_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"resource_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"source\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"type\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"unit\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"user_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n      </xsd:sequence>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+                                        },
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "listMeter",
+                                            "example": "[\n    {\n        \"meter_id\": \"YmQ5NDMxYzEtOGQ2OS00YWQzLTgwM2EtOGQ0YTZiODlmZDM2K2luc3RhbmNl\\n\",\n        \"name\": \"instance\",\n        \"project_id\": \"35b17138-b364-4e6a-a131-8f3099c5be68\",\n        \"resource_id\": \"bd9431c1-8d69-4ad3-803a-8d4a6b89fd36\",\n        \"source\": \"openstack\",\n        \"type\": \"gauge\",\n        \"unit\": \"instance\",\n        \"user_id\": \"efd87807-12d2-4b38-9c70-5f5c2ac427ff\"\n    }\n]",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"object\" ,\n      \"properties\" : {\n        \"meter_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"name\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"project_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"resource_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"source\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"type\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"unit\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"user_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  ]\n}"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "queryParameters": {
+                                "q": {
+                                    "name": "q",
+                                    "displayName": "q",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Filter rules for the meters to be returned.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "description": "List meters",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "resources": [
+                        {
+                            "relativeUri": "/{meter_name}",
+                            "uriParameters": {
+                                "meter_name": {
+                                    "name": "meter_name",
+                                    "displayName": "meter_name",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "__METADATA__": {
+                                        "calculated": true,
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "listSampleXML",
+                                                    "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<values>\n  <value>\n    <counter_name>instance</counter_name>\n    <counter_type>gauge</counter_type>\n    <counter_unit>instance</counter_unit>\n    <counter_volume>1.0</counter_volume>\n    <message_id>5460acce-4fd6-480d-ab18-9735ec7b1996</message_id>\n    <project_id>35b17138-b364-4e6a-a131-8f3099c5be68</project_id>\n    <resource_id>bd9431c1-8d69-4ad3-803a-8d4a6b89fd36</resource_id>\n    <resource_metadata>\n      <item>\n        <key>name2</key>\n        <value>value2</value>\n      </item>\n      <item>\n        <key>name1</key>\n        <value>value1</value>\n      </item>\n    </resource_metadata>\n    <source>openstack</source>\n    <timestamp>2013-11-21T12:33:08.323533</timestamp>\n    <user_id>efd87807-12d2-4b38-9c70-5f5c2ac427ff</user_id>\n  </value>\n</values>",
+                                                    "schemaContent": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"values\">\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"counter_name\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"counter_type\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"counter_unit\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"counter_volume\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:decimal\"/>\r\n              <xsd:element name=\"message_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"project_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"resource_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"resource_metadata\" minOccurs=\"0\" maxOccurs=\"1\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"item\" maxOccurs=\"unbounded\">\r\n                      <xsd:complexType>\r\n                        <xsd:sequence>\r\n                          <xsd:element name=\"key\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                          <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                        </xsd:sequence>\r\n                      </xsd:complexType>\r\n                    </xsd:element>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n              <xsd:element name=\"source\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"timestamp\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"user_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n      </xsd:sequence>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "listSample",
+                                                    "example": "[\n    {\n        \"counter_name\": \"instance\",\n        \"counter_type\": \"gauge\",\n        \"counter_unit\": \"instance\",\n        \"counter_volume\": 1.0,\n        \"message_id\": \"5460acce-4fd6-480d-ab18-9735ec7b1996\",\n        \"project_id\": \"35b17138-b364-4e6a-a131-8f3099c5be68\",\n        \"resource_id\": \"bd9431c1-8d69-4ad3-803a-8d4a6b89fd36\",\n        \"resource_metadata\": {\n            \"name1\": \"value1\",\n            \"name2\": \"value2\"\n        },\n        \"source\": \"openstack\",\n        \"timestamp\": \"2013-11-21T12:33:08.323533\",\n        \"user_id\": \"efd87807-12d2-4b38-9c70-5f5c2ac427ff\"\n    }\n]",
+                                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"object\" ,\n      \"properties\" : {\n        \"counter_name\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"counter_type\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"counter_unit\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"counter_volume\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"message_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"project_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"resource_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"resource_metadata\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"name1\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"name2\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        } ,\n        \"source\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"timestamp\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"user_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  ]\n}"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml",
+                                            "schema": ""
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTP"
+                                    ],
+                                    "description": "Show meter",
+                                    "method": "get",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "listSampleXML",
+                                                    "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<values>\n  <value>\n    <counter_name>instance</counter_name>\n    <counter_type>gauge</counter_type>\n    <counter_unit>instance</counter_unit>\n    <counter_volume>1.0</counter_volume>\n    <message_id>5460acce-4fd6-480d-ab18-9735ec7b1996</message_id>\n    <project_id>35b17138-b364-4e6a-a131-8f3099c5be68</project_id>\n    <resource_id>bd9431c1-8d69-4ad3-803a-8d4a6b89fd36</resource_id>\n    <resource_metadata>\n      <item>\n        <key>name2</key>\n        <value>value2</value>\n      </item>\n      <item>\n        <key>name1</key>\n        <value>value1</value>\n      </item>\n    </resource_metadata>\n    <source>openstack</source>\n    <timestamp>2013-11-21T12:33:08.323533</timestamp>\n    <user_id>efd87807-12d2-4b38-9c70-5f5c2ac427ff</user_id>\n  </value>\n</values>",
+                                                    "schemaContent": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"values\">\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"counter_name\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"counter_type\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"counter_unit\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"counter_volume\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:decimal\"/>\r\n              <xsd:element name=\"message_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"project_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"resource_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"resource_metadata\" minOccurs=\"0\" maxOccurs=\"1\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"item\" maxOccurs=\"unbounded\">\r\n                      <xsd:complexType>\r\n                        <xsd:sequence>\r\n                          <xsd:element name=\"key\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                          <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                        </xsd:sequence>\r\n                      </xsd:complexType>\r\n                    </xsd:element>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n              <xsd:element name=\"source\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"timestamp\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"user_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n      </xsd:sequence>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "listSample",
+                                                    "example": "[\n    {\n        \"counter_name\": \"instance\",\n        \"counter_type\": \"gauge\",\n        \"counter_unit\": \"instance\",\n        \"counter_volume\": 1.0,\n        \"message_id\": \"5460acce-4fd6-480d-ab18-9735ec7b1996\",\n        \"project_id\": \"35b17138-b364-4e6a-a131-8f3099c5be68\",\n        \"resource_id\": \"bd9431c1-8d69-4ad3-803a-8d4a6b89fd36\",\n        \"resource_metadata\": {\n            \"name1\": \"value1\",\n            \"name2\": \"value2\"\n        },\n        \"source\": \"openstack\",\n        \"timestamp\": \"2013-11-21T12:33:08.323533\",\n        \"user_id\": \"efd87807-12d2-4b38-9c70-5f5c2ac427ff\"\n    }\n]",
+                                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"object\" ,\n      \"properties\" : {\n        \"counter_name\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"counter_type\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"counter_unit\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"counter_volume\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"message_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"project_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"resource_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"resource_metadata\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"name1\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"name2\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        } ,\n        \"source\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"timestamp\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"user_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  ]\n}"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml",
+                                            "schema": ""
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTP"
+                                    ],
+                                    "queryParameters": {
+                                        "samples ": {
+                                            "name": "samples ",
+                                            "displayName": "samples ",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "A list of samples within the request body.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "description": "Create meter",
+                                    "method": "post",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "resources": [
+                                {
+                                    "relativeUri": "/statistics",
+                                    "methods": [
+                                        {
+                                            "responses": {
+                                                "200": {
+                                                    "code": "200",
+                                                    "body": {
+                                                        "application/xml": {
+                                                            "name": "application/xml",
+                                                            "schema": "listStatisticsXML",
+                                                            "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<values>\n  <value>\n    <avg>4.5</avg>\n    <count>10</count>\n    <duration>300.0</duration>\n    <duration_end>2013-01-04T16:47:00</duration_end>\n    <duration_start>2013-01-04T16:42:00</duration_start>\n    <max>9.0</max>\n    <min>1.0</min>\n    <period>7200</period>\n    <period_end>2013-01-04T18:00:00</period_end>\n    <period_start>2013-01-04T16:00:00</period_start>\n    <sum>45.0</sum>\n    <unit>GiB</unit>\n  </value>\n</values>",
+                                                            "schemaContent": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"values\">\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"avg\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:decimal\"/>\r\n              <xsd:element name=\"count\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:int\"/>\r\n              <xsd:element name=\"duration\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:decimal\"/>\r\n              <xsd:element name=\"duration_end\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"duration_start\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"max\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:decimal\"/>\r\n              <xsd:element name=\"min\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:decimal\"/>\r\n              <xsd:element name=\"period\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:int\"/>\r\n              <xsd:element name=\"period_end\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"period_start\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"sum\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:decimal\"/>\r\n              <xsd:element name=\"unit\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n      </xsd:sequence>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+                                                        },
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": "listStatistics",
+                                                            "example": "[\n    {\n        \"avg\": 4.5,\n        \"count\": 10,\n        \"duration\": 300.0,\n        \"duration_end\": \"2013-01-04T16:47:00\",\n        \"duration_start\": \"2013-01-04T16:42:00\",\n        \"max\": 9.0,\n        \"min\": 1.0,\n        \"period\": 7200,\n        \"period_end\": \"2013-01-04T18:00:00\",\n        \"period_start\": \"2013-01-04T16:00:00\",\n        \"sum\": 45.0,\n        \"unit\": \"GiB\"\n    }\n]",
+                                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"object\" ,\n      \"properties\" : {\n        \"avg\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"count\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"duration\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"duration_end\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"duration_start\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"max\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"min\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"period\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"period_end\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"period_start\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"sum\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"unit\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  ]\n}"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "protocols": [
+                                                "HTTP"
+                                            ],
+                                            "queryParameters": {
+                                                "q": {
+                                                    "name": "q",
+                                                    "displayName": "q",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "Filter rules for the data to be returned.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "groupby ": {
+                                                    "name": "groupby ",
+                                                    "displayName": "groupby ",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "example": "Fields for group by aggregation",
+                                                    "repeat": false,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "period ": {
+                                                    "name": "period ",
+                                                    "displayName": "period ",
+                                                    "type": "integer",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "Returned result will be an array of statistics for a period long of that number of seconds.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "description": "Show meter statistics",
+                                            "method": "get",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "protocols": {
+                                                        "calculated": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "displayName": "/statistics",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    },
+                                    "relativeUriPathSegments": [
+                                        "statistics"
+                                    ]
+                                }
+                            ],
+                            "displayName": "/{meter_name}",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "{meter_name}"
+                            ]
+                        }
+                    ],
+                    "displayName": "/meters",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "meters"
+                    ]
+                },
+                {
+                    "relativeUri": "/resources",
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml",
+                                            "schema": "listResourceXML",
+                                            "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<values>\n  <value>\n    <links>\n      <item>\n        <href>http://localhost:8777/v2/resources/bd9431c1-8d69-4ad3-803a-8d4a6b89fd36</href>\n        <rel>self</rel>\n      </item>\n      <item>\n        <href>http://localhost:8777/v2/meters/volume?q.field=resource_id&amp;q.value=bd9431c1-8d69-4ad3-803a-8d4a6b89fd36</href>\n        <rel>volume</rel>\n      </item>\n    </links>\n    <metadata>\n      <item>\n        <key>name2</key>\n        <value>value2</value>\n      </item>\n      <item>\n        <key>name1</key>\n        <value>value1</value>\n      </item>\n    </metadata>\n    <project_id>35b17138-b364-4e6a-a131-8f3099c5be68</project_id>\n    <resource_id>bd9431c1-8d69-4ad3-803a-8d4a6b89fd36</resource_id>\n    <source>openstack</source>\n    <timestamp>2013-11-21T12:33:08.189843</timestamp>\n    <user_id>efd87807-12d2-4b38-9c70-5f5c2ac427ff</user_id>\n  </value>\n</values>",
+                                            "schemaContent": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"values\">\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"links\" minOccurs=\"0\" maxOccurs=\"1\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"item\" maxOccurs=\"unbounded\">\r\n                      <xsd:complexType>\r\n                        <xsd:sequence>\r\n                          <xsd:element name=\"href\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:anyURI\"/>\r\n                          <xsd:element name=\"rel\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                        </xsd:sequence>\r\n                      </xsd:complexType>\r\n                    </xsd:element>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n              <xsd:element name=\"metadata\" minOccurs=\"0\" maxOccurs=\"1\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"item\" maxOccurs=\"unbounded\">\r\n                      <xsd:complexType>\r\n                        <xsd:sequence>\r\n                          <xsd:element name=\"key\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                          <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                        </xsd:sequence>\r\n                      </xsd:complexType>\r\n                    </xsd:element>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n              <xsd:element name=\"project_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"resource_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"source\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"timestamp\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"user_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n      </xsd:sequence>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+                                        },
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "listResource",
+                                            "example": "[\n    {\n        \"links\": [\n            {\n                \"href\": \"http://localhost:8777/v2/resources/bd9431c1-8d69-4ad3-803a-8d4a6b89fd36\",\n                \"rel\": \"self\"\n            },\n            {\n                \"href\": \"http://localhost:8777/v2/meters/volume?q.field=resource_id&q.value=bd9431c1-8d69-4ad3-803a-8d4a6b89fd36\",\n                \"rel\": \"volume\"\n            }\n        ],\n        \"metadata\": {\n            \"name1\": \"value1\",\n            \"name2\": \"value2\"\n        },\n        \"project_id\": \"35b17138-b364-4e6a-a131-8f3099c5be68\",\n        \"resource_id\": \"bd9431c1-8d69-4ad3-803a-8d4a6b89fd36\",\n        \"source\": \"openstack\",\n        \"timestamp\": \"2013-11-21T12:33:08.189843\",\n        \"user_id\": \"efd87807-12d2-4b38-9c70-5f5c2ac427ff\"\n    }\n]",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"object\" ,\n      \"properties\" : {\n        \"links\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"object\" ,\n              \"properties\" : {\n                \"href\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"rel\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            }\n          ]\n        } ,\n        \"metadata\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"name1\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"name2\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        } ,\n        \"project_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"resource_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"source\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"timestamp\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"user_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  ]\n}"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "queryParameters": {
+                                "q": {
+                                    "name": "q",
+                                    "displayName": "q",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Filter rules for the resources to be returned.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "description": "List resources",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "resources": [
+                        {
+                            "relativeUri": "/{resource_id}",
+                            "uriParameters": {
+                                "resource_id": {
+                                    "name": "resource_id",
+                                    "displayName": "resource_id",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "__METADATA__": {
+                                        "calculated": true,
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "resourceXML",
+                                                    "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<value>\n  <links>\n    <item>\n      <href>http://localhost:8777/v2/resources/bd9431c1-8d69-4ad3-803a-8d4a6b89fd36</href>\n      <rel>self</rel>\n    </item>\n    <item>\n      <href>http://localhost:8777/v2/meters/volume?q.field=resource_id&amp;q.value=bd9431c1-8d69-4ad3-803a-8d4a6b89fd36</href>\n      <rel>volume</rel>\n    </item>\n  </links>\n  <metadata>\n    <item>\n      <key>name2</key>\n      <value>value2</value>\n    </item>\n    <item>\n      <key>name1</key>\n      <value>value1</value>\n    </item>\n  </metadata>\n  <project_id>35b17138-b364-4e6a-a131-8f3099c5be68</project_id>\n  <resource_id>bd9431c1-8d69-4ad3-803a-8d4a6b89fd36</resource_id>\n  <source>openstack</source>\n  <timestamp>2013-11-21T12:33:08.189843</timestamp>\n  <user_id>efd87807-12d2-4b38-9c70-5f5c2ac427ff</user_id>\n</value>",
+                                                    "schemaContent": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"value\">\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:element name=\"links\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"item\" maxOccurs=\"unbounded\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"href\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:anyURI\"/>\r\n                    <xsd:element name=\"rel\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"metadata\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"item\" maxOccurs=\"unbounded\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"key\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                    <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"project_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"resource_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"source\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"timestamp\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"user_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n      </xsd:sequence>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "resource",
+                                                    "example": "{\n    \"links\": [\n        {\n            \"href\": \"http://localhost:8777/v2/resources/bd9431c1-8d69-4ad3-803a-8d4a6b89fd36\",\n            \"rel\": \"self\"\n        },\n        {\n            \"href\": \"http://localhost:8777/v2/meters/volume?q.field=resource_id&q.value=bd9431c1-8d69-4ad3-803a-8d4a6b89fd36\",\n            \"rel\": \"volume\"\n        }\n    ],\n    \"metadata\": {\n        \"name1\": \"value1\",\n        \"name2\": \"value2\"\n    },\n    \"project_id\": \"35b17138-b364-4e6a-a131-8f3099c5be68\",\n    \"resource_id\": \"bd9431c1-8d69-4ad3-803a-8d4a6b89fd36\",\n    \"source\": \"openstack\",\n    \"timestamp\": \"2013-11-21T12:33:08.189843\",\n    \"user_id\": \"efd87807-12d2-4b38-9c70-5f5c2ac427ff\"\n}",
+                                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"links\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"href\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"rel\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    } ,\n    \"metadata\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"name1\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"name2\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"project_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"resource_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"source\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"timestamp\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"user_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTP"
+                                    ],
+                                    "queryParameters": {
+                                        "resource_id ": {
+                                            "name": "resource_id ",
+                                            "displayName": "resource_id ",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "The UUID of the resource.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "description": "Show resource information",
+                                    "method": "get",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "displayName": "/{resource_id}",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "{resource_id}"
+                            ]
+                        }
+                    ],
+                    "displayName": "/resources",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "resources"
+                    ]
+                },
+                {
+                    "relativeUri": "/samples",
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml",
+                                            "schema": "listSamplesXML",
+                                            "example": "<values>\n  <value>\n    <id>8db08c68-bc70-11e4-a8c4-fa163e1d1a9b</id>\n    <meter>instance</meter>\n    <type>gauge</type>\n    <unit>instance</unit>\n    <volume>1.0</volume>\n    <user_id>efd87807-12d2-4b38-9c70-5f5c2ac427ff</user_id>\n    <project_id>35b17138-b364-4e6a-a131-8f3099c5be68</project_id>\n    <resource_id>bd9431c1-8d69-4ad3-803a-8d4a6b89fd36</resource_id>\n    <source>openstack</source>\n    <timestamp>2015-02-24T22:00:32.747930</timestamp>\n    <recorded_at>2015-02-24T22:00:32.747930</recorded_at>\n    <metadata>\n      <item>\n        <key>name2</key>\n        <value>value2</value>\n      </item>\n      <item>\n        <key>name1</key>\n        <value>value1</value>\n      </item>\n    </metadata>\n  </value>\n</values>\n",
+                                            "schemaContent": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"values\">\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"meter\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"type\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"unit\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"volume\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:decimal\"/>\r\n              <xsd:element name=\"user_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"project_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"resource_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"source\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"timestamp\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"recorded_at\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n              <xsd:element name=\"metadata\" minOccurs=\"0\" maxOccurs=\"1\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"item\" maxOccurs=\"unbounded\">\r\n                      <xsd:complexType>\r\n                        <xsd:sequence>\r\n                          <xsd:element name=\"key\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                          <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                        </xsd:sequence>\r\n                      </xsd:complexType>\r\n                    </xsd:element>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n      </xsd:sequence>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+                                        },
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "listSamples",
+                                            "example": "[\n    {\n        \"id\": \"8db08c68-bc70-11e4-a8c4-fa163e1d1a9b\",\n        \"metadata\": {\n            \"name1\": \"value1\",\n            \"name2\": \"value2\"\n        },\n        \"meter\": \"instance\",\n        \"project_id\": \"35b17138-b364-4e6a-a131-8f3099c5be68\",\n        \"recorded_at\": \"2015-02-24T22:00:32.747930\",\n        \"resource_id\": \"bd9431c1-8d69-4ad3-803a-8d4a6b89fd36\",\n        \"source\": \"openstack\",\n        \"timestamp\": \"2015-02-24T22:00:32.747930\",\n        \"type\": \"gauge\",\n        \"unit\": \"instance\",\n        \"user_id\": \"efd87807-12d2-4b38-9c70-5f5c2ac427ff\",\n        \"volume\": 1.0\n    }\n]\n",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"object\" ,\n      \"properties\" : {\n        \"id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"metadata\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"name1\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"name2\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        } ,\n        \"meter\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"project_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"recorded_at\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"resource_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"source\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"timestamp\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"type\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"unit\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"user_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"volume\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        }\n      }\n    }\n  ]\n}"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "queryParameters": {
+                                "q": {
+                                    "name": "q",
+                                    "displayName": "q",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Filter rules for the samples to be returned.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "description": "List samples",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "resources": [
+                        {
+                            "relativeUri": "/{sample_id}",
+                            "uriParameters": {
+                                "sample_id": {
+                                    "name": "sample_id",
+                                    "displayName": "sample_id",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "__METADATA__": {
+                                        "calculated": true,
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "newSampleXML",
+                                                    "example": "<value>\n  <id>8db08c68-bc70-11e4-a8c4-fa163e1d1a9b</id>\n  <meter>instance</meter>\n  <type>gauge</type>\n  <unit>instance</unit>\n  <volume>1.0</volume>\n  <user_id>efd87807-12d2-4b38-9c70-5f5c2ac427ff</user_id>\n  <project_id>35b17138-b364-4e6a-a131-8f3099c5be68</project_id>\n  <resource_id>bd9431c1-8d69-4ad3-803a-8d4a6b89fd36</resource_id>\n  <source>openstack</source>\n  <timestamp>2015-02-24T22:00:32.747930</timestamp>\n  <recorded_at>2015-02-24T22:00:32.747930</recorded_at>\n  <metadata>\n    <item>\n      <key>name2</key>\n      <value>value2</value>\n    </item>\n    <item>\n      <key>name1</key>\n      <value>value1</value>\n    </item>\n  </metadata>\n</value>\n",
+                                                    "schemaContent": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"value\">\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:element name=\"id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"meter\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"type\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"unit\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"volume\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:decimal\"/>\r\n        <xsd:element name=\"user_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"project_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"resource_id\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"source\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"timestamp\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"recorded_at\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n        <xsd:element name=\"metadata\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"item\" maxOccurs=\"unbounded\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"key\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                    <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n      </xsd:sequence>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "newSample",
+                                                    "example": "{\n    \"id\": \"8db08c68-bc70-11e4-a8c4-fa163e1d1a9b\",\n    \"metadata\": {\n        \"name1\": \"value1\",\n        \"name2\": \"value2\"\n    },\n    \"meter\": \"instance\",\n    \"project_id\": \"35b17138-b364-4e6a-a131-8f3099c5be68\",\n    \"recorded_at\": \"2015-02-24T22:00:32.747930\",\n    \"resource_id\": \"bd9431c1-8d69-4ad3-803a-8d4a6b89fd36\",\n    \"source\": \"openstack\",\n    \"timestamp\": \"2015-02-24T22:00:32.747930\",\n    \"type\": \"gauge\",\n    \"unit\": \"instance\",\n    \"user_id\": \"efd87807-12d2-4b38-9c70-5f5c2ac427ff\",\n    \"volume\": 1.0\n}\n",
+                                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"metadata\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"name1\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"name2\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"meter\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"project_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"recorded_at\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"resource_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"source\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"timestamp\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"type\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"unit\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"user_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"volume\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTP"
+                                    ],
+                                    "queryParameters": {
+                                        "sample_id ": {
+                                            "name": "sample_id ",
+                                            "displayName": "sample_id ",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "The id of the sample.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "description": "Show sample",
+                                    "method": "get",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "displayName": "/{sample_id}",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "{sample_id}"
+                            ]
+                        }
+                    ],
+                    "displayName": "/samples",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "samples"
+                    ]
+                },
+                {
+                    "relativeUri": "/capabilities",
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml",
+                                            "schema": "storageCapabilitiesXML",
+                                            "example": "<value>\r\n  <api>\r\n    <item>\r\n      <key>statistics:query:complex</key>\r\n      <value>false</value>\r\n    </item>\r\n    <item>\r\n      <key>alarms:history:query:simple</key>\r\n      <value>true</value>\r\n    </item>\r\n    <item>\r\n      <key>meters:query:metadata</key>\r\n      <value>true</value>\r\n    </item>\r\n    <item>\r\n      <key>alarms:query:simple</key>\r\n      <value>true</value>\r\n    </item>\r\n    <item>\r\n      <key>resources:query:simple</key>\r\n      <value>true</value>\r\n    </item>\r\n    <item>\r\n      <key>statistics:aggregation:selectable:quartile</key>\r\n      <value>false</value>\r\n    </item>\r\n    <item>\r\n      <key>statistics:query:simple</key>\r\n      <value>true</value>\r\n    </item>\r\n    <item>\r\n      <key>statistics:aggregation:selectable:count</key>\r\n      <value>true</value>\r\n    </item>\r\n    <item>\r\n      <key>statistics:aggregation:selectable:min</key>\r\n      <value>true</value>\r\n    </item>\r\n    <item>\r\n      <key>samples:pagination</key>\r\n      <value>true</value>\r\n    </item>\r\n    <item>\r\n      <key>statistics:pagination</key>\r\n      <value>true</value>\r\n    </item>\r\n    <item>\r\n      <key>alarms:query:complex</key>\r\n      <value>true</value>\r\n    </item>\r\n    <item>\r\n      <key>meters:query:complex</key>\r\n      <value>false</value>\r\n    </item>\r\n    <item>\r\n      <key>resources:pagination</key>\r\n      <value>false</value>\r\n    </item>\r\n    <item>\r\n      <key>statistics:groupby</key>\r\n      <value>true</value>\r\n    </item>\r\n    <item>\r\n      <key>alarms:history:query:complex</key>\r\n      <value>true</value>\r\n    </item>\r\n    <item>\r\n      <key>meters:pagination</key>\r\n      <value>true</value>\r\n    </item>\r\n    <item>\r\n      <key>meters:query:simple</key>\r\n      <value>true</value>\r\n    </item>\r\n    <item>\r\n      <key>samples:query:metadata</key>\r\n      <value>true</value>\r\n    </item>\r\n    <item>\r\n      <key>statistics:query:metadata</key>\r\n      <value>true</value>\r\n    </item>\r\n    <item>\r\n      <key>samples:query:simple</key>\r\n      <value>true</value>\r\n    </item>\r\n    <item>\r\n      <key>resources:query:metadata</key>\r\n      <value>true</value>\r\n    </item>\r\n    <item>\r\n      <key>statistics:aggregation:selectable:max</key>\r\n      <value>true</value>\r\n    </item>\r\n    <item>\r\n      <key>samples:query:complex</key>\r\n      <value>true</value>\r\n    </item>\r\n    <item>\r\n      <key>statistics:aggregation:standard</key>\r\n      <value>true</value>\r\n    </item>\r\n    <item>\r\n      <key>statistics:aggregation:selectable:sum</key>\r\n      <value>true</value>\r\n    </item>\r\n    <item>\r\n      <key>events:query:simple</key>\r\n      <value>true</value>\r\n    </item>\r\n    <item>\r\n      <key>statistics:aggregation:selectable:stddev</key>\r\n      <value>true</value>\r\n    </item>\r\n    <item>\r\n      <key>statistics:aggregation:selectable:avg</key>\r\n      <value>true</value>\r\n    </item>\r\n    <item>\r\n      <key>statistics:aggregation:selectable:cardinality</key>\r\n      <value>true</value>\r\n    </item>\r\n    <item>\r\n      <key>resources:query:complex</key>\r\n      <value>false</value>\r\n    </item>\r\n  </api>\r\n  <storage>\r\n    <item>\r\n      <key>storage:production_ready</key>\r\n      <value>true</value>\r\n    </item>\r\n  </storage>\r\n  <alarm_storage>\r\n    <item>\r\n      <key>storage:production_ready</key>\r\n      <value>true</value>\r\n    </item>\r\n  </alarm_storage>\r\n  <event_storage>\r\n    <item>\r\n      <key>storage:production_ready</key>\r\n      <value>true</value>\r\n    </item>\r\n  </event_storage>\r\n</value>",
+                                            "schemaContent": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <xsd:element name=\"value\">\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:element name=\"api\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"item\" maxOccurs=\"unbounded\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"key\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                    <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:boolean\"/>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"storage\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"item\" minOccurs=\"0\" maxOccurs=\"1\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"key\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                    <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:boolean\"/>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"alarm_storage\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"item\" minOccurs=\"0\" maxOccurs=\"1\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"key\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                    <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:boolean\"/>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n        <xsd:element name=\"event_storage\" minOccurs=\"0\" maxOccurs=\"1\">\r\n          <xsd:complexType>\r\n            <xsd:sequence>\r\n              <xsd:element name=\"item\" minOccurs=\"0\" maxOccurs=\"1\">\r\n                <xsd:complexType>\r\n                  <xsd:sequence>\r\n                    <xsd:element name=\"key\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:normalizedString\"/>\r\n                    <xsd:element name=\"value\" minOccurs=\"0\" maxOccurs=\"1\" type=\"xsd:boolean\"/>\r\n                  </xsd:sequence>\r\n                </xsd:complexType>\r\n              </xsd:element>\r\n            </xsd:sequence>\r\n          </xsd:complexType>\r\n        </xsd:element>\r\n      </xsd:sequence>\r\n    </xsd:complexType>\r\n  </xsd:element>\r\n</xsd:schema>\r\n"
+                                        },
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "storageCapabilities",
+                                            "example": "{\n  \"alarm_storage\" : {\n    \"storage:production_ready\" : true\n  } ,\n  \"api\" : {\n    \"alarms:history:query:complex\" : true ,\n    \"alarms:history:query:simple\" : true ,\n    \"alarms:query:complex\" : true ,\n    \"alarms:query:simple\" : true ,\n    \"events:query:simple\" : true ,\n    \"meters:pagination\" : true ,\n    \"meters:query:complex\" : false ,\n    \"meters:query:metadata\" : true ,\n    \"meters:query:simple\" : true ,\n    \"resources:pagination\" : false ,\n    \"resources:query:complex\" : false ,\n    \"resources:query:metadata\" : true ,\n    \"resources:query:simple\" : true ,\n    \"samples:pagination\" : true ,\n    \"samples:query:complex\" : true ,\n    \"samples:query:metadata\" : true ,\n    \"samples:query:simple\" : true ,\n    \"statistics:aggregation:selectable:avg\" : true ,\n    \"statistics:aggregation:selectable:cardinality\" : true ,\n    \"statistics:aggregation:selectable:count\" : true ,\n    \"statistics:aggregation:selectable:max\" : true ,\n    \"statistics:aggregation:selectable:min\" : true ,\n    \"statistics:aggregation:selectable:quartile\" : false ,\n    \"statistics:aggregation:selectable:stddev\" : true ,\n    \"statistics:aggregation:selectable:sum\" : true ,\n    \"statistics:aggregation:standard\" : true ,\n    \"statistics:groupby\" : true ,\n    \"statistics:pagination\" : true ,\n    \"statistics:query:complex\" : false ,\n    \"statistics:query:metadata\" : true ,\n    \"statistics:query:simple\" : true\n  } ,\n  \"event_storage\" : {\n    \"storage:production_ready\" : true\n  } ,\n  \"storage\" : {\n    \"storage:production_ready\" : true\n  }\n}",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"alarm_storage\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"storage:production_ready\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"api\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"alarms:history:query:complex\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"alarms:history:query:simple\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"alarms:query:complex\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"alarms:query:simple\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"events:query:simple\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"meters:pagination\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"meters:query:complex\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"meters:query:metadata\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"meters:query:simple\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"resources:pagination\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"resources:query:complex\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"resources:query:metadata\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"resources:query:simple\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"samples:pagination\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"samples:query:complex\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"samples:query:metadata\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"samples:query:simple\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:aggregation:selectable:avg\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:aggregation:selectable:cardinality\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:aggregation:selectable:count\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:aggregation:selectable:max\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:aggregation:selectable:min\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:aggregation:selectable:quartile\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:aggregation:selectable:stddev\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:aggregation:selectable:sum\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:aggregation:standard\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:groupby\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:pagination\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:query:complex\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:query:metadata\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"statistics:query:simple\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"event_storage\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"storage:production_ready\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"storage\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"storage:production_ready\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTP"
+                            ],
+                            "description": "List capabilities",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/capabilities",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "capabilities"
+                    ]
+                }
+            ],
+            "displayName": "/{version}",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "{version}"
+            ]
+        }
+    ],
+    "__METADATA__": {
+        "primitiveValuesMeta": {
+            "protocols": {
+                "calculated": true
+            }
+        }
+    }
+}

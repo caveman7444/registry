@@ -1,0 +1,12 @@
+{"apis": [
+    {
+        "name": "Grooveshark API",
+        "location": "https://raw.githubusercontent.com/raml-apis/GrooveShark/master/grooveshark.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "Grooveshark API",
+        "location": "https://raw.githubusercontent.com/raml-apis/GrooveShark/staging/grooveshark.raml",
+        "RAMLVersion": "0.8"
+    }
+]}

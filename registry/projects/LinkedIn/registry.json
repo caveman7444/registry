@@ -1,0 +1,5 @@
+{"apis": [{
+    "name": "LinkedIn",
+    "location": "https://raw.githubusercontent.com/raml-apis/LinkedIn/production/linkedin.raml",
+    "RAMLVersion": "0.8"
+}]}

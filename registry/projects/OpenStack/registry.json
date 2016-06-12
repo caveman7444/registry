@@ -1,0 +1,112 @@
+{"apis": [
+    {
+        "name": "OpenStack Compute API",
+        "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/master/computeAPI.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "OpenStack Database Service API",
+        "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/master/databasesAPI.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "OpenStack Data Processing API",
+        "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/master/dataprocessingAPI.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "OpenStack Identity API",
+        "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/master/identityAPI.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "OpenStack Identity API extensions",
+        "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/master/identityExtensionsAPI.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "OpenStack Image Service API",
+        "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/master/imageAPI.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "OpenStack Networking API",
+        "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/master/netconnAPI.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "OpenStack Object Storage API",
+        "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/master/objectAPI.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "OpenStack Orchestration API",
+        "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/master/orchestrationAPI.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "OpenStack Telemetry API",
+        "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/master/telemetryAPI.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "OpenStack Block Storage API",
+        "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/master/volumeAPI.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "OpenStack Compute API",
+        "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/staging/computeAPI.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "OpenStack Database Service API",
+        "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/staging/databasesAPI.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "OpenStack Data Processing API",
+        "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/staging/dataprocessingAPI.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "OpenStack Identity API",
+        "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/staging/identityAPI.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "OpenStack Identity API extensions",
+        "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/staging/identityExtensionsAPI.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "OpenStack Image Service API",
+        "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/staging/imageAPI.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "OpenStack Networking API",
+        "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/staging/netconnAPI.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "OpenStack Object Storage API",
+        "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/staging/objectAPI.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "OpenStack Orchestration API",
+        "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/staging/orchestrationAPI.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "OpenStack Telemetry API",
+        "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/staging/telemetryAPI.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "OpenStack Block Storage API",
+        "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/staging/volumeAPI.raml",
+        "RAMLVersion": "0.8"
+    }
+]}

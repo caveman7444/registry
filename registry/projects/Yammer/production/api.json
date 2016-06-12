@@ -1,0 +1,3700 @@
+{
+    "title": "Yammer",
+    "version": "v1",
+    "baseUri": "https://www.yammer.com/api/{version}",
+    "baseUriParameters": {
+        "version": {
+            "name": "version",
+            "displayName": "version",
+            "type": "string",
+            "required": true,
+            "repeat": false,
+            "enum": [
+                "v1"
+            ],
+            "__METADATA__": {
+                "calculated": true,
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    },
+                    "type": {
+                        "insertedAsDefault": true
+                    },
+                    "required": {
+                        "insertedAsDefault": true
+                    },
+                    "repeat": {
+                        "insertedAsDefault": true
+                    },
+                    "enum": {
+                        "calculated": true
+                    }
+                }
+            }
+        }
+    },
+    "protocols": [
+        "HTTPS"
+    ],
+    "traits": [
+        {
+            "subscriptionManagement": {
+                "securedBy": [
+                    "oauth_2_0"
+                ],
+                "queryParameters": {
+                    "target_id": {
+                        "name": "target_id",
+                        "displayName": "target_id",
+                        "type": "string",
+                        "required": true,
+                        "repeat": false,
+                        "description": "The ID of the object to which user_current will subscribe/unsubscribe. Must be used in combination with target_type.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "target_type": {
+                        "name": "target_type",
+                        "displayName": "target_type",
+                        "type": "string",
+                        "required": true,
+                        "repeat": false,
+                        "description": "The target type (user or tag(legacy for topic)) to which user_current will subscribe/unsubscribe. Must be used in combination with target_id.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "name": "subscriptionManagement",
+                "__METADATA__": {
+                    "primitiveValuesMeta": {
+                        "securedBy": {
+                            "calculated": true
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "acceptUserId": {
+                "securedBy": [
+                    "oauth_2_0"
+                ],
+                "queryParameters": {
+                    "user_id": {
+                        "name": "user_id",
+                        "displayName": "user_id",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "To view or edit the relationships for a user other than the logged-in user.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "name": "acceptUserId",
+                "__METADATA__": {
+                    "primitiveValuesMeta": {
+                        "securedBy": {
+                            "calculated": true
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "acceptsPage": {
+                "securedBy": [
+                    "oauth_2_0"
+                ],
+                "queryParameters": {
+                    "page": {
+                        "name": "page",
+                        "displayName": "page",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "name": "acceptsPage",
+                "__METADATA__": {
+                    "primitiveValuesMeta": {
+                        "securedBy": {
+                            "calculated": true
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "acceptsMessageId": {
+                "securedBy": [
+                    "oauth_2_0"
+                ],
+                "queryParameters": {
+                    "message_id": {
+                        "name": "message_id",
+                        "displayName": "message_id",
+                        "type": "string",
+                        "required": true,
+                        "repeat": false,
+                        "description": "",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "name": "acceptsMessageId",
+                "__METADATA__": {
+                    "primitiveValuesMeta": {
+                        "securedBy": {
+                            "calculated": true
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "acceptsGroupId": {
+                "securedBy": [
+                    "oauth_2_0"
+                ],
+                "queryParameters": {
+                    "group_id": {
+                        "name": "group_id",
+                        "displayName": "group_id",
+                        "type": "string",
+                        "required": true,
+                        "repeat": false,
+                        "description": "The group_id that the user is joining or leaving.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "name": "acceptsGroupId",
+                "__METADATA__": {
+                    "primitiveValuesMeta": {
+                        "securedBy": {
+                            "calculated": true
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "securedBy": [
+        "oauth_2_0"
+    ],
+    "securitySchemes": [
+        {
+            "oauth_2_0": {
+                "name": "oauth_2_0",
+                "type": "OAuth 2.0",
+                "description": "",
+                "describedBy": {
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "headers": {
+                        "Authorization": {
+                            "name": "Authorization",
+                            "displayName": "Authorization",
+                            "type": "string",
+                            "required": false,
+                            "example": "Bearer _token_",
+                            "repeat": false,
+                            "description": "Used to send a valid OAuth 2 access token. The token must be preceeded by the word \"Bearer\".\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                "settings": {
+                    "accessTokenUri": "https://www.yammer.com/oauth2/access_token.json",
+                    "authorizationUri": "https://www.yammer.com/dialog/oauth",
+                    "authorizationGrants": [
+                        "code"
+                    ]
+                }
+            }
+        }
+    ],
+    "resourceTypes": [
+        {
+            "base": {
+                "name": "base",
+                "securedBy": [
+                    "oauth_2_0"
+                ],
+                "uriParameters": [
+                    {
+                        "name": "mediaTypeExtension",
+                        "displayName": "mediaTypeExtension",
+                        "type": "string",
+                        "required": true,
+                        "repeat": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                ],
+                "__METADATA__": {
+                    "primitiveValuesMeta": {
+                        "securedBy": {
+                            "calculated": true
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "messages": {
+                "name": "messages",
+                "type": "base",
+                "securedBy": [
+                    "oauth_2_0"
+                ],
+                "__METADATA__": {
+                    "primitiveValuesMeta": {
+                        "securedBy": {
+                            "calculated": true
+                        }
+                    }
+                },
+                "get": {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/xml": {
+                                    "name": "application/xml"
+                                },
+                                "application/json": {
+                                    "name": "application/json"
+                                }
+                            }
+                        }
+                    },
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "queryParameters": {
+                        "older_than": {
+                            "name": "older_than",
+                            "displayName": "older_than",
+                            "type": "string",
+                            "required": false,
+                            "example": "2912",
+                            "repeat": false,
+                            "description": "Returns messages older than the message ID specified as a numeric string. This is useful for paginating messages. For example, if you're currently viewing 20 messages and the oldest is number 2912, you could append \"?older_than=2912\" to your request to get the 20 messages prior to those you're seeing.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "newer_than": {
+                            "name": "newer_than",
+                            "displayName": "newer_than",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Returns messages newer than the message ID specified as a numeric string. This should be used when polling for new messages. If you're looking at messages, and the most recent message returned is 3516, you can make a request with the parameter \"?newer_than=3516\" to ensure that you do not get duplicate copies of messages already on your page\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "threaded": {
+                            "name": "threaded",
+                            "displayName": "threaded",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "will only return the first message in each thread. This parameter is intended for apps which display message threads collapsed. threaded=extended will return the thread starter messages in order of most recently active as well as the two most recent messages, as they are viewed in the default view on the Yammer web interface.",
+                            "enum": [
+                                "extended",
+                                "true"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "limit": {
+                            "name": "limit",
+                            "displayName": "limit",
+                            "type": "integer",
+                            "required": false,
+                            "example": "22",
+                            "repeat": false,
+                            "description": "Return only the specified number of messages. Works for threaded=true and threaded=extended.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "resources": [
+        {
+            "relativeUri": "/messages{mediaTypeExtension}",
+            "type": "messages",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "uriParameters": {
+                "mediaTypeExtension": {
+                    "name": "mediaTypeExtension",
+                    "displayName": "mediaTypeExtension",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "body": {
+                        "application/x-www-form-urlencoded": {
+                            "name": "application/x-www-form-urlencoded"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "description": "Create a new message. The response body will include the new message formatted the same way as message polling above. This allows your app to immediately display the newly-posted message back to the user.",
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/messages{mediaTypeExtension}",
+            "description": "All public messages in the user's (whose access token is being used to make the API call henceforth referred to as current user) Yammer network. Corresponds to conversations in the Yammer web interface.",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "messages{mediaTypeExtension}"
+            ]
+        },
+        {
+            "relativeUri": "/pending_attachments",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "methods": [
+                {
+                    "responses": {
+                        "201": {
+                            "code": "201"
+                        }
+                    },
+                    "body": {
+                        "multipart/form-data": {
+                            "name": "multipart/form-data"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "resources": [
+                {
+                    "relativeUri": "/{id}",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "id": {
+                            "name": "id",
+                            "displayName": "id",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "method": "delete",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/{id}",
+                    "description": "Delete a pending attachment owned by the current user.",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{id}"
+                    ]
+                }
+            ],
+            "displayName": "/pending_attachments",
+            "description": "Create a new pending attachment.",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "pending_attachments"
+            ]
+        },
+        {
+            "relativeUri": "/threads/{id}{mediaTypeExtension}",
+            "type": "base",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "uriParameters": {
+                "id": {
+                    "name": "id",
+                    "displayName": "id",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                },
+                "mediaTypeExtension": {
+                    "name": "mediaTypeExtension",
+                    "displayName": "mediaTypeExtension",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/xml": {
+                                    "name": "application/xml"
+                                },
+                                "application/json": {
+                                    "name": "application/json"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/threads/{id}{mediaTypeExtension}",
+            "description": "The conversation view for a thread specified by the numeric string ID.",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "threads",
+                "{id}{mediaTypeExtension}"
+            ]
+        },
+        {
+            "relativeUri": "/topics/{id}{mediaTypeExtension}",
+            "type": "base",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "uriParameters": {
+                "id": {
+                    "name": "id",
+                    "displayName": "id",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                },
+                "mediaTypeExtension": {
+                    "name": "mediaTypeExtension",
+                    "displayName": "mediaTypeExtension",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/xml": {
+                                    "name": "application/xml"
+                                },
+                                "application/json": {
+                                    "name": "application/json"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/topics/{id}{mediaTypeExtension}",
+            "description": "The users that have used the topic specified by the numeric string ID.",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "topics",
+                "{id}{mediaTypeExtension}"
+            ]
+        },
+        {
+            "relativeUri": "/group_memberships{mediaTypeExtension}",
+            "type": "base",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "uriParameters": {
+                "mediaTypeExtension": {
+                    "name": "mediaTypeExtension",
+                    "displayName": "mediaTypeExtension",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "description": "Join the group specified by the numeric string ID.",
+                    "method": "post",
+                    "is": [
+                        "acceptsGroupId"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "description": "Leave a group.",
+                    "method": "delete",
+                    "is": [
+                        "acceptsGroupId"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/group_memberships{mediaTypeExtension}",
+            "description": "Allow current user to join or leave a specified group",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "group_memberships{mediaTypeExtension}"
+            ]
+        },
+        {
+            "relativeUri": "/users{mediaTypeExtension}",
+            "type": "base",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "uriParameters": {
+                "mediaTypeExtension": {
+                    "name": "mediaTypeExtension",
+                    "displayName": "mediaTypeExtension",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/xml": {
+                                    "name": "application/xml"
+                                },
+                                "application/json": {
+                                    "name": "application/json"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "queryParameters": {
+                        "sort_by": {
+                            "name": "sort_by",
+                            "displayName": "sort_by",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "reverse": {
+                            "name": "reverse",
+                            "displayName": "reverse",
+                            "type": "boolean",
+                            "required": false,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "letter": {
+                            "name": "letter",
+                            "displayName": "letter",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "Retrieve users in the current user's Yammer network. Supports page, sort_by, reverse, and letter parameters.",
+                    "method": "get",
+                    "is": [
+                        "acceptsPage"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "body": {
+                        "application/json": {
+                            "name": "application/json"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "description": "Create a new user. Current user should be a verified admin in a paid Yammer network to perform this action.",
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/users{mediaTypeExtension}",
+            "description": "Retrieve users in the current user's Yammer network. Supports page, sort_by, reverse, and letter parameters.",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "users{mediaTypeExtension}"
+            ]
+        },
+        {
+            "relativeUri": "/relationships{mediaTypeExtension}",
+            "type": "base",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "uriParameters": {
+                "mediaTypeExtension": {
+                    "name": "mediaTypeExtension",
+                    "displayName": "mediaTypeExtension",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/xml": {
+                                    "name": "application/xml"
+                                },
+                                "application/json": {
+                                    "name": "application/json"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "method": "get",
+                    "is": [
+                        "acceptUserId"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "queryParameters": {
+                        "subordinate": {
+                            "name": "subordinate",
+                            "displayName": "subordinate",
+                            "type": "string",
+                            "required": false,
+                            "repeat": true,
+                            "description": "Pass email addresses as the value of the subordinate, superior or colleague parameters to add them to your org chart. All three can be passed in one request, and each can be passed multiple times.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "superior": {
+                            "name": "superior",
+                            "displayName": "superior",
+                            "type": "string",
+                            "required": false,
+                            "repeat": true,
+                            "description": "Pass email addresses as the value of the subordinate, superior or colleague parameters to add them to your org chart. All three can be passed in one request, and each can be passed multiple times",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "colleague": {
+                            "name": "colleague",
+                            "displayName": "colleague",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Pass email addresses as the value of the subordinate, superior or colleague parameters to add them to your org chart. All three can be passed in one request, and each can be passed multiple times.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "Add an org chart relationship. Specify id of the user for whom the relationship is being added as user_id, if the user is not the current user. Use [ subordinate | superior | colleague ] to create the relationship.",
+                    "method": "post",
+                    "is": [
+                        "acceptUserId"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/relationships{mediaTypeExtension}",
+            "description": "Show org chart relationships. Defaults to user_current, supports user_id.",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "relationships{mediaTypeExtension}"
+            ]
+        },
+        {
+            "relativeUri": "/relationships/{id}{mediaTypeExtension}",
+            "type": "base",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "uriParameters": {
+                "id": {
+                    "name": "id",
+                    "displayName": "id",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                },
+                "mediaTypeExtension": {
+                    "name": "mediaTypeExtension",
+                    "displayName": "mediaTypeExtension",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "queryParameters": {
+                        "type": {
+                            "name": "type",
+                            "displayName": "type",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "relationship type",
+                            "enum": [
+                                "superior",
+                                "colleague",
+                                "subordinate"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "method": "delete",
+                    "is": [
+                        "acceptUserId"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/relationships/{id}{mediaTypeExtension}",
+            "description": "Remove the relationship specified by relationship_type from the user specified by the numeric string ID.",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "relationships",
+                "{id}{mediaTypeExtension}"
+            ]
+        },
+        {
+            "relativeUri": "/streams/notifications{mediaTypeExtension}",
+            "type": "base",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "uriParameters": {
+                "mediaTypeExtension": {
+                    "name": "mediaTypeExtension",
+                    "displayName": "mediaTypeExtension",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/xml": {
+                                    "name": "application/xml"
+                                },
+                                "application/json": {
+                                    "name": "application/json"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "description": "Get the notifications feed for the current user.",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/streams/notifications{mediaTypeExtension}",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "streams",
+                "notifications{mediaTypeExtension}"
+            ]
+        },
+        {
+            "relativeUri": "/suggestions{mediaTypeExtension}",
+            "type": "base",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "uriParameters": {
+                "mediaTypeExtension": {
+                    "name": "mediaTypeExtension",
+                    "displayName": "mediaTypeExtension",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/xml": {
+                                    "name": "application/xml"
+                                },
+                                "application/json": {
+                                    "name": "application/json"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "queryParameters": {
+                        "limit": {
+                            "name": "limit",
+                            "displayName": "limit",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Return only the specified number of suggestions.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/suggestions{mediaTypeExtension}",
+            "description": "Show suggested groups to join and users to follow.",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "suggestions{mediaTypeExtension}"
+            ]
+        },
+        {
+            "relativeUri": "/suggestions/{id}{mediaTypeExtension}",
+            "type": "base",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "uriParameters": {
+                "id": {
+                    "name": "id",
+                    "displayName": "id",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                },
+                "mediaTypeExtension": {
+                    "name": "mediaTypeExtension",
+                    "displayName": "mediaTypeExtension",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "method": "delete",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/suggestions/{id}{mediaTypeExtension}",
+            "description": "Decline a suggestion.",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "suggestions",
+                "{id}{mediaTypeExtension}"
+            ]
+        },
+        {
+            "relativeUri": "/subscriptions",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "methods": [
+                {
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "description": "Subscribe to a user or topic. Supports target_type and target_id parameters.",
+                    "method": "post",
+                    "is": [
+                        "subscriptionManagement"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "description": "Unsubscribe to a user or topic. Supports target_type and target_id parameters.",
+                    "method": "delete",
+                    "is": [
+                        "subscriptionManagement"
+                    ],
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "resources": [
+                {
+                    "relativeUri": "/to_topic/{id}{mediaTypeExtension}",
+                    "type": "base",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "id": {
+                            "name": "id",
+                            "displayName": "id",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "mediaTypeExtension": {
+                            "name": "mediaTypeExtension",
+                            "displayName": "mediaTypeExtension",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200"
+                                },
+                                "404": {
+                                    "code": "404"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/to_topic/{id}{mediaTypeExtension}",
+                    "description": "Check to see if you are subscribed to topic with the given id. Returns 404 when you are not following a given topic.",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "to_topic",
+                        "{id}{mediaTypeExtension}"
+                    ]
+                },
+                {
+                    "relativeUri": "/to_user/{id}{mediaTypeExtension}",
+                    "type": "base",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "id": {
+                            "name": "id",
+                            "displayName": "id",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "mediaTypeExtension": {
+                            "name": "mediaTypeExtension",
+                            "displayName": "mediaTypeExtension",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200"
+                                },
+                                "404": {
+                                    "code": "404"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/to_user/{id}{mediaTypeExtension}",
+                    "description": "Check to see if you are subscribed to the user with the given id. Returns 404 when you are not following a given user. If you are in a Community that is set to follow everyone all requests will return 404.",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "to_user",
+                        "{id}{mediaTypeExtension}"
+                    ]
+                },
+                {
+                    "relativeUri": "/to_thread/{id}{mediaTypeExtension}",
+                    "type": "base",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "id": {
+                            "name": "id",
+                            "displayName": "id",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "mediaTypeExtension": {
+                            "name": "mediaTypeExtension",
+                            "displayName": "mediaTypeExtension",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200"
+                                },
+                                "404": {
+                                    "code": "404"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/to_thread/{id}{mediaTypeExtension}",
+                    "description": "Check to see if you are subscribed to thread with the given id. Returns 404 when you are not following a given thread. If you are in a Community that is set to follow everyone all requests will return 404.",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "to_thread",
+                        "{id}{mediaTypeExtension}"
+                    ]
+                }
+            ],
+            "displayName": "/subscriptions",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "subscriptions"
+            ]
+        },
+        {
+            "relativeUri": "/autocomplete/ranked",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json"
+                                }
+                            }
+                        },
+                        "400": {
+                            "code": "400",
+                            "description": "If prefix or models parameter is missing, a 400 -- Bad Request is returned."
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "queryParameters": {
+                        "prefix": {
+                            "name": "prefix",
+                            "displayName": "prefix",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "A string for matching against the searchable fields in the specified models. For example, specifying the parameter prefix=ab would return autocomplete results for models that have searchable fields that begin with \"ab\".",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "models": {
+                            "name": "models",
+                            "displayName": "models",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "modelName:count -  Accepts a comma separated list of the models that should be searched on and the how many results should be returned for each model. This is specified in the format modelName1:count1,modelName2:count2 where count is an integer and modelName can be the following:",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/autocomplete/ranked",
+            "description": "Return typeahead suggestions for the prefix passed",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "autocomplete",
+                "ranked"
+            ]
+        },
+        {
+            "relativeUri": "/invitations{mediaTypeExtension}",
+            "type": "base",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "uriParameters": {
+                "mediaTypeExtension": {
+                    "name": "mediaTypeExtension",
+                    "displayName": "mediaTypeExtension",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "queryParameters": {
+                        "email": {
+                            "name": "email",
+                            "displayName": "email",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The email address of the user being invited. This can be specified multiple times to invite multiple users, or using email1 through email20.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/invitations{mediaTypeExtension}",
+            "description": "Sends an email invitation to a user who has not yet joined the current users yammer network. If the current user is a verified admin in a paid yammer network, users with external email domains can be added. If the current user is not, only email addresses for official company domains will be allowed.",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "invitations{mediaTypeExtension}"
+            ]
+        },
+        {
+            "relativeUri": "/search{mediaTypeExtension}",
+            "type": "base",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "uriParameters": {
+                "mediaTypeExtension": {
+                    "name": "mediaTypeExtension",
+                    "displayName": "mediaTypeExtension",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "queryParameters": {
+                        "search ": {
+                            "name": "search ",
+                            "displayName": "search ",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The search query.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "page": {
+                            "name": "page",
+                            "displayName": "page",
+                            "type": "integer",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Only 20 results of each type will be returned for each page, but a total count is returned with each query. page=1 (the default) will return items 1-20, page=2 will return items 21-30, etc.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "num_per_page": {
+                            "name": "num_per_page",
+                            "displayName": "num_per_page",
+                            "type": "number",
+                            "required": false,
+                            "default": 20,
+                            "repeat": false,
+                            "description": "This allows you to limit the number of results of each type per page, up to a maximum of 20, the default value.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/search{mediaTypeExtension}",
+            "description": "The search resource will return a list of messages, users, topics and groups that match the users search query.",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "search{mediaTypeExtension}"
+            ]
+        },
+        {
+            "relativeUri": "/networks/current{mediaTypeExtension}",
+            "type": "base",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "uriParameters": {
+                "mediaTypeExtension": {
+                    "name": "mediaTypeExtension",
+                    "displayName": "mediaTypeExtension",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": [
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "queryParameters": {
+                        "include_suspended": {
+                            "name": "include_suspended",
+                            "displayName": "include_suspended",
+                            "type": "boolean",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Include networks the user is suspended in.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "exclude_own_messages_from_unseen": {
+                            "name": "exclude_own_messages_from_unseen",
+                            "displayName": "exclude_own_messages_from_unseen",
+                            "type": "boolean",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Exclude the users own messages from the unseen count. This is good for unread badges.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "displayName": "/networks/current{mediaTypeExtension}",
+            "description": "Returns a list of networks to which the current user has access. Supports included_suspended parameter.",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "networks",
+                "current{mediaTypeExtension}"
+            ]
+        },
+        {
+            "relativeUri": "/messages",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "resources": [
+                {
+                    "relativeUri": "/my_feed{mediaTypeExtension}",
+                    "type": "messages",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "mediaTypeExtension": {
+                            "name": "mediaTypeExtension",
+                            "displayName": "mediaTypeExtension",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "displayName": "/my_feed{mediaTypeExtension}",
+                    "description": "The user's feed, based on the selection they have made between  conversations.",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "my_feed{mediaTypeExtension}"
+                    ]
+                },
+                {
+                    "relativeUri": "/received{mediaTypeExtension}",
+                    "type": "messages",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "mediaTypeExtension": {
+                            "name": "mediaTypeExtension",
+                            "displayName": "mediaTypeExtension",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "displayName": "/received{mediaTypeExtension}",
+                    "description": "All messages received by the user.",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "received{mediaTypeExtension}"
+                    ]
+                },
+                {
+                    "relativeUri": "/algo{mediaTypeExtension}",
+                    "type": "messages",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "mediaTypeExtension": {
+                            "name": "mediaTypeExtension",
+                            "displayName": "mediaTypeExtension",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "displayName": "/algo{mediaTypeExtension}",
+                    "description": "The algorithmic feed for the user that corresponds to conversations, which is what the vast majority of users will see in the Yammer web interface.",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "algo{mediaTypeExtension}"
+                    ]
+                },
+                {
+                    "relativeUri": "/sent{mediaTypeExtension}",
+                    "type": "messages",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "mediaTypeExtension": {
+                            "name": "mediaTypeExtension",
+                            "displayName": "mediaTypeExtension",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "displayName": "/sent{mediaTypeExtension}",
+                    "description": "All messages sent by the user. Alias for /api/v1/messages/from_user/logged-in_user_id.format.",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "sent{mediaTypeExtension}"
+                    ]
+                },
+                {
+                    "relativeUri": "/private{mediaTypeExtension}",
+                    "type": "messages",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "mediaTypeExtension": {
+                            "name": "mediaTypeExtension",
+                            "displayName": "mediaTypeExtension",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "displayName": "/private{mediaTypeExtension}",
+                    "description": "All messages received by the user.",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "private{mediaTypeExtension}"
+                    ]
+                },
+                {
+                    "relativeUri": "/{id}",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "id": {
+                            "name": "id",
+                            "displayName": "id",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "Remove a message. The message must be owned by the current user.\nIf your app does not support the DELETE method you can do a POST with the parameter _method=DELETE.\n",
+                            "method": "delete",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "Send the current user a copy of the message specified by the numeric string ID.",
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/{id}",
+                    "description": "Remove a message. The message must be owned by the current user.",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{id}"
+                    ]
+                },
+                {
+                    "relativeUri": "/liked_by/current{mediaTypeExtension}",
+                    "type": "base",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "mediaTypeExtension": {
+                            "name": "mediaTypeExtension",
+                            "displayName": "mediaTypeExtension",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "methods": [
+                        {
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "method": "post",
+                            "is": [
+                                "acceptsMessageId"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "method": "delete",
+                            "is": [
+                                "acceptsMessageId"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/liked_by/current{mediaTypeExtension}",
+                    "description": "Marks the specified message as liked by the current user.",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "liked_by",
+                        "current{mediaTypeExtension}"
+                    ]
+                },
+                {
+                    "relativeUri": "/about_topic/{id}{mediaTypeExtension}",
+                    "type": "messages",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "id": {
+                            "name": "id",
+                            "displayName": "id",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "mediaTypeExtension": {
+                            "name": "mediaTypeExtension",
+                            "displayName": "mediaTypeExtension",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "methods": [
+                        {
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/about_topic/{id}{mediaTypeExtension}",
+                    "description": "The feed of messages for a hashtag specified by the numeric string ID.",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "about_topic",
+                        "{id}{mediaTypeExtension}"
+                    ]
+                },
+                {
+                    "relativeUri": "/following{mediaTypeExtension}",
+                    "type": "messages",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "mediaTypeExtension": {
+                            "name": "mediaTypeExtension",
+                            "displayName": "mediaTypeExtension",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "displayName": "/following{mediaTypeExtension}",
+                    "description": "The  feed which is conversations involving people, groups and topics that the user is following.",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "following{mediaTypeExtension}"
+                    ]
+                }
+            ],
+            "displayName": "/messages",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "messages"
+            ]
+        },
+        {
+            "relativeUri": "/users",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "resources": [
+                {
+                    "relativeUri": "/in_group/{id}{mediaTypeExtension}",
+                    "type": "base",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "id": {
+                            "name": "id",
+                            "displayName": "id",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "mediaTypeExtension": {
+                            "name": "mediaTypeExtension",
+                            "displayName": "mediaTypeExtension",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "methods": [
+                        {
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "method": "get",
+                            "is": [
+                                "acceptsPage"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/in_group/{id}{mediaTypeExtension}",
+                    "description": "Users in a group. Supports the page parameter.",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "in_group",
+                        "{id}{mediaTypeExtension}"
+                    ]
+                },
+                {
+                    "relativeUri": "/{id}{mediaTypeExtension}",
+                    "type": "base",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "id": {
+                            "name": "id",
+                            "displayName": "id",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "mediaTypeExtension": {
+                            "name": "mediaTypeExtension",
+                            "displayName": "mediaTypeExtension",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml"
+                                        },
+                                        "application/json": {
+                                            "name": "application/json"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200"
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "Update information about a user. The target user should be the current user or a verified admin in a paid Yammer network.",
+                            "method": "put",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "Suspend or delete a user. Current user should be a verified admin in a paid Yammer network to perform this action.",
+                            "method": "delete",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/{id}{mediaTypeExtension}",
+                    "description": "View data about a user.",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{id}{mediaTypeExtension}"
+                    ]
+                },
+                {
+                    "relativeUri": "/current{mediaTypeExtension}",
+                    "type": "base",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "mediaTypeExtension": {
+                            "name": "mediaTypeExtension",
+                            "displayName": "mediaTypeExtension",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml"
+                                        },
+                                        "application/json": {
+                                            "name": "application/json"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "View data about the current user.",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/current{mediaTypeExtension}",
+                    "description": "View data about the current user.",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "current{mediaTypeExtension}"
+                    ]
+                },
+                {
+                    "relativeUri": "/by_email{mediaTypeExtension}",
+                    "type": "base",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "mediaTypeExtension": {
+                            "name": "mediaTypeExtension",
+                            "displayName": "mediaTypeExtension",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml"
+                                        },
+                                        "application/json": {
+                                            "name": "application/json"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "queryParameters": {
+                                "email": {
+                                    "name": "email",
+                                    "displayName": "email",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/by_email{mediaTypeExtension}",
+                    "description": "Alias to /api/v1/users/current users id.format. Supports include_followed_users, include_followed_tags, and include_group_memberships parameters.",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "by_email{mediaTypeExtension}"
+                    ]
+                }
+            ],
+            "displayName": "/users",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "users"
+            ]
+        }
+    ],
+    "documentation": [
+        {
+            "title": "Headline",
+            "content": "Yammer is a leading enterprise social network for businesses to get work done smarter and faster."
+        }
+    ],
+    "__METADATA__": {
+        "primitiveValuesMeta": {
+            "protocols": {
+                "calculated": true
+            }
+        }
+    }
+}

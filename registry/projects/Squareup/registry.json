@@ -1,0 +1,5 @@
+{"apis": [{
+    "name": "Squareup",
+    "location": "https://raw.githubusercontent.com/raml-apis/Squareup/production/squareup.raml",
+    "RAMLVersion": "0.8"
+}]}

@@ -1,0 +1,349 @@
+{
+    "uses": [
+        {
+            "key": "types",
+            "value": "types.raml"
+        }
+    ],
+    "securitySchemes": [
+        {
+            "oauth_2_0": {
+                "name": "oauth_2_0",
+                "type": "OAuth 2.0",
+                "description": "Google recommend using OAuth 2.0 to authorize requests.\n",
+                "describedBy": {
+                    "queryParameters": {
+                        "access_token": {
+                            "name": "access_token",
+                            "displayName": "access_token",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Used to send a valid OAuth 2 access token\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "headers": {
+                        "Authorization": {
+                            "name": "Authorization",
+                            "displayName": "Authorization",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Used to send a valid OAuth 2 access token.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": [
+                        {
+                            "code": "401",
+                            "description": "Authorization error.\n"
+                        }
+                    ]
+                },
+                "settings": {
+                    "accessTokenUri": "https://login.uber.com/oauth/token",
+                    "authorizationUri": "https://login.uber.com/oauth/authorize",
+                    "authorizationGrants": [
+                        "code"
+                    ],
+                    "scopes": [
+                        "profile",
+                        "history",
+                        "history_lite",
+                        "request",
+                        "request_receipt"
+                    ]
+                }
+            }
+        },
+        {
+            "bearer": {
+                "name": "bearer",
+                "type": "x-bearer",
+                "description": "Basically, you need to set the header 'Authorization' to 'Bearer <API_KEY>'. If you're having trouble with this, email support@stripe.com\n",
+                "describedBy": {
+                    "headers": {
+                        "Authorization": {
+                            "name": "Authorization",
+                            "displayName": "Authorization",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "title": "Uber user activity",
+    "version": "v1.2",
+    "baseUri": "https://{apiMode}.uber.com/{version}",
+    "baseUriParameters": {
+        "apiMode": {
+            "name": "apiMode",
+            "displayName": "apiMode",
+            "type": [
+                "string"
+            ],
+            "repeat": false,
+            "required": true,
+            "description": "In order to use the Sandbox environment set 'sandbox-api'. Otherwise set 'api'.",
+            "enum": [
+                "sandbox-api",
+                "api"
+            ],
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    },
+                    "type": {
+                        "insertedAsDefault": true
+                    },
+                    "repeat": {
+                        "insertedAsDefault": true
+                    },
+                    "required": {
+                        "insertedAsDefault": true
+                    }
+                }
+            }
+        },
+        "version": {
+            "name": "version",
+            "displayName": "version",
+            "type": [
+                "string"
+            ],
+            "repeat": false,
+            "required": true,
+            "enum": [
+                "v1.2"
+            ],
+            "__METADATA__": {
+                "calculated": true,
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    },
+                    "type": {
+                        "insertedAsDefault": true
+                    },
+                    "repeat": {
+                        "insertedAsDefault": true
+                    },
+                    "required": {
+                        "insertedAsDefault": true
+                    },
+                    "enum": {
+                        "calculated": true
+                    }
+                }
+            }
+        }
+    },
+    "protocols": [
+        "HTTPS"
+    ],
+    "securedBy": [
+        "oauth_2_0"
+    ],
+    "resources": [
+        {
+            "methods": [
+                {
+                    "queryParameters": {
+                        "offset": {
+                            "name": "offset",
+                            "displayName": "offset",
+                            "type": [
+                                "integer"
+                            ],
+                            "default": 0,
+                            "example": 2,
+                            "repeat": false,
+                            "required": true,
+                            "description": "Offset the list of returned results by this amount. Default is zero.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            },
+                            "structuredExample": {
+                                "value": 2,
+                                "strict": true,
+                                "name": null,
+                                "structuredValue": 2
+                            }
+                        },
+                        "limit": {
+                            "name": "limit",
+                            "displayName": "limit",
+                            "type": [
+                                "integer"
+                            ],
+                            "default": 5,
+                            "example": 20,
+                            "repeat": false,
+                            "required": true,
+                            "description": "Number of items to retrieve. Default is 5, maximum is 50.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            },
+                            "structuredExample": {
+                                "value": 20,
+                                "strict": true,
+                                "name": null,
+                                "structuredValue": 20
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "type": [
+                                        "types.UserHistoryResponse"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "description": "The User Activity endpoint returns a limited amount of data about a user's lifetime activity with Uber. The response will include pickup and dropoff times, the city the trips took place in, the distance of past requests, and information about which products were requested.\n\nThe history array in the response will have a maximum length based on the limit parameter. The response value count may exceed limit, therefore subsequent API requests may be necessary.\n",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
+            "description": "The User Activity endpoint returns a limited amount of data about a user's lifetime activity with Uber. The response will include pickup and dropoff times, the city the trips took place in, the distance of past requests, and information about which products were requested.\n\nThe history array in the response will have a maximum length based on the limit parameter. The response value count may exceed limit, therefore subsequent API requests may be necessary.\n",
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "relativeUri": "/history",
+            "displayName": "/history",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "history"
+            ]
+        }
+    ],
+    "documentation": [
+        {
+            "title": "Headline",
+            "content": "can not resolve docs/userActivity/headline.md"
+        }
+    ],
+    "__METADATA__": {
+        "primitiveValuesMeta": {
+            "protocols": {
+                "calculated": true
+            }
+        }
+    }
+}

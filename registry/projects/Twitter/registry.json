@@ -1,0 +1,12 @@
+{"apis": [
+    {
+        "name": "Twitter API",
+        "location": "https://raw.githubusercontent.com/raml-apis/Twitter/production/api.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "Twitter Streaming API",
+        "location": "https://raw.githubusercontent.com/raml-apis/Twitter/production/userstreamApi.raml",
+        "RAMLVersion": "0.8"
+    }
+]}

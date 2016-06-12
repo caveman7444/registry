@@ -1,0 +1,12 @@
+{"apis": [
+    {
+        "name": "Magento",
+        "location": "https://raw.githubusercontent.com/raml-apis/Magento/master/api.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "Magento",
+        "location": "https://raw.githubusercontent.com/raml-apis/Magento/staging/api.raml",
+        "RAMLVersion": "0.8"
+    }
+]}

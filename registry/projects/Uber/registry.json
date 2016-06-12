@@ -1,0 +1,27 @@
+{"apis": [
+    {
+        "name": "Uber",
+        "location": "https://raw.githubusercontent.com/raml-apis/Uber/production/api.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "Uber user activity",
+        "location": "https://raw.githubusercontent.com/raml-apis/Uber/production/userActivity.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "Uber",
+        "location": "https://raw.githubusercontent.com/raml-apis/Uber/raml1.0/api.raml",
+        "RAMLVersion": "1.0"
+    },
+    {
+        "name": "",
+        "location": "https://raw.githubusercontent.com/raml-apis/Uber/raml1.0/types.raml",
+        "RAMLVersion": "1.0 Library"
+    },
+    {
+        "name": "Uber user activity",
+        "location": "https://raw.githubusercontent.com/raml-apis/Uber/raml1.0/userActivity.raml",
+        "RAMLVersion": "1.0"
+    }
+]}

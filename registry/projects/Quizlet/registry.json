@@ -1,0 +1,12 @@
+{"apis": [
+    {
+        "name": "\"Quizlet\"",
+        "location": "https://raw.githubusercontent.com/raml-apis/Quizlet/master/quizlet.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "\"Quizlet\"",
+        "location": "https://raw.githubusercontent.com/raml-apis/Quizlet/staging/quizlet.raml",
+        "RAMLVersion": "0.8"
+    }
+]}

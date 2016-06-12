@@ -1,0 +1,917 @@
+{
+    "uses": [
+        {
+            "key": "types",
+            "value": "types.raml"
+        }
+    ],
+    "resourceTypes": [
+        {
+            "standardResponse": {
+                "securedBy": [
+                    "oauth_2_0"
+                ],
+                "name": "standardResponse",
+                "__METADATA__": {
+                    "primitiveValuesMeta": {
+                        "securedBy": {
+                            "calculated": true
+                        }
+                    }
+                },
+                "delete": {
+                    "headers": {
+                        "If-Match": {
+                            "name": "If-Match",
+                            "displayName": "If-Match",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": false,
+                            "description": "If-Match header let you ensure that your app only alters files/folders\non Box if you have the current version.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "204": {
+                            "code": "204",
+                            "description": "\"No Content. Item successfully removed.\"\n"
+                        },
+                        "404": {
+                            "code": "404",
+                            "description": "The file is not in the trash."
+                        },
+                        "412": {
+                            "code": "412",
+                            "description": "Precondition Failed. The precondition given in one or more of the\nrequest-header fields evaluated to false when it was tested on the\nserver.\n"
+                        },
+                        "429": {
+                            "code": "429",
+                            "description": "Your application is sending too many simultaneous requests."
+                        }
+                    },
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "method": "delete",
+                    "__METADATA__": {
+                        "optional": true,
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                "post": {
+                    "headers": {
+                        "If-Match": {
+                            "name": "If-Match",
+                            "displayName": "If-Match",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": false,
+                            "description": "If-Match header let you ensure that your app only alters files/folders\non Box if you have the current version.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "Content-MD5": {
+                            "name": "Content-MD5",
+                            "displayName": "Content-MD5",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "The SHA1 hash of the file.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "201": {
+                            "code": "201",
+                            "description": "The request has been fulfilled and resulted in a new resource being\ncreated.\n"
+                        },
+                        "403": {
+                            "code": "403",
+                            "description": "Forbidden. The server understood the request, but is refusing to\nfulfill it.\n"
+                        },
+                        "405": {
+                            "code": "405",
+                            "description": "Method Not Allowed. The method specified in the Request-Line is not\nallowed for the resource identified by the Request-URI.\n"
+                        },
+                        "409": {
+                            "code": "409",
+                            "description": "Conflict. The request could not be completed due to a conflict with\nthe current state of the resource. Often happened because of file\nnames duplication.\n"
+                        },
+                        "429": {
+                            "code": "429",
+                            "description": "Your application is sending too many simultaneous requests."
+                        }
+                    },
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "method": "post",
+                    "__METADATA__": {
+                        "optional": true,
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                "put": {
+                    "headers": {
+                        "If-Match": {
+                            "name": "If-Match",
+                            "displayName": "If-Match",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": false,
+                            "description": "If-Match header let you ensure that your app only alters files/folders\non Box if you have the current version.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "The request has succeeded. The information returned with the response\nis dependent on the method used in the request.\n"
+                        },
+                        "429": {
+                            "code": "429",
+                            "description": "Your application is sending too many simultaneous requests."
+                        }
+                    },
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "method": "put",
+                    "__METADATA__": {
+                        "optional": true,
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                "get": {
+                    "headers": {
+                        "If-None-Match": {
+                            "name": "If-None-Match",
+                            "displayName": "If-None-Match",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": false,
+                            "description": "If-None-Match headers ensure that you don't retrieve unnecessary data\nif you already have the most current version on-hand.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "On-Behalf-Of": {
+                            "name": "On-Behalf-Of",
+                            "displayName": "On-Behalf-Of",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": false,
+                            "description": "Used for enterprise administrators to make API calls on behalf of their\nmanaged users. To enable this functionality, please contact us with your\nAPI key.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "The request has succeeded. The information returned with the response\nis dependent on the method used in the request.\n"
+                        },
+                        "202": {
+                            "code": "202",
+                            "description": "The request has been accepted for processing, but the processing has\nnot been completed.\n"
+                        },
+                        "302": {
+                            "code": "302",
+                            "description": "Found. The requested resource resides temporarily under a different URI."
+                        },
+                        "304": {
+                            "code": "304",
+                            "description": "Not Modified. If the client has performed a conditional GET request\nand access is allowed, but the document has not been modified\n"
+                        },
+                        "400": {
+                            "code": "400",
+                            "description": "Bad Request. The request could not be understood by the server due\nto malformed syntax.\n"
+                        },
+                        "401": {
+                            "code": "401",
+                            "description": "Unauthorized. The request requires user authentication."
+                        },
+                        "404": {
+                            "code": "404",
+                            "description": "Not Found. The server has not found anything matching the Request-URI."
+                        },
+                        "429": {
+                            "code": "429",
+                            "description": "Your application is sending too many simultaneous requests."
+                        },
+                        "500": {
+                            "code": "500",
+                            "description": "We couldn't return the representation due to an internal server error."
+                        },
+                        "507": {
+                            "code": "507",
+                            "description": "Insufficient Storage. The server is unable to store the representation\nneeded to complete the request\n"
+                        }
+                    },
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "method": "get",
+                    "__METADATA__": {
+                        "optional": true,
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "securitySchemes": [
+        {
+            "oauth_2_0": {
+                "name": "oauth_2_0",
+                "type": "OAuth 2.0",
+                "description": "The Box API uses OAuth 2 for authentication. An authorization header containing\na valid access_token must be included in every request.\n",
+                "describedBy": {
+                    "queryParameters": {
+                        "access_token": {
+                            "name": "access_token",
+                            "displayName": "access_token",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "headers": {
+                        "Authorization": {
+                            "name": "Authorization",
+                            "displayName": "Authorization",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"access_token\" query string parameter.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "settings": {
+                    "accessTokenUri": "https://www.box.com/api/oauth2/token",
+                    "authorizationUri": "https://www.box.com/api/oauth2/authorize",
+                    "authorizationGrants": [
+                        "code"
+                    ]
+                }
+            }
+        }
+    ],
+    "title": "Box.com upload API",
+    "version": "2.0",
+    "baseUri": "https://upload.box.com/api/{version}",
+    "baseUriParameters": {
+        "version": {
+            "name": "version",
+            "displayName": "version",
+            "type": [
+                "string"
+            ],
+            "repeat": false,
+            "required": true,
+            "enum": [
+                "2.0"
+            ],
+            "__METADATA__": {
+                "calculated": true,
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    },
+                    "type": {
+                        "insertedAsDefault": true
+                    },
+                    "repeat": {
+                        "insertedAsDefault": true
+                    },
+                    "required": {
+                        "insertedAsDefault": true
+                    },
+                    "enum": {
+                        "calculated": true
+                    }
+                }
+            }
+        }
+    },
+    "protocols": [
+        "HTTPS"
+    ],
+    "mediaType": "application/json",
+    "securedBy": [
+        "oauth_2_0"
+    ],
+    "resources": [
+        {
+            "securedBy": [
+                "oauth_2_0"
+            ],
+            "relativeUri": "/files",
+            "displayName": "/files",
+            "resources": [
+                {
+                    "methods": [
+                        {
+                            "headers": {
+                                "Content-MD5": {
+                                    "name": "Content-MD5",
+                                    "displayName": "Content-MD5",
+                                    "type": [
+                                        "string"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "description": "The SHA1 hash of the file",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "displayName": "application/json",
+                                            "type": [
+                                                "types.UploadFile-response"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "body": {
+                                "multipart/form-data": {
+                                    "name": "multipart/form-data",
+                                    "displayName": "multipart/form-data",
+                                    "type": [
+                                        "object"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "properties": {
+                                        "filename": {
+                                            "name": "filename",
+                                            "displayName": "filename",
+                                            "type": [
+                                                "file"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "The name of the file to be uploaded",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "parent_Id": {
+                                            "name": "parent_Id",
+                                            "displayName": "parent_Id",
+                                            "type": [
+                                                "integer"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "The ID of folder where this file should be uploaded",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "content_created_at": {
+                                            "name": "content_created_at",
+                                            "displayName": "content_created_at",
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "The time this file was created on the user’s machine. See here for more details.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "content_modified_at": {
+                                            "name": "content_modified_at",
+                                            "displayName": "content_modified_at",
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "The time this file was last modified on the user’s machine. See here for more details.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "Upload a File.\nUse the Uploads API to allow users to add a new file. The user can then\nupload a file by specifying the destination folder for the file. If the user\nprovides a file name that already exists in the destination folder, the\nuser will receive an error. A different Box URL,\nhttps://upload.box.com/api/2.0/files/content, handles uploads. This API\nuses the multipart post method to complete all upload tasks. You can\noptionally specify a Content-MD5 header with the SHA1 hash of the file\nto ensure that the file is not corrupted in transit.\nSupported Filenames - The only names that will not be supported are those\nthat contain / or \\, names with leading or trailing spaces, and the special\nnames '.' and '..'.\nA full file object is returned inside of a collection if the ID is valid and\nif the update is successful. An error is thrown when a name collision occurs.\n",
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "type": "standardResponse",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "relativeUri": "/content",
+                    "displayName": "/content",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "content"
+                    ]
+                },
+                {
+                    "methods": [
+                        {
+                            "headers": {
+                                "If-Match": {
+                                    "name": "If-Match",
+                                    "displayName": "If-Match",
+                                    "type": [
+                                        "string"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "description": "This is in the field of the file object.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "displayName": "application/json",
+                                            "type": [
+                                                "types.UploadFile-response"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "body": {
+                                "multipart/form-data": {
+                                    "name": "multipart/form-data",
+                                    "displayName": "multipart/form-data",
+                                    "type": [
+                                        "object"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "properties": {
+                                        "filename": {
+                                            "name": "filename",
+                                            "displayName": "filename",
+                                            "type": [
+                                                "file"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "The name of the file to be uploaded",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "content_modified_at": {
+                                            "name": "content_modified_at",
+                                            "displayName": "content_modified_at",
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "The time this file was last modified on the user’s machine. See here for more details.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "description": "Upload a New Version of a File.\nNote that uploads are handled through https://upload.box.com. This method is\nused to upload a new version of an existing file in a user's account. Similar\nto regular file uploads, these are performed as multipart form uploads An\noptional If-Match header can be included to ensure that client only overwrites\nthe file if it knows about the latest version. The filename on Box will remain\nthe same as the previous version. To update the file's name, use PUT /files/{id}\nSupported Filenames - The only names that will not be supported are those tha\ncontain / or \\, names with leading or trailing spaces, and the special names\n'.' and '..'.\nThe updated file object will be returned inside of a file collection. Errors\nmay occur due to bad filenames and invalid file IDs.\n",
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "type": "standardResponse",
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "uriParameters": {
+                        "fileId": {
+                            "name": "fileId",
+                            "displayName": "fileId",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "Box's unique string identifying this file.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "relativeUri": "/{fileId}/content",
+                    "displayName": "/{fileId}/content",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "securedBy": {
+                                "calculated": true
+                            },
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "{fileId}",
+                        "content"
+                    ]
+                }
+            ],
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "securedBy": {
+                        "calculated": true
+                    },
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "files"
+            ]
+        }
+    ],
+    "documentation": [
+        {
+            "title": "Headline",
+            "content": "can not resolve docs/boxUploadAPI/headline.md"
+        }
+    ],
+    "__METADATA__": {
+        "primitiveValuesMeta": {
+            "protocols": {
+                "calculated": true
+            }
+        }
+    }
+}

@@ -1,0 +1,852 @@
+{
+    "title": "Google Predicion",
+    "version": "v1.6",
+    "baseUri": "https://www.googleapis.com/prediction/{version}",
+    "baseUriParameters": {
+        "version": {
+            "name": "version",
+            "displayName": "version",
+            "type": "string",
+            "required": true,
+            "repeat": false,
+            "enum": [
+                "v1.6"
+            ],
+            "__METADATA__": {
+                "calculated": true,
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    },
+                    "type": {
+                        "insertedAsDefault": true
+                    },
+                    "required": {
+                        "insertedAsDefault": true
+                    },
+                    "repeat": {
+                        "insertedAsDefault": true
+                    },
+                    "enum": {
+                        "calculated": true
+                    }
+                }
+            }
+        }
+    },
+    "protocols": [
+        "HTTPS"
+    ],
+    "schemas": [
+        {
+            "predictRequest": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"input\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"csvInstance\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"string\"\n            }\n          ]\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+            "predictResponse": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"kind\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"selfLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"outputLabel\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"outputMulti\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"label\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"score\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    } ,\n    \"outputValue\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "analyzeResponse": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"kind\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"selfLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"errors\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"(key)\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    } ,\n    \"dataDescription\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"outputFeature\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"numeric\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"count\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"mean\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"variance\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            } ,\n            \"text\" : {\n              \"type\" : \"array\" ,\n              \"required\" : false ,\n              \"items\" : [\n                {\n                  \"type\" : \"object\" ,\n                  \"properties\" : {\n                    \"value\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"count\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    }\n                  }\n                }\n              ]\n            }\n          }\n        } ,\n        \"features\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"object\" ,\n              \"properties\" : {\n                \"index\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"numeric\" : {\n                  \"type\" : \"object\" ,\n                  \"required\" : false ,\n                  \"properties\" : {\n                    \"count\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"mean\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"variance\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    }\n                  }\n                } ,\n                \"categorical\" : {\n                  \"type\" : \"object\" ,\n                  \"required\" : false ,\n                  \"properties\" : {\n                    \"count\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"values\" : {\n                      \"type\" : \"array\" ,\n                      \"required\" : false ,\n                      \"items\" : [\n                        {\n                          \"type\" : \"object\" ,\n                          \"properties\" : {\n                            \"value\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"count\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            }\n                          }\n                        }\n                      ]\n                    }\n                  }\n                } ,\n                \"text\" : {\n                  \"type\" : \"object\" ,\n                  \"required\" : false ,\n                  \"properties\" : {\n                    \"count\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    }\n                  }\n                }\n              }\n            }\n          ]\n        }\n      }\n    } ,\n    \"modelDescription\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"modelinfo\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"confusionMatrix\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"(key)\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"(key)\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            }\n          }\n        } ,\n        \"confusionMatrixRowTotals\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"(key)\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+            "trainedmodelResponse": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"kind\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"selfLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"created\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"trainingComplete\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"modelInfo\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"numberInstances\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"modelType\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"numberLabels\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"classificationAccuracy\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"classWeightedAccuracy\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"meanSquaredError\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"trainingStatus\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "trainPredictionRequest": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"sourceModel\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"storageDataLocation\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"storagePMMLLocation\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"storagePMMLModelLocation\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"modelType\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"trainingInstances\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"output\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"csvInstance\" : {\n              \"type\" : \"array\" ,\n              \"required\" : false ,\n              \"items\" : [\n                {\n                  \"type\" : \"string\"\n                }\n              ]\n            }\n          }\n        }\n      ]\n    } ,\n    \"utility\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"(key)\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+        },
+        {
+            "trainPredictionResponse": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"kind\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"selfLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"storageDataLocation\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"storagePMMLLocation\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"storagePMMLModelLocation\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"modelType\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "trainedmodelsResponse": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"kind\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"selfLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"nextPageToken\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"items\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n      ]\n    }\n  }\n}"
+        },
+        {
+            "trainedmodelPredictRequest": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"input\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"csvInstance\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n          ]\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+            "trainedmodelPredictResponse": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"kind\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"selfLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"outputLabel\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"outputMulti\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"label\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"score\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    } ,\n    \"outputValue\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+        },
+        {
+            "updateModelRequest": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"output\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"csvInstance\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"string\"\n        }\n      ]\n    }\n  }\n}"
+        }
+    ],
+    "traits": [
+        {
+            "standardQueryParameters": {
+                "queryParameters": {
+                    "access_token": {
+                        "name": "access_token",
+                        "displayName": "access_token",
+                        "type": "string",
+                        "required": true,
+                        "repeat": false,
+                        "description": "OAuth 2.0 token for the current user. One possible way to provide an OAuth 2.0 token.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "callback": {
+                        "name": "callback",
+                        "displayName": "callback",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Callback function. Name of the JavaScript callback function that handles the response. Used in JavaScript JSON-P requests.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "fields": {
+                        "name": "fields",
+                        "displayName": "fields",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Selector specifying a subset of fields to include in the response. For more information, see the partial response section in the Performance Tips document. Use for better performance.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "key": {
+                        "name": "key",
+                        "displayName": "key",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "API key. *Required unless you provide an OAuth 2.0 token. Your API key identifies your project and provides you with API access, quota, and reports. Obtain your project's API key from the Google Developers Console.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "prettyPrint": {
+                        "name": "prettyPrint",
+                        "displayName": "prettyPrint",
+                        "type": "string",
+                        "required": false,
+                        "default": true,
+                        "example": "true",
+                        "repeat": false,
+                        "description": "Returns response with indentations and line breaks. Returns the response in a human-readable format if true. Default value: true. When this is false, it can reduce the response payload size, which might lead to better performance in some environments.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "quotaUser": {
+                        "name": "quotaUser",
+                        "displayName": "quotaUser",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Lets you enforce per-user quotas from a server-side application even in cases when the user's IP address is unknown. This can occur, for example, with applications that run cron jobs on App Engine on a user's behalf.  You can choose any arbitrary string that uniquely identifies a user, but it is limited to 40 characters. Overrides userIp if both are provided. Learn more about capping usage.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    },
+                    "userIp": {
+                        "name": "userIp",
+                        "displayName": "userIp",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "IP address of the end user for whom the API call is being made. Lets you enforce per-user quotas when calling the API from a server-side application. Learn more about capping usage.",
+                        "__METADATA__": {
+                            "primitiveValuesMeta": {
+                                "displayName": {
+                                    "calculated": true
+                                },
+                                "type": {
+                                    "insertedAsDefault": true
+                                },
+                                "required": {
+                                    "insertedAsDefault": true
+                                },
+                                "repeat": {
+                                    "insertedAsDefault": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "name": "standardQueryParameters"
+            }
+        }
+    ],
+    "securitySchemes": [
+        {
+            "oauth_2_0": {
+                "name": "oauth_2_0",
+                "type": "OAuth 2.0",
+                "description": "Google recommend using OAuth 2.0 to authorize requests.\n",
+                "describedBy": {
+                    "responses": {
+                        "401": {
+                            "code": "401",
+                            "description": "Authorization error.\n"
+                        }
+                    },
+                    "queryParameters": {
+                        "access_token": {
+                            "name": "access_token",
+                            "displayName": "access_token",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Used to send a valid OAuth 2 access token\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "headers": {
+                        "Authorization": {
+                            "name": "Authorization",
+                            "displayName": "Authorization",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Used to send a valid OAuth 2 access token.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "settings": {
+                    "accessTokenUri": "https://accounts.google.com/o/oauth2/token",
+                    "authorizationUri": "https://accounts.google.com/o/oauth2/auth",
+                    "authorizationGrants": [
+                        "code"
+                    ],
+                    "scopes": [
+                        "https//www.googleapis.com/auth/prediction",
+                        "https//www.googleapis.com/auth/devstorage.full_control"
+                    ]
+                }
+            }
+        }
+    ],
+    "resources": [
+        {
+            "relativeUri": "/projects/{project}",
+            "uriParameters": {
+                "project": {
+                    "name": "project",
+                    "displayName": "project",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "__METADATA__": {
+                        "calculated": true,
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            },
+                            "type": {
+                                "insertedAsDefault": true
+                            },
+                            "required": {
+                                "insertedAsDefault": true
+                            },
+                            "repeat": {
+                                "insertedAsDefault": true
+                            }
+                        }
+                    }
+                }
+            },
+            "resources": [
+                {
+                    "relativeUri": "/hostedmodels/{hostedModelName}/predict",
+                    "uriParameters": {
+                        "hostedModelName": {
+                            "name": "hostedModelName",
+                            "displayName": "hostedModelName",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "calculated": true,
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "methods": [
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "predictResponse",
+                                            "example": "{\n  \"kind\" : \"prediction#output\" ,\n  \"id\" : \"string\" ,\n  \"selfLink\" : \"string\" ,\n  \"outputLabel\" : \"string\" ,\n  \"outputMulti\" : [\n    {\n      \"label\" : \"string\" ,\n      \"score\" : \"string\"\n    }\n  ] ,\n  \"outputValue\" : \"double\"\n}",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"kind\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"selfLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"outputLabel\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"outputMulti\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"label\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"score\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    } ,\n    \"outputValue\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                        }
+                                    }
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "predictRequest",
+                                    "example": "{\n  \"input\" : {\n    \"csvInstance\" : [\n      \"(value)\"\n    ]\n  }\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"input\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"csvInstance\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"string\"\n            }\n          ]\n        }\n      }\n    }\n  }\n}"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "Submit input and request an output against a hosted model.",
+                            "method": "post",
+                            "is": [
+                                "standardQueryParameters"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "displayName": "/hostedmodels/{hostedModelName}/predict",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "hostedmodels",
+                        "{hostedModelName}",
+                        "predict"
+                    ]
+                },
+                {
+                    "relativeUri": "/trainedmodels",
+                    "methods": [
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "trainPredictionResponse",
+                                            "example": "{\n  \"kind\" : \"prediction#training\" ,\n  \"id\" : \"string\" ,\n  \"selfLink\" : \"string\" ,\n  \"storageDataLocation\" : \"string\" ,\n  \"storagePMMLLocation\" : \"string\" ,\n  \"storagePMMLModelLocation\" : \"string\" ,\n  \"modelType\" : \"string\"\n}",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"kind\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"selfLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"storageDataLocation\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"storagePMMLLocation\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"storagePMMLModelLocation\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"modelType\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                        }
+                                    }
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "trainPredictionRequest",
+                                    "example": "{\n  \"id\" : \"string\" ,\n  \"sourceModel\" : \"string\" ,\n  \"storageDataLocation\" : \"string\" ,\n  \"storagePMMLLocation\" : \"string\" ,\n  \"storagePMMLModelLocation\" : \"string\" ,\n  \"modelType\" : \"string\" ,\n  \"trainingInstances\" : [\n    {\n      \"output\" : \"string\" ,\n      \"csvInstance\" : [\n        \"(value)\"\n      ]\n    }\n  ] ,\n  \"utility\" : [\n    {\n      \"(key)\" : \"double\"\n    }\n  ]\n}",
+                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"sourceModel\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"storageDataLocation\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"storagePMMLLocation\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"storagePMMLModelLocation\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"modelType\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"trainingInstances\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"output\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"csvInstance\" : {\n              \"type\" : \"array\" ,\n              \"required\" : false ,\n              \"items\" : [\n                {\n                  \"type\" : \"string\"\n                }\n              ]\n            }\n          }\n        }\n      ]\n    } ,\n    \"utility\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"(key)\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "Train a Prediction API model.",
+                            "method": "post",
+                            "is": [
+                                "standardQueryParameters"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "resources": [
+                        {
+                            "relativeUri": "/{id}",
+                            "uriParameters": {
+                                "id": {
+                                    "name": "id",
+                                    "displayName": "id",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "__METADATA__": {
+                                        "calculated": true,
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "204": {
+                                            "code": "204"
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "description": "Delete a trained model.",
+                                    "method": "delete",
+                                    "is": [
+                                        "standardQueryParameters"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "trainedmodelResponse",
+                                                    "example": "{\r\n  \"kind\" : \"prediction#training\" ,\r\n  \"id\" : \"string\" ,\r\n  \"selfLink\" : \"string\" ,\r\n  \"created\" : \"datetime\" ,\r\n  \"trainingComplete\" : \"datetime\" ,\r\n  \"modelInfo\" : {\r\n    \"numberInstances\" : \"long\" ,\r\n    \"modelType\" : \"string\" ,\r\n    \"numberLabels\" : \"long\" ,\r\n    \"classificationAccuracy\" : \"string\" ,\r\n    \"classWeightedAccuracy\" : \"string\" ,\r\n    \"meanSquaredError\" : \"string\"\r\n  } ,\r\n  \"trainingStatus\" : \"string\"\r\n}",
+                                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"kind\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"selfLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"created\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"trainingComplete\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"modelInfo\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"numberInstances\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"modelType\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"numberLabels\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"classificationAccuracy\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"classWeightedAccuracy\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"meanSquaredError\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"trainingStatus\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "description": "Check training status of your model.",
+                                    "method": "get",
+                                    "is": [
+                                        "standardQueryParameters"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "trainedmodelResponse",
+                                                    "example": "{\r\n  \"kind\" : \"prediction#training\" ,\r\n  \"id\" : \"string\" ,\r\n  \"selfLink\" : \"string\" ,\r\n  \"created\" : \"datetime\" ,\r\n  \"trainingComplete\" : \"datetime\" ,\r\n  \"modelInfo\" : {\r\n    \"numberInstances\" : \"long\" ,\r\n    \"modelType\" : \"string\" ,\r\n    \"numberLabels\" : \"long\" ,\r\n    \"classificationAccuracy\" : \"string\" ,\r\n    \"classWeightedAccuracy\" : \"string\" ,\r\n    \"meanSquaredError\" : \"string\"\r\n  } ,\r\n  \"trainingStatus\" : \"string\"\r\n}",
+                                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"kind\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"selfLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"created\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"trainingComplete\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"modelInfo\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"numberInstances\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"modelType\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"numberLabels\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"classificationAccuracy\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"classWeightedAccuracy\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"meanSquaredError\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"trainingStatus\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "updateModelRequest",
+                                            "example": "{\n  \"kind\" : \"prediction#output\" ,\n  \"id\" : \"string\" ,\n  \"selfLink\" : \"string\" ,\n  \"outputLabel\" : \"string\" ,\n  \"outputMulti\" : [\n    {\n      \"label\" : \"string\" ,\n      \"score\" : \"string\"\n    }\n  ] ,\n  \"outputValue\" : \"string\"\n}",
+                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"output\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"csvInstance\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"string\"\n        }\n      ]\n    }\n  }\n}"
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "description": "Add new data to a trained model.",
+                                    "method": "put",
+                                    "is": [
+                                        "standardQueryParameters"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "resources": [
+                                {
+                                    "relativeUri": "/analyze",
+                                    "methods": [
+                                        {
+                                            "responses": {
+                                                "200": {
+                                                    "code": "200",
+                                                    "body": {
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": "analyzeResponse",
+                                                            "example": "{\n  \"kind\" : \"prediction#analyze\" ,\n  \"id\" : \"string\" ,\n  \"selfLink\" : \"string\" ,\n  \"errors\" : [\n    {\n      \"(key)\" : \"string\"\n    }\n  ] ,\n  \"dataDescription\" : {\n    \"outputFeature\" : {\n      \"numeric\" : {\n        \"count\" : \"long\" ,\n        \"mean\" : \"string\" ,\n        \"variance\" : \"string\"\n      } ,\n      \"text\" : [\n        {\n          \"value\" : \"string\" ,\n          \"count\" : \"long\"\n        }\n      ]\n    } ,\n    \"features\" : [\n      {\n        \"index\" : \"long\" ,\n        \"numeric\" : {\n          \"count\" : \"long\" ,\n          \"mean\" : \"string\" ,\n          \"variance\" : \"string\"\n        } ,\n        \"categorical\" : {\n          \"count\" : \"long\" ,\n          \"values\" : [\n            {\n              \"value\" : \"string\" ,\n              \"count\" : \"long\"\n            }\n          ]\n        } ,\n        \"text\" : {\n          \"count\" : \"long\"\n        }\n      }\n    ]\n  } ,\n  \"modelDescription\" : {\n    \"modelinfo\" : \"trainedmodels Resource\" ,\n    \"confusionMatrix\" : {\n      \"(key)\" : {\n        \"(key)\" : \"string\"\n      }\n    } ,\n    \"confusionMatrixRowTotals\" : {\n      \"(key)\" : \"string\"\n    }\n  }\n}",
+                                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"kind\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"selfLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"errors\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"(key)\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    } ,\n    \"dataDescription\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"outputFeature\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"numeric\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"count\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"mean\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"variance\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            } ,\n            \"text\" : {\n              \"type\" : \"array\" ,\n              \"required\" : false ,\n              \"items\" : [\n                {\n                  \"type\" : \"object\" ,\n                  \"properties\" : {\n                    \"value\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"count\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    }\n                  }\n                }\n              ]\n            }\n          }\n        } ,\n        \"features\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"object\" ,\n              \"properties\" : {\n                \"index\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"numeric\" : {\n                  \"type\" : \"object\" ,\n                  \"required\" : false ,\n                  \"properties\" : {\n                    \"count\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"mean\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"variance\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    }\n                  }\n                } ,\n                \"categorical\" : {\n                  \"type\" : \"object\" ,\n                  \"required\" : false ,\n                  \"properties\" : {\n                    \"count\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"values\" : {\n                      \"type\" : \"array\" ,\n                      \"required\" : false ,\n                      \"items\" : [\n                        {\n                          \"type\" : \"object\" ,\n                          \"properties\" : {\n                            \"value\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"count\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            }\n                          }\n                        }\n                      ]\n                    }\n                  }\n                } ,\n                \"text\" : {\n                  \"type\" : \"object\" ,\n                  \"required\" : false ,\n                  \"properties\" : {\n                    \"count\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    }\n                  }\n                }\n              }\n            }\n          ]\n        }\n      }\n    } ,\n    \"modelDescription\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"modelinfo\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"confusionMatrix\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"(key)\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"(key)\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            }\n          }\n        } ,\n        \"confusionMatrixRowTotals\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"(key)\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "protocols": [
+                                                "HTTPS"
+                                            ],
+                                            "description": "Get analysis of the model and the data the model was trained on.",
+                                            "method": "get",
+                                            "is": [
+                                                "standardQueryParameters"
+                                            ],
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "protocols": {
+                                                        "calculated": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "displayName": "/analyze",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    },
+                                    "relativeUriPathSegments": [
+                                        "analyze"
+                                    ]
+                                },
+                                {
+                                    "relativeUri": "/predict",
+                                    "methods": [
+                                        {
+                                            "responses": {
+                                                "201": {
+                                                    "code": "201",
+                                                    "body": {
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": "updateModelRequest",
+                                                            "example": "{\n  \"kind\" : \"prediction#output\" ,\n  \"id\" : \"string\" ,\n  \"selfLink\" : \"string\" ,\n  \"outputLabel\" : \"string\" ,\n  \"outputMulti\" : [\n    {\n      \"label\" : \"string\" ,\n      \"score\" : \"string\"\n    }\n  ] ,\n  \"outputValue\" : \"string\"\n}",
+                                                            "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"output\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"csvInstance\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"string\"\n        }\n      ]\n    }\n  }\n}"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "trainedmodelPredictRequest",
+                                                    "example": "{\n  \"input\" : {\n    \"csvInstance\" : [\n    ]\n  }\n}",
+                                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"input\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"csvInstance\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n          ]\n        }\n      }\n    }\n  }\n}"
+                                                }
+                                            },
+                                            "protocols": [
+                                                "HTTPS"
+                                            ],
+                                            "description": "Submit model id and request a prediction.",
+                                            "method": "post",
+                                            "is": [
+                                                "standardQueryParameters"
+                                            ],
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "protocols": {
+                                                        "calculated": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "displayName": "/predict",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    },
+                                    "relativeUriPathSegments": [
+                                        "predict"
+                                    ]
+                                }
+                            ],
+                            "displayName": "/{id}",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "{id}"
+                            ]
+                        },
+                        {
+                            "relativeUri": "/list",
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "trainedmodelsResponse",
+                                                    "example": "{\n  \"kind\" : \"prediction#list\" ,\n  \"selfLink\" : \"string\" ,\n  \"nextPageToken\" : \"string\" ,\n  \"items\" : [\n  ]\n}",
+                                                    "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"kind\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"selfLink\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"nextPageToken\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"items\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n      ]\n    }\n  }\n}"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "queryParameters": {
+                                        "maxResults": {
+                                            "name": "maxResults",
+                                            "displayName": "maxResults",
+                                            "type": "integer",
+                                            "required": false,
+                                            "example": "10",
+                                            "repeat": false,
+                                            "description": "Maximum number of results to return.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "pageToken": {
+                                            "name": "pageToken",
+                                            "displayName": "pageToken",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Pagination token.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "description": "List available models.",
+                                    "method": "get",
+                                    "is": [
+                                        "standardQueryParameters"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "displayName": "/list",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    }
+                                }
+                            },
+                            "relativeUriPathSegments": [
+                                "list"
+                            ]
+                        }
+                    ],
+                    "displayName": "/trainedmodels",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "displayName": {
+                                "calculated": true
+                            }
+                        }
+                    },
+                    "relativeUriPathSegments": [
+                        "trainedmodels"
+                    ]
+                }
+            ],
+            "displayName": "/projects/{project}",
+            "__METADATA__": {
+                "primitiveValuesMeta": {
+                    "displayName": {
+                        "calculated": true
+                    }
+                }
+            },
+            "relativeUriPathSegments": [
+                "projects",
+                "{project}"
+            ]
+        }
+    ],
+    "documentation": [
+        {
+            "title": "Headline",
+            "content": "can not resolve docs/headline.md"
+        }
+    ],
+    "__METADATA__": {
+        "primitiveValuesMeta": {
+            "protocols": {
+                "calculated": true
+            }
+        }
+    }
+}

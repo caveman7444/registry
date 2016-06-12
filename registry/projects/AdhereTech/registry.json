@@ -1,0 +1,12 @@
+{"apis": [
+    {
+        "name": "AdhereTech External API",
+        "location": "https://raw.githubusercontent.com/raml-apis/AdhereTech/master/api.raml",
+        "RAMLVersion": "1.0"
+    },
+    {
+        "name": "AdhereTech External API",
+        "location": "https://raw.githubusercontent.com/raml-apis/AdhereTech/raml1.0/api.raml",
+        "RAMLVersion": "1.0"
+    }
+]}

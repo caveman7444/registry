@@ -1,0 +1,12 @@
+{"apis": [
+    {
+        "name": "\"Fitbit API\"",
+        "location": "https://raw.githubusercontent.com/raml-apis/Fitbit/master/api.raml",
+        "RAMLVersion": "0.8"
+    },
+    {
+        "name": "\"Fitbit API\"",
+        "location": "https://raw.githubusercontent.com/raml-apis/Fitbit/staging/api.raml",
+        "RAMLVersion": "0.8"
+    }
+]}
