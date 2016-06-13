@@ -1,0 +1,13 @@
+.DS_Store
+.project
+/**/docs/
+/**/examples/
+/**/notebooks/
+/**/portal/
+/**/resourceTypes/
+/**/schemas/
+/**/traits/
+/**/securitySchemes/
+/**/connectors/
+/**/.settings/
+*.raml

@@ -10,11 +10,5 @@
         "RAMLVersion": "1.0",
         "location": "https://raw.githubusercontent.com/raml-apis/Instagram/raml1.0/api.raml",
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Instagram/raml1.0/api.json"
-    },
-    {
-        "name": "\"Photos\"",
-        "RAMLVersion": "1.0  Library",
-        "location": "https://raw.githubusercontent.com/raml-apis/Instagram/raml1.0/types.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Instagram/raml1.0/types.json"
     }
 ]}

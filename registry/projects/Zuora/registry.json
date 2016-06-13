@@ -2,5 +2,6 @@
     "name": "Zuora",
     "RAMLVersion": "0.8",
     "location": "https://raw.githubusercontent.com/raml-apis/Zuora/production/zuora.raml",
-    "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Zuora/production/zuora.json"
+    "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Zuora/production/zuora.json",
+    "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Zuora/logo.png"
 }]}

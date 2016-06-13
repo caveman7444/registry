@@ -2,5 +2,6 @@
     "name": "Twitch",
     "RAMLVersion": "0.8",
     "location": "https://raw.githubusercontent.com/raml-apis/Twitch/production/api.raml",
-    "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Twitch/production/api.json"
+    "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Twitch/production/api.json",
+    "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Twitch/logo.png"
 }]}

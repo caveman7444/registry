@@ -730,46 +730,7 @@
     "securitySchemes": [
         {
             "usernameSchema": {
-                "name": "usernameSchema",
-                "type": "x-username-schema",
-                "describedBy": {
-                    "securedBy": [
-                        "usernameSchema"
-                    ],
-                    "queryParameters": {
-                        "username": {
-                            "name": "username",
-                            "displayName": "username",
-                            "type": "string",
-                            "required": false,
-                            "repeat": false,
-                            "description": "The GeoNames Web Service Identifier. Each subscriber to GeoNames Web Services is uniquely\nidentified by a username and every request to Web services requires this username.\n",
-                            "__METADATA__": {
-                                "primitiveValuesMeta": {
-                                    "displayName": {
-                                        "calculated": true
-                                    },
-                                    "type": {
-                                        "insertedAsDefault": true
-                                    },
-                                    "required": {
-                                        "insertedAsDefault": true
-                                    },
-                                    "repeat": {
-                                        "insertedAsDefault": true
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "__METADATA__": {
-                        "primitiveValuesMeta": {
-                            "securedBy": {
-                                "calculated": true
-                            }
-                        }
-                    }
-                }
+                "name": "usernameSchema"
             }
         }
     ],

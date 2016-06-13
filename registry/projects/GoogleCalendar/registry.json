@@ -3,18 +3,14 @@
         "name": "Google Calendar",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/GoogleCalendar/production/api.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GoogleCalendar/production/api.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GoogleCalendar/production/api.json",
+        "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GoogleCalendar/logo.png"
     },
     {
         "name": "Google Calendar",
         "RAMLVersion": "1.0",
         "location": "https://raw.githubusercontent.com/raml-apis/GoogleCalendar/raml1.0/api.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GoogleCalendar/raml1.0/api.json"
-    },
-    {
-        "name": "",
-        "RAMLVersion": "1.0 Library",
-        "location": "https://raw.githubusercontent.com/raml-apis/GoogleCalendar/raml1.0/types.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GoogleCalendar/raml1.0/types.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GoogleCalendar/raml1.0/api.json",
+        "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GoogleCalendar/logo.png"
     }
 ]}

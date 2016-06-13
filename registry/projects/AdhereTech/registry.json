@@ -1,14 +1,6 @@
-{"apis": [
-    {
-        "name": "AdhereTech External API",
-        "RAMLVersion": "1.0",
-        "location": "https://raw.githubusercontent.com/raml-apis/AdhereTech/master/api.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/AdhereTech/master/api.json"
-    },
-    {
-        "name": "AdhereTech External API",
-        "RAMLVersion": "1.0",
-        "location": "https://raw.githubusercontent.com/raml-apis/AdhereTech/raml1.0/api.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/AdhereTech/raml1.0/api.json"
-    }
-]}
+{"apis": [{
+    "name": "AdhereTech External API",
+    "RAMLVersion": "1.0",
+    "location": "https://raw.githubusercontent.com/raml-apis/AdhereTech/raml1.0/api.raml",
+    "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/AdhereTech/raml1.0/api.json"
+}]}

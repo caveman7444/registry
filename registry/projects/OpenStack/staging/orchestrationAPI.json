@@ -130,30 +130,7 @@
     "resourceTypes": [
         {
             "apiVersions": {
-                "name": "apiVersions",
-                "get": {
-                    "responses": {
-                        "200": {
-                            "code": "200",
-                            "body": {
-                                "application/xml": {
-                                    "name": "application/xml",
-                                    "schema": "neutronVersionsResponseXML",
-                                    "example": "can not resolve examples/neutronVersionsResponse-example.xml",
-                                    "schemaContent": "neutronVersionsResponseXML"
-                                },
-                                "application/json": {
-                                    "name": "application/json",
-                                    "schema": "neutronVersionsResponse",
-                                    "example": "can not resolve examples/neutronVersionsResponse-example.json",
-                                    "schemaContent": "neutronVersionsResponse"
-                                }
-                            }
-                        }
-                    },
-                    "description": "List API versions",
-                    "method": "get"
-                }
+                "name": "apiVersions"
             }
         }
     ],

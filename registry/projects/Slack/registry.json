@@ -3,18 +3,14 @@
         "name": "Slack",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Slack/production/slack.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Slack/production/slack.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Slack/production/slack.json",
+        "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Slack/logo.png"
     },
     {
         "name": "Slack",
         "RAMLVersion": "1.0",
         "location": "https://raw.githubusercontent.com/raml-apis/Slack/raml1.0/slack.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Slack/raml1.0/slack.json"
-    },
-    {
-        "name": "\"Slack for Android Upload\"",
-        "RAMLVersion": "1.0 Library",
-        "location": "https://raw.githubusercontent.com/raml-apis/Slack/raml1.0/types.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Slack/raml1.0/types.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Slack/raml1.0/slack.json",
+        "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Slack/logo.png"
     }
 ]}
