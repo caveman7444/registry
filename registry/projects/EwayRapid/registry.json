@@ -7,29 +7,10 @@
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/EwayRapid/master/api.json",
         "baseUri": "https://api.ewaypayments.com/",
         "version": "3.1",
-        "securitySchemes": [{"basic": {
+        "securitySchemes": [{
             "name": "basic",
-            "type": "Basic",
-            "description": "All requests, other than form POSTs, should be sent using basic authentication.\n",
-            "describedBy": {
-                "securedBy": ["basic"],
-                "headers": {"Authorization": {
-                    "name": "Authorization",
-                    "displayName": "Authorization",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "description": "Example of Authorization header:\nAuthorization: Basic BDOM0dF1WeYYjUQ5TZzMQEE74Y5Ef2x55YtlOp0ES1yMzQ=\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-            }
-        }}],
+            "type": "Basic"
+        }],
         "resourcesCount": 5,
         "methodsCount": 6
     },
@@ -41,29 +22,10 @@
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/EwayRapid/staging/api.json",
         "baseUri": "https://api.ewaypayments.com/",
         "version": "3.1",
-        "securitySchemes": [{"basic": {
+        "securitySchemes": [{
             "name": "basic",
-            "type": "Basic",
-            "description": "All requests, other than form POSTs, should be sent using basic authentication.\n",
-            "describedBy": {
-                "securedBy": ["basic"],
-                "headers": {"Authorization": {
-                    "name": "Authorization",
-                    "displayName": "Authorization",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "description": "Example of Authorization header:\nAuthorization: Basic BDOM0dF1WeYYjUQ5TZzMQEE74Y5Ef2x55YtlOp0ES1yMzQ=\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-            }
-        }}],
+            "type": "Basic"
+        }],
         "resourcesCount": 5,
         "methodsCount": 6
     }

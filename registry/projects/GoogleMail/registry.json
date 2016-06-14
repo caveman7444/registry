@@ -7,49 +7,10 @@
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GoogleMail/production/api.json",
         "baseUri": "https://www.googleapis.com/gmail/{version}/users",
         "version": "v1",
-        "securitySchemes": [{"oauth_2_0": {
+        "securitySchemes": [{
             "name": "oauth_2_0",
-            "type": "OAuth 2.0",
-            "description": "",
-            "describedBy": {
-                "securedBy": ["oauth_2_0"],
-                "queryParameters": {"access_token": {
-                    "name": "access_token",
-                    "displayName": "access_token",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "headers": {"Authorization": {
-                    "name": "Authorization",
-                    "displayName": "Authorization",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"access_token\" queryParameters string parameter.\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-            },
-            "settings": {
-                "accessTokenUri": "https://accounts.google.com/o/oauth2/token",
-                "authorizationUri": "https://accounts.google.com/o/oauth2/auth",
-                "authorizationGrants": ["code"],
-                "scopes": ["https://mail.google.com/"]
-            }
-        }}],
+            "type": "OAuth 2.0"
+        }],
         "resourcesCount": 21,
         "methodsCount": 30
     },
@@ -61,49 +22,10 @@
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GoogleMail/production/uploadApi.json",
         "baseUri": "https://www.googleapis.com/upload/gmail/{version}/users",
         "version": "v1",
-        "securitySchemes": [{"oauth_2_0": {
+        "securitySchemes": [{
             "name": "oauth_2_0",
-            "type": "OAuth 2.0",
-            "description": "",
-            "describedBy": {
-                "securedBy": ["oauth_2_0"],
-                "queryParameters": {"access_token": {
-                    "name": "access_token",
-                    "displayName": "access_token",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "headers": {"Authorization": {
-                    "name": "Authorization",
-                    "displayName": "Authorization",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"access_token\" queryParameters string parameter.\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-            },
-            "settings": {
-                "accessTokenUri": "https://accounts.google.com/o/oauth2/token",
-                "authorizationUri": "https://accounts.google.com/o/oauth2/auth",
-                "authorizationGrants": ["code"],
-                "scopes": ["https://mail.google.com/"]
-            }
-        }}],
+            "type": "OAuth 2.0"
+        }],
         "resourcesCount": 7,
         "methodsCount": 6
     },
@@ -115,47 +37,10 @@
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GoogleMail/raml1.0/api.json",
         "baseUri": "https://www.googleapis.com/gmail/{version}/users",
         "version": "v1",
-        "securitySchemes": [{"oauth_2_0": {
+        "securitySchemes": [{
             "name": "oauth_2_0",
-            "type": "OAuth 2.0",
-            "description": "",
-            "describedBy": {
-                "queryParameters": {"access_token": {
-                    "name": "access_token",
-                    "displayName": "access_token",
-                    "type": ["string"],
-                    "repeat": false,
-                    "required": true,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true}
-                    }}
-                }},
-                "headers": {"Authorization": {
-                    "name": "Authorization",
-                    "displayName": "Authorization",
-                    "type": ["string"],
-                    "repeat": false,
-                    "required": true,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"access_token\" queryParameters string parameter.\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true}
-                    }}
-                }}
-            },
-            "settings": {
-                "accessTokenUri": "https://accounts.google.com/o/oauth2/token",
-                "authorizationUri": "https://accounts.google.com/o/oauth2/auth",
-                "authorizationGrants": ["code"],
-                "scopes": ["https://mail.google.com/"]
-            }
-        }}],
+            "type": "OAuth 2.0"
+        }],
         "resourcesCount": 21,
         "methodsCount": 30
     },
@@ -167,47 +52,10 @@
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GoogleMail/raml1.0/uploadApi.json",
         "baseUri": "https://www.googleapis.com/upload/gmail/{version}/users",
         "version": "v1",
-        "securitySchemes": [{"oauth_2_0": {
+        "securitySchemes": [{
             "name": "oauth_2_0",
-            "type": "OAuth 2.0",
-            "description": "",
-            "describedBy": {
-                "queryParameters": {"access_token": {
-                    "name": "access_token",
-                    "displayName": "access_token",
-                    "type": ["string"],
-                    "repeat": false,
-                    "required": true,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true}
-                    }}
-                }},
-                "headers": {"Authorization": {
-                    "name": "Authorization",
-                    "displayName": "Authorization",
-                    "type": ["string"],
-                    "repeat": false,
-                    "required": true,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"access_token\" queryParameters string parameter.\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true}
-                    }}
-                }}
-            },
-            "settings": {
-                "accessTokenUri": "https://accounts.google.com/o/oauth2/token",
-                "authorizationUri": "https://accounts.google.com/o/oauth2/auth",
-                "authorizationGrants": ["code"],
-                "scopes": ["https://mail.google.com/"]
-            }
-        }}],
+            "type": "OAuth 2.0"
+        }],
         "resourcesCount": 7,
         "methodsCount": 6
     }

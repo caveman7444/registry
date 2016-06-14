@@ -8,28 +8,14 @@
         "baseUri": "https://events.pagerduty.com/generic/{version}/",
         "version": "2010-04-15",
         "securitySchemes": [
-            {"basic": {
+            {
                 "name": "basic",
                 "type": "Basic Authentication"
-            }},
-            {"tokenSchema": {
+            },
+            {
                 "name": "tokenSchema",
-                "type": "x-token-schema",
-                "description": "Schema which requires Application ID and REST API Key",
-                "describedBy": {"headers": {"Authorization": {
-                    "name": "Authorization",
-                    "displayName": "Authorization",
-                    "type": "string",
-                    "required": true,
-                    "example": "Token token=E7px6VVr3PVHZPJq51oa",
-                    "repeat": false,
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }}}
-            }}
+                "type": "x-token-schema"
+            }
         ],
         "resourcesCount": 1,
         "methodsCount": 1
@@ -43,28 +29,14 @@
         "baseUri": "https://{serviceName}.pagerduty.com/api/{version}",
         "version": "v1",
         "securitySchemes": [
-            {"basic": {
+            {
                 "name": "basic",
                 "type": "Basic Authentication"
-            }},
-            {"tokenSchema": {
+            },
+            {
                 "name": "tokenSchema",
-                "type": "x-token-schema",
-                "description": "Schema which requires Application ID and REST API Key",
-                "describedBy": {"headers": {"Authorization": {
-                    "name": "Authorization",
-                    "displayName": "Authorization",
-                    "type": "string",
-                    "required": true,
-                    "example": "Token token=E7px6VVr3PVHZPJq51oa",
-                    "repeat": false,
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }}}
-            }}
+                "type": "x-token-schema"
+            }
         ],
         "resourcesCount": 41,
         "methodsCount": 69

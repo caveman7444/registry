@@ -1,4 +1,9 @@
 {"apis": {
+    "notebooks": [
+        {"Accounts, catalog and signature": "https://raw.githubusercontent.com/raml-apis/Zuora/master/notebooks/accountsCatalogAndSignature.md"},
+        {"Subscriptions": "https://raw.githubusercontent.com/raml-apis/Zuora/master/notebooks/subscriptions.md"},
+        {"Transactions, operations, usage and payment": "https://raw.githubusercontent.com/raml-apis/Zuora/master/notebooks/transactionsOperationsUsageAndPayment.md"}
+    ],
     "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Zuora/logo.png",
     "RAMLFiles": [{
         "name": "Zuora",
@@ -8,11 +13,10 @@
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Zuora/production/zuora.json",
         "baseUri": "https://{partitionName}.zuora.com/rest/{version}",
         "version": "v1",
-        "securitySchemes": [{"basic": {
+        "securitySchemes": [{
             "name": "basic",
-            "type": "Basic Authentication",
-            "description": "Include the apiAccessKeyId and apiSecretAccessKey in the request header, which re-authenticates the user with each request."
-        }}],
+            "type": "Basic Authentication"
+        }],
         "resourcesCount": 23,
         "methodsCount": 23,
         "developerPortalURI": "https://knowledgecenter.zuora.com/D_REST_API"

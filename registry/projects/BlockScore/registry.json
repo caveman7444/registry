@@ -1,4 +1,5 @@
 {"apis": {
+    "notebooks": [{"BlockScore": "https://raw.githubusercontent.com/raml-apis/BlockScore/staging/notebooks/notebook.md"}],
     "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/BlockScore/logo.png",
     "RAMLFiles": [{
         "name": "BlockScore",
@@ -8,28 +9,10 @@
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/BlockScore/staging/api.json",
         "baseUri": "https://api.blockscore.com",
         "version": "4",
-        "securitySchemes": [{"basic": {
+        "securitySchemes": [{
             "name": "basic",
-            "type": "Basic Authentication",
-            "describedBy": {
-                "securedBy": ["basic"],
-                "headers": {"Authorization": {
-                    "name": "Authorization",
-                    "displayName": "Authorization",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "description": "The Authorization field value consists of credentials\ncontaining the authentication information of the user agent for the\nrealm of the resource being requested.\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-            }
-        }}],
+            "type": "Basic Authentication"
+        }],
         "resourcesCount": 12,
         "methodsCount": 18,
         "developerPortalURI": "https://developer.flightstats.com/api-docs/"

@@ -8,81 +8,14 @@
         "baseUri": "https://{apiMode}.uber.com/{version}",
         "version": "v1",
         "securitySchemes": [
-            {"oauth_2_0": {
+            {
                 "name": "oauth_2_0",
-                "type": "OAuth 2.0",
-                "description": "Google recommend using OAuth 2.0 to authorize requests.\n",
-                "describedBy": {
-                    "responses": {"401": {
-                        "code": "401",
-                        "description": "Authorization error.\n"
-                    }},
-                    "securedBy": ["oauth_2_0"],
-                    "queryParameters": {"access_token": {
-                        "name": "access_token",
-                        "displayName": "access_token",
-                        "type": "string",
-                        "required": false,
-                        "repeat": false,
-                        "description": "Used to send a valid OAuth 2 access token\n",
-                        "__METADATA__": {"primitiveValuesMeta": {
-                            "displayName": {"calculated": true},
-                            "type": {"insertedAsDefault": true},
-                            "required": {"insertedAsDefault": true},
-                            "repeat": {"insertedAsDefault": true}
-                        }}
-                    }},
-                    "headers": {"Authorization": {
-                        "name": "Authorization",
-                        "displayName": "Authorization",
-                        "type": "string",
-                        "required": false,
-                        "repeat": false,
-                        "description": "Used to send a valid OAuth 2 access token.\n",
-                        "__METADATA__": {"primitiveValuesMeta": {
-                            "displayName": {"calculated": true},
-                            "type": {"insertedAsDefault": true},
-                            "required": {"insertedAsDefault": true},
-                            "repeat": {"insertedAsDefault": true}
-                        }}
-                    }},
-                    "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-                },
-                "settings": {
-                    "accessTokenUri": "https://login.uber.com/oauth/token",
-                    "authorizationUri": "https://login.uber.com/oauth/authorize",
-                    "authorizationGrants": ["code"],
-                    "scopes": [
-                        "profile",
-                        "history",
-                        "history_lite",
-                        "request",
-                        "request_receipt"
-                    ]
-                }
-            }},
-            {"bearer": {
+                "type": "OAuth 2.0"
+            },
+            {
                 "name": "bearer",
-                "type": "x-bearer",
-                "description": "Basically, you need to set the header 'Authorization' to 'Bearer <API_KEY>'. If you're having trouble with this, email support@stripe.com\n",
-                "describedBy": {
-                    "securedBy": ["oauth_2_0"],
-                    "headers": {"Authorization": {
-                        "name": "Authorization",
-                        "displayName": "Authorization",
-                        "type": "string",
-                        "required": false,
-                        "repeat": false,
-                        "__METADATA__": {"primitiveValuesMeta": {
-                            "displayName": {"calculated": true},
-                            "type": {"insertedAsDefault": true},
-                            "required": {"insertedAsDefault": true},
-                            "repeat": {"insertedAsDefault": true}
-                        }}
-                    }},
-                    "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-                }
-            }}
+                "type": "x-bearer"
+            }
         ],
         "resourcesCount": 12,
         "methodsCount": 12
@@ -96,81 +29,14 @@
         "baseUri": "https://{apiMode}.uber.com/{version}",
         "version": "v1.2",
         "securitySchemes": [
-            {"oauth_2_0": {
+            {
                 "name": "oauth_2_0",
-                "type": "OAuth 2.0",
-                "description": "Google recommend using OAuth 2.0 to authorize requests.\n",
-                "describedBy": {
-                    "responses": {"401": {
-                        "code": "401",
-                        "description": "Authorization error.\n"
-                    }},
-                    "securedBy": ["oauth_2_0"],
-                    "queryParameters": {"access_token": {
-                        "name": "access_token",
-                        "displayName": "access_token",
-                        "type": "string",
-                        "required": false,
-                        "repeat": false,
-                        "description": "Used to send a valid OAuth 2 access token\n",
-                        "__METADATA__": {"primitiveValuesMeta": {
-                            "displayName": {"calculated": true},
-                            "type": {"insertedAsDefault": true},
-                            "required": {"insertedAsDefault": true},
-                            "repeat": {"insertedAsDefault": true}
-                        }}
-                    }},
-                    "headers": {"Authorization": {
-                        "name": "Authorization",
-                        "displayName": "Authorization",
-                        "type": "string",
-                        "required": false,
-                        "repeat": false,
-                        "description": "Used to send a valid OAuth 2 access token.\n",
-                        "__METADATA__": {"primitiveValuesMeta": {
-                            "displayName": {"calculated": true},
-                            "type": {"insertedAsDefault": true},
-                            "required": {"insertedAsDefault": true},
-                            "repeat": {"insertedAsDefault": true}
-                        }}
-                    }},
-                    "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-                },
-                "settings": {
-                    "accessTokenUri": "https://login.uber.com/oauth/token",
-                    "authorizationUri": "https://login.uber.com/oauth/authorize",
-                    "authorizationGrants": ["code"],
-                    "scopes": [
-                        "profile",
-                        "history",
-                        "history_lite",
-                        "request",
-                        "request_receipt"
-                    ]
-                }
-            }},
-            {"bearer": {
+                "type": "OAuth 2.0"
+            },
+            {
                 "name": "bearer",
-                "type": "x-bearer",
-                "description": "Basically, you need to set the header 'Authorization' to 'Bearer <API_KEY>'. If you're having trouble with this, email support@stripe.com\n",
-                "describedBy": {
-                    "securedBy": ["oauth_2_0"],
-                    "headers": {"Authorization": {
-                        "name": "Authorization",
-                        "displayName": "Authorization",
-                        "type": "string",
-                        "required": false,
-                        "repeat": false,
-                        "__METADATA__": {"primitiveValuesMeta": {
-                            "displayName": {"calculated": true},
-                            "type": {"insertedAsDefault": true},
-                            "required": {"insertedAsDefault": true},
-                            "repeat": {"insertedAsDefault": true}
-                        }}
-                    }},
-                    "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-                }
-            }}
+                "type": "x-bearer"
+            }
         ],
         "resourcesCount": 1,
         "methodsCount": 1
@@ -184,75 +50,14 @@
         "baseUri": "https://{apiMode}.uber.com/{version}",
         "version": "v1",
         "securitySchemes": [
-            {"oauth_2_0": {
+            {
                 "name": "oauth_2_0",
-                "type": "OAuth 2.0",
-                "description": "Google recommend using OAuth 2.0 to authorize requests.\n",
-                "describedBy": {
-                    "queryParameters": {"access_token": {
-                        "name": "access_token",
-                        "displayName": "access_token",
-                        "type": ["string"],
-                        "repeat": false,
-                        "required": true,
-                        "description": "Used to send a valid OAuth 2 access token\n",
-                        "__METADATA__": {"primitiveValuesMeta": {
-                            "displayName": {"calculated": true},
-                            "type": {"insertedAsDefault": true},
-                            "repeat": {"insertedAsDefault": true},
-                            "required": {"insertedAsDefault": true}
-                        }}
-                    }},
-                    "headers": {"Authorization": {
-                        "name": "Authorization",
-                        "displayName": "Authorization",
-                        "type": ["string"],
-                        "repeat": false,
-                        "required": true,
-                        "description": "Used to send a valid OAuth 2 access token.\n",
-                        "__METADATA__": {"primitiveValuesMeta": {
-                            "displayName": {"calculated": true},
-                            "type": {"insertedAsDefault": true},
-                            "repeat": {"insertedAsDefault": true},
-                            "required": {"insertedAsDefault": true}
-                        }}
-                    }},
-                    "responses": [{
-                        "code": "401",
-                        "description": "Authorization error.\n"
-                    }]
-                },
-                "settings": {
-                    "accessTokenUri": "https://login.uber.com/oauth/token",
-                    "authorizationUri": "https://login.uber.com/oauth/authorize",
-                    "authorizationGrants": ["code"],
-                    "scopes": [
-                        "profile",
-                        "history",
-                        "history_lite",
-                        "request",
-                        "request_receipt"
-                    ]
-                }
-            }},
-            {"bearer": {
+                "type": "OAuth 2.0"
+            },
+            {
                 "name": "bearer",
-                "type": "x-bearer",
-                "description": "Basically, you need to set the header 'Authorization' to 'Bearer <API_KEY>'. If you're having trouble with this, email support@stripe.com\n",
-                "describedBy": {"headers": {"Authorization": {
-                    "name": "Authorization",
-                    "displayName": "Authorization",
-                    "type": ["string"],
-                    "repeat": false,
-                    "required": true,
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true}
-                    }}
-                }}}
-            }}
+                "type": "x-bearer"
+            }
         ],
         "resourcesCount": 12,
         "methodsCount": 12
@@ -266,75 +71,14 @@
         "baseUri": "https://{apiMode}.uber.com/{version}",
         "version": "v1.2",
         "securitySchemes": [
-            {"oauth_2_0": {
+            {
                 "name": "oauth_2_0",
-                "type": "OAuth 2.0",
-                "description": "Google recommend using OAuth 2.0 to authorize requests.\n",
-                "describedBy": {
-                    "queryParameters": {"access_token": {
-                        "name": "access_token",
-                        "displayName": "access_token",
-                        "type": ["string"],
-                        "repeat": false,
-                        "required": true,
-                        "description": "Used to send a valid OAuth 2 access token\n",
-                        "__METADATA__": {"primitiveValuesMeta": {
-                            "displayName": {"calculated": true},
-                            "type": {"insertedAsDefault": true},
-                            "repeat": {"insertedAsDefault": true},
-                            "required": {"insertedAsDefault": true}
-                        }}
-                    }},
-                    "headers": {"Authorization": {
-                        "name": "Authorization",
-                        "displayName": "Authorization",
-                        "type": ["string"],
-                        "repeat": false,
-                        "required": true,
-                        "description": "Used to send a valid OAuth 2 access token.\n",
-                        "__METADATA__": {"primitiveValuesMeta": {
-                            "displayName": {"calculated": true},
-                            "type": {"insertedAsDefault": true},
-                            "repeat": {"insertedAsDefault": true},
-                            "required": {"insertedAsDefault": true}
-                        }}
-                    }},
-                    "responses": [{
-                        "code": "401",
-                        "description": "Authorization error.\n"
-                    }]
-                },
-                "settings": {
-                    "accessTokenUri": "https://login.uber.com/oauth/token",
-                    "authorizationUri": "https://login.uber.com/oauth/authorize",
-                    "authorizationGrants": ["code"],
-                    "scopes": [
-                        "profile",
-                        "history",
-                        "history_lite",
-                        "request",
-                        "request_receipt"
-                    ]
-                }
-            }},
-            {"bearer": {
+                "type": "OAuth 2.0"
+            },
+            {
                 "name": "bearer",
-                "type": "x-bearer",
-                "description": "Basically, you need to set the header 'Authorization' to 'Bearer <API_KEY>'. If you're having trouble with this, email support@stripe.com\n",
-                "describedBy": {"headers": {"Authorization": {
-                    "name": "Authorization",
-                    "displayName": "Authorization",
-                    "type": ["string"],
-                    "repeat": false,
-                    "required": true,
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true}
-                    }}
-                }}}
-            }}
+                "type": "x-bearer"
+            }
         ],
         "resourcesCount": 1,
         "methodsCount": 1

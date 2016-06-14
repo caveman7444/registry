@@ -1,4 +1,25 @@
 {"apis": {
+    "notebooks": [
+        {"Account, uploads, attachments, locales": "https://raw.githubusercontent.com/raml-apis/Zendesk/master/notebooks/accountUploadsAttachmentsLocales.md"},
+        {"Apps": "https://raw.githubusercontent.com/raml-apis/Zendesk/master/notebooks/apps.md"},
+        {"Dynamic content, forums, automations, categories": "https://raw.githubusercontent.com/raml-apis/Zendesk/master/notebooks/dynamicContentForumsAutomationsCategories.md"},
+        {"End user": "https://raw.githubusercontent.com/raml-apis/Zendesk/master/notebooks/endUser.md"},
+        {"Help center: articles, questions, translations": "https://raw.githubusercontent.com/raml-apis/Zendesk/master/notebooks/hcArticlesQuestionsTranslationsVotesAnswers.md"},
+        {"Help center: section, locale": "https://raw.githubusercontent.com/raml-apis/Zendesk/master/notebooks/hcSectionLocaleCategiesUsers.md"},
+        {"Incremental": "https://raw.githubusercontent.com/raml-apis/Zendesk/master/notebooks/incremental.md"},
+        {"Macros, ticket": "https://raw.githubusercontent.com/raml-apis/Zendesk/master/notebooks/macrosTicket.md"},
+        {"Merge users": "https://raw.githubusercontent.com/raml-apis/Zendesk/master/notebooks/mergeUsers.md"},
+        {"Organizations, organization field and subscription": "https://raw.githubusercontent.com/raml-apis/Zendesk/master/notebooks/organizationsOrganizationFieldAndSubscription.md"},
+        {"Phone numbers": "https://raw.githubusercontent.com/raml-apis/Zendesk/master/notebooks/phoneNumbers.md"},
+        {"Requests, search, portal, sharing agreements": "https://raw.githubusercontent.com/raml-apis/Zendesk/master/notebooks/requestsSearchPortalSharingAgreements.md"},
+        {"Set user password, change own password": "https://raw.githubusercontent.com/raml-apis/Zendesk/master/notebooks/setUserPasswordChangeOwnPassword.md"},
+        {"Suspended ticket, mark as spam, activities": "https://raw.githubusercontent.com/raml-apis/Zendesk/master/notebooks/suspendedTicketMarkAsSpamActivities.md"},
+        {"Twitter": "https://raw.githubusercontent.com/raml-apis/Zendesk/master/notebooks/twitter.md"},
+        {"Users, job statuses": "https://raw.githubusercontent.com/raml-apis/Zendesk/master/notebooks/usersJobStatuses.md"},
+        {"Views, oauth, bookmarks": "https://raw.githubusercontent.com/raml-apis/Zendesk/master/notebooks/viewsOauthBookmarks.md"},
+        {"Voice, ticket metric": "https://raw.githubusercontent.com/raml-apis/Zendesk/master/notebooks/voiceTicketMetric.md"},
+        {"Zendesk targets, problems, exports, import": "https://raw.githubusercontent.com/raml-apis/Zendesk/master/notebooks/zendeskTargetsProblemsExportsImport.md"}
+    ],
     "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Zendesk/logo.png",
     "RAMLFiles": [{
         "name": "Zendesk",
@@ -9,71 +30,18 @@
         "baseUri": "https://{domain}.zendesk.com/api/{version}",
         "version": "v2",
         "securitySchemes": [
-            {"oauth_2_0": {
+            {
                 "name": "oauth_2_0",
-                "type": "OAuth 2.0",
-                "description": "You can use OAuth 2 to authenticate all your application's API requests to Zendesk. OAuth provides a secure way for your application to access Zendesk data without requiring that sensitive information like usernames and passwords be sent with the requests.\nTo use OAuth authentication, you need to register your application with Zendesk. You also need to add some functionality to your application to support the OAuth authorization flow.\n",
-                "describedBy": {
-                    "responses": {"404": {
-                        "code": "404",
-                        "description": "Unauthorized"
-                    }},
-                    "securedBy": ["oauth_2_0"],
-                    "headers": {"Authorization": {
-                        "name": "Authorization",
-                        "displayName": "Authorization",
-                        "type": "string",
-                        "required": false,
-                        "repeat": false,
-                        "description": "Set the token in the request's authorization header as follows: Authorization: Bearer {a_valid_access_token}",
-                        "__METADATA__": {"primitiveValuesMeta": {
-                            "displayName": {"calculated": true},
-                            "type": {"insertedAsDefault": true},
-                            "required": {"insertedAsDefault": true},
-                            "repeat": {"insertedAsDefault": true}
-                        }}
-                    }},
-                    "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-                },
-                "settings": {
-                    "accessTokenUri": "https://{domain}.zendesk.com/oauth/tokens",
-                    "authorizationUri": "https://{domain}.zendesk.com/oauth/authorizations/new",
-                    "authorizationGrants": ["code"],
-                    "scopes": [
-                        "read",
-                        "write"
-                    ]
-                }
-            }},
-            {"basic": {
+                "type": "OAuth 2.0"
+            },
+            {
                 "name": "basic",
-                "type": "Basic Authentication",
-                "description": "Authorize against the API using basic authentication with your email and password credentials."
-            }},
-            {"x-token": {
+                "type": "Basic Authentication"
+            },
+            {
                 "name": "x-token",
-                "type": "x-token",
-                "description": "Authorize against the API with username and API token. In fact, this schema works the same way as Basic with '{email_address}/token' as username and '{api_token}' as password.   \n",
-                "describedBy": {
-                    "securedBy": ["oauth_2_0"],
-                    "headers": {"Authorization": {
-                        "name": "Authorization",
-                        "displayName": "Authorization",
-                        "type": "string",
-                        "required": false,
-                        "example": "Basic bWFyay0xOTY3QGxpc3QucnUvdG9rZW46bzhXTnBZRW4yMXpIUU9XMHZBbmtJSmRqdERDb1p4VER2R1dWbjdReg==",
-                        "repeat": false,
-                        "description": "Expected Base64 encoded string with following content: '{email_address}/token:{api_token}'",
-                        "__METADATA__": {"primitiveValuesMeta": {
-                            "displayName": {"calculated": true},
-                            "type": {"insertedAsDefault": true},
-                            "required": {"insertedAsDefault": true},
-                            "repeat": {"insertedAsDefault": true}
-                        }}
-                    }},
-                    "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-                }
-            }}
+                "type": "x-token"
+            }
         ],
         "resourcesCount": 431,
         "methodsCount": 428,

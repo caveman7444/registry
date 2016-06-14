@@ -1,61 +1,24 @@
-{"apis": {"RAMLFiles": [{
-    "name": "Smartsheet",
-    "description": "descriptionexamle",
-    "RAMLVersion": "0.8",
-    "location": "https://raw.githubusercontent.com/raml-apis/SmartSheet/production/api.raml",
-    "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/SmartSheet/production/api.json",
-    "baseUri": "https://api.smartsheet.com/{version}",
-    "version": "1.1",
-    "securitySchemes": [{"oauth_2_0": {
-        "name": "oauth_2_0",
-        "type": "OAuth 2.0",
-        "describedBy": {
-            "queryParameters": {"access_token": {
-                "name": "access_token",
-                "displayName": "access_token",
-                "type": "string",
-                "required": false,
-                "repeat": false,
-                "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
-                "__METADATA__": {"primitiveValuesMeta": {
-                    "displayName": {"calculated": true},
-                    "type": {"insertedAsDefault": true},
-                    "required": {"insertedAsDefault": true},
-                    "repeat": {"insertedAsDefault": true}
-                }}
-            }},
-            "headers": {"Authorization": {
-                "name": "Authorization",
-                "displayName": "Authorization",
-                "type": "string",
-                "required": false,
-                "repeat": false,
-                "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"access_token\" queryParameters string parameter.\n",
-                "__METADATA__": {"primitiveValuesMeta": {
-                    "displayName": {"calculated": true},
-                    "type": {"insertedAsDefault": true},
-                    "required": {"insertedAsDefault": true},
-                    "repeat": {"insertedAsDefault": true}
-                }}
-            }}
-        },
-        "settings": {
-            "accessTokenUri": "https://api.smartsheet.com/1.1/token",
-            "authorizationUri": "https://www.smartsheet.com/b/authorize",
-            "authorizationGrants": ["code"],
-            "scopes": [
-                "READ_SHEETS",
-                "WRITE_SHEETS",
-                "SHARE_SHEETS",
-                "DELETE_SHEETS",
-                "CREATE_SHEETS",
-                "ADMIN_USERS",
-                "ADMIN_SHEETS",
-                "ADMIN_WORKSPACES"
-            ]
-        }
-    }}],
-    "resourcesCount": 84,
-    "methodsCount": 109,
-    "developerPortalURI": "https://www.smartsheet.com/developers/api-documentation​"
-}]}}
+{"apis": {
+    "notebooks": [
+        {"Folder, templates, report, users, groups, search": "https://raw.githubusercontent.com/raml-apis/SmartSheet/master/notebooks/folderTemplatesReportUsersGroupsSear.md"},
+        {"Home, favorites, workspaces": "https://raw.githubusercontent.com/raml-apis/SmartSheet/master/notebooks/homeFavoritesWorkspaces.md"},
+        {"Sheet/attachments, sheet/publish, sheet/column": "https://raw.githubusercontent.com/raml-apis/SmartSheet/master/notebooks/sheetAttachmentsSheetPublishSheetColumn.md"},
+        {"Sheet/version, sheet/emails, sheet/columns": "https://raw.githubusercontent.com/raml-apis/SmartSheet/master/notebooks/sheetVersionSheetEmailsSheetColumns.md"}
+    ],
+    "RAMLFiles": [{
+        "name": "Smartsheet",
+        "description": "descriptionexamle",
+        "RAMLVersion": "0.8",
+        "location": "https://raw.githubusercontent.com/raml-apis/SmartSheet/production/api.raml",
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/SmartSheet/production/api.json",
+        "baseUri": "https://api.smartsheet.com/{version}",
+        "version": "1.1",
+        "securitySchemes": [{
+            "name": "oauth_2_0",
+            "type": "OAuth 2.0"
+        }],
+        "resourcesCount": 84,
+        "methodsCount": 109,
+        "developerPortalURI": "https://www.smartsheet.com/developers/api-documentation​"
+    }]
+}}

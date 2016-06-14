@@ -1,137 +1,38 @@
-{"apis": {"RAMLFiles": [{
-    "name": "Parse",
-    "description": "descriptionexamle",
-    "RAMLVersion": "0.8",
-    "location": "https://raw.githubusercontent.com/raml-apis/Parse/production/parse.raml",
-    "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Parse/production/parse.json",
-    "baseUri": "https://api.parse.com/{version}",
-    "version": "1",
-    "securitySchemes": [
-        {"basic": {
-            "name": "basic",
-            "type": "Basic Authentication"
-        }},
-        {"commonSchema": {
-            "name": "commonSchema",
-            "type": "x-header-schema",
-            "description": "Schema which requires Application ID and REST API Key",
-            "describedBy": {"headers": {
-                "X-Parse-Application-Id": {
-                    "name": "X-Parse-Application-Id",
-                    "displayName": "X-Parse-Application-Id",
-                    "type": "string",
-                    "required": true,
-                    "example": "GzBxtflDl76RdiZFLujo4uNVxS7MIZXbEy6D3Tle",
-                    "repeat": false,
-                    "description": "Id of the application",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                },
-                "X-Parse-REST-API-Key": {
-                    "name": "X-Parse-REST-API-Key",
-                    "displayName": "X-Parse-REST-API-Key",
-                    "type": "string",
-                    "required": true,
-                    "example": "UugJz3YVpU0gKgK7OfIYQQAntOxFGKPK615Qmjc9",
-                    "repeat": false,
-                    "description": "REST API key of the application.",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }
-            }}
-        }},
-        {"sessionTokenSchema": {
-            "name": "sessionTokenSchema",
-            "type": "x-header-schema",
-            "description": "Schema which requires Application ID, REST API Key and Session Token",
-            "describedBy": {"headers": {
-                "X-Parse-Application-Id": {
-                    "name": "X-Parse-Application-Id",
-                    "displayName": "X-Parse-Application-Id",
-                    "type": "string",
-                    "required": true,
-                    "example": "GzBxtflDl76RdiZFLujo4uNVxS7MIZXbEy6D3Tle",
-                    "repeat": false,
-                    "description": "Id of the application",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                },
-                "X-Parse-REST-API-Key": {
-                    "name": "X-Parse-REST-API-Key",
-                    "displayName": "X-Parse-REST-API-Key",
-                    "type": "string",
-                    "required": true,
-                    "example": "UugJz3YVpU0gKgK7OfIYQQAntOxFGKPK615Qmjc9",
-                    "repeat": false,
-                    "description": "REST API key of the application.",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                },
-                "X-Parse-Session-Token": {
-                    "name": "X-Parse-Session-Token",
-                    "displayName": "X-Parse-Session-Token",
-                    "type": "string",
-                    "required": true,
-                    "example": "pnktnjyb996sj4p156gjtp4im",
-                    "repeat": false,
-                    "description": "Session token",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }
-            }}
-        }},
-        {"masterSchema": {
-            "name": "masterSchema",
-            "type": "x-header-schema",
-            "description": "Schema which requires Application ID and Master Key",
-            "describedBy": {"headers": {
-                "X-Parse-Application-Id": {
-                    "name": "X-Parse-Application-Id",
-                    "displayName": "X-Parse-Application-Id",
-                    "type": "string",
-                    "required": true,
-                    "example": "GzBxtflDl76RdiZFLujo4uNVxS7MIZXbEy6D3Tle",
-                    "repeat": false,
-                    "description": "Id of the application",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                },
-                "X-Parse-Master-Key": {
-                    "name": "X-Parse-Master-Key",
-                    "displayName": "X-Parse-Master-Key",
-                    "type": "string",
-                    "required": true,
-                    "example": "ooE8rNiYKd5FTnT6gGJNXyq5mlXCSk2xLRPMBwZs",
-                    "repeat": false,
-                    "description": "Master key of the application.",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }
-            }}
-        }}
+{"apis": {
+    "notebooks": [
+        {"Classes and cloud functions": "https://raw.githubusercontent.com/raml-apis/Parse/master/notebooks/classesAndCloudFunctions.md"},
+        {"Files, events, push notifications, installations": "https://raw.githubusercontent.com/raml-apis/Parse/master/notebooks/filesEventsPushNotificationsInstallations.md"},
+        {"Roles": "https://raw.githubusercontent.com/raml-apis/Parse/master/notebooks/roles.md"},
+        {"Users": "https://raw.githubusercontent.com/raml-apis/Parse/master/notebooks/users.md"}
     ],
-    "resourcesCount": 20,
-    "methodsCount": 29,
-    "developerPortalURI": "https://parse.com/docs/rest"
-}]}}
+    "RAMLFiles": [{
+        "name": "Parse",
+        "description": "descriptionexamle",
+        "RAMLVersion": "0.8",
+        "location": "https://raw.githubusercontent.com/raml-apis/Parse/production/parse.raml",
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Parse/production/parse.json",
+        "baseUri": "https://api.parse.com/{version}",
+        "version": "1",
+        "securitySchemes": [
+            {
+                "name": "basic",
+                "type": "Basic Authentication"
+            },
+            {
+                "name": "commonSchema",
+                "type": "x-header-schema"
+            },
+            {
+                "name": "sessionTokenSchema",
+                "type": "x-header-schema"
+            },
+            {
+                "name": "masterSchema",
+                "type": "x-header-schema"
+            }
+        ],
+        "resourcesCount": 20,
+        "methodsCount": 29,
+        "developerPortalURI": "https://parse.com/docs/rest"
+    }]
+}}

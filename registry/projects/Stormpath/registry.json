@@ -1,39 +1,29 @@
-{"apis": {"RAMLFiles": [{
-    "name": "StormPath",
-    "description": "descriptionexamle",
-    "RAMLVersion": "0.8",
-    "location": "https://raw.githubusercontent.com/raml-apis/Stormpath/production/api.raml",
-    "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Stormpath/production/api.json",
-    "baseUri": "https://api.stormpath.com/{version}",
-    "version": "v1",
-    "securitySchemes": [
-        {"basic": {
-            "name": "basic",
-            "type": "Basic Authentication"
-        }},
-        {"digest": {
-            "name": "digest",
-            "type": "x-digest-schema",
-            "description": "Stormpath also supports a more secure authentication scheme known as digest authentication.\nThis approach computes a cryptographic digest of the request and sends the digest value\nalong with the request. If the transmitted digest matches what the Stormpath API server\ncomputes for the same request, the request is authenticated.\n\nThis technique is especially secure because the API key secret is never transmitted outside\nof the application, making it extremely difficult for anything (or anyone) outside of the\napplication to interfere with a request or see the secret.\n\nWe recommend using digest authentication whenever possible because it is inherently more\nsecure. However, due to its complexity, it might not be feasible for some projects.\n\nAll Stormpath SDKs (currently Java, Ruby, PHP, and Python) use this more secure digest\nauthentication so we recommend that you use the SDKs whenever possible. However, if we do not\nyet have an SDK for your programming language, you should use basic authentication over HTTPS.\n\nFinally, if you would like to use Stormpath digest authentication in a programming language\nthat Stormpath does not yet support, you can attempt to port the algorithm to that language.\nYou can try to replicate the algorithm and use Stormpath existing code as examples to help:\n\nJava: Sauthc1Signer (the sign method) https://github.com/stormpath/stormpath-sdk-java/blob/master/impl/src/main/java/com/stormpath/sdk/impl/http/authc/Sauthc1Signer.java\nRuby: Sauthc1Signer (the sign_request method) https://github.com/stormpath/stormpath-sdk-ruby/blob/master/lib/stormpath-sdk/http/authc/sauthc1_signer.rb\nPHP: Sauthc1Signer (the signRequest method) https://github.com/stormpath/stormpath-sdk-php/blob/master/src/Stormpath/Http/Authc/Sauthc1Signer.php\nPython: Sauthc1Signer (the call method) https://github.com/stormpath/stormpath-sdk-python/blob/master/stormpath/auth.py\n\nIf you port the algorithm to other languages, please let us know. We are happy to help.\nEmail us at support@stormpath.com and we will help as best as we can.\n",
-            "describedBy": {
-                "securedBy": ["basic"],
-                "headers": {"Authorisation": {
-                    "name": "Authorisation",
-                    "displayName": "Authorisation",
-                    "type": "string",
-                    "required": true,
-                    "repeat": false,
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-            }
-        }}
+{"apis": {
+    "notebooks": [
+        {"Accounts": "https://raw.githubusercontent.com/raml-apis/Stormpath/master/notebooks/accounts.md"},
+        {"Groups and group memberships": "https://raw.githubusercontent.com/raml-apis/Stormpath/master/notebooks/groupsAndGroupMemberships.md"},
+        {"Tenants, applications, directories": "https://raw.githubusercontent.com/raml-apis/Stormpath/master/notebooks/tenantsApplicationsDirectories.md"}
     ],
-    "resourcesCount": 35,
-    "methodsCount": 49,
-    "developerPortalURI": "http://docs.stormpath.com/rest/product-guide"
-}]}}
+    "RAMLFiles": [{
+        "name": "StormPath",
+        "description": "descriptionexamle",
+        "RAMLVersion": "0.8",
+        "location": "https://raw.githubusercontent.com/raml-apis/Stormpath/production/api.raml",
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Stormpath/production/api.json",
+        "baseUri": "https://api.stormpath.com/{version}",
+        "version": "v1",
+        "securitySchemes": [
+            {
+                "name": "basic",
+                "type": "Basic Authentication"
+            },
+            {
+                "name": "digest",
+                "type": "x-digest-schema"
+            }
+        ],
+        "resourcesCount": 35,
+        "methodsCount": 49,
+        "developerPortalURI": "http://docs.stormpath.com/rest/product-guide"
+    }]
+}}

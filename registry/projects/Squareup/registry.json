@@ -1,50 +1,22 @@
-{"apis": {"RAMLFiles": [{
-    "name": "Squareup",
-    "description": "descriptionexamle",
-    "RAMLVersion": "0.8",
-    "location": "https://raw.githubusercontent.com/raml-apis/Squareup/production/squareup.raml",
-    "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Squareup/production/squareup.json",
-    "baseUri": "https://connect.squareup.com/{version}",
-    "version": "v1",
-    "securitySchemes": [{"oauth_2_0": {
-        "name": "oauth_2_0",
-        "type": "OAuth 2.0",
-        "description": "",
-        "describedBy": {
-            "securedBy": ["oauth_2_0"],
-            "headers": {"Authorization": {
-                "name": "Authorization",
-                "displayName": "Authorization",
-                "type": "string",
-                "required": false,
-                "example": "Bearer ACCESS_TOKEN",
-                "repeat": false,
-                "description": "Used to send a valid OAuth 2 access token.\n",
-                "__METADATA__": {"primitiveValuesMeta": {
-                    "displayName": {"calculated": true},
-                    "type": {"insertedAsDefault": true},
-                    "required": {"insertedAsDefault": true},
-                    "repeat": {"insertedAsDefault": true}
-                }}
-            }},
-            "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-        },
-        "settings": {
-            "authorizationUri": "https://connect.squareup.com/oauth2/authorize",
-            "authorizationGrants": ["code"],
-            "scopes": [
-                "MERCHANT_PROFILE_READ",
-                "PAYMENTS_READ",
-                "PAYMENTS_WRITE",
-                "SETTLEMENTS_READ",
-                "BANK_ACCOUNTS_READ",
-                "ITEMS_READ",
-                "ITEMS_WRITE",
-                "ORDERS_READ",
-                "ORDERS_WRITE"
-            ]
-        }
-    }}],
-    "resourcesCount": 35,
-    "methodsCount": 56
-}]}}
+{"apis": {
+    "notebooks": [
+        {"Squareup API Notebook (items, inventory, root, batch)": "https://raw.githubusercontent.com/raml-apis/Squareup/master/notebooks/itemsInventoryRootBatch.md"},
+        {"Squareup API Notebook  (modifier-lists, categories, discounts, fees, pages)": "https://raw.githubusercontent.com/raml-apis/Squareup/master/notebooks/modifierlistsCategoriesDiscountsFeesPages.md"},
+        {"Squareup API Notebook (payments, settlements, refunds, orders, bank accounts, business, locations)": "https://raw.githubusercontent.com/raml-apis/Squareup/master/notebooks/paymentsSettlementsRefundsOrdersBankAccountsBusinessLocations.md"}
+    ],
+    "RAMLFiles": [{
+        "name": "Squareup",
+        "description": "descriptionexamle",
+        "RAMLVersion": "0.8",
+        "location": "https://raw.githubusercontent.com/raml-apis/Squareup/production/squareup.raml",
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Squareup/production/squareup.json",
+        "baseUri": "https://connect.squareup.com/{version}",
+        "version": "v1",
+        "securitySchemes": [{
+            "name": "oauth_2_0",
+            "type": "OAuth 2.0"
+        }],
+        "resourcesCount": 35,
+        "methodsCount": 56
+    }]
+}}

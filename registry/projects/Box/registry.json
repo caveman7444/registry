@@ -7,48 +7,10 @@
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Box/production/boxAPI.json",
         "baseUri": "https://api.box.com/{version}/",
         "version": "2.0",
-        "securitySchemes": [{"oauth_2_0": {
+        "securitySchemes": [{
             "name": "oauth_2_0",
-            "type": "OAuth 2.0",
-            "description": "The Box API uses OAuth 2 for authentication. An authorization header containing\na valid access_token must be included in every request.\n",
-            "describedBy": {
-                "securedBy": ["oauth_2_0"],
-                "queryParameters": {"access_token": {
-                    "name": "access_token",
-                    "displayName": "access_token",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "headers": {"Authorization": {
-                    "name": "Authorization",
-                    "displayName": "Authorization",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"access_token\" query string parameter.\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-            },
-            "settings": {
-                "accessTokenUri": "https://www.box.com/api/oauth2/token",
-                "authorizationUri": "https://www.box.com/api/oauth2/authorize",
-                "authorizationGrants": ["code"]
-            }
-        }}],
+            "type": "OAuth 2.0"
+        }],
         "resourcesCount": 42,
         "methodsCount": 66
     },
@@ -60,48 +22,10 @@
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Box/production/boxUploadAPI.json",
         "baseUri": "https://upload.box.com/api/{version}",
         "version": "2.0",
-        "securitySchemes": [{"oauth_2_0": {
+        "securitySchemes": [{
             "name": "oauth_2_0",
-            "type": "OAuth 2.0",
-            "description": "The Box API uses OAuth 2 for authentication. An authorization header containing\na valid access_token must be included in every request.\n",
-            "describedBy": {
-                "securedBy": ["oauth_2_0"],
-                "queryParameters": {"access_token": {
-                    "name": "access_token",
-                    "displayName": "access_token",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "headers": {"Authorization": {
-                    "name": "Authorization",
-                    "displayName": "Authorization",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"access_token\" query string parameter.\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-            },
-            "settings": {
-                "accessTokenUri": "https://www.box.com/api/oauth2/token",
-                "authorizationUri": "https://www.box.com/api/oauth2/authorize",
-                "authorizationGrants": ["code"]
-            }
-        }}],
+            "type": "OAuth 2.0"
+        }],
         "resourcesCount": 3,
         "methodsCount": 2
     },
@@ -113,46 +37,10 @@
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Box/raml1.0/boxAPI.json",
         "baseUri": "https://api.box.com/{version}/",
         "version": "2.0",
-        "securitySchemes": [{"oauth_2_0": {
+        "securitySchemes": [{
             "name": "oauth_2_0",
-            "type": "OAuth 2.0",
-            "description": "The Box API uses OAuth 2 for authentication. An authorization header containing\na valid access_token must be included in every request.\n",
-            "describedBy": {
-                "queryParameters": {"access_token": {
-                    "name": "access_token",
-                    "displayName": "access_token",
-                    "type": ["string"],
-                    "repeat": false,
-                    "required": true,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true}
-                    }}
-                }},
-                "headers": {"Authorization": {
-                    "name": "Authorization",
-                    "displayName": "Authorization",
-                    "type": ["string"],
-                    "repeat": false,
-                    "required": true,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"access_token\" query string parameter.\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true}
-                    }}
-                }}
-            },
-            "settings": {
-                "accessTokenUri": "https://www.box.com/api/oauth2/token",
-                "authorizationUri": "https://www.box.com/api/oauth2/authorize",
-                "authorizationGrants": ["code"]
-            }
-        }}],
+            "type": "OAuth 2.0"
+        }],
         "resourcesCount": 42,
         "methodsCount": 66
     },
@@ -164,46 +52,10 @@
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Box/raml1.0/boxUploadAPI.json",
         "baseUri": "https://upload.box.com/api/{version}",
         "version": "2.0",
-        "securitySchemes": [{"oauth_2_0": {
+        "securitySchemes": [{
             "name": "oauth_2_0",
-            "type": "OAuth 2.0",
-            "description": "The Box API uses OAuth 2 for authentication. An authorization header containing\na valid access_token must be included in every request.\n",
-            "describedBy": {
-                "queryParameters": {"access_token": {
-                    "name": "access_token",
-                    "displayName": "access_token",
-                    "type": ["string"],
-                    "repeat": false,
-                    "required": true,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true}
-                    }}
-                }},
-                "headers": {"Authorization": {
-                    "name": "Authorization",
-                    "displayName": "Authorization",
-                    "type": ["string"],
-                    "repeat": false,
-                    "required": true,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"access_token\" query string parameter.\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true}
-                    }}
-                }}
-            },
-            "settings": {
-                "accessTokenUri": "https://www.box.com/api/oauth2/token",
-                "authorizationUri": "https://www.box.com/api/oauth2/authorize",
-                "authorizationGrants": ["code"]
-            }
-        }}],
+            "type": "OAuth 2.0"
+        }],
         "resourcesCount": 3,
         "methodsCount": 2
     }

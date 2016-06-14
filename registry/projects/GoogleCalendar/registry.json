@@ -1,4 +1,8 @@
 {"apis": {
+    "notebooks": [
+        {"CalendarList, Event": "https://raw.githubusercontent.com/raml-apis/GoogleCalendar/master/notebooks/calendarlistEvent.md"},
+        {"Calendars, Colors, Freebusy, Current user settings": "https://raw.githubusercontent.com/raml-apis/GoogleCalendar/master/notebooks/calendarsColorsFreebusyCurrentUserSettings.md"}
+    ],
     "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GoogleCalendar/logo.png",
     "RAMLFiles": [
         {
@@ -9,53 +13,10 @@
             "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GoogleCalendar/production/api.json",
             "baseUri": "https://www.googleapis.com/calendar/{version}",
             "version": "v3",
-            "securitySchemes": [{"oauth_2_0": {
+            "securitySchemes": [{
                 "name": "oauth_2_0",
-                "type": "OAuth 2.0",
-                "description": "Google recommend using OAuth 2.0 to authorize requests.\n",
-                "describedBy": {
-                    "responses": {"401": {
-                        "code": "401",
-                        "description": "Authorization error.\n"
-                    }},
-                    "securedBy": ["oauth_2_0"],
-                    "queryParameters": {"access_token": {
-                        "name": "access_token",
-                        "displayName": "access_token",
-                        "type": "string",
-                        "required": false,
-                        "repeat": false,
-                        "description": "Used to send a valid OAuth 2 access token\n",
-                        "__METADATA__": {"primitiveValuesMeta": {
-                            "displayName": {"calculated": true},
-                            "type": {"insertedAsDefault": true},
-                            "required": {"insertedAsDefault": true},
-                            "repeat": {"insertedAsDefault": true}
-                        }}
-                    }},
-                    "headers": {"Authorization": {
-                        "name": "Authorization",
-                        "displayName": "Authorization",
-                        "type": "string",
-                        "required": false,
-                        "repeat": false,
-                        "description": "Used to send a valid OAuth 2 access token.\n",
-                        "__METADATA__": {"primitiveValuesMeta": {
-                            "displayName": {"calculated": true},
-                            "type": {"insertedAsDefault": true},
-                            "required": {"insertedAsDefault": true},
-                            "repeat": {"insertedAsDefault": true}
-                        }}
-                    }},
-                    "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-                },
-                "settings": {
-                    "accessTokenUri": "https://accounts.google.com/o/oauth2/token",
-                    "authorizationUri": "https://accounts.google.com/o/oauth2/auth",
-                    "authorizationGrants": ["code"],
-                    "scopes": ["https://www.googleapis.com/auth/calendar"]
-                }
-            }}],
+                "type": "OAuth 2.0"
+            }],
             "resourcesCount": 23,
             "methodsCount": 37,
             "developerPortalURI": "https://developers.google.com/google-apps/calendar/v3/reference/​"
@@ -68,51 +29,10 @@
             "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GoogleCalendar/raml1.0/api.json",
             "baseUri": "https://www.googleapis.com/calendar/{version}",
             "version": "v3",
-            "securitySchemes": [{"oauth_2_0": {
+            "securitySchemes": [{
                 "name": "oauth_2_0",
-                "type": "OAuth 2.0",
-                "description": "Google recommend using OAuth 2.0 to authorize requests.\n",
-                "describedBy": {
-                    "queryParameters": {"access_token": {
-                        "name": "access_token",
-                        "displayName": "access_token",
-                        "type": ["string"],
-                        "repeat": false,
-                        "required": true,
-                        "description": "Used to send a valid OAuth 2 access token\n",
-                        "__METADATA__": {"primitiveValuesMeta": {
-                            "displayName": {"calculated": true},
-                            "type": {"insertedAsDefault": true},
-                            "repeat": {"insertedAsDefault": true},
-                            "required": {"insertedAsDefault": true}
-                        }}
-                    }},
-                    "headers": {"Authorization": {
-                        "name": "Authorization",
-                        "displayName": "Authorization",
-                        "type": ["string"],
-                        "repeat": false,
-                        "required": true,
-                        "description": "Used to send a valid OAuth 2 access token.\n",
-                        "__METADATA__": {"primitiveValuesMeta": {
-                            "displayName": {"calculated": true},
-                            "type": {"insertedAsDefault": true},
-                            "repeat": {"insertedAsDefault": true},
-                            "required": {"insertedAsDefault": true}
-                        }}
-                    }},
-                    "responses": [{
-                        "code": "401",
-                        "description": "Authorization error.\n"
-                    }]
-                },
-                "settings": {
-                    "accessTokenUri": "https://accounts.google.com/o/oauth2/token",
-                    "authorizationUri": "https://accounts.google.com/o/oauth2/auth",
-                    "authorizationGrants": ["code"],
-                    "scopes": ["https://www.googleapis.com/auth/calendar"]
-                }
-            }}],
+                "type": "OAuth 2.0"
+            }],
             "resourcesCount": 23,
             "methodsCount": 37,
             "developerPortalURI": "https://developers.google.com/google-apps/calendar/v3/reference/​"

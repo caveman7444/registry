@@ -7,10 +7,10 @@
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Jira/production/api.json",
         "baseUri": "{protocol}://{domain}/rest/api/{version}",
         "version": "2",
-        "securitySchemes": [{"basic": {
+        "securitySchemes": [{
             "name": "basic",
             "type": "Basic Authentication"
-        }}],
+        }],
         "resourcesCount": 135,
         "methodsCount": 213
     },

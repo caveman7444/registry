@@ -1,24 +1,27 @@
-{"apis": {"RAMLFiles": [
-    {
-        "name": "Fuel Economy",
-        "description": "descriptionexamle",
-        "RAMLVersion": "0.8",
-        "location": "https://raw.githubusercontent.com/raml-apis/FuelEconomy/production/api.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/FuelEconomy/production/api.json",
-        "baseUri": "http://www.fueleconomy.gov/ws/rest",
-        "resourcesCount": 20,
-        "methodsCount": 16,
-        "developerPortalURI": "http://www.fueleconomy.gov/feg/ws/index.shtml"
-    },
-    {
-        "name": "Fuel Economy",
-        "description": "descriptionexamle",
-        "RAMLVersion": "1.0",
-        "location": "https://raw.githubusercontent.com/raml-apis/FuelEconomy/raml1.0/api.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/FuelEconomy/raml1.0/api.json",
-        "baseUri": "http://www.fueleconomy.gov/ws/rest",
-        "resourcesCount": 20,
-        "methodsCount": 16,
-        "developerPortalURI": "http://www.fueleconomy.gov/feg/ws/index.shtml"
-    }
-]}}
+{"apis": {
+    "notebooks": [{"Fuel Economy API Notebook": "https://raw.githubusercontent.com/raml-apis/FuelEconomy/master/notebooks/fuelEconomyApiNotebook.md"}],
+    "RAMLFiles": [
+        {
+            "name": "Fuel Economy",
+            "description": "descriptionexamle",
+            "RAMLVersion": "0.8",
+            "location": "https://raw.githubusercontent.com/raml-apis/FuelEconomy/production/api.raml",
+            "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/FuelEconomy/production/api.json",
+            "baseUri": "http://www.fueleconomy.gov/ws/rest",
+            "resourcesCount": 20,
+            "methodsCount": 16,
+            "developerPortalURI": "http://www.fueleconomy.gov/feg/ws/index.shtml"
+        },
+        {
+            "name": "Fuel Economy",
+            "description": "descriptionexamle",
+            "RAMLVersion": "1.0",
+            "location": "https://raw.githubusercontent.com/raml-apis/FuelEconomy/raml1.0/api.raml",
+            "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/FuelEconomy/raml1.0/api.json",
+            "baseUri": "http://www.fueleconomy.gov/ws/rest",
+            "resourcesCount": 20,
+            "methodsCount": 16,
+            "developerPortalURI": "http://www.fueleconomy.gov/feg/ws/index.shtml"
+        }
+    ]
+}}

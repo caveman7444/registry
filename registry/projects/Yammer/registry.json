@@ -1,4 +1,5 @@
 {"apis": {
+    "notebooks": [{"Yammer API notebook": "https://raw.githubusercontent.com/raml-apis/Yammer/master/notebooks/yammerApiNotebook.md"}],
     "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Yammer/logo.png",
     "RAMLFiles": [{
         "name": "Yammer",
@@ -8,35 +9,10 @@
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Yammer/production/api.json",
         "baseUri": "https://www.yammer.com/api/{version}",
         "version": "v1",
-        "securitySchemes": [{"oauth_2_0": {
+        "securitySchemes": [{
             "name": "oauth_2_0",
-            "type": "OAuth 2.0",
-            "description": "",
-            "describedBy": {
-                "securedBy": ["oauth_2_0"],
-                "headers": {"Authorization": {
-                    "name": "Authorization",
-                    "displayName": "Authorization",
-                    "type": "string",
-                    "required": false,
-                    "example": "Bearer _token_",
-                    "repeat": false,
-                    "description": "Used to send a valid OAuth 2 access token. The token must be preceeded by the word \"Bearer\".\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-            },
-            "settings": {
-                "accessTokenUri": "https://www.yammer.com/oauth2/access_token.json",
-                "authorizationUri": "https://www.yammer.com/dialog/oauth",
-                "authorizationGrants": ["code"]
-            }
-        }}],
+            "type": "OAuth 2.0"
+        }],
         "resourcesCount": 35,
         "methodsCount": 42,
         "developerPortalURI": "https://developer.yammer.com/restapi/"

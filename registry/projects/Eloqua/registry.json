@@ -6,10 +6,10 @@
         "location": "https://raw.githubusercontent.com/raml-apis/Eloqua/master/api.raml",
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Eloqua/master/api.json",
         "baseUri": "https://secure.eloqua.com",
-        "securitySchemes": [{"basic": {
+        "securitySchemes": [{
             "name": "basic",
             "type": "Basic Authentication"
-        }}],
+        }],
         "resourcesCount": 549,
         "methodsCount": 575
     },
@@ -20,10 +20,10 @@
         "location": "https://raw.githubusercontent.com/raml-apis/Eloqua/staging/api.raml",
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Eloqua/staging/api.json",
         "baseUri": "https://secure.eloqua.com",
-        "securitySchemes": [{"basic": {
+        "securitySchemes": [{
             "name": "basic",
             "type": "Basic Authentication"
-        }}],
+        }],
         "resourcesCount": 549,
         "methodsCount": 575
     }

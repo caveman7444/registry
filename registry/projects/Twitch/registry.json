@@ -1,4 +1,5 @@
 {"apis": {
+    "notebooks": [{"Twitch.tv API notebook": "https://raw.githubusercontent.com/raml-apis/Twitch/master/notebooks/twitchApiNotebook.md"}],
     "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Twitch/logo.png",
     "RAMLFiles": [{
         "name": "Twitch",
@@ -8,60 +9,10 @@
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Twitch/production/api.json",
         "baseUri": "https://api.twitch.tv/kraken",
         "version": "v2",
-        "securitySchemes": [{"oauth_2_0": {
+        "securitySchemes": [{
             "name": "oauth_2_0",
-            "type": "OAuth 2.0",
-            "description": "The Twitch API uses the OAuth 2.0 protocol for simple, but effective\nauthentication and authorization. The one thing to keep in mind is tha\nall requests to the API must be made over SSL (https:// not http://)\n",
-            "describedBy": {
-                "queryParameters": {"access_token": {
-                    "name": "access_token",
-                    "displayName": "access_token",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "headers": {"Authorization": {
-                    "name": "Authorization",
-                    "displayName": "Authorization",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"access_token\" queryParameters string parameter.\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }}
-            },
-            "settings": {
-                "accessTokenUri": "https://api.twitch.tv/kraken/oauth2/token",
-                "authorizationUri": "https://api.twitch.tv/kraken/oauth2/authorize",
-                "authorizationGrants": ["code"],
-                "scopes": [
-                    "user_read",
-                    "user_blocks_edit",
-                    "user_blocks_read",
-                    "user_follows_edit",
-                    "channel_read",
-                    "channel_editor",
-                    "channel_commercial",
-                    "channel_stream",
-                    "channel_subscriptions",
-                    "user_subscriptions",
-                    "channel_check_subscription",
-                    "chat_login"
-                ]
-            }
-        }}],
+            "type": "OAuth 2.0"
+        }],
         "resourcesCount": 36,
         "methodsCount": 37,
         "developerPortalURI": "https://github.com/justintv/Twitch-API/blob/master/README.md"

@@ -1,4 +1,8 @@
 {"apis": {
+    "notebooks": [
+        {"Groups, posts, comments, jobs, companies": "https://raw.githubusercontent.com/raml-apis/LinkedIn/master/notebooks/groupsPostsCommentsJobsCompanies.md"},
+        {"People, people-search": "https://raw.githubusercontent.com/raml-apis/LinkedIn/master/notebooks/peoplePeopleSearch.md"}
+    ],
     "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/LinkedIn/logo.png",
     "RAMLFiles": [{
         "name": "LinkedIn",
@@ -9,47 +13,14 @@
         "baseUri": "https://api.linkedin.com/{version}",
         "version": "v1",
         "securitySchemes": [
-            {"oauth_2_0": {
+            {
                 "name": "oauth_2_0",
-                "type": "OAuth 2.0",
-                "description": "LinkedIn supports OAuth 2.0 for authenticating all API requests.\n",
-                "describedBy": {
-                    "securedBy": [
-                        "oauth_2_0",
-                        "oauth_1_0"
-                    ],
-                    "queryParameters": {"oauth2_access_token": {
-                        "name": "oauth2_access_token",
-                        "displayName": "oauth2_access_token",
-                        "type": "string",
-                        "required": false,
-                        "repeat": false,
-                        "description": "Used to send a valid OAuth 2 access token\n",
-                        "__METADATA__": {"primitiveValuesMeta": {
-                            "displayName": {"calculated": true},
-                            "type": {"insertedAsDefault": true},
-                            "required": {"insertedAsDefault": true},
-                            "repeat": {"insertedAsDefault": true}
-                        }}
-                    }},
-                    "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-                },
-                "settings": {
-                    "accessTokenUri": "https://www.linkedin.com/uas/oauth2/accessToken",
-                    "authorizationUri": "https://www.linkedin.com/uas/oauth2/authorization",
-                    "authorizationGrants": ["code"]
-                }
-            }},
-            {"oauth_1_0": {
+                "type": "OAuth 2.0"
+            },
+            {
                 "name": "oauth_1_0",
-                "type": "OAuth 1.0",
-                "description": "OAuth 1.0 continues to be supported for all API requests, but OAuth 2.0 is now preferred.\n",
-                "settings": {
-                    "requestTokenUri": "https://api.linkedin.com/uas/oauth/requestToken",
-                    "authorizationUri": "https//www.linkedin.com/uas/oauth/authenticate",
-                    "tokenCredentialsUri": "https://api.linkedin.com/uas/oauth/accessToken"
-                }
-            }}
+                "type": "OAuth 1.0"
+            }
         ],
         "resourcesCount": 59,
         "methodsCount": 60,

@@ -1,76 +1,37 @@
-{"apis": {"RAMLFiles": [
-    {
-        "name": "Bufferapp",
-        "description": "descriptionexamle",
-        "RAMLVersion": "0.8",
-        "location": "https://raw.githubusercontent.com/raml-apis/Bufferapp/production/api.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Bufferapp/production/api.json",
-        "baseUri": "https://api.bufferapp.com/{version}/",
-        "version": "1",
-        "securitySchemes": [{"oauth_2_0": {
-            "name": "oauth_2_0",
-            "type": "OAuth 2.0",
-            "description": "Body example for authorisation request:\n\nclient_id=...&\nredirect_uri=...&\nresponse_type=code\n\nBidy example for token request:\n\nPOST Data\nclient_id=...&\nclient_secret=...&\nredirect_uri=...&\ncode=...&\ngrant_type=authorization_code\n\nAll requests to the Buffer API must be made using HTTPS, with the access token provided in the HTTP Authorization header, request body or query string.\n",
-            "describedBy": {
-                "securedBy": ["oauth_2_0"],
-                "queryParameters": {"access_token": {
-                    "name": "access_token",
-                    "displayName": "access_token",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-            },
-            "settings": {
-                "accessTokenUri": "https://api.bufferapp.com/1/oauth2/token.json",
-                "authorizationUri": "https://bufferapp.com/oauth2/authorize",
-                "authorizationGrants": ["code"]
-            }
-        }}],
-        "resourcesCount": 23,
-        "methodsCount": 18,
-        "developerPortalURI": "https://bufferapp.com/developers/api"
-    },
-    {
-        "name": "Bufferapp",
-        "description": "descriptionexamle",
-        "RAMLVersion": "1.0",
-        "location": "https://raw.githubusercontent.com/raml-apis/Bufferapp/raml1.0/api.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Bufferapp/raml1.0/api.json",
-        "baseUri": "https://api.bufferapp.com/{version}/",
-        "version": "1",
-        "securitySchemes": [{"oauth_2_0": {
-            "name": "oauth_2_0",
-            "type": "OAuth 2.0",
-            "description": "Body example for authorisation request:\n\nclient_id=...&\nredirect_uri=...&\nresponse_type=code\n\nBidy example for token request:\n\nPOST Data\nclient_id=...&\nclient_secret=...&\nredirect_uri=...&\ncode=...&\ngrant_type=authorization_code\n\nAll requests to the Buffer API must be made using HTTPS, with the access token provided in the HTTP Authorization header, request body or query string.\n",
-            "describedBy": {"queryParameters": {"access_token": {
-                "name": "access_token",
-                "displayName": "access_token",
-                "type": ["string"],
-                "repeat": false,
-                "required": true,
-                "__METADATA__": {"primitiveValuesMeta": {
-                    "displayName": {"calculated": true},
-                    "type": {"insertedAsDefault": true},
-                    "repeat": {"insertedAsDefault": true},
-                    "required": {"insertedAsDefault": true}
-                }}
-            }}},
-            "settings": {
-                "accessTokenUri": "https://api.bufferapp.com/1/oauth2/token.json",
-                "authorizationUri": "https://bufferapp.com/oauth2/authorize",
-                "authorizationGrants": ["code"]
-            }
-        }}],
-        "resourcesCount": 23,
-        "methodsCount": 18,
-        "developerPortalURI": "https://bufferapp.com/developers/api"
-    }
-]}}
+{"apis": {
+    "notebooks": [{"Bufferapp API Notebook": "https://raw.githubusercontent.com/raml-apis/Bufferapp/master/notebooks/bufferappApiNotebook.md"}],
+    "RAMLFiles": [
+        {
+            "name": "Bufferapp",
+            "description": "descriptionexamle",
+            "RAMLVersion": "0.8",
+            "location": "https://raw.githubusercontent.com/raml-apis/Bufferapp/production/api.raml",
+            "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Bufferapp/production/api.json",
+            "baseUri": "https://api.bufferapp.com/{version}/",
+            "version": "1",
+            "securitySchemes": [{
+                "name": "oauth_2_0",
+                "type": "OAuth 2.0"
+            }],
+            "resourcesCount": 23,
+            "methodsCount": 18,
+            "developerPortalURI": "https://bufferapp.com/developers/api"
+        },
+        {
+            "name": "Bufferapp",
+            "description": "descriptionexamle",
+            "RAMLVersion": "1.0",
+            "location": "https://raw.githubusercontent.com/raml-apis/Bufferapp/raml1.0/api.raml",
+            "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Bufferapp/raml1.0/api.json",
+            "baseUri": "https://api.bufferapp.com/{version}/",
+            "version": "1",
+            "securitySchemes": [{
+                "name": "oauth_2_0",
+                "type": "OAuth 2.0"
+            }],
+            "resourcesCount": 23,
+            "methodsCount": 18,
+            "developerPortalURI": "https://bufferapp.com/developers/api"
+        }
+    ]
+}}

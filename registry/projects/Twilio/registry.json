@@ -1,4 +1,18 @@
 {"apis": {
+    "notebooks": [
+        {"Add incoming numbers": "https://raw.githubusercontent.com/raml-apis/Twilio/master/notebooks/addIncomingNumbers.md"},
+        {"Applications, Notifications, Incoming Numbers": "https://raw.githubusercontent.com/raml-apis/Twilio/master/notebooks/applicationsNotificationsIncomingNumbers.md"},
+        {"Conferences": "https://raw.githubusercontent.com/raml-apis/Twilio/master/notebooks/conferences.md"},
+        {"Connect Apps, Authorized Connect Apps": "https://raw.githubusercontent.com/raml-apis/Twilio/master/notebooks/connectAppsAuthorizedConnectAppsAndUsage.md"},
+        {"Dangerous methods": "https://raw.githubusercontent.com/raml-apis/Twilio/master/notebooks/dangerousMethods.md"},
+        {"Outgoing Caller Id, Available Numbers and Calls": "https://raw.githubusercontent.com/raml-apis/Twilio/master/notebooks/outgoingCallerIdAvailablePhoneNumbersCalls.md"},
+        {"Queues": "https://raw.githubusercontent.com/raml-apis/Twilio/master/notebooks/queues.md"},
+        {"Recordings": "https://raw.githubusercontent.com/raml-apis/Twilio/master/notebooks/recordings.md"},
+        {"SIP CredentialLists": "https://raw.githubusercontent.com/raml-apis/Twilio/master/notebooks/sipCredentiallists.md"},
+        {"SIP IpAccessControlLists": "https://raw.githubusercontent.com/raml-apis/Twilio/master/notebooks/sipIpaccesscontrollists.md"},
+        {"SMS, Messages, making Calls": "https://raw.githubusercontent.com/raml-apis/Twilio/master/notebooks/smsMessagesMakingCalls.md"},
+        {"Transcriptions": "https://raw.githubusercontent.com/raml-apis/Twilio/master/notebooks/transcriptions.md"}
+    ],
     "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Twilio/logo.png",
     "RAMLFiles": [{
         "name": "Twilio API",
@@ -8,28 +22,10 @@
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Twilio/production/api.json",
         "baseUri": "https://api.twilio.com/{version}",
         "version": "2010-04-01",
-        "securitySchemes": [{"basic": {
+        "securitySchemes": [{
             "name": "basic",
-            "type": "Basic Authentication",
-            "describedBy": {
-                "securedBy": ["basic"],
-                "headers": {"Authorization": {
-                    "name": "Authorization",
-                    "displayName": "Authorization",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "description": "The Authorization field value consists of credentials\ncontaining the authentication information of the user agent for the\nrealm of the resource being requested.\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-            }
-        }}],
+            "type": "Basic Authentication"
+        }],
         "resourcesCount": 86,
         "methodsCount": 116,
         "developerPortalURI": "www.twilio.com/docs/api/rest"

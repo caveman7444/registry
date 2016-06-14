@@ -1,4 +1,9 @@
 {"apis": {
+    "notebooks": [
+        {"Accounts, customers, plans and coupons": "https://raw.githubusercontent.com/raml-apis/Stripe/master/notebooks/accountsCustomersPlansAndCoupons.md"},
+        {"Charges, invoices and invoice items": "https://raw.githubusercontent.com/raml-apis/Stripe/master/notebooks/chargesInvoicesAndInvoiceItems.md"},
+        {"Transfers, recepients, balance, events, tokens": "https://raw.githubusercontent.com/raml-apis/Stripe/master/notebooks/transfersRecepientsBalanceEventsTokens.md"}
+    ],
     "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Stripe/logo.png",
     "RAMLFiles": [{
         "name": "Stripe",
@@ -9,77 +14,14 @@
         "baseUri": "https://api.stripe.com/{version}",
         "version": "v1",
         "securitySchemes": [
-            {"oauth_2_0": {
+            {
                 "name": "oauth_2_0",
-                "type": "OAuth 2.0",
-                "description": "The Box API uses OAuth 2 for authentication. An authorization header containing\na valid access_token must be included in every request.\n",
-                "describedBy": {
-                    "securedBy": [
-                        "oauth_2_0",
-                        "basic"
-                    ],
-                    "queryParameters": {"access_token": {
-                        "name": "access_token",
-                        "displayName": "access_token",
-                        "type": "string",
-                        "required": false,
-                        "repeat": false,
-                        "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
-                        "__METADATA__": {"primitiveValuesMeta": {
-                            "displayName": {"calculated": true},
-                            "type": {"insertedAsDefault": true},
-                            "required": {"insertedAsDefault": true},
-                            "repeat": {"insertedAsDefault": true}
-                        }}
-                    }},
-                    "headers": {"Authorization": {
-                        "name": "Authorization",
-                        "displayName": "Authorization",
-                        "type": "string",
-                        "required": false,
-                        "repeat": false,
-                        "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"access_token\" query string parameter.\n",
-                        "__METADATA__": {"primitiveValuesMeta": {
-                            "displayName": {"calculated": true},
-                            "type": {"insertedAsDefault": true},
-                            "required": {"insertedAsDefault": true},
-                            "repeat": {"insertedAsDefault": true}
-                        }}
-                    }},
-                    "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-                },
-                "settings": {
-                    "accessTokenUri": "https://connect.stripe.com/oauth/token",
-                    "authorizationUri": "https://connect.stripe.com/oauth/authorize",
-                    "authorizationGrants": ["code"]
-                }
-            }},
-            {"basic": {
+                "type": "OAuth 2.0"
+            },
+            {
                 "name": "basic",
-                "type": "Basic Authentication",
-                "description": "Authentication to the API occurs via HTTP Basic Auth. Provide your API key as the basic auth username. You do no\nneed to provide a password.\n",
-                "describedBy": {
-                    "securedBy": [
-                        "oauth_2_0",
-                        "basic"
-                    ],
-                    "headers": {"Authorization": {
-                        "name": "Authorization",
-                        "displayName": "Authorization",
-                        "type": "string",
-                        "required": false,
-                        "repeat": false,
-                        "description": "The Authorization field value consists of credentials\ncontaining the authentication information of the user agent for the\nrealm of the resource being requested.\n",
-                        "__METADATA__": {"primitiveValuesMeta": {
-                            "displayName": {"calculated": true},
-                            "type": {"insertedAsDefault": true},
-                            "required": {"insertedAsDefault": true},
-                            "repeat": {"insertedAsDefault": true}
-                        }}
-                    }},
-                    "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-                }
-            }}
+                "type": "Basic Authentication"
+            }
         ],
         "resourcesCount": 41,
         "methodsCount": 67,

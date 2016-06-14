@@ -7,51 +7,10 @@
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Facebook/production/api.json",
         "baseUri": "https://graph.facebook.com/{version}",
         "version": "v2.0",
-        "securitySchemes": [{"oauth_2_0": {
+        "securitySchemes": [{
             "name": "oauth_2_0",
-            "type": "OAuth 2.0",
-            "description": "Facebook API uses the OAuth 2.0 protocol for simple, but effective\nauthentication and authorization. The one thing to keep in mind is tha\nall requests to the API must be made over SSL (https:// not http://)\n",
-            "describedBy": {
-                "securedBy": ["oauth_2_0"],
-                "queryParameters": {"access_token": {
-                    "name": "access_token",
-                    "displayName": "access_token",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "headers": {"Authorization": {
-                    "name": "Authorization",
-                    "displayName": "Authorization",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"access_token\" queryParameters string parameter.\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-            },
-            "settings": {
-                "accessTokenUri": "https://graph.facebook.com/oauth/access_token",
-                "authorizationUri": "https://graph.facebook.com/oauth/authorize",
-                "authorizationGrants": [
-                    "code",
-                    "token"
-                ]
-            }
-        }}],
+            "type": "OAuth 2.0"
+        }],
         "resourcesCount": 244,
         "methodsCount": 381
     },
@@ -63,51 +22,10 @@
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Facebook/production/postVideo.json",
         "baseUri": "https://graph-video.facebook.com/{version}",
         "version": "v2.3",
-        "securitySchemes": [{"oauth_2_0": {
+        "securitySchemes": [{
             "name": "oauth_2_0",
-            "type": "OAuth 2.0",
-            "description": "Facebook API uses the OAuth 2.0 protocol for simple, but effective\nauthentication and authorization. The one thing to keep in mind is tha\nall requests to the API must be made over SSL (https:// not http://)\n",
-            "describedBy": {
-                "securedBy": ["oauth_2_0"],
-                "queryParameters": {"access_token": {
-                    "name": "access_token",
-                    "displayName": "access_token",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "headers": {"Authorization": {
-                    "name": "Authorization",
-                    "displayName": "Authorization",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"access_token\" queryParameters string parameter.\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-            },
-            "settings": {
-                "accessTokenUri": "https://graph.facebook.com/oauth/access_token",
-                "authorizationUri": "https://graph.facebook.com/oauth/authorize",
-                "authorizationGrants": [
-                    "code",
-                    "token"
-                ]
-            }
-        }}],
+            "type": "OAuth 2.0"
+        }],
         "resourcesCount": 4,
         "methodsCount": 2
     }

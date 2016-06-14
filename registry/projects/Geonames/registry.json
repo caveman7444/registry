@@ -1,4 +1,8 @@
 {"apis": {
+    "notebooks": [
+        {"Geonames part 1": "https://raw.githubusercontent.com/raml-apis/Geonames/master/notebooks/geonamesPartOne.md"},
+        {"Geonames part 2": "https://raw.githubusercontent.com/raml-apis/Geonames/master/notebooks/geonamesPartTwo.md"}
+    ],
     "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Geonames/logo.png",
     "RAMLFiles": [{
         "name": "GeoNames",
@@ -7,7 +11,10 @@
         "location": "https://raw.githubusercontent.com/raml-apis/Geonames/production/api.raml",
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Geonames/production/api.json",
         "baseUri": "http://api.geonames.org",
-        "securitySchemes": [{"usernameSchema": {"name": "usernameSchema"}}],
+        "securitySchemes": [{
+            "name": "usernameSchema",
+            "type": ""
+        }],
         "resourcesCount": 38,
         "methodsCount": 40,
         "developerPortalURI": "http://www.geonames.org/export/web-services.html​"

@@ -1,4 +1,5 @@
 {"apis": {
+    "notebooks": [{"Healthcare.gov notebook": "https://raw.githubusercontent.com/raml-apis/HealthCare/master/notebooks/healthcareNotebook.md"}],
     "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/HealthCare/logo.png",
     "RAMLFiles": [{
         "name": "Healthcare",

@@ -7,63 +7,10 @@
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GitHub/production/api.json",
         "baseUri": "https://api.github.com",
         "version": "v3",
-        "securitySchemes": [{"oauth_2_0": {
+        "securitySchemes": [{
             "name": "oauth_2_0",
-            "type": "OAuth 2.0",
-            "description": "OAuth2 is a protocol that lets external apps request authorization to private\ndetails in a user's GitHub account without getting their password. This is\npreferred over Basic Authentication because tokens can be limited to specific\ntypes of data, and can be revoked by users at any time.\n",
-            "describedBy": {
-                "responses": {"404": {
-                    "code": "404",
-                    "description": "Unauthorized"
-                }},
-                "securedBy": ["oauth_2_0"],
-                "queryParameters": {"access_token": {
-                    "name": "access_token",
-                    "displayName": "access_token",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "headers": {"Authorization": {
-                    "name": "Authorization",
-                    "displayName": "Authorization",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"access_token\" query string parameter.\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-            },
-            "settings": {
-                "accessTokenUri": "https://github.com/login/oauth/access_token",
-                "authorizationUri": "https://github.com/login/oauth/authorize",
-                "authorizationGrants": ["code"],
-                "scopes": [
-                    "user",
-                    "user:email",
-                    "user:follow",
-                    "public_repo",
-                    "repo",
-                    "repo:status",
-                    "delete_repo",
-                    "notifications",
-                    "gist"
-                ]
-            }
-        }}],
+            "type": "OAuth 2.0"
+        }],
         "resourcesCount": 161,
         "methodsCount": 244
     },
@@ -75,63 +22,10 @@
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GitHub/production/uploadsApi.json",
         "baseUri": "https://uploads.github.com/",
         "version": "v3",
-        "securitySchemes": [{"oauth_2_0": {
+        "securitySchemes": [{
             "name": "oauth_2_0",
-            "type": "OAuth 2.0",
-            "description": "OAuth2 is a protocol that lets external apps request authorization to private\ndetails in a user's GitHub account without getting their password. This is\npreferred over Basic Authentication because tokens can be limited to specific\ntypes of data, and can be revoked by users at any time.\n",
-            "describedBy": {
-                "responses": {"404": {
-                    "code": "404",
-                    "description": "Unauthorized"
-                }},
-                "securedBy": ["oauth_2_0"],
-                "queryParameters": {"access_token": {
-                    "name": "access_token",
-                    "displayName": "access_token",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "headers": {"Authorization": {
-                    "name": "Authorization",
-                    "displayName": "Authorization",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"access_token\" query string parameter.\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-            },
-            "settings": {
-                "accessTokenUri": "https://github.com/login/oauth/access_token",
-                "authorizationUri": "https://github.com/login/oauth/authorize",
-                "authorizationGrants": ["code"],
-                "scopes": [
-                    "user",
-                    "user:email",
-                    "user:follow",
-                    "public_repo",
-                    "repo",
-                    "repo:status",
-                    "delete_repo",
-                    "notifications",
-                    "gist"
-                ]
-            }
-        }}],
+            "type": "OAuth 2.0"
+        }],
         "resourcesCount": 2,
         "methodsCount": 1
     },
@@ -143,61 +37,10 @@
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GitHub/raml1.0/api.json",
         "baseUri": "https://api.github.com",
         "version": "v3",
-        "securitySchemes": [{"oauth_2_0": {
+        "securitySchemes": [{
             "name": "oauth_2_0",
-            "type": "OAuth 2.0",
-            "description": "OAuth2 is a protocol that lets external apps request authorization to private\ndetails in a user's GitHub account without getting their password. This is\npreferred over Basic Authentication because tokens can be limited to specific\ntypes of data, and can be revoked by users at any time.\n",
-            "describedBy": {
-                "queryParameters": {"access_token": {
-                    "name": "access_token",
-                    "displayName": "access_token",
-                    "type": ["string"],
-                    "repeat": false,
-                    "required": true,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true}
-                    }}
-                }},
-                "headers": {"Authorization": {
-                    "name": "Authorization",
-                    "displayName": "Authorization",
-                    "type": ["string"],
-                    "repeat": false,
-                    "required": true,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"access_token\" query string parameter.\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true}
-                    }}
-                }},
-                "responses": [{
-                    "code": "404",
-                    "description": "Unauthorized"
-                }]
-            },
-            "settings": {
-                "accessTokenUri": "https://github.com/login/oauth/access_token",
-                "authorizationUri": "https://github.com/login/oauth/authorize",
-                "authorizationGrants": ["code"],
-                "scopes": [
-                    "user",
-                    "user:email",
-                    "user:follow",
-                    "public_repo",
-                    "repo",
-                    "repo:status",
-                    "delete_repo",
-                    "notifications",
-                    "gist"
-                ]
-            }
-        }}],
+            "type": "OAuth 2.0"
+        }],
         "resourcesCount": 162,
         "methodsCount": 245
     },
@@ -209,63 +52,10 @@
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GitHub/raml1.0/uploadsApi.json",
         "baseUri": "https://uploads.github.com/",
         "version": "v3",
-        "securitySchemes": [{"oauth_2_0": {
+        "securitySchemes": [{
             "name": "oauth_2_0",
-            "type": "OAuth 2.0",
-            "description": "OAuth2 is a protocol that lets external apps request authorization to private\ndetails in a user's GitHub account without getting their password. This is\npreferred over Basic Authentication because tokens can be limited to specific\ntypes of data, and can be revoked by users at any time.\n",
-            "describedBy": {
-                "responses": {"404": {
-                    "code": "404",
-                    "description": "Unauthorized"
-                }},
-                "securedBy": ["oauth_2_0"],
-                "queryParameters": {"access_token": {
-                    "name": "access_token",
-                    "displayName": "access_token",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "headers": {"Authorization": {
-                    "name": "Authorization",
-                    "displayName": "Authorization",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"access_token\" query string parameter.\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-            },
-            "settings": {
-                "accessTokenUri": "https://github.com/login/oauth/access_token",
-                "authorizationUri": "https://github.com/login/oauth/authorize",
-                "authorizationGrants": ["code"],
-                "scopes": [
-                    "user",
-                    "user:email",
-                    "user:follow",
-                    "public_repo",
-                    "repo",
-                    "repo:status",
-                    "delete_repo",
-                    "notifications",
-                    "gist"
-                ]
-            }
-        }}],
+            "type": "OAuth 2.0"
+        }],
         "resourcesCount": 2,
         "methodsCount": 1
     }

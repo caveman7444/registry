@@ -6,10 +6,10 @@
     "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/AdhereTech/raml1.0/api.json",
     "baseUri": "adheretech.com/api/{version}",
     "version": "v1",
-    "securitySchemes": [{"auth": {
+    "securitySchemes": [{
         "name": "auth",
         "type": "Basic Authentication"
-    }}],
+    }],
     "resourcesCount": 24,
     "methodsCount": 44
 }]}}

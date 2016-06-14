@@ -7,51 +7,10 @@
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/23andMe/staging/api.json",
         "baseUri": "https://api.23andme.com/{version}",
         "version": "1",
-        "securitySchemes": [{"oauth_2_0": {
+        "securitySchemes": [{
             "name": "oauth_2_0",
-            "type": "OAuth 2.0",
-            "describedBy": {
-                "securedBy": ["oauth_2_0"],
-                "queryParameters": {"access_token": {
-                    "name": "access_token",
-                    "displayName": "access_token",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-            },
-            "settings": {
-                "accessTokenUri": "https://api.23andme.com/token/",
-                "authorizationUri": "https://api.23andme.com/authorize/",
-                "authorizationGrants": ["code"],
-                "scopes": [
-                    "genomes",
-                    "basic",
-                    "names",
-                    "email",
-                    "haplogroups",
-                    "ancestry",
-                    "family_tree",
-                    "relatives",
-                    "relatives:write",
-                    "analyses",
-                    "profile:read",
-                    "profile:write",
-                    "publish",
-                    "introduction:read",
-                    "introduction:write",
-                    "phenotypes:write:sex"
-                ]
-            }
-        }}],
+            "type": "OAuth 2.0"
+        }],
         "resourcesCount": 38,
         "methodsCount": 43
     },
@@ -63,51 +22,10 @@
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/23andMe/staging/reseller.json",
         "baseUri": "https://api.23andme.com/{version}",
         "version": "2",
-        "securitySchemes": [{"oauth_2_0": {
+        "securitySchemes": [{
             "name": "oauth_2_0",
-            "type": "OAuth 2.0",
-            "describedBy": {
-                "securedBy": ["oauth_2_0"],
-                "queryParameters": {"access_token": {
-                    "name": "access_token",
-                    "displayName": "access_token",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-            },
-            "settings": {
-                "accessTokenUri": "https://api.23andme.com/token/",
-                "authorizationUri": "https://api.23andme.com/authorize/",
-                "authorizationGrants": ["code"],
-                "scopes": [
-                    "genomes",
-                    "basic",
-                    "names",
-                    "email",
-                    "haplogroups",
-                    "ancestry",
-                    "family_tree",
-                    "relatives",
-                    "relatives:write",
-                    "analyses",
-                    "profile:read",
-                    "profile:write",
-                    "publish",
-                    "introduction:read",
-                    "introduction:write",
-                    "phenotypes:write:sex"
-                ]
-            }
-        }}],
+            "type": "OAuth 2.0"
+        }],
         "resourcesCount": 2,
         "methodsCount": 2
     }

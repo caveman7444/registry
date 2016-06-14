@@ -1,4 +1,5 @@
 {"apis": {
+    "notebooks": [{"XKCD API Notebook": "https://raw.githubusercontent.com/raml-apis/XKCD/master/notebooks/xkcdApiNotebook.md"}],
     "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/XKCD/logo.png",
     "RAMLFiles": [
         {

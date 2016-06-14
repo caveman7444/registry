@@ -1,4 +1,5 @@
 {"apis": {
+    "notebooks": [{"Slideshare API Notebook": "https://raw.githubusercontent.com/raml-apis/SlideShare/master/notebooks/slideshareApiNotebook.md"}],
     "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/SlideShare/logo.png",
     "RAMLFiles": [{
         "name": "Slideshare",
@@ -8,56 +9,10 @@
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/SlideShare/production/slideshare.json",
         "baseUri": "https://www.slideshare.net/api/{version}",
         "version": "2",
-        "securitySchemes": [{"apiKey": {
+        "securitySchemes": [{
             "name": "apiKey",
-            "type": "x-ApiKey",
-            "description": "All requests made using the SlideShare API must have some parameters.\n",
-            "describedBy": {
-                "securedBy": ["apiKey"],
-                "queryParameters": {
-                    "api_key": {
-                        "name": "api_key",
-                        "displayName": "api_key",
-                        "type": "string",
-                        "required": true,
-                        "repeat": false,
-                        "description": "Set this to the API Key that SlideShare has provided for you.\n",
-                        "__METADATA__": {"primitiveValuesMeta": {
-                            "displayName": {"calculated": true},
-                            "type": {"insertedAsDefault": true},
-                            "repeat": {"insertedAsDefault": true}
-                        }}
-                    },
-                    "ts": {
-                        "name": "ts",
-                        "displayName": "ts",
-                        "type": "string",
-                        "required": true,
-                        "repeat": false,
-                        "description": "Set this to the current time in Unix TimeStamp format, to the nearest second(?).\n",
-                        "__METADATA__": {"primitiveValuesMeta": {
-                            "displayName": {"calculated": true},
-                            "type": {"insertedAsDefault": true},
-                            "repeat": {"insertedAsDefault": true}
-                        }}
-                    },
-                    "hash": {
-                        "name": "hash",
-                        "displayName": "hash",
-                        "type": "string",
-                        "required": true,
-                        "repeat": false,
-                        "description": "Set this to the SHA1 hash of the concatenation of the shared secret and the timestamp (ts). i.e. SHA1 (sharedsecret + timestamp). The order of the terms in the concatenation is important.\n",
-                        "__METADATA__": {"primitiveValuesMeta": {
-                            "displayName": {"calculated": true},
-                            "type": {"insertedAsDefault": true},
-                            "repeat": {"insertedAsDefault": true}
-                        }}
-                    }
-                },
-                "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-            }
-        }}],
+            "type": "x-ApiKey"
+        }],
         "resourcesCount": 17,
         "methodsCount": 17,
         "developerPortalURI": "http://www.slideshare.net/developers/documentation"

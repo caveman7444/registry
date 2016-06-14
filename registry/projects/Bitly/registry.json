@@ -1,4 +1,9 @@
 {"apis": {
+    "notebooks": [
+        {"Bundles": "https://raw.githubusercontent.com/raml-apis/Bitly/master/notebooks/bundles.md"},
+        {"Shorten, Expand, Info": "https://raw.githubusercontent.com/raml-apis/Bitly/master/notebooks/shortenExpandInfo.md"},
+        {"Users and Links": "https://raw.githubusercontent.com/raml-apis/Bitly/master/notebooks/usersAndLinks.md"}
+    ],
     "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Bitly/logo.png",
     "RAMLFiles": [{
         "name": "Bitly",
@@ -8,34 +13,10 @@
         "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Bitly/production/api.json",
         "baseUri": "https://api-ssl.bitly.com/{version}/",
         "version": "v3",
-        "securitySchemes": [{"oauth_2_0": {
+        "securitySchemes": [{
             "name": "oauth_2_0",
-            "type": "OAuth 2.0",
-            "description": "OAuth 2.0 is a simple and secure authentication mechanism. It allows applications\nto acquire an access token for bitly via a quick redirect to the bitly site. Once\nan application has an access token, it can access a user's link metrics, and\nshorten links using that user's bitly account.\n",
-            "describedBy": {
-                "securedBy": ["oauth_2_0"],
-                "queryParameters": {"access_token": {
-                    "name": "access_token",
-                    "displayName": "access_token",
-                    "type": "string",
-                    "required": false,
-                    "repeat": false,
-                    "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
-                    "__METADATA__": {"primitiveValuesMeta": {
-                        "displayName": {"calculated": true},
-                        "type": {"insertedAsDefault": true},
-                        "required": {"insertedAsDefault": true},
-                        "repeat": {"insertedAsDefault": true}
-                    }}
-                }},
-                "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
-            },
-            "settings": {
-                "accessTokenUri": "https://api-ssl.bitly.com/oauth/access_token",
-                "authorizationUri": "https://bitly.com/oauth/authorize",
-                "authorizationGrants": ["code"]
-            }
-        }}],
+            "type": "OAuth 2.0"
+        }],
         "resourcesCount": 63,
         "methodsCount": 59,
         "developerPortalURI": "http://dev.bitly.com/"

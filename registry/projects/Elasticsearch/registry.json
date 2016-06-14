@@ -1,11 +1,22 @@
-{"apis": {"RAMLFiles": [{
-    "name": "Elasticsearch",
-    "description": "descriptionexamle",
-    "RAMLVersion": "0.8",
-    "location": "https://raw.githubusercontent.com/raml-apis/Elasticsearch/production/api.raml",
-    "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Elasticsearch/production/api.json",
-    "baseUri": "{protocol}://{domain}:{port}",
-    "resourcesCount": 111,
-    "methodsCount": 138,
-    "developerPortalURI": "http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/index.html"
-}]}}
+{"apis": {
+    "notebooks": [
+        {"Elasticsearch (cat, cluster, aliases)": "https://raw.githubusercontent.com/raml-apis/Elasticsearch/master/notebooks/catClusterAliases.md"},
+        {"Elasticsearch (index)": "https://raw.githubusercontent.com/raml-apis/Elasticsearch/master/notebooks/index.md"},
+        {"Elasticsearch (index/type)": "https://raw.githubusercontent.com/raml-apis/Elasticsearch/master/notebooks/indexType.md"},
+        {"Elasticsearch (index/type/document)": "https://raw.githubusercontent.com/raml-apis/Elasticsearch/master/notebooks/indexTypeDocument.md"},
+        {"Elasticsearch (nodes, cache, segments, template, mtermvectors, mget, bulk, optimize, analyze)": "https://raw.githubusercontent.com/raml-apis/Elasticsearch/master/notebooks/nodesCacheSegmentsTemplateMtermvectorsMgetBulkOptimizeAnalyze.md"},
+        {"Elasticsearch (settings, mprecolate, search, msearch, mappings)": "https://raw.githubusercontent.com/raml-apis/Elasticsearch/master/notebooks/settingsMprecolateSearchMsearchMappings.md"},
+        {"Elasticsearch (warmer, warmers, status, flush, bench, stats, refresh)": "https://raw.githubusercontent.com/raml-apis/Elasticsearch/master/notebooks/warmerWarmersStatusFlushBenchStatsRefresh.md"}
+    ],
+    "RAMLFiles": [{
+        "name": "Elasticsearch",
+        "description": "descriptionexamle",
+        "RAMLVersion": "0.8",
+        "location": "https://raw.githubusercontent.com/raml-apis/Elasticsearch/production/api.raml",
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Elasticsearch/production/api.json",
+        "baseUri": "{protocol}://{domain}:{port}",
+        "resourcesCount": 111,
+        "methodsCount": 138,
+        "developerPortalURI": "http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/index.html"
+    }]
+}}
