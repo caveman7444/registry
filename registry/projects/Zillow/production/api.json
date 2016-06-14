@@ -682,6 +682,48 @@
                     "securedBy": [
                         "zwsIdSchema"
                     ],
+                    "queryParameters": {
+                        "zpid": {
+                            "name": "zpid",
+                            "displayName": "zpid",
+                            "type": "integer",
+                            "required": true,
+                            "repeat": false,
+                            "description": "The Zillow Property ID for the property for which to obtain information. The parameter type is an integer.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "rentzestimate": {
+                            "name": "rentzestimate",
+                            "displayName": "rentzestimate",
+                            "type": "boolean",
+                            "required": false,
+                            "default": false,
+                            "repeat": false,
+                            "description": "Return Rent Zestimate information if available",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "Returns the full property address and geographic location (latitude/longitude) and a set of identifiers that uniquely represent the region (ZIP code, city, county & state) in which the property exists.",
                     "method": "get",
                     "is": [
@@ -703,9 +745,6 @@
             "displayName": "/GetZestimate.htm",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }
@@ -742,6 +781,72 @@
                     "securedBy": [
                         "zwsIdSchema"
                     ],
+                    "queryParameters": {
+                        "rentzestimate": {
+                            "name": "rentzestimate",
+                            "displayName": "rentzestimate",
+                            "type": "boolean",
+                            "required": false,
+                            "default": false,
+                            "repeat": false,
+                            "description": "Return Rent Zestimate information if available",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "address": {
+                            "name": "address",
+                            "displayName": "address",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "The address of the property to search. This string should be URL encoded.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "citystatezip": {
+                            "name": "citystatezip",
+                            "displayName": "citystatezip",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "The city+state combination and/or ZIP code for which to search. This string should be URL encoded. Note that giving both city and state is required. Using just one will not work.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "The GetSearchResults API finds a property for a specified address. The content returned contains the address for the property or properties as well as the Zillow Property ID (ZPID) and current Zestimate. It also includes the date the Zestimate was computed, a valuation range and the Zestimate ranking for the property within its ZIP code.",
                     "method": "get",
                     "is": [
@@ -763,9 +868,6 @@
             "displayName": "/GetSearchResults.htm",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }
@@ -802,6 +904,113 @@
                     "securedBy": [
                         "zwsIdSchema"
                     ],
+                    "queryParameters": {
+                        "zpid": {
+                            "name": "zpid",
+                            "displayName": "zpid",
+                            "type": "integer",
+                            "required": true,
+                            "repeat": false,
+                            "description": "The Zillow Property ID for the property for which to obtain information. The parameter type is an integer.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "height": {
+                            "name": "height",
+                            "displayName": "height",
+                            "type": "integer",
+                            "required": false,
+                            "repeat": false,
+                            "description": "An integer value that specifies the height of the generated image; the value must be between 100 and 300, inclusive.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "width": {
+                            "name": "width",
+                            "displayName": "width",
+                            "type": "integer",
+                            "required": false,
+                            "repeat": false,
+                            "description": "An integer value that specifies the width of the generated image; the value must be between 200 and 600, inclusive",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "chartDuration": {
+                            "name": "chartDuration",
+                            "displayName": "chartDuration",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The duration of past data that needs to be shown in the chart. Valid values are \"1year\", \"5years\" and \"10years\". If unspecified, the value defaults to \"1year\".",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "unit-type": {
+                            "name": "unit-type",
+                            "displayName": "unit-type",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "A string value that specifies whether to show the percent change, parameter value of \"percent,\" or dollar change, parameter value of \"dollar\"",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "The GetChart API generates a URL for an image file that displays historical Zestimates for a specific property. The API accepts as input the Zillow Property ID as well as a chart type: either percentage or dollar value change. Optionally, the API accepts width and height parameters that constrain the size of the image. The historical data can be for the past 1 year, 5 years or 10 years.\n",
                     "method": "get",
                     "is": [
@@ -823,9 +1032,6 @@
             "displayName": "/GetChart.htm",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }
@@ -862,6 +1068,66 @@
                     "securedBy": [
                         "zwsIdSchema"
                     ],
+                    "queryParameters": {
+                        "zpid": {
+                            "name": "zpid",
+                            "displayName": "zpid",
+                            "type": "integer",
+                            "required": true,
+                            "repeat": false,
+                            "description": "The Zillow Property ID for the property for which to obtain information. The parameter type is an integer.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "rentzestimate": {
+                            "name": "rentzestimate",
+                            "displayName": "rentzestimate",
+                            "type": "boolean",
+                            "required": false,
+                            "default": false,
+                            "repeat": false,
+                            "description": "Return Rent Zestimate information if available",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "count": {
+                            "name": "count",
+                            "displayName": "count",
+                            "type": "integer",
+                            "required": true,
+                            "repeat": false,
+                            "description": "The number of comparable recent sales to obtain (integer between 1 and 25)",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "The GetComps API returns a list of comparable recent sales for a specified property. The result set returned contains the address, Zillow property identifier, and Zestimate for the comparable properties and the principal property for which the comparables are being retrieved.\n",
                     "method": "get",
                     "is": [
@@ -884,9 +1150,6 @@
             "displayName": "/GetComps.htm",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }
@@ -923,6 +1186,66 @@
                     "securedBy": [
                         "zwsIdSchema"
                     ],
+                    "queryParameters": {
+                        "zpid": {
+                            "name": "zpid",
+                            "displayName": "zpid",
+                            "type": "integer",
+                            "required": true,
+                            "repeat": false,
+                            "description": "The Zillow Property ID for the property for which to obtain information. The parameter type is an integer.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "rentzestimate": {
+                            "name": "rentzestimate",
+                            "displayName": "rentzestimate",
+                            "type": "boolean",
+                            "required": false,
+                            "default": false,
+                            "repeat": false,
+                            "description": "Return Rent Zestimate information if available",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "count": {
+                            "name": "count",
+                            "displayName": "count",
+                            "type": "integer",
+                            "required": true,
+                            "repeat": false,
+                            "description": "The number of comparable recent sales to obtain (integer between 1 and 25)",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "The GetDeepComps API returns a list of comparable recent sales for a specified property. The result set returned contains the address, Zillow property identifier, and Zestimate for the comparable properties and the principal property for which the comparables are being retrieved. This API call also returns rich property data for the comparables.\n",
                     "method": "get",
                     "is": [
@@ -945,9 +1268,6 @@
             "displayName": "/GetDeepComps.htm",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }
@@ -984,6 +1304,72 @@
                     "securedBy": [
                         "zwsIdSchema"
                     ],
+                    "queryParameters": {
+                        "rentzestimate": {
+                            "name": "rentzestimate",
+                            "displayName": "rentzestimate",
+                            "type": "boolean",
+                            "required": false,
+                            "default": false,
+                            "repeat": false,
+                            "description": "Return Rent Zestimate information if available",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "address": {
+                            "name": "address",
+                            "displayName": "address",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "The address of the property to search. This string should be URL encoded.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "citystatezip": {
+                            "name": "citystatezip",
+                            "displayName": "citystatezip",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "The city+state combination and/or ZIP code for which to search. This string should be URL encoded. Note that giving both city and state is required. Using just one will not work.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "The GetDeepSearchResults API finds a property for a specified address. The result set returned contains the full address(s), zpid and Zestimate data that is provided by the GetSearchResults API. Moreover, this API call also gives rich property data like lot size, year built, bath/beds, last sale details etc.\n",
                     "method": "get",
                     "is": [
@@ -1005,9 +1391,6 @@
             "displayName": "/GetDeepSearchResults.htm",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }
@@ -1044,6 +1427,26 @@
                     "securedBy": [
                         "zwsIdSchema"
                     ],
+                    "queryParameters": {
+                        "zpid": {
+                            "name": "zpid",
+                            "displayName": "zpid",
+                            "type": "integer",
+                            "required": true,
+                            "repeat": false,
+                            "description": "The Zillow Property ID for the property for which to obtain information. The parameter type is an integer.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "For a specified property, the GetUpdatedPropertyDetails API returns all of the home facts that have been edited by the home's owner or agent. The result set contains the following attributes:\nProperty address\nZillow property identifier\nPosting details such as the agent name, MLS number, price, and posting type (For Sale or Make Me Move)\nUp to five photos of the property\nUpdated home facts such as beds, baths, square footage, home description, and neighborhood and school names\n",
                     "method": "get",
                     "is": [
@@ -1064,9 +1467,6 @@
             "displayName": "/GetUpdatedPropertyDetails.htm",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }
@@ -1242,9 +1642,6 @@
             "displayName": "/GetDemographics.htm",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }
@@ -1420,9 +1817,6 @@
             "displayName": "/GetRegionChildren.htm",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }
@@ -1555,6 +1949,93 @@
                                     }
                                 }
                             }
+                        },
+                        "height": {
+                            "name": "height",
+                            "displayName": "height",
+                            "type": "integer",
+                            "required": false,
+                            "repeat": false,
+                            "description": "An integer value that specifies the height of the generated image; the value must be between 100 and 300, inclusive.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "width": {
+                            "name": "width",
+                            "displayName": "width",
+                            "type": "integer",
+                            "required": false,
+                            "repeat": false,
+                            "description": "An integer value that specifies the width of the generated image; the value must be between 200 and 600, inclusive",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "chartDuration": {
+                            "name": "chartDuration",
+                            "displayName": "chartDuration",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The duration of past data that needs to be shown in the chart. Valid values are \"1year\", \"5years\" and \"10years\". If unspecified, the value defaults to \"1year\".",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "unit-type": {
+                            "name": "unit-type",
+                            "displayName": "unit-type",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "A string value that specifies whether to show the percent change, parameter value of \"percent,\" or dollar change, parameter value of \"dollar\"",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
                         }
                     },
                     "description": "The GetRegionChart API generates a URL for an image file that displays the historical Zestimates for a specific geographic region. The API accepts as input the name of the region as well as a chart type: either percentage or dollar value change. Optionally, the API accepts width and height parameters that constrain the size of the image. The historical data can be for the past 1 year, 5 years or 10 years.\n",
@@ -1577,9 +2058,6 @@
             "displayName": "/GetRegionChart.htm",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }
@@ -1646,6 +2124,55 @@
                                     }
                                 }
                             }
+                        },
+                        "callback": {
+                            "name": "callback",
+                            "displayName": "callback",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The name of the JavaScript callback function used to process the returned JSON data. If specified, the returned JSON will be wrapped in a function call with the specified function name. This parameter is intended for use with dynamic script tags. The callback function is only used for JSON output.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "output": {
+                            "name": "output",
+                            "displayName": "output",
+                            "type": "string",
+                            "required": false,
+                            "default": "xml",
+                            "repeat": false,
+                            "description": "The type of output desired. Specify 'xml' for XML output and 'json' for JSON output. If omitted, 'xml' is assumed.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
                         }
                     },
                     "description": "The GetRateSummary API returns the current rates per loan type from Zillow Mortgage Marketplace. Current supported loan types are 30-year fixed, 15-year fixed, and 5/1 ARM. Rates are computed from real quotes borrowers receive from lenders just seconds before the rate data is returned. The GetRateSummary API returns rates for a specific state if the optional state parameter is used.\n",
@@ -1668,9 +2195,6 @@
             "displayName": "/GetRateSummary.htm",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }
@@ -1807,6 +2331,55 @@
                                     }
                                 }
                             }
+                        },
+                        "callback": {
+                            "name": "callback",
+                            "displayName": "callback",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The name of the JavaScript callback function used to process the returned JSON data. If specified, the returned JSON will be wrapped in a function call with the specified function name. This parameter is intended for use with dynamic script tags. The callback function is only used for JSON output.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "output": {
+                            "name": "output",
+                            "displayName": "output",
+                            "type": "string",
+                            "required": false,
+                            "default": "xml",
+                            "repeat": false,
+                            "description": "The type of output desired. Specify 'xml' for XML output and 'json' for JSON output. If omitted, 'xml' is assumed.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
                         }
                     },
                     "description": "For a specific loan amount, the GetMonthlyPayments API returns the estimated monthly payment that includes principal and interest based on todays mortgage rate. The API returns the estimated monthly payment per loan type (30-year fixed, 15-year fixed, and 5/1 ARM). If a ZIP code is entered, the estimated taxes and insurance are returned in the result set.",
@@ -1829,9 +2402,6 @@
             "displayName": "/GetMonthlyPayments.htm",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }
@@ -2143,6 +2713,85 @@
                                             }
                                         }
                                     }
+                                },
+                                "callback": {
+                                    "name": "callback",
+                                    "displayName": "callback",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The name of the JavaScript callback function used to process the returned JSON data. If specified, the returned JSON will be wrapped in a function call with the specified function name. This parameter is intended for use with dynamic script tags. The callback function is only used for JSON output.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "output": {
+                                    "name": "output",
+                                    "displayName": "output",
+                                    "type": "string",
+                                    "required": false,
+                                    "default": "xml",
+                                    "repeat": false,
+                                    "description": "The type of output desired. Specify 'xml' for XML output and 'json' for JSON output. If omitted, 'xml' is assumed.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "schedule": {
+                                    "name": "schedule",
+                                    "displayName": "schedule",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The type of amortization schedule to return in the result set. If omitted, no table will be returned.",
+                                    "enum": [
+                                        "yearly",
+                                        "monthly",
+                                        "both",
+                                        "none"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
                                 }
                             },
                             "description": "The CalculateAffordability API calculates the amount a user can afford based on their income or desired monthly payment. It returns an affordability amount along with detailed breakdown of the mortgage payment, amortization schedule, and monthly budget.",
@@ -2166,9 +2815,6 @@
                     "displayName": "/CalculateAffordability.htm",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
-                            "securedBy": {
-                                "calculated": true
-                            },
                             "displayName": {
                                 "calculated": true
                             }

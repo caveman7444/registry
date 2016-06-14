@@ -410,6 +410,35 @@
                 {
                     "relativeUri": "/Move",
                     "type": "action",
+                    "methods": [
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201",
+                                    "description": "A successful response contains a JSON representation."
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "copyFolder",
+                                    "example": "{\r\n  \"DestinationId\": <destination_folder_id>\r\n}",
+                                    "schemaContent": "copyFolder"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
                     "displayName": "/Move",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
@@ -425,6 +454,35 @@
                 {
                     "relativeUri": "/Copy",
                     "type": "action",
+                    "methods": [
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201",
+                                    "description": "A successful response contains a JSON representation."
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "copyFolder",
+                                    "example": "{\r\n  \"DestinationId\": <destination_folder_id>\r\n}",
+                                    "schemaContent": "copyFolder"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
                     "displayName": "/Copy",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
@@ -656,6 +714,35 @@
                 {
                     "relativeUri": "/Move",
                     "type": "action",
+                    "methods": [
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201",
+                                    "description": "A successful response contains a JSON representation."
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "copyFolder",
+                                    "example": "{\r\n  \"DestinationId\": <destination_folder_id>\r\n}",
+                                    "schemaContent": "copyFolder"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
                     "displayName": "/Move",
                     "description": "You can move an email by using the Move action on the Message entity.",
                     "__METADATA__": {
@@ -672,6 +759,35 @@
                 {
                     "relativeUri": "/Copy",
                     "type": "action",
+                    "methods": [
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201",
+                                    "description": "A successful response contains a JSON representation."
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "copyFolder",
+                                    "example": "{\r\n  \"DestinationId\": <destination_folder_id>\r\n}",
+                                    "schemaContent": "copyFolder"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
                     "displayName": "/Copy",
                     "description": "You can copy an email by using the Copy action on the Message entity.",
                     "__METADATA__": {
@@ -688,6 +804,27 @@
                 {
                     "relativeUri": "/CreateReply",
                     "type": "createReply",
+                    "methods": [
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201",
+                                    "description": "A successful response contains a JSON representation. The result is located in the Drafts folder."
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
                     "displayName": "/CreateReply",
                     "description": "You can create a reply to only the sender of an email by using the CreateReply action on the Message entity.",
                     "__METADATA__": {
@@ -704,6 +841,27 @@
                 {
                     "relativeUri": "/CreateReplyAll",
                     "type": "createReply",
+                    "methods": [
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201",
+                                    "description": "A successful response contains a JSON representation. The result is located in the Drafts folder."
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
                     "displayName": "/CreateReplyAll",
                     "description": "You can create a reply to all recipients of an email by using the CreateReplyAll action on the Message entity.",
                     "__METADATA__": {
@@ -720,6 +878,27 @@
                 {
                     "relativeUri": "/CreateForward",
                     "type": "createReply",
+                    "methods": [
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201",
+                                    "description": "A successful response contains a JSON representation. The result is located in the Drafts folder."
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
                     "displayName": "/CreateForward",
                     "description": "You can create a forward of an email by using the CreateForward action on the Message entity.",
                     "__METADATA__": {
@@ -736,6 +915,35 @@
                 {
                     "relativeUri": "/Reply",
                     "type": "reply",
+                    "methods": [
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201",
+                                    "description": "The request has been fulfilled and resulted in the creation of a new resource."
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "replyComment",
+                                    "example": "{\r\n  \"Comment\": <reply_message>\r\n}",
+                                    "schemaContent": "replyComment"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
                     "displayName": "/Reply",
                     "description": "The server responds with an HTTP status 200 \"OK\" to indicate success. A copy of the reply is saved in the Sent Items folder.",
                     "__METADATA__": {
@@ -752,6 +960,35 @@
                 {
                     "relativeUri": "/ReplyAll",
                     "type": "reply",
+                    "methods": [
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201",
+                                    "description": "The request has been fulfilled and resulted in the creation of a new resource."
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "replyComment",
+                                    "example": "{\r\n  \"Comment\": <reply_message>\r\n}",
+                                    "schemaContent": "replyComment"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
                     "displayName": "/ReplyAll",
                     "description": "The server responds with an HTTP status 200 \"OK\" to indicate success. A copy of the reply is saved in the Sent Items folder.",
                     "__METADATA__": {
@@ -891,6 +1128,76 @@
                 {
                     "relativeUri": "/Attachments",
                     "type": "attachments",
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "description": "The request completed successfully."
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "To get attachments, send a GET request to the Attachments property on the entity that contains the attachments.",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "description": "The request completed successfully."
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "To delete an attachment, send a DELETE request to the URL of the Attachment entity.",
+                            "method": "delete",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201",
+                                    "description": "The request completed successfully. The server responds with a JSON representation of each attachment. Note that both FileAttachment entities and ItemAttachment entities are returned, as applicable. You can tell them apart by checking the @odata.type property on the attachment entity."
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "newAttachment",
+                                    "example": "{\r\n  \"@odata.type\": \"#Microsoft.Exchange.Services.OData.Model.ItemAttachment\",\r\n  \"Name\": \"Test attachment message\",\r\n  \"Item\": {\r\n    \"@odata.type\": \"#Microsoft.Exchange.Services.OData.Model.Message\",\r\n    \"Subject\": \"Test attachment message\",\r\n    \"Body\": {\r\n      \"ContentType\": \"Text\",\r\n      \"Content\": \"Hello!\"\r\n    },\r\n    \"Importance\": \"Normal\",\r\n    \"From\": {\r\n      \"Name\": \"Sadie Daniels\",\r\n      \"Address\": \"sadie@contoso.com\"\r\n    },\r\n    \"ToRecipients\": [\r\n      {\r\n        \"Name\": \"Hope Gross\",\r\n        \"Address\": \"hope@contoso.com\"\r\n      }\r\n    ]\r\n  }\r\n}",
+                                    "schemaContent": "newAttachment"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "To add an attachment to an item, send a POST request to the Attachments property on the item with a JSON representation of the new attachment in the request payload. The following example adds an item attachment to an existing message.",
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
                     "displayName": "/Attachments",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
@@ -1111,6 +1418,54 @@
                 {
                     "relativeUri": "/Calendars",
                     "type": "calendars",
+                    "methods": [
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201"
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "addCalendarGroup",
+                                    "example": "{\r\n  \"@odata.type\": \"#Microsoft.Exchange.Services.OData.Model.CalendarGroup\",\r\n  \"Name\": <new_calendargroup_name>\r\n}",
+                                    "schemaContent": "addCalendarGroup"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "You can create a calendar by sending a POST request with a JSON representation of a Calendar entity to the Calendars property on a CalendarGroup entity (to create a calendar in that calendar group).",
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "You can request all the user's calendars (or a filtered list by using the $filter OData query parameter) via the Calendars property on the User entity, or request all calendars just in a specific calendar group via the Calendars property on the CalendarGroup entity.",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
                     "displayName": "/Calendars",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
@@ -1139,6 +1494,54 @@
         {
             "relativeUri": "/Calendars",
             "type": "calendars",
+            "methods": [
+                {
+                    "responses": {
+                        "201": {
+                            "code": "201"
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "addCalendarGroup",
+                            "example": "{\r\n  \"@odata.type\": \"#Microsoft.Exchange.Services.OData.Model.CalendarGroup\",\r\n  \"Name\": <new_calendargroup_name>\r\n}",
+                            "schemaContent": "addCalendarGroup"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "You can create a calendar by sending a POST request with a JSON representation of a Calendar entity to the Calendars property on a CalendarGroup entity (to create a calendar in that calendar group).",
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "You can request all the user's calendars (or a filtered list by using the $filter OData query parameter) via the Calendars property on the User entity, or request all calendars just in a specific calendar group via the Calendars property on the CalendarGroup entity.",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
             "displayName": "/Calendars",
             "__METADATA__": {
                 "primitiveValuesMeta": {
@@ -1342,6 +1745,55 @@
                 {
                     "relativeUri": "/Events",
                     "type": "events",
+                    "methods": [
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201",
+                                    "description": "The request has been fulfilled and resulted in the creation of a new resource."
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "newEvent",
+                                    "example": "{\r\n  \"@odata.type\": \"#Microsoft.Exchange.Services.OData.Model.Event\",\r\n  \"Subject\": \"Discuss the Calendar REST API\",\r\n  \"Body\": {\r\n    \"ContentType\": \"HTML\",\r\n    \"Content\": \"I think it will meet our requirements!\"\r\n  },\r\n  \"Start\": \"2014-07-02T18:00:00Z\",\r\n  \"End\": \"2014-07-02T19:00:00Z\",\r\n  \"Location\": {\r\n      \"DisplayName\": \"Conference Room 1\"\r\n    },\r\n  \"ShowAs\": \"Busy\",\r\n  \"Attendees\": [\r\n    {\r\n      \"Name\": \"Alex Darrow\",\r\n      \"Address\": \"alexd@contoso.com\",\r\n      \"Type\": \"Required\"\r\n    },\r\n    {\r\n      \"Name\": \"Anne Wallace\",\r\n      \"Address\": \"annew@contoso.com\",\r\n      \"Type\": \"Optional\"\r\n    },\r\n    {\r\n      \"Name\": \"Conference Room 1\",\r\n      \"Address\": \"conf1@contoso.com\",\r\n      \"Type\": \"Resource\"\r\n    }\r\n  ]\r\n}",
+                                    "schemaContent": "newEvent"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "description": "The request completed successfully."
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "You can request all the events across all calendars (or a filtered list by using the $filter OData query parameter) via the Events property on the User entity, or request all events in a specific calendar via the Events property on the Calendar entity.",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
                     "displayName": "/Events",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
@@ -1370,6 +1822,55 @@
         {
             "relativeUri": "/Events",
             "type": "events",
+            "methods": [
+                {
+                    "responses": {
+                        "201": {
+                            "code": "201",
+                            "description": "The request has been fulfilled and resulted in the creation of a new resource."
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "newEvent",
+                            "example": "{\r\n  \"@odata.type\": \"#Microsoft.Exchange.Services.OData.Model.Event\",\r\n  \"Subject\": \"Discuss the Calendar REST API\",\r\n  \"Body\": {\r\n    \"ContentType\": \"HTML\",\r\n    \"Content\": \"I think it will meet our requirements!\"\r\n  },\r\n  \"Start\": \"2014-07-02T18:00:00Z\",\r\n  \"End\": \"2014-07-02T19:00:00Z\",\r\n  \"Location\": {\r\n      \"DisplayName\": \"Conference Room 1\"\r\n    },\r\n  \"ShowAs\": \"Busy\",\r\n  \"Attendees\": [\r\n    {\r\n      \"Name\": \"Alex Darrow\",\r\n      \"Address\": \"alexd@contoso.com\",\r\n      \"Type\": \"Required\"\r\n    },\r\n    {\r\n      \"Name\": \"Anne Wallace\",\r\n      \"Address\": \"annew@contoso.com\",\r\n      \"Type\": \"Optional\"\r\n    },\r\n    {\r\n      \"Name\": \"Conference Room 1\",\r\n      \"Address\": \"conf1@contoso.com\",\r\n      \"Type\": \"Resource\"\r\n    }\r\n  ]\r\n}",
+                            "schemaContent": "newEvent"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "The request completed successfully."
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "You can request all the events across all calendars (or a filtered list by using the $filter OData query parameter) via the Events property on the User entity, or request all events in a specific calendar via the Events property on the Calendar entity.",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
             "displayName": "/Events",
             "__METADATA__": {
                 "primitiveValuesMeta": {
@@ -1492,6 +1993,35 @@
                 {
                     "relativeUri": "/Accept",
                     "type": "reply",
+                    "methods": [
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201",
+                                    "description": "The request has been fulfilled and resulted in the creation of a new resource."
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "replyComment",
+                                    "example": "{\r\n  \"Comment\": <reply_message>\r\n}",
+                                    "schemaContent": "replyComment"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
                     "displayName": "/Accept",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
@@ -1507,6 +2037,35 @@
                 {
                     "relativeUri": "/Decline",
                     "type": "reply",
+                    "methods": [
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201",
+                                    "description": "The request has been fulfilled and resulted in the creation of a new resource."
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "replyComment",
+                                    "example": "{\r\n  \"Comment\": <reply_message>\r\n}",
+                                    "schemaContent": "replyComment"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
                     "displayName": "/Decline",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
@@ -1522,6 +2081,35 @@
                 {
                     "relativeUri": "/TentativelyAccept",
                     "type": "reply",
+                    "methods": [
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201",
+                                    "description": "The request has been fulfilled and resulted in the creation of a new resource."
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "replyComment",
+                                    "example": "{\r\n  \"Comment\": <reply_message>\r\n}",
+                                    "schemaContent": "replyComment"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
                     "displayName": "/TentativelyAccept",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
@@ -1537,6 +2125,76 @@
                 {
                     "relativeUri": "/Attachments",
                     "type": "attachments",
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "description": "The request completed successfully."
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "To get attachments, send a GET request to the Attachments property on the entity that contains the attachments.",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "description": "The request completed successfully."
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "To delete an attachment, send a DELETE request to the URL of the Attachment entity.",
+                            "method": "delete",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201",
+                                    "description": "The request completed successfully. The server responds with a JSON representation of each attachment. Note that both FileAttachment entities and ItemAttachment entities are returned, as applicable. You can tell them apart by checking the @odata.type property on the attachment entity."
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "newAttachment",
+                                    "example": "{\r\n  \"@odata.type\": \"#Microsoft.Exchange.Services.OData.Model.ItemAttachment\",\r\n  \"Name\": \"Test attachment message\",\r\n  \"Item\": {\r\n    \"@odata.type\": \"#Microsoft.Exchange.Services.OData.Model.Message\",\r\n    \"Subject\": \"Test attachment message\",\r\n    \"Body\": {\r\n      \"ContentType\": \"Text\",\r\n      \"Content\": \"Hello!\"\r\n    },\r\n    \"Importance\": \"Normal\",\r\n    \"From\": {\r\n      \"Name\": \"Sadie Daniels\",\r\n      \"Address\": \"sadie@contoso.com\"\r\n    },\r\n    \"ToRecipients\": [\r\n      {\r\n        \"Name\": \"Hope Gross\",\r\n        \"Address\": \"hope@contoso.com\"\r\n      }\r\n    ]\r\n  }\r\n}",
+                                    "schemaContent": "newAttachment"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "To add an attachment to an item, send a POST request to the Attachments property on the item with a JSON representation of the new attachment in the request payload. The following example adds an item attachment to an existing message.",
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
                     "displayName": "/Attachments",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
@@ -1660,6 +2318,56 @@
                 {
                     "relativeUri": "/Contacts",
                     "type": "contacts",
+                    "methods": [
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201",
+                                    "description": "A successful response contains a JSON representation of the new contact."
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "createContact",
+                                    "example": "{\r\n  \"@odata.type\": \"#Microsoft.Exchange.Services.OData.Model.Contact\",\r\n  \"GivenName\": \"Mara\",\r\n  \"Surname\": \"Whitley\",\r\n  \"EmailAddress1\": \"mara@fabrikam.com\",\r\n  \"BusinessPhone1\": \"425-555-1313\",\r\n  \"Birthday\": \"1974-07-22T07:00:00Z\"\r\n}",
+                                    "schemaContent": "createContact"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "You can create a contact by sending a POST request with a JSON representation in the payload of a Contact entity to the Contacts property on either the User entity (to create a contact in the default contact folder), or on the ContactFolder entity (to create a contact in that contact folder).",
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "description": "The request completed successfully."
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "You can request all contacts (or a filtered set by using the $filter OData query parameter) in the user's default contact folder via the Contacts property on the User entity. To request contacts in a non-default contact folder, use the Contacts property on the corresponding ContactFolder entity.",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
                     "displayName": "/Contacts",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
@@ -1688,6 +2396,56 @@
         {
             "relativeUri": "/Contacts",
             "type": "contacts",
+            "methods": [
+                {
+                    "responses": {
+                        "201": {
+                            "code": "201",
+                            "description": "A successful response contains a JSON representation of the new contact."
+                        }
+                    },
+                    "body": {
+                        "application/json": {
+                            "name": "application/json",
+                            "schema": "createContact",
+                            "example": "{\r\n  \"@odata.type\": \"#Microsoft.Exchange.Services.OData.Model.Contact\",\r\n  \"GivenName\": \"Mara\",\r\n  \"Surname\": \"Whitley\",\r\n  \"EmailAddress1\": \"mara@fabrikam.com\",\r\n  \"BusinessPhone1\": \"425-555-1313\",\r\n  \"Birthday\": \"1974-07-22T07:00:00Z\"\r\n}",
+                            "schemaContent": "createContact"
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "You can create a contact by sending a POST request with a JSON representation in the payload of a Contact entity to the Contacts property on either the User entity (to create a contact in the default contact folder), or on the ContactFolder entity (to create a contact in that contact folder).",
+                    "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "The request completed successfully."
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "description": "You can request all contacts (or a filtered set by using the $filter OData query parameter) in the user's default contact folder via the Contacts property on the User entity. To request contacts in a non-default contact folder, use the Contacts property on the corresponding ContactFolder entity.",
+                    "method": "get",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                }
+            ],
             "displayName": "/Contacts",
             "__METADATA__": {
                 "primitiveValuesMeta": {
@@ -1837,6 +2595,76 @@
                 {
                     "relativeUri": "/Attachments",
                     "type": "attachments",
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "description": "The request completed successfully."
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "To get attachments, send a GET request to the Attachments property on the entity that contains the attachments.",
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "description": "The request completed successfully."
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "To delete an attachment, send a DELETE request to the URL of the Attachment entity.",
+                            "method": "delete",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201",
+                                    "description": "The request completed successfully. The server responds with a JSON representation of each attachment. Note that both FileAttachment entities and ItemAttachment entities are returned, as applicable. You can tell them apart by checking the @odata.type property on the attachment entity."
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "newAttachment",
+                                    "example": "{\r\n  \"@odata.type\": \"#Microsoft.Exchange.Services.OData.Model.ItemAttachment\",\r\n  \"Name\": \"Test attachment message\",\r\n  \"Item\": {\r\n    \"@odata.type\": \"#Microsoft.Exchange.Services.OData.Model.Message\",\r\n    \"Subject\": \"Test attachment message\",\r\n    \"Body\": {\r\n      \"ContentType\": \"Text\",\r\n      \"Content\": \"Hello!\"\r\n    },\r\n    \"Importance\": \"Normal\",\r\n    \"From\": {\r\n      \"Name\": \"Sadie Daniels\",\r\n      \"Address\": \"sadie@contoso.com\"\r\n    },\r\n    \"ToRecipients\": [\r\n      {\r\n        \"Name\": \"Hope Gross\",\r\n        \"Address\": \"hope@contoso.com\"\r\n      }\r\n    ]\r\n  }\r\n}",
+                                    "schemaContent": "newAttachment"
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "To add an attachment to an item, send a POST request to the Attachments property on the item with a JSON representation of the new attachment in the request payload. The following example adds an item attachment to an existing message.",
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
                     "displayName": "/Attachments",
                     "__METADATA__": {
                         "primitiveValuesMeta": {

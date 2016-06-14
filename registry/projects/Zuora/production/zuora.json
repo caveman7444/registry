@@ -454,9 +454,6 @@
                             "description": "",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -470,9 +467,6 @@
                     "displayName": "/{accountKey}",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
-                            "securedBy": {
-                                "calculated": true
-                            },
                             "displayName": {
                                 "calculated": true
                             }
@@ -487,9 +481,6 @@
             "description": "The Accounts REST API provides direct access to customer account information.",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }
@@ -526,6 +517,50 @@
                     "securedBy": [
                         "basic"
                     ],
+                    "queryParameters": {
+                        "pageSize": {
+                            "name": "pageSize",
+                            "displayName": "pageSize",
+                            "type": "integer",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Number of rows to return.  Maximum is 40; default is 20.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "page": {
+                            "name": "page",
+                            "displayName": "page",
+                            "type": "integer",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Page number.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "Retrieves the entire product catalog, including all products and their corresponding rate plans and charges.\n\nProducts are returned in reverse chronological order on UpdatedDate. Information for each product includes rate plans and, within those, rate plan charges.\n\nThe REST API does not support the creation or updating of products, product rate plans and charges; these tasks can only be performed in the web-based UI or via the SOAP API.\n",
                     "method": "get",
                     "is": [
@@ -546,9 +581,6 @@
             "displayName": "/catalog/products",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }
@@ -595,9 +627,6 @@
             "displayName": "/connections",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }
@@ -659,9 +688,6 @@
             "displayName": "/hmac-signatures",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }
@@ -774,6 +800,50 @@
                             "securedBy": [
                                 "basic"
                             ],
+                            "queryParameters": {
+                                "pageSize": {
+                                    "name": "pageSize",
+                                    "displayName": "pageSize",
+                                    "type": "integer",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Number of rows to return.  Maximum is 40; default is 20.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "page": {
+                                    "name": "page",
+                                    "displayName": "page",
+                                    "type": "integer",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Page number.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Retrieves all subscriptions associated with the specified account.\nSubscription data is returned in reverse chronological order based on updatedDate.\n",
                             "method": "get",
                             "is": [
@@ -794,9 +864,6 @@
                     "displayName": "/accounts/{accountKey}",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
-                            "securedBy": {
-                                "calculated": true
-                            },
                             "displayName": {
                                 "calculated": true
                             }
@@ -859,9 +926,6 @@
                     "displayName": "/preview",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
-                            "securedBy": {
-                                "calculated": true
-                            },
                             "displayName": {
                                 "calculated": true
                             }
@@ -1032,9 +1096,6 @@
                             "displayName": "/cancel",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -1096,9 +1157,6 @@
                             "displayName": "/renew",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -1112,9 +1170,6 @@
                     "displayName": "/{subscriptionKey}",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
-                            "securedBy": {
-                                "calculated": true
-                            },
                             "displayName": {
                                 "calculated": true
                             }
@@ -1129,9 +1184,6 @@
             "description": "The REST API allows you to preview, create, view, and modify subscriptions.",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }
@@ -1201,6 +1253,50 @@
                             "securedBy": [
                                 "basic"
                             ],
+                            "queryParameters": {
+                                "pageSize": {
+                                    "name": "pageSize",
+                                    "displayName": "pageSize",
+                                    "type": "integer",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Number of rows to return.  Maximum is 40; default is 20.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "page": {
+                                    "name": "page",
+                                    "displayName": "page",
+                                    "type": "integer",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Page number.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Retrieves invoices for a specified account.\nInvoices are returned in reverse chronological order by \"invoiceDate\".\n",
                             "method": "get",
                             "is": [
@@ -1221,9 +1317,6 @@
                     "displayName": "/invoices/accounts/{accountKey}",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
-                            "securedBy": {
-                                "calculated": true
-                            },
                             "displayName": {
                                 "calculated": true
                             }
@@ -1288,6 +1381,50 @@
                             "securedBy": [
                                 "basic"
                             ],
+                            "queryParameters": {
+                                "pageSize": {
+                                    "name": "pageSize",
+                                    "displayName": "pageSize",
+                                    "type": "integer",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Number of rows to return.  Maximum is 40; default is 20.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "page": {
+                                    "name": "page",
+                                    "displayName": "page",
+                                    "type": "integer",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Page number.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "method": "get",
                             "is": [
                                 "allowsPagination"
@@ -1307,9 +1444,6 @@
                     "displayName": "/payments/accounts/{accountKey}",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
-                            "securedBy": {
-                                "calculated": true
-                            },
                             "displayName": {
                                 "calculated": true
                             }
@@ -1326,9 +1460,6 @@
             "description": "The Transactions API retrieves invoices or payments for a specified account, as well as allowing you to invoice and collect payment from a specific account.",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }
@@ -1390,9 +1521,6 @@
             "displayName": "/operations/invoice-collect",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }
@@ -1506,6 +1634,50 @@
                             "securedBy": [
                                 "basic"
                             ],
+                            "queryParameters": {
+                                "pageSize": {
+                                    "name": "pageSize",
+                                    "displayName": "pageSize",
+                                    "type": "integer",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Number of rows to return.  Maximum is 40; default is 20.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "page": {
+                                    "name": "page",
+                                    "displayName": "page",
+                                    "type": "integer",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Page number.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Retrieves usage details for an account.\nUsage data is returned in reverse chronological order.\n",
                             "method": "get",
                             "is": [
@@ -1526,9 +1698,6 @@
                     "displayName": "/accounts/{accountKey}",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
-                            "securedBy": {
-                                "calculated": true
-                            },
                             "displayName": {
                                 "calculated": true
                             }
@@ -1543,9 +1712,6 @@
             "displayName": "/usage",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }
@@ -1631,9 +1797,6 @@
                     "displayName": "/{paymentMethodId}",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
-                            "securedBy": {
-                                "calculated": true
-                            },
                             "displayName": {
                                 "calculated": true
                             }
@@ -1746,6 +1909,50 @@
                                     "securedBy": [
                                         "basic"
                                     ],
+                                    "queryParameters": {
+                                        "pageSize": {
+                                            "name": "pageSize",
+                                            "displayName": "pageSize",
+                                            "type": "integer",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Number of rows to return.  Maximum is 40; default is 20.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "page": {
+                                            "name": "page",
+                                            "displayName": "page",
+                                            "type": "integer",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Page number.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Retrieves all credit card information for the specified customer account.\n\nThe response includes details on all the credit or debit cards for the specified customer account. Card numbers are masked, e.g., \"************1234\". Cards are returned in reverse chronological order of last update.\n",
                                     "method": "get",
                                     "is": [
@@ -1766,9 +1973,6 @@
                             "displayName": "/accounts/{accountKey}",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -1857,9 +2061,6 @@
                             "displayName": "/{paymentMethodId}",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -1874,9 +2075,6 @@
                     "description": "The Payment Methods REST API provides access to your customers' credit card payment methods. To manage other types of payment methods, such as bank transfers and checks, use the web-based UI or the Zuora SOAP API.",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
-                            "securedBy": {
-                                "calculated": true
-                            },
                             "displayName": {
                                 "calculated": true
                             }

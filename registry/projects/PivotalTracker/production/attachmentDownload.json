@@ -186,6 +186,26 @@
                                     }
                                 }
                             }
+                        },
+                        "envelope": {
+                            "name": "envelope",
+                            "displayName": "envelope",
+                            "type": "boolean",
+                            "required": false,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
                         }
                     },
                     "method": "get",

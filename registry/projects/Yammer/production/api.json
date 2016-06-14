@@ -517,8 +517,11 @@
                     "type": "string",
                     "required": true,
                     "repeat": false,
+                    "enum": [
+                        "json",
+                        "xml"
+                    ],
                     "__METADATA__": {
-                        "calculated": true,
                         "primitiveValuesMeta": {
                             "displayName": {
                                 "calculated": true
@@ -551,6 +554,139 @@
                     ],
                     "description": "Create a new message. The response body will include the new message formatted the same way as message polling above. This allows your app to immediately display the newly-posted message back to the user.",
                     "method": "post",
+                    "__METADATA__": {
+                        "primitiveValuesMeta": {
+                            "protocols": {
+                                "calculated": true
+                            },
+                            "securedBy": {
+                                "calculated": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/xml": {
+                                    "name": "application/xml"
+                                },
+                                "application/json": {
+                                    "name": "application/json"
+                                }
+                            }
+                        }
+                    },
+                    "protocols": [
+                        "HTTPS"
+                    ],
+                    "securedBy": [
+                        "oauth_2_0"
+                    ],
+                    "queryParameters": {
+                        "older_than": {
+                            "name": "older_than",
+                            "displayName": "older_than",
+                            "type": "string",
+                            "required": false,
+                            "example": "2912",
+                            "repeat": false,
+                            "description": "Returns messages older than the message ID specified as a numeric string. This is useful for paginating messages. For example, if you're currently viewing 20 messages and the oldest is number 2912, you could append \"?older_than=2912\" to your request to get the 20 messages prior to those you're seeing.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "newer_than": {
+                            "name": "newer_than",
+                            "displayName": "newer_than",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Returns messages newer than the message ID specified as a numeric string. This should be used when polling for new messages. If you're looking at messages, and the most recent message returned is 3516, you can make a request with the parameter \"?newer_than=3516\" to ensure that you do not get duplicate copies of messages already on your page\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "threaded": {
+                            "name": "threaded",
+                            "displayName": "threaded",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "will only return the first message in each thread. This parameter is intended for apps which display message threads collapsed. threaded=extended will return the thread starter messages in order of most recently active as well as the two most recent messages, as they are viewed in the default view on the Yammer web interface.",
+                            "enum": [
+                                "extended",
+                                "true"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "limit": {
+                            "name": "limit",
+                            "displayName": "limit",
+                            "type": "integer",
+                            "required": false,
+                            "example": "22",
+                            "repeat": false,
+                            "description": "Return only the specified number of messages. Works for threaded=true and threaded=extended.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "method": "get",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
                             "protocols": {
@@ -743,8 +879,11 @@
                     "type": "string",
                     "required": true,
                     "repeat": false,
+                    "enum": [
+                        "json",
+                        "xml"
+                    ],
                     "__METADATA__": {
-                        "calculated": true,
                         "primitiveValuesMeta": {
                             "displayName": {
                                 "calculated": true
@@ -850,8 +989,11 @@
                     "type": "string",
                     "required": true,
                     "repeat": false,
+                    "enum": [
+                        "json",
+                        "xml"
+                    ],
                     "__METADATA__": {
-                        "calculated": true,
                         "primitiveValuesMeta": {
                             "displayName": {
                                 "calculated": true
@@ -933,8 +1075,11 @@
                     "type": "string",
                     "required": true,
                     "repeat": false,
+                    "enum": [
+                        "json",
+                        "xml"
+                    ],
                     "__METADATA__": {
-                        "calculated": true,
                         "primitiveValuesMeta": {
                             "displayName": {
                                 "calculated": true
@@ -965,6 +1110,29 @@
                     "securedBy": [
                         "oauth_2_0"
                     ],
+                    "queryParameters": {
+                        "group_id": {
+                            "name": "group_id",
+                            "displayName": "group_id",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "The group_id that the user is joining or leaving.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "Join the group specified by the numeric string ID.",
                     "method": "post",
                     "is": [
@@ -993,6 +1161,29 @@
                     "securedBy": [
                         "oauth_2_0"
                     ],
+                    "queryParameters": {
+                        "group_id": {
+                            "name": "group_id",
+                            "displayName": "group_id",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "The group_id that the user is joining or leaving.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "Leave a group.",
                     "method": "delete",
                     "is": [
@@ -1039,8 +1230,11 @@
                     "type": "string",
                     "required": true,
                     "repeat": false,
+                    "enum": [
+                        "json",
+                        "xml"
+                    ],
                     "__METADATA__": {
-                        "calculated": true,
                         "primitiveValuesMeta": {
                             "displayName": {
                                 "calculated": true
@@ -1145,6 +1339,30 @@
                                     }
                                 }
                             }
+                        },
+                        "page": {
+                            "name": "page",
+                            "displayName": "page",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
                         }
                     },
                     "description": "Retrieve users in the current user's Yammer network. Supports page, sort_by, reverse, and letter parameters.",
@@ -1218,8 +1436,11 @@
                     "type": "string",
                     "required": true,
                     "repeat": false,
+                    "enum": [
+                        "json",
+                        "xml"
+                    ],
                     "__METADATA__": {
-                        "calculated": true,
                         "primitiveValuesMeta": {
                             "displayName": {
                                 "calculated": true
@@ -1258,6 +1479,32 @@
                     "securedBy": [
                         "oauth_2_0"
                     ],
+                    "queryParameters": {
+                        "user_id": {
+                            "name": "user_id",
+                            "displayName": "user_id",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "To view or edit the relationships for a user other than the logged-in user.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "method": "get",
                     "is": [
                         "acceptUserId"
@@ -1346,6 +1593,30 @@
                                     }
                                 }
                             }
+                        },
+                        "user_id": {
+                            "name": "user_id",
+                            "displayName": "user_id",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "To view or edit the relationships for a user other than the logged-in user.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
                         }
                     },
                     "description": "Add an org chart relationship. Specify id of the user for whom the relationship is being added as user_id, if the user is not the current user. Use [ subordinate | superior | colleague ] to create the relationship.",
@@ -1418,8 +1689,11 @@
                     "type": "string",
                     "required": true,
                     "repeat": false,
+                    "enum": [
+                        "json",
+                        "xml"
+                    ],
                     "__METADATA__": {
-                        "calculated": true,
                         "primitiveValuesMeta": {
                             "displayName": {
                                 "calculated": true
@@ -1458,6 +1732,30 @@
                                 "colleague",
                                 "subordinate"
                             ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "user_id": {
+                            "name": "user_id",
+                            "displayName": "user_id",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "To view or edit the relationships for a user other than the logged-in user.",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
                                     "displayName": {
@@ -1522,8 +1820,11 @@
                     "type": "string",
                     "required": true,
                     "repeat": false,
+                    "enum": [
+                        "json",
+                        "xml"
+                    ],
                     "__METADATA__": {
-                        "calculated": true,
                         "primitiveValuesMeta": {
                             "displayName": {
                                 "calculated": true
@@ -1605,8 +1906,11 @@
                     "type": "string",
                     "required": true,
                     "repeat": false,
+                    "enum": [
+                        "json",
+                        "xml"
+                    ],
                     "__METADATA__": {
-                        "calculated": true,
                         "primitiveValuesMeta": {
                             "displayName": {
                                 "calculated": true
@@ -1737,8 +2041,11 @@
                     "type": "string",
                     "required": true,
                     "repeat": false,
+                    "enum": [
+                        "json",
+                        "xml"
+                    ],
                     "__METADATA__": {
-                        "calculated": true,
                         "primitiveValuesMeta": {
                             "displayName": {
                                 "calculated": true
@@ -1807,6 +2114,50 @@
                     "securedBy": [
                         "oauth_2_0"
                     ],
+                    "queryParameters": {
+                        "target_id": {
+                            "name": "target_id",
+                            "displayName": "target_id",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "The ID of the object to which user_current will subscribe/unsubscribe. Must be used in combination with target_type.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "target_type": {
+                            "name": "target_type",
+                            "displayName": "target_type",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "The target type (user or tag(legacy for topic)) to which user_current will subscribe/unsubscribe. Must be used in combination with target_id.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "Subscribe to a user or topic. Supports target_type and target_id parameters.",
                     "method": "post",
                     "is": [
@@ -1830,6 +2181,50 @@
                     "securedBy": [
                         "oauth_2_0"
                     ],
+                    "queryParameters": {
+                        "target_id": {
+                            "name": "target_id",
+                            "displayName": "target_id",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "The ID of the object to which user_current will subscribe/unsubscribe. Must be used in combination with target_type.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "target_type": {
+                            "name": "target_type",
+                            "displayName": "target_type",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "The target type (user or tag(legacy for topic)) to which user_current will subscribe/unsubscribe. Must be used in combination with target_id.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "Unsubscribe to a user or topic. Supports target_type and target_id parameters.",
                     "method": "delete",
                     "is": [
@@ -1885,8 +2280,11 @@
                             "type": "string",
                             "required": true,
                             "repeat": false,
+                            "enum": [
+                                "json",
+                                "xml"
+                            ],
                             "__METADATA__": {
-                                "calculated": true,
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true
@@ -1987,8 +2385,11 @@
                             "type": "string",
                             "required": true,
                             "repeat": false,
+                            "enum": [
+                                "json",
+                                "xml"
+                            ],
                             "__METADATA__": {
-                                "calculated": true,
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true
@@ -2089,8 +2490,11 @@
                             "type": "string",
                             "required": true,
                             "repeat": false,
+                            "enum": [
+                                "json",
+                                "xml"
+                            ],
                             "__METADATA__": {
-                                "calculated": true,
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true
@@ -2284,8 +2688,11 @@
                     "type": "string",
                     "required": true,
                     "repeat": false,
+                    "enum": [
+                        "json",
+                        "xml"
+                    ],
                     "__METADATA__": {
-                        "calculated": true,
                         "primitiveValuesMeta": {
                             "displayName": {
                                 "calculated": true
@@ -2379,8 +2786,11 @@
                     "type": "string",
                     "required": true,
                     "repeat": false,
+                    "enum": [
+                        "json",
+                        "xml"
+                    ],
                     "__METADATA__": {
-                        "calculated": true,
                         "primitiveValuesMeta": {
                             "displayName": {
                                 "calculated": true
@@ -2517,8 +2927,11 @@
                     "type": "string",
                     "required": true,
                     "repeat": false,
+                    "enum": [
+                        "json",
+                        "xml"
+                    ],
                     "__METADATA__": {
-                        "calculated": true,
                         "primitiveValuesMeta": {
                             "displayName": {
                                 "calculated": true
@@ -2642,8 +3055,11 @@
                             "type": "string",
                             "required": true,
                             "repeat": false,
+                            "enum": [
+                                "json",
+                                "xml"
+                            ],
                             "__METADATA__": {
-                                "calculated": true,
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true
@@ -2661,6 +3077,141 @@
                             }
                         }
                     },
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml"
+                                        },
+                                        "application/json": {
+                                            "name": "application/json"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "queryParameters": {
+                                "older_than": {
+                                    "name": "older_than",
+                                    "displayName": "older_than",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "2912",
+                                    "repeat": false,
+                                    "description": "Returns messages older than the message ID specified as a numeric string. This is useful for paginating messages. For example, if you're currently viewing 20 messages and the oldest is number 2912, you could append \"?older_than=2912\" to your request to get the 20 messages prior to those you're seeing.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "newer_than": {
+                                    "name": "newer_than",
+                                    "displayName": "newer_than",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Returns messages newer than the message ID specified as a numeric string. This should be used when polling for new messages. If you're looking at messages, and the most recent message returned is 3516, you can make a request with the parameter \"?newer_than=3516\" to ensure that you do not get duplicate copies of messages already on your page\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "threaded": {
+                                    "name": "threaded",
+                                    "displayName": "threaded",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "will only return the first message in each thread. This parameter is intended for apps which display message threads collapsed. threaded=extended will return the thread starter messages in order of most recently active as well as the two most recent messages, as they are viewed in the default view on the Yammer web interface.",
+                                    "enum": [
+                                        "extended",
+                                        "true"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "limit": {
+                                    "name": "limit",
+                                    "displayName": "limit",
+                                    "type": "integer",
+                                    "required": false,
+                                    "example": "22",
+                                    "repeat": false,
+                                    "description": "Return only the specified number of messages. Works for threaded=true and threaded=extended.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
                     "displayName": "/my_feed{mediaTypeExtension}",
                     "description": "The user's feed, based on the selection they have made between  conversations.",
                     "__METADATA__": {
@@ -2690,8 +3241,11 @@
                             "type": "string",
                             "required": true,
                             "repeat": false,
+                            "enum": [
+                                "json",
+                                "xml"
+                            ],
                             "__METADATA__": {
-                                "calculated": true,
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true
@@ -2709,6 +3263,141 @@
                             }
                         }
                     },
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml"
+                                        },
+                                        "application/json": {
+                                            "name": "application/json"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "queryParameters": {
+                                "older_than": {
+                                    "name": "older_than",
+                                    "displayName": "older_than",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "2912",
+                                    "repeat": false,
+                                    "description": "Returns messages older than the message ID specified as a numeric string. This is useful for paginating messages. For example, if you're currently viewing 20 messages and the oldest is number 2912, you could append \"?older_than=2912\" to your request to get the 20 messages prior to those you're seeing.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "newer_than": {
+                                    "name": "newer_than",
+                                    "displayName": "newer_than",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Returns messages newer than the message ID specified as a numeric string. This should be used when polling for new messages. If you're looking at messages, and the most recent message returned is 3516, you can make a request with the parameter \"?newer_than=3516\" to ensure that you do not get duplicate copies of messages already on your page\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "threaded": {
+                                    "name": "threaded",
+                                    "displayName": "threaded",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "will only return the first message in each thread. This parameter is intended for apps which display message threads collapsed. threaded=extended will return the thread starter messages in order of most recently active as well as the two most recent messages, as they are viewed in the default view on the Yammer web interface.",
+                                    "enum": [
+                                        "extended",
+                                        "true"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "limit": {
+                                    "name": "limit",
+                                    "displayName": "limit",
+                                    "type": "integer",
+                                    "required": false,
+                                    "example": "22",
+                                    "repeat": false,
+                                    "description": "Return only the specified number of messages. Works for threaded=true and threaded=extended.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
                     "displayName": "/received{mediaTypeExtension}",
                     "description": "All messages received by the user.",
                     "__METADATA__": {
@@ -2738,8 +3427,11 @@
                             "type": "string",
                             "required": true,
                             "repeat": false,
+                            "enum": [
+                                "json",
+                                "xml"
+                            ],
                             "__METADATA__": {
-                                "calculated": true,
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true
@@ -2757,6 +3449,141 @@
                             }
                         }
                     },
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml"
+                                        },
+                                        "application/json": {
+                                            "name": "application/json"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "queryParameters": {
+                                "older_than": {
+                                    "name": "older_than",
+                                    "displayName": "older_than",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "2912",
+                                    "repeat": false,
+                                    "description": "Returns messages older than the message ID specified as a numeric string. This is useful for paginating messages. For example, if you're currently viewing 20 messages and the oldest is number 2912, you could append \"?older_than=2912\" to your request to get the 20 messages prior to those you're seeing.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "newer_than": {
+                                    "name": "newer_than",
+                                    "displayName": "newer_than",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Returns messages newer than the message ID specified as a numeric string. This should be used when polling for new messages. If you're looking at messages, and the most recent message returned is 3516, you can make a request with the parameter \"?newer_than=3516\" to ensure that you do not get duplicate copies of messages already on your page\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "threaded": {
+                                    "name": "threaded",
+                                    "displayName": "threaded",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "will only return the first message in each thread. This parameter is intended for apps which display message threads collapsed. threaded=extended will return the thread starter messages in order of most recently active as well as the two most recent messages, as they are viewed in the default view on the Yammer web interface.",
+                                    "enum": [
+                                        "extended",
+                                        "true"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "limit": {
+                                    "name": "limit",
+                                    "displayName": "limit",
+                                    "type": "integer",
+                                    "required": false,
+                                    "example": "22",
+                                    "repeat": false,
+                                    "description": "Return only the specified number of messages. Works for threaded=true and threaded=extended.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
                     "displayName": "/algo{mediaTypeExtension}",
                     "description": "The algorithmic feed for the user that corresponds to conversations, which is what the vast majority of users will see in the Yammer web interface.",
                     "__METADATA__": {
@@ -2786,8 +3613,11 @@
                             "type": "string",
                             "required": true,
                             "repeat": false,
+                            "enum": [
+                                "json",
+                                "xml"
+                            ],
                             "__METADATA__": {
-                                "calculated": true,
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true
@@ -2805,6 +3635,141 @@
                             }
                         }
                     },
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml"
+                                        },
+                                        "application/json": {
+                                            "name": "application/json"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "queryParameters": {
+                                "older_than": {
+                                    "name": "older_than",
+                                    "displayName": "older_than",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "2912",
+                                    "repeat": false,
+                                    "description": "Returns messages older than the message ID specified as a numeric string. This is useful for paginating messages. For example, if you're currently viewing 20 messages and the oldest is number 2912, you could append \"?older_than=2912\" to your request to get the 20 messages prior to those you're seeing.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "newer_than": {
+                                    "name": "newer_than",
+                                    "displayName": "newer_than",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Returns messages newer than the message ID specified as a numeric string. This should be used when polling for new messages. If you're looking at messages, and the most recent message returned is 3516, you can make a request with the parameter \"?newer_than=3516\" to ensure that you do not get duplicate copies of messages already on your page\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "threaded": {
+                                    "name": "threaded",
+                                    "displayName": "threaded",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "will only return the first message in each thread. This parameter is intended for apps which display message threads collapsed. threaded=extended will return the thread starter messages in order of most recently active as well as the two most recent messages, as they are viewed in the default view on the Yammer web interface.",
+                                    "enum": [
+                                        "extended",
+                                        "true"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "limit": {
+                                    "name": "limit",
+                                    "displayName": "limit",
+                                    "type": "integer",
+                                    "required": false,
+                                    "example": "22",
+                                    "repeat": false,
+                                    "description": "Return only the specified number of messages. Works for threaded=true and threaded=extended.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
                     "displayName": "/sent{mediaTypeExtension}",
                     "description": "All messages sent by the user. Alias for /api/v1/messages/from_user/logged-in_user_id.format.",
                     "__METADATA__": {
@@ -2834,8 +3799,11 @@
                             "type": "string",
                             "required": true,
                             "repeat": false,
+                            "enum": [
+                                "json",
+                                "xml"
+                            ],
                             "__METADATA__": {
-                                "calculated": true,
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true
@@ -2853,6 +3821,141 @@
                             }
                         }
                     },
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml"
+                                        },
+                                        "application/json": {
+                                            "name": "application/json"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "queryParameters": {
+                                "older_than": {
+                                    "name": "older_than",
+                                    "displayName": "older_than",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "2912",
+                                    "repeat": false,
+                                    "description": "Returns messages older than the message ID specified as a numeric string. This is useful for paginating messages. For example, if you're currently viewing 20 messages and the oldest is number 2912, you could append \"?older_than=2912\" to your request to get the 20 messages prior to those you're seeing.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "newer_than": {
+                                    "name": "newer_than",
+                                    "displayName": "newer_than",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Returns messages newer than the message ID specified as a numeric string. This should be used when polling for new messages. If you're looking at messages, and the most recent message returned is 3516, you can make a request with the parameter \"?newer_than=3516\" to ensure that you do not get duplicate copies of messages already on your page\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "threaded": {
+                                    "name": "threaded",
+                                    "displayName": "threaded",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "will only return the first message in each thread. This parameter is intended for apps which display message threads collapsed. threaded=extended will return the thread starter messages in order of most recently active as well as the two most recent messages, as they are viewed in the default view on the Yammer web interface.",
+                                    "enum": [
+                                        "extended",
+                                        "true"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "limit": {
+                                    "name": "limit",
+                                    "displayName": "limit",
+                                    "type": "integer",
+                                    "required": false,
+                                    "example": "22",
+                                    "repeat": false,
+                                    "description": "Return only the specified number of messages. Works for threaded=true and threaded=extended.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
                     "displayName": "/private{mediaTypeExtension}",
                     "description": "All messages received by the user.",
                     "__METADATA__": {
@@ -2976,8 +4079,11 @@
                             "type": "string",
                             "required": true,
                             "repeat": false,
+                            "enum": [
+                                "json",
+                                "xml"
+                            ],
                             "__METADATA__": {
-                                "calculated": true,
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true
@@ -3003,6 +4109,29 @@
                             "securedBy": [
                                 "oauth_2_0"
                             ],
+                            "queryParameters": {
+                                "message_id": {
+                                    "name": "message_id",
+                                    "displayName": "message_id",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "description": "",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "method": "post",
                             "is": [
                                 "acceptsMessageId"
@@ -3025,6 +4154,29 @@
                             "securedBy": [
                                 "oauth_2_0"
                             ],
+                            "queryParameters": {
+                                "message_id": {
+                                    "name": "message_id",
+                                    "displayName": "message_id",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "description": "",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "method": "delete",
                             "is": [
                                 "acceptsMessageId"
@@ -3095,8 +4247,11 @@
                             "type": "string",
                             "required": true,
                             "repeat": false,
+                            "enum": [
+                                "json",
+                                "xml"
+                            ],
                             "__METADATA__": {
-                                "calculated": true,
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true
@@ -3116,12 +4271,126 @@
                     },
                     "methods": [
                         {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml"
+                                        },
+                                        "application/json": {
+                                            "name": "application/json"
+                                        }
+                                    }
+                                }
+                            },
                             "protocols": [
                                 "HTTPS"
                             ],
                             "securedBy": [
                                 "oauth_2_0"
                             ],
+                            "queryParameters": {
+                                "older_than": {
+                                    "name": "older_than",
+                                    "displayName": "older_than",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "2912",
+                                    "repeat": false,
+                                    "description": "Returns messages older than the message ID specified as a numeric string. This is useful for paginating messages. For example, if you're currently viewing 20 messages and the oldest is number 2912, you could append \"?older_than=2912\" to your request to get the 20 messages prior to those you're seeing.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "newer_than": {
+                                    "name": "newer_than",
+                                    "displayName": "newer_than",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Returns messages newer than the message ID specified as a numeric string. This should be used when polling for new messages. If you're looking at messages, and the most recent message returned is 3516, you can make a request with the parameter \"?newer_than=3516\" to ensure that you do not get duplicate copies of messages already on your page\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "threaded": {
+                                    "name": "threaded",
+                                    "displayName": "threaded",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "will only return the first message in each thread. This parameter is intended for apps which display message threads collapsed. threaded=extended will return the thread starter messages in order of most recently active as well as the two most recent messages, as they are viewed in the default view on the Yammer web interface.",
+                                    "enum": [
+                                        "extended",
+                                        "true"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "limit": {
+                                    "name": "limit",
+                                    "displayName": "limit",
+                                    "type": "integer",
+                                    "required": false,
+                                    "example": "22",
+                                    "repeat": false,
+                                    "description": "Return only the specified number of messages. Works for threaded=true and threaded=extended.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "method": "get",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
@@ -3165,8 +4434,11 @@
                             "type": "string",
                             "required": true,
                             "repeat": false,
+                            "enum": [
+                                "json",
+                                "xml"
+                            ],
                             "__METADATA__": {
-                                "calculated": true,
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true
@@ -3184,6 +4456,141 @@
                             }
                         }
                     },
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml"
+                                        },
+                                        "application/json": {
+                                            "name": "application/json"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0"
+                            ],
+                            "queryParameters": {
+                                "older_than": {
+                                    "name": "older_than",
+                                    "displayName": "older_than",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "2912",
+                                    "repeat": false,
+                                    "description": "Returns messages older than the message ID specified as a numeric string. This is useful for paginating messages. For example, if you're currently viewing 20 messages and the oldest is number 2912, you could append \"?older_than=2912\" to your request to get the 20 messages prior to those you're seeing.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "newer_than": {
+                                    "name": "newer_than",
+                                    "displayName": "newer_than",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Returns messages newer than the message ID specified as a numeric string. This should be used when polling for new messages. If you're looking at messages, and the most recent message returned is 3516, you can make a request with the parameter \"?newer_than=3516\" to ensure that you do not get duplicate copies of messages already on your page\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "threaded": {
+                                    "name": "threaded",
+                                    "displayName": "threaded",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "will only return the first message in each thread. This parameter is intended for apps which display message threads collapsed. threaded=extended will return the thread starter messages in order of most recently active as well as the two most recent messages, as they are viewed in the default view on the Yammer web interface.",
+                                    "enum": [
+                                        "extended",
+                                        "true"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "limit": {
+                                    "name": "limit",
+                                    "displayName": "limit",
+                                    "type": "integer",
+                                    "required": false,
+                                    "example": "22",
+                                    "repeat": false,
+                                    "description": "Return only the specified number of messages. Works for threaded=true and threaded=extended.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
                     "displayName": "/following{mediaTypeExtension}",
                     "description": "The  feed which is conversations involving people, groups and topics that the user is following.",
                     "__METADATA__": {
@@ -3259,8 +4666,11 @@
                             "type": "string",
                             "required": true,
                             "repeat": false,
+                            "enum": [
+                                "json",
+                                "xml"
+                            ],
                             "__METADATA__": {
-                                "calculated": true,
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true
@@ -3286,6 +4696,32 @@
                             "securedBy": [
                                 "oauth_2_0"
                             ],
+                            "queryParameters": {
+                                "page": {
+                                    "name": "page",
+                                    "displayName": "page",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "method": "get",
                             "is": [
                                 "acceptsPage"
@@ -3356,8 +4792,11 @@
                             "type": "string",
                             "required": true,
                             "repeat": false,
+                            "enum": [
+                                "json",
+                                "xml"
+                            ],
                             "__METADATA__": {
-                                "calculated": true,
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true
@@ -3493,8 +4932,11 @@
                             "type": "string",
                             "required": true,
                             "repeat": false,
+                            "enum": [
+                                "json",
+                                "xml"
+                            ],
                             "__METADATA__": {
-                                "calculated": true,
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true
@@ -3576,8 +5018,11 @@
                             "type": "string",
                             "required": true,
                             "repeat": false,
+                            "enum": [
+                                "json",
+                                "xml"
+                            ],
                             "__METADATA__": {
-                                "calculated": true,
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true

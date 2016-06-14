@@ -1,7 +1,20 @@
-{"apis": [{
-    "name": "Zuora",
-    "RAMLVersion": "0.8",
-    "location": "https://raw.githubusercontent.com/raml-apis/Zuora/production/zuora.raml",
-    "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Zuora/production/zuora.json",
-    "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Zuora/logo.png"
-}]}
+{"apis": {
+    "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Zuora/logo.png",
+    "RAMLFiles": [{
+        "name": "Zuora",
+        "description": "descriptionexamle",
+        "RAMLVersion": "0.8",
+        "location": "https://raw.githubusercontent.com/raml-apis/Zuora/production/zuora.raml",
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Zuora/production/zuora.json",
+        "baseUri": "https://{partitionName}.zuora.com/rest/{version}",
+        "version": "v1",
+        "securitySchemes": [{"basic": {
+            "name": "basic",
+            "type": "Basic Authentication",
+            "description": "Include the apiAccessKeyId and apiSecretAccessKey in the request header, which re-authenticates the user with each request."
+        }}],
+        "resourcesCount": 23,
+        "methodsCount": 23,
+        "developerPortalURI": "https://knowledgecenter.zuora.com/D_REST_API"
+    }]
+}}

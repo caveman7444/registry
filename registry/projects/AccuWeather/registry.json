@@ -1,6 +1,34 @@
-{"apis": [{
+{"apis": {"RAMLFiles": [{
     "name": "AccuWeather API",
+    "description": "descriptionexamle",
     "RAMLVersion": "0.8",
     "location": "https://raw.githubusercontent.com/raml-apis/AccuWeather/production/accuWeather.raml",
-    "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/AccuWeather/production/accuWeather.json"
-}]}
+    "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/AccuWeather/production/accuWeather.json",
+    "baseUri": "http://{apiDomain}.accuweather.com",
+    "version": "v1",
+    "securitySchemes": [{"api_key": {
+        "name": "api_key",
+        "type": "x-API-Key-Signatures",
+        "description": "Access to the AccuWeather API requires an API key.  Contact sales@accuweather.com to receive an API key. \n",
+        "describedBy": {
+            "securedBy": ["api_key"],
+            "queryParameters": {"key": {
+                "name": "key",
+                "displayName": "key",
+                "type": "string",
+                "required": true,
+                "example": "ABDE12456AB2324445",
+                "repeat": false,
+                "description": "Your unique API key",
+                "__METADATA__": {"primitiveValuesMeta": {
+                    "displayName": {"calculated": true},
+                    "type": {"insertedAsDefault": true},
+                    "repeat": {"insertedAsDefault": true}
+                }}
+            }},
+            "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
+        }
+    }}],
+    "resourcesCount": 46,
+    "methodsCount": 37
+}]}}

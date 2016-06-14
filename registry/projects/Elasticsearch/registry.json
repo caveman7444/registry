@@ -1,6 +1,11 @@
-{"apis": [{
+{"apis": {"RAMLFiles": [{
     "name": "Elasticsearch",
+    "description": "descriptionexamle",
     "RAMLVersion": "0.8",
     "location": "https://raw.githubusercontent.com/raml-apis/Elasticsearch/production/api.raml",
-    "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Elasticsearch/production/api.json"
-}]}
+    "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Elasticsearch/production/api.json",
+    "baseUri": "{protocol}://{domain}:{port}",
+    "resourcesCount": 111,
+    "methodsCount": 138,
+    "developerPortalURI": "http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/index.html"
+}]}}

@@ -1,14 +1,66 @@
-{"apis": [
+{"apis": {"RAMLFiles": [
     {
         "name": "Pivotal Tracker",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/PivotalTracker/production/api.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/PivotalTracker/production/api.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/PivotalTracker/production/api.json",
+        "baseUri": "https://www.pivotaltracker.com/services/{version}",
+        "version": "v5",
+        "securitySchemes": [{"customSchema": {
+            "name": "customSchema",
+            "type": "x-custom",
+            "describedBy": {
+                "securedBy": ["customSchema"],
+                "headers": {"X-TrackerToken": {
+                    "name": "X-TrackerToken",
+                    "displayName": "X-TrackerToken",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "description": "Specifies the authentication scheme.",
+                    "__METADATA__": {"primitiveValuesMeta": {
+                        "displayName": {"calculated": true},
+                        "type": {"insertedAsDefault": true},
+                        "repeat": {"insertedAsDefault": true}
+                    }}
+                }},
+                "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
+            }
+        }}],
+        "resourcesCount": 58,
+        "methodsCount": 98
     },
     {
         "name": "PivotalTracker Attachment Download",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/PivotalTracker/production/attachmentDownload.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/PivotalTracker/production/attachmentDownload.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/PivotalTracker/production/attachmentDownload.json",
+        "baseUri": "https://www.pivotaltracker.com/",
+        "version": "v5",
+        "securitySchemes": [{"customSchema": {
+            "name": "customSchema",
+            "type": "x-custom",
+            "describedBy": {
+                "securedBy": ["customSchema"],
+                "headers": {"X-TrackerToken": {
+                    "name": "X-TrackerToken",
+                    "displayName": "X-TrackerToken",
+                    "type": "string",
+                    "required": true,
+                    "repeat": false,
+                    "description": "Specifies the authentication scheme.",
+                    "__METADATA__": {"primitiveValuesMeta": {
+                        "displayName": {"calculated": true},
+                        "type": {"insertedAsDefault": true},
+                        "repeat": {"insertedAsDefault": true}
+                    }}
+                }},
+                "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
+            }
+        }}],
+        "resourcesCount": 1,
+        "methodsCount": 1
     }
-]}
+]}}

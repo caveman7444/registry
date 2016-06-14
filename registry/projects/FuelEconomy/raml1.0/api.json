@@ -405,6 +405,41 @@
                         {
                             "methods": [
                                 {
+                                    "queryParameters": {
+                                        "year": {
+                                            "name": "year",
+                                            "displayName": "year",
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "example": "year=2012",
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "Year of production",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            },
+                                            "structuredExample": {
+                                                "value": "year=2012",
+                                                "strict": true,
+                                                "name": null,
+                                                "structuredValue": "year=2012"
+                                            }
+                                        }
+                                    },
                                     "responses": {
                                         "200": {
                                             "code": "200",
@@ -467,6 +502,74 @@
                         {
                             "methods": [
                                 {
+                                    "queryParameters": {
+                                        "make": {
+                                            "name": "make",
+                                            "displayName": "make",
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "example": "make=Honda",
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "Manufacturer",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            },
+                                            "structuredExample": {
+                                                "value": "make=Honda",
+                                                "strict": true,
+                                                "name": null,
+                                                "structuredValue": "make=Honda"
+                                            }
+                                        },
+                                        "year": {
+                                            "name": "year",
+                                            "displayName": "year",
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "example": "year=2012",
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "Year of production",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            },
+                                            "structuredExample": {
+                                                "value": "year=2012",
+                                                "strict": true,
+                                                "name": null,
+                                                "structuredValue": "year=2012"
+                                            }
+                                        }
+                                    },
                                     "responses": {
                                         "200": {
                                             "code": "200",
@@ -530,6 +633,100 @@
                         {
                             "methods": [
                                 {
+                                    "queryParameters": {
+                                        "model": {
+                                            "name": "model",
+                                            "displayName": "model",
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "Model of a car",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "make": {
+                                            "name": "make",
+                                            "displayName": "make",
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "example": "make=Honda",
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "Manufacturer",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            },
+                                            "structuredExample": {
+                                                "value": "make=Honda",
+                                                "strict": true,
+                                                "name": null,
+                                                "structuredValue": "make=Honda"
+                                            }
+                                        },
+                                        "year": {
+                                            "name": "year",
+                                            "displayName": "year",
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "example": "year=2012",
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "Year of production",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            },
+                                            "structuredExample": {
+                                                "value": "year=2012",
+                                                "strict": true,
+                                                "name": null,
+                                                "structuredValue": "year=2012"
+                                            }
+                                        }
+                                    },
                                     "responses": {
                                         "200": {
                                             "code": "200",
@@ -1007,6 +1204,41 @@
                         {
                             "methods": [
                                 {
+                                    "queryParameters": {
+                                        "make": {
+                                            "name": "make",
+                                            "displayName": "make",
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "example": "make=Honda",
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "Manufacturer",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            },
+                                            "structuredExample": {
+                                                "value": "make=Honda",
+                                                "strict": true,
+                                                "name": null,
+                                                "structuredValue": "make=Honda"
+                                            }
+                                        }
+                                    },
                                     "responses": {
                                         "200": {
                                             "code": "200",
@@ -1081,6 +1313,67 @@
                 {
                     "methods": [
                         {
+                            "queryParameters": {
+                                "model": {
+                                    "name": "model",
+                                    "displayName": "model",
+                                    "type": [
+                                        "string"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "description": "Model of a car",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "make": {
+                                    "name": "make",
+                                    "displayName": "make",
+                                    "type": [
+                                        "string"
+                                    ],
+                                    "example": "make=Honda",
+                                    "repeat": false,
+                                    "required": true,
+                                    "description": "Manufacturer",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    },
+                                    "structuredExample": {
+                                        "value": "make=Honda",
+                                        "strict": true,
+                                        "name": null,
+                                        "structuredValue": "make=Honda"
+                                    }
+                                }
+                            },
                             "responses": {
                                 "200": {
                                     "code": "200",
@@ -1368,6 +1661,65 @@
                                     }
                                 }
                             }
+                        },
+                        "vclass": {
+                            "name": "vclass",
+                            "displayName": "vclass",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "year": {
+                            "name": "year",
+                            "displayName": "year",
+                            "type": [
+                                "string"
+                            ],
+                            "example": "year=2012",
+                            "repeat": false,
+                            "required": true,
+                            "description": "Year of production",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            },
+                            "structuredExample": {
+                                "value": "year=2012",
+                                "strict": true,
+                                "name": null,
+                                "structuredValue": "year=2012"
+                            }
                         }
                     },
                     "responses": {
@@ -1547,6 +1899,32 @@
                             ],
                             "repeat": false,
                             "required": true,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "vclass": {
+                            "name": "vclass",
+                            "displayName": "vclass",
+                            "type": [
+                                "string"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "description": "",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
                                     "displayName": {

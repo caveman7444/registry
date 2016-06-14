@@ -1,16 +1,89 @@
-{"apis": [
-    {
-        "name": "Slack",
-        "RAMLVersion": "0.8",
-        "location": "https://raw.githubusercontent.com/raml-apis/Slack/production/slack.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Slack/production/slack.json",
-        "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Slack/logo.png"
-    },
-    {
-        "name": "Slack",
-        "RAMLVersion": "1.0",
-        "location": "https://raw.githubusercontent.com/raml-apis/Slack/raml1.0/slack.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Slack/raml1.0/slack.json",
-        "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Slack/logo.png"
-    }
-]}
+{"apis": {
+    "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Slack/logo.png",
+    "RAMLFiles": [
+        {
+            "name": "Slack",
+            "description": "descriptionexamle",
+            "RAMLVersion": "0.8",
+            "location": "https://raw.githubusercontent.com/raml-apis/Slack/production/slack.raml",
+            "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Slack/production/slack.json",
+            "baseUri": "https://slack.com/api",
+            "securitySchemes": [{"oauth_2_0": {
+                "name": "oauth_2_0",
+                "type": "OAuth 2.0",
+                "description": "",
+                "describedBy": {
+                    "securedBy": ["oauth_2_0"],
+                    "queryParameters": {"token": {
+                        "name": "token",
+                        "displayName": "token",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Used to send a valid OAuth 2 access token. \n",
+                        "__METADATA__": {"primitiveValuesMeta": {
+                            "displayName": {"calculated": true},
+                            "type": {"insertedAsDefault": true},
+                            "required": {"insertedAsDefault": true},
+                            "repeat": {"insertedAsDefault": true}
+                        }}
+                    }},
+                    "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
+                },
+                "settings": {
+                    "accessTokenUri": "https://slack.com/api/oauth.access",
+                    "authorizationUri": "https://slack.com/oauth/authorize",
+                    "authorizationGrants": ["code"],
+                    "scopes": [
+                        "identify",
+                        "read",
+                        "post"
+                    ]
+                }
+            }}],
+            "resourcesCount": 29,
+            "methodsCount": 29,
+            "developerPortalURI": "https://api.slack.com/"
+        },
+        {
+            "name": "Slack",
+            "description": "descriptionexamle",
+            "RAMLVersion": "1.0",
+            "location": "https://raw.githubusercontent.com/raml-apis/Slack/raml1.0/slack.raml",
+            "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Slack/raml1.0/slack.json",
+            "baseUri": "https://slack.com/api",
+            "securitySchemes": [{"oauth_2_0": {
+                "name": "oauth_2_0",
+                "type": "OAuth 2.0",
+                "description": "",
+                "describedBy": {"queryParameters": {"token": {
+                    "name": "token",
+                    "displayName": "token",
+                    "type": ["string"],
+                    "repeat": false,
+                    "required": true,
+                    "description": "Used to send a valid OAuth 2 access token. \n",
+                    "__METADATA__": {"primitiveValuesMeta": {
+                        "displayName": {"calculated": true},
+                        "type": {"insertedAsDefault": true},
+                        "repeat": {"insertedAsDefault": true},
+                        "required": {"insertedAsDefault": true}
+                    }}
+                }}},
+                "settings": {
+                    "accessTokenUri": "https://slack.com/api/oauth.access",
+                    "authorizationUri": "https://slack.com/oauth/authorize",
+                    "authorizationGrants": ["code"],
+                    "scopes": [
+                        "identify",
+                        "read",
+                        "post"
+                    ]
+                }
+            }}],
+            "resourcesCount": 29,
+            "methodsCount": 29,
+            "developerPortalURI": "https://api.slack.com/"
+        }
+    ]
+}}

@@ -191,18 +191,18 @@
                     "name": "mediaTypeExtension",
                     "displayName": "mediaTypeExtension",
                     "type": "string",
-                    "required": true,
+                    "required": false,
                     "repeat": false,
+                    "description": "Omiting the param causes html to be returned.",
+                    "enum": [
+                        ".json"
+                    ],
                     "__METADATA__": {
-                        "calculated": true,
                         "primitiveValuesMeta": {
                             "displayName": {
                                 "calculated": true
                             },
                             "type": {
-                                "insertedAsDefault": true
-                            },
-                            "required": {
                                 "insertedAsDefault": true
                             },
                             "repeat": {
@@ -220,14 +220,24 @@
                             "body": {
                                 "application/json": {
                                     "name": "application/json",
-                                    "example": "{\r\n  \"published\" : true ,\r\n  \"layout\" : \"basic-full-page\" ,\r\n  \"lang\" : \"en\" ,\r\n  \"experience\" : \"learn\" ,\r\n  \"url\" : \"/developers\" ,\r\n  \"title\" : \"Developers\" ,\r\n  \"content\" : \"<h1>HealthCare.gov for Developers</h1>\\r\\n\\r\\n<p>We're making our source code freely available on GitHub. All of our educational content about the <a href=\\\"/marketplace/individual\\\">Health Insurance Marketplace</a> is available in machine-readable formats so that innovators, entrepreneurs, and partners can turn it into new products and services.</p>\\r\\n\\r\\n<h2>Open Source and Accessible</h2>\\r\\n\\r\\n<p><strong>All content is available through an API.</strong> Everyone can use the API to embed content from HealthCare.gov. As official content gets updated on HealthCare.gov, the new content will update automatically and appear on websites using the HealthCare.gov API.</p>\\r\\n\\r\\n<p>From day one, we embraced the principles of open data, universal access, and accessibility through simplicity. We produce standards compliant code to make our content <a href=\\\"/accessibility\\\">accessible</a> to people with disabilities.</p>\\r\\n\\r\\n<h2>HealthCare.gov Content API</h2>\\r\\n\" ,\r\n  \"date\" : \"2013-06-12 00:00:00 -0400\" ,\r\n  \"tags\" : [\r\n  ] ,\r\n  \"sort\" : 0 ,\r\n  \"id\" : \"/developers\" ,\r\n  \"categories\" : [\r\n  ] ,\r\n  \"excerpt\" : \"<h1>HealthCare.gov for Developers</h1>\\r\\n\" ,\r\n  \"path\" : \"_posts/2013-06-12-developers.md\"\r\n}"
+                                    "schema": "page",
+                                    "example": "{\r\n  \"published\" : true ,\r\n  \"layout\" : \"basic-full-page\" ,\r\n  \"lang\" : \"en\" ,\r\n  \"experience\" : \"learn\" ,\r\n  \"url\" : \"/developers\" ,\r\n  \"title\" : \"Developers\" ,\r\n  \"content\" : \"<h1>HealthCare.gov for Developers</h1>\\r\\n\\r\\n<p>We're making our source code freely available on GitHub. All of our educational content about the <a href=\\\"/marketplace/individual\\\">Health Insurance Marketplace</a> is available in machine-readable formats so that innovators, entrepreneurs, and partners can turn it into new products and services.</p>\\r\\n\\r\\n<h2>Open Source and Accessible</h2>\\r\\n\\r\\n<p><strong>All content is available through an API.</strong> Everyone can use the API to embed content from HealthCare.gov. As official content gets updated on HealthCare.gov, the new content will update automatically and appear on websites using the HealthCare.gov API.</p>\\r\\n\\r\\n<p>From day one, we embraced the principles of open data, universal access, and accessibility through simplicity. We produce standards compliant code to make our content <a href=\\\"/accessibility\\\">accessible</a> to people with disabilities.</p>\\r\\n\\r\\n<h2>HealthCare.gov Content API</h2>\\r\\n\" ,\r\n  \"date\" : \"2013-06-12 00:00:00 -0400\" ,\r\n  \"tags\" : [\r\n  ] ,\r\n  \"sort\" : 0 ,\r\n  \"id\" : \"/developers\" ,\r\n  \"categories\" : [\r\n  ] ,\r\n  \"excerpt\" : \"<h1>HealthCare.gov for Developers</h1>\\r\\n\" ,\r\n  \"path\" : \"_posts/2013-06-12-developers.md\"\r\n}",
+                                    "schemaContent": "page"
+                                },
+                                "application/html": {
+                                    "name": "application/html"
                                 }
                             }
+                        },
+                        "404": {
+                            "code": "404",
+                            "description": "Resource not found."
                         }
                     },
                     "protocols": [
                         "HTTPS"
                     ],
+                    "description": "Returns pages content.",
                     "method": "get",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
@@ -289,8 +299,11 @@
                     "type": "string",
                     "required": true,
                     "repeat": false,
+                    "description": "Omiting the param causes html to be returned.",
+                    "enum": [
+                        ".json"
+                    ],
                     "__METADATA__": {
-                        "calculated": true,
                         "primitiveValuesMeta": {
                             "displayName": {
                                 "calculated": true
@@ -316,14 +329,21 @@
                             "body": {
                                 "application/json": {
                                     "name": "application/json",
-                                    "example": "{\r\n  \"lang\" : \"en\" ,\r\n  \"tags\" : [\r\n    \"state\"\r\n  ] ,\r\n  \"stateurl\" : \"none\" ,\r\n  \"url\" : \"/wyoming\" ,\r\n  \"title\" : \"Wyoming\" ,\r\n  \"content\" : \"<h3>Consumer Assistance in Wyoming</h3>\\r\\n\\r\\n<p>Contact your state department of insurance to <a href=\\\"http : //insurance.state.wy.us/\\\">get consumer help with a health insurance problem or question</a>.</p>\\r\\n\\r\\n<h3>Medicaid in Wyoming</h3>\\r\\n\\r\\n<p>Wyoming has not chosen to expand its Medicaid program at this time. Read <a href=\\\"https : //www.healthcare.gov/what-if-my-state-is-not-expanding-medicaid/\\\">\\\"What if my state isn't expanding Medicaid?\\\"</a> to learn more. You can find out whether you qualify for Medicaid under Wyoming's current rules 2 ways: <a href=\\\"http : //www.health.wyo.gov/default.aspx\\\">Contact your state Medicaid agency right now</a> or <a href=\\\"https : //www.healthcare.gov/marketplace/individual/\\\">fill out an application for coverage in the Health Insurance Marketplace</a>.</p>\\r\\n\\r\\n<h3>Shop Health Insurance Marketplace in Wyoming</h3>\\r\\n\\r\\n<p>If your small business is located in Wyoming, you'll use an agent, broker, or insurance company to enroll your employees in health coverage. Enroll by the 15th for coverage that starts as soon as the 1st of the month.</p>\\r\\n\\r\\n<h3>Health Insurance Marketplace in Wyoming</h3>\\r\\n\\r\\n<p>If you live in Wyoming, you'll use HealthCare.gov to apply and enroll in health coverage. Enroll by the 15th for coverage that starts as soon as the 1st of the month. Need more info first? <a href=\\\"/get-covered-a-1-page-guide-to-the-health-insurance-marketplace/\\\">Here's what you need to know</a>. Ready to begin? Select a button to apply.</p>\\r\\n\\r\\n<h3>CHIP in Wyoming</h3>\\r\\n\\r\\n<p>Kid Care CHIP covers uninsured children in families with moderate incomes that are too high to qualify for Medicaid. You can find out whether your children qualify for Kid Care CHIP right now. <a href=\\\"https : //www.healthcare.gov/marketplace/individual/\\\">Fill out a Marketplace application</a> and find out whether your children qualify. <a href=\\\"http : //www.health.wyo.gov/default.aspx\\\">Learn more about Kid Care CHIP in Wyoming</a>.</p>\\r\\n\" ,\r\n  \"date\" : \"0001-02-01 00:00:00 -0456\" ,\r\n  \"sort\" : 0 ,\r\n  \"id\" : \"/wyoming\" ,\r\n  \"categories\" : [\r\n  ] ,\r\n  \"excerpt\" : \"<h3>Consumer Assistance in Wyoming</h3>\\r\\n\" ,\r\n  \"path\" : \"_posts/states/0001-02-01-wyoming.md\"\r\n}"
+                                    "schema": "statePage",
+                                    "example": "{\r\n  \"lang\" : \"en\" ,\r\n  \"tags\" : [\r\n    \"state\"\r\n  ] ,\r\n  \"stateurl\" : \"none\" ,\r\n  \"url\" : \"/wyoming\" ,\r\n  \"title\" : \"Wyoming\" ,\r\n  \"content\" : \"<h3>Consumer Assistance in Wyoming</h3>\\r\\n\\r\\n<p>Contact your state department of insurance to <a href=\\\"http : //insurance.state.wy.us/\\\">get consumer help with a health insurance problem or question</a>.</p>\\r\\n\\r\\n<h3>Medicaid in Wyoming</h3>\\r\\n\\r\\n<p>Wyoming has not chosen to expand its Medicaid program at this time. Read <a href=\\\"https : //www.healthcare.gov/what-if-my-state-is-not-expanding-medicaid/\\\">\\\"What if my state isn't expanding Medicaid?\\\"</a> to learn more. You can find out whether you qualify for Medicaid under Wyoming's current rules 2 ways: <a href=\\\"http : //www.health.wyo.gov/default.aspx\\\">Contact your state Medicaid agency right now</a> or <a href=\\\"https : //www.healthcare.gov/marketplace/individual/\\\">fill out an application for coverage in the Health Insurance Marketplace</a>.</p>\\r\\n\\r\\n<h3>Shop Health Insurance Marketplace in Wyoming</h3>\\r\\n\\r\\n<p>If your small business is located in Wyoming, you'll use an agent, broker, or insurance company to enroll your employees in health coverage. Enroll by the 15th for coverage that starts as soon as the 1st of the month.</p>\\r\\n\\r\\n<h3>Health Insurance Marketplace in Wyoming</h3>\\r\\n\\r\\n<p>If you live in Wyoming, you'll use HealthCare.gov to apply and enroll in health coverage. Enroll by the 15th for coverage that starts as soon as the 1st of the month. Need more info first? <a href=\\\"/get-covered-a-1-page-guide-to-the-health-insurance-marketplace/\\\">Here's what you need to know</a>. Ready to begin? Select a button to apply.</p>\\r\\n\\r\\n<h3>CHIP in Wyoming</h3>\\r\\n\\r\\n<p>Kid Care CHIP covers uninsured children in families with moderate incomes that are too high to qualify for Medicaid. You can find out whether your children qualify for Kid Care CHIP right now. <a href=\\\"https : //www.healthcare.gov/marketplace/individual/\\\">Fill out a Marketplace application</a> and find out whether your children qualify. <a href=\\\"http : //www.health.wyo.gov/default.aspx\\\">Learn more about Kid Care CHIP in Wyoming</a>.</p>\\r\\n\" ,\r\n  \"date\" : \"0001-02-01 00:00:00 -0456\" ,\r\n  \"sort\" : 0 ,\r\n  \"id\" : \"/wyoming\" ,\r\n  \"categories\" : [\r\n  ] ,\r\n  \"excerpt\" : \"<h3>Consumer Assistance in Wyoming</h3>\\r\\n\" ,\r\n  \"path\" : \"_posts/states/0001-02-01-wyoming.md\"\r\n}",
+                                    "schemaContent": "statePage"
                                 }
                             }
+                        },
+                        "404": {
+                            "code": "404",
+                            "description": "Resource not found."
                         }
                     },
                     "protocols": [
                         "HTTPS"
                     ],
+                    "description": "Returns pages content.",
                     "method": "get",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
@@ -383,18 +403,18 @@
                     "name": "mediaTypeExtension",
                     "displayName": "mediaTypeExtension",
                     "type": "string",
-                    "required": true,
+                    "required": false,
                     "repeat": false,
+                    "description": "Omiting the param causes html to be returned.",
+                    "enum": [
+                        ".json"
+                    ],
                     "__METADATA__": {
-                        "calculated": true,
                         "primitiveValuesMeta": {
                             "displayName": {
                                 "calculated": true
                             },
                             "type": {
-                                "insertedAsDefault": true
-                            },
-                            "required": {
                                 "insertedAsDefault": true
                             },
                             "repeat": {
@@ -412,14 +432,24 @@
                             "body": {
                                 "application/json": {
                                     "name": "application/json",
-                                    "example": "{\r\n  \"categories\" : [\r\n    \"blog\"\r\n  ] ,\r\n  \"published\" : true ,\r\n  \"title\" : \"Want coverage starting March 1? Plan ahead for best results\" ,\r\n  \"lang\" : \"en\" ,\r\n  \"layout\" : \"blog\" ,\r\n  \"meta-title\" : \"Want coverage starting March 1? Plan ahead for best results\" ,\r\n  \"meta-description\" : \"From Saturday February 15, 2014 at 3:00PM until Tuesday, February 18, 2014 at 5:00AM EST, the Social Security Administration will conduct annual systems maintenance activities.  During this period, verification of Social Security Numbers and other related data via the Data Services Hub will be unavailable.\" ,\r\n  \"seo-keywords\" : \"Health Insurance Marketplace, enrollment, February 15, March 1 coverage, health insurance,\" ,\r\n  \"topics\" : [\r\n    \"health-insurance-marketplace\"\r\n  ] ,\r\n  \"url\" : \"/blog/want-coverage-starting-march-1-plan-ahead-for-best-results\" ,\r\n  \"content\" : \"<p>Consumers are applying and enrolling in quality, affordable health coverage every day using HealthCare.gov and State-based Marketplaces around the country. More than 3 million have enrolled so far, and we hope millions more will do so by March 31, the end of open enrollment.</p>\\r\\n\\r\\n<p>From Saturday February 15, 2014 at 3:00PM until Tuesday, February 18, 2014 at 5:00AM EST, the Social Security Administration will conduct required, <a href=\\\"http : //www.ssa.gov/admin/transactions.html\\\">regularly scheduled systems maintenance activities</a> over the three day weekend. During this period, verification of Social Security Numbers and other related data via the Data Services Hub will be unavailable. All other services of the Hub will be functioning as normal.</p>\\r\\n\\r\\n<p>What this means for you:</p>\\r\\n\" ,\r\n  \"date\" : \"2014-02-10 00:00:00 -0500\" ,\r\n  \"tags\" : [\r\n  ] ,\r\n  \"sort\" : 0 ,\r\n  \"id\" : \"/blog/want-coverage-starting-march-1-plan-ahead-for-best-results\" ,\r\n  \"excerpt\" : \"<p>Consumers are applying and enrolling in quality, affordable health coverage every day using HealthCare.gov and State-based Marketplaces around the country. More than 3 million have enrolled so far, and we hope millions more will do so by March 31, the end of open enrollment.</p>\\r\\n\" ,\r\n  \"path\" : \"_posts/blog/2014-02-10-want-coverage-starting-march-1-plan-ahead-for-best-results.md\"\r\n}"
+                                    "schema": "blogPage",
+                                    "example": "{\r\n  \"categories\" : [\r\n    \"blog\"\r\n  ] ,\r\n  \"published\" : true ,\r\n  \"title\" : \"Want coverage starting March 1? Plan ahead for best results\" ,\r\n  \"lang\" : \"en\" ,\r\n  \"layout\" : \"blog\" ,\r\n  \"meta-title\" : \"Want coverage starting March 1? Plan ahead for best results\" ,\r\n  \"meta-description\" : \"From Saturday February 15, 2014 at 3:00PM until Tuesday, February 18, 2014 at 5:00AM EST, the Social Security Administration will conduct annual systems maintenance activities.  During this period, verification of Social Security Numbers and other related data via the Data Services Hub will be unavailable.\" ,\r\n  \"seo-keywords\" : \"Health Insurance Marketplace, enrollment, February 15, March 1 coverage, health insurance,\" ,\r\n  \"topics\" : [\r\n    \"health-insurance-marketplace\"\r\n  ] ,\r\n  \"url\" : \"/blog/want-coverage-starting-march-1-plan-ahead-for-best-results\" ,\r\n  \"content\" : \"<p>Consumers are applying and enrolling in quality, affordable health coverage every day using HealthCare.gov and State-based Marketplaces around the country. More than 3 million have enrolled so far, and we hope millions more will do so by March 31, the end of open enrollment.</p>\\r\\n\\r\\n<p>From Saturday February 15, 2014 at 3:00PM until Tuesday, February 18, 2014 at 5:00AM EST, the Social Security Administration will conduct required, <a href=\\\"http : //www.ssa.gov/admin/transactions.html\\\">regularly scheduled systems maintenance activities</a> over the three day weekend. During this period, verification of Social Security Numbers and other related data via the Data Services Hub will be unavailable. All other services of the Hub will be functioning as normal.</p>\\r\\n\\r\\n<p>What this means for you:</p>\\r\\n\" ,\r\n  \"date\" : \"2014-02-10 00:00:00 -0500\" ,\r\n  \"tags\" : [\r\n  ] ,\r\n  \"sort\" : 0 ,\r\n  \"id\" : \"/blog/want-coverage-starting-march-1-plan-ahead-for-best-results\" ,\r\n  \"excerpt\" : \"<p>Consumers are applying and enrolling in quality, affordable health coverage every day using HealthCare.gov and State-based Marketplaces around the country. More than 3 million have enrolled so far, and we hope millions more will do so by March 31, the end of open enrollment.</p>\\r\\n\" ,\r\n  \"path\" : \"_posts/blog/2014-02-10-want-coverage-starting-march-1-plan-ahead-for-best-results.md\"\r\n}",
+                                    "schemaContent": "blogPage"
+                                },
+                                "application/html": {
+                                    "name": "application/html"
                                 }
                             }
+                        },
+                        "404": {
+                            "code": "404",
+                            "description": "Resource not found."
                         }
                     },
                     "protocols": [
                         "HTTPS"
                     ],
+                    "description": "Returns pages content.",
                     "method": "get",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
@@ -480,18 +510,18 @@
                     "name": "mediaTypeExtension",
                     "displayName": "mediaTypeExtension",
                     "type": "string",
-                    "required": true,
+                    "required": false,
                     "repeat": false,
+                    "description": "Omiting the param causes html to be returned.",
+                    "enum": [
+                        ".json"
+                    ],
                     "__METADATA__": {
-                        "calculated": true,
                         "primitiveValuesMeta": {
                             "displayName": {
                                 "calculated": true
                             },
                             "type": {
-                                "insertedAsDefault": true
-                            },
-                            "required": {
                                 "insertedAsDefault": true
                             },
                             "repeat": {
@@ -509,14 +539,24 @@
                             "body": {
                                 "application/json": {
                                     "name": "application/json",
-                                    "example": "{\r\n  \"categories\" : [\r\n    \"glossary\"\r\n  ] ,\r\n  \"layout\" : \"glossary-word\" ,\r\n  \"published\" : true ,\r\n  \"title\" : \"Modified Adjusted Gross Income (MAGI)\" ,\r\n  \"lang\" : \"en\" ,\r\n  \"tags\" : [\r\n    \"glossary\"\r\n  ] ,\r\n  \"url\" : \"/glossary/modified-adjusted-gross-income-magi\" ,\r\n  \"content\" : \"<p>The figure used to determine eligibility for lower costs in the Marketplace and for Medicaid and CHIP. Generally, modified adjusted gross income is your adjusted gross income plus any tax-exempt Social Security, interest, or foreign income you have.</p>\\r\\n\" ,\r\n  \"date\" : \"2013-07-08 00:00:00 -0400\" ,\r\n  \"sort\" : 0 ,\r\n  \"id\" : \"/glossary/modified-adjusted-gross-income-magi\" ,\r\n  \"excerpt\" : \"<p>The figure used to determine eligibility for lower costs in the Marketplace and for Medicaid and CHIP. Generally, modified adjusted gross income is your adjusted gross income plus any tax-exempt Social Security, interest, or foreign income you have.</p>\\r\\n\" ,\r\n  \"path\" : \"_posts/glossary/2013-07-08-modified-adjusted-gross-income-magi.md\"\r\n}"
+                                    "schema": "glossaryPage",
+                                    "example": "{\r\n  \"categories\" : [\r\n    \"glossary\"\r\n  ] ,\r\n  \"layout\" : \"glossary-word\" ,\r\n  \"published\" : true ,\r\n  \"title\" : \"Modified Adjusted Gross Income (MAGI)\" ,\r\n  \"lang\" : \"en\" ,\r\n  \"tags\" : [\r\n    \"glossary\"\r\n  ] ,\r\n  \"url\" : \"/glossary/modified-adjusted-gross-income-magi\" ,\r\n  \"content\" : \"<p>The figure used to determine eligibility for lower costs in the Marketplace and for Medicaid and CHIP. Generally, modified adjusted gross income is your adjusted gross income plus any tax-exempt Social Security, interest, or foreign income you have.</p>\\r\\n\" ,\r\n  \"date\" : \"2013-07-08 00:00:00 -0400\" ,\r\n  \"sort\" : 0 ,\r\n  \"id\" : \"/glossary/modified-adjusted-gross-income-magi\" ,\r\n  \"excerpt\" : \"<p>The figure used to determine eligibility for lower costs in the Marketplace and for Medicaid and CHIP. Generally, modified adjusted gross income is your adjusted gross income plus any tax-exempt Social Security, interest, or foreign income you have.</p>\\r\\n\" ,\r\n  \"path\" : \"_posts/glossary/2013-07-08-modified-adjusted-gross-income-magi.md\"\r\n}",
+                                    "schemaContent": "glossaryPage"
+                                },
+                                "application/html": {
+                                    "name": "application/html"
                                 }
                             }
+                        },
+                        "404": {
+                            "code": "404",
+                            "description": "Resource not found."
                         }
                     },
                     "protocols": [
                         "HTTPS"
                     ],
+                    "description": "Returns pages content.",
                     "method": "get",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
@@ -579,8 +619,11 @@
                     "type": "string",
                     "required": true,
                     "repeat": false,
+                    "description": "Omiting the param causes html to be returned.",
+                    "enum": [
+                        ".json"
+                    ],
                     "__METADATA__": {
-                        "calculated": true,
                         "primitiveValuesMeta": {
                             "displayName": {
                                 "calculated": true
@@ -606,14 +649,21 @@
                             "body": {
                                 "application/json": {
                                     "name": "application/json",
-                                    "example": "{\r\n  \"categories\" : [\r\n    \"question\"\r\n  ] ,\r\n  \"tags\" : [\r\n    \"question\"\r\n  ] ,\r\n  \"published\" : true ,\r\n  \"title\" : \"Do Marketplace plans cover breastfeeding and contraception benefits?  \" ,\r\n  \"lang\" : \"en\" ,\r\n  \"url\" : \"/question/do-marketplace-plans-cover-breastfeeding-and-contraception-benefits\" ,\r\n  \"content\" : \"<p>Generally, yes. Learn more about <a href=\\\"/what-are-my-breastfeeding-benefits/\\\">breastfeeding</a> and <a href=\\\"/what-are-my-birth-control-benefits/\\\">contraception</a> benefits under the health care law.</p>\\r\\n\" ,\r\n  \"date\" : \"2014-01-29 00:00:00 -0500\" ,\r\n  \"sort\" : 0 ,\r\n  \"id\" : \"/question/do-marketplace-plans-cover-breastfeeding-and-contraception-benefits\" ,\r\n  \"excerpt\" : \"<p>Generally, yes. Learn more about <a href=\\\"/what-are-my-breastfeeding-benefits/\\\">breastfeeding</a> and <a href=\\\"/what-are-my-birth-control-benefits/\\\">contraception</a> benefits under the health care law.</p>\\r\\n\" ,\r\n  \"path\" : \"_posts/questions/2014-01-29-do-marketplace-plans-cover-breastfeeding-and-contraception-benefits.md\"\r\n}"
+                                    "schema": "questionPage",
+                                    "example": "{\r\n  \"categories\" : [\r\n    \"question\"\r\n  ] ,\r\n  \"tags\" : [\r\n    \"question\"\r\n  ] ,\r\n  \"published\" : true ,\r\n  \"title\" : \"Do Marketplace plans cover breastfeeding and contraception benefits?  \" ,\r\n  \"lang\" : \"en\" ,\r\n  \"url\" : \"/question/do-marketplace-plans-cover-breastfeeding-and-contraception-benefits\" ,\r\n  \"content\" : \"<p>Generally, yes. Learn more about <a href=\\\"/what-are-my-breastfeeding-benefits/\\\">breastfeeding</a> and <a href=\\\"/what-are-my-birth-control-benefits/\\\">contraception</a> benefits under the health care law.</p>\\r\\n\" ,\r\n  \"date\" : \"2014-01-29 00:00:00 -0500\" ,\r\n  \"sort\" : 0 ,\r\n  \"id\" : \"/question/do-marketplace-plans-cover-breastfeeding-and-contraception-benefits\" ,\r\n  \"excerpt\" : \"<p>Generally, yes. Learn more about <a href=\\\"/what-are-my-breastfeeding-benefits/\\\">breastfeeding</a> and <a href=\\\"/what-are-my-birth-control-benefits/\\\">contraception</a> benefits under the health care law.</p>\\r\\n\" ,\r\n  \"path\" : \"_posts/questions/2014-01-29-do-marketplace-plans-cover-breastfeeding-and-contraception-benefits.md\"\r\n}",
+                                    "schemaContent": "questionPage"
                                 }
                             }
+                        },
+                        "404": {
+                            "code": "404",
+                            "description": "Resource not found."
                         }
                     },
                     "protocols": [
                         "HTTPS"
                     ],
+                    "description": "Returns pages content.",
                     "method": "get",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
@@ -677,18 +727,18 @@
                             "name": "mediaTypeExtension",
                             "displayName": "mediaTypeExtension",
                             "type": "string",
-                            "required": true,
+                            "required": false,
                             "repeat": false,
+                            "description": "Omiting the param causes html to be returned.",
+                            "enum": [
+                                ".json"
+                            ],
                             "__METADATA__": {
-                                "calculated": true,
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true
                                     },
                                     "type": {
-                                        "insertedAsDefault": true
-                                    },
-                                    "required": {
                                         "insertedAsDefault": true
                                     },
                                     "repeat": {
@@ -706,14 +756,24 @@
                                     "body": {
                                         "application/json": {
                                             "name": "application/json",
-                                            "example": "{\r\n  \"published\" : true ,\r\n  \"layout\" : \"basic-full-page\" ,\r\n  \"lang\" : \"en\" ,\r\n  \"experience\" : \"learn\" ,\r\n  \"url\" : \"/developers\" ,\r\n  \"title\" : \"Developers\" ,\r\n  \"content\" : \"<h1>HealthCare.gov for Developers</h1>\\r\\n\\r\\n<p>We're making our source code freely available on GitHub. All of our educational content about the <a href=\\\"/marketplace/individual\\\">Health Insurance Marketplace</a> is available in machine-readable formats so that innovators, entrepreneurs, and partners can turn it into new products and services.</p>\\r\\n\\r\\n<h2>Open Source and Accessible</h2>\\r\\n\\r\\n<p><strong>All content is available through an API.</strong> Everyone can use the API to embed content from HealthCare.gov. As official content gets updated on HealthCare.gov, the new content will update automatically and appear on websites using the HealthCare.gov API.</p>\\r\\n\\r\\n<p>From day one, we embraced the principles of open data, universal access, and accessibility through simplicity. We produce standards compliant code to make our content <a href=\\\"/accessibility\\\">accessible</a> to people with disabilities.</p>\\r\\n\\r\\n<h2>HealthCare.gov Content API</h2>\\r\\n\" ,\r\n  \"date\" : \"2013-06-12 00:00:00 -0400\" ,\r\n  \"tags\" : [\r\n  ] ,\r\n  \"sort\" : 0 ,\r\n  \"id\" : \"/developers\" ,\r\n  \"categories\" : [\r\n  ] ,\r\n  \"excerpt\" : \"<h1>HealthCare.gov for Developers</h1>\\r\\n\" ,\r\n  \"path\" : \"_posts/2013-06-12-developers.md\"\r\n}"
+                                            "schema": "page",
+                                            "example": "{\r\n  \"published\" : true ,\r\n  \"layout\" : \"basic-full-page\" ,\r\n  \"lang\" : \"en\" ,\r\n  \"experience\" : \"learn\" ,\r\n  \"url\" : \"/developers\" ,\r\n  \"title\" : \"Developers\" ,\r\n  \"content\" : \"<h1>HealthCare.gov for Developers</h1>\\r\\n\\r\\n<p>We're making our source code freely available on GitHub. All of our educational content about the <a href=\\\"/marketplace/individual\\\">Health Insurance Marketplace</a> is available in machine-readable formats so that innovators, entrepreneurs, and partners can turn it into new products and services.</p>\\r\\n\\r\\n<h2>Open Source and Accessible</h2>\\r\\n\\r\\n<p><strong>All content is available through an API.</strong> Everyone can use the API to embed content from HealthCare.gov. As official content gets updated on HealthCare.gov, the new content will update automatically and appear on websites using the HealthCare.gov API.</p>\\r\\n\\r\\n<p>From day one, we embraced the principles of open data, universal access, and accessibility through simplicity. We produce standards compliant code to make our content <a href=\\\"/accessibility\\\">accessible</a> to people with disabilities.</p>\\r\\n\\r\\n<h2>HealthCare.gov Content API</h2>\\r\\n\" ,\r\n  \"date\" : \"2013-06-12 00:00:00 -0400\" ,\r\n  \"tags\" : [\r\n  ] ,\r\n  \"sort\" : 0 ,\r\n  \"id\" : \"/developers\" ,\r\n  \"categories\" : [\r\n  ] ,\r\n  \"excerpt\" : \"<h1>HealthCare.gov for Developers</h1>\\r\\n\" ,\r\n  \"path\" : \"_posts/2013-06-12-developers.md\"\r\n}",
+                                            "schemaContent": "page"
+                                        },
+                                        "application/html": {
+                                            "name": "application/html"
                                         }
                                     }
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "Resource not found."
                                 }
                             },
                             "protocols": [
                                 "HTTPS"
                             ],
+                            "description": "Returns pages content.",
                             "method": "get",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
@@ -775,8 +835,11 @@
                             "type": "string",
                             "required": true,
                             "repeat": false,
+                            "description": "Omiting the param causes html to be returned.",
+                            "enum": [
+                                ".json"
+                            ],
                             "__METADATA__": {
-                                "calculated": true,
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true
@@ -802,14 +865,21 @@
                                     "body": {
                                         "application/json": {
                                             "name": "application/json",
-                                            "example": "{\r\n  \"lang\" : \"en\" ,\r\n  \"tags\" : [\r\n    \"state\"\r\n  ] ,\r\n  \"stateurl\" : \"none\" ,\r\n  \"url\" : \"/wyoming\" ,\r\n  \"title\" : \"Wyoming\" ,\r\n  \"content\" : \"<h3>Consumer Assistance in Wyoming</h3>\\r\\n\\r\\n<p>Contact your state department of insurance to <a href=\\\"http : //insurance.state.wy.us/\\\">get consumer help with a health insurance problem or question</a>.</p>\\r\\n\\r\\n<h3>Medicaid in Wyoming</h3>\\r\\n\\r\\n<p>Wyoming has not chosen to expand its Medicaid program at this time. Read <a href=\\\"https : //www.healthcare.gov/what-if-my-state-is-not-expanding-medicaid/\\\">\\\"What if my state isn't expanding Medicaid?\\\"</a> to learn more. You can find out whether you qualify for Medicaid under Wyoming's current rules 2 ways: <a href=\\\"http : //www.health.wyo.gov/default.aspx\\\">Contact your state Medicaid agency right now</a> or <a href=\\\"https : //www.healthcare.gov/marketplace/individual/\\\">fill out an application for coverage in the Health Insurance Marketplace</a>.</p>\\r\\n\\r\\n<h3>Shop Health Insurance Marketplace in Wyoming</h3>\\r\\n\\r\\n<p>If your small business is located in Wyoming, you'll use an agent, broker, or insurance company to enroll your employees in health coverage. Enroll by the 15th for coverage that starts as soon as the 1st of the month.</p>\\r\\n\\r\\n<h3>Health Insurance Marketplace in Wyoming</h3>\\r\\n\\r\\n<p>If you live in Wyoming, you'll use HealthCare.gov to apply and enroll in health coverage. Enroll by the 15th for coverage that starts as soon as the 1st of the month. Need more info first? <a href=\\\"/get-covered-a-1-page-guide-to-the-health-insurance-marketplace/\\\">Here's what you need to know</a>. Ready to begin? Select a button to apply.</p>\\r\\n\\r\\n<h3>CHIP in Wyoming</h3>\\r\\n\\r\\n<p>Kid Care CHIP covers uninsured children in families with moderate incomes that are too high to qualify for Medicaid. You can find out whether your children qualify for Kid Care CHIP right now. <a href=\\\"https : //www.healthcare.gov/marketplace/individual/\\\">Fill out a Marketplace application</a> and find out whether your children qualify. <a href=\\\"http : //www.health.wyo.gov/default.aspx\\\">Learn more about Kid Care CHIP in Wyoming</a>.</p>\\r\\n\" ,\r\n  \"date\" : \"0001-02-01 00:00:00 -0456\" ,\r\n  \"sort\" : 0 ,\r\n  \"id\" : \"/wyoming\" ,\r\n  \"categories\" : [\r\n  ] ,\r\n  \"excerpt\" : \"<h3>Consumer Assistance in Wyoming</h3>\\r\\n\" ,\r\n  \"path\" : \"_posts/states/0001-02-01-wyoming.md\"\r\n}"
+                                            "schema": "statePage",
+                                            "example": "{\r\n  \"lang\" : \"en\" ,\r\n  \"tags\" : [\r\n    \"state\"\r\n  ] ,\r\n  \"stateurl\" : \"none\" ,\r\n  \"url\" : \"/wyoming\" ,\r\n  \"title\" : \"Wyoming\" ,\r\n  \"content\" : \"<h3>Consumer Assistance in Wyoming</h3>\\r\\n\\r\\n<p>Contact your state department of insurance to <a href=\\\"http : //insurance.state.wy.us/\\\">get consumer help with a health insurance problem or question</a>.</p>\\r\\n\\r\\n<h3>Medicaid in Wyoming</h3>\\r\\n\\r\\n<p>Wyoming has not chosen to expand its Medicaid program at this time. Read <a href=\\\"https : //www.healthcare.gov/what-if-my-state-is-not-expanding-medicaid/\\\">\\\"What if my state isn't expanding Medicaid?\\\"</a> to learn more. You can find out whether you qualify for Medicaid under Wyoming's current rules 2 ways: <a href=\\\"http : //www.health.wyo.gov/default.aspx\\\">Contact your state Medicaid agency right now</a> or <a href=\\\"https : //www.healthcare.gov/marketplace/individual/\\\">fill out an application for coverage in the Health Insurance Marketplace</a>.</p>\\r\\n\\r\\n<h3>Shop Health Insurance Marketplace in Wyoming</h3>\\r\\n\\r\\n<p>If your small business is located in Wyoming, you'll use an agent, broker, or insurance company to enroll your employees in health coverage. Enroll by the 15th for coverage that starts as soon as the 1st of the month.</p>\\r\\n\\r\\n<h3>Health Insurance Marketplace in Wyoming</h3>\\r\\n\\r\\n<p>If you live in Wyoming, you'll use HealthCare.gov to apply and enroll in health coverage. Enroll by the 15th for coverage that starts as soon as the 1st of the month. Need more info first? <a href=\\\"/get-covered-a-1-page-guide-to-the-health-insurance-marketplace/\\\">Here's what you need to know</a>. Ready to begin? Select a button to apply.</p>\\r\\n\\r\\n<h3>CHIP in Wyoming</h3>\\r\\n\\r\\n<p>Kid Care CHIP covers uninsured children in families with moderate incomes that are too high to qualify for Medicaid. You can find out whether your children qualify for Kid Care CHIP right now. <a href=\\\"https : //www.healthcare.gov/marketplace/individual/\\\">Fill out a Marketplace application</a> and find out whether your children qualify. <a href=\\\"http : //www.health.wyo.gov/default.aspx\\\">Learn more about Kid Care CHIP in Wyoming</a>.</p>\\r\\n\" ,\r\n  \"date\" : \"0001-02-01 00:00:00 -0456\" ,\r\n  \"sort\" : 0 ,\r\n  \"id\" : \"/wyoming\" ,\r\n  \"categories\" : [\r\n  ] ,\r\n  \"excerpt\" : \"<h3>Consumer Assistance in Wyoming</h3>\\r\\n\" ,\r\n  \"path\" : \"_posts/states/0001-02-01-wyoming.md\"\r\n}",
+                                            "schemaContent": "statePage"
                                         }
                                     }
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "Resource not found."
                                 }
                             },
                             "protocols": [
                                 "HTTPS"
                             ],
+                            "description": "Returns pages content.",
                             "method": "get",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
@@ -869,18 +939,18 @@
                             "name": "mediaTypeExtension",
                             "displayName": "mediaTypeExtension",
                             "type": "string",
-                            "required": true,
+                            "required": false,
                             "repeat": false,
+                            "description": "Omiting the param causes html to be returned.",
+                            "enum": [
+                                ".json"
+                            ],
                             "__METADATA__": {
-                                "calculated": true,
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true
                                     },
                                     "type": {
-                                        "insertedAsDefault": true
-                                    },
-                                    "required": {
                                         "insertedAsDefault": true
                                     },
                                     "repeat": {
@@ -898,14 +968,24 @@
                                     "body": {
                                         "application/json": {
                                             "name": "application/json",
-                                            "example": "{\r\n  \"categories\" : [\r\n    \"blog\"\r\n  ] ,\r\n  \"published\" : true ,\r\n  \"title\" : \"Want coverage starting March 1? Plan ahead for best results\" ,\r\n  \"lang\" : \"en\" ,\r\n  \"layout\" : \"blog\" ,\r\n  \"meta-title\" : \"Want coverage starting March 1? Plan ahead for best results\" ,\r\n  \"meta-description\" : \"From Saturday February 15, 2014 at 3:00PM until Tuesday, February 18, 2014 at 5:00AM EST, the Social Security Administration will conduct annual systems maintenance activities.  During this period, verification of Social Security Numbers and other related data via the Data Services Hub will be unavailable.\" ,\r\n  \"seo-keywords\" : \"Health Insurance Marketplace, enrollment, February 15, March 1 coverage, health insurance,\" ,\r\n  \"topics\" : [\r\n    \"health-insurance-marketplace\"\r\n  ] ,\r\n  \"url\" : \"/blog/want-coverage-starting-march-1-plan-ahead-for-best-results\" ,\r\n  \"content\" : \"<p>Consumers are applying and enrolling in quality, affordable health coverage every day using HealthCare.gov and State-based Marketplaces around the country. More than 3 million have enrolled so far, and we hope millions more will do so by March 31, the end of open enrollment.</p>\\r\\n\\r\\n<p>From Saturday February 15, 2014 at 3:00PM until Tuesday, February 18, 2014 at 5:00AM EST, the Social Security Administration will conduct required, <a href=\\\"http : //www.ssa.gov/admin/transactions.html\\\">regularly scheduled systems maintenance activities</a> over the three day weekend. During this period, verification of Social Security Numbers and other related data via the Data Services Hub will be unavailable. All other services of the Hub will be functioning as normal.</p>\\r\\n\\r\\n<p>What this means for you:</p>\\r\\n\" ,\r\n  \"date\" : \"2014-02-10 00:00:00 -0500\" ,\r\n  \"tags\" : [\r\n  ] ,\r\n  \"sort\" : 0 ,\r\n  \"id\" : \"/blog/want-coverage-starting-march-1-plan-ahead-for-best-results\" ,\r\n  \"excerpt\" : \"<p>Consumers are applying and enrolling in quality, affordable health coverage every day using HealthCare.gov and State-based Marketplaces around the country. More than 3 million have enrolled so far, and we hope millions more will do so by March 31, the end of open enrollment.</p>\\r\\n\" ,\r\n  \"path\" : \"_posts/blog/2014-02-10-want-coverage-starting-march-1-plan-ahead-for-best-results.md\"\r\n}"
+                                            "schema": "blogPage",
+                                            "example": "{\r\n  \"categories\" : [\r\n    \"blog\"\r\n  ] ,\r\n  \"published\" : true ,\r\n  \"title\" : \"Want coverage starting March 1? Plan ahead for best results\" ,\r\n  \"lang\" : \"en\" ,\r\n  \"layout\" : \"blog\" ,\r\n  \"meta-title\" : \"Want coverage starting March 1? Plan ahead for best results\" ,\r\n  \"meta-description\" : \"From Saturday February 15, 2014 at 3:00PM until Tuesday, February 18, 2014 at 5:00AM EST, the Social Security Administration will conduct annual systems maintenance activities.  During this period, verification of Social Security Numbers and other related data via the Data Services Hub will be unavailable.\" ,\r\n  \"seo-keywords\" : \"Health Insurance Marketplace, enrollment, February 15, March 1 coverage, health insurance,\" ,\r\n  \"topics\" : [\r\n    \"health-insurance-marketplace\"\r\n  ] ,\r\n  \"url\" : \"/blog/want-coverage-starting-march-1-plan-ahead-for-best-results\" ,\r\n  \"content\" : \"<p>Consumers are applying and enrolling in quality, affordable health coverage every day using HealthCare.gov and State-based Marketplaces around the country. More than 3 million have enrolled so far, and we hope millions more will do so by March 31, the end of open enrollment.</p>\\r\\n\\r\\n<p>From Saturday February 15, 2014 at 3:00PM until Tuesday, February 18, 2014 at 5:00AM EST, the Social Security Administration will conduct required, <a href=\\\"http : //www.ssa.gov/admin/transactions.html\\\">regularly scheduled systems maintenance activities</a> over the three day weekend. During this period, verification of Social Security Numbers and other related data via the Data Services Hub will be unavailable. All other services of the Hub will be functioning as normal.</p>\\r\\n\\r\\n<p>What this means for you:</p>\\r\\n\" ,\r\n  \"date\" : \"2014-02-10 00:00:00 -0500\" ,\r\n  \"tags\" : [\r\n  ] ,\r\n  \"sort\" : 0 ,\r\n  \"id\" : \"/blog/want-coverage-starting-march-1-plan-ahead-for-best-results\" ,\r\n  \"excerpt\" : \"<p>Consumers are applying and enrolling in quality, affordable health coverage every day using HealthCare.gov and State-based Marketplaces around the country. More than 3 million have enrolled so far, and we hope millions more will do so by March 31, the end of open enrollment.</p>\\r\\n\" ,\r\n  \"path\" : \"_posts/blog/2014-02-10-want-coverage-starting-march-1-plan-ahead-for-best-results.md\"\r\n}",
+                                            "schemaContent": "blogPage"
+                                        },
+                                        "application/html": {
+                                            "name": "application/html"
                                         }
                                     }
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "Resource not found."
                                 }
                             },
                             "protocols": [
                                 "HTTPS"
                             ],
+                            "description": "Returns pages content.",
                             "method": "get",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
@@ -966,18 +1046,18 @@
                             "name": "mediaTypeExtension",
                             "displayName": "mediaTypeExtension",
                             "type": "string",
-                            "required": true,
+                            "required": false,
                             "repeat": false,
+                            "description": "Omiting the param causes html to be returned.",
+                            "enum": [
+                                ".json"
+                            ],
                             "__METADATA__": {
-                                "calculated": true,
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true
                                     },
                                     "type": {
-                                        "insertedAsDefault": true
-                                    },
-                                    "required": {
                                         "insertedAsDefault": true
                                     },
                                     "repeat": {
@@ -995,14 +1075,24 @@
                                     "body": {
                                         "application/json": {
                                             "name": "application/json",
-                                            "example": "{\r\n  \"categories\" : [\r\n    \"glossary\"\r\n  ] ,\r\n  \"layout\" : \"glossary-word\" ,\r\n  \"published\" : true ,\r\n  \"title\" : \"Modified Adjusted Gross Income (MAGI)\" ,\r\n  \"lang\" : \"en\" ,\r\n  \"tags\" : [\r\n    \"glossary\"\r\n  ] ,\r\n  \"url\" : \"/glossary/modified-adjusted-gross-income-magi\" ,\r\n  \"content\" : \"<p>The figure used to determine eligibility for lower costs in the Marketplace and for Medicaid and CHIP. Generally, modified adjusted gross income is your adjusted gross income plus any tax-exempt Social Security, interest, or foreign income you have.</p>\\r\\n\" ,\r\n  \"date\" : \"2013-07-08 00:00:00 -0400\" ,\r\n  \"sort\" : 0 ,\r\n  \"id\" : \"/glossary/modified-adjusted-gross-income-magi\" ,\r\n  \"excerpt\" : \"<p>The figure used to determine eligibility for lower costs in the Marketplace and for Medicaid and CHIP. Generally, modified adjusted gross income is your adjusted gross income plus any tax-exempt Social Security, interest, or foreign income you have.</p>\\r\\n\" ,\r\n  \"path\" : \"_posts/glossary/2013-07-08-modified-adjusted-gross-income-magi.md\"\r\n}"
+                                            "schema": "glossaryPage",
+                                            "example": "{\r\n  \"categories\" : [\r\n    \"glossary\"\r\n  ] ,\r\n  \"layout\" : \"glossary-word\" ,\r\n  \"published\" : true ,\r\n  \"title\" : \"Modified Adjusted Gross Income (MAGI)\" ,\r\n  \"lang\" : \"en\" ,\r\n  \"tags\" : [\r\n    \"glossary\"\r\n  ] ,\r\n  \"url\" : \"/glossary/modified-adjusted-gross-income-magi\" ,\r\n  \"content\" : \"<p>The figure used to determine eligibility for lower costs in the Marketplace and for Medicaid and CHIP. Generally, modified adjusted gross income is your adjusted gross income plus any tax-exempt Social Security, interest, or foreign income you have.</p>\\r\\n\" ,\r\n  \"date\" : \"2013-07-08 00:00:00 -0400\" ,\r\n  \"sort\" : 0 ,\r\n  \"id\" : \"/glossary/modified-adjusted-gross-income-magi\" ,\r\n  \"excerpt\" : \"<p>The figure used to determine eligibility for lower costs in the Marketplace and for Medicaid and CHIP. Generally, modified adjusted gross income is your adjusted gross income plus any tax-exempt Social Security, interest, or foreign income you have.</p>\\r\\n\" ,\r\n  \"path\" : \"_posts/glossary/2013-07-08-modified-adjusted-gross-income-magi.md\"\r\n}",
+                                            "schemaContent": "glossaryPage"
+                                        },
+                                        "application/html": {
+                                            "name": "application/html"
                                         }
                                     }
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "Resource not found."
                                 }
                             },
                             "protocols": [
                                 "HTTPS"
                             ],
+                            "description": "Returns pages content.",
                             "method": "get",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
@@ -1065,8 +1155,11 @@
                             "type": "string",
                             "required": true,
                             "repeat": false,
+                            "description": "Omiting the param causes html to be returned.",
+                            "enum": [
+                                ".json"
+                            ],
                             "__METADATA__": {
-                                "calculated": true,
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true
@@ -1092,14 +1185,21 @@
                                     "body": {
                                         "application/json": {
                                             "name": "application/json",
-                                            "example": "{\r\n  \"categories\" : [\r\n    \"question\"\r\n  ] ,\r\n  \"tags\" : [\r\n    \"question\"\r\n  ] ,\r\n  \"published\" : true ,\r\n  \"title\" : \"Do Marketplace plans cover breastfeeding and contraception benefits?  \" ,\r\n  \"lang\" : \"en\" ,\r\n  \"url\" : \"/question/do-marketplace-plans-cover-breastfeeding-and-contraception-benefits\" ,\r\n  \"content\" : \"<p>Generally, yes. Learn more about <a href=\\\"/what-are-my-breastfeeding-benefits/\\\">breastfeeding</a> and <a href=\\\"/what-are-my-birth-control-benefits/\\\">contraception</a> benefits under the health care law.</p>\\r\\n\" ,\r\n  \"date\" : \"2014-01-29 00:00:00 -0500\" ,\r\n  \"sort\" : 0 ,\r\n  \"id\" : \"/question/do-marketplace-plans-cover-breastfeeding-and-contraception-benefits\" ,\r\n  \"excerpt\" : \"<p>Generally, yes. Learn more about <a href=\\\"/what-are-my-breastfeeding-benefits/\\\">breastfeeding</a> and <a href=\\\"/what-are-my-birth-control-benefits/\\\">contraception</a> benefits under the health care law.</p>\\r\\n\" ,\r\n  \"path\" : \"_posts/questions/2014-01-29-do-marketplace-plans-cover-breastfeeding-and-contraception-benefits.md\"\r\n}"
+                                            "schema": "questionPage",
+                                            "example": "{\r\n  \"categories\" : [\r\n    \"question\"\r\n  ] ,\r\n  \"tags\" : [\r\n    \"question\"\r\n  ] ,\r\n  \"published\" : true ,\r\n  \"title\" : \"Do Marketplace plans cover breastfeeding and contraception benefits?  \" ,\r\n  \"lang\" : \"en\" ,\r\n  \"url\" : \"/question/do-marketplace-plans-cover-breastfeeding-and-contraception-benefits\" ,\r\n  \"content\" : \"<p>Generally, yes. Learn more about <a href=\\\"/what-are-my-breastfeeding-benefits/\\\">breastfeeding</a> and <a href=\\\"/what-are-my-birth-control-benefits/\\\">contraception</a> benefits under the health care law.</p>\\r\\n\" ,\r\n  \"date\" : \"2014-01-29 00:00:00 -0500\" ,\r\n  \"sort\" : 0 ,\r\n  \"id\" : \"/question/do-marketplace-plans-cover-breastfeeding-and-contraception-benefits\" ,\r\n  \"excerpt\" : \"<p>Generally, yes. Learn more about <a href=\\\"/what-are-my-breastfeeding-benefits/\\\">breastfeeding</a> and <a href=\\\"/what-are-my-birth-control-benefits/\\\">contraception</a> benefits under the health care law.</p>\\r\\n\" ,\r\n  \"path\" : \"_posts/questions/2014-01-29-do-marketplace-plans-cover-breastfeeding-and-contraception-benefits.md\"\r\n}",
+                                            "schemaContent": "questionPage"
                                         }
                                     }
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "Resource not found."
                                 }
                             },
                             "protocols": [
                                 "HTTPS"
                             ],
+                            "description": "Returns pages content.",
                             "method": "get",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
@@ -1155,8 +1255,11 @@
                             "type": "string",
                             "required": true,
                             "repeat": false,
+                            "description": "Omiting the param causes html to be returned.",
+                            "enum": [
+                                ".json"
+                            ],
                             "__METADATA__": {
-                                "calculated": true,
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true
@@ -1182,14 +1285,21 @@
                                     "body": {
                                         "application/json": {
                                             "name": "application/json",
-                                            "example": "{\r\n  \"articles\" : [\r\n    {\r\n      \"published\" : true ,\r\n      \"title\" : \"If I'm a college student, what do I need to know about the Marketplace? \" ,\r\n      \"lang\" : \"en\" ,\r\n      \"layout\" : \"basic\" ,\r\n      \"featured\" : false ,\r\n      \"bite\" : \"College students have several choices for health coverage. But there's no special student exemption from the penalty that people without coverage must pay.\" ,\r\n      \"meta-title\" : \"What college students need to know about the Health Insurance Marketplace? \" ,\r\n      \"meta-description\" : \"Learn about the health insurance choices for college students in the Health Insurance Marketplace\" ,\r\n      \"title-short\" : \"College students and the Marketplace\" ,\r\n      \"topics\" : [\r\n        \"young-adults\" ,\r\n        \"the-marketplace-and-you\"\r\n      ] ,\r\n      \"related\" : [\r\n        \"why-should-i-have-health-coverage\" ,\r\n        \"can-i-keep-my-child-on-my-insurance-until-age-26\" ,\r\n        \"can-i-buy-a-catastrophic-plan\"\r\n      ] ,\r\n      \"url\" : \"/if-i-m-a-college-student-what-do-i-need-to-know-about-the-marketplace\" ,\r\n      \"content\" : \"<p>College students have several choices for health coverage. But there's no special student exemption from the penalty that people without coverage must pay.</p>\\r\\n<h2>If you have a student health plan</h2>\\r\\n\\r\\n<ul>\\r\\n<li>If you're covered by your school's student health plan, in most cases you're considered covered under the health care law. You won't have to pay the penalty that people without coverage must generally pay. Check with your student health plan to see if it qualifies as coverage under the health law.</li>\\r\\n<li>Even if you have access to a student health plan, you can choose to buy a health plan through the Marketplace instead. You may qualify for <a href=\\\"/how-can-i-save-money-on-marketplace-coverage/\\\">lower costs</a> based on your income. Fill out a <a href=\\\"/marketplace/individual/\\\">Marketplace application</a> to find out if you qualify for lower costs, or use our quick <a href=\\\"/find-premium-estimates/\\\">plan and cost preview tool</a> first.</li>\\r\\n</ul>\\r\\n\\r\\n\" ,\r\n      \"date\" : \"2014-01-27 00:00:00 -0500\" ,\r\n      \"tags\" : [\r\n      ] ,\r\n      \"sort\" : 0 ,\r\n      \"id\" : \"/if-i-m-a-college-student-what-do-i-need-to-know-about-the-marketplace\" ,\r\n      \"categories\" : [\r\n      ] ,\r\n      \"excerpt\" : \"<p>College students have several choices for health coverage. But there's no special student exemption from the penalty that people without coverage must pay.</p>\\r\\n\\r\\n\" ,\r\n      \"path\" : \"_posts/articles/2014-01-27-if-i-m-a-college-student-what-do-i-need-to-know-about-the-marketplace.md\"\r\n    } , {\r\n      \"published\" : true ,\r\n      \"title\" : \"Tengo nueva cobertura de Medicaid o CHIP\" ,\r\n      \"lang\" : \"es\" ,\r\n      \"layout\" : \"basic\" ,\r\n      \"categories\" : [\r\n        \"es\"\r\n      ] ,\r\n      \"featured\" : false ,\r\n      \"meta-description\" : \"Si usted esta actualmente inscrito en Medicaid o en el Programa de Seguro Medico para Ninos de su estado, debe saber lo siguiente.\" ,\r\n      \"meta-title\" : \"Si tengo nueva cobertura de Medicaid o CHIP?\" ,\r\n      \"bite\" : \"Si usted esta actualmente inscrito en Medicaid o en el Programa de Seguro Medico para Ninos de su estado, debe saber lo siguiente\" ,\r\n      \"title-short\" : \"Mo utilizo mi nueva cobertura de Medicaid o CHIP?\" ,\r\n      \"topics\" : [\r\n        \"other-health-insurance-programs\"\r\n      ] ,\r\n      \"related\" : [\r\n        \"do-i-qualify-for-medicaid\" ,\r\n        \"what-if-my-state-is-not-expanding-medicaid\" ,\r\n        \"are-my-children-eligible-for-chip\"\r\n      ] ,\r\n      \"seo-keywords\" : \"Medicaid, CHIP, Children's Health Insurance Program, nueva cobertura de Medicaid, nueva cobertura de CHIP\" ,\r\n      \"url\" : \"/es/what-if-i-have-new-medicaid-or-chip-coverage\" ,\r\n      \"content\" : \"<p>Si usted esta actualmente inscrito en <a href=\\\"/es/do-i-qualify-for-medicaid/\\\">Medicaid</a> o en el <a href=\\\"/es/are-my-children-eligible-for-chip/\\\">Programa de Seguro Medico para Ninos</a> de su estado, debe saber lo siguiente:</p>\\r\\n\\r\\n<h2>Preguntas sobre cГіmo usar su nueva cobertura de Medicaid o CHIP</h2>\\r\\n\\r\\n<p>Use los siguientes recursos para obtener ayuda con respecto a sus preguntas de cobertura con el Programa de Seguro Medico para Ninos (CHIP), Medicaid, materiales de inscripciГіn, beneficios y proveedores:</p>\",\r\n      \"date\" : \"2013-12-31 00:00:00 -0500\" ,\r\n      \"tags\" : [\r\n      ] ,\r\n      \"sort\" : 0 ,\r\n      \"id\" : \"/es/what-if-i-have-new-medicaid-or-chip-coverage\" ,\r\n      \"excerpt\" : \"<p>Si usted esta actualmente inscrito en <a href=\\\"/es/do-i-qualify-for-medicaid/\\\">Medicaid</a> o en el <a href=\\\"/es/are-my-children-eligible-for-chip/\\\">Programa de Seguro Medico para Ninos</a> de su estado, debe saber lo siguiente:</p>\\r\\n\\r\\n\" ,\r\n      \"path\" : \"_posts/articles/es/2013-12-31-what-if-i-have-new-medicaid-or-chip-coverage.md\"\r\n    }\r\n  ]\r\n}"
+                                            "schema": "articlesList",
+                                            "example": "{\r\n  \"articles\" : [\r\n    {\r\n      \"published\" : true ,\r\n      \"title\" : \"If I'm a college student, what do I need to know about the Marketplace? \" ,\r\n      \"lang\" : \"en\" ,\r\n      \"layout\" : \"basic\" ,\r\n      \"featured\" : false ,\r\n      \"bite\" : \"College students have several choices for health coverage. But there's no special student exemption from the penalty that people without coverage must pay.\" ,\r\n      \"meta-title\" : \"What college students need to know about the Health Insurance Marketplace? \" ,\r\n      \"meta-description\" : \"Learn about the health insurance choices for college students in the Health Insurance Marketplace\" ,\r\n      \"title-short\" : \"College students and the Marketplace\" ,\r\n      \"topics\" : [\r\n        \"young-adults\" ,\r\n        \"the-marketplace-and-you\"\r\n      ] ,\r\n      \"related\" : [\r\n        \"why-should-i-have-health-coverage\" ,\r\n        \"can-i-keep-my-child-on-my-insurance-until-age-26\" ,\r\n        \"can-i-buy-a-catastrophic-plan\"\r\n      ] ,\r\n      \"url\" : \"/if-i-m-a-college-student-what-do-i-need-to-know-about-the-marketplace\" ,\r\n      \"content\" : \"<p>College students have several choices for health coverage. But there's no special student exemption from the penalty that people without coverage must pay.</p>\\r\\n<h2>If you have a student health plan</h2>\\r\\n\\r\\n<ul>\\r\\n<li>If you're covered by your school's student health plan, in most cases you're considered covered under the health care law. You won't have to pay the penalty that people without coverage must generally pay. Check with your student health plan to see if it qualifies as coverage under the health law.</li>\\r\\n<li>Even if you have access to a student health plan, you can choose to buy a health plan through the Marketplace instead. You may qualify for <a href=\\\"/how-can-i-save-money-on-marketplace-coverage/\\\">lower costs</a> based on your income. Fill out a <a href=\\\"/marketplace/individual/\\\">Marketplace application</a> to find out if you qualify for lower costs, or use our quick <a href=\\\"/find-premium-estimates/\\\">plan and cost preview tool</a> first.</li>\\r\\n</ul>\\r\\n\\r\\n\" ,\r\n      \"date\" : \"2014-01-27 00:00:00 -0500\" ,\r\n      \"tags\" : [\r\n      ] ,\r\n      \"sort\" : 0 ,\r\n      \"id\" : \"/if-i-m-a-college-student-what-do-i-need-to-know-about-the-marketplace\" ,\r\n      \"categories\" : [\r\n      ] ,\r\n      \"excerpt\" : \"<p>College students have several choices for health coverage. But there's no special student exemption from the penalty that people without coverage must pay.</p>\\r\\n\\r\\n\" ,\r\n      \"path\" : \"_posts/articles/2014-01-27-if-i-m-a-college-student-what-do-i-need-to-know-about-the-marketplace.md\"\r\n    } , {\r\n      \"published\" : true ,\r\n      \"title\" : \"Tengo nueva cobertura de Medicaid o CHIP\" ,\r\n      \"lang\" : \"es\" ,\r\n      \"layout\" : \"basic\" ,\r\n      \"categories\" : [\r\n        \"es\"\r\n      ] ,\r\n      \"featured\" : false ,\r\n      \"meta-description\" : \"Si usted esta actualmente inscrito en Medicaid o en el Programa de Seguro Medico para Ninos de su estado, debe saber lo siguiente.\" ,\r\n      \"meta-title\" : \"Si tengo nueva cobertura de Medicaid o CHIP?\" ,\r\n      \"bite\" : \"Si usted esta actualmente inscrito en Medicaid o en el Programa de Seguro Medico para Ninos de su estado, debe saber lo siguiente\" ,\r\n      \"title-short\" : \"Mo utilizo mi nueva cobertura de Medicaid o CHIP?\" ,\r\n      \"topics\" : [\r\n        \"other-health-insurance-programs\"\r\n      ] ,\r\n      \"related\" : [\r\n        \"do-i-qualify-for-medicaid\" ,\r\n        \"what-if-my-state-is-not-expanding-medicaid\" ,\r\n        \"are-my-children-eligible-for-chip\"\r\n      ] ,\r\n      \"seo-keywords\" : \"Medicaid, CHIP, Children's Health Insurance Program, nueva cobertura de Medicaid, nueva cobertura de CHIP\" ,\r\n      \"url\" : \"/es/what-if-i-have-new-medicaid-or-chip-coverage\" ,\r\n      \"content\" : \"<p>Si usted esta actualmente inscrito en <a href=\\\"/es/do-i-qualify-for-medicaid/\\\">Medicaid</a> o en el <a href=\\\"/es/are-my-children-eligible-for-chip/\\\">Programa de Seguro Medico para Ninos</a> de su estado, debe saber lo siguiente:</p>\\r\\n\\r\\n<h2>Preguntas sobre cГіmo usar su nueva cobertura de Medicaid o CHIP</h2>\\r\\n\\r\\n<p>Use los siguientes recursos para obtener ayuda con respecto a sus preguntas de cobertura con el Programa de Seguro Medico para Ninos (CHIP), Medicaid, materiales de inscripciГіn, beneficios y proveedores:</p>\",\r\n      \"date\" : \"2013-12-31 00:00:00 -0500\" ,\r\n      \"tags\" : [\r\n      ] ,\r\n      \"sort\" : 0 ,\r\n      \"id\" : \"/es/what-if-i-have-new-medicaid-or-chip-coverage\" ,\r\n      \"excerpt\" : \"<p>Si usted esta actualmente inscrito en <a href=\\\"/es/do-i-qualify-for-medicaid/\\\">Medicaid</a> o en el <a href=\\\"/es/are-my-children-eligible-for-chip/\\\">Programa de Seguro Medico para Ninos</a> de su estado, debe saber lo siguiente:</p>\\r\\n\\r\\n\" ,\r\n      \"path\" : \"_posts/articles/es/2013-12-31-what-if-i-have-new-medicaid-or-chip-coverage.md\"\r\n    }\r\n  ]\r\n}",
+                                            "schemaContent": "articlesList"
                                         }
                                     }
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "Resource not found."
                                 }
                             },
                             "protocols": [
                                 "HTTPS"
                             ],
+                            "description": "Returns pages content.",
                             "method": "get",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
@@ -1227,8 +1337,11 @@
                             "type": "string",
                             "required": true,
                             "repeat": false,
+                            "description": "Omiting the param causes html to be returned.",
+                            "enum": [
+                                ".json"
+                            ],
                             "__METADATA__": {
-                                "calculated": true,
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true
@@ -1254,14 +1367,21 @@
                                     "body": {
                                         "application/json": {
                                             "name": "application/json",
-                                            "example": "{\r\n  \"questions\" : [\r\n    {\r\n      \"categories\" : [\r\n        \"question\"\r\n      ] ,\r\n      \"tags\" : [\r\n        \"question\"\r\n      ] ,\r\n      \"published\" : true ,\r\n      \"title\" : \"What plans should I consider if I travel a lot or spend time in more than one state?\" ,\r\n      \"lang\" : \"en\" ,\r\n      \"url\" : \"/question/what-plans-should-i-consider-if-i-travel-a-lot-or-spend-time-in-more-than-one-state\" ,\r\n      \"content\" : \"<p>If you live in one state and work or spend a lot of time in another state, carefully check the provider directories of the plans you're thinking about buying.</p>\\r\\n\\r\\n<p>See if their networks have doctors, hospitals, and other health care providers in the places you'll be. Also check out the plan's payment policies for out-of-network care.</p>\\r\\n\\r\\n<ul>\\r\\n\\r\\n<li>Some plans have networks that cover only part of one state. Other plans have networks that cover much of the country.</li>\\r\\n<li>If you use a doctor or facility that's not in your plan's network, you may have to pay more for the services you get.</li>\\r\\n</ul>\\r\\n\\r\\n\\r\\n<p>Marketplace plans must have a link to a provider network directory on their website and the directory must have the most current listing of in-network providers. You can also contact  the plan to confirm your doctor or facility is part of the network.</p>\\r\\n\\r\\n<p>HealthCare.gov provides direct links to provider directories for all Marketplace plans, so you can easily tell what your plan covers.</p>\\r\\n\" ,\r\n      \"date\" : \"2014-01-17 00:00:00 -0500\" ,\r\n      \"sort\" : 0 ,\r\n      \"id\" : \"/question/what-plans-should-i-consider-if-i-travel-a-lot-or-spend-time-in-more-than-one-state\" ,\r\n      \"excerpt\" : \"<p>If you live in one state and work or spend a lot of time in another state, carefully check the provider directories of the plans you're thinking about buying.</p>\\r\\n\" ,\r\n      \"path\" : \"_posts/questions/2014-01-17-what-plans-should-i-consider-if-i-travel-a-lot-or-spend-time-in-more-than-one-state.md\"\r\n    } , {\r\n      \"categories\" : [\r\n        \"question\"\r\n      ] ,\r\n      \"tags\" : [\r\n        \"question\"\r\n      ] ,\r\n      \"published\" : true ,\r\n      \"title\" : \"Do Marketplace plans cover breastfeeding and contraception benefits?  \" ,\r\n      \"lang\" : \"en\" ,\r\n      \"url\" : \"/question/do-marketplace-plans-cover-breastfeeding-and-contraception-benefits\" ,\r\n      \"content\" : \"<p>Generally, yes. Learn more about <a href=\\\"/what-are-my-breastfeeding-benefits/\\\">breastfeeding</a> and <a href=\\\"/what-are-my-birth-control-benefits/\\\">contraception</a> benefits under the health care law.</p>\\r\\n\" ,\r\n      \"date\" : \"2014-01-29 00:00:00 -0500\" ,\r\n      \"sort\" : 0 ,\r\n      \"id\" : \"/question/do-marketplace-plans-cover-breastfeeding-and-contraception-benefits\" ,\r\n      \"excerpt\" : \"<p>Generally, yes. Learn more about <a href=\\\"/what-are-my-breastfeeding-benefits/\\\">breastfeeding</a> and <a href=\\\"/what-are-my-birth-control-benefits/\\\">contraception</a> benefits under the health care law.</p>\\r\\n\" ,\r\n      \"path\" : \"_posts/questions/2014-01-29-do-marketplace-plans-cover-breastfeeding-and-contraception-benefits.md\"\r\n    }\r\n  ]\r\n}"
+                                            "schema": "questionsList",
+                                            "example": "{\r\n  \"questions\" : [\r\n    {\r\n      \"categories\" : [\r\n        \"question\"\r\n      ] ,\r\n      \"tags\" : [\r\n        \"question\"\r\n      ] ,\r\n      \"published\" : true ,\r\n      \"title\" : \"What plans should I consider if I travel a lot or spend time in more than one state?\" ,\r\n      \"lang\" : \"en\" ,\r\n      \"url\" : \"/question/what-plans-should-i-consider-if-i-travel-a-lot-or-spend-time-in-more-than-one-state\" ,\r\n      \"content\" : \"<p>If you live in one state and work or spend a lot of time in another state, carefully check the provider directories of the plans you're thinking about buying.</p>\\r\\n\\r\\n<p>See if their networks have doctors, hospitals, and other health care providers in the places you'll be. Also check out the plan's payment policies for out-of-network care.</p>\\r\\n\\r\\n<ul>\\r\\n\\r\\n<li>Some plans have networks that cover only part of one state. Other plans have networks that cover much of the country.</li>\\r\\n<li>If you use a doctor or facility that's not in your plan's network, you may have to pay more for the services you get.</li>\\r\\n</ul>\\r\\n\\r\\n\\r\\n<p>Marketplace plans must have a link to a provider network directory on their website and the directory must have the most current listing of in-network providers. You can also contact  the plan to confirm your doctor or facility is part of the network.</p>\\r\\n\\r\\n<p>HealthCare.gov provides direct links to provider directories for all Marketplace plans, so you can easily tell what your plan covers.</p>\\r\\n\" ,\r\n      \"date\" : \"2014-01-17 00:00:00 -0500\" ,\r\n      \"sort\" : 0 ,\r\n      \"id\" : \"/question/what-plans-should-i-consider-if-i-travel-a-lot-or-spend-time-in-more-than-one-state\" ,\r\n      \"excerpt\" : \"<p>If you live in one state and work or spend a lot of time in another state, carefully check the provider directories of the plans you're thinking about buying.</p>\\r\\n\" ,\r\n      \"path\" : \"_posts/questions/2014-01-17-what-plans-should-i-consider-if-i-travel-a-lot-or-spend-time-in-more-than-one-state.md\"\r\n    } , {\r\n      \"categories\" : [\r\n        \"question\"\r\n      ] ,\r\n      \"tags\" : [\r\n        \"question\"\r\n      ] ,\r\n      \"published\" : true ,\r\n      \"title\" : \"Do Marketplace plans cover breastfeeding and contraception benefits?  \" ,\r\n      \"lang\" : \"en\" ,\r\n      \"url\" : \"/question/do-marketplace-plans-cover-breastfeeding-and-contraception-benefits\" ,\r\n      \"content\" : \"<p>Generally, yes. Learn more about <a href=\\\"/what-are-my-breastfeeding-benefits/\\\">breastfeeding</a> and <a href=\\\"/what-are-my-birth-control-benefits/\\\">contraception</a> benefits under the health care law.</p>\\r\\n\" ,\r\n      \"date\" : \"2014-01-29 00:00:00 -0500\" ,\r\n      \"sort\" : 0 ,\r\n      \"id\" : \"/question/do-marketplace-plans-cover-breastfeeding-and-contraception-benefits\" ,\r\n      \"excerpt\" : \"<p>Generally, yes. Learn more about <a href=\\\"/what-are-my-breastfeeding-benefits/\\\">breastfeeding</a> and <a href=\\\"/what-are-my-birth-control-benefits/\\\">contraception</a> benefits under the health care law.</p>\\r\\n\" ,\r\n      \"path\" : \"_posts/questions/2014-01-29-do-marketplace-plans-cover-breastfeeding-and-contraception-benefits.md\"\r\n    }\r\n  ]\r\n}",
+                                            "schemaContent": "questionsList"
                                         }
                                     }
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "Resource not found."
                                 }
                             },
                             "protocols": [
                                 "HTTPS"
                             ],
+                            "description": "Returns pages content.",
                             "method": "get",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
@@ -1299,8 +1419,11 @@
                             "type": "string",
                             "required": true,
                             "repeat": false,
+                            "description": "Omiting the param causes html to be returned.",
+                            "enum": [
+                                ".json"
+                            ],
                             "__METADATA__": {
-                                "calculated": true,
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true
@@ -1326,14 +1449,21 @@
                                     "body": {
                                         "application/json": {
                                             "name": "application/json",
-                                            "example": "{\r\n  \"blog\" : [\r\n    {\r\n      \"categories\" : [\r\n        \"es\" ,\r\n        \"blog\"\r\n      ] ,\r\n      \"lang\" : \"es\" ,\r\n      \"published\" : true ,\r\n      \"title\" : \"Mantenimiento del sistema del Seguro Social\" ,\r\n      \"layout\" : \"blog\" ,\r\n      \"meta-title\" : \"Mantenimiento del sistema del Seguro Social\" ,\r\n      \"meta-description\" : \"Desde el 15 de febrero de 2014 a las 3:00 p.m. hasta el martes 18 de febrero de 2014 a las 5:00 a.m. Hora del Este, se estara haciendo el mantenimiento programado del sistema del Seguro Social. Durante este pero­odo, usted no podra presentar su solicitud en CuidadoDeSalud.gov ni averiguar para quo© es elegible.\" ,\r\n      \"seo-keywords\" : \"CuidadoDeSalud.gov\" ,\r\n      \"topics\" : [\r\n        \"health-insurance-marketplace\"\r\n      ] ,\r\n      \"url\" : \"/es/blog/how-we-are-working-to-improve-healthcare-gov\" ,\r\n      \"content\" : \"La solicitud electroіnica usa un servicio de datos que se comunica con otros sistema para verificar la informacioіn que nos ha dado. Uno de estos sistemas pertenece al Seguro Social y verifica su noєmero de Seguro Social y otros datos. Desde el 15 de febrero de 2014 a las 3:00 p.m. hasta el martes 18 de febrero de 2014 a las 5:00 a.m. Hora del Este, se estara haciendo el mantenimiento programado del sistema del Seguro Social. Durante este pero­odo, usted no podra presentar su solicitud en CuidadoDeSalud.gov ni averiguar para quo© es elegible. Si esta tratando de inscribirse antes de la fecha lo­mite del 15 de febrero para que su cobertura comience el 1 de marzo, debe presentar la solicitud antes de las 3:00 p.m. del 15 de febrero para que el mantenimiento del sistema no le afecte.\\r\\n\\r\\n[Lea mas informacioіn sobre coіmo le puede afectar el mantenimiento del sistema del Seguro Socia...](/es/blog/want-coverage-starting-march-1-plan-ahead-for-best-results/)\\r\\n\\r\\n\\r\\n\" ,\r\n      \"date\" : \"2014-02-13 00:00:00 -0500\" ,\r\n      \"tags\" : [\r\n      ] ,\r\n      \"sort\" : 0\r\n    } , {\r\n      \"categories\" : [\r\n        \"blog\"\r\n      ] ,\r\n      \"published\" : true ,\r\n      \"title\" : \"We're working to improve HealthCare.gov\" ,\r\n      \"lang\" : \"en\" ,\r\n      \"layout\" : \"blog\" ,\r\n      \"meta-title\" : \"We're working to improve HealthCare.gov\" ,\r\n      \"meta-description\" : \"We're committed to updating you on our progress as we work to improve HealthCare.gov. Check back often to get the latest information on the status of our site.\" ,\r\n      \"seo-keywords\" : \"HealthCare.gov, tech surge, technology surge, Health Insurance Marketplace, Obamacare website,\" ,\r\n      \"topics\" : [\r\n        \"using-the-marketplace\"\r\n      ] ,\r\n      \"url\" : \"/blog/how-we-are-working-to-improve-healthcare-gov\" ,\r\n      \"content\" : \"We're committed to updating you on our progress as we work to improve HealthCare.gov. Check back often to get the latest information on the status of our site.\\r\\n\\r\\nAnd remember, there are [several different ways you can apply for coverage](/how-do-i-apply-for-marketplace-coverage/).\\r\\n\\r\\n## [Thursday, February 13: Upcoming System Maintenance at Social Security](/blog/want-coverage-starting-march-1-plan-ahead-for-best-results/) \\r\\n\\r\\nOur online application uses a Data Services Hub to \\\"talk to\\\" other data systems to verify information that you enter. One of these systems belongs to the Social Security Administration, which verifies Social Security Numbers and other related data.  From Saturday February 15, 2014 at 3:00 p.m. until Tuesday, February 18, 2014 at 5:00 a.m. EST, the Social Security Administration will conduct required, regularly scheduled systems maintenance activities. During this period, you won't be able to submit an application at HealthCare.gov and find out what you are eligible for. If you are trying to enroll by the February 15 deadline for coverage beginning March 1, you should try to submit your application before 3:00 p.m. on February 15, so the outage doesn't affect you.\\r\\n\\r\\n[Read more about how the Social Security system outage will affect you...](/blog/want-coverage-starting-march-1-plan-ahead-for-best-results/)\\r\\n\\r\\n\\r\\n##[Thursday, January 16: HealthCare.gov Moving Forward](http://www.hhs.gov/digitalstrategy/blog/2014/01/healthcare-gov-moving-forward.html) \\r\\nWe're pleased that HealthCare.gov has helped millions of Americans access health care, but our work is not over. And we're keeping our eye on the ball to make sure that the website works well -- and steadily improves -- as we invite new consumers to sign up for affordable, quality health coverage in the months ahead. \\r\\n\\r\\n[Read more about how HealthCare.gov is moving forward...](http://www.hhs.gov/digitalstrategy/blog/2014/01/healthcare-gov-moving-forward.html)\\r\\n\" ,\r\n      \"date\" : \"2014-02-13 00:00:00 -0500\" ,\r\n      \"tags\" : [\r\n      ] ,\r\n      \"sort\" : 0\r\n    }\r\n  ]\r\n}"
+                                            "schema": "blogList",
+                                            "example": "{\r\n  \"blog\" : [\r\n    {\r\n      \"categories\" : [\r\n        \"es\" ,\r\n        \"blog\"\r\n      ] ,\r\n      \"lang\" : \"es\" ,\r\n      \"published\" : true ,\r\n      \"title\" : \"Mantenimiento del sistema del Seguro Social\" ,\r\n      \"layout\" : \"blog\" ,\r\n      \"meta-title\" : \"Mantenimiento del sistema del Seguro Social\" ,\r\n      \"meta-description\" : \"Desde el 15 de febrero de 2014 a las 3:00 p.m. hasta el martes 18 de febrero de 2014 a las 5:00 a.m. Hora del Este, se estara haciendo el mantenimiento programado del sistema del Seguro Social. Durante este pero­odo, usted no podra presentar su solicitud en CuidadoDeSalud.gov ni averiguar para quo© es elegible.\" ,\r\n      \"seo-keywords\" : \"CuidadoDeSalud.gov\" ,\r\n      \"topics\" : [\r\n        \"health-insurance-marketplace\"\r\n      ] ,\r\n      \"url\" : \"/es/blog/how-we-are-working-to-improve-healthcare-gov\" ,\r\n      \"content\" : \"La solicitud electroіnica usa un servicio de datos que se comunica con otros sistema para verificar la informacioіn que nos ha dado. Uno de estos sistemas pertenece al Seguro Social y verifica su noєmero de Seguro Social y otros datos. Desde el 15 de febrero de 2014 a las 3:00 p.m. hasta el martes 18 de febrero de 2014 a las 5:00 a.m. Hora del Este, se estara haciendo el mantenimiento programado del sistema del Seguro Social. Durante este pero­odo, usted no podra presentar su solicitud en CuidadoDeSalud.gov ni averiguar para quo© es elegible. Si esta tratando de inscribirse antes de la fecha lo­mite del 15 de febrero para que su cobertura comience el 1 de marzo, debe presentar la solicitud antes de las 3:00 p.m. del 15 de febrero para que el mantenimiento del sistema no le afecte.\\r\\n\\r\\n[Lea mas informacioіn sobre coіmo le puede afectar el mantenimiento del sistema del Seguro Socia...](/es/blog/want-coverage-starting-march-1-plan-ahead-for-best-results/)\\r\\n\\r\\n\\r\\n\" ,\r\n      \"date\" : \"2014-02-13 00:00:00 -0500\" ,\r\n      \"tags\" : [\r\n      ] ,\r\n      \"sort\" : 0\r\n    } , {\r\n      \"categories\" : [\r\n        \"blog\"\r\n      ] ,\r\n      \"published\" : true ,\r\n      \"title\" : \"We're working to improve HealthCare.gov\" ,\r\n      \"lang\" : \"en\" ,\r\n      \"layout\" : \"blog\" ,\r\n      \"meta-title\" : \"We're working to improve HealthCare.gov\" ,\r\n      \"meta-description\" : \"We're committed to updating you on our progress as we work to improve HealthCare.gov. Check back often to get the latest information on the status of our site.\" ,\r\n      \"seo-keywords\" : \"HealthCare.gov, tech surge, technology surge, Health Insurance Marketplace, Obamacare website,\" ,\r\n      \"topics\" : [\r\n        \"using-the-marketplace\"\r\n      ] ,\r\n      \"url\" : \"/blog/how-we-are-working-to-improve-healthcare-gov\" ,\r\n      \"content\" : \"We're committed to updating you on our progress as we work to improve HealthCare.gov. Check back often to get the latest information on the status of our site.\\r\\n\\r\\nAnd remember, there are [several different ways you can apply for coverage](/how-do-i-apply-for-marketplace-coverage/).\\r\\n\\r\\n## [Thursday, February 13: Upcoming System Maintenance at Social Security](/blog/want-coverage-starting-march-1-plan-ahead-for-best-results/) \\r\\n\\r\\nOur online application uses a Data Services Hub to \\\"talk to\\\" other data systems to verify information that you enter. One of these systems belongs to the Social Security Administration, which verifies Social Security Numbers and other related data.  From Saturday February 15, 2014 at 3:00 p.m. until Tuesday, February 18, 2014 at 5:00 a.m. EST, the Social Security Administration will conduct required, regularly scheduled systems maintenance activities. During this period, you won't be able to submit an application at HealthCare.gov and find out what you are eligible for. If you are trying to enroll by the February 15 deadline for coverage beginning March 1, you should try to submit your application before 3:00 p.m. on February 15, so the outage doesn't affect you.\\r\\n\\r\\n[Read more about how the Social Security system outage will affect you...](/blog/want-coverage-starting-march-1-plan-ahead-for-best-results/)\\r\\n\\r\\n\\r\\n##[Thursday, January 16: HealthCare.gov Moving Forward](http://www.hhs.gov/digitalstrategy/blog/2014/01/healthcare-gov-moving-forward.html) \\r\\nWe're pleased that HealthCare.gov has helped millions of Americans access health care, but our work is not over. And we're keeping our eye on the ball to make sure that the website works well -- and steadily improves -- as we invite new consumers to sign up for affordable, quality health coverage in the months ahead. \\r\\n\\r\\n[Read more about how HealthCare.gov is moving forward...](http://www.hhs.gov/digitalstrategy/blog/2014/01/healthcare-gov-moving-forward.html)\\r\\n\" ,\r\n      \"date\" : \"2014-02-13 00:00:00 -0500\" ,\r\n      \"tags\" : [\r\n      ] ,\r\n      \"sort\" : 0\r\n    }\r\n  ]\r\n}",
+                                            "schemaContent": "blogList"
                                         }
                                     }
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "Resource not found."
                                 }
                             },
                             "protocols": [
                                 "HTTPS"
                             ],
+                            "description": "Returns pages content.",
                             "method": "get",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
@@ -1371,8 +1501,11 @@
                             "type": "string",
                             "required": true,
                             "repeat": false,
+                            "description": "Omiting the param causes html to be returned.",
+                            "enum": [
+                                ".json"
+                            ],
                             "__METADATA__": {
-                                "calculated": true,
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true
@@ -1398,14 +1531,21 @@
                                     "body": {
                                         "application/json": {
                                             "name": "application/json",
-                                            "example": "{\r\n  \"glossary\" : [\r\n    {\r\n      \"categories\" : [\r\n        \"es\" ,\r\n        \"glossary\"\r\n      ] ,\r\n      \"layout\" : \"glossary-word\" ,\r\n      \"published\" : true ,\r\n      \"title\" : \"Ingreso Bruto Ajustado Modificado (MAGI en inglГ©s)\" ,\r\n      \"lang\" : \"es\" ,\r\n      \"tags\" : [\r\n        \"glossary\"\r\n      ] ,\r\n      \"url\" : \"/es/glossary/modified-adjusted-gross-income-magi\" ,\r\n      \"content\" : \"<p>La cifra utilizada para determinar la elegibilidad de costos reducidos en el Mercado y para Medicaid y CHIP. El ingreso bruto ajusto modificado es el ingreso bruto ajustado (que paga impuestos) mas los ingresos por concepto de intereses exentos de impuestos.</p>\\r\\n\\r\\n\" ,\r\n      \"date\" : \"2013-07-08 00:00:00 -0400\" ,\r\n      \"sort\" : 0 ,\r\n      \"id\" : \"/es/glossary/modified-adjusted-gross-income-magi\" ,\r\n      \"excerpt\" : \"<p>La cifra utilizada para determinar la elegibilidad de costos reducidos en el Mercado y para Medicaid y CHIP. El ingreso bruto ajusto modificado es el ingreso bruto ajustado (que paga impuestos) mas los ingresos por concepto de intereses exentos de impuestos.</p>\\r\\n\\r\\n\" ,\r\n      \"path\" : \"_posts/glossary/es/2013-07-08-modified-adjusted-gross-income-magi.md\"\r\n    } , {\r\n      \"categories\" : [\r\n        \"glossary\"\r\n      ] ,\r\n      \"layout\" : \"glossary-word\" ,\r\n      \"published\" : true ,\r\n      \"title\" : \"Modified Adjusted Gross Income (MAGI)\" ,\r\n      \"lang\" : \"en\" ,\r\n      \"tags\" : [\r\n        \"glossary\"\r\n      ] ,\r\n      \"url\" : \"/glossary/modified-adjusted-gross-income-magi\" ,\r\n      \"content\" : \"<p>The figure used to determine eligibility for lower costs in the Marketplace and for Medicaid and CHIP. Generally, modified adjusted gross income is your adjusted gross income plus any tax-exempt Social Security, interest, or foreign income you have.</p>\\r\\n\\r\\n\" ,\r\n      \"date\" : \"2013-07-08 00:00:00 -0400\" ,\r\n      \"sort\" : 0 ,\r\n      \"id\" : \"/glossary/modified-adjusted-gross-income-magi\" ,\r\n      \"excerpt\" : \"<p>The figure used to determine eligibility for lower costs in the Marketplace and for Medicaid and CHIP. Generally, modified adjusted gross income is your adjusted gross income plus any tax-exempt Social Security, interest, or foreign income you have.</p>\\r\\n\\r\\n\" ,\r\n      \"path\" : \"_posts/glossary/2013-07-08-modified-adjusted-gross-income-magi.md\"\r\n    }\r\n  ] \r\n}"
+                                            "schema": "glossaryList",
+                                            "example": "{\r\n  \"glossary\" : [\r\n    {\r\n      \"categories\" : [\r\n        \"es\" ,\r\n        \"glossary\"\r\n      ] ,\r\n      \"layout\" : \"glossary-word\" ,\r\n      \"published\" : true ,\r\n      \"title\" : \"Ingreso Bruto Ajustado Modificado (MAGI en inglГ©s)\" ,\r\n      \"lang\" : \"es\" ,\r\n      \"tags\" : [\r\n        \"glossary\"\r\n      ] ,\r\n      \"url\" : \"/es/glossary/modified-adjusted-gross-income-magi\" ,\r\n      \"content\" : \"<p>La cifra utilizada para determinar la elegibilidad de costos reducidos en el Mercado y para Medicaid y CHIP. El ingreso bruto ajusto modificado es el ingreso bruto ajustado (que paga impuestos) mas los ingresos por concepto de intereses exentos de impuestos.</p>\\r\\n\\r\\n\" ,\r\n      \"date\" : \"2013-07-08 00:00:00 -0400\" ,\r\n      \"sort\" : 0 ,\r\n      \"id\" : \"/es/glossary/modified-adjusted-gross-income-magi\" ,\r\n      \"excerpt\" : \"<p>La cifra utilizada para determinar la elegibilidad de costos reducidos en el Mercado y para Medicaid y CHIP. El ingreso bruto ajusto modificado es el ingreso bruto ajustado (que paga impuestos) mas los ingresos por concepto de intereses exentos de impuestos.</p>\\r\\n\\r\\n\" ,\r\n      \"path\" : \"_posts/glossary/es/2013-07-08-modified-adjusted-gross-income-magi.md\"\r\n    } , {\r\n      \"categories\" : [\r\n        \"glossary\"\r\n      ] ,\r\n      \"layout\" : \"glossary-word\" ,\r\n      \"published\" : true ,\r\n      \"title\" : \"Modified Adjusted Gross Income (MAGI)\" ,\r\n      \"lang\" : \"en\" ,\r\n      \"tags\" : [\r\n        \"glossary\"\r\n      ] ,\r\n      \"url\" : \"/glossary/modified-adjusted-gross-income-magi\" ,\r\n      \"content\" : \"<p>The figure used to determine eligibility for lower costs in the Marketplace and for Medicaid and CHIP. Generally, modified adjusted gross income is your adjusted gross income plus any tax-exempt Social Security, interest, or foreign income you have.</p>\\r\\n\\r\\n\" ,\r\n      \"date\" : \"2013-07-08 00:00:00 -0400\" ,\r\n      \"sort\" : 0 ,\r\n      \"id\" : \"/glossary/modified-adjusted-gross-income-magi\" ,\r\n      \"excerpt\" : \"<p>The figure used to determine eligibility for lower costs in the Marketplace and for Medicaid and CHIP. Generally, modified adjusted gross income is your adjusted gross income plus any tax-exempt Social Security, interest, or foreign income you have.</p>\\r\\n\\r\\n\" ,\r\n      \"path\" : \"_posts/glossary/2013-07-08-modified-adjusted-gross-income-magi.md\"\r\n    }\r\n  ] \r\n}",
+                                            "schemaContent": "glossaryList"
                                         }
                                     }
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "Resource not found."
                                 }
                             },
                             "protocols": [
                                 "HTTPS"
                             ],
+                            "description": "Returns pages content.",
                             "method": "get",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
@@ -1443,8 +1583,11 @@
                             "type": "string",
                             "required": true,
                             "repeat": false,
+                            "description": "Omiting the param causes html to be returned.",
+                            "enum": [
+                                ".json"
+                            ],
                             "__METADATA__": {
-                                "calculated": true,
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true
@@ -1470,14 +1613,21 @@
                                     "body": {
                                         "application/json": {
                                             "name": "application/json",
-                                            "example": "{\r\n  \"states\" : [\r\n    {\r\n      \"lang\" : \"en\" ,\r\n      \"tags\" : [\r\n        \"state\"\r\n      ] ,\r\n      \"stateurl\" : \"none\" ,\r\n      \"url\" : \"/wyoming\" ,\r\n      \"title\" : \"Wyoming\" ,\r\n      \"content\" : \"<h3>Consumer Assistance in Wyoming</h3>\\r\\n\\r\\n<p>Contact your state department of insurance to <a href=\\\"http : //insurance.state.wy.us/\\\">get consumer help with a health insurance problem or question</a>.</p>\\r\\n\\r\\n<h3>Medicaid in Wyoming</h3>\\r\\n\\r\\n<p>Wyoming has not chosen to expand its Medicaid program at this time. Read <a href=\\\"https : //www.healthcare.gov/what-if-my-state-is-not-expanding-medicaid/\\\">\\\"What if my state isn't expanding Medicaid?\\\"</a> to learn more. You can find out whether you qualify for Medicaid under Wyoming's current rules 2 ways: <a href=\\\"http : //www.health.wyo.gov/default.aspx\\\">Contact your state Medicaid agency right now</a> or <a href=\\\"https : //www.healthcare.gov/marketplace/individual/\\\">fill out an application for coverage in the Health Insurance Marketplace</a>.</p>\\r\\n\\r\\n<h3>Shop Health Insurance Marketplace in Wyoming</h3>\\r\\n\\r\\n<p>If your small business is located in Wyoming, you'll use an agent, broker, or insurance company to enroll your employees in health coverage. Enroll by the 15th for coverage that starts as soon as the 1st of the month.</p>\\r\\n\\r\\n<h3>Health Insurance Marketplace in Wyoming</h3>\\r\\n\\r\\n<p>If you live in Wyoming, you'll use HealthCare.gov to apply and enroll in health coverage. Enroll by the 15th for coverage that starts as soon as the 1st of the month. Need more info first? <a href=\\\"/get-covered-a-1-page-guide-to-the-health-insurance-marketplace/\\\">Here's what you need to know</a>. Ready to begin? Select a button to apply.</p>\\r\\n\\r\\n<h3>CHIP in Wyoming</h3>\\r\\n\\r\\n<p>Kid Care CHIP covers uninsured children in families with moderate incomes that are too high to qualify for Medicaid. You can find out whether your children qualify for Kid Care CHIP right now. <a href=\\\"https : //www.healthcare.gov/marketplace/individual/\\\">Fill out a Marketplace application</a> and find out whether your children qualify. <a href=\\\"http : //www.health.wyo.gov/default.aspx\\\">Learn more about Kid Care CHIP in Wyoming</a>.</p>\\r\\n\" ,\r\n      \"date\" : \"0001-02-01 00:00:00 -0456\" ,\r\n      \"sort\" : 0 ,\r\n      \"id\" : \"/wyoming\" ,\r\n      \"categories\" : [\r\n      ] ,\r\n      \"excerpt\" : \"<h3>Consumer Assistance in Wyoming</h3>\\r\\n\" ,\r\n      \"path\" : \"_posts/states/0001-02-01-wyoming.md\"\r\n    } , {\r\n      \"lang\" : \"en\" ,\r\n      \"tags\" : [\r\n        \"state\"\r\n      ] ,\r\n      \"stateurl\" : \"none\" ,\r\n      \"url\" : \"/wisconsin\" ,\r\n      \"title\" : \"Wisconsin\" ,\r\n      \"content\" : \"<h3>Consumer Assistance in Wisconsin</h3>\\r\\n\\r\\n<p>Contact your state department of insurance to <a href=\\\"http : //oci.wi.gov/consinfo.htm\\\">get consumer help with a health insurance problem or question</a>.</p>\\r\\n\\r\\n<h3>Medicaid in Wisconsin</h3>\\r\\n\\r\\n<p>Wisconsin has not chosen to expand its Medicaid program at this time. Read <a href=\\\"https : //www.healthcare.gov/what-if-my-state-is-not-expanding-medicaid/\\\">\\\"What if my state isn't expanding Medicaid?\\\"</a> to learn more. You can find out whether you qualify for Medicaid under Wisconsin's current rules 2 ways: <a href=\\\"http : //www.dhs.wisconsin.gov/forwardhealth/imagency/baylake.htm\\\">Contact your state Medicaid agency right now</a> or <a href=\\\"https : //www.healthcare.gov/marketplace/individual/\\\">fill out an application for coverage in the Health Insurance Marketplace</a>.</p>\\r\\n\\r\\n<h3>Shop Health Insurance Marketplace in Wisconsin</h3>\\r\\n\\r\\n<p>If your small business is located in Wisconsin, you'll use an agent, broker, or insurance company to enroll your employees in health coverage. Enroll by the 15th for coverage that starts as soon as the 1st of the month.</p>\\r\\n\\r\\n<h3>Health Insurance Marketplace in Wisconsin</h3>\\r\\n\\r\\n<p>If you live in Wisconsin, you'll use HealthCare.gov to apply and enroll in health coverage. Enroll by the 15th for coverage that starts as soon as the 1st of the month. Need more info first? <a href=\\\"/get-covered-a-1-page-guide-to-the-health-insurance-marketplace/\\\">Here's what you need to know</a>. Ready to begin? Select a button to apply.</p>\\r\\n\\r\\n<h3>CHIP in Wisconsin</h3>\\r\\n\\r\\n<p>BadgerCare Plus covers uninsured children in families with moderate incomes that are too high to qualify for Medicaid. You can find out whether your children qualify for BadgerCare Plus right now. <a href=\\\"https : //www.healthcare.gov/marketplace/individual/\\\">Fill out a Marketplace application</a> and find out whether your children qualify. <a href=\\\"http : //www.dhs.wisconsin.gov/forwardhealth/imagency/baylake.htm\\\">Learn more about BadgerCare Plus in Wisconsin</a>.</p>\\r\\n\" ,\r\n      \"date\" : \"0001-02-01 00:00:00 -0456\" ,\r\n      \"sort\" : 0 ,\r\n      \"id\" : \"/wisconsin\" ,\r\n      \"categories\" : [\r\n      ] ,\r\n      \"excerpt\" : \"<h3>Consumer Assistance in Wisconsin</h3>\\r\\n\" ,\r\n      \"path\" : \"_posts/states/0001-02-01-wisconsin.md\"\r\n    }\r\n  ]\r\n}"
+                                            "schema": "statesList",
+                                            "example": "{\r\n  \"states\" : [\r\n    {\r\n      \"lang\" : \"en\" ,\r\n      \"tags\" : [\r\n        \"state\"\r\n      ] ,\r\n      \"stateurl\" : \"none\" ,\r\n      \"url\" : \"/wyoming\" ,\r\n      \"title\" : \"Wyoming\" ,\r\n      \"content\" : \"<h3>Consumer Assistance in Wyoming</h3>\\r\\n\\r\\n<p>Contact your state department of insurance to <a href=\\\"http : //insurance.state.wy.us/\\\">get consumer help with a health insurance problem or question</a>.</p>\\r\\n\\r\\n<h3>Medicaid in Wyoming</h3>\\r\\n\\r\\n<p>Wyoming has not chosen to expand its Medicaid program at this time. Read <a href=\\\"https : //www.healthcare.gov/what-if-my-state-is-not-expanding-medicaid/\\\">\\\"What if my state isn't expanding Medicaid?\\\"</a> to learn more. You can find out whether you qualify for Medicaid under Wyoming's current rules 2 ways: <a href=\\\"http : //www.health.wyo.gov/default.aspx\\\">Contact your state Medicaid agency right now</a> or <a href=\\\"https : //www.healthcare.gov/marketplace/individual/\\\">fill out an application for coverage in the Health Insurance Marketplace</a>.</p>\\r\\n\\r\\n<h3>Shop Health Insurance Marketplace in Wyoming</h3>\\r\\n\\r\\n<p>If your small business is located in Wyoming, you'll use an agent, broker, or insurance company to enroll your employees in health coverage. Enroll by the 15th for coverage that starts as soon as the 1st of the month.</p>\\r\\n\\r\\n<h3>Health Insurance Marketplace in Wyoming</h3>\\r\\n\\r\\n<p>If you live in Wyoming, you'll use HealthCare.gov to apply and enroll in health coverage. Enroll by the 15th for coverage that starts as soon as the 1st of the month. Need more info first? <a href=\\\"/get-covered-a-1-page-guide-to-the-health-insurance-marketplace/\\\">Here's what you need to know</a>. Ready to begin? Select a button to apply.</p>\\r\\n\\r\\n<h3>CHIP in Wyoming</h3>\\r\\n\\r\\n<p>Kid Care CHIP covers uninsured children in families with moderate incomes that are too high to qualify for Medicaid. You can find out whether your children qualify for Kid Care CHIP right now. <a href=\\\"https : //www.healthcare.gov/marketplace/individual/\\\">Fill out a Marketplace application</a> and find out whether your children qualify. <a href=\\\"http : //www.health.wyo.gov/default.aspx\\\">Learn more about Kid Care CHIP in Wyoming</a>.</p>\\r\\n\" ,\r\n      \"date\" : \"0001-02-01 00:00:00 -0456\" ,\r\n      \"sort\" : 0 ,\r\n      \"id\" : \"/wyoming\" ,\r\n      \"categories\" : [\r\n      ] ,\r\n      \"excerpt\" : \"<h3>Consumer Assistance in Wyoming</h3>\\r\\n\" ,\r\n      \"path\" : \"_posts/states/0001-02-01-wyoming.md\"\r\n    } , {\r\n      \"lang\" : \"en\" ,\r\n      \"tags\" : [\r\n        \"state\"\r\n      ] ,\r\n      \"stateurl\" : \"none\" ,\r\n      \"url\" : \"/wisconsin\" ,\r\n      \"title\" : \"Wisconsin\" ,\r\n      \"content\" : \"<h3>Consumer Assistance in Wisconsin</h3>\\r\\n\\r\\n<p>Contact your state department of insurance to <a href=\\\"http : //oci.wi.gov/consinfo.htm\\\">get consumer help with a health insurance problem or question</a>.</p>\\r\\n\\r\\n<h3>Medicaid in Wisconsin</h3>\\r\\n\\r\\n<p>Wisconsin has not chosen to expand its Medicaid program at this time. Read <a href=\\\"https : //www.healthcare.gov/what-if-my-state-is-not-expanding-medicaid/\\\">\\\"What if my state isn't expanding Medicaid?\\\"</a> to learn more. You can find out whether you qualify for Medicaid under Wisconsin's current rules 2 ways: <a href=\\\"http : //www.dhs.wisconsin.gov/forwardhealth/imagency/baylake.htm\\\">Contact your state Medicaid agency right now</a> or <a href=\\\"https : //www.healthcare.gov/marketplace/individual/\\\">fill out an application for coverage in the Health Insurance Marketplace</a>.</p>\\r\\n\\r\\n<h3>Shop Health Insurance Marketplace in Wisconsin</h3>\\r\\n\\r\\n<p>If your small business is located in Wisconsin, you'll use an agent, broker, or insurance company to enroll your employees in health coverage. Enroll by the 15th for coverage that starts as soon as the 1st of the month.</p>\\r\\n\\r\\n<h3>Health Insurance Marketplace in Wisconsin</h3>\\r\\n\\r\\n<p>If you live in Wisconsin, you'll use HealthCare.gov to apply and enroll in health coverage. Enroll by the 15th for coverage that starts as soon as the 1st of the month. Need more info first? <a href=\\\"/get-covered-a-1-page-guide-to-the-health-insurance-marketplace/\\\">Here's what you need to know</a>. Ready to begin? Select a button to apply.</p>\\r\\n\\r\\n<h3>CHIP in Wisconsin</h3>\\r\\n\\r\\n<p>BadgerCare Plus covers uninsured children in families with moderate incomes that are too high to qualify for Medicaid. You can find out whether your children qualify for BadgerCare Plus right now. <a href=\\\"https : //www.healthcare.gov/marketplace/individual/\\\">Fill out a Marketplace application</a> and find out whether your children qualify. <a href=\\\"http : //www.dhs.wisconsin.gov/forwardhealth/imagency/baylake.htm\\\">Learn more about BadgerCare Plus in Wisconsin</a>.</p>\\r\\n\" ,\r\n      \"date\" : \"0001-02-01 00:00:00 -0456\" ,\r\n      \"sort\" : 0 ,\r\n      \"id\" : \"/wisconsin\" ,\r\n      \"categories\" : [\r\n      ] ,\r\n      \"excerpt\" : \"<h3>Consumer Assistance in Wisconsin</h3>\\r\\n\" ,\r\n      \"path\" : \"_posts/states/0001-02-01-wisconsin.md\"\r\n    }\r\n  ]\r\n}",
+                                            "schemaContent": "statesList"
                                         }
                                     }
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "Resource not found."
                                 }
                             },
                             "protocols": [
                                 "HTTPS"
                             ],
+                            "description": "Returns pages content.",
                             "method": "get",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
@@ -1515,8 +1665,11 @@
                             "type": "string",
                             "required": true,
                             "repeat": false,
+                            "description": "Omiting the param causes html to be returned.",
+                            "enum": [
+                                ".json"
+                            ],
                             "__METADATA__": {
-                                "calculated": true,
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true
@@ -1542,14 +1695,21 @@
                                     "body": {
                                         "application/json": {
                                             "name": "application/json",
-                                            "example": "{\r\n  \"topics\" : [\r\n    {\r\n      \"published\" : true ,\r\n      \"title\" : \"Save Money on Coverage\" ,\r\n      \"lang\" : \"en\" ,\r\n      \"layout\" : \"topic\" ,\r\n      \"tags\" : [\r\n        \"topic\"\r\n      ] ,\r\n      \"order\" : 5 ,\r\n      \"meta-title\" : \"Getting Lower Costs on Health Insurance Coverage\" ,\r\n      \"meta-description\" : \"You can be getting lower costs on coverage through the Health Insurance Marketplace. See how you may qualify  today. Learn how the new law affects you\" ,\r\n      \"url\" : \"/getting-lower-costs-on-coverage\" ,\r\n      \"content\" : \"\\r\\n \" ,\r\n      \"date\" : \"0001-06-13 00:00:00 -0456\" ,\r\n      \"sort\" : 0 ,\r\n      \"id\" : \"/getting-lower-costs-on-coverage\" ,\r\n      \"categories\" : [\r\n      ] ,\r\n      \"excerpt\" : \"\\r\\n\" ,\r\n      \"path\" : \"_posts/topics/0001-06-13-getting-lower-costs-on-coverage.md\"\r\n    } , {\r\n      \"title\" : \"Young Adults\" ,\r\n      \"layout\" : \"topic\" ,\r\n      \"lang\" : \"en\" ,\r\n      \"order\" : 6 ,\r\n      \"tags\" : [\r\n        \"topic\"\r\n      ] ,\r\n      \"published\" : true ,\r\n      \"meta-title\" : \"Health Insurance for Young Adults, Health Insurance Marketplace\" ,\r\n      \"meta-description\" : \"Young adults have health coverage options at the Health Insurance Marketplace. Visit Healthcare.gov to learn how the new healthcare law affects you today\" ,\r\n      \"articleorder\" : [\r\n        \"can-i-keep-my-child-on-my-insurance-until-age-26\" ,\r\n        \"can-i-buy-a-catastrophic-plan\" ,\r\n        \"if-i-m-a-college-student-what-do-i-need-to-know-about-the-marketplace\" ,\r\n        \"why-should-i-have-health-coverage\" ,\r\n        \"what-if-someone-doesnt-have-health-coverage-in-2014\" ,\r\n        \"what-are-my-birth-control-benefits\" ,\r\n        \"what-if-im-pregnant-or-plan-to-get-pregnant\"\r\n      ] ,\r\n      \"url\" : \"/young-adults\" ,\r\n      \"content\" : \"\\r\\n\" ,\r\n      \"date\" : \"0001-01-01 00:00:00 -0456\" ,\r\n      \"sort\" : 0 ,\r\n      \"id\" : \"/young-adults\" ,\r\n      \"categories\" : [\r\n      ] ,\r\n      \"excerpt\" : \"\\r\\n\" ,\r\n      \"path\" : \"_posts/topics/0001-01-01-young-adults.md\"\r\n    } , {\r\n      \"title\" : \"Using the Marketplace\" ,\r\n      \"layout\" : \"topic\" ,\r\n      \"lang\" : \"en\" ,\r\n      \"order\" : 3 ,\r\n      \"tags\" : [\r\n        \"topic\"\r\n      ] ,\r\n      \"published\" : true ,\r\n      \"meta-title\" : \"Using the Health Insurance Marketplace\" ,\r\n      \"meta-description\" : \"Learn how to apply for health insurance coverage at Healthcare.gov. Know your rights and how the new healthcare law affects you\" ,\r\n      \"articleorder\" : [\r\n        \"how-do-i-apply-for-marketplace-coverage\" ,\r\n        \"how-to-have-the-best-experience-with-healthcare-gov\" ,\r\n        \"what-income-and-household-information-do-i-provide-when-i-apply-for-marketplace-coverage\" ,\r\n        \"how-do-i-choose-marketplace-insurance\" ,\r\n        \"how-can-i-get-coverage-outside-of-open-enrollment\" ,\r\n        \"can-i-appeal-a-marketplace-decision\" ,\r\n        \"browser-compatibility\" ,\r\n        \"enroll-after-applying\" ,\r\n        \"how-can-i-get-ready-to-enroll-in-the-marketplace\"\r\n      ] ,\r\n      \"url\" : \"/using-the-marketplace\" ,\r\n      \"content\" : \"\\r\\n\" ,\r\n      \"date\" : \"0001-01-01 00:00:00 -0456\" ,\r\n      \"sort\" : 0 ,\r\n      \"id\" : \"/using-the-marketplace\" ,\r\n      \"categories\" : [\r\n      ] ,\r\n      \"excerpt\" : \"\\r\\n\" ,\r\n      \"path\" : \"_posts/topics/0001-01-01-using-the-marketplace.md\"\r\n    }\r\n  ]\r\n}"
+                                            "schema": "topicsList",
+                                            "example": "{\r\n  \"topics\" : [\r\n    {\r\n      \"published\" : true ,\r\n      \"title\" : \"Save Money on Coverage\" ,\r\n      \"lang\" : \"en\" ,\r\n      \"layout\" : \"topic\" ,\r\n      \"tags\" : [\r\n        \"topic\"\r\n      ] ,\r\n      \"order\" : 5 ,\r\n      \"meta-title\" : \"Getting Lower Costs on Health Insurance Coverage\" ,\r\n      \"meta-description\" : \"You can be getting lower costs on coverage through the Health Insurance Marketplace. See how you may qualify  today. Learn how the new law affects you\" ,\r\n      \"url\" : \"/getting-lower-costs-on-coverage\" ,\r\n      \"content\" : \"\\r\\n \" ,\r\n      \"date\" : \"0001-06-13 00:00:00 -0456\" ,\r\n      \"sort\" : 0 ,\r\n      \"id\" : \"/getting-lower-costs-on-coverage\" ,\r\n      \"categories\" : [\r\n      ] ,\r\n      \"excerpt\" : \"\\r\\n\" ,\r\n      \"path\" : \"_posts/topics/0001-06-13-getting-lower-costs-on-coverage.md\"\r\n    } , {\r\n      \"title\" : \"Young Adults\" ,\r\n      \"layout\" : \"topic\" ,\r\n      \"lang\" : \"en\" ,\r\n      \"order\" : 6 ,\r\n      \"tags\" : [\r\n        \"topic\"\r\n      ] ,\r\n      \"published\" : true ,\r\n      \"meta-title\" : \"Health Insurance for Young Adults, Health Insurance Marketplace\" ,\r\n      \"meta-description\" : \"Young adults have health coverage options at the Health Insurance Marketplace. Visit Healthcare.gov to learn how the new healthcare law affects you today\" ,\r\n      \"articleorder\" : [\r\n        \"can-i-keep-my-child-on-my-insurance-until-age-26\" ,\r\n        \"can-i-buy-a-catastrophic-plan\" ,\r\n        \"if-i-m-a-college-student-what-do-i-need-to-know-about-the-marketplace\" ,\r\n        \"why-should-i-have-health-coverage\" ,\r\n        \"what-if-someone-doesnt-have-health-coverage-in-2014\" ,\r\n        \"what-are-my-birth-control-benefits\" ,\r\n        \"what-if-im-pregnant-or-plan-to-get-pregnant\"\r\n      ] ,\r\n      \"url\" : \"/young-adults\" ,\r\n      \"content\" : \"\\r\\n\" ,\r\n      \"date\" : \"0001-01-01 00:00:00 -0456\" ,\r\n      \"sort\" : 0 ,\r\n      \"id\" : \"/young-adults\" ,\r\n      \"categories\" : [\r\n      ] ,\r\n      \"excerpt\" : \"\\r\\n\" ,\r\n      \"path\" : \"_posts/topics/0001-01-01-young-adults.md\"\r\n    } , {\r\n      \"title\" : \"Using the Marketplace\" ,\r\n      \"layout\" : \"topic\" ,\r\n      \"lang\" : \"en\" ,\r\n      \"order\" : 3 ,\r\n      \"tags\" : [\r\n        \"topic\"\r\n      ] ,\r\n      \"published\" : true ,\r\n      \"meta-title\" : \"Using the Health Insurance Marketplace\" ,\r\n      \"meta-description\" : \"Learn how to apply for health insurance coverage at Healthcare.gov. Know your rights and how the new healthcare law affects you\" ,\r\n      \"articleorder\" : [\r\n        \"how-do-i-apply-for-marketplace-coverage\" ,\r\n        \"how-to-have-the-best-experience-with-healthcare-gov\" ,\r\n        \"what-income-and-household-information-do-i-provide-when-i-apply-for-marketplace-coverage\" ,\r\n        \"how-do-i-choose-marketplace-insurance\" ,\r\n        \"how-can-i-get-coverage-outside-of-open-enrollment\" ,\r\n        \"can-i-appeal-a-marketplace-decision\" ,\r\n        \"browser-compatibility\" ,\r\n        \"enroll-after-applying\" ,\r\n        \"how-can-i-get-ready-to-enroll-in-the-marketplace\"\r\n      ] ,\r\n      \"url\" : \"/using-the-marketplace\" ,\r\n      \"content\" : \"\\r\\n\" ,\r\n      \"date\" : \"0001-01-01 00:00:00 -0456\" ,\r\n      \"sort\" : 0 ,\r\n      \"id\" : \"/using-the-marketplace\" ,\r\n      \"categories\" : [\r\n      ] ,\r\n      \"excerpt\" : \"\\r\\n\" ,\r\n      \"path\" : \"_posts/topics/0001-01-01-using-the-marketplace.md\"\r\n    }\r\n  ]\r\n}",
+                                            "schemaContent": "topicsList"
                                         }
                                     }
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "Resource not found."
                                 }
                             },
                             "protocols": [
                                 "HTTPS"
                             ],
+                            "description": "Returns pages content.",
                             "method": "get",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {

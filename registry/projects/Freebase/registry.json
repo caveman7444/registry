@@ -1,14 +1,24 @@
-{"apis": [
+{"apis": {"RAMLFiles": [
     {
         "name": "Get Started with the Freebase API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Freebase/master/api.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Freebase/master/api.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Freebase/master/api.json",
+        "baseUri": "https://www.googleapis.com/freebase/{version}",
+        "version": "v1",
+        "resourcesCount": 6,
+        "methodsCount": 6
     },
     {
         "name": "Get Started with the Freebase API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Freebase/staging/api.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Freebase/staging/api.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Freebase/staging/api.json",
+        "baseUri": "https://www.googleapis.com/freebase/{version}",
+        "version": "v1",
+        "resourcesCount": 6,
+        "methodsCount": 6
     }
-]}
+]}}

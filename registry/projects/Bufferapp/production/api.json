@@ -276,6 +276,30 @@
                                     "schemaContent": "user"
                                 }
                             }
+                        },
+                        "400": {
+                            "code": "400",
+                            "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                        },
+                        "403": {
+                            "code": "403",
+                            "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                        },
+                        "404": {
+                            "code": "404",
+                            "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                        },
+                        "405": {
+                            "code": "405",
+                            "description": "405  Method not allowed.\n"
+                        },
+                        "406": {
+                            "code": "406",
+                            "description": "1005  Unsupported response format.\n"
+                        },
+                        "500": {
+                            "code": "500",
+                            "description": "An unknown error occurred.\n"
                         }
                     },
                     "protocols": [
@@ -301,9 +325,6 @@
             "displayName": "/user{mediaTypeExtension}",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }
@@ -354,6 +375,30 @@
                                     "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"avatar\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"created_at\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"default\" : {\r\n      \"type\" : \"boolean\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"formatted_username\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"id\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"schedules\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"days\" : {\r\n              \"type\" : \"array\" ,\r\n              \"required\" : false ,\r\n              \"items\" : \r\n                {\r\n                  \"type\" : \"string\"\r\n                }\r\n              \r\n            } ,\r\n            \"times\" : {\r\n              \"type\" : \"array\" ,\r\n              \"required\" : false ,\r\n              \"items\" : \r\n                {\r\n                  \"type\" : \"string\"\r\n                }\r\n              \r\n            }\r\n          }\r\n        }\r\n      \r\n    } ,\r\n    \"service\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"service_id\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"service_username\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"statistics\" : {\r\n      \"type\" : \"object\" ,\r\n      \"required\" : false ,\r\n      \"properties\" : {\r\n        \"followers\" : {\r\n          \"type\" : \"number\" ,\r\n          \"required\" : false\r\n        }\r\n      }\r\n    } ,\r\n    \"team_members\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"string\"\r\n        }\r\n      \r\n    } ,\r\n    \"timezone\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"user_id\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    }\r\n  }\r\n}"
                                 }
                             }
+                        },
+                        "400": {
+                            "code": "400",
+                            "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                        },
+                        "403": {
+                            "code": "403",
+                            "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                        },
+                        "404": {
+                            "code": "404",
+                            "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                        },
+                        "405": {
+                            "code": "405",
+                            "description": "405  Method not allowed.\n"
+                        },
+                        "406": {
+                            "code": "406",
+                            "description": "1005  Unsupported response format.\n"
+                        },
+                        "500": {
+                            "code": "500",
+                            "description": "An unknown error occurred.\n"
                         }
                     },
                     "protocols": [
@@ -379,9 +424,6 @@
             "displayName": "/profiles{mediaTypeExtension}",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }
@@ -462,6 +504,30 @@
                                             "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"avatar\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"created_at\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"default\" : {\r\n      \"type\" : \"boolean\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"formatted_username\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"id\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"schedules\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"days\" : {\r\n              \"type\" : \"array\" ,\r\n              \"required\" : false ,\r\n              \"items\" : \r\n                {\r\n                  \"type\" : \"string\"\r\n                }\r\n              \r\n            } ,\r\n            \"times\" : {\r\n              \"type\" : \"array\" ,\r\n              \"required\" : false ,\r\n              \"items\" : \r\n                {\r\n                  \"type\" : \"string\"\r\n                }\r\n              \r\n            }\r\n          }\r\n        }\r\n      \r\n    } ,\r\n    \"service\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"service_id\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"service_username\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"statistics\" : {\r\n      \"type\" : \"object\" ,\r\n      \"required\" : false ,\r\n      \"properties\" : {\r\n        \"followers\" : {\r\n          \"type\" : \"number\" ,\r\n          \"required\" : false\r\n        }\r\n      }\r\n    } ,\r\n    \"team_members\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"string\"\r\n        }\r\n      \r\n    } ,\r\n    \"timezone\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"user_id\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    }\r\n  }\r\n}"
                                         }
                                     }
+                                },
+                                "400": {
+                                    "code": "400",
+                                    "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                },
+                                "403": {
+                                    "code": "403",
+                                    "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                },
+                                "405": {
+                                    "code": "405",
+                                    "description": "405  Method not allowed.\n"
+                                },
+                                "406": {
+                                    "code": "406",
+                                    "description": "1005  Unsupported response format.\n"
+                                },
+                                "500": {
+                                    "code": "500",
+                                    "description": "An unknown error occurred.\n"
                                 }
                             },
                             "protocols": [
@@ -487,9 +553,6 @@
                     "displayName": "/{id}{mediaTypeExtension}",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
-                            "securedBy": {
-                                "calculated": true
-                            },
                             "displayName": {
                                 "calculated": true
                             }
@@ -572,6 +635,30 @@
                                                     "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"days\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"string\"\r\n        }\r\n      \r\n    } ,\r\n    \"times\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"string\"\r\n        }\r\n      \r\n    }\r\n  }\r\n}"
                                                 }
                                             }
+                                        },
+                                        "400": {
+                                            "code": "400",
+                                            "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                        },
+                                        "403": {
+                                            "code": "403",
+                                            "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                        },
+                                        "404": {
+                                            "code": "404",
+                                            "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                        },
+                                        "405": {
+                                            "code": "405",
+                                            "description": "405  Method not allowed.\n"
+                                        },
+                                        "406": {
+                                            "code": "406",
+                                            "description": "1005  Unsupported response format.\n"
+                                        },
+                                        "500": {
+                                            "code": "500",
+                                            "description": "An unknown error occurred.\n"
                                         }
                                     },
                                     "protocols": [
@@ -597,9 +684,6 @@
                             "displayName": "/schedules{mediaTypeExtension}",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -650,6 +734,30 @@
                                                     "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"success\" : {\r\n      \"type\" : \"boolean\" ,\r\n      \"required\" : false\r\n    }\r\n  }\r\n}"
                                                 }
                                             }
+                                        },
+                                        "400": {
+                                            "code": "400",
+                                            "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                        },
+                                        "403": {
+                                            "code": "403",
+                                            "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                        },
+                                        "404": {
+                                            "code": "404",
+                                            "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                        },
+                                        "405": {
+                                            "code": "405",
+                                            "description": "405  Method not allowed.\n"
+                                        },
+                                        "406": {
+                                            "code": "406",
+                                            "description": "1005  Unsupported response format.\n"
+                                        },
+                                        "500": {
+                                            "code": "500",
+                                            "description": "An unknown error occurred."
                                         }
                                     },
                                     "body": {
@@ -704,9 +812,6 @@
                             "displayName": "/schedules/update{mediaTypeExtension}",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -764,6 +869,30 @@
                                                             "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"total\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"updates\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"id\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"created_at\" : {\r\n              \"type\" : \"number\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"day\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"due_at\" : {\r\n              \"type\" : \"number\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"due_time\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"profile_id\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"profile_service\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"status\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"text\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"text_formatted\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"user_id\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"via\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            }\r\n          }\r\n        }\r\n      \r\n    }\r\n  }\r\n}"
                                                         }
                                                     }
+                                                },
+                                                "400": {
+                                                    "code": "400",
+                                                    "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                                },
+                                                "403": {
+                                                    "code": "403",
+                                                    "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                                },
+                                                "404": {
+                                                    "code": "404",
+                                                    "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                                },
+                                                "405": {
+                                                    "code": "405",
+                                                    "description": "405  Method not allowed.\n"
+                                                },
+                                                "406": {
+                                                    "code": "406",
+                                                    "description": "1005  Unsupported response format.\n"
+                                                },
+                                                "500": {
+                                                    "code": "500",
+                                                    "description": "An unknown error occurred.\n"
                                                 }
                                             },
                                             "protocols": [
@@ -875,9 +1004,6 @@
                                     "displayName": "/pending{mediaTypeExtension}",
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
-                                            "securedBy": {
-                                                "calculated": true
-                                            },
                                             "displayName": {
                                                 "calculated": true
                                             }
@@ -928,6 +1054,30 @@
                                                             "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"total\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"updates\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"id\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"created_at\" : {\r\n              \"type\" : \"number\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"day\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"due_at\" : {\r\n              \"type\" : \"number\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"due_time\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"profile_id\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"profile_service\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"status\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"text\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"text_formatted\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"user_id\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"via\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            }\r\n          }\r\n        }\r\n      \r\n    }\r\n  }\r\n}"
                                                         }
                                                     }
+                                                },
+                                                "400": {
+                                                    "code": "400",
+                                                    "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                                },
+                                                "403": {
+                                                    "code": "403",
+                                                    "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                                },
+                                                "404": {
+                                                    "code": "404",
+                                                    "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                                },
+                                                "405": {
+                                                    "code": "405",
+                                                    "description": "405  Method not allowed.\n"
+                                                },
+                                                "406": {
+                                                    "code": "406",
+                                                    "description": "1005  Unsupported response format.\n"
+                                                },
+                                                "500": {
+                                                    "code": "500",
+                                                    "description": "An unknown error occurred.\n"
                                                 }
                                             },
                                             "protocols": [
@@ -1039,9 +1189,6 @@
                                     "displayName": "/sent{mediaTypeExtension}",
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
-                                            "securedBy": {
-                                                "calculated": true
-                                            },
                                             "displayName": {
                                                 "calculated": true
                                             }
@@ -1092,6 +1239,30 @@
                                                             "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"success\" : {\r\n      \"type\" : \"boolean\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"updates\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"id\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"created_at\" : {\r\n              \"type\" : \"number\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"day\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"due_at\" : {\r\n              \"type\" : \"number\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"due_time\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"profile_id\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"profile_service\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"status\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"text\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"text_formatted\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"user_id\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"via\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            }\r\n          }\r\n        }\r\n      \r\n    }\r\n  }\r\n}"
                                                         }
                                                     }
+                                                },
+                                                "400": {
+                                                    "code": "400",
+                                                    "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                                },
+                                                "403": {
+                                                    "code": "403",
+                                                    "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                                },
+                                                "404": {
+                                                    "code": "404",
+                                                    "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                                },
+                                                "405": {
+                                                    "code": "405",
+                                                    "description": "405  Method not allowed.\n"
+                                                },
+                                                "406": {
+                                                    "code": "406",
+                                                    "description": "1005  Unsupported response format.\n"
+                                                },
+                                                "500": {
+                                                    "code": "500",
+                                                    "description": "An unknown error occurred."
                                                 }
                                             },
                                             "body": {
@@ -1187,9 +1358,6 @@
                                     "displayName": "/reorder{mediaTypeExtension}",
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
-                                            "securedBy": {
-                                                "calculated": true
-                                            },
                                             "displayName": {
                                                 "calculated": true
                                             }
@@ -1240,6 +1408,30 @@
                                                             "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"success\" : {\r\n      \"type\" : \"boolean\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"updates\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"id\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"created_at\" : {\r\n              \"type\" : \"number\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"day\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"due_at\" : {\r\n              \"type\" : \"number\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"due_time\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"profile_id\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"profile_service\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"status\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"text\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"text_formatted\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"user_id\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"via\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            }\r\n          }\r\n        }\r\n      \r\n    }\r\n  }\r\n}"
                                                         }
                                                     }
+                                                },
+                                                "400": {
+                                                    "code": "400",
+                                                    "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                                },
+                                                "403": {
+                                                    "code": "403",
+                                                    "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                                },
+                                                "404": {
+                                                    "code": "404",
+                                                    "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                                },
+                                                "405": {
+                                                    "code": "405",
+                                                    "description": "405  Method not allowed.\n"
+                                                },
+                                                "406": {
+                                                    "code": "406",
+                                                    "description": "1005  Unsupported response format.\n"
+                                                },
+                                                "500": {
+                                                    "code": "500",
+                                                    "description": "An unknown error occurred."
                                                 }
                                             },
                                             "body": {
@@ -1314,9 +1506,6 @@
                                     "displayName": "/shuffle{mediaTypeExtension}",
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
-                                            "securedBy": {
-                                                "calculated": true
-                                            },
                                             "displayName": {
                                                 "calculated": true
                                             }
@@ -1445,6 +1634,30 @@
                                             "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"id\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"created_at\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"day\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"due_at\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"due_time\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"profile_id\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"profile_service\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"sent_at\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"service_update_id\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"statistics\" : {\r\n      \"type\" : \"object\" ,\r\n      \"required\" : false ,\r\n      \"properties\" : {\r\n        \"reach\" : {\r\n          \"type\" : \"number\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"clicks\" : {\r\n          \"type\" : \"number\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"retweets\" : {\r\n          \"type\" : \"number\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"favorites\" : {\r\n          \"type\" : \"number\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"mentions\" : {\r\n          \"type\" : \"number\" ,\r\n          \"required\" : false\r\n        }\r\n      }\r\n    } ,\r\n    \"status\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"text\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"text_formatted\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"user_id\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"via\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    }\r\n  }\r\n}"
                                         }
                                     }
+                                },
+                                "400": {
+                                    "code": "400",
+                                    "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                },
+                                "403": {
+                                    "code": "403",
+                                    "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                },
+                                "405": {
+                                    "code": "405",
+                                    "description": "405  Method not allowed.\n"
+                                },
+                                "406": {
+                                    "code": "406",
+                                    "description": "1005  Unsupported response format.\n"
+                                },
+                                "500": {
+                                    "code": "500",
+                                    "description": "An unknown error occurred.\n"
                                 }
                             },
                             "protocols": [
@@ -1470,9 +1683,6 @@
                     "displayName": "/{id}{mediaTypeExtension}",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
-                            "securedBy": {
-                                "calculated": true
-                            },
                             "displayName": {
                                 "calculated": true
                             }
@@ -1555,6 +1765,30 @@
                                                     "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"total\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"interactions\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"_id\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"created_at\" : {\r\n              \"type\" : \"number\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"event\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"id\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"interaction_id\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"user\" : {\r\n              \"type\" : \"object\" ,\r\n              \"required\" : false ,\r\n              \"properties\" : {\r\n                \"username\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                } ,\r\n                \"followers\" : {\r\n                  \"type\" : \"number\" ,\r\n                  \"required\" : false\r\n                } ,\r\n                \"avatar\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                } ,\r\n                \"avatar_https\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                } ,\r\n                \"twitter_id\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                }\r\n              }\r\n            }\r\n          }\r\n        }\r\n      \r\n    }\r\n  }\r\n}"
                                                 }
                                             }
+                                        },
+                                        "400": {
+                                            "code": "400",
+                                            "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                        },
+                                        "403": {
+                                            "code": "403",
+                                            "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                        },
+                                        "404": {
+                                            "code": "404",
+                                            "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                        },
+                                        "405": {
+                                            "code": "405",
+                                            "description": "405  Method not allowed.\n"
+                                        },
+                                        "406": {
+                                            "code": "406",
+                                            "description": "1005  Unsupported response format.\n"
+                                        },
+                                        "500": {
+                                            "code": "500",
+                                            "description": "An unknown error occurred.\n"
                                         }
                                     },
                                     "protocols": [
@@ -1645,9 +1879,6 @@
                             "displayName": "/interactions{mediaTypeExtension}",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -1698,6 +1929,30 @@
                                                     "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"success\" : {\r\n      \"type\" : \"boolean\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"buffer_count\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"buffer_percentage\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"update\" : {\r\n      \"type\" : \"object\" ,\r\n      \"required\" : false ,\r\n      \"properties\" : {\r\n        \"id\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"client_id\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"created_at\" : {\r\n          \"type\" : \"number\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"day\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"due_at\" : {\r\n          \"type\" : \"number\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"due_time\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"media\" : {\r\n          \"type\" : \"object\" ,\r\n          \"required\" : false ,\r\n          \"properties\" : {\r\n            \"link\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"title\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"description\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            }\r\n          }\r\n        } ,\r\n        \"profile_id\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"profile_service\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"status\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"text\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"text_formatted\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"user_id\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"via\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        }\r\n      }\r\n    }\r\n  }\r\n}"
                                                 }
                                             }
+                                        },
+                                        "400": {
+                                            "code": "400",
+                                            "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                        },
+                                        "403": {
+                                            "code": "403",
+                                            "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                        },
+                                        "404": {
+                                            "code": "404",
+                                            "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                        },
+                                        "405": {
+                                            "code": "405",
+                                            "description": "405  Method not allowed.\n"
+                                        },
+                                        "406": {
+                                            "code": "406",
+                                            "description": "1005  Unsupported response format.\n"
+                                        },
+                                        "500": {
+                                            "code": "500",
+                                            "description": "An unknown error occurred."
                                         }
                                     },
                                     "body": {
@@ -1841,9 +2096,6 @@
                             "displayName": "/update{mediaTypeExtension}",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -1894,6 +2146,30 @@
                                                     "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"success\" : {\r\n      \"type\" : \"boolean\" ,\r\n      \"required\" : false\r\n    }\r\n  }\r\n}"
                                                 }
                                             }
+                                        },
+                                        "400": {
+                                            "code": "400",
+                                            "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                        },
+                                        "403": {
+                                            "code": "403",
+                                            "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                        },
+                                        "404": {
+                                            "code": "404",
+                                            "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                        },
+                                        "405": {
+                                            "code": "405",
+                                            "description": "405  Method not allowed.\n"
+                                        },
+                                        "406": {
+                                            "code": "406",
+                                            "description": "1005  Unsupported response format.\n"
+                                        },
+                                        "500": {
+                                            "code": "500",
+                                            "description": "An unknown error occurred."
                                         }
                                     },
                                     "protocols": [
@@ -1919,9 +2195,6 @@
                             "displayName": "/share{mediaTypeExtension}",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -1972,6 +2245,30 @@
                                                     "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"success\" : {\r\n      \"type\" : \"boolean\" ,\r\n      \"required\" : false\r\n    }\r\n  }\r\n}"
                                                 }
                                             }
+                                        },
+                                        "400": {
+                                            "code": "400",
+                                            "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                        },
+                                        "403": {
+                                            "code": "403",
+                                            "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                        },
+                                        "404": {
+                                            "code": "404",
+                                            "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                        },
+                                        "405": {
+                                            "code": "405",
+                                            "description": "405  Method not allowed.\n"
+                                        },
+                                        "406": {
+                                            "code": "406",
+                                            "description": "1005  Unsupported response format.\n"
+                                        },
+                                        "500": {
+                                            "code": "500",
+                                            "description": "An unknown error occurred."
                                         }
                                     },
                                     "protocols": [
@@ -1997,9 +2294,6 @@
                             "displayName": "/destroy{mediaTypeExtension}",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -2050,6 +2344,30 @@
                                                     "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"id\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"created_at\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"day\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"due_at\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"due_time\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"profile_id\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"profile_service\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"sent_at\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"service_update_id\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"statistics\" : {\r\n      \"type\" : \"object\" ,\r\n      \"required\" : false ,\r\n      \"properties\" : {\r\n        \"reach\" : {\r\n          \"type\" : \"number\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"clicks\" : {\r\n          \"type\" : \"number\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"retweets\" : {\r\n          \"type\" : \"number\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"favorites\" : {\r\n          \"type\" : \"number\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"mentions\" : {\r\n          \"type\" : \"number\" ,\r\n          \"required\" : false\r\n        }\r\n      }\r\n    } ,\r\n    \"status\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"text\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"text_formatted\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"user_id\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"via\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    }\r\n  }\r\n}"
                                                 }
                                             }
+                                        },
+                                        "400": {
+                                            "code": "400",
+                                            "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                        },
+                                        "403": {
+                                            "code": "403",
+                                            "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                        },
+                                        "404": {
+                                            "code": "404",
+                                            "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                        },
+                                        "405": {
+                                            "code": "405",
+                                            "description": "405  Method not allowed.\n"
+                                        },
+                                        "406": {
+                                            "code": "406",
+                                            "description": "1005  Unsupported response format.\n"
+                                        },
+                                        "500": {
+                                            "code": "500",
+                                            "description": "An unknown error occurred."
                                         }
                                     },
                                     "protocols": [
@@ -2075,9 +2393,6 @@
                             "displayName": "/move_to_top{mediaTypeExtension}",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -2144,6 +2459,30 @@
                                             "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"success\" : {\r\n      \"type\" : \"boolean\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"buffer_count\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"buffer_percentage\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"updates\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"id\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"created_at\" : {\r\n              \"type\" : \"number\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"day\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"due_at\" : {\r\n              \"type\" : \"number\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"due_time\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"media\" : {\r\n              \"type\" : \"object\" ,\r\n              \"required\" : false ,\r\n              \"properties\" : {\r\n                \"link\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                } ,\r\n                \"title\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                } ,\r\n                \"description\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                }\r\n              }\r\n            } ,\r\n            \"profile_id\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"profile_service\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"status\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"text\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"text_formatted\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"user_id\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"via\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            }\r\n          }\r\n        }\r\n      \r\n    }\r\n  }\r\n}"
                                         }
                                     }
+                                },
+                                "400": {
+                                    "code": "400",
+                                    "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                },
+                                "403": {
+                                    "code": "403",
+                                    "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                },
+                                "405": {
+                                    "code": "405",
+                                    "description": "405  Method not allowed.\n"
+                                },
+                                "406": {
+                                    "code": "406",
+                                    "description": "1005  Unsupported response format.\n"
+                                },
+                                "500": {
+                                    "code": "500",
+                                    "description": "An unknown error occurred."
                                 }
                             },
                             "body": {
@@ -2350,9 +2689,6 @@
                     "displayName": "/create{mediaTypeExtension}",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
-                            "securedBy": {
-                                "calculated": true
-                            },
                             "displayName": {
                                 "calculated": true
                             }
@@ -2419,6 +2755,30 @@
                                     "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"shares\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    }\r\n  }\r\n}"
                                 }
                             }
+                        },
+                        "400": {
+                            "code": "400",
+                            "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                        },
+                        "403": {
+                            "code": "403",
+                            "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                        },
+                        "404": {
+                            "code": "404",
+                            "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                        },
+                        "405": {
+                            "code": "405",
+                            "description": "405  Method not allowed.\n"
+                        },
+                        "406": {
+                            "code": "406",
+                            "description": "1005  Unsupported response format.\n"
+                        },
+                        "500": {
+                            "code": "500",
+                            "description": "An unknown error occurred.\n"
                         }
                     },
                     "protocols": [
@@ -2468,9 +2828,6 @@
             "displayName": "/links/shares{mediaTypeExtension}",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }
@@ -2522,6 +2879,30 @@
                                     "schemaContent": "{\n  \"type\": \"object\",\n  \"required\": true,\n  \"$schema\": \"http://json-schema.org/draft-03/schema\",\n  \"properties\": {\n    \"services\": {\n      \"type\": \"object\",\n      \"required\": false,\n      \"properties\": {\n        \"twitter\": {\n          \"type\": \"object\",\n          \"required\": false,\n          \"properties\": {\n            \"types\": {\n              \"type\": \"object\",\n              \"required\": false,\n              \"properties\": {\n                \"profile\": {\n                  \"type\": \"object\",\n                  \"required\": false,\n                  \"properties\": {\n                    \"name\": {\n                      \"type\": \"string\",\n                      \"required\": false\n                    },\n                    \"character_limit\": {\n                      \"type\": \"number\",\n                      \"required\": false\n                    },\n                    \"schedule_limit\": {\n                      \"type\": \"number\",\n                      \"required\": false\n                    },\n                    \"icons\": {\n                      \"type\": \"object\",\n                      \"required\": false,\n                      \"properties\": {\n                        \"16\": {\n                          \"type\": \"string\",\n                          \"required\": false\n                        },\n                        \"32\": {\n                          \"type\": \"string\",\n                          \"required\": false\n                        },\n                        \"64\": {\n                          \"type\": \"string\",\n                          \"required\": false\n                        }\n                      }\n                    },\n                    \"supported_interactions\": {\n                      \"type\": \"array\",\n                      \"required\": false,\n                      \"items\": {\n                        \"type\": \"array\",\n                        \"items\": {\n                          \"type\": \"string\"\n                        }\n                      }\n                    }\n                  }\n                }\n              }\n            },\n            \"urls\": {\n              \"type\": \"object\",\n              \"required\": false,\n              \"properties\": {\n                \"user\": {\n                  \"type\": \"string\",\n                  \"required\": false\n                },\n                \"hashtag\": {\n                  \"type\": \"string\",\n                  \"required\": false\n                },\n                \"cashtag\": {\n                  \"type\": \"string\",\n                  \"required\": false\n                }\n              }\n            }\n          }\n        },\n        \"facebook\": {\n          \"type\": \"object\",\n          \"required\": false,\n          \"properties\": {\n            \"types\": {\n              \"type\": \"object\",\n              \"required\": false,\n              \"properties\": {\n                \"profile\": {\n                  \"type\": \"object\",\n                  \"required\": false,\n                  \"properties\": {\n                    \"name\": {\n                      \"type\": \"string\",\n                      \"required\": false\n                    },\n                    \"character_limit\": {\n                      \"type\": \"number\",\n                      \"required\": false\n                    },\n                    \"schedule_limit\": {\n                      \"type\": \"number\",\n                      \"required\": false\n                    },\n                    \"icons\": {\n                      \"type\": \"object\",\n                      \"required\": false,\n                      \"properties\": {\n                        \"16\": {\n                          \"type\": \"string\",\n                          \"required\": false\n                        },\n                        \"32\": {\n                          \"type\": \"string\",\n                          \"required\": false\n                        },\n                        \"64\": {\n                          \"type\": \"string\",\n                          \"required\": false\n                        }\n                      }\n                    },\n                    \"supported_interactions\": {\n                      \"type\": \"array\",\n                      \"required\": false,\n                      \"items\": {\n                        \"type\": \"array\",\n                        \"items\": {\n                          \"type\": \"string\"\n                        }\n                      }\n                    }\n                  }\n                },\n                \"page\": {\n                  \"type\": \"object\",\n                  \"required\": false,\n                  \"properties\": {\n                    \"name\": {\n                      \"type\": \"string\",\n                      \"required\": false\n                    },\n                    \"character_limit\": {\n                      \"type\": \"number\",\n                      \"required\": false\n                    },\n                    \"schedule_limit\": {\n                      \"type\": \"number\",\n                      \"required\": false\n                    },\n                    \"icons\": {\n                      \"type\": \"object\",\n                      \"required\": false,\n                      \"properties\": {\n                        \"16\": {\n                          \"type\": \"string\",\n                          \"required\": false\n                        },\n                        \"32\": {\n                          \"type\": \"string\",\n                          \"required\": false\n                        },\n                        \"64\": {\n                          \"type\": \"string\",\n                          \"required\": false\n                        }\n                      }\n                    },\n                    \"supported_interactions\": {\n                      \"type\": \"array\",\n                      \"required\": false,\n                      \"items\": {\n                        \"type\": \"array\",\n                        \"items\": {\n                          \"type\": \"string\"\n                        }\n                      }\n                    }\n                  }\n                }\n              }\n            },\n            \"urls\": {\n              \"type\": \"object\",\n              \"required\": false,\n              \"properties\": {\n                \"user\": {\n                  \"type\": \"string\",\n                  \"required\": false\n                }\n              }\n            }\n          }\n        },\n        \"linkedin\": {\n          \"type\": \"object\",\n          \"required\": false,\n          \"properties\": {\n            \"types\": {\n              \"type\": \"object\",\n              \"required\": false,\n              \"properties\": {\n                \"profile\": {\n                  \"type\": \"object\",\n                  \"required\": false,\n                  \"properties\": {\n                    \"name\": {\n                      \"type\": \"string\",\n                      \"required\": false\n                    },\n                    \"character_limit\": {\n                      \"type\": \"number\",\n                      \"required\": false\n                    },\n                    \"schedule_limit\": {\n                      \"type\": \"number\",\n                      \"required\": false\n                    },\n                    \"icons\": {\n                      \"type\": \"object\",\n                      \"required\": false,\n                      \"properties\": {\n                        \"16\": {\n                          \"type\": \"string\",\n                          \"required\": false\n                        },\n                        \"32\": {\n                          \"type\": \"string\",\n                          \"required\": false\n                        },\n                        \"64\": {\n                          \"type\": \"string\",\n                          \"required\": false\n                        }\n                      }\n                    },\n                    \"supported_interactions\": {\n                      \"type\": \"array\",\n                      \"required\": false,\n                      \"items\": {\n                        \"type\": \"array\",\n                        \"items\": {\n                          \"type\": \"string\"\n                        }\n                      }\n                    }\n                  }\n                },\n                \"group\": {\n                  \"type\": \"object\",\n                  \"required\": false,\n                  \"properties\": {\n                    \"name\": {\n                      \"type\": \"string\",\n                      \"required\": false\n                    },\n                    \"character_limit\": {\n                      \"type\": \"number\",\n                      \"required\": false\n                    },\n                    \"schedule_limit\": {\n                      \"type\": \"number\",\n                      \"required\": false\n                    },\n                    \"icons\": {\n                      \"type\": \"object\",\n                      \"required\": false,\n                      \"properties\": {\n                        \"16\": {\n                          \"type\": \"string\",\n                          \"required\": false\n                        },\n                        \"32\": {\n                          \"type\": \"string\",\n                          \"required\": false\n                        },\n                        \"64\": {\n                          \"type\": \"string\",\n                          \"required\": false\n                        }\n                      }\n                    },\n                    \"supported_interactions\": {\n                      \"type\": \"array\",\n                      \"required\": false,\n                      \"items\": {\n                        \"type\": \"array\",\n                        \"items\": {\n                          \"type\": \"string\"\n                        }\n                      }\n                    }\n                  }\n                }\n              }\n            },\n            \"urls\": {\n              \"type\": \"object\",\n              \"required\": false,\n              \"properties\": {\n                \"user\": {\n                  \"type\": \"string\",\n                  \"required\": false\n                }\n              }\n            }\n          }\n        },\n        \"appdotnet\": {\n          \"type\": \"object\",\n          \"required\": false,\n          \"properties\": {\n            \"types\": {\n              \"type\": \"object\",\n              \"required\": false,\n              \"properties\": {\n                \"profile\": {\n                  \"type\": \"object\",\n                  \"required\": false,\n                  \"properties\": {\n                    \"name\": {\n                      \"type\": \"string\",\n                      \"required\": false\n                    },\n                    \"character_limit\": {\n                      \"type\": \"number\",\n                      \"required\": false\n                    },\n                    \"schedule_limit\": {\n                      \"type\": \"number\",\n                      \"required\": false\n                    },\n                    \"icons\": {\n                      \"type\": \"object\",\n                      \"required\": false,\n                      \"properties\": {\n                        \"16\": {\n                          \"type\": \"string\",\n                          \"required\": false\n                        },\n                        \"32\": {\n                          \"type\": \"string\",\n                          \"required\": false\n                        },\n                        \"64\": {\n                          \"type\": \"string\",\n                          \"required\": false\n                        }\n                      }\n                    },\n                    \"supported_interactions\": {\n                      \"type\": \"array\",\n                      \"required\": false,\n                      \"items\": {\n                        \"type\": \"array\"\n                      }\n                    }\n                  }\n                }\n              }\n            },\n            \"urls\": {\n              \"type\": \"object\",\n              \"required\": false,\n              \"properties\": {\n                \"user\": {\n                  \"type\": \"string\",\n                  \"required\": false\n                },\n                \"hashtag\": {\n                  \"type\": \"string\",\n                  \"required\": false\n                }\n              }\n            }\n          }\n        }\n      }\n    },\n    \"media\": {\n      \"type\": \"object\",\n      \"required\": false,\n      \"properties\": {\n        \"picture_size_min\": {\n          \"type\": \"number\",\n          \"required\": false\n        },\n        \"picture_size_max\": {\n          \"type\": \"number\",\n          \"required\": false\n        },\n        \"picture_filetypes\": {\n          \"type\": \"array\",\n          \"required\": false,\n          \"items\": {\n            \"type\": \"array\",\n            \"items\": {\n              \"type\": \"string\"\n            }\n          }\n        }\n      }\n    }\n  }\n}"
                                 }
                             }
+                        },
+                        "400": {
+                            "code": "400",
+                            "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                        },
+                        "403": {
+                            "code": "403",
+                            "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                        },
+                        "404": {
+                            "code": "404",
+                            "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                        },
+                        "405": {
+                            "code": "405",
+                            "description": "405  Method not allowed.\n"
+                        },
+                        "406": {
+                            "code": "406",
+                            "description": "1005  Unsupported response format.\n"
+                        },
+                        "500": {
+                            "code": "500",
+                            "description": "An unknown error occurred.\n"
                         }
                     },
                     "protocols": [
@@ -2547,9 +2928,6 @@
             "displayName": "/info/configuration{mediaTypeExtension}",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }

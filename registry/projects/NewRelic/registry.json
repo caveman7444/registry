@@ -1,7 +1,33 @@
-{"apis": [{
-    "name": "NewRelic",
-    "RAMLVersion": "0.8",
-    "location": "https://raw.githubusercontent.com/raml-apis/NewRelic/production/newRelic.raml",
-    "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/NewRelic/production/newRelic.json",
-    "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/NewRelic/logo.png"
-}]}
+{"apis": {
+    "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/NewRelic/logo.png",
+    "RAMLFiles": [{
+        "name": "NewRelic",
+        "description": "descriptionexamle",
+        "RAMLVersion": "0.8",
+        "location": "https://raw.githubusercontent.com/raml-apis/NewRelic/production/newRelic.raml",
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/NewRelic/production/newRelic.json",
+        "baseUri": "https://api.newrelic.com/{version}",
+        "version": "v2",
+        "securitySchemes": [{"x-Api-Key": {
+            "name": "x-Api-Key",
+            "type": "x-Api-Key",
+            "describedBy": {"headers": {"X-Api-Key": {
+                "name": "X-Api-Key",
+                "displayName": "API Key",
+                "type": "string",
+                "required": false,
+                "example": "apikey",
+                "repeat": false,
+                "description": "API authentication header",
+                "__METADATA__": {"primitiveValuesMeta": {
+                    "type": {"insertedAsDefault": true},
+                    "required": {"insertedAsDefault": true},
+                    "repeat": {"insertedAsDefault": true}
+                }}
+            }}}
+        }}],
+        "resourcesCount": 40,
+        "methodsCount": 29,
+        "developerPortalURI": "http://docs.newrelic.com/docs/apis/getting-started-with-the-new-relic-rest-api"
+    }]
+}}

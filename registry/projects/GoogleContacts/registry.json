@@ -1,7 +1,77 @@
-{"apis": [{
-    "name": "Google Contacts API",
-    "RAMLVersion": "0.8",
-    "location": "https://raw.githubusercontent.com/raml-apis/GoogleContacts/production/gc.raml",
-    "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GoogleContacts/production/gc.json",
-    "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GoogleContacts/logo.png"
-}]}
+{"apis": {
+    "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GoogleContacts/logo.png",
+    "RAMLFiles": [{
+        "name": "Google Contacts API",
+        "description": "descriptionexamle",
+        "RAMLVersion": "0.8",
+        "location": "https://raw.githubusercontent.com/raml-apis/GoogleContacts/production/gc.raml",
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GoogleContacts/production/gc.json",
+        "baseUri": "https://www.google.com/m8/feeds",
+        "version": "v3",
+        "securitySchemes": [
+            {"oauth_2_0": {
+                "name": "oauth_2_0",
+                "type": "OAuth 2.0",
+                "description": "Google recommend using OAuth 2.0 to authorize requests.\n",
+                "describedBy": {
+                    "responses": {"401": {
+                        "code": "401",
+                        "description": "Authorization error.\n"
+                    }},
+                    "securedBy": [
+                        "oauth_2_0",
+                        "oauth_1_0"
+                    ],
+                    "queryParameters": {"access_token": {
+                        "name": "access_token",
+                        "displayName": "access_token",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Used to send a valid OAuth 2 access token\n",
+                        "__METADATA__": {"primitiveValuesMeta": {
+                            "displayName": {"calculated": true},
+                            "type": {"insertedAsDefault": true},
+                            "required": {"insertedAsDefault": true},
+                            "repeat": {"insertedAsDefault": true}
+                        }}
+                    }},
+                    "headers": {"Authorization": {
+                        "name": "Authorization",
+                        "displayName": "Authorization",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Used to send a valid OAuth 2 access token.\n",
+                        "__METADATA__": {"primitiveValuesMeta": {
+                            "displayName": {"calculated": true},
+                            "type": {"insertedAsDefault": true},
+                            "required": {"insertedAsDefault": true},
+                            "repeat": {"insertedAsDefault": true}
+                        }}
+                    }},
+                    "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
+                },
+                "settings": {
+                    "accessTokenUri": "https://accounts.google.com/o/oauth2/token",
+                    "authorizationUri": "https://accounts.google.com/o/oauth2/auth",
+                    "authorizationGrants": ["code"],
+                    "scopes": ["https://www.google.com/m8/feeds"]
+                }
+            }},
+            {"oauth_1_0": {
+                "name": "oauth_1_0",
+                "type": "OAuth 1.0",
+                "description": "**Important**: OAuth 1.0 has been officially deprecated as of April 20, 2012. It will continue to work as per our deprecation policy,\nbut we encourage you to migrate to OAuth 2.0 as soon as possible.\n",
+                "settings": {
+                    "requestTokenUri": "https://www.google.com/accounts/OAuthGetRequestToken",
+                    "authorizationUri": "https://www.google.com/accounts/OAuthAuthorizeToken",
+                    "tokenCredentialsUri": "https://www.google.com/accounts/OAuthGetAccessToken"
+                }
+            }}
+        ],
+        "resourcesCount": 7,
+        "methodsCount": 15,
+        "developerPortalURI": "https://developers.google.com/google-apps/contacts/v3/"
+    }]
+}}

@@ -1,6 +1,11 @@
-{"apis": [{
+{"apis": {"RAMLFiles": [{
     "name": "MediaWiki",
+    "description": "descriptionexamle",
     "RAMLVersion": "1.0",
     "location": "https://raw.githubusercontent.com/raml-apis/MediaWiki/raml1.0/api.raml",
-    "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/MediaWiki/raml1.0/api.json"
-}]}
+    "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/MediaWiki/raml1.0/api.json",
+    "baseUri": "https://en.wikipedia.org/w/api.php",
+    "version": "v1",
+    "resourcesCount": 1,
+    "methodsCount": 1
+}]}}

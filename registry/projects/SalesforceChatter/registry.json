@@ -1,6 +1,11 @@
-{"apis": [{
+{"apis": {"RAMLFiles": [{
     "name": "Chatter",
+    "description": "descriptionexamle",
     "RAMLVersion": "0.8",
     "location": "https://raw.githubusercontent.com/raml-apis/SalesforceChatter/production/api.raml",
-    "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/SalesforceChatter/production/api.json"
-}]}
+    "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/SalesforceChatter/production/api.json",
+    "baseUri": "https://na1.salesforce.com/services/data/{version}",
+    "version": "v34.0",
+    "resourcesCount": 295,
+    "methodsCount": 639
+}]}}

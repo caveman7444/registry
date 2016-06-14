@@ -653,6 +653,28 @@
                     "securedBy": [
                         "customSchema"
                     ],
+                    "queryParameters": {
+                        "envelope": {
+                            "name": "envelope",
+                            "displayName": "envelope",
+                            "type": "boolean",
+                            "required": false,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "In addition to authenticating this request like other API requests, this request can be made with authentication using \"basic auth\" to pass the user's normal Pivotal Tracker login credentials (their email address or user name plus their password). In this way, client software can use the user's name and password to obtain their API Token, and then use that token to authenticate future API requests made on behalf of that user. Obviously, the user's password should not be stored or otherwise retained.\n",
                     "method": "get",
                     "__METADATA__": {
@@ -893,7 +915,9 @@
                                             "body": {
                                                 "application/json": {
                                                     "name": "application/json",
-                                                    "example": "{\n  \"action\" : \"ownership\" ,\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"id\" : 21 ,\n  \"kind\" : \"notification\" ,\n  \"message\" : \"Wilhuff Tarkin has made you an owner of this story:\" ,\n  \"new_attachment_count\" : 0 ,\n  \"notification_type\" : \"story\" ,\n  \"performer\" : {\n    \"kind\" : \"person\" ,\n    \"id\" : 102 ,\n    \"name\" : \"Wilhuff Tarkin\"\n  } ,\n  \"project\" : {\n    \"kind\" : \"project\" ,\n    \"id\" : 99 ,\n    \"name\" : \"Death Star\"\n  } ,\n  \"read_at\" : \"2014-07-22T12:00:05Z\" ,\n  \"story\" : {\n    \"kind\" : \"story\" ,\n    \"id\" : 558 ,\n    \"name\" : \"All exhaust ports should be shielded\"\n  } ,\n  \"updated_at\" : \"2014-07-22T12:00:05Z\"\n}"
+                                                    "schema": "notification",
+                                                    "example": "{\n  \"action\" : \"ownership\" ,\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"id\" : 21 ,\n  \"kind\" : \"notification\" ,\n  \"message\" : \"Wilhuff Tarkin has made you an owner of this story:\" ,\n  \"new_attachment_count\" : 0 ,\n  \"notification_type\" : \"story\" ,\n  \"performer\" : {\n    \"kind\" : \"person\" ,\n    \"id\" : 102 ,\n    \"name\" : \"Wilhuff Tarkin\"\n  } ,\n  \"project\" : {\n    \"kind\" : \"project\" ,\n    \"id\" : 99 ,\n    \"name\" : \"Death Star\"\n  } ,\n  \"read_at\" : \"2014-07-22T12:00:05Z\" ,\n  \"story\" : {\n    \"kind\" : \"story\" ,\n    \"id\" : 558 ,\n    \"name\" : \"All exhaust ports should be shielded\"\n  } ,\n  \"updated_at\" : \"2014-07-22T12:00:05Z\"\n}",
+                                                    "schemaContent": "notification"
                                                 }
                                             }
                                         }
@@ -950,7 +974,9 @@
                                             "body": {
                                                 "application/json": {
                                                     "name": "application/json",
-                                                    "example": "{\n  \"action\" : \"ownership\" ,\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"id\" : 21 ,\n  \"kind\" : \"notification\" ,\n  \"message\" : \"Wilhuff Tarkin has made you an owner of this story:\" ,\n  \"new_attachment_count\" : 0 ,\n  \"notification_type\" : \"story\" ,\n  \"performer\" : {\n    \"kind\" : \"person\" ,\n    \"id\" : 102 ,\n    \"name\" : \"Wilhuff Tarkin\"\n  } ,\n  \"project\" : {\n    \"kind\" : \"project\" ,\n    \"id\" : 99 ,\n    \"name\" : \"Death Star\"\n  } ,\n  \"read_at\" : \"2014-07-22T12:00:05Z\" ,\n  \"story\" : {\n    \"kind\" : \"story\" ,\n    \"id\" : 558 ,\n    \"name\" : \"All exhaust ports should be shielded\"\n  } ,\n  \"updated_at\" : \"2014-07-22T12:00:05Z\"\n}"
+                                                    "schema": "notification",
+                                                    "example": "{\n  \"action\" : \"ownership\" ,\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"id\" : 21 ,\n  \"kind\" : \"notification\" ,\n  \"message\" : \"Wilhuff Tarkin has made you an owner of this story:\" ,\n  \"new_attachment_count\" : 0 ,\n  \"notification_type\" : \"story\" ,\n  \"performer\" : {\n    \"kind\" : \"person\" ,\n    \"id\" : 102 ,\n    \"name\" : \"Wilhuff Tarkin\"\n  } ,\n  \"project\" : {\n    \"kind\" : \"project\" ,\n    \"id\" : 99 ,\n    \"name\" : \"Death Star\"\n  } ,\n  \"read_at\" : \"2014-07-22T12:00:05Z\" ,\n  \"story\" : {\n    \"kind\" : \"story\" ,\n    \"id\" : 558 ,\n    \"name\" : \"All exhaust ports should be shielded\"\n  } ,\n  \"updated_at\" : \"2014-07-22T12:00:05Z\"\n}",
+                                                    "schemaContent": "notification"
                                                 }
                                             }
                                         }
@@ -961,6 +987,28 @@
                                     "securedBy": [
                                         "customSchema"
                                     ],
+                                    "queryParameters": {
+                                        "envelope": {
+                                            "name": "envelope",
+                                            "displayName": "envelope",
+                                            "type": "boolean",
+                                            "required": false,
+                                            "repeat": false,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Retrieve particular notification",
                                     "method": "get",
                                     "__METADATA__": {
@@ -1014,12 +1062,120 @@
                     ],
                     "methods": [
                         {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "activity_types",
+                                            "example": "[\n  {\n    \"kind\" : \"iteration_update_activity\" ,\n    \"guid\" : \"99_62\" ,\n    \"project_version\" : 62 ,\n    \"message\" : \"Wilhuff Tarkin changed iteration 1s length from default to 2 weeks\" ,\n    \"highlight\" : \"changed\" ,\n    \"changes\" : [\n      {\n        \"kind\" : \"iteration_override\" ,\n        \"change_type\" : \"update\" ,\n        \"number\" : 1 ,\n        \"original_values\" : [\n          1 ,\n          1406030400000 ,\n          1 ,\n          \"default\"\n        ] ,\n        \"new_values\" : [\n          1 ,\n          0.9 ,\n          2 ,\n          1406030405000\n        ]\n      }\n    ] ,\n    \"primary_resources\" : [\n      {\n        \"kind\" : \"iteration_override\" ,\n        \"number\" : 1\n      }\n    ] ,\n    \"project\" : {\n      \"kind\" : \"project\" ,\n      \"id\" : 99 ,\n      \"name\" : \"Death Star\"\n    } ,\n    \"performed_by\" : {\n      \"kind\" : \"person\" ,\n      \"id\" : 102 ,\n      \"name\" : \"Wilhuff Tarkin\" ,\n      \"initials\" : \"WT\"\n    } ,\n    \"occurred_at\" : \"2014-07-22T12:00:10Z\"\n  }\n]",
+                                            "schemaContent": "activity_types"
+                                        }
+                                    }
+                                }
+                            },
                             "protocols": [
                                 "HTTPS"
                             ],
                             "securedBy": [
                                 "customSchema"
                             ],
+                            "queryParameters": {
+                                "occurred_before": {
+                                    "name": "occurred_before",
+                                    "displayName": "occurred_before",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Activity will be returned only for operations that occurred before the time specified by this parameter.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "occurred_after": {
+                                    "name": "occurred_after",
+                                    "displayName": "occurred_after",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Activity will be returned only for operations that occurred after the time specified by this parameter.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "limit": {
+                                    "name": "limit",
+                                    "displayName": "limit",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The number of iterations to return relative to the offset.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "offset": {
+                                    "name": "offset",
+                                    "displayName": "offset",
+                                    "type": "integer",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The offset of first iteration to return, relative to the set of iterations specified by 'scope', with zero being the first iteration in the scope. Defaults to zero. For the 'Done' scope, negative numbers can be passed, which specifies the number of iterations preceding the 'Current' iteration.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Return list of the selected activity for the authenticated person.",
                             "method": "get",
                             "is": [
@@ -1083,6 +1239,28 @@
                             "securedBy": [
                                 "customSchema"
                             ],
+                            "queryParameters": {
+                                "envelope": {
+                                    "name": "envelope",
+                                    "displayName": "envelope",
+                                    "type": "boolean",
+                                    "required": false,
+                                    "repeat": false,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Return list of workspaces for the authenticated person.",
                             "method": "get",
                             "__METADATA__": {
@@ -1103,7 +1281,9 @@
                                     "body": {
                                         "application/json": {
                                             "name": "application/json",
-                                            "example": "{\n  \"id\" : 32 ,\n  \"kind\" : \"workspace\" ,\n  \"name\" : \"executor\" ,\n  \"person_id\" : 101 ,\n  \"project_ids\" : [\n    99 ,\n    98\n  ]\n}"
+                                            "schema": "workspace",
+                                            "example": "{\n  \"id\" : 32 ,\n  \"kind\" : \"workspace\" ,\n  \"name\" : \"executor\" ,\n  \"person_id\" : 101 ,\n  \"project_ids\" : [\n    99 ,\n    98\n  ]\n}",
+                                            "schemaContent": "workspace"
                                         }
                                     }
                                 }
@@ -1181,7 +1361,9 @@
                                             "body": {
                                                 "application/json": {
                                                     "name": "application/json",
-                                                    "example": "{\n  \"id\" : 32 ,\n  \"kind\" : \"workspace\" ,\n  \"name\" : \"executor\" ,\n  \"person_id\" : 101 ,\n  \"project_ids\" : [\n    99 ,\n    98\n  ]\n}"
+                                                    "schema": "workspace",
+                                                    "example": "{\n  \"id\" : 32 ,\n  \"kind\" : \"workspace\" ,\n  \"name\" : \"executor\" ,\n  \"person_id\" : 101 ,\n  \"project_ids\" : [\n    99 ,\n    98\n  ]\n}",
+                                                    "schemaContent": "workspace"
                                                 }
                                             }
                                         }
@@ -1214,6 +1396,11 @@
                                     }
                                 },
                                 {
+                                    "responses": {
+                                        "204": {
+                                            "code": "204"
+                                        }
+                                    },
                                     "protocols": [
                                         "HTTPS"
                                     ],
@@ -1240,7 +1427,9 @@
                                             "body": {
                                                 "application/json": {
                                                     "name": "application/json",
-                                                    "example": "{\n  \"id\" : 32 ,\n  \"kind\" : \"workspace\" ,\n  \"name\" : \"executor\" ,\n  \"person_id\" : 101 ,\n  \"project_ids\" : [\n    99 ,\n    98\n  ]\n}"
+                                                    "schema": "workspace",
+                                                    "example": "{\n  \"id\" : 32 ,\n  \"kind\" : \"workspace\" ,\n  \"name\" : \"executor\" ,\n  \"person_id\" : 101 ,\n  \"project_ids\" : [\n    99 ,\n    98\n  ]\n}",
+                                                    "schemaContent": "workspace"
                                                 }
                                             }
                                         }
@@ -1251,6 +1440,28 @@
                                     "securedBy": [
                                         "customSchema"
                                     ],
+                                    "queryParameters": {
+                                        "envelope": {
+                                            "name": "envelope",
+                                            "displayName": "envelope",
+                                            "type": "boolean",
+                                            "required": false,
+                                            "repeat": false,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Return a workspace for the authenticated person.",
                                     "method": "get",
                                     "__METADATA__": {
@@ -1389,6 +1600,28 @@
                     "securedBy": [
                         "customSchema"
                     ],
+                    "queryParameters": {
+                        "envelope": {
+                            "name": "envelope",
+                            "displayName": "envelope",
+                            "type": "boolean",
+                            "required": false,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "Returns list of notifications for the specified person whose updated_at values are less than the timestamp.",
                     "method": "get",
                     "__METADATA__": {
@@ -1477,6 +1710,26 @@
                                     }
                                 }
                             }
+                        },
+                        "envelope": {
+                            "name": "envelope",
+                            "displayName": "envelope",
+                            "type": "boolean",
+                            "required": false,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
                         }
                     },
                     "description": "Get all of a user's active projects.",
@@ -1499,7 +1752,9 @@
                             "body": {
                                 "application/json": {
                                     "name": "application/json",
-                                    "example": "{\n  \"account_id\" : 100 ,\n  \"atom_enabled\" : true ,\n  \"automatic_planning\" : true ,\n  \"bugs_and_chores_are_estimatable\" : false ,\n  \"created_at\" : \"2014-07-22T12:00:05Z\" ,\n  \"current_iteration_number\" : 15 ,\n  \"description\" : \"Expeditionary Battle Planetoid\" ,\n  \"enable_following\" : true ,\n  \"enable_incoming_emails\" : true ,\n  \"enable_tasks\" : true ,\n  \"has_google_domain\" : false ,\n  \"id\" : 99 ,\n  \"initial_velocity\" : 10 ,\n  \"iteration_length\" : 1 ,\n  \"kind\" : \"project\" ,\n  \"name\" : \"Death Star\" ,\n  \"number_of_done_iterations_to_show\" : 12 ,\n  \"point_scale\" : \"0,1,2,3\" ,\n  \"point_scale_is_custom\" : false ,\n  \"profile_content\" : \"This is a machine of war such as the universe has never known. It's colossal, the size of a class-four moon. And it possesses firepower unequaled in the history of warfare.\" ,\n  \"public\" : false ,\n  \"start_date\" : \"2014-04-07\" ,\n  \"start_time\" : \"2014-07-22T12:00:10Z\" ,\n  \"time_zone\" : {\n    \"kind\" : \"time_zone\" ,\n    \"olson_name\" : \"America/Los_Angeles\" ,\n    \"offset\" : \"-07:00\"\n  } ,\n  \"updated_at\" : \"2014-07-22T12:00:10Z\" ,\n  \"velocity_averaged_over\" : 3 ,\n  \"version\" : 62 ,\n  \"week_start_day\" : \"Monday\"\n}"
+                                    "schema": "project",
+                                    "example": "{\n  \"account_id\" : 100 ,\n  \"atom_enabled\" : true ,\n  \"automatic_planning\" : true ,\n  \"bugs_and_chores_are_estimatable\" : false ,\n  \"created_at\" : \"2014-07-22T12:00:05Z\" ,\n  \"current_iteration_number\" : 15 ,\n  \"description\" : \"Expeditionary Battle Planetoid\" ,\n  \"enable_following\" : true ,\n  \"enable_incoming_emails\" : true ,\n  \"enable_tasks\" : true ,\n  \"has_google_domain\" : false ,\n  \"id\" : 99 ,\n  \"initial_velocity\" : 10 ,\n  \"iteration_length\" : 1 ,\n  \"kind\" : \"project\" ,\n  \"name\" : \"Death Star\" ,\n  \"number_of_done_iterations_to_show\" : 12 ,\n  \"point_scale\" : \"0,1,2,3\" ,\n  \"point_scale_is_custom\" : false ,\n  \"profile_content\" : \"This is a machine of war such as the universe has never known. It's colossal, the size of a class-four moon. And it possesses firepower unequaled in the history of warfare.\" ,\n  \"public\" : false ,\n  \"start_date\" : \"2014-04-07\" ,\n  \"start_time\" : \"2014-07-22T12:00:10Z\" ,\n  \"time_zone\" : {\n    \"kind\" : \"time_zone\" ,\n    \"olson_name\" : \"America/Los_Angeles\" ,\n    \"offset\" : \"-07:00\"\n  } ,\n  \"updated_at\" : \"2014-07-22T12:00:10Z\" ,\n  \"velocity_averaged_over\" : 3 ,\n  \"version\" : 62 ,\n  \"week_start_day\" : \"Monday\"\n}",
+                                    "schemaContent": "project"
                                 }
                             }
                         }
@@ -1577,7 +1832,9 @@
                                     "body": {
                                         "application/json": {
                                             "name": "application/json",
-                                            "example": "{\n  \"account_id\" : 100 ,\n  \"atom_enabled\" : true ,\n  \"automatic_planning\" : true ,\n  \"bugs_and_chores_are_estimatable\" : false ,\n  \"created_at\" : \"2014-07-22T12:00:05Z\" ,\n  \"current_iteration_number\" : 15 ,\n  \"description\" : \"Expeditionary Battle Planetoid\" ,\n  \"enable_following\" : true ,\n  \"enable_incoming_emails\" : true ,\n  \"enable_tasks\" : true ,\n  \"has_google_domain\" : false ,\n  \"id\" : 99 ,\n  \"initial_velocity\" : 10 ,\n  \"iteration_length\" : 1 ,\n  \"kind\" : \"project\" ,\n  \"name\" : \"Death Star\" ,\n  \"number_of_done_iterations_to_show\" : 12 ,\n  \"point_scale\" : \"0,1,2,3\" ,\n  \"point_scale_is_custom\" : false ,\n  \"profile_content\" : \"This is a machine of war such as the universe has never known. It's colossal, the size of a class-four moon. And it possesses firepower unequaled in the history of warfare.\" ,\n  \"public\" : false ,\n  \"start_date\" : \"2014-04-07\" ,\n  \"start_time\" : \"2014-07-22T12:00:10Z\" ,\n  \"time_zone\" : {\n    \"kind\" : \"time_zone\" ,\n    \"olson_name\" : \"America/Los_Angeles\" ,\n    \"offset\" : \"-07:00\"\n  } ,\n  \"updated_at\" : \"2014-07-22T12:00:10Z\" ,\n  \"velocity_averaged_over\" : 3 ,\n  \"version\" : 62 ,\n  \"week_start_day\" : \"Monday\"\n}"
+                                            "schema": "project",
+                                            "example": "{\n  \"account_id\" : 100 ,\n  \"atom_enabled\" : true ,\n  \"automatic_planning\" : true ,\n  \"bugs_and_chores_are_estimatable\" : false ,\n  \"created_at\" : \"2014-07-22T12:00:05Z\" ,\n  \"current_iteration_number\" : 15 ,\n  \"description\" : \"Expeditionary Battle Planetoid\" ,\n  \"enable_following\" : true ,\n  \"enable_incoming_emails\" : true ,\n  \"enable_tasks\" : true ,\n  \"has_google_domain\" : false ,\n  \"id\" : 99 ,\n  \"initial_velocity\" : 10 ,\n  \"iteration_length\" : 1 ,\n  \"kind\" : \"project\" ,\n  \"name\" : \"Death Star\" ,\n  \"number_of_done_iterations_to_show\" : 12 ,\n  \"point_scale\" : \"0,1,2,3\" ,\n  \"point_scale_is_custom\" : false ,\n  \"profile_content\" : \"This is a machine of war such as the universe has never known. It's colossal, the size of a class-four moon. And it possesses firepower unequaled in the history of warfare.\" ,\n  \"public\" : false ,\n  \"start_date\" : \"2014-04-07\" ,\n  \"start_time\" : \"2014-07-22T12:00:10Z\" ,\n  \"time_zone\" : {\n    \"kind\" : \"time_zone\" ,\n    \"olson_name\" : \"America/Los_Angeles\" ,\n    \"offset\" : \"-07:00\"\n  } ,\n  \"updated_at\" : \"2014-07-22T12:00:10Z\" ,\n  \"velocity_averaged_over\" : 3 ,\n  \"version\" : 62 ,\n  \"week_start_day\" : \"Monday\"\n}",
+                                            "schemaContent": "project"
                                         }
                                     }
                                 }
@@ -1588,6 +1845,28 @@
                             "securedBy": [
                                 "customSchema"
                             ],
+                            "queryParameters": {
+                                "envelope": {
+                                    "name": "envelope",
+                                    "displayName": "envelope",
+                                    "type": "boolean",
+                                    "required": false,
+                                    "repeat": false,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Fetch the content of the specified project.",
                             "method": "get",
                             "__METADATA__": {
@@ -1608,7 +1887,9 @@
                                     "body": {
                                         "application/json": {
                                             "name": "application/json",
-                                            "example": "{\n  \"account_id\" : 100 ,\n  \"atom_enabled\" : true ,\n  \"automatic_planning\" : true ,\n  \"bugs_and_chores_are_estimatable\" : false ,\n  \"created_at\" : \"2014-07-22T12:00:05Z\" ,\n  \"current_iteration_number\" : 15 ,\n  \"description\" : \"Expeditionary Battle Planetoid\" ,\n  \"enable_following\" : true ,\n  \"enable_incoming_emails\" : true ,\n  \"enable_tasks\" : true ,\n  \"has_google_domain\" : false ,\n  \"id\" : 99 ,\n  \"initial_velocity\" : 10 ,\n  \"iteration_length\" : 1 ,\n  \"kind\" : \"project\" ,\n  \"name\" : \"Death Star\" ,\n  \"number_of_done_iterations_to_show\" : 12 ,\n  \"point_scale\" : \"0,1,2,3\" ,\n  \"point_scale_is_custom\" : false ,\n  \"profile_content\" : \"This is a machine of war such as the universe has never known. It's colossal, the size of a class-four moon. And it possesses firepower unequaled in the history of warfare.\" ,\n  \"public\" : false ,\n  \"start_date\" : \"2014-04-07\" ,\n  \"start_time\" : \"2014-07-22T12:00:10Z\" ,\n  \"time_zone\" : {\n    \"kind\" : \"time_zone\" ,\n    \"olson_name\" : \"America/Los_Angeles\" ,\n    \"offset\" : \"-07:00\"\n  } ,\n  \"updated_at\" : \"2014-07-22T12:00:10Z\" ,\n  \"velocity_averaged_over\" : 3 ,\n  \"version\" : 62 ,\n  \"week_start_day\" : \"Monday\"\n}"
+                                            "schema": "project",
+                                            "example": "{\n  \"account_id\" : 100 ,\n  \"atom_enabled\" : true ,\n  \"automatic_planning\" : true ,\n  \"bugs_and_chores_are_estimatable\" : false ,\n  \"created_at\" : \"2014-07-22T12:00:05Z\" ,\n  \"current_iteration_number\" : 15 ,\n  \"description\" : \"Expeditionary Battle Planetoid\" ,\n  \"enable_following\" : true ,\n  \"enable_incoming_emails\" : true ,\n  \"enable_tasks\" : true ,\n  \"has_google_domain\" : false ,\n  \"id\" : 99 ,\n  \"initial_velocity\" : 10 ,\n  \"iteration_length\" : 1 ,\n  \"kind\" : \"project\" ,\n  \"name\" : \"Death Star\" ,\n  \"number_of_done_iterations_to_show\" : 12 ,\n  \"point_scale\" : \"0,1,2,3\" ,\n  \"point_scale_is_custom\" : false ,\n  \"profile_content\" : \"This is a machine of war such as the universe has never known. It's colossal, the size of a class-four moon. And it possesses firepower unequaled in the history of warfare.\" ,\n  \"public\" : false ,\n  \"start_date\" : \"2014-04-07\" ,\n  \"start_time\" : \"2014-07-22T12:00:10Z\" ,\n  \"time_zone\" : {\n    \"kind\" : \"time_zone\" ,\n    \"olson_name\" : \"America/Los_Angeles\" ,\n    \"offset\" : \"-07:00\"\n  } ,\n  \"updated_at\" : \"2014-07-22T12:00:10Z\" ,\n  \"velocity_averaged_over\" : 3 ,\n  \"version\" : 62 ,\n  \"week_start_day\" : \"Monday\"\n}",
+                                            "schemaContent": "project"
                                         }
                                     }
                                 }
@@ -1641,6 +1922,11 @@
                             }
                         },
                         {
+                            "responses": {
+                                "204": {
+                                    "code": "204"
+                                }
+                            },
                             "protocols": [
                                 "HTTPS"
                             ],
@@ -1723,6 +2009,71 @@
                                                     }
                                                 }
                                             }
+                                        },
+                                        "envelope": {
+                                            "name": "envelope",
+                                            "displayName": "envelope",
+                                            "type": "boolean",
+                                            "required": false,
+                                            "repeat": false,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "limit": {
+                                            "name": "limit",
+                                            "displayName": "limit",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "The number of iterations to return relative to the offset.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "offset": {
+                                            "name": "offset",
+                                            "displayName": "offset",
+                                            "type": "integer",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "The offset of first iteration to return, relative to the set of iterations specified by 'scope', with zero being the first iteration in the scope. Defaults to zero. For the 'Done' scope, negative numbers can be passed, which specifies the number of iterations preceding the 'Current' iteration.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
                                         }
                                     },
                                     "description": "Return a set of iterations from the project.",
@@ -1788,6 +2139,28 @@
                                     "securedBy": [
                                         "customSchema"
                                     ],
+                                    "queryParameters": {
+                                        "envelope": {
+                                            "name": "envelope",
+                                            "displayName": "envelope",
+                                            "type": "boolean",
+                                            "required": false,
+                                            "repeat": false,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Returns a project's integrations.",
                                     "method": "get",
                                     "__METADATA__": {
@@ -1808,7 +2181,9 @@
                                             "body": {
                                                 "application/json": {
                                                     "name": "application/json",
-                                                    "example": "{\n  \"kind\" : \"other_integration\" ,\n  \"import_api_url\" : \"http://localhost:3000/starwars.xml\" ,\n  \"id\" : 30 ,\n  \"project_id\" : 99 ,\n  \"can_import\" : true ,\n  \"base_url\" : \"http://localhost:3000\" ,\n  \"is_other\" : true ,\n  \"story_name\" : \"item\" ,\n  \"name\" : \"Sounder Flats Computer Complex\" ,\n  \"active\" : true ,\n  \"created_at\" : \"2014-08-12T12:00:00Z\" ,\n  \"updated_at\" : \"2014-08-12T12:00:00Z\"\n}"
+                                                    "schema": "integration",
+                                                    "example": "{\n  \"kind\" : \"other_integration\" ,\n  \"import_api_url\" : \"http://localhost:3000/starwars.xml\" ,\n  \"id\" : 30 ,\n  \"project_id\" : 99 ,\n  \"can_import\" : true ,\n  \"base_url\" : \"http://localhost:3000\" ,\n  \"is_other\" : true ,\n  \"story_name\" : \"item\" ,\n  \"name\" : \"Sounder Flats Computer Complex\" ,\n  \"active\" : true ,\n  \"created_at\" : \"2014-08-12T12:00:00Z\" ,\n  \"updated_at\" : \"2014-08-12T12:00:00Z\"\n}",
+                                                    "schemaContent": "integration"
                                                 }
                                             }
                                         }
@@ -1886,7 +2261,9 @@
                                                     "body": {
                                                         "application/json": {
                                                             "name": "application/json",
-                                                            "example": "{\n  \"kind\" : \"other_integration\" ,\n  \"import_api_url\" : \"http://localhost:3000/starwars.xml\" ,\n  \"id\" : 30 ,\n  \"project_id\" : 99 ,\n  \"can_import\" : true ,\n  \"base_url\" : \"http://localhost:3000\" ,\n  \"is_other\" : true ,\n  \"story_name\" : \"item\" ,\n  \"name\" : \"Sounder Flats Computer Complex\" ,\n  \"active\" : true ,\n  \"created_at\" : \"2014-08-12T12:00:00Z\" ,\n  \"updated_at\" : \"2014-08-12T12:00:00Z\"\n}"
+                                                            "schema": "integration",
+                                                            "example": "{\n  \"kind\" : \"other_integration\" ,\n  \"import_api_url\" : \"http://localhost:3000/starwars.xml\" ,\n  \"id\" : 30 ,\n  \"project_id\" : 99 ,\n  \"can_import\" : true ,\n  \"base_url\" : \"http://localhost:3000\" ,\n  \"is_other\" : true ,\n  \"story_name\" : \"item\" ,\n  \"name\" : \"Sounder Flats Computer Complex\" ,\n  \"active\" : true ,\n  \"created_at\" : \"2014-08-12T12:00:00Z\" ,\n  \"updated_at\" : \"2014-08-12T12:00:00Z\"\n}",
+                                                            "schemaContent": "integration"
                                                         }
                                                     }
                                                 }
@@ -1897,6 +2274,28 @@
                                             "securedBy": [
                                                 "customSchema"
                                             ],
+                                            "queryParameters": {
+                                                "envelope": {
+                                                    "name": "envelope",
+                                                    "displayName": "envelope",
+                                                    "type": "boolean",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
                                             "description": "Returns a project integration.",
                                             "method": "get",
                                             "__METADATA__": {
@@ -1917,7 +2316,9 @@
                                                     "body": {
                                                         "application/json": {
                                                             "name": "application/json",
-                                                            "example": "{\n  \"kind\" : \"other_integration\" ,\n  \"import_api_url\" : \"http://localhost:3000/starwars.xml\" ,\n  \"id\" : 30 ,\n  \"project_id\" : 99 ,\n  \"can_import\" : true ,\n  \"base_url\" : \"http://localhost:3000\" ,\n  \"is_other\" : true ,\n  \"story_name\" : \"item\" ,\n  \"name\" : \"Sounder Flats Computer Complex\" ,\n  \"active\" : true ,\n  \"created_at\" : \"2014-08-12T12:00:00Z\" ,\n  \"updated_at\" : \"2014-08-12T12:00:00Z\"\n}"
+                                                            "schema": "integration",
+                                                            "example": "{\n  \"kind\" : \"other_integration\" ,\n  \"import_api_url\" : \"http://localhost:3000/starwars.xml\" ,\n  \"id\" : 30 ,\n  \"project_id\" : 99 ,\n  \"can_import\" : true ,\n  \"base_url\" : \"http://localhost:3000\" ,\n  \"is_other\" : true ,\n  \"story_name\" : \"item\" ,\n  \"name\" : \"Sounder Flats Computer Complex\" ,\n  \"active\" : true ,\n  \"created_at\" : \"2014-08-12T12:00:00Z\" ,\n  \"updated_at\" : \"2014-08-12T12:00:00Z\"\n}",
+                                                            "schemaContent": "integration"
                                                         }
                                                     }
                                                 }
@@ -1948,6 +2349,11 @@
                                             }
                                         },
                                         {
+                                            "responses": {
+                                                "204": {
+                                                    "code": "204"
+                                                }
+                                            },
                                             "protocols": [
                                                 "HTTPS"
                                             ],
@@ -2443,6 +2849,28 @@
                                     "securedBy": [
                                         "customSchema"
                                     ],
+                                    "queryParameters": {
+                                        "envelope": {
+                                            "name": "envelope",
+                                            "displayName": "envelope",
+                                            "type": "boolean",
+                                            "required": false,
+                                            "repeat": false,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Provides all of the project's labels.",
                                     "method": "get",
                                     "__METADATA__": {
@@ -2463,7 +2891,9 @@
                                             "body": {
                                                 "application/json": {
                                                     "name": "application/json",
-                                                    "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"id\" : 2014 ,\n  \"kind\" : \"label\" ,\n  \"name\" : \"detention\" ,\n  \"project_id\" : 99 ,\n  \"updated_at\" : \"2014-07-22T12:00:05Z\"\n}"
+                                                    "schema": "label",
+                                                    "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"id\" : 2014 ,\n  \"kind\" : \"label\" ,\n  \"name\" : \"detention\" ,\n  \"project_id\" : 99 ,\n  \"updated_at\" : \"2014-07-22T12:00:05Z\"\n}",
+                                                    "schemaContent": "label"
                                                 }
                                             }
                                         }
@@ -2541,7 +2971,9 @@
                                                     "body": {
                                                         "application/json": {
                                                             "name": "application/json",
-                                                            "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"id\" : 2014 ,\n  \"kind\" : \"label\" ,\n  \"name\" : \"detention\" ,\n  \"project_id\" : 99 ,\n  \"updated_at\" : \"2014-07-22T12:00:05Z\"\n}"
+                                                            "schema": "label",
+                                                            "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"id\" : 2014 ,\n  \"kind\" : \"label\" ,\n  \"name\" : \"detention\" ,\n  \"project_id\" : 99 ,\n  \"updated_at\" : \"2014-07-22T12:00:05Z\"\n}",
+                                                            "schemaContent": "label"
                                                         }
                                                     }
                                                 }
@@ -2552,6 +2984,28 @@
                                             "securedBy": [
                                                 "customSchema"
                                             ],
+                                            "queryParameters": {
+                                                "envelope": {
+                                                    "name": "envelope",
+                                                    "displayName": "envelope",
+                                                    "type": "boolean",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
                                             "description": "Provides a project's label.",
                                             "method": "get",
                                             "__METADATA__": {
@@ -2572,7 +3026,9 @@
                                                     "body": {
                                                         "application/json": {
                                                             "name": "application/json",
-                                                            "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"id\" : 2014 ,\n  \"kind\" : \"label\" ,\n  \"name\" : \"detention\" ,\n  \"project_id\" : 99 ,\n  \"updated_at\" : \"2014-07-22T12:00:05Z\"\n}"
+                                                            "schema": "label",
+                                                            "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"id\" : 2014 ,\n  \"kind\" : \"label\" ,\n  \"name\" : \"detention\" ,\n  \"project_id\" : 99 ,\n  \"updated_at\" : \"2014-07-22T12:00:05Z\"\n}",
+                                                            "schemaContent": "label"
                                                         }
                                                     }
                                                 }
@@ -2605,6 +3061,11 @@
                                             }
                                         },
                                         {
+                                            "responses": {
+                                                "204": {
+                                                    "code": "204"
+                                                }
+                                            },
                                             "protocols": [
                                                 "HTTPS"
                                             ],
@@ -2937,6 +3398,71 @@
                                                     }
                                                 }
                                             }
+                                        },
+                                        "envelope": {
+                                            "name": "envelope",
+                                            "displayName": "envelope",
+                                            "type": "boolean",
+                                            "required": false,
+                                            "repeat": false,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "limit": {
+                                            "name": "limit",
+                                            "displayName": "limit",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "The number of iterations to return relative to the offset.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "offset": {
+                                            "name": "offset",
+                                            "displayName": "offset",
+                                            "type": "integer",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "The offset of first iteration to return, relative to the set of iterations specified by 'scope', with zero being the first iteration in the scope. Defaults to zero. For the 'Done' scope, negative numbers can be passed, which specifies the number of iterations preceding the 'Current' iteration.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
                                         }
                                     },
                                     "description": "Provides selected stories.",
@@ -2962,7 +3488,9 @@
                                             "body": {
                                                 "application/json": {
                                                     "name": "application/json",
-                                                    "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"current_state\" : \"rejected\" ,\n  \"description\" : \"ray shielded, that is.\" ,\n  \"estimate\" : 3 ,\n  \"id\" : 558 ,\n  \"kind\" : \"story\" ,\n  \"labels\" : [\n    {\n      \"kind\" : \"label\" ,\n      \"id\" : 2008 ,\n      \"project_id\" : 99 ,\n      \"name\" : \"plans\" ,\n      \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n      \"updated_at\" : \"2014-07-22T12:00:00Z\"\n    }\n  ] ,\n  \"name\" : \"All exhaust ports should be shielded\" ,\n  \"owned_by_id\" : 104 ,\n  \"owner_ids\" : [\n    104\n  ] ,\n  \"project_id\" : 99 ,\n  \"requested_by_id\" : 102 ,\n  \"story_type\" : \"feature\" ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"url\" : \"http://localhost/story/show/558\"\n}"
+                                                    "schema": "story",
+                                                    "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"current_state\" : \"rejected\" ,\n  \"description\" : \"ray shielded, that is.\" ,\n  \"estimate\" : 3 ,\n  \"id\" : 558 ,\n  \"kind\" : \"story\" ,\n  \"labels\" : [\n    {\n      \"kind\" : \"label\" ,\n      \"id\" : 2008 ,\n      \"project_id\" : 99 ,\n      \"name\" : \"plans\" ,\n      \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n      \"updated_at\" : \"2014-07-22T12:00:00Z\"\n    }\n  ] ,\n  \"name\" : \"All exhaust ports should be shielded\" ,\n  \"owned_by_id\" : 104 ,\n  \"owner_ids\" : [\n    104\n  ] ,\n  \"project_id\" : 99 ,\n  \"requested_by_id\" : 102 ,\n  \"story_type\" : \"feature\" ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"url\" : \"http://localhost/story/show/558\"\n}",
+                                                    "schemaContent": "story"
                                                 }
                                             }
                                         }
@@ -3040,7 +3568,9 @@
                                                     "body": {
                                                         "application/json": {
                                                             "name": "application/json",
-                                                            "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"current_state\" : \"rejected\" ,\n  \"description\" : \"ray shielded, that is.\" ,\n  \"estimate\" : 3 ,\n  \"id\" : 558 ,\n  \"kind\" : \"story\" ,\n  \"labels\" : [\n    {\n      \"kind\" : \"label\" ,\n      \"id\" : 2008 ,\n      \"project_id\" : 99 ,\n      \"name\" : \"plans\" ,\n      \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n      \"updated_at\" : \"2014-07-22T12:00:00Z\"\n    }\n  ] ,\n  \"name\" : \"All exhaust ports should be shielded\" ,\n  \"owned_by_id\" : 104 ,\n  \"owner_ids\" : [\n    104\n  ] ,\n  \"project_id\" : 99 ,\n  \"requested_by_id\" : 102 ,\n  \"story_type\" : \"feature\" ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"url\" : \"http://localhost/story/show/558\"\n}"
+                                                            "schema": "story",
+                                                            "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"current_state\" : \"rejected\" ,\n  \"description\" : \"ray shielded, that is.\" ,\n  \"estimate\" : 3 ,\n  \"id\" : 558 ,\n  \"kind\" : \"story\" ,\n  \"labels\" : [\n    {\n      \"kind\" : \"label\" ,\n      \"id\" : 2008 ,\n      \"project_id\" : 99 ,\n      \"name\" : \"plans\" ,\n      \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n      \"updated_at\" : \"2014-07-22T12:00:00Z\"\n    }\n  ] ,\n  \"name\" : \"All exhaust ports should be shielded\" ,\n  \"owned_by_id\" : 104 ,\n  \"owner_ids\" : [\n    104\n  ] ,\n  \"project_id\" : 99 ,\n  \"requested_by_id\" : 102 ,\n  \"story_type\" : \"feature\" ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"url\" : \"http://localhost/story/show/558\"\n}",
+                                                            "schemaContent": "story"
                                                         }
                                                     }
                                                 }
@@ -3051,6 +3581,28 @@
                                             "securedBy": [
                                                 "customSchema"
                                             ],
+                                            "queryParameters": {
+                                                "envelope": {
+                                                    "name": "envelope",
+                                                    "displayName": "envelope",
+                                                    "type": "boolean",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
                                             "description": "Returns the specified story.",
                                             "method": "get",
                                             "__METADATA__": {
@@ -3071,7 +3623,9 @@
                                                     "body": {
                                                         "application/json": {
                                                             "name": "application/json",
-                                                            "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"current_state\" : \"rejected\" ,\n  \"description\" : \"ray shielded, that is.\" ,\n  \"estimate\" : 3 ,\n  \"id\" : 558 ,\n  \"kind\" : \"story\" ,\n  \"labels\" : [\n    {\n      \"kind\" : \"label\" ,\n      \"id\" : 2008 ,\n      \"project_id\" : 99 ,\n      \"name\" : \"plans\" ,\n      \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n      \"updated_at\" : \"2014-07-22T12:00:00Z\"\n    }\n  ] ,\n  \"name\" : \"All exhaust ports should be shielded\" ,\n  \"owned_by_id\" : 104 ,\n  \"owner_ids\" : [\n    104\n  ] ,\n  \"project_id\" : 99 ,\n  \"requested_by_id\" : 102 ,\n  \"story_type\" : \"feature\" ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"url\" : \"http://localhost/story/show/558\"\n}"
+                                                            "schema": "story",
+                                                            "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"current_state\" : \"rejected\" ,\n  \"description\" : \"ray shielded, that is.\" ,\n  \"estimate\" : 3 ,\n  \"id\" : 558 ,\n  \"kind\" : \"story\" ,\n  \"labels\" : [\n    {\n      \"kind\" : \"label\" ,\n      \"id\" : 2008 ,\n      \"project_id\" : 99 ,\n      \"name\" : \"plans\" ,\n      \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n      \"updated_at\" : \"2014-07-22T12:00:00Z\"\n    }\n  ] ,\n  \"name\" : \"All exhaust ports should be shielded\" ,\n  \"owned_by_id\" : 104 ,\n  \"owner_ids\" : [\n    104\n  ] ,\n  \"project_id\" : 99 ,\n  \"requested_by_id\" : 102 ,\n  \"story_type\" : \"feature\" ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"url\" : \"http://localhost/story/show/558\"\n}",
+                                                            "schemaContent": "story"
                                                         }
                                                     }
                                                 }
@@ -3104,6 +3658,11 @@
                                             }
                                         },
                                         {
+                                            "responses": {
+                                                "204": {
+                                                    "code": "204"
+                                                }
+                                            },
                                             "protocols": [
                                                 "HTTPS"
                                             ],
@@ -3156,6 +3715,28 @@
                                                     "securedBy": [
                                                         "customSchema"
                                                     ],
+                                                    "queryParameters": {
+                                                        "envelope": {
+                                                            "name": "envelope",
+                                                            "displayName": "envelope",
+                                                            "type": "boolean",
+                                                            "required": false,
+                                                            "repeat": false,
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    },
                                                     "description": "Returns the tasks on a specified story.",
                                                     "method": "get",
                                                     "__METADATA__": {
@@ -3176,7 +3757,9 @@
                                                             "body": {
                                                                 "application/json": {
                                                                     "name": "application/json",
-                                                                    "example": "{\n  \"complete\" : false ,\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"description\" : \"port 360\" ,\n  \"id\" : 5 ,\n  \"kind\" : \"task\" ,\n  \"position\" : 1 ,\n  \"story_id\" : 558 ,\n  \"updated_at\" : \"2014-07-22T12:00:05Z\"\n}"
+                                                                    "schema": "task",
+                                                                    "example": "{\n  \"complete\" : false ,\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"description\" : \"port 360\" ,\n  \"id\" : 5 ,\n  \"kind\" : \"task\" ,\n  \"position\" : 1 ,\n  \"story_id\" : 558 ,\n  \"updated_at\" : \"2014-07-22T12:00:05Z\"\n}",
+                                                                    "schemaContent": "task"
                                                                 }
                                                             }
                                                         }
@@ -3254,7 +3837,9 @@
                                                                     "body": {
                                                                         "application/json": {
                                                                             "name": "application/json",
-                                                                            "example": "{\n  \"complete\" : false ,\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"description\" : \"port 360\" ,\n  \"id\" : 5 ,\n  \"kind\" : \"task\" ,\n  \"position\" : 1 ,\n  \"story_id\" : 558 ,\n  \"updated_at\" : \"2014-07-22T12:00:05Z\"\n}"
+                                                                            "schema": "task",
+                                                                            "example": "{\n  \"complete\" : false ,\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"description\" : \"port 360\" ,\n  \"id\" : 5 ,\n  \"kind\" : \"task\" ,\n  \"position\" : 1 ,\n  \"story_id\" : 558 ,\n  \"updated_at\" : \"2014-07-22T12:00:05Z\"\n}",
+                                                                            "schemaContent": "task"
                                                                         }
                                                                     }
                                                                 }
@@ -3265,6 +3850,28 @@
                                                             "securedBy": [
                                                                 "customSchema"
                                                             ],
+                                                            "queryParameters": {
+                                                                "envelope": {
+                                                                    "name": "envelope",
+                                                                    "displayName": "envelope",
+                                                                    "type": "boolean",
+                                                                    "required": false,
+                                                                    "repeat": false,
+                                                                    "__METADATA__": {
+                                                                        "primitiveValuesMeta": {
+                                                                            "displayName": {
+                                                                                "calculated": true
+                                                                            },
+                                                                            "required": {
+                                                                                "insertedAsDefault": true
+                                                                            },
+                                                                            "repeat": {
+                                                                                "insertedAsDefault": true
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
                                                             "description": "Returns the specified task on a specified story.",
                                                             "method": "get",
                                                             "__METADATA__": {
@@ -3285,7 +3892,9 @@
                                                                     "body": {
                                                                         "application/json": {
                                                                             "name": "application/json",
-                                                                            "example": "{\n  \"complete\" : false ,\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"description\" : \"port 360\" ,\n  \"id\" : 5 ,\n  \"kind\" : \"task\" ,\n  \"position\" : 1 ,\n  \"story_id\" : 558 ,\n  \"updated_at\" : \"2014-07-22T12:00:05Z\"\n}"
+                                                                            "schema": "task",
+                                                                            "example": "{\n  \"complete\" : false ,\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"description\" : \"port 360\" ,\n  \"id\" : 5 ,\n  \"kind\" : \"task\" ,\n  \"position\" : 1 ,\n  \"story_id\" : 558 ,\n  \"updated_at\" : \"2014-07-22T12:00:05Z\"\n}",
+                                                                            "schemaContent": "task"
                                                                         }
                                                                     }
                                                                 }
@@ -3318,6 +3927,11 @@
                                                             }
                                                         },
                                                         {
+                                                            "responses": {
+                                                                "204": {
+                                                                    "code": "204"
+                                                                }
+                                                            },
                                                             "protocols": [
                                                                 "HTTPS"
                                                             ],
@@ -3387,7 +4001,9 @@
                                                             "body": {
                                                                 "application/json": {
                                                                     "name": "application/json",
-                                                                    "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"id\" : 2014 ,\n  \"kind\" : \"label\" ,\n  \"name\" : \"detention\" ,\n  \"project_id\" : 99 ,\n  \"updated_at\" : \"2014-07-22T12:00:05Z\"\n}"
+                                                                    "schema": "label",
+                                                                    "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"id\" : 2014 ,\n  \"kind\" : \"label\" ,\n  \"name\" : \"detention\" ,\n  \"project_id\" : 99 ,\n  \"updated_at\" : \"2014-07-22T12:00:05Z\"\n}",
+                                                                    "schemaContent": "label"
                                                                 }
                                                             }
                                                         }
@@ -3439,6 +4055,28 @@
                                                     "securedBy": [
                                                         "customSchema"
                                                     ],
+                                                    "queryParameters": {
+                                                        "envelope": {
+                                                            "name": "envelope",
+                                                            "displayName": "envelope",
+                                                            "type": "boolean",
+                                                            "required": false,
+                                                            "repeat": false,
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    },
                                                     "description": "Returns the labels on a specified story.\n",
                                                     "method": "get",
                                                     "__METADATA__": {
@@ -3488,6 +4126,11 @@
                                                     },
                                                     "methods": [
                                                         {
+                                                            "responses": {
+                                                                "204": {
+                                                                    "code": "204"
+                                                                }
+                                                            },
                                                             "protocols": [
                                                                 "HTTPS"
                                                             ],
@@ -3566,6 +4209,28 @@
                                                     "securedBy": [
                                                         "customSchema"
                                                     ],
+                                                    "queryParameters": {
+                                                        "envelope": {
+                                                            "name": "envelope",
+                                                            "displayName": "envelope",
+                                                            "type": "boolean",
+                                                            "required": false,
+                                                            "repeat": false,
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    },
                                                     "description": "Returns the owners of a specified story.",
                                                     "method": "get",
                                                     "__METADATA__": {
@@ -3737,6 +4402,28 @@
                                                     "securedBy": [
                                                         "customSchema"
                                                     ],
+                                                    "queryParameters": {
+                                                        "envelope": {
+                                                            "name": "envelope",
+                                                            "displayName": "envelope",
+                                                            "type": "boolean",
+                                                            "required": false,
+                                                            "repeat": false,
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    },
                                                     "description": "Returns the specified story's comments.",
                                                     "method": "get",
                                                     "__METADATA__": {
@@ -3757,7 +4444,9 @@
                                                             "body": {
                                                                 "application/json": {
                                                                     "name": "application/json",
-                                                                    "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"epic_id\" : 4 ,\n  \"id\" : 300 ,\n  \"kind\" : \"comment\" ,\n  \"person_id\" : 103 ,\n  \"text\" : \"This is my comment\" ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\"\n}"
+                                                                    "schema": "comment",
+                                                                    "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"epic_id\" : 4 ,\n  \"id\" : 300 ,\n  \"kind\" : \"comment\" ,\n  \"person_id\" : 103 ,\n  \"text\" : \"This is my comment\" ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\"\n}",
+                                                                    "schemaContent": "comment"
                                                                 }
                                                             }
                                                         }
@@ -3835,7 +4524,9 @@
                                                                     "body": {
                                                                         "application/json": {
                                                                             "name": "application/json",
-                                                                            "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"epic_id\" : 4 ,\n  \"id\" : 300 ,\n  \"kind\" : \"comment\" ,\n  \"person_id\" : 103 ,\n  \"text\" : \"This is my comment\" ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\"\n}"
+                                                                            "schema": "comment",
+                                                                            "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"epic_id\" : 4 ,\n  \"id\" : 300 ,\n  \"kind\" : \"comment\" ,\n  \"person_id\" : 103 ,\n  \"text\" : \"This is my comment\" ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\"\n}",
+                                                                            "schemaContent": "comment"
                                                                         }
                                                                     }
                                                                 }
@@ -3846,6 +4537,28 @@
                                                             "securedBy": [
                                                                 "customSchema"
                                                             ],
+                                                            "queryParameters": {
+                                                                "envelope": {
+                                                                    "name": "envelope",
+                                                                    "displayName": "envelope",
+                                                                    "type": "boolean",
+                                                                    "required": false,
+                                                                    "repeat": false,
+                                                                    "__METADATA__": {
+                                                                        "primitiveValuesMeta": {
+                                                                            "displayName": {
+                                                                                "calculated": true
+                                                                            },
+                                                                            "required": {
+                                                                                "insertedAsDefault": true
+                                                                            },
+                                                                            "repeat": {
+                                                                                "insertedAsDefault": true
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
                                                             "description": "Gets a comment.",
                                                             "method": "get",
                                                             "__METADATA__": {
@@ -3866,7 +4579,9 @@
                                                                     "body": {
                                                                         "application/json": {
                                                                             "name": "application/json",
-                                                                            "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"epic_id\" : 4 ,\n  \"id\" : 300 ,\n  \"kind\" : \"comment\" ,\n  \"person_id\" : 103 ,\n  \"text\" : \"This is my comment\" ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\"\n}"
+                                                                            "schema": "comment",
+                                                                            "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"epic_id\" : 4 ,\n  \"id\" : 300 ,\n  \"kind\" : \"comment\" ,\n  \"person_id\" : 103 ,\n  \"text\" : \"This is my comment\" ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\"\n}",
+                                                                            "schemaContent": "comment"
                                                                         }
                                                                     }
                                                                 }
@@ -3899,6 +4614,11 @@
                                                             }
                                                         },
                                                         {
+                                                            "responses": {
+                                                                "204": {
+                                                                    "code": "204"
+                                                                }
+                                                            },
                                                             "protocols": [
                                                                 "HTTPS"
                                                             ],
@@ -4098,6 +4818,19 @@
                                             ],
                                             "methods": [
                                                 {
+                                                    "responses": {
+                                                        "200": {
+                                                            "code": "200",
+                                                            "body": {
+                                                                "application/json": {
+                                                                    "name": "application/json",
+                                                                    "schema": "activity_types",
+                                                                    "example": "[\n  {\n    \"kind\" : \"iteration_update_activity\" ,\n    \"guid\" : \"99_62\" ,\n    \"project_version\" : 62 ,\n    \"message\" : \"Wilhuff Tarkin changed iteration 1s length from default to 2 weeks\" ,\n    \"highlight\" : \"changed\" ,\n    \"changes\" : [\n      {\n        \"kind\" : \"iteration_override\" ,\n        \"change_type\" : \"update\" ,\n        \"number\" : 1 ,\n        \"original_values\" : [\n          1 ,\n          1406030400000 ,\n          1 ,\n          \"default\"\n        ] ,\n        \"new_values\" : [\n          1 ,\n          0.9 ,\n          2 ,\n          1406030405000\n        ]\n      }\n    ] ,\n    \"primary_resources\" : [\n      {\n        \"kind\" : \"iteration_override\" ,\n        \"number\" : 1\n      }\n    ] ,\n    \"project\" : {\n      \"kind\" : \"project\" ,\n      \"id\" : 99 ,\n      \"name\" : \"Death Star\"\n    } ,\n    \"performed_by\" : {\n      \"kind\" : \"person\" ,\n      \"id\" : 102 ,\n      \"name\" : \"Wilhuff Tarkin\" ,\n      \"initials\" : \"WT\"\n    } ,\n    \"occurred_at\" : \"2014-07-22T12:00:10Z\"\n  }\n]",
+                                                                    "schemaContent": "activity_types"
+                                                                }
+                                                            }
+                                                        }
+                                                    },
                                                     "protocols": [
                                                         "HTTPS"
                                                     ],
@@ -4128,10 +4861,106 @@
                                                                     }
                                                                 }
                                                             }
+                                                        },
+                                                        "occurred_before": {
+                                                            "name": "occurred_before",
+                                                            "displayName": "occurred_before",
+                                                            "type": "string",
+                                                            "required": false,
+                                                            "repeat": false,
+                                                            "description": "Activity will be returned only for operations that occurred before the time specified by this parameter.",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "type": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "occurred_after": {
+                                                            "name": "occurred_after",
+                                                            "displayName": "occurred_after",
+                                                            "type": "string",
+                                                            "required": false,
+                                                            "repeat": false,
+                                                            "description": "Activity will be returned only for operations that occurred after the time specified by this parameter.",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "type": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "limit": {
+                                                            "name": "limit",
+                                                            "displayName": "limit",
+                                                            "type": "string",
+                                                            "required": false,
+                                                            "repeat": false,
+                                                            "description": "The number of iterations to return relative to the offset.",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "type": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "offset": {
+                                                            "name": "offset",
+                                                            "displayName": "offset",
+                                                            "type": "integer",
+                                                            "required": false,
+                                                            "repeat": false,
+                                                            "description": "The offset of first iteration to return, relative to the set of iterations specified by 'scope', with zero being the first iteration in the scope. Defaults to zero. For the 'Done' scope, negative numbers can be passed, which specifies the number of iterations preceding the 'Current' iteration.",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
                                                         }
                                                     },
                                                     "description": "Return list of the selected story's activity. ",
                                                     "method": "get",
+                                                    "is": [
+                                                        "pageable"
+                                                    ],
                                                     "__METADATA__": {
                                                         "primitiveValuesMeta": {
                                                             "protocols": {
@@ -4246,6 +5075,26 @@
                                                     }
                                                 }
                                             }
+                                        },
+                                        "envelope": {
+                                            "name": "envelope",
+                                            "displayName": "envelope",
+                                            "type": "boolean",
+                                            "required": false,
+                                            "repeat": false,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
                                         }
                                     },
                                     "description": "Returns a list of all epics in the project.",
@@ -4268,7 +5117,9 @@
                                             "body": {
                                                 "application/json": {
                                                     "name": "application/json",
-                                                    "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"description\" : \"Identify the systems and eliminate the rebel scum.\" ,\n  \"id\" : 4 ,\n  \"kind\" : \"epic\" ,\n  \"label\" : {\n    \"kind\" : \"label\" ,\n    \"id\" : 2007 ,\n    \"project_id\" : 99 ,\n    \"name\" : \"rebel bases\" ,\n    \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n    \"updated_at\" : \"2014-07-22T12:00:00Z\"\n  } ,\n  \"name\" : \"Rebel Home Worlds\" ,\n  \"project_id\" : 99 ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"url\" : \"http://localhost/epic/show/4\"\n}"
+                                                    "schema": "epic",
+                                                    "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"description\" : \"Identify the systems and eliminate the rebel scum.\" ,\n  \"id\" : 4 ,\n  \"kind\" : \"epic\" ,\n  \"label\" : {\n    \"kind\" : \"label\" ,\n    \"id\" : 2007 ,\n    \"project_id\" : 99 ,\n    \"name\" : \"rebel bases\" ,\n    \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n    \"updated_at\" : \"2014-07-22T12:00:00Z\"\n  } ,\n  \"name\" : \"Rebel Home Worlds\" ,\n  \"project_id\" : 99 ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"url\" : \"http://localhost/epic/show/4\"\n}",
+                                                    "schemaContent": "epic"
                                                 }
                                             }
                                         }
@@ -4359,6 +5210,28 @@
                                             "securedBy": [
                                                 "customSchema"
                                             ],
+                                            "queryParameters": {
+                                                "envelope": {
+                                                    "name": "envelope",
+                                                    "displayName": "envelope",
+                                                    "type": "boolean",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
                                             "description": "Returns the specified epic.",
                                             "method": "get",
                                             "__METADATA__": {
@@ -4379,7 +5252,9 @@
                                                     "body": {
                                                         "application/json": {
                                                             "name": "application/json",
-                                                            "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"description\" : \"Identify the systems and eliminate the rebel scum.\" ,\n  \"id\" : 4 ,\n  \"kind\" : \"epic\" ,\n  \"label\" : {\n    \"kind\" : \"label\" ,\n    \"id\" : 2007 ,\n    \"project_id\" : 99 ,\n    \"name\" : \"rebel bases\" ,\n    \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n    \"updated_at\" : \"2014-07-22T12:00:00Z\"\n  } ,\n  \"name\" : \"Rebel Home Worlds\" ,\n  \"project_id\" : 99 ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"url\" : \"http://localhost/epic/show/4\"\n}"
+                                                            "schema": "epic",
+                                                            "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"description\" : \"Identify the systems and eliminate the rebel scum.\" ,\n  \"id\" : 4 ,\n  \"kind\" : \"epic\" ,\n  \"label\" : {\n    \"kind\" : \"label\" ,\n    \"id\" : 2007 ,\n    \"project_id\" : 99 ,\n    \"name\" : \"rebel bases\" ,\n    \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n    \"updated_at\" : \"2014-07-22T12:00:00Z\"\n  } ,\n  \"name\" : \"Rebel Home Worlds\" ,\n  \"project_id\" : 99 ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"url\" : \"http://localhost/epic/show/4\"\n}",
+                                                            "schemaContent": "epic"
                                                         }
                                                     }
                                                 }
@@ -4412,6 +5287,11 @@
                                             }
                                         },
                                         {
+                                            "responses": {
+                                                "204": {
+                                                    "code": "204"
+                                                }
+                                            },
                                             "protocols": [
                                                 "HTTPS"
                                             ],
@@ -4441,6 +5321,19 @@
                                             ],
                                             "methods": [
                                                 {
+                                                    "responses": {
+                                                        "200": {
+                                                            "code": "200",
+                                                            "body": {
+                                                                "application/json": {
+                                                                    "name": "application/json",
+                                                                    "schema": "activity_types",
+                                                                    "example": "[\n  {\n    \"kind\" : \"iteration_update_activity\" ,\n    \"guid\" : \"99_62\" ,\n    \"project_version\" : 62 ,\n    \"message\" : \"Wilhuff Tarkin changed iteration 1s length from default to 2 weeks\" ,\n    \"highlight\" : \"changed\" ,\n    \"changes\" : [\n      {\n        \"kind\" : \"iteration_override\" ,\n        \"change_type\" : \"update\" ,\n        \"number\" : 1 ,\n        \"original_values\" : [\n          1 ,\n          1406030400000 ,\n          1 ,\n          \"default\"\n        ] ,\n        \"new_values\" : [\n          1 ,\n          0.9 ,\n          2 ,\n          1406030405000\n        ]\n      }\n    ] ,\n    \"primary_resources\" : [\n      {\n        \"kind\" : \"iteration_override\" ,\n        \"number\" : 1\n      }\n    ] ,\n    \"project\" : {\n      \"kind\" : \"project\" ,\n      \"id\" : 99 ,\n      \"name\" : \"Death Star\"\n    } ,\n    \"performed_by\" : {\n      \"kind\" : \"person\" ,\n      \"id\" : 102 ,\n      \"name\" : \"Wilhuff Tarkin\" ,\n      \"initials\" : \"WT\"\n    } ,\n    \"occurred_at\" : \"2014-07-22T12:00:10Z\"\n  }\n]",
+                                                                    "schemaContent": "activity_types"
+                                                                }
+                                                            }
+                                                        }
+                                                    },
                                                     "protocols": [
                                                         "HTTPS"
                                                     ],
@@ -4462,6 +5355,99 @@
                                                                     },
                                                                     "type": {
                                                                         "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "occurred_before": {
+                                                            "name": "occurred_before",
+                                                            "displayName": "occurred_before",
+                                                            "type": "string",
+                                                            "required": false,
+                                                            "repeat": false,
+                                                            "description": "Activity will be returned only for operations that occurred before the time specified by this parameter.",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "type": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "occurred_after": {
+                                                            "name": "occurred_after",
+                                                            "displayName": "occurred_after",
+                                                            "type": "string",
+                                                            "required": false,
+                                                            "repeat": false,
+                                                            "description": "Activity will be returned only for operations that occurred after the time specified by this parameter.",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "type": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "limit": {
+                                                            "name": "limit",
+                                                            "displayName": "limit",
+                                                            "type": "string",
+                                                            "required": false,
+                                                            "repeat": false,
+                                                            "description": "The number of iterations to return relative to the offset.",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "type": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "offset": {
+                                                            "name": "offset",
+                                                            "displayName": "offset",
+                                                            "type": "integer",
+                                                            "required": false,
+                                                            "repeat": false,
+                                                            "description": "The offset of first iteration to return, relative to the set of iterations specified by 'scope', with zero being the first iteration in the scope. Defaults to zero. For the 'Done' scope, negative numbers can be passed, which specifies the number of iterations preceding the 'Current' iteration.",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
                                                                     },
                                                                     "required": {
                                                                         "insertedAsDefault": true
@@ -4536,6 +5522,28 @@
                                                     "securedBy": [
                                                         "customSchema"
                                                     ],
+                                                    "queryParameters": {
+                                                        "envelope": {
+                                                            "name": "envelope",
+                                                            "displayName": "envelope",
+                                                            "type": "boolean",
+                                                            "required": false,
+                                                            "repeat": false,
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    },
                                                     "description": "Returns the specified epic's comments.",
                                                     "method": "get",
                                                     "__METADATA__": {
@@ -4556,7 +5564,9 @@
                                                             "body": {
                                                                 "application/json": {
                                                                     "name": "application/json",
-                                                                    "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"epic_id\" : 4 ,\n  \"id\" : 300 ,\n  \"kind\" : \"comment\" ,\n  \"person_id\" : 103 ,\n  \"text\" : \"This is my comment\" ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\"\n}"
+                                                                    "schema": "comment",
+                                                                    "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"epic_id\" : 4 ,\n  \"id\" : 300 ,\n  \"kind\" : \"comment\" ,\n  \"person_id\" : 103 ,\n  \"text\" : \"This is my comment\" ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\"\n}",
+                                                                    "schemaContent": "comment"
                                                                 }
                                                             }
                                                         }
@@ -4634,7 +5644,9 @@
                                                                     "body": {
                                                                         "application/json": {
                                                                             "name": "application/json",
-                                                                            "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"epic_id\" : 4 ,\n  \"id\" : 300 ,\n  \"kind\" : \"comment\" ,\n  \"person_id\" : 103 ,\n  \"text\" : \"This is my comment\" ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\"\n}"
+                                                                            "schema": "comment",
+                                                                            "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"epic_id\" : 4 ,\n  \"id\" : 300 ,\n  \"kind\" : \"comment\" ,\n  \"person_id\" : 103 ,\n  \"text\" : \"This is my comment\" ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\"\n}",
+                                                                            "schemaContent": "comment"
                                                                         }
                                                                     }
                                                                 }
@@ -4645,6 +5657,28 @@
                                                             "securedBy": [
                                                                 "customSchema"
                                                             ],
+                                                            "queryParameters": {
+                                                                "envelope": {
+                                                                    "name": "envelope",
+                                                                    "displayName": "envelope",
+                                                                    "type": "boolean",
+                                                                    "required": false,
+                                                                    "repeat": false,
+                                                                    "__METADATA__": {
+                                                                        "primitiveValuesMeta": {
+                                                                            "displayName": {
+                                                                                "calculated": true
+                                                                            },
+                                                                            "required": {
+                                                                                "insertedAsDefault": true
+                                                                            },
+                                                                            "repeat": {
+                                                                                "insertedAsDefault": true
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
                                                             "description": "Gets a comment.",
                                                             "method": "get",
                                                             "__METADATA__": {
@@ -4665,7 +5699,9 @@
                                                                     "body": {
                                                                         "application/json": {
                                                                             "name": "application/json",
-                                                                            "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"epic_id\" : 4 ,\n  \"id\" : 300 ,\n  \"kind\" : \"comment\" ,\n  \"person_id\" : 103 ,\n  \"text\" : \"This is my comment\" ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\"\n}"
+                                                                            "schema": "comment",
+                                                                            "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"epic_id\" : 4 ,\n  \"id\" : 300 ,\n  \"kind\" : \"comment\" ,\n  \"person_id\" : 103 ,\n  \"text\" : \"This is my comment\" ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\"\n}",
+                                                                            "schemaContent": "comment"
                                                                         }
                                                                     }
                                                                 }
@@ -4698,6 +5734,11 @@
                                                             }
                                                         },
                                                         {
+                                                            "responses": {
+                                                                "204": {
+                                                                    "code": "204"
+                                                                }
+                                                            },
                                                             "protocols": [
                                                                 "HTTPS"
                                                             ],
@@ -5142,6 +6183,19 @@
                             ],
                             "methods": [
                                 {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "activity_types",
+                                                    "example": "[\n  {\n    \"kind\" : \"iteration_update_activity\" ,\n    \"guid\" : \"99_62\" ,\n    \"project_version\" : 62 ,\n    \"message\" : \"Wilhuff Tarkin changed iteration 1s length from default to 2 weeks\" ,\n    \"highlight\" : \"changed\" ,\n    \"changes\" : [\n      {\n        \"kind\" : \"iteration_override\" ,\n        \"change_type\" : \"update\" ,\n        \"number\" : 1 ,\n        \"original_values\" : [\n          1 ,\n          1406030400000 ,\n          1 ,\n          \"default\"\n        ] ,\n        \"new_values\" : [\n          1 ,\n          0.9 ,\n          2 ,\n          1406030405000\n        ]\n      }\n    ] ,\n    \"primary_resources\" : [\n      {\n        \"kind\" : \"iteration_override\" ,\n        \"number\" : 1\n      }\n    ] ,\n    \"project\" : {\n      \"kind\" : \"project\" ,\n      \"id\" : 99 ,\n      \"name\" : \"Death Star\"\n    } ,\n    \"performed_by\" : {\n      \"kind\" : \"person\" ,\n      \"id\" : 102 ,\n      \"name\" : \"Wilhuff Tarkin\" ,\n      \"initials\" : \"WT\"\n    } ,\n    \"occurred_at\" : \"2014-07-22T12:00:10Z\"\n  }\n]",
+                                                    "schemaContent": "activity_types"
+                                                }
+                                            }
+                                        }
+                                    },
                                     "protocols": [
                                         "HTTPS"
                                     ],
@@ -5172,10 +6226,106 @@
                                                     }
                                                 }
                                             }
+                                        },
+                                        "occurred_before": {
+                                            "name": "occurred_before",
+                                            "displayName": "occurred_before",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Activity will be returned only for operations that occurred before the time specified by this parameter.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "occurred_after": {
+                                            "name": "occurred_after",
+                                            "displayName": "occurred_after",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Activity will be returned only for operations that occurred after the time specified by this parameter.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "limit": {
+                                            "name": "limit",
+                                            "displayName": "limit",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "The number of iterations to return relative to the offset.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "offset": {
+                                            "name": "offset",
+                                            "displayName": "offset",
+                                            "type": "integer",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "The offset of first iteration to return, relative to the set of iterations specified by 'scope', with zero being the first iteration in the scope. Defaults to zero. For the 'Done' scope, negative numbers can be passed, which specifies the number of iterations preceding the 'Current' iteration.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
                                         }
                                     },
                                     "description": "Return list of the selected project activity.",
                                     "method": "get",
+                                    "is": [
+                                        "pageable"
+                                    ],
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
                                             "protocols": {
@@ -5276,6 +6426,28 @@
                                     "securedBy": [
                                         "customSchema"
                                     ],
+                                    "queryParameters": {
+                                        "envelope": {
+                                            "name": "envelope",
+                                            "displayName": "envelope",
+                                            "type": "boolean",
+                                            "required": false,
+                                            "repeat": false,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Return the project's webhooks.",
                                     "method": "get",
                                     "__METADATA__": {
@@ -5296,7 +6468,9 @@
                                             "body": {
                                                 "application/json": {
                                                     "name": "application/json",
-                                                    "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"id\" : 27 ,\n  \"kind\" : \"webhook\" ,\n  \"project_id\" : 99 ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"webhook_url\" : \"http://localhost:3000/test_postbin\" ,\n  \"webhook_version\" : \"v5\"\n}"
+                                                    "schema": "webhook",
+                                                    "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"id\" : 27 ,\n  \"kind\" : \"webhook\" ,\n  \"project_id\" : 99 ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"webhook_url\" : \"http://localhost:3000/test_postbin\" ,\n  \"webhook_version\" : \"v5\"\n}",
+                                                    "schemaContent": "webhook"
                                                 }
                                             }
                                         }
@@ -5374,7 +6548,9 @@
                                                     "body": {
                                                         "application/json": {
                                                             "name": "application/json",
-                                                            "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"id\" : 27 ,\n  \"kind\" : \"webhook\" ,\n  \"project_id\" : 99 ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"webhook_url\" : \"http://localhost:3000/test_postbin\" ,\n  \"webhook_version\" : \"v5\"\n}"
+                                                            "schema": "webhook",
+                                                            "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"id\" : 27 ,\n  \"kind\" : \"webhook\" ,\n  \"project_id\" : 99 ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"webhook_url\" : \"http://localhost:3000/test_postbin\" ,\n  \"webhook_version\" : \"v5\"\n}",
+                                                            "schemaContent": "webhook"
                                                         }
                                                     }
                                                 }
@@ -5385,6 +6561,28 @@
                                             "securedBy": [
                                                 "customSchema"
                                             ],
+                                            "queryParameters": {
+                                                "envelope": {
+                                                    "name": "envelope",
+                                                    "displayName": "envelope",
+                                                    "type": "boolean",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
                                             "description": "Return the specified project webhook.",
                                             "method": "get",
                                             "__METADATA__": {
@@ -5405,7 +6603,9 @@
                                                     "body": {
                                                         "application/json": {
                                                             "name": "application/json",
-                                                            "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"id\" : 27 ,\n  \"kind\" : \"webhook\" ,\n  \"project_id\" : 99 ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"webhook_url\" : \"http://localhost:3000/test_postbin\" ,\n  \"webhook_version\" : \"v5\"\n}"
+                                                            "schema": "webhook",
+                                                            "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"id\" : 27 ,\n  \"kind\" : \"webhook\" ,\n  \"project_id\" : 99 ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"webhook_url\" : \"http://localhost:3000/test_postbin\" ,\n  \"webhook_version\" : \"v5\"\n}",
+                                                            "schemaContent": "webhook"
                                                         }
                                                     }
                                                 }
@@ -5438,6 +6638,11 @@
                                             }
                                         },
                                         {
+                                            "responses": {
+                                                "204": {
+                                                    "code": "204"
+                                                }
+                                            },
                                             "protocols": [
                                                 "HTTPS"
                                             ],
@@ -5539,7 +6744,9 @@
                             "body": {
                                 "application/json": {
                                     "name": "application/json",
-                                    "example": "[\n   {\n       \"kind\": \"account\",\n       \"id\": 100,\n       \"name\": \"Galactic Empire\",\n       \"plan\": \"Pivotal Labs\",\n       \"status\": \"active\",\n       \"created_at\": \"2014-07-22T12:00:00Z\",\n       \"updated_at\": \"2014-07-22T12:00:00Z\"\n   }\n]\n"
+                                    "schema": "accounts",
+                                    "example": "[\n   {\n       \"kind\": \"account\",\n       \"id\": 100,\n       \"name\": \"Galactic Empire\",\n       \"plan\": \"Pivotal Labs\",\n       \"status\": \"active\",\n       \"created_at\": \"2014-07-22T12:00:00Z\",\n       \"updated_at\": \"2014-07-22T12:00:00Z\"\n   }\n]\n",
+                                    "schemaContent": "accounts"
                                 }
                             }
                         }
@@ -5550,6 +6757,28 @@
                     "securedBy": [
                         "customSchema"
                     ],
+                    "queryParameters": {
+                        "envelope": {
+                            "name": "envelope",
+                            "displayName": "envelope",
+                            "type": "boolean",
+                            "required": false,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "Get all of the accounts a user is an owner or admin of.",
                     "method": "get",
                     "__METADATA__": {
@@ -5609,7 +6838,9 @@
                                     "body": {
                                         "application/json": {
                                             "name": "application/json",
-                                            "example": "{\n  \"account_id\" : 100 ,\n  \"admin\" : false ,\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"id\" : 103 ,\n  \"kind\" : \"account_membership\" ,\n  \"owner\" : false ,\n  \"person\" : {\n    \"kind\" : \"person\" ,\n    \"id\" : 103 ,\n    \"name\" : \"Moradmin Bast\" ,\n    \"email\" : \"bast@deathstar.mil\" ,\n    \"initials\" : \"MB\" ,\n    \"username\" : \"bast\"\n  } ,\n  \"project_creator\" : true ,\n  \"time_enterer\" : true ,\n  \"timekeeper\" : true ,\n  \"updated_at\" : \"2014-07-22T12:00:05Z\"\n}"
+                                            "schema": "account",
+                                            "example": "{\n  \"account_id\" : 100 ,\n  \"admin\" : false ,\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"id\" : 103 ,\n  \"kind\" : \"account_membership\" ,\n  \"owner\" : false ,\n  \"person\" : {\n    \"kind\" : \"person\" ,\n    \"id\" : 103 ,\n    \"name\" : \"Moradmin Bast\" ,\n    \"email\" : \"bast@deathstar.mil\" ,\n    \"initials\" : \"MB\" ,\n    \"username\" : \"bast\"\n  } ,\n  \"project_creator\" : true ,\n  \"time_enterer\" : true ,\n  \"timekeeper\" : true ,\n  \"updated_at\" : \"2014-07-22T12:00:05Z\"\n}",
+                                            "schemaContent": "account"
                                         }
                                     }
                                 }
@@ -5620,6 +6851,28 @@
                             "securedBy": [
                                 "customSchema"
                             ],
+                            "queryParameters": {
+                                "envelope": {
+                                    "name": "envelope",
+                                    "displayName": "envelope",
+                                    "type": "boolean",
+                                    "required": false,
+                                    "repeat": false,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Fetch the content of the specified account.",
                             "method": "get",
                             "__METADATA__": {
@@ -5770,6 +7023,28 @@
                                             "securedBy": [
                                                 "customSchema"
                                             ],
+                                            "queryParameters": {
+                                                "envelope": {
+                                                    "name": "envelope",
+                                                    "displayName": "envelope",
+                                                    "type": "boolean",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
                                             "description": "Returns the specified account membership.",
                                             "method": "get",
                                             "__METADATA__": {
@@ -5825,6 +7100,11 @@
                                             }
                                         },
                                         {
+                                            "responses": {
+                                                "204": {
+                                                    "code": "204"
+                                                }
+                                            },
                                             "protocols": [
                                                 "HTTPS"
                                             ],
@@ -5958,7 +7238,9 @@
                                     "body": {
                                         "application/json": {
                                             "name": "application/json",
-                                            "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"current_state\" : \"rejected\" ,\n  \"description\" : \"ray shielded, that is.\" ,\n  \"estimate\" : 3 ,\n  \"id\" : 558 ,\n  \"kind\" : \"story\" ,\n  \"labels\" : [\n    {\n      \"kind\" : \"label\" ,\n      \"id\" : 2008 ,\n      \"project_id\" : 99 ,\n      \"name\" : \"plans\" ,\n      \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n      \"updated_at\" : \"2014-07-22T12:00:00Z\"\n    }\n  ] ,\n  \"name\" : \"All exhaust ports should be shielded\" ,\n  \"owned_by_id\" : 104 ,\n  \"owner_ids\" : [\n    104\n  ] ,\n  \"project_id\" : 99 ,\n  \"requested_by_id\" : 102 ,\n  \"story_type\" : \"feature\" ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"url\" : \"http://localhost/story/show/558\"\n}"
+                                            "schema": "story",
+                                            "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"current_state\" : \"rejected\" ,\n  \"description\" : \"ray shielded, that is.\" ,\n  \"estimate\" : 3 ,\n  \"id\" : 558 ,\n  \"kind\" : \"story\" ,\n  \"labels\" : [\n    {\n      \"kind\" : \"label\" ,\n      \"id\" : 2008 ,\n      \"project_id\" : 99 ,\n      \"name\" : \"plans\" ,\n      \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n      \"updated_at\" : \"2014-07-22T12:00:00Z\"\n    }\n  ] ,\n  \"name\" : \"All exhaust ports should be shielded\" ,\n  \"owned_by_id\" : 104 ,\n  \"owner_ids\" : [\n    104\n  ] ,\n  \"project_id\" : 99 ,\n  \"requested_by_id\" : 102 ,\n  \"story_type\" : \"feature\" ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"url\" : \"http://localhost/story/show/558\"\n}",
+                                            "schemaContent": "story"
                                         }
                                     }
                                 }
@@ -5969,6 +7251,28 @@
                             "securedBy": [
                                 "customSchema"
                             ],
+                            "queryParameters": {
+                                "envelope": {
+                                    "name": "envelope",
+                                    "displayName": "envelope",
+                                    "type": "boolean",
+                                    "required": false,
+                                    "repeat": false,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Returns the specified story.",
                             "method": "get",
                             "__METADATA__": {
@@ -5989,7 +7293,9 @@
                                     "body": {
                                         "application/json": {
                                             "name": "application/json",
-                                            "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"current_state\" : \"rejected\" ,\n  \"description\" : \"ray shielded, that is.\" ,\n  \"estimate\" : 3 ,\n  \"id\" : 558 ,\n  \"kind\" : \"story\" ,\n  \"labels\" : [\n    {\n      \"kind\" : \"label\" ,\n      \"id\" : 2008 ,\n      \"project_id\" : 99 ,\n      \"name\" : \"plans\" ,\n      \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n      \"updated_at\" : \"2014-07-22T12:00:00Z\"\n    }\n  ] ,\n  \"name\" : \"All exhaust ports should be shielded\" ,\n  \"owned_by_id\" : 104 ,\n  \"owner_ids\" : [\n    104\n  ] ,\n  \"project_id\" : 99 ,\n  \"requested_by_id\" : 102 ,\n  \"story_type\" : \"feature\" ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"url\" : \"http://localhost/story/show/558\"\n}"
+                                            "schema": "story",
+                                            "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"current_state\" : \"rejected\" ,\n  \"description\" : \"ray shielded, that is.\" ,\n  \"estimate\" : 3 ,\n  \"id\" : 558 ,\n  \"kind\" : \"story\" ,\n  \"labels\" : [\n    {\n      \"kind\" : \"label\" ,\n      \"id\" : 2008 ,\n      \"project_id\" : 99 ,\n      \"name\" : \"plans\" ,\n      \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n      \"updated_at\" : \"2014-07-22T12:00:00Z\"\n    }\n  ] ,\n  \"name\" : \"All exhaust ports should be shielded\" ,\n  \"owned_by_id\" : 104 ,\n  \"owner_ids\" : [\n    104\n  ] ,\n  \"project_id\" : 99 ,\n  \"requested_by_id\" : 102 ,\n  \"story_type\" : \"feature\" ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"url\" : \"http://localhost/story/show/558\"\n}",
+                                            "schemaContent": "story"
                                         }
                                     }
                                 }
@@ -6022,6 +7328,11 @@
                             }
                         },
                         {
+                            "responses": {
+                                "204": {
+                                    "code": "204"
+                                }
+                            },
                             "protocols": [
                                 "HTTPS"
                             ],
@@ -6160,7 +7471,9 @@
                             "body": {
                                 "application/json": {
                                     "name": "application/json",
-                                    "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"description\" : \"Identify the systems and eliminate the rebel scum.\" ,\n  \"id\" : 4 ,\n  \"kind\" : \"epic\" ,\n  \"label\" : {\n    \"kind\" : \"label\" ,\n    \"id\" : 2007 ,\n    \"project_id\" : 99 ,\n    \"name\" : \"rebel bases\" ,\n    \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n    \"updated_at\" : \"2014-07-22T12:00:00Z\"\n  } ,\n  \"name\" : \"Rebel Home Worlds\" ,\n  \"project_id\" : 99 ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"url\" : \"http://localhost/epic/show/4\"\n}"
+                                    "schema": "epic",
+                                    "example": "{\n  \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"description\" : \"Identify the systems and eliminate the rebel scum.\" ,\n  \"id\" : 4 ,\n  \"kind\" : \"epic\" ,\n  \"label\" : {\n    \"kind\" : \"label\" ,\n    \"id\" : 2007 ,\n    \"project_id\" : 99 ,\n    \"name\" : \"rebel bases\" ,\n    \"created_at\" : \"2014-07-22T12:00:00Z\" ,\n    \"updated_at\" : \"2014-07-22T12:00:00Z\"\n  } ,\n  \"name\" : \"Rebel Home Worlds\" ,\n  \"project_id\" : 99 ,\n  \"updated_at\" : \"2014-07-22T12:00:00Z\" ,\n  \"url\" : \"http://localhost/epic/show/4\"\n}",
+                                    "schemaContent": "epic"
                                 }
                             }
                         }
@@ -6171,6 +7484,28 @@
                     "securedBy": [
                         "customSchema"
                     ],
+                    "queryParameters": {
+                        "envelope": {
+                            "name": "envelope",
+                            "displayName": "envelope",
+                            "type": "boolean",
+                            "required": false,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "Returns the specified epic.",
                     "method": "get",
                     "__METADATA__": {
@@ -6262,6 +7597,26 @@
                                     }
                                 }
                             }
+                        },
+                        "envelope": {
+                            "name": "envelope",
+                            "displayName": "envelope",
+                            "type": "boolean",
+                            "required": false,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
                         }
                     },
                     "method": "get",
@@ -6321,6 +7676,28 @@
                     "securedBy": [
                         "customSchema"
                     ],
+                    "queryParameters": {
+                        "envelope": {
+                            "name": "envelope",
+                            "displayName": "envelope",
+                            "type": "boolean",
+                            "required": false,
+                            "repeat": false,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "Fetch items describing the user's available Google resources.",
                     "method": "get",
                     "__METADATA__": {

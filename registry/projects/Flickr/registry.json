@@ -1,14 +1,22 @@
-{"apis": [
+{"apis": {"RAMLFiles": [
     {
         "name": "Flickr API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Flickr/master/flickr.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Flickr/master/flickr.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Flickr/master/flickr.json",
+        "baseUri": "https://api.flickr.com/services",
+        "resourcesCount": 3,
+        "methodsCount": 4
     },
     {
         "name": "Flickr API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Flickr/staging/flickr.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Flickr/staging/flickr.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Flickr/staging/flickr.json",
+        "baseUri": "https://api.flickr.com/services",
+        "resourcesCount": 3,
+        "methodsCount": 4
     }
-]}
+]}}

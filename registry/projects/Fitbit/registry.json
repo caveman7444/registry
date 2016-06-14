@@ -1,14 +1,44 @@
-{"apis": [
+{"apis": {"RAMLFiles": [
     {
         "name": "\"Fitbit API\"",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Fitbit/master/api.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Fitbit/master/api.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Fitbit/master/api.json",
+        "baseUri": "http://api.fitbit.com/{version}/",
+        "version": "1",
+        "securitySchemes": [{"oauth_1_0": {
+            "name": "oauth_1_0",
+            "type": "OAuth 1.0",
+            "description": "The Fitbit API uses OAuth Authentication as described in The OAuth 1.0 Protocol\n(draft-hammer-oauth-10). OAuth is an open protocol for clients of the Fitbi\nAPI to access Fitbit content on behalf of a Fitbit user.\n",
+            "settings": {
+                "requestTokenUri": "https://api.fitbit.com/oauth/request_token",
+                "authorizationUri": "http://www.fitbit.com/oauth/authorize",
+                "tokenCredentialsUri": "https://api.fitbit.com/oauth/access_token"
+            }
+        }}],
+        "resourcesCount": 68,
+        "methodsCount": 78
     },
     {
         "name": "\"Fitbit API\"",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Fitbit/staging/api.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Fitbit/staging/api.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Fitbit/staging/api.json",
+        "baseUri": "http://api.fitbit.com/{version}/",
+        "version": "1",
+        "securitySchemes": [{"oauth_1_0": {
+            "name": "oauth_1_0",
+            "type": "OAuth 1.0",
+            "description": "The Fitbit API uses OAuth Authentication as described in The OAuth 1.0 Protocol\n(draft-hammer-oauth-10). OAuth is an open protocol for clients of the Fitbi\nAPI to access Fitbit content on behalf of a Fitbit user.\n",
+            "settings": {
+                "requestTokenUri": "https://api.fitbit.com/oauth/request_token",
+                "authorizationUri": "http://www.fitbit.com/oauth/authorize",
+                "tokenCredentialsUri": "https://api.fitbit.com/oauth/access_token"
+            }
+        }}],
+        "resourcesCount": 68,
+        "methodsCount": 78
     }
-]}
+]}}

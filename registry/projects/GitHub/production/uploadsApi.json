@@ -1073,6 +1073,10 @@
                                             "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"url\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"id\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"label\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"state\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"content_type\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"size\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"download_count\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"created_at\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"updated_at\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"uploader\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"login\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"id\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"avatar_url\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"gravatar_id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"url\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"html_url\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"followers_url\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"following_url\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"gists_url\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"starred_url\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"subscriptions_url\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"organizations_url\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"repos_url\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"events_url\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"received_events_url\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"type\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"site_admin\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
                                         }
                                     }
+                                },
+                                "403": {
+                                    "code": "403",
+                                    "description": "API rate limit exceeded. See http://developer.github.com/v3/#rate-limiting\nfor details.\n"
                                 }
                             },
                             "protocols": [
@@ -1120,6 +1124,134 @@
                                                 "calculated": true
                                             },
                                             "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "X-GitHub-Media-Type": {
+                                    "name": "X-GitHub-Media-Type",
+                                    "displayName": "X-GitHub-Media-Type",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "You can check the current version of media type in responses.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "Accept": {
+                                    "name": "Accept",
+                                    "displayName": "Accept",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Is used to set specified media type.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "X-RateLimit-Limit": {
+                                    "name": "X-RateLimit-Limit",
+                                    "displayName": "X-RateLimit-Limit",
+                                    "type": "integer",
+                                    "required": false,
+                                    "repeat": false,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "X-RateLimit-Remaining": {
+                                    "name": "X-RateLimit-Remaining",
+                                    "displayName": "X-RateLimit-Remaining",
+                                    "type": "integer",
+                                    "required": false,
+                                    "repeat": false,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "X-RateLimit-Reset": {
+                                    "name": "X-RateLimit-Reset",
+                                    "displayName": "X-RateLimit-Reset",
+                                    "type": "integer",
+                                    "required": false,
+                                    "repeat": false,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "X-GitHub-Request-Id": {
+                                    "name": "X-GitHub-Request-Id",
+                                    "displayName": "X-GitHub-Request-Id",
+                                    "type": "integer",
+                                    "required": false,
+                                    "repeat": false,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
                                                 "insertedAsDefault": true
                                             },
                                             "repeat": {

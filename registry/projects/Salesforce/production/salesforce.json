@@ -1000,7 +1000,8 @@
             "relativeUri": "/",
             "type": "generalResource",
             "securedBy": [
-                "oauth_2_0"
+                "oauth_2_0",
+                "tokenSchema"
             ],
             "methods": [
                 {
@@ -1027,7 +1028,8 @@
                         "HTTPS"
                     ],
                     "securedBy": [
-                        "oauth_2_0"
+                        "oauth_2_0",
+                        "tokenSchema"
                     ],
                     "description": "List Available REST API Versions",
                     "method": "get",
@@ -1047,9 +1049,6 @@
             "description": "Lists summary information about each Salesforce versions currently available, including the version, label, and a link to each version's root.",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }
@@ -1061,7 +1060,8 @@
             "relativeUri": "/{version}",
             "type": "generalResource",
             "securedBy": [
-                "oauth_2_0"
+                "oauth_2_0",
+                "tokenSchema"
             ],
             "uriParameters": {
                 "version": {
@@ -1108,7 +1108,8 @@
                         "HTTPS"
                     ],
                     "securedBy": [
-                        "oauth_2_0"
+                        "oauth_2_0",
+                        "tokenSchema"
                     ],
                     "description": "Lists available resources for the specified API version, including resource name and URI.",
                     "method": "get",
@@ -1129,14 +1130,78 @@
                     "relativeUri": "/query",
                     "type": "query",
                     "securedBy": [
-                        "oauth_2_0"
+                        "oauth_2_0",
+                        "tokenSchema"
+                    ],
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml"
+                                        },
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "query",
+                                            "example": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"done\" : {\r\n      \"type\" : \"boolean\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"totalSize\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"records\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : [\r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"attributes\" : {\r\n              \"type\" : \"object\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"Name\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            }\r\n          }\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}",
+                                            "schemaContent": "query"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0",
+                                "tokenSchema"
+                            ],
+                            "queryParameters": {
+                                "q": {
+                                    "name": "q",
+                                    "displayName": "q",
+                                    "type": "string",
+                                    "required": true,
+                                    "example": "SELECT+Name+FROM+MyObject",
+                                    "repeat": false,
+                                    "description": "A SOQL query. Note that you will need to replace spaces with '+' characters in your query string to create a valid URI.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
                     ],
                     "resources": [
                         {
                             "relativeUri": "/{queryIdentifier}",
                             "type": "queryResults",
                             "securedBy": [
-                                "oauth_2_0"
+                                "oauth_2_0",
+                                "tokenSchema"
                             ],
                             "uriParameters": {
                                 "queryIdentifier": {
@@ -1164,13 +1229,48 @@
                                     }
                                 }
                             },
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "queryResults",
+                                                    "example": "{\r\n  \"done\" : true ,\r\n  \"totalSize\" : 3214 ,\r\n  \"records\" : [\r\n  ]\r\n}",
+                                                    "schemaContent": "queryResults"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0",
+                                        "tokenSchema"
+                                    ],
+                                    "method": "get",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
                             "displayName": "/{queryIdentifier}",
                             "description": "",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -1185,9 +1285,6 @@
                     "description": "Executes the specified SOQL query.\nIf the query results are too large, the response contains the first batch of results and a query identifier in the 'nextRecordsUrl' field of the response. The identifier can be used in an additional request to retrieve the next batch.\n",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
-                            "securedBy": {
-                                "calculated": true
-                            },
                             "displayName": {
                                 "calculated": true
                             }
@@ -1201,7 +1298,8 @@
                     "relativeUri": "/recent",
                     "type": "generalResource",
                     "securedBy": [
-                        "oauth_2_0"
+                        "oauth_2_0",
+                        "tokenSchema"
                     ],
                     "methods": [
                         {
@@ -1225,7 +1323,8 @@
                                 "HTTPS"
                             ],
                             "securedBy": [
-                                "oauth_2_0"
+                                "oauth_2_0",
+                                "tokenSchema"
                             ],
                             "queryParameters": {
                                 "limit": {
@@ -1270,9 +1369,6 @@
                     "description": "Gets the most recently accessed items that were viewed or referenced by the current user. Salesforce stores information about record views in the interface and uses it to generate a list of recently viewed and referenced records, such as in the sidebar and for the auto-complete options in search.\nThis resource only accesses most recently used item information. If you want to modify the list of recently viewed items, you'll need to update recently viewed information directly by using a SOQL Query with a FOR VIEW or FOR REFERENCE clause.\n",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
-                            "securedBy": {
-                                "calculated": true
-                            },
                             "displayName": {
                                 "calculated": true
                             }
@@ -1286,7 +1382,8 @@
                     "relativeUri": "/sobjects",
                     "type": "generalResource",
                     "securedBy": [
-                        "oauth_2_0"
+                        "oauth_2_0",
+                        "tokenSchema"
                     ],
                     "methods": [
                         {
@@ -1310,7 +1407,8 @@
                                 "HTTPS"
                             ],
                             "securedBy": [
-                                "oauth_2_0"
+                                "oauth_2_0",
+                                "tokenSchema"
                             ],
                             "description": "Get a List of Objects",
                             "method": "get",
@@ -1331,7 +1429,8 @@
                             "relativeUri": "/SelfServiceUser/{selfServiceUserId}/password",
                             "type": "passwordManagement",
                             "securedBy": [
-                                "oauth_2_0"
+                                "oauth_2_0",
+                                "tokenSchema"
                             ],
                             "uriParameters": {
                                 "selfServiceUserId": {
@@ -1359,13 +1458,160 @@
                                     }
                                 }
                             },
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "passwordExpiration-xml",
+                                                    "example": "<Password>\r\n  <isExpired>false</isExpired>\r\n</Password>",
+                                                    "schemaContent": "passwordExpiration-xml"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "passwordExpiration",
+                                                    "example": "{\r\n  \"isExpired\" : false\r\n}",
+                                                    "schemaContent": "passwordExpiration"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0",
+                                        "tokenSchema"
+                                    ],
+                                    "description": "Retreive password expiration status.",
+                                    "method": "get",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "responses": {
+                                        "201": {
+                                            "code": "201"
+                                        },
+                                        "400": {
+                                            "code": "400"
+                                        }
+                                    },
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml"
+                                        },
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "passwordNew",
+                                            "example": "{\r\n  \"NewPassword\" : \"myNewPassword1234\"\r\n}",
+                                            "schemaContent": "passwordNew"
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0",
+                                        "tokenSchema"
+                                    ],
+                                    "description": "Set the password.",
+                                    "method": "post",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "passwordReset-xml",
+                                                    "example": "<Result>\r\n  <NewPassword>2sv0xHAuM</NewPassword>\r\n</Result>",
+                                                    "schemaContent": "passwordReset-xml"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "passwordReset",
+                                                    "example": "{\r\n  \"NewPassword\" : \"2sv0xHAuM\"\r\n}",
+                                                    "schemaContent": "passwordReset"
+                                                }
+                                            }
+                                        },
+                                        "204": {
+                                            "code": "204"
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0",
+                                        "tokenSchema"
+                                    ],
+                                    "description": "Reset the password.",
+                                    "method": "delete",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200"
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0",
+                                        "tokenSchema"
+                                    ],
+                                    "method": "head",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
                             "displayName": "/SelfServiceUser/{selfServiceUserId}/password",
                             "description": "Set, reset, or get information about a self-service user password. This resource is available in REST API version 24.0 and later.",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -1381,7 +1627,8 @@
                             "relativeUri": "/{SObjectName}",
                             "type": "generalResource",
                             "securedBy": [
-                                "oauth_2_0"
+                                "oauth_2_0",
+                                "tokenSchema"
                             ],
                             "uriParameters": {
                                 "SObjectName": {
@@ -1432,7 +1679,8 @@
                                         "HTTPS"
                                     ],
                                     "securedBy": [
-                                        "oauth_2_0"
+                                        "oauth_2_0",
+                                        "tokenSchema"
                                     ],
                                     "method": "get",
                                     "__METADATA__": {
@@ -1461,6 +1709,9 @@
                                                     "schemaContent": "{\n  \"type\": \"object\",\n  \"required\": true,\n  \"$schema\": \"http://json-schema.org/draft-03/schema\",\n  \"properties\": {\n    \"id\": {\n      \"type\": \"string\",\n      \"required\": false\n    },\n    \"errors\": {\n      \"type\": \"array\",\n      \"required\": false,\n      \"items\": {\n        \"type\": \"array\"\n      }\n    },\n    \"success\": {\n      \"type\": \"boolean\",\n      \"required\": false\n    }\n  }\n}"
                                                 }
                                             }
+                                        },
+                                        "400": {
+                                            "code": "400"
                                         }
                                     },
                                     "body": {
@@ -1478,7 +1729,8 @@
                                         "HTTPS"
                                     ],
                                     "securedBy": [
-                                        "oauth_2_0"
+                                        "oauth_2_0",
+                                        "tokenSchema"
                                     ],
                                     "method": "post",
                                     "__METADATA__": {
@@ -1501,7 +1753,8 @@
                                         "hasPeriod"
                                     ],
                                     "securedBy": [
-                                        "oauth_2_0"
+                                        "oauth_2_0",
+                                        "tokenSchema"
                                     ],
                                     "methods": [
                                         {
@@ -1528,8 +1781,53 @@
                                                 "HTTPS"
                                             ],
                                             "securedBy": [
-                                                "oauth_2_0"
+                                                "oauth_2_0",
+                                                "tokenSchema"
                                             ],
+                                            "queryParameters": {
+                                                "start": {
+                                                    "name": "start",
+                                                    "displayName": "start",
+                                                    "type": "string",
+                                                    "required": true,
+                                                    "repeat": false,
+                                                    "description": "Starting date/time (Coordinated Universal Time (UTC)-not local- timezone) of the timespan for which to retrieve the data. The API ignores the seconds portion of the specified dateTime value (for example, 12:30:15 is interpreted as 12:30:00 UTC). The date and time should be provided in ISO 8601 format: YYYY-MM-DDThh:mm:ss+hh:mm. The date/time value for 'start' must chronologically precede 'end'.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "end": {
+                                                    "name": "end",
+                                                    "displayName": "end",
+                                                    "type": "string",
+                                                    "required": true,
+                                                    "repeat": false,
+                                                    "description": "Ending date/time (Coordinated Universal Time (UTC)-not local- timezone) of the timespan for which to retrieve the data. The API ignores the seconds portion of the specified dateTime value (for example, 12:35:15 is interpreted as 12:35:00 UTC). The date and time should be provided in ISO 8601 format: YYYY-MM-DDThh:mm:ss+hh:mm.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
                                             "method": "get",
                                             "__METADATA__": {
                                                 "primitiveValuesMeta": {
@@ -1547,9 +1845,6 @@
                                     "description": "Retrieves the list of individual records that have been deleted within the given timespan for the specified object. SObject Get Deleted is available in API version 29.0 and later.\nThis resource is commonly used in data replication applications. Note the following considerations:\nDeleted records are written to a delete log which this resource accesses. A background process that runs every two hours purges records that have been in an organization's delete log for more than two hours if the number of records is above a certain limit. Starting with the oldest records, the process purges delete log entries until the delete log is back below the limit. This is done to protect Salesforce from performance issues related to massive delete logs\nInformation on deleted records are returned only if the current session user has access to them.\nResults are returned for no more than 15 days previous to the day the call is executed (or earlier if an administrator has purged the Recycle Bin).\nSee \"Data Replication\" in the SOAP API Developer's Guide for additional details on data replication and data replication limits.\n",
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
-                                            "securedBy": {
-                                                "calculated": true
-                                            },
                                             "displayName": {
                                                 "calculated": true
                                             }
@@ -1563,7 +1858,8 @@
                                     "relativeUri": "/{id}",
                                     "type": "generalResource",
                                     "securedBy": [
-                                        "oauth_2_0"
+                                        "oauth_2_0",
+                                        "tokenSchema"
                                     ],
                                     "uriParameters": {
                                         "id": {
@@ -1613,7 +1909,8 @@
                                                 "HTTPS"
                                             ],
                                             "securedBy": [
-                                                "oauth_2_0"
+                                                "oauth_2_0",
+                                                "tokenSchema"
                                             ],
                                             "queryParameters": {
                                                 "fields": {
@@ -1654,11 +1951,17 @@
                                             }
                                         },
                                         {
+                                            "responses": {
+                                                "204": {
+                                                    "code": "204"
+                                                }
+                                            },
                                             "protocols": [
                                                 "HTTPS"
                                             ],
                                             "securedBy": [
-                                                "oauth_2_0"
+                                                "oauth_2_0",
+                                                "tokenSchema"
                                             ],
                                             "method": "delete",
                                             "__METADATA__": {
@@ -1673,6 +1976,11 @@
                                             }
                                         },
                                         {
+                                            "responses": {
+                                                "400": {
+                                                    "code": "400"
+                                                }
+                                            },
                                             "body": {
                                                 "application/xml": {
                                                     "name": "application/xml",
@@ -1689,7 +1997,8 @@
                                                 "HTTPS"
                                             ],
                                             "securedBy": [
-                                                "oauth_2_0"
+                                                "oauth_2_0",
+                                                "tokenSchema"
                                             ],
                                             "method": "patch",
                                             "__METADATA__": {
@@ -1709,7 +2018,8 @@
                                             "relativeUri": "/{blobField}",
                                             "type": "generalResource",
                                             "securedBy": [
-                                                "oauth_2_0"
+                                                "oauth_2_0",
+                                                "tokenSchema"
                                             ],
                                             "uriParameters": {
                                                 "blobField": {
@@ -1756,7 +2066,8 @@
                                                         "HTTPS"
                                                     ],
                                                     "securedBy": [
-                                                        "oauth_2_0"
+                                                        "oauth_2_0",
+                                                        "tokenSchema"
                                                     ],
                                                     "method": "get",
                                                     "__METADATA__": {
@@ -1775,9 +2086,6 @@
                                             "description": "Retrieves the specified blob field from an individual record.\nBecause blob fields contain binary data, you can't use JSON or XML to retrieve this data.\n",
                                             "__METADATA__": {
                                                 "primitiveValuesMeta": {
-                                                    "securedBy": {
-                                                        "calculated": true
-                                                    },
                                                     "displayName": {
                                                         "calculated": true
                                                     }
@@ -1792,9 +2100,6 @@
                                     "description": "Accesses records based on the specified object ID. Retrieves, updates, or deletes records. This resource can also be used to retrieve field values. Use the GET method to retrieve records or fields, the DELETE method to delete records, and the PATCH method to update records.\nTo create new records, use the \"SObject Basic Information\" resource.\n",
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
-                                            "securedBy": {
-                                                "calculated": true
-                                            },
                                             "displayName": {
                                                 "calculated": true
                                             }
@@ -1808,7 +2113,8 @@
                                     "relativeUri": "/quickActions",
                                     "type": "generalResource",
                                     "securedBy": [
-                                        "oauth_2_0"
+                                        "oauth_2_0",
+                                        "tokenSchema"
                                     ],
                                     "methods": [
                                         {
@@ -1829,7 +2135,8 @@
                                                 "HTTPS"
                                             ],
                                             "securedBy": [
-                                                "oauth_2_0"
+                                                "oauth_2_0",
+                                                "tokenSchema"
                                             ],
                                             "method": "get",
                                             "__METADATA__": {
@@ -1844,6 +2151,14 @@
                                             }
                                         },
                                         {
+                                            "responses": {
+                                                "201": {
+                                                    "code": "201"
+                                                },
+                                                "400": {
+                                                    "code": "400"
+                                                }
+                                            },
                                             "body": {
                                                 "application/xml": {
                                                     "name": "application/xml"
@@ -1856,7 +2171,8 @@
                                                 "HTTPS"
                                             ],
                                             "securedBy": [
-                                                "oauth_2_0"
+                                                "oauth_2_0",
+                                                "tokenSchema"
                                             ],
                                             "method": "post",
                                             "__METADATA__": {
@@ -1871,11 +2187,17 @@
                                             }
                                         },
                                         {
+                                            "responses": {
+                                                "200": {
+                                                    "code": "200"
+                                                }
+                                            },
                                             "protocols": [
                                                 "HTTPS"
                                             ],
                                             "securedBy": [
-                                                "oauth_2_0"
+                                                "oauth_2_0",
+                                                "tokenSchema"
                                             ],
                                             "method": "head",
                                             "__METADATA__": {
@@ -1895,7 +2217,8 @@
                                             "relativeUri": "/{actionName}",
                                             "type": "generalResource",
                                             "securedBy": [
-                                                "oauth_2_0"
+                                                "oauth_2_0",
+                                                "tokenSchema"
                                             ],
                                             "uriParameters": {
                                                 "actionName": {
@@ -1942,7 +2265,8 @@
                                                         "HTTPS"
                                                     ],
                                                     "securedBy": [
-                                                        "oauth_2_0"
+                                                        "oauth_2_0",
+                                                        "tokenSchema"
                                                     ],
                                                     "method": "get",
                                                     "__METADATA__": {
@@ -1957,6 +2281,14 @@
                                                     }
                                                 },
                                                 {
+                                                    "responses": {
+                                                        "201": {
+                                                            "code": "201"
+                                                        },
+                                                        "400": {
+                                                            "code": "400"
+                                                        }
+                                                    },
                                                     "body": {
                                                         "application/xml": {
                                                             "name": "application/xml"
@@ -1972,7 +2304,8 @@
                                                         "HTTPS"
                                                     ],
                                                     "securedBy": [
-                                                        "oauth_2_0"
+                                                        "oauth_2_0",
+                                                        "tokenSchema"
                                                     ],
                                                     "method": "post",
                                                     "__METADATA__": {
@@ -1987,11 +2320,17 @@
                                                     }
                                                 },
                                                 {
+                                                    "responses": {
+                                                        "200": {
+                                                            "code": "200"
+                                                        }
+                                                    },
                                                     "protocols": [
                                                         "HTTPS"
                                                     ],
                                                     "securedBy": [
-                                                        "oauth_2_0"
+                                                        "oauth_2_0",
+                                                        "tokenSchema"
                                                     ],
                                                     "method": "head",
                                                     "__METADATA__": {
@@ -2011,7 +2350,8 @@
                                                     "relativeUri": "/describe",
                                                     "type": "generalResource",
                                                     "securedBy": [
-                                                        "oauth_2_0"
+                                                        "oauth_2_0",
+                                                        "tokenSchema"
                                                     ],
                                                     "methods": [
                                                         {
@@ -2032,7 +2372,8 @@
                                                                 "HTTPS"
                                                             ],
                                                             "securedBy": [
-                                                                "oauth_2_0"
+                                                                "oauth_2_0",
+                                                                "tokenSchema"
                                                             ],
                                                             "method": "get",
                                                             "__METADATA__": {
@@ -2047,6 +2388,14 @@
                                                             }
                                                         },
                                                         {
+                                                            "responses": {
+                                                                "201": {
+                                                                    "code": "201"
+                                                                },
+                                                                "400": {
+                                                                    "code": "400"
+                                                                }
+                                                            },
                                                             "body": {
                                                                 "application/xml": {
                                                                     "name": "application/xml"
@@ -2059,7 +2408,8 @@
                                                                 "HTTPS"
                                                             ],
                                                             "securedBy": [
-                                                                "oauth_2_0"
+                                                                "oauth_2_0",
+                                                                "tokenSchema"
                                                             ],
                                                             "method": "post",
                                                             "__METADATA__": {
@@ -2074,11 +2424,17 @@
                                                             }
                                                         },
                                                         {
+                                                            "responses": {
+                                                                "200": {
+                                                                    "code": "200"
+                                                                }
+                                                            },
                                                             "protocols": [
                                                                 "HTTPS"
                                                             ],
                                                             "securedBy": [
-                                                                "oauth_2_0"
+                                                                "oauth_2_0",
+                                                                "tokenSchema"
                                                             ],
                                                             "method": "head",
                                                             "__METADATA__": {
@@ -2097,9 +2453,6 @@
                                                     "description": "Returns a specific action's descriptive detail.\nThis resource is available in REST API version 28.0 and later. When working with publisher actions, also refer to \"Quick Actions\".\n",
                                                     "__METADATA__": {
                                                         "primitiveValuesMeta": {
-                                                            "securedBy": {
-                                                                "calculated": true
-                                                            },
                                                             "displayName": {
                                                                 "calculated": true
                                                             }
@@ -2113,7 +2466,8 @@
                                                     "relativeUri": "/defaultValues",
                                                     "type": "generalResource",
                                                     "securedBy": [
-                                                        "oauth_2_0"
+                                                        "oauth_2_0",
+                                                        "tokenSchema"
                                                     ],
                                                     "methods": [
                                                         {
@@ -2134,7 +2488,8 @@
                                                                 "HTTPS"
                                                             ],
                                                             "securedBy": [
-                                                                "oauth_2_0"
+                                                                "oauth_2_0",
+                                                                "tokenSchema"
                                                             ],
                                                             "method": "get",
                                                             "__METADATA__": {
@@ -2149,6 +2504,14 @@
                                                             }
                                                         },
                                                         {
+                                                            "responses": {
+                                                                "201": {
+                                                                    "code": "201"
+                                                                },
+                                                                "400": {
+                                                                    "code": "400"
+                                                                }
+                                                            },
                                                             "body": {
                                                                 "application/xml": {
                                                                     "name": "application/xml"
@@ -2161,7 +2524,8 @@
                                                                 "HTTPS"
                                                             ],
                                                             "securedBy": [
-                                                                "oauth_2_0"
+                                                                "oauth_2_0",
+                                                                "tokenSchema"
                                                             ],
                                                             "method": "post",
                                                             "__METADATA__": {
@@ -2176,11 +2540,17 @@
                                                             }
                                                         },
                                                         {
+                                                            "responses": {
+                                                                "200": {
+                                                                    "code": "200"
+                                                                }
+                                                            },
                                                             "protocols": [
                                                                 "HTTPS"
                                                             ],
                                                             "securedBy": [
-                                                                "oauth_2_0"
+                                                                "oauth_2_0",
+                                                                "tokenSchema"
                                                             ],
                                                             "method": "head",
                                                             "__METADATA__": {
@@ -2200,7 +2570,8 @@
                                                             "relativeUri": "/{contextId}",
                                                             "type": "generalResource",
                                                             "securedBy": [
-                                                                "oauth_2_0"
+                                                                "oauth_2_0",
+                                                                "tokenSchema"
                                                             ],
                                                             "uriParameters": {
                                                                 "contextId": {
@@ -2247,7 +2618,8 @@
                                                                         "HTTPS"
                                                                     ],
                                                                     "securedBy": [
-                                                                        "oauth_2_0"
+                                                                        "oauth_2_0",
+                                                                        "tokenSchema"
                                                                     ],
                                                                     "method": "get",
                                                                     "__METADATA__": {
@@ -2262,11 +2634,20 @@
                                                                     }
                                                                 },
                                                                 {
+                                                                    "responses": {
+                                                                        "201": {
+                                                                            "code": "201"
+                                                                        },
+                                                                        "400": {
+                                                                            "code": "400"
+                                                                        }
+                                                                    },
                                                                     "protocols": [
                                                                         "HTTPS"
                                                                     ],
                                                                     "securedBy": [
-                                                                        "oauth_2_0"
+                                                                        "oauth_2_0",
+                                                                        "tokenSchema"
                                                                     ],
                                                                     "method": "post",
                                                                     "__METADATA__": {
@@ -2281,11 +2662,17 @@
                                                                     }
                                                                 },
                                                                 {
+                                                                    "responses": {
+                                                                        "200": {
+                                                                            "code": "200"
+                                                                        }
+                                                                    },
                                                                     "protocols": [
                                                                         "HTTPS"
                                                                     ],
                                                                     "securedBy": [
-                                                                        "oauth_2_0"
+                                                                        "oauth_2_0",
+                                                                        "tokenSchema"
                                                                     ],
                                                                     "method": "head",
                                                                     "__METADATA__": {
@@ -2304,9 +2691,6 @@
                                                             "description": "In API version 29.0 and greater, evaluate the default values for an action.\nThis returns the default values specific to the 'contextId' object.\n",
                                                             "__METADATA__": {
                                                                 "primitiveValuesMeta": {
-                                                                    "securedBy": {
-                                                                        "calculated": true
-                                                                    },
                                                                     "displayName": {
                                                                         "calculated": true
                                                                     }
@@ -2320,7 +2704,8 @@
                                                             "relativeUri": "/{parentId}",
                                                             "type": "generalResource",
                                                             "securedBy": [
-                                                                "oauth_2_0"
+                                                                "oauth_2_0",
+                                                                "tokenSchema"
                                                             ],
                                                             "uriParameters": {
                                                                 "parentId": {
@@ -2367,7 +2752,8 @@
                                                                         "HTTPS"
                                                                     ],
                                                                     "securedBy": [
-                                                                        "oauth_2_0"
+                                                                        "oauth_2_0",
+                                                                        "tokenSchema"
                                                                     ],
                                                                     "method": "get",
                                                                     "__METADATA__": {
@@ -2382,11 +2768,20 @@
                                                                     }
                                                                 },
                                                                 {
+                                                                    "responses": {
+                                                                        "201": {
+                                                                            "code": "201"
+                                                                        },
+                                                                        "400": {
+                                                                            "code": "400"
+                                                                        }
+                                                                    },
                                                                     "protocols": [
                                                                         "HTTPS"
                                                                     ],
                                                                     "securedBy": [
-                                                                        "oauth_2_0"
+                                                                        "oauth_2_0",
+                                                                        "tokenSchema"
                                                                     ],
                                                                     "method": "post",
                                                                     "__METADATA__": {
@@ -2401,11 +2796,17 @@
                                                                     }
                                                                 },
                                                                 {
+                                                                    "responses": {
+                                                                        "200": {
+                                                                            "code": "200"
+                                                                        }
+                                                                    },
                                                                     "protocols": [
                                                                         "HTTPS"
                                                                     ],
                                                                     "securedBy": [
-                                                                        "oauth_2_0"
+                                                                        "oauth_2_0",
+                                                                        "tokenSchema"
                                                                     ],
                                                                     "method": "head",
                                                                     "__METADATA__": {
@@ -2424,9 +2825,6 @@
                                                             "description": "In API version 28.0, evaluates the default values for an action.\nThis resource is available in REST API version 28.0 and later. When working with publisher actions, also refer to \"Quick Actions\".\n",
                                                             "__METADATA__": {
                                                                 "primitiveValuesMeta": {
-                                                                    "securedBy": {
-                                                                        "calculated": true
-                                                                    },
                                                                     "displayName": {
                                                                         "calculated": true
                                                                     }
@@ -2441,9 +2839,6 @@
                                                     "description": "Return a specific action's default values, including default field values.\nThis resource is available in REST API version 28.0 and later. When working with publisher actions, also refer to \"Quick Actions\".\n",
                                                     "__METADATA__": {
                                                         "primitiveValuesMeta": {
-                                                            "securedBy": {
-                                                                "calculated": true
-                                                            },
                                                             "displayName": {
                                                                 "calculated": true
                                                             }
@@ -2458,9 +2853,6 @@
                                             "description": "Returns a specific action.\nThis resource is available in REST API version 28.0 and later. When working with publisher actions, also refer to \"Quick Actions\".\n",
                                             "__METADATA__": {
                                                 "primitiveValuesMeta": {
-                                                    "securedBy": {
-                                                        "calculated": true
-                                                    },
                                                     "displayName": {
                                                         "calculated": true
                                                     }
@@ -2475,9 +2867,6 @@
                                     "description": "Returns a specific object's actions as well as global actions.\nThis resource is available in REST API version 28.0 and later. When working with publisher actions, also refer to \"Quick Actions\".\n",
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
-                                            "securedBy": {
-                                                "calculated": true
-                                            },
                                             "displayName": {
                                                 "calculated": true
                                             }
@@ -2491,7 +2880,8 @@
                                     "relativeUri": "/{fieldName}/{fieldValue}",
                                     "type": "generalResource",
                                     "securedBy": [
-                                        "oauth_2_0"
+                                        "oauth_2_0",
+                                        "tokenSchema"
                                     ],
                                     "uriParameters": {
                                         "fieldName": {
@@ -2566,7 +2956,8 @@
                                                 "HTTPS"
                                             ],
                                             "securedBy": [
-                                                "oauth_2_0"
+                                                "oauth_2_0",
+                                                "tokenSchema"
                                             ],
                                             "method": "get",
                                             "__METADATA__": {
@@ -2581,11 +2972,17 @@
                                             }
                                         },
                                         {
+                                            "responses": {
+                                                "204": {
+                                                    "code": "204"
+                                                }
+                                            },
                                             "protocols": [
                                                 "HTTPS"
                                             ],
                                             "securedBy": [
-                                                "oauth_2_0"
+                                                "oauth_2_0",
+                                                "tokenSchema"
                                             ],
                                             "method": "delete",
                                             "__METADATA__": {
@@ -2632,6 +3029,9 @@
                                                     },
                                                     "description": "The external ID value isn't unique. Body contains a list of records that matched the query."
                                                 },
+                                                "400": {
+                                                    "code": "400"
+                                                },
                                                 "404": {
                                                     "code": "404",
                                                     "body": {
@@ -2662,7 +3062,8 @@
                                                 "HTTPS"
                                             ],
                                             "securedBy": [
-                                                "oauth_2_0"
+                                                "oauth_2_0",
+                                                "tokenSchema"
                                             ],
                                             "method": "patch",
                                             "__METADATA__": {
@@ -2677,11 +3078,17 @@
                                             }
                                         },
                                         {
+                                            "responses": {
+                                                "200": {
+                                                    "code": "200"
+                                                }
+                                            },
                                             "protocols": [
                                                 "HTTPS"
                                             ],
                                             "securedBy": [
-                                                "oauth_2_0"
+                                                "oauth_2_0",
+                                                "tokenSchema"
                                             ],
                                             "method": "head",
                                             "__METADATA__": {
@@ -2700,9 +3107,6 @@
                                     "description": "Creates new records or updates existing records (upserts records) based on the value of a specified external ID field.\nIf the specified value doesn't exist, a new record is created.\nIf a record does exist with that value, the field values specified in the request body are updated.\nIf the value is not unique, the REST API returns a 300 response with the list of matching records.\n",
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
-                                            "securedBy": {
-                                                "calculated": true
-                                            },
                                             "displayName": {
                                                 "calculated": true
                                             }
@@ -2720,7 +3124,8 @@
                                         "hasPeriod"
                                     ],
                                     "securedBy": [
-                                        "oauth_2_0"
+                                        "oauth_2_0",
+                                        "tokenSchema"
                                     ],
                                     "methods": [
                                         {
@@ -2747,8 +3152,53 @@
                                                 "HTTPS"
                                             ],
                                             "securedBy": [
-                                                "oauth_2_0"
+                                                "oauth_2_0",
+                                                "tokenSchema"
                                             ],
+                                            "queryParameters": {
+                                                "start": {
+                                                    "name": "start",
+                                                    "displayName": "start",
+                                                    "type": "string",
+                                                    "required": true,
+                                                    "repeat": false,
+                                                    "description": "Starting date/time (Coordinated Universal Time (UTC)-not local- timezone) of the timespan for which to retrieve the data. The API ignores the seconds portion of the specified dateTime value (for example, 12:30:15 is interpreted as 12:30:00 UTC). The date and time should be provided in ISO 8601 format: YYYY-MM-DDThh:mm:ss+hh:mm. The date/time value for 'start' must chronologically precede 'end'.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "end": {
+                                                    "name": "end",
+                                                    "displayName": "end",
+                                                    "type": "string",
+                                                    "required": true,
+                                                    "repeat": false,
+                                                    "description": "Ending date/time (Coordinated Universal Time (UTC)-not local- timezone) of the timespan for which to retrieve the data. The API ignores the seconds portion of the specified dateTime value (for example, 12:35:15 is interpreted as 12:35:00 UTC). The date and time should be provided in ISO 8601 format: YYYY-MM-DDThh:mm:ss+hh:mm.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
                                             "method": "get",
                                             "__METADATA__": {
                                                 "primitiveValuesMeta": {
@@ -2766,9 +3216,6 @@
                                     "description": "Retrieves the list of individual records that have been updated (added or changed) within the given timespan for the specified object. SObject Get Updated is available in API version 29.0 and later.\nThis resource is commonly used in data replication applications. Note the following considerations:\nResults are returned for no more than 30 days previous to the day the call is executed.\nYour client application can replicate any objects to which it has sufficient permissions. For example, to replicate all data for your organization, your client application must be logged in with \"View All Data\" access rights to the specified object. Similarly, the objects must be within your sharing rules.\nThere is a limit of 200,000 IDs returned from this resource. If more than 200,000 IDs would be returned, EXCEEDED_ID_LIMIT is returned. You can correct the error by choosing start and end dates that are closer together.\nSee \"Data Replication\" in the SOAP API Developer's Guide for additional details on data replication and data replication limits.\n",
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
-                                            "securedBy": {
-                                                "calculated": true
-                                            },
                                             "displayName": {
                                                 "calculated": true
                                             }
@@ -2782,7 +3229,8 @@
                                     "relativeUri": "/describe",
                                     "type": "generalResource",
                                     "securedBy": [
-                                        "oauth_2_0"
+                                        "oauth_2_0",
+                                        "tokenSchema"
                                     ],
                                     "methods": [
                                         {
@@ -2810,7 +3258,8 @@
                                                 "HTTPS"
                                             ],
                                             "securedBy": [
-                                                "oauth_2_0"
+                                                "oauth_2_0",
+                                                "tokenSchema"
                                             ],
                                             "headers": {
                                                 "If-Modified-Since": {
@@ -2857,7 +3306,8 @@
                                             "relativeUri": "/layouts",
                                             "type": "generalResource",
                                             "securedBy": [
-                                                "oauth_2_0"
+                                                "oauth_2_0",
+                                                "tokenSchema"
                                             ],
                                             "methods": [
                                                 {
@@ -2881,7 +3331,8 @@
                                                         "HTTPS"
                                                     ],
                                                     "securedBy": [
-                                                        "oauth_2_0"
+                                                        "oauth_2_0",
+                                                        "tokenSchema"
                                                     ],
                                                     "method": "get",
                                                     "__METADATA__": {
@@ -2896,11 +3347,17 @@
                                                     }
                                                 },
                                                 {
+                                                    "responses": {
+                                                        "200": {
+                                                            "code": "200"
+                                                        }
+                                                    },
                                                     "protocols": [
                                                         "HTTPS"
                                                     ],
                                                     "securedBy": [
-                                                        "oauth_2_0"
+                                                        "oauth_2_0",
+                                                        "tokenSchema"
                                                     ],
                                                     "method": "head",
                                                     "__METADATA__": {
@@ -2919,9 +3376,6 @@
                                             "description": "Returns description for a specific object, including for publisher actions. The list of fields and the layout name are returned.\nThis resource is available in REST API version 28.0 and later. When working with publisher actions, also refer to \"Quick Actions\".\n",
                                             "__METADATA__": {
                                                 "primitiveValuesMeta": {
-                                                    "securedBy": {
-                                                        "calculated": true
-                                                    },
                                                     "displayName": {
                                                         "calculated": true
                                                     }
@@ -2935,7 +3389,8 @@
                                             "relativeUri": "/compactLayouts",
                                             "type": "generalResource",
                                             "securedBy": [
-                                                "oauth_2_0"
+                                                "oauth_2_0",
+                                                "tokenSchema"
                                             ],
                                             "methods": [
                                                 {
@@ -2959,7 +3414,8 @@
                                                         "HTTPS"
                                                     ],
                                                     "securedBy": [
-                                                        "oauth_2_0"
+                                                        "oauth_2_0",
+                                                        "tokenSchema"
                                                     ],
                                                     "method": "get",
                                                     "__METADATA__": {
@@ -2974,11 +3430,17 @@
                                                     }
                                                 },
                                                 {
+                                                    "responses": {
+                                                        "200": {
+                                                            "code": "200"
+                                                        }
+                                                    },
                                                     "protocols": [
                                                         "HTTPS"
                                                     ],
                                                     "securedBy": [
-                                                        "oauth_2_0"
+                                                        "oauth_2_0",
+                                                        "tokenSchema"
                                                     ],
                                                     "method": "head",
                                                     "__METADATA__": {
@@ -2996,9 +3458,6 @@
                                             "displayName": "/compactLayouts",
                                             "__METADATA__": {
                                                 "primitiveValuesMeta": {
-                                                    "securedBy": {
-                                                        "calculated": true
-                                                    },
                                                     "displayName": {
                                                         "calculated": true
                                                     }
@@ -3013,9 +3472,6 @@
                                     "description": "Completely describes the individual metadata at all levels for the specified object. For example, this can be used to retrieve the fields, URLs, and child relationships for the Account object.\nThe \"If-Modified-Since\" header can be used with this resource, with a date format of EEE, dd MMM yyyy HH:mm:ss z. When this header is used, if the object metadata has not changed since the provided date, a 304 Not Modified status code is returned, with no response body.\n",
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
-                                            "securedBy": {
-                                                "calculated": true
-                                            },
                                             "displayName": {
                                                 "calculated": true
                                             }
@@ -3030,9 +3486,6 @@
                             "description": "Describes the individual metadata for the specified object. Can also be used to create a new record for a given object. For example, this can be used to retrieve the metadata for the Account object using the GET method, or create a new Account object using the POST method.",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -3046,7 +3499,8 @@
                             "relativeUri": "/User/{userId}/password",
                             "type": "passwordManagement",
                             "securedBy": [
-                                "oauth_2_0"
+                                "oauth_2_0",
+                                "tokenSchema"
                             ],
                             "uriParameters": {
                                 "userId": {
@@ -3074,13 +3528,160 @@
                                     }
                                 }
                             },
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "passwordExpiration-xml",
+                                                    "example": "<Password>\r\n  <isExpired>false</isExpired>\r\n</Password>",
+                                                    "schemaContent": "passwordExpiration-xml"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "passwordExpiration",
+                                                    "example": "{\r\n  \"isExpired\" : false\r\n}",
+                                                    "schemaContent": "passwordExpiration"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0",
+                                        "tokenSchema"
+                                    ],
+                                    "description": "Retreive password expiration status.",
+                                    "method": "get",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "responses": {
+                                        "201": {
+                                            "code": "201"
+                                        },
+                                        "400": {
+                                            "code": "400"
+                                        }
+                                    },
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml"
+                                        },
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "passwordNew",
+                                            "example": "{\r\n  \"NewPassword\" : \"myNewPassword1234\"\r\n}",
+                                            "schemaContent": "passwordNew"
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0",
+                                        "tokenSchema"
+                                    ],
+                                    "description": "Set the password.",
+                                    "method": "post",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml",
+                                                    "schema": "passwordReset-xml",
+                                                    "example": "<Result>\r\n  <NewPassword>2sv0xHAuM</NewPassword>\r\n</Result>",
+                                                    "schemaContent": "passwordReset-xml"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "passwordReset",
+                                                    "example": "{\r\n  \"NewPassword\" : \"2sv0xHAuM\"\r\n}",
+                                                    "schemaContent": "passwordReset"
+                                                }
+                                            }
+                                        },
+                                        "204": {
+                                            "code": "204"
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0",
+                                        "tokenSchema"
+                                    ],
+                                    "description": "Reset the password.",
+                                    "method": "delete",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200"
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0",
+                                        "tokenSchema"
+                                    ],
+                                    "method": "head",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
                             "displayName": "/User/{userId}/password",
                             "description": "Set, reset, or get information about a user password. This resource is available in REST API version 24.0 and later.",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -3096,7 +3697,8 @@
                             "relativeUri": "/Global/describe/layouts",
                             "type": "generalResource",
                             "securedBy": [
-                                "oauth_2_0"
+                                "oauth_2_0",
+                                "tokenSchema"
                             ],
                             "methods": [
                                 {
@@ -3120,7 +3722,8 @@
                                         "HTTPS"
                                     ],
                                     "securedBy": [
-                                        "oauth_2_0"
+                                        "oauth_2_0",
+                                        "tokenSchema"
                                     ],
                                     "method": "get",
                                     "__METADATA__": {
@@ -3135,11 +3738,17 @@
                                     }
                                 },
                                 {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200"
+                                        }
+                                    },
                                     "protocols": [
                                         "HTTPS"
                                     ],
                                     "securedBy": [
-                                        "oauth_2_0"
+                                        "oauth_2_0",
+                                        "tokenSchema"
                                     ],
                                     "description": "Returns a list of layouts and descriptions, including for publisher actions. The list of fields and the layout name are returned.\nThis resource is available in REST API version 28.0 and later. When working with publisher actions, also refer to \"Quick Actions\".\n",
                                     "method": "head",
@@ -3159,9 +3768,6 @@
                             "description": "Returns descriptions of global publisher layouts, including for publisher actions. The list of fields and the layout name are returned.\nThis resource is available in REST API version 28.0 and later. When working with publisher actions, also refer to \"Quick Actions\".\n",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -3178,9 +3784,6 @@
                     "description": "Lists the available objects and their metadata for your organization's data. In addition, it provides the organization encoding, as well as maximum batch size permitted in queries. For more information on encoding, see Internationalization and Character Sets.",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
-                            "securedBy": {
-                                "calculated": true
-                            },
                             "displayName": {
                                 "calculated": true
                             }
@@ -3194,7 +3797,8 @@
                     "relativeUri": "/quickActions",
                     "type": "generalResource",
                     "securedBy": [
-                        "oauth_2_0"
+                        "oauth_2_0",
+                        "tokenSchema"
                     ],
                     "methods": [
                         {
@@ -3215,7 +3819,8 @@
                                 "HTTPS"
                             ],
                             "securedBy": [
-                                "oauth_2_0"
+                                "oauth_2_0",
+                                "tokenSchema"
                             ],
                             "description": "Retreive available quick actions.",
                             "method": "get",
@@ -3231,11 +3836,17 @@
                             }
                         },
                         {
+                            "responses": {
+                                "200": {
+                                    "code": "200"
+                                }
+                            },
                             "protocols": [
                                 "HTTPS"
                             ],
                             "securedBy": [
-                                "oauth_2_0"
+                                "oauth_2_0",
+                                "tokenSchema"
                             ],
                             "description": "Retreive available quick actions.",
                             "method": "head",
@@ -3370,9 +3981,6 @@
                     "description": "Returns a list of global publisher actions and standard actions.\nThis resource is available in REST API version 28.0 and later. When working with publisher actions, also refer to \"SObject Quick Actions\".\n",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
-                            "securedBy": {
-                                "calculated": true
-                            },
                             "displayName": {
                                 "calculated": true
                             }
@@ -3386,7 +3994,8 @@
                     "relativeUri": "/limits",
                     "type": "generalResource",
                     "securedBy": [
-                        "oauth_2_0"
+                        "oauth_2_0",
+                        "tokenSchema"
                     ],
                     "methods": [
                         {
@@ -3410,7 +4019,8 @@
                                 "HTTPS"
                             ],
                             "securedBy": [
-                                "oauth_2_0"
+                                "oauth_2_0",
+                                "tokenSchema"
                             ],
                             "method": "get",
                             "__METADATA__": {
@@ -3429,9 +4039,6 @@
                     "description": "Lists information about limits in your organization. This resource is available in REST API version 29.0 and later. The resource returns these limits:\nDaily API calls\nDaily Batch Apex and future method executions\nDaily Bulk API calls\nDaily Streaming API events\nStreaming API concurrent clients\n",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
-                            "securedBy": {
-                                "calculated": true
-                            },
                             "displayName": {
                                 "calculated": true
                             }
@@ -3445,14 +4052,78 @@
                     "relativeUri": "/queryAll",
                     "type": "query",
                     "securedBy": [
-                        "oauth_2_0"
+                        "oauth_2_0",
+                        "tokenSchema"
+                    ],
+                    "methods": [
+                        {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/xml": {
+                                            "name": "application/xml"
+                                        },
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "query",
+                                            "example": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"done\" : {\r\n      \"type\" : \"boolean\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"totalSize\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"records\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : [\r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"attributes\" : {\r\n              \"type\" : \"object\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"Name\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            }\r\n          }\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}",
+                                            "schemaContent": "query"
+                                        }
+                                    }
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "securedBy": [
+                                "oauth_2_0",
+                                "tokenSchema"
+                            ],
+                            "queryParameters": {
+                                "q": {
+                                    "name": "q",
+                                    "displayName": "q",
+                                    "type": "string",
+                                    "required": true,
+                                    "example": "SELECT+Name+FROM+MyObject",
+                                    "repeat": false,
+                                    "description": "A SOQL query. Note that you will need to replace spaces with '+' characters in your query string to create a valid URI.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "method": "get",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
                     ],
                     "resources": [
                         {
                             "relativeUri": "/{queryIdentifier}",
                             "type": "queryResults",
                             "securedBy": [
-                                "oauth_2_0"
+                                "oauth_2_0",
+                                "tokenSchema"
                             ],
                             "uriParameters": {
                                 "queryIdentifier": {
@@ -3480,13 +4151,48 @@
                                     }
                                 }
                             },
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/xml": {
+                                                    "name": "application/xml"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "queryResults",
+                                                    "example": "{\r\n  \"done\" : true ,\r\n  \"totalSize\" : 3214 ,\r\n  \"records\" : [\r\n  ]\r\n}",
+                                                    "schemaContent": "queryResults"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0",
+                                        "tokenSchema"
+                                    ],
+                                    "method": "get",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
                             "displayName": "/{queryIdentifier}",
                             "description": "",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -3501,9 +4207,6 @@
                     "description": "Executes the specified SOQL query. Unlike the Query resource, QueryAll will return records that have been deleted because of a merge or delete. QueryAll will also return information about archived Task and Event records. QueryAll is available in API version 29.0 and later.\nIf the query results are too large, the response contains the first batch of results and a query identifier in the nextRecordsUrl field of the response. The identifier can be used in an additional request to retrieve the next batch. Note that even though nextRecordsUrl has query in the URL, it will still provide remaining results from the initial QueryAll request. The remaining results will include deleted records that matched the initial query.\n",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
-                            "securedBy": {
-                                "calculated": true
-                            },
                             "displayName": {
                                 "calculated": true
                             }
@@ -3517,14 +4220,16 @@
                     "relativeUri": "/appMenu",
                     "type": "generalResource",
                     "securedBy": [
-                        "oauth_2_0"
+                        "oauth_2_0",
+                        "tokenSchema"
                     ],
                     "resources": [
                         {
                             "relativeUri": "/AppSwitcher",
                             "type": "generalResource",
                             "securedBy": [
-                                "oauth_2_0"
+                                "oauth_2_0",
+                                "tokenSchema"
                             ],
                             "methods": [
                                 {
@@ -3548,7 +4253,8 @@
                                         "HTTPS"
                                     ],
                                     "securedBy": [
-                                        "oauth_2_0"
+                                        "oauth_2_0",
+                                        "tokenSchema"
                                     ],
                                     "method": "get",
                                     "__METADATA__": {
@@ -3563,11 +4269,17 @@
                                     }
                                 },
                                 {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200"
+                                        }
+                                    },
                                     "protocols": [
                                         "HTTPS"
                                     ],
                                     "securedBy": [
-                                        "oauth_2_0"
+                                        "oauth_2_0",
+                                        "tokenSchema"
                                     ],
                                     "method": "head",
                                     "__METADATA__": {
@@ -3586,9 +4298,6 @@
                             "description": "Returns a list of items in the Salesforce app drop-down menu.",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -3602,7 +4311,8 @@
                             "relativeUri": "/Salesforce1",
                             "type": "generalResource",
                             "securedBy": [
-                                "oauth_2_0"
+                                "oauth_2_0",
+                                "tokenSchema"
                             ],
                             "methods": [
                                 {
@@ -3626,7 +4336,8 @@
                                         "HTTPS"
                                     ],
                                     "securedBy": [
-                                        "oauth_2_0"
+                                        "oauth_2_0",
+                                        "tokenSchema"
                                     ],
                                     "method": "get",
                                     "__METADATA__": {
@@ -3641,11 +4352,17 @@
                                     }
                                 },
                                 {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200"
+                                        }
+                                    },
                                     "protocols": [
                                         "HTTPS"
                                     ],
                                     "securedBy": [
-                                        "oauth_2_0"
+                                        "oauth_2_0",
+                                        "tokenSchema"
                                     ],
                                     "method": "head",
                                     "__METADATA__": {
@@ -3664,9 +4381,6 @@
                             "description": "Returns a list of items in the Salesforce1 navigation menu.",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -3680,9 +4394,6 @@
                     "displayName": "/appMenu",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
-                            "securedBy": {
-                                "calculated": true
-                            },
                             "displayName": {
                                 "calculated": true
                             }
@@ -3696,7 +4407,8 @@
                     "relativeUri": "/theme",
                     "type": "generalResource",
                     "securedBy": [
-                        "oauth_2_0"
+                        "oauth_2_0",
+                        "tokenSchema"
                     ],
                     "methods": [
                         {
@@ -3720,7 +4432,8 @@
                                 "HTTPS"
                             ],
                             "securedBy": [
-                                "oauth_2_0"
+                                "oauth_2_0",
+                                "tokenSchema"
                             ],
                             "method": "get",
                             "__METADATA__": {
@@ -3739,9 +4452,6 @@
                     "description": "Gets the list of icons and colors used by themes in the Salesforce application. Theme information is provided for objects in your organization that use icons and colors in the Salesforce UI.",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
-                            "securedBy": {
-                                "calculated": true
-                            },
                             "displayName": {
                                 "calculated": true
                             }
@@ -3755,7 +4465,8 @@
                     "relativeUri": "/search",
                     "type": "generalResource",
                     "securedBy": [
-                        "oauth_2_0"
+                        "oauth_2_0",
+                        "tokenSchema"
                     ],
                     "methods": [
                         {
@@ -3779,7 +4490,8 @@
                                 "HTTPS"
                             ],
                             "securedBy": [
-                                "oauth_2_0"
+                                "oauth_2_0",
+                                "tokenSchema"
                             ],
                             "queryParameters": {
                                 "q": {
@@ -3822,7 +4534,8 @@
                             "relativeUri": "/layout",
                             "type": "generalResource",
                             "securedBy": [
-                                "oauth_2_0"
+                                "oauth_2_0",
+                                "tokenSchema"
                             ],
                             "methods": [
                                 {
@@ -3846,7 +4559,8 @@
                                         "HTTPS"
                                     ],
                                     "securedBy": [
-                                        "oauth_2_0"
+                                        "oauth_2_0",
+                                        "tokenSchema"
                                     ],
                                     "queryParameters": {
                                         "q": {
@@ -3888,9 +4602,6 @@
                             "description": "Returns search result layout information for the objects in the query string. For each object, this call returns the list of fields displayed on the search results page as columns, the number of rows displayed on the first page, and the label used on the search results page. This call supports bulk fetch for up to 100 objects in a query.",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -3904,7 +4615,8 @@
                             "relativeUri": "/scopeOrder",
                             "type": "generalResource",
                             "securedBy": [
-                                "oauth_2_0"
+                                "oauth_2_0",
+                                "tokenSchema"
                             ],
                             "methods": [
                                 {
@@ -3928,7 +4640,8 @@
                                         "HTTPS"
                                     ],
                                     "securedBy": [
-                                        "oauth_2_0"
+                                        "oauth_2_0",
+                                        "tokenSchema"
                                     ],
                                     "method": "get",
                                     "__METADATA__": {
@@ -3947,9 +4660,6 @@
                             "description": "Returns an ordered list of objects in the default global search scope of a logged-in user. Global search keeps track of which objects the user interacts with and how often and arranges the search results accordingly. Objects used most frequently appear at the top of the list.\nThe returned list reflects the object order in the user's default search scope, including any pinned objects on the user's search results page. This call is useful if you want to implement a custom search results page using the optimized global search scope. The search string must be URL-encoded.\n",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -3964,9 +4674,6 @@
                     "description": "Executes the specified SOSL search. The search string must be URL-encoded.",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
-                            "securedBy": {
-                                "calculated": true
-                            },
                             "displayName": {
                                 "calculated": true
                             }
@@ -3980,7 +4687,8 @@
                     "relativeUri": "/flexiPage/{idOfFlexiblePage}",
                     "type": "generalResource",
                     "securedBy": [
-                        "oauth_2_0"
+                        "oauth_2_0",
+                        "tokenSchema"
                     ],
                     "uriParameters": {
                         "idOfFlexiblePage": {
@@ -4030,7 +4738,8 @@
                                 "HTTPS"
                             ],
                             "securedBy": [
-                                "oauth_2_0"
+                                "oauth_2_0",
+                                "tokenSchema"
                             ],
                             "method": "get",
                             "__METADATA__": {
@@ -4045,11 +4754,17 @@
                             }
                         },
                         {
+                            "responses": {
+                                "200": {
+                                    "code": "200"
+                                }
+                            },
                             "protocols": [
                                 "HTTPS"
                             ],
                             "securedBy": [
-                                "oauth_2_0"
+                                "oauth_2_0",
+                                "tokenSchema"
                             ],
                             "method": "head",
                             "__METADATA__": {
@@ -4068,9 +4783,6 @@
                     "description": "Returns a list of Flexible Pages and their details. Information returned includes Flexible Page regions, the components within each region, and each component's properties, as well as any associated QuickActions. This resource is available in API version 29.0 and later.",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
-                            "securedBy": {
-                                "calculated": true
-                            },
                             "displayName": {
                                 "calculated": true
                             }
@@ -4086,9 +4798,6 @@
             "description": "",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }

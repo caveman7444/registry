@@ -464,8 +464,38 @@
                                     "body": {
                                         "message/rfc822": {
                                             "name": "message/rfc822"
+                                        },
+                                        "application/json": {
+                                            "name": "application/json"
                                         }
                                     }
+                                },
+                                "401": {
+                                    "code": "401",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "invalidCredentials",
+                                            "example": "{\n  \"error\" : {\n    \"errors\" : [\n      {\n        \"domain\" : \"global\" ,\n        \"reason\" : \"authError\" ,\n        \"message\" : \"Invalid Credentials\" ,\n        \"locationType\" : \"header\" ,\n        \"location\" : \"Authorization\"\n      }\n    ] ,\n    \"code\" : 401 ,\n    \"message\" : \"Invalid Credentials\"\n  }\n}",
+                                            "schemaContent": "invalidCredentials"
+                                        }
+                                    }
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "notFound",
+                                            "example": "{\n  \"error\" : {\n    \"errors\" : [\n      {\n        \"domain\" : \"global\" ,\n        \"reason\" : \"notFound\" ,\n        \"message\" : \"Not Found\"\n      }\n    ] ,\n    \"code\" : 404 ,\n    \"message\" : \"Not Found\"\n  }\n}",
+                                            "schemaContent": "notFound"
+                                        }
+                                    }
+                                }
+                            },
+                            "body": {
+                                "message/rfc822": {
+                                    "name": "message/rfc822"
                                 }
                             },
                             "protocols": [
@@ -474,8 +504,157 @@
                             "securedBy": [
                                 "oauth_2_0"
                             ],
+                            "queryParameters": {
+                                "uploadType": {
+                                    "name": "uploadType",
+                                    "displayName": "uploadType",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "description": "The type of upload request to the /upload URI. Acceptable values are\n\nmedia - Simple upload. Upload the media only, without any metadata.\n\nmultipart - Multipart upload. Upload both the media and its metadata, in a single request.\n",
+                                    "enum": [
+                                        "multipart",
+                                        "media"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "callback": {
+                                    "name": "callback",
+                                    "displayName": "callback",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Callback function. Name of the JavaScript callback function that handles the response. Used in JavaScript JSON-P requests.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "fields": {
+                                    "name": "fields",
+                                    "displayName": "fields",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Selector specifying a subset of fields to include in the response. For more information, see the partial response section in the Performance Tips document. Use for better performance.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "prettyPrint": {
+                                    "name": "prettyPrint",
+                                    "displayName": "prettyPrint",
+                                    "type": "boolean",
+                                    "required": false,
+                                    "default": true,
+                                    "repeat": false,
+                                    "description": "Returns response with indentations and line breaks. Returns the response in a human-readable format if 'true'. When this is 'false', it can reduce the response payload size, which might lead to better performance in some environments.    \n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "quotaUser": {
+                                    "name": "quotaUser",
+                                    "displayName": "quotaUser",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Alternative to 'userIp'. Lets you enforce per-user quotas from a server-side application even in cases when the user's IP address is unknown. This can occur, for example, with applications that run cron jobs on App Engine on a user's behalf. You can choose any arbitrary string that uniquely identifies a user, but it is limited to 40 characters. Overrides 'userIp' if both are provided.\nLearn more about capping usage.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "userIp": {
+                                    "name": "userIp",
+                                    "displayName": "userIp",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "IP address of the end user for whom the API call is being made. Lets you enforce per-user quotas when calling the API from a server-side application. Learn more about capping usage.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Media upload request. Directly inserts a message into only this user's mailbox. Does not send a message.",
                             "method": "post",
+                            "is": [
+                                "uploadMedia",
+                                "commonParams"
+                            ],
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
                                     "protocols": {
@@ -503,8 +682,38 @@
                                             "body": {
                                                 "message/rfc822": {
                                                     "name": "message/rfc822"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json"
                                                 }
                                             }
+                                        },
+                                        "401": {
+                                            "code": "401",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "invalidCredentials",
+                                                    "example": "{\n  \"error\" : {\n    \"errors\" : [\n      {\n        \"domain\" : \"global\" ,\n        \"reason\" : \"authError\" ,\n        \"message\" : \"Invalid Credentials\" ,\n        \"locationType\" : \"header\" ,\n        \"location\" : \"Authorization\"\n      }\n    ] ,\n    \"code\" : 401 ,\n    \"message\" : \"Invalid Credentials\"\n  }\n}",
+                                                    "schemaContent": "invalidCredentials"
+                                                }
+                                            }
+                                        },
+                                        "404": {
+                                            "code": "404",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "notFound",
+                                                    "example": "{\n  \"error\" : {\n    \"errors\" : [\n      {\n        \"domain\" : \"global\" ,\n        \"reason\" : \"notFound\" ,\n        \"message\" : \"Not Found\"\n      }\n    ] ,\n    \"code\" : 404 ,\n    \"message\" : \"Not Found\"\n  }\n}",
+                                                    "schemaContent": "notFound"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "body": {
+                                        "message/rfc822": {
+                                            "name": "message/rfc822"
                                         }
                                     },
                                     "protocols": [
@@ -513,8 +722,157 @@
                                     "securedBy": [
                                         "oauth_2_0"
                                     ],
+                                    "queryParameters": {
+                                        "uploadType": {
+                                            "name": "uploadType",
+                                            "displayName": "uploadType",
+                                            "type": "string",
+                                            "required": true,
+                                            "repeat": false,
+                                            "description": "The type of upload request to the /upload URI. Acceptable values are\n\nmedia - Simple upload. Upload the media only, without any metadata.\n\nmultipart - Multipart upload. Upload both the media and its metadata, in a single request.\n",
+                                            "enum": [
+                                                "multipart",
+                                                "media"
+                                            ],
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "callback": {
+                                            "name": "callback",
+                                            "displayName": "callback",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Callback function. Name of the JavaScript callback function that handles the response. Used in JavaScript JSON-P requests.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "fields": {
+                                            "name": "fields",
+                                            "displayName": "fields",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Selector specifying a subset of fields to include in the response. For more information, see the partial response section in the Performance Tips document. Use for better performance.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "prettyPrint": {
+                                            "name": "prettyPrint",
+                                            "displayName": "prettyPrint",
+                                            "type": "boolean",
+                                            "required": false,
+                                            "default": true,
+                                            "repeat": false,
+                                            "description": "Returns response with indentations and line breaks. Returns the response in a human-readable format if 'true'. When this is 'false', it can reduce the response payload size, which might lead to better performance in some environments.    \n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "quotaUser": {
+                                            "name": "quotaUser",
+                                            "displayName": "quotaUser",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Alternative to 'userIp'. Lets you enforce per-user quotas from a server-side application even in cases when the user's IP address is unknown. This can occur, for example, with applications that run cron jobs on App Engine on a user's behalf. You can choose any arbitrary string that uniquely identifies a user, but it is limited to 40 characters. Overrides 'userIp' if both are provided.\nLearn more about capping usage.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "userIp": {
+                                            "name": "userIp",
+                                            "displayName": "userIp",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "IP address of the end user for whom the API call is being made. Lets you enforce per-user quotas when calling the API from a server-side application. Learn more about capping usage.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Media upload request. Sends the specified message to the recipients in the 'To', 'Cc', and 'Bcc' headers.",
                                     "method": "post",
+                                    "is": [
+                                        "uploadMedia",
+                                        "commonParams"
+                                    ],
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
                                             "protocols": {
@@ -556,8 +914,38 @@
                                             "body": {
                                                 "message/rfc822": {
                                                     "name": "message/rfc822"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json"
                                                 }
                                             }
+                                        },
+                                        "401": {
+                                            "code": "401",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "invalidCredentials",
+                                                    "example": "{\n  \"error\" : {\n    \"errors\" : [\n      {\n        \"domain\" : \"global\" ,\n        \"reason\" : \"authError\" ,\n        \"message\" : \"Invalid Credentials\" ,\n        \"locationType\" : \"header\" ,\n        \"location\" : \"Authorization\"\n      }\n    ] ,\n    \"code\" : 401 ,\n    \"message\" : \"Invalid Credentials\"\n  }\n}",
+                                                    "schemaContent": "invalidCredentials"
+                                                }
+                                            }
+                                        },
+                                        "404": {
+                                            "code": "404",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "notFound",
+                                                    "example": "{\n  \"error\" : {\n    \"errors\" : [\n      {\n        \"domain\" : \"global\" ,\n        \"reason\" : \"notFound\" ,\n        \"message\" : \"Not Found\"\n      }\n    ] ,\n    \"code\" : 404 ,\n    \"message\" : \"Not Found\"\n  }\n}",
+                                                    "schemaContent": "notFound"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "body": {
+                                        "message/rfc822": {
+                                            "name": "message/rfc822"
                                         }
                                     },
                                     "protocols": [
@@ -566,8 +954,157 @@
                                     "securedBy": [
                                         "oauth_2_0"
                                     ],
+                                    "queryParameters": {
+                                        "uploadType": {
+                                            "name": "uploadType",
+                                            "displayName": "uploadType",
+                                            "type": "string",
+                                            "required": true,
+                                            "repeat": false,
+                                            "description": "The type of upload request to the /upload URI. Acceptable values are\n\nmedia - Simple upload. Upload the media only, without any metadata.\n\nmultipart - Multipart upload. Upload both the media and its metadata, in a single request.\n",
+                                            "enum": [
+                                                "multipart",
+                                                "media"
+                                            ],
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "callback": {
+                                            "name": "callback",
+                                            "displayName": "callback",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Callback function. Name of the JavaScript callback function that handles the response. Used in JavaScript JSON-P requests.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "fields": {
+                                            "name": "fields",
+                                            "displayName": "fields",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Selector specifying a subset of fields to include in the response. For more information, see the partial response section in the Performance Tips document. Use for better performance.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "prettyPrint": {
+                                            "name": "prettyPrint",
+                                            "displayName": "prettyPrint",
+                                            "type": "boolean",
+                                            "required": false,
+                                            "default": true,
+                                            "repeat": false,
+                                            "description": "Returns response with indentations and line breaks. Returns the response in a human-readable format if 'true'. When this is 'false', it can reduce the response payload size, which might lead to better performance in some environments.    \n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "quotaUser": {
+                                            "name": "quotaUser",
+                                            "displayName": "quotaUser",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Alternative to 'userIp'. Lets you enforce per-user quotas from a server-side application even in cases when the user's IP address is unknown. This can occur, for example, with applications that run cron jobs on App Engine on a user's behalf. You can choose any arbitrary string that uniquely identifies a user, but it is limited to 40 characters. Overrides 'userIp' if both are provided.\nLearn more about capping usage.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "userIp": {
+                                            "name": "userIp",
+                                            "displayName": "userIp",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "IP address of the end user for whom the API call is being made. Lets you enforce per-user quotas when calling the API from a server-side application. Learn more about capping usage.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Media upload request. Directly imports a message into only this user's mailbox, similar to receiving via SMTP. Does not send a message.",
                                     "method": "post",
+                                    "is": [
+                                        "uploadMedia",
+                                        "commonParams"
+                                    ],
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
                                             "protocols": {
@@ -625,8 +1162,38 @@
                                     "body": {
                                         "message/rfc822": {
                                             "name": "message/rfc822"
+                                        },
+                                        "application/json": {
+                                            "name": "application/json"
                                         }
                                     }
+                                },
+                                "401": {
+                                    "code": "401",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "invalidCredentials",
+                                            "example": "{\n  \"error\" : {\n    \"errors\" : [\n      {\n        \"domain\" : \"global\" ,\n        \"reason\" : \"authError\" ,\n        \"message\" : \"Invalid Credentials\" ,\n        \"locationType\" : \"header\" ,\n        \"location\" : \"Authorization\"\n      }\n    ] ,\n    \"code\" : 401 ,\n    \"message\" : \"Invalid Credentials\"\n  }\n}",
+                                            "schemaContent": "invalidCredentials"
+                                        }
+                                    }
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "notFound",
+                                            "example": "{\n  \"error\" : {\n    \"errors\" : [\n      {\n        \"domain\" : \"global\" ,\n        \"reason\" : \"notFound\" ,\n        \"message\" : \"Not Found\"\n      }\n    ] ,\n    \"code\" : 404 ,\n    \"message\" : \"Not Found\"\n  }\n}",
+                                            "schemaContent": "notFound"
+                                        }
+                                    }
+                                }
+                            },
+                            "body": {
+                                "message/rfc822": {
+                                    "name": "message/rfc822"
                                 }
                             },
                             "protocols": [
@@ -635,8 +1202,157 @@
                             "securedBy": [
                                 "oauth_2_0"
                             ],
+                            "queryParameters": {
+                                "uploadType": {
+                                    "name": "uploadType",
+                                    "displayName": "uploadType",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "description": "The type of upload request to the /upload URI. Acceptable values are\n\nmedia - Simple upload. Upload the media only, without any metadata.\n\nmultipart - Multipart upload. Upload both the media and its metadata, in a single request.\n",
+                                    "enum": [
+                                        "multipart",
+                                        "media"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "callback": {
+                                    "name": "callback",
+                                    "displayName": "callback",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Callback function. Name of the JavaScript callback function that handles the response. Used in JavaScript JSON-P requests.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "fields": {
+                                    "name": "fields",
+                                    "displayName": "fields",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Selector specifying a subset of fields to include in the response. For more information, see the partial response section in the Performance Tips document. Use for better performance.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "prettyPrint": {
+                                    "name": "prettyPrint",
+                                    "displayName": "prettyPrint",
+                                    "type": "boolean",
+                                    "required": false,
+                                    "default": true,
+                                    "repeat": false,
+                                    "description": "Returns response with indentations and line breaks. Returns the response in a human-readable format if 'true'. When this is 'false', it can reduce the response payload size, which might lead to better performance in some environments.    \n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "quotaUser": {
+                                    "name": "quotaUser",
+                                    "displayName": "quotaUser",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Alternative to 'userIp'. Lets you enforce per-user quotas from a server-side application even in cases when the user's IP address is unknown. This can occur, for example, with applications that run cron jobs on App Engine on a user's behalf. You can choose any arbitrary string that uniquely identifies a user, but it is limited to 40 characters. Overrides 'userIp' if both are provided.\nLearn more about capping usage.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "userIp": {
+                                    "name": "userIp",
+                                    "displayName": "userIp",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "IP address of the end user for whom the API call is being made. Lets you enforce per-user quotas when calling the API from a server-side application. Learn more about capping usage.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Media upload request. Creates a new draft with the DRAFT label.",
                             "method": "post",
+                            "is": [
+                                "uploadMedia",
+                                "commonParams"
+                            ],
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
                                     "protocols": {
@@ -690,8 +1406,38 @@
                                             "body": {
                                                 "message/rfc822": {
                                                     "name": "message/rfc822"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json"
                                                 }
                                             }
+                                        },
+                                        "401": {
+                                            "code": "401",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "invalidCredentials",
+                                                    "example": "{\n  \"error\" : {\n    \"errors\" : [\n      {\n        \"domain\" : \"global\" ,\n        \"reason\" : \"authError\" ,\n        \"message\" : \"Invalid Credentials\" ,\n        \"locationType\" : \"header\" ,\n        \"location\" : \"Authorization\"\n      }\n    ] ,\n    \"code\" : 401 ,\n    \"message\" : \"Invalid Credentials\"\n  }\n}",
+                                                    "schemaContent": "invalidCredentials"
+                                                }
+                                            }
+                                        },
+                                        "404": {
+                                            "code": "404",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "notFound",
+                                                    "example": "{\n  \"error\" : {\n    \"errors\" : [\n      {\n        \"domain\" : \"global\" ,\n        \"reason\" : \"notFound\" ,\n        \"message\" : \"Not Found\"\n      }\n    ] ,\n    \"code\" : 404 ,\n    \"message\" : \"Not Found\"\n  }\n}",
+                                                    "schemaContent": "notFound"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "body": {
+                                        "message/rfc822": {
+                                            "name": "message/rfc822"
                                         }
                                     },
                                     "protocols": [
@@ -700,8 +1446,157 @@
                                     "securedBy": [
                                         "oauth_2_0"
                                     ],
+                                    "queryParameters": {
+                                        "uploadType": {
+                                            "name": "uploadType",
+                                            "displayName": "uploadType",
+                                            "type": "string",
+                                            "required": true,
+                                            "repeat": false,
+                                            "description": "The type of upload request to the /upload URI. Acceptable values are\n\nmedia - Simple upload. Upload the media only, without any metadata.\n\nmultipart - Multipart upload. Upload both the media and its metadata, in a single request.\n",
+                                            "enum": [
+                                                "multipart",
+                                                "media"
+                                            ],
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "callback": {
+                                            "name": "callback",
+                                            "displayName": "callback",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Callback function. Name of the JavaScript callback function that handles the response. Used in JavaScript JSON-P requests.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "fields": {
+                                            "name": "fields",
+                                            "displayName": "fields",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Selector specifying a subset of fields to include in the response. For more information, see the partial response section in the Performance Tips document. Use for better performance.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "prettyPrint": {
+                                            "name": "prettyPrint",
+                                            "displayName": "prettyPrint",
+                                            "type": "boolean",
+                                            "required": false,
+                                            "default": true,
+                                            "repeat": false,
+                                            "description": "Returns response with indentations and line breaks. Returns the response in a human-readable format if 'true'. When this is 'false', it can reduce the response payload size, which might lead to better performance in some environments.    \n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "quotaUser": {
+                                            "name": "quotaUser",
+                                            "displayName": "quotaUser",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Alternative to 'userIp'. Lets you enforce per-user quotas from a server-side application even in cases when the user's IP address is unknown. This can occur, for example, with applications that run cron jobs on App Engine on a user's behalf. You can choose any arbitrary string that uniquely identifies a user, but it is limited to 40 characters. Overrides 'userIp' if both are provided.\nLearn more about capping usage.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "userIp": {
+                                            "name": "userIp",
+                                            "displayName": "userIp",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "IP address of the end user for whom the API call is being made. Lets you enforce per-user quotas when calling the API from a server-side application. Learn more about capping usage.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Media upload request. Replaces a draft's content.",
                                     "method": "put",
+                                    "is": [
+                                        "uploadMedia",
+                                        "commonParams"
+                                    ],
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
                                             "protocols": {
@@ -743,8 +1638,38 @@
                                             "body": {
                                                 "message/rfc822": {
                                                     "name": "message/rfc822"
+                                                },
+                                                "application/json": {
+                                                    "name": "application/json"
                                                 }
                                             }
+                                        },
+                                        "401": {
+                                            "code": "401",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "invalidCredentials",
+                                                    "example": "{\n  \"error\" : {\n    \"errors\" : [\n      {\n        \"domain\" : \"global\" ,\n        \"reason\" : \"authError\" ,\n        \"message\" : \"Invalid Credentials\" ,\n        \"locationType\" : \"header\" ,\n        \"location\" : \"Authorization\"\n      }\n    ] ,\n    \"code\" : 401 ,\n    \"message\" : \"Invalid Credentials\"\n  }\n}",
+                                                    "schemaContent": "invalidCredentials"
+                                                }
+                                            }
+                                        },
+                                        "404": {
+                                            "code": "404",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "notFound",
+                                                    "example": "{\n  \"error\" : {\n    \"errors\" : [\n      {\n        \"domain\" : \"global\" ,\n        \"reason\" : \"notFound\" ,\n        \"message\" : \"Not Found\"\n      }\n    ] ,\n    \"code\" : 404 ,\n    \"message\" : \"Not Found\"\n  }\n}",
+                                                    "schemaContent": "notFound"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "body": {
+                                        "message/rfc822": {
+                                            "name": "message/rfc822"
                                         }
                                     },
                                     "protocols": [
@@ -753,8 +1678,157 @@
                                     "securedBy": [
                                         "oauth_2_0"
                                     ],
+                                    "queryParameters": {
+                                        "uploadType": {
+                                            "name": "uploadType",
+                                            "displayName": "uploadType",
+                                            "type": "string",
+                                            "required": true,
+                                            "repeat": false,
+                                            "description": "The type of upload request to the /upload URI. Acceptable values are\n\nmedia - Simple upload. Upload the media only, without any metadata.\n\nmultipart - Multipart upload. Upload both the media and its metadata, in a single request.\n",
+                                            "enum": [
+                                                "multipart",
+                                                "media"
+                                            ],
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "callback": {
+                                            "name": "callback",
+                                            "displayName": "callback",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Callback function. Name of the JavaScript callback function that handles the response. Used in JavaScript JSON-P requests.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "fields": {
+                                            "name": "fields",
+                                            "displayName": "fields",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Selector specifying a subset of fields to include in the response. For more information, see the partial response section in the Performance Tips document. Use for better performance.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "prettyPrint": {
+                                            "name": "prettyPrint",
+                                            "displayName": "prettyPrint",
+                                            "type": "boolean",
+                                            "required": false,
+                                            "default": true,
+                                            "repeat": false,
+                                            "description": "Returns response with indentations and line breaks. Returns the response in a human-readable format if 'true'. When this is 'false', it can reduce the response payload size, which might lead to better performance in some environments.    \n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "quotaUser": {
+                                            "name": "quotaUser",
+                                            "displayName": "quotaUser",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Alternative to 'userIp'. Lets you enforce per-user quotas from a server-side application even in cases when the user's IP address is unknown. This can occur, for example, with applications that run cron jobs on App Engine on a user's behalf. You can choose any arbitrary string that uniquely identifies a user, but it is limited to 40 characters. Overrides 'userIp' if both are provided.\nLearn more about capping usage.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "userIp": {
+                                            "name": "userIp",
+                                            "displayName": "userIp",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "IP address of the end user for whom the API call is being made. Lets you enforce per-user quotas when calling the API from a server-side application. Learn more about capping usage.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Media upload request. Sends the specified, existing draft to the recipients in the 'To', 'Cc', and 'Bcc' headers. ",
                                     "method": "post",
+                                    "is": [
+                                        "uploadMedia",
+                                        "commonParams"
+                                    ],
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
                                             "protocols": {

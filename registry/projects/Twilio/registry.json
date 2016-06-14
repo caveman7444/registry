@@ -1,7 +1,37 @@
-{"apis": [{
-    "name": "Twilio API",
-    "RAMLVersion": "0.8",
-    "location": "https://raw.githubusercontent.com/raml-apis/Twilio/production/api.raml",
-    "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Twilio/production/api.json",
-    "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Twilio/logo.png"
-}]}
+{"apis": {
+    "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Twilio/logo.png",
+    "RAMLFiles": [{
+        "name": "Twilio API",
+        "description": "descriptionexamle",
+        "RAMLVersion": "0.8",
+        "location": "https://raw.githubusercontent.com/raml-apis/Twilio/production/api.raml",
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Twilio/production/api.json",
+        "baseUri": "https://api.twilio.com/{version}",
+        "version": "2010-04-01",
+        "securitySchemes": [{"basic": {
+            "name": "basic",
+            "type": "Basic Authentication",
+            "describedBy": {
+                "securedBy": ["basic"],
+                "headers": {"Authorization": {
+                    "name": "Authorization",
+                    "displayName": "Authorization",
+                    "type": "string",
+                    "required": false,
+                    "repeat": false,
+                    "description": "The Authorization field value consists of credentials\ncontaining the authentication information of the user agent for the\nrealm of the resource being requested.\n",
+                    "__METADATA__": {"primitiveValuesMeta": {
+                        "displayName": {"calculated": true},
+                        "type": {"insertedAsDefault": true},
+                        "required": {"insertedAsDefault": true},
+                        "repeat": {"insertedAsDefault": true}
+                    }}
+                }},
+                "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
+            }
+        }}],
+        "resourcesCount": 86,
+        "methodsCount": 116,
+        "developerPortalURI": "www.twilio.com/docs/api/rest"
+    }]
+}}

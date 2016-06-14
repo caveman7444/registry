@@ -1,14 +1,184 @@
-{"apis": [
+{"apis": {"RAMLFiles": [
     {
         "name": "FlightStats",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/FlightStats/production/api.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/FlightStats/production/api.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/FlightStats/production/api.json",
+        "baseUri": "https://api.flightstats.com/flex",
+        "version": "v1",
+        "securitySchemes": [
+            {"apiHeaderKey": {
+                "name": "apiHeaderKey",
+                "type": "x-ApiKey",
+                "description": "Any API request requires your key. Authentication via headers parameters or query parameters.\n",
+                "describedBy": {
+                    "securedBy": ["apiHeaderKey"],
+                    "headers": {
+                        "appId": {
+                            "name": "appId",
+                            "displayName": "appId",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Authentication header parameters",
+                            "__METADATA__": {"primitiveValuesMeta": {
+                                "displayName": {"calculated": true},
+                                "type": {"insertedAsDefault": true},
+                                "required": {"insertedAsDefault": true},
+                                "repeat": {"insertedAsDefault": true}
+                            }}
+                        },
+                        "appKey": {
+                            "name": "appKey",
+                            "displayName": "appKey",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Authentication header parameters",
+                            "__METADATA__": {"primitiveValuesMeta": {
+                                "displayName": {"calculated": true},
+                                "type": {"insertedAsDefault": true},
+                                "required": {"insertedAsDefault": true},
+                                "repeat": {"insertedAsDefault": true}
+                            }}
+                        }
+                    },
+                    "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
+                }
+            }},
+            {"apiQueryKey": {
+                "name": "apiQueryKey",
+                "type": "x-ApiKey",
+                "description": "Any API request requires your key. Authentication via headers parameters or query parameters.\n",
+                "describedBy": {
+                    "securedBy": ["apiHeaderKey"],
+                    "queryParameters": {
+                        "appId": {
+                            "name": "appId",
+                            "displayName": "appId",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Authentication query parameters",
+                            "__METADATA__": {"primitiveValuesMeta": {
+                                "displayName": {"calculated": true},
+                                "type": {"insertedAsDefault": true},
+                                "required": {"insertedAsDefault": true},
+                                "repeat": {"insertedAsDefault": true}
+                            }}
+                        },
+                        "appKey": {
+                            "name": "appKey",
+                            "displayName": "appKey",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Authentication query parameters",
+                            "__METADATA__": {"primitiveValuesMeta": {
+                                "displayName": {"calculated": true},
+                                "type": {"insertedAsDefault": true},
+                                "required": {"insertedAsDefault": true},
+                                "repeat": {"insertedAsDefault": true}
+                            }}
+                        }
+                    },
+                    "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
+                }
+            }}
+        ],
+        "resourcesCount": 80,
+        "methodsCount": 59
     },
     {
         "name": "Flight Status And Track",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/FlightStats/production/flightStatusAndTrack.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/FlightStats/production/flightStatusAndTrack.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/FlightStats/production/flightStatusAndTrack.json",
+        "baseUri": "https://api.flightstats.com/flex/flightstatus/rest/{version}",
+        "version": "v2",
+        "securitySchemes": [
+            {"apiHeaderKey": {
+                "name": "apiHeaderKey",
+                "type": "x-ApiKey",
+                "description": "Any API request requires your key. Authentication via headers parameters or query parameters.\n",
+                "describedBy": {
+                    "securedBy": ["apiHeaderKey"],
+                    "headers": {
+                        "appId": {
+                            "name": "appId",
+                            "displayName": "appId",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Authentication header parameters",
+                            "__METADATA__": {"primitiveValuesMeta": {
+                                "displayName": {"calculated": true},
+                                "type": {"insertedAsDefault": true},
+                                "required": {"insertedAsDefault": true},
+                                "repeat": {"insertedAsDefault": true}
+                            }}
+                        },
+                        "appKey": {
+                            "name": "appKey",
+                            "displayName": "appKey",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Authentication header parameters",
+                            "__METADATA__": {"primitiveValuesMeta": {
+                                "displayName": {"calculated": true},
+                                "type": {"insertedAsDefault": true},
+                                "required": {"insertedAsDefault": true},
+                                "repeat": {"insertedAsDefault": true}
+                            }}
+                        }
+                    },
+                    "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
+                }
+            }},
+            {"apiQueryKey": {
+                "name": "apiQueryKey",
+                "type": "x-ApiKey",
+                "description": "Any API request requires your key. Authentication via headers parameters or query parameters.\n",
+                "describedBy": {
+                    "securedBy": ["apiHeaderKey"],
+                    "queryParameters": {
+                        "appId": {
+                            "name": "appId",
+                            "displayName": "appId",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Authentication query parameters",
+                            "__METADATA__": {"primitiveValuesMeta": {
+                                "displayName": {"calculated": true},
+                                "type": {"insertedAsDefault": true},
+                                "required": {"insertedAsDefault": true},
+                                "repeat": {"insertedAsDefault": true}
+                            }}
+                        },
+                        "appKey": {
+                            "name": "appKey",
+                            "displayName": "appKey",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Authentication query parameters",
+                            "__METADATA__": {"primitiveValuesMeta": {
+                                "displayName": {"calculated": true},
+                                "type": {"insertedAsDefault": true},
+                                "required": {"insertedAsDefault": true},
+                                "repeat": {"insertedAsDefault": true}
+                            }}
+                        }
+                    },
+                    "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
+                }
+            }}
+        ],
+        "resourcesCount": 28,
+        "methodsCount": 16
     }
-]}
+]}}

@@ -1,14 +1,24 @@
-{"apis": [
+{"apis": {"RAMLFiles": [
     {
         "name": "Amazon S3 Buckets",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/AmazonS3/production/amazonS3Bucket.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/AmazonS3/production/amazonS3Bucket.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/AmazonS3/production/amazonS3Bucket.json",
+        "baseUri": "https://{bucketName}.{region}.amazonaws.com/",
+        "version": "2006-03-01",
+        "resourcesCount": 22,
+        "methodsCount": 47
     },
     {
         "name": "Amazon S3 Services",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/AmazonS3/production/amazonS3Services.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/AmazonS3/production/amazonS3Services.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/AmazonS3/production/amazonS3Services.json",
+        "baseUri": "https://s3.amazonaws.com/",
+        "version": "2006-03-01",
+        "resourcesCount": 1,
+        "methodsCount": 1
     }
-]}
+]}}

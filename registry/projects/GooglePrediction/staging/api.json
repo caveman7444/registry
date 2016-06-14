@@ -409,6 +409,175 @@
                             "protocols": [
                                 "HTTPS"
                             ],
+                            "queryParameters": {
+                                "access_token": {
+                                    "name": "access_token",
+                                    "displayName": "access_token",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "description": "OAuth 2.0 token for the current user. One possible way to provide an OAuth 2.0 token.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "callback": {
+                                    "name": "callback",
+                                    "displayName": "callback",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Callback function. Name of the JavaScript callback function that handles the response. Used in JavaScript JSON-P requests.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "fields": {
+                                    "name": "fields",
+                                    "displayName": "fields",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Selector specifying a subset of fields to include in the response. For more information, see the partial response section in the Performance Tips document. Use for better performance.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "key": {
+                                    "name": "key",
+                                    "displayName": "key",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "API key. *Required unless you provide an OAuth 2.0 token. Your API key identifies your project and provides you with API access, quota, and reports. Obtain your project's API key from the Google Developers Console.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "prettyPrint": {
+                                    "name": "prettyPrint",
+                                    "displayName": "prettyPrint",
+                                    "type": "string",
+                                    "required": false,
+                                    "default": true,
+                                    "example": "true",
+                                    "repeat": false,
+                                    "description": "Returns response with indentations and line breaks. Returns the response in a human-readable format if true. Default value: true. When this is false, it can reduce the response payload size, which might lead to better performance in some environments.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "quotaUser": {
+                                    "name": "quotaUser",
+                                    "displayName": "quotaUser",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Lets you enforce per-user quotas from a server-side application even in cases when the user's IP address is unknown. This can occur, for example, with applications that run cron jobs on App Engine on a user's behalf.  You can choose any arbitrary string that uniquely identifies a user, but it is limited to 40 characters. Overrides userIp if both are provided. Learn more about capping usage.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "userIp": {
+                                    "name": "userIp",
+                                    "displayName": "userIp",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "IP address of the end user for whom the API call is being made. Lets you enforce per-user quotas when calling the API from a server-side application. Learn more about capping usage.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Submit input and request an output against a hosted model.",
                             "method": "post",
                             "is": [
@@ -465,6 +634,175 @@
                             "protocols": [
                                 "HTTPS"
                             ],
+                            "queryParameters": {
+                                "access_token": {
+                                    "name": "access_token",
+                                    "displayName": "access_token",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "description": "OAuth 2.0 token for the current user. One possible way to provide an OAuth 2.0 token.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "callback": {
+                                    "name": "callback",
+                                    "displayName": "callback",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Callback function. Name of the JavaScript callback function that handles the response. Used in JavaScript JSON-P requests.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "fields": {
+                                    "name": "fields",
+                                    "displayName": "fields",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Selector specifying a subset of fields to include in the response. For more information, see the partial response section in the Performance Tips document. Use for better performance.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "key": {
+                                    "name": "key",
+                                    "displayName": "key",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "API key. *Required unless you provide an OAuth 2.0 token. Your API key identifies your project and provides you with API access, quota, and reports. Obtain your project's API key from the Google Developers Console.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "prettyPrint": {
+                                    "name": "prettyPrint",
+                                    "displayName": "prettyPrint",
+                                    "type": "string",
+                                    "required": false,
+                                    "default": true,
+                                    "example": "true",
+                                    "repeat": false,
+                                    "description": "Returns response with indentations and line breaks. Returns the response in a human-readable format if true. Default value: true. When this is false, it can reduce the response payload size, which might lead to better performance in some environments.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "quotaUser": {
+                                    "name": "quotaUser",
+                                    "displayName": "quotaUser",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Lets you enforce per-user quotas from a server-side application even in cases when the user's IP address is unknown. This can occur, for example, with applications that run cron jobs on App Engine on a user's behalf.  You can choose any arbitrary string that uniquely identifies a user, but it is limited to 40 characters. Overrides userIp if both are provided. Learn more about capping usage.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "userIp": {
+                                    "name": "userIp",
+                                    "displayName": "userIp",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "IP address of the end user for whom the API call is being made. Lets you enforce per-user quotas when calling the API from a server-side application. Learn more about capping usage.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Train a Prediction API model.",
                             "method": "post",
                             "is": [
@@ -518,6 +856,175 @@
                                     "protocols": [
                                         "HTTPS"
                                     ],
+                                    "queryParameters": {
+                                        "access_token": {
+                                            "name": "access_token",
+                                            "displayName": "access_token",
+                                            "type": "string",
+                                            "required": true,
+                                            "repeat": false,
+                                            "description": "OAuth 2.0 token for the current user. One possible way to provide an OAuth 2.0 token.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "callback": {
+                                            "name": "callback",
+                                            "displayName": "callback",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Callback function. Name of the JavaScript callback function that handles the response. Used in JavaScript JSON-P requests.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "fields": {
+                                            "name": "fields",
+                                            "displayName": "fields",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Selector specifying a subset of fields to include in the response. For more information, see the partial response section in the Performance Tips document. Use for better performance.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "key": {
+                                            "name": "key",
+                                            "displayName": "key",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "API key. *Required unless you provide an OAuth 2.0 token. Your API key identifies your project and provides you with API access, quota, and reports. Obtain your project's API key from the Google Developers Console.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "prettyPrint": {
+                                            "name": "prettyPrint",
+                                            "displayName": "prettyPrint",
+                                            "type": "string",
+                                            "required": false,
+                                            "default": true,
+                                            "example": "true",
+                                            "repeat": false,
+                                            "description": "Returns response with indentations and line breaks. Returns the response in a human-readable format if true. Default value: true. When this is false, it can reduce the response payload size, which might lead to better performance in some environments.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "quotaUser": {
+                                            "name": "quotaUser",
+                                            "displayName": "quotaUser",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Lets you enforce per-user quotas from a server-side application even in cases when the user's IP address is unknown. This can occur, for example, with applications that run cron jobs on App Engine on a user's behalf.  You can choose any arbitrary string that uniquely identifies a user, but it is limited to 40 characters. Overrides userIp if both are provided. Learn more about capping usage.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "userIp": {
+                                            "name": "userIp",
+                                            "displayName": "userIp",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "IP address of the end user for whom the API call is being made. Lets you enforce per-user quotas when calling the API from a server-side application. Learn more about capping usage.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Delete a trained model.",
                                     "method": "delete",
                                     "is": [
@@ -548,6 +1055,175 @@
                                     "protocols": [
                                         "HTTPS"
                                     ],
+                                    "queryParameters": {
+                                        "access_token": {
+                                            "name": "access_token",
+                                            "displayName": "access_token",
+                                            "type": "string",
+                                            "required": true,
+                                            "repeat": false,
+                                            "description": "OAuth 2.0 token for the current user. One possible way to provide an OAuth 2.0 token.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "callback": {
+                                            "name": "callback",
+                                            "displayName": "callback",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Callback function. Name of the JavaScript callback function that handles the response. Used in JavaScript JSON-P requests.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "fields": {
+                                            "name": "fields",
+                                            "displayName": "fields",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Selector specifying a subset of fields to include in the response. For more information, see the partial response section in the Performance Tips document. Use for better performance.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "key": {
+                                            "name": "key",
+                                            "displayName": "key",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "API key. *Required unless you provide an OAuth 2.0 token. Your API key identifies your project and provides you with API access, quota, and reports. Obtain your project's API key from the Google Developers Console.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "prettyPrint": {
+                                            "name": "prettyPrint",
+                                            "displayName": "prettyPrint",
+                                            "type": "string",
+                                            "required": false,
+                                            "default": true,
+                                            "example": "true",
+                                            "repeat": false,
+                                            "description": "Returns response with indentations and line breaks. Returns the response in a human-readable format if true. Default value: true. When this is false, it can reduce the response payload size, which might lead to better performance in some environments.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "quotaUser": {
+                                            "name": "quotaUser",
+                                            "displayName": "quotaUser",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Lets you enforce per-user quotas from a server-side application even in cases when the user's IP address is unknown. This can occur, for example, with applications that run cron jobs on App Engine on a user's behalf.  You can choose any arbitrary string that uniquely identifies a user, but it is limited to 40 characters. Overrides userIp if both are provided. Learn more about capping usage.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "userIp": {
+                                            "name": "userIp",
+                                            "displayName": "userIp",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "IP address of the end user for whom the API call is being made. Lets you enforce per-user quotas when calling the API from a server-side application. Learn more about capping usage.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Check training status of your model.",
                                     "method": "get",
                                     "is": [
@@ -586,6 +1262,175 @@
                                     "protocols": [
                                         "HTTPS"
                                     ],
+                                    "queryParameters": {
+                                        "access_token": {
+                                            "name": "access_token",
+                                            "displayName": "access_token",
+                                            "type": "string",
+                                            "required": true,
+                                            "repeat": false,
+                                            "description": "OAuth 2.0 token for the current user. One possible way to provide an OAuth 2.0 token.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "callback": {
+                                            "name": "callback",
+                                            "displayName": "callback",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Callback function. Name of the JavaScript callback function that handles the response. Used in JavaScript JSON-P requests.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "fields": {
+                                            "name": "fields",
+                                            "displayName": "fields",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Selector specifying a subset of fields to include in the response. For more information, see the partial response section in the Performance Tips document. Use for better performance.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "key": {
+                                            "name": "key",
+                                            "displayName": "key",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "API key. *Required unless you provide an OAuth 2.0 token. Your API key identifies your project and provides you with API access, quota, and reports. Obtain your project's API key from the Google Developers Console.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "prettyPrint": {
+                                            "name": "prettyPrint",
+                                            "displayName": "prettyPrint",
+                                            "type": "string",
+                                            "required": false,
+                                            "default": true,
+                                            "example": "true",
+                                            "repeat": false,
+                                            "description": "Returns response with indentations and line breaks. Returns the response in a human-readable format if true. Default value: true. When this is false, it can reduce the response payload size, which might lead to better performance in some environments.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "quotaUser": {
+                                            "name": "quotaUser",
+                                            "displayName": "quotaUser",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Lets you enforce per-user quotas from a server-side application even in cases when the user's IP address is unknown. This can occur, for example, with applications that run cron jobs on App Engine on a user's behalf.  You can choose any arbitrary string that uniquely identifies a user, but it is limited to 40 characters. Overrides userIp if both are provided. Learn more about capping usage.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "userIp": {
+                                            "name": "userIp",
+                                            "displayName": "userIp",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "IP address of the end user for whom the API call is being made. Lets you enforce per-user quotas when calling the API from a server-side application. Learn more about capping usage.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Add new data to a trained model.",
                                     "method": "put",
                                     "is": [
@@ -621,6 +1466,175 @@
                                             "protocols": [
                                                 "HTTPS"
                                             ],
+                                            "queryParameters": {
+                                                "access_token": {
+                                                    "name": "access_token",
+                                                    "displayName": "access_token",
+                                                    "type": "string",
+                                                    "required": true,
+                                                    "repeat": false,
+                                                    "description": "OAuth 2.0 token for the current user. One possible way to provide an OAuth 2.0 token.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "callback": {
+                                                    "name": "callback",
+                                                    "displayName": "callback",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "Callback function. Name of the JavaScript callback function that handles the response. Used in JavaScript JSON-P requests.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "fields": {
+                                                    "name": "fields",
+                                                    "displayName": "fields",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "Selector specifying a subset of fields to include in the response. For more information, see the partial response section in the Performance Tips document. Use for better performance.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "key": {
+                                                    "name": "key",
+                                                    "displayName": "key",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "API key. *Required unless you provide an OAuth 2.0 token. Your API key identifies your project and provides you with API access, quota, and reports. Obtain your project's API key from the Google Developers Console.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "prettyPrint": {
+                                                    "name": "prettyPrint",
+                                                    "displayName": "prettyPrint",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "default": true,
+                                                    "example": "true",
+                                                    "repeat": false,
+                                                    "description": "Returns response with indentations and line breaks. Returns the response in a human-readable format if true. Default value: true. When this is false, it can reduce the response payload size, which might lead to better performance in some environments.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "quotaUser": {
+                                                    "name": "quotaUser",
+                                                    "displayName": "quotaUser",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "Lets you enforce per-user quotas from a server-side application even in cases when the user's IP address is unknown. This can occur, for example, with applications that run cron jobs on App Engine on a user's behalf.  You can choose any arbitrary string that uniquely identifies a user, but it is limited to 40 characters. Overrides userIp if both are provided. Learn more about capping usage.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "userIp": {
+                                                    "name": "userIp",
+                                                    "displayName": "userIp",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "IP address of the end user for whom the API call is being made. Lets you enforce per-user quotas when calling the API from a server-side application. Learn more about capping usage.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
                                             "description": "Get analysis of the model and the data the model was trained on.",
                                             "method": "get",
                                             "is": [
@@ -675,6 +1689,175 @@
                                             "protocols": [
                                                 "HTTPS"
                                             ],
+                                            "queryParameters": {
+                                                "access_token": {
+                                                    "name": "access_token",
+                                                    "displayName": "access_token",
+                                                    "type": "string",
+                                                    "required": true,
+                                                    "repeat": false,
+                                                    "description": "OAuth 2.0 token for the current user. One possible way to provide an OAuth 2.0 token.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "callback": {
+                                                    "name": "callback",
+                                                    "displayName": "callback",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "Callback function. Name of the JavaScript callback function that handles the response. Used in JavaScript JSON-P requests.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "fields": {
+                                                    "name": "fields",
+                                                    "displayName": "fields",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "Selector specifying a subset of fields to include in the response. For more information, see the partial response section in the Performance Tips document. Use for better performance.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "key": {
+                                                    "name": "key",
+                                                    "displayName": "key",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "API key. *Required unless you provide an OAuth 2.0 token. Your API key identifies your project and provides you with API access, quota, and reports. Obtain your project's API key from the Google Developers Console.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "prettyPrint": {
+                                                    "name": "prettyPrint",
+                                                    "displayName": "prettyPrint",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "default": true,
+                                                    "example": "true",
+                                                    "repeat": false,
+                                                    "description": "Returns response with indentations and line breaks. Returns the response in a human-readable format if true. Default value: true. When this is false, it can reduce the response payload size, which might lead to better performance in some environments.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "quotaUser": {
+                                                    "name": "quotaUser",
+                                                    "displayName": "quotaUser",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "Lets you enforce per-user quotas from a server-side application even in cases when the user's IP address is unknown. This can occur, for example, with applications that run cron jobs on App Engine on a user's behalf.  You can choose any arbitrary string that uniquely identifies a user, but it is limited to 40 characters. Overrides userIp if both are provided. Learn more about capping usage.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "userIp": {
+                                                    "name": "userIp",
+                                                    "displayName": "userIp",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "IP address of the end user for whom the API call is being made. Lets you enforce per-user quotas when calling the API from a server-side application. Learn more about capping usage.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
                                             "description": "Submit model id and request a prediction.",
                                             "method": "post",
                                             "is": [
@@ -764,6 +1947,173 @@
                                             "required": false,
                                             "repeat": false,
                                             "description": "Pagination token.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "access_token": {
+                                            "name": "access_token",
+                                            "displayName": "access_token",
+                                            "type": "string",
+                                            "required": true,
+                                            "repeat": false,
+                                            "description": "OAuth 2.0 token for the current user. One possible way to provide an OAuth 2.0 token.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "callback": {
+                                            "name": "callback",
+                                            "displayName": "callback",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Callback function. Name of the JavaScript callback function that handles the response. Used in JavaScript JSON-P requests.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "fields": {
+                                            "name": "fields",
+                                            "displayName": "fields",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Selector specifying a subset of fields to include in the response. For more information, see the partial response section in the Performance Tips document. Use for better performance.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "key": {
+                                            "name": "key",
+                                            "displayName": "key",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "API key. *Required unless you provide an OAuth 2.0 token. Your API key identifies your project and provides you with API access, quota, and reports. Obtain your project's API key from the Google Developers Console.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "prettyPrint": {
+                                            "name": "prettyPrint",
+                                            "displayName": "prettyPrint",
+                                            "type": "string",
+                                            "required": false,
+                                            "default": true,
+                                            "example": "true",
+                                            "repeat": false,
+                                            "description": "Returns response with indentations and line breaks. Returns the response in a human-readable format if true. Default value: true. When this is false, it can reduce the response payload size, which might lead to better performance in some environments.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "quotaUser": {
+                                            "name": "quotaUser",
+                                            "displayName": "quotaUser",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Lets you enforce per-user quotas from a server-side application even in cases when the user's IP address is unknown. This can occur, for example, with applications that run cron jobs on App Engine on a user's behalf.  You can choose any arbitrary string that uniquely identifies a user, but it is limited to 40 characters. Overrides userIp if both are provided. Learn more about capping usage.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "userIp": {
+                                            "name": "userIp",
+                                            "displayName": "userIp",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "IP address of the end user for whom the API call is being made. Lets you enforce per-user quotas when calling the API from a server-side application. Learn more about capping usage.",
                                             "__METADATA__": {
                                                 "primitiveValuesMeta": {
                                                     "displayName": {

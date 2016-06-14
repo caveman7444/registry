@@ -213,7 +213,8 @@
                                             "example": "{\n  \"session\" : {\n    \"name\" : \"JSESSIONID\" ,\n    \"value\" : \"12345678901234567890\"\n  } ,\n  \"loginInfo\" : {\n    \"failedLoginCount\" : 10 ,\n    \"loginCount\" : 127 ,\n    \"lastFailedLoginTime\" : \"2014-06-11T07:33:40.865+0000\" ,\n    \"previousLoginTime\" : \"2014-06-11T07:33:40.865+0000\"\n  }\n}",
                                             "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"session\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"name\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"value\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    } ,\n    \"loginInfo\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"failedLoginCount\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"loginCount\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"lastFailedLoginTime\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"previousLoginTime\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
                                         }
-                                    }
+                                    },
+                                    "description": "Returned if the object was retrieved successful."
                                 },
                                 "401": {
                                     "code": "401",
@@ -246,6 +247,11 @@
                                     "description": "Returned if the caller is not authenticated."
                                 }
                             },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json"
+                                }
+                            },
                             "description": "Logs the current user out of JIRA, destroying the existing session, if any.",
                             "method": "delete"
                         }
@@ -271,6 +277,11 @@
                                 "204": {
                                     "code": "204",
                                     "description": "Returned if no error occurs"
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json"
                                 }
                             },
                             "description": "This method invalidates the any current WebSudo session.",

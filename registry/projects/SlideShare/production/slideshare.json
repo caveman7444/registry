@@ -793,6 +793,71 @@
                                     }
                                 }
                             }
+                        },
+                        "username": {
+                            "name": "username",
+                            "displayName": "username",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "username of requesting user",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "password": {
+                            "name": "password",
+                            "displayName": "password",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "password of requesting user",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "detailed": {
+                            "name": "detailed",
+                            "displayName": "detailed",
+                            "type": "integer",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Set it to 1 if you want a detailed response",
+                            "minimum": 0,
+                            "maximum": 1,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
                         }
                     },
                     "description": "Returns slideshow object",
@@ -871,6 +936,74 @@
                                         "calculated": true
                                     },
                                     "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "limit": {
+                            "name": "limit",
+                            "displayName": "limit",
+                            "type": "integer",
+                            "required": false,
+                            "example": "10",
+                            "repeat": false,
+                            "description": "Specify the number of slideshows to return",
+                            "minimum": 1,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "offset": {
+                            "name": "offset",
+                            "displayName": "offset",
+                            "type": "integer",
+                            "required": false,
+                            "repeat": false,
+                            "description": "specify offset",
+                            "minimum": 0,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "detailed": {
+                            "name": "detailed",
+                            "displayName": "detailed",
+                            "type": "integer",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Set it to 1 if you want a detailed response",
+                            "minimum": 0,
+                            "maximum": 1,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
                                         "insertedAsDefault": true
                                     },
                                     "repeat": {
@@ -963,6 +1096,74 @@
                                     }
                                 }
                             }
+                        },
+                        "limit": {
+                            "name": "limit",
+                            "displayName": "limit",
+                            "type": "integer",
+                            "required": false,
+                            "example": "10",
+                            "repeat": false,
+                            "description": "Specify the number of slideshows to return",
+                            "minimum": 1,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "offset": {
+                            "name": "offset",
+                            "displayName": "offset",
+                            "type": "integer",
+                            "required": false,
+                            "repeat": false,
+                            "description": "specify offset",
+                            "minimum": 0,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "detailed": {
+                            "name": "detailed",
+                            "displayName": "detailed",
+                            "type": "integer",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Set it to 1 if you want a detailed response",
+                            "minimum": 0,
+                            "maximum": 1,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
                         }
                     },
                     "description": "Returns slideshows that are a part of the specified group",
@@ -1040,6 +1241,138 @@
                                         "calculated": true
                                     },
                                     "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "username": {
+                            "name": "username",
+                            "displayName": "username",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "username of requesting user",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "password": {
+                            "name": "password",
+                            "displayName": "password",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "password of requesting user",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "limit": {
+                            "name": "limit",
+                            "displayName": "limit",
+                            "type": "integer",
+                            "required": false,
+                            "example": "10",
+                            "repeat": false,
+                            "description": "Specify the number of slideshows to return",
+                            "minimum": 1,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "offset": {
+                            "name": "offset",
+                            "displayName": "offset",
+                            "type": "integer",
+                            "required": false,
+                            "repeat": false,
+                            "description": "specify offset",
+                            "minimum": 0,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "detailed": {
+                            "name": "detailed",
+                            "displayName": "detailed",
+                            "type": "integer",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Set it to 1 if you want a detailed response",
+                            "minimum": 0,
+                            "maximum": 1,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "username_for": {
+                            "name": "username_for",
+                            "displayName": "username_for",
+                            "type": "string",
+                            "required": true,
+                            "example": "rashmi",
+                            "repeat": false,
+                            "description": "username of user whose slideshows are being requested",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
                                         "insertedAsDefault": true
                                     },
                                     "repeat": {
@@ -1443,6 +1776,29 @@
                                     }
                                 }
                             }
+                        },
+                        "detailed": {
+                            "name": "detailed",
+                            "displayName": "detailed",
+                            "type": "integer",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Set it to 1 if you want a detailed response",
+                            "minimum": 0,
+                            "maximum": 1,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
                         }
                     },
                     "description": "Returns slideshows according to the search criteria",
@@ -1509,6 +1865,189 @@
                             "required": true,
                             "repeat": false,
                             "description": "Id of slideshow which is being edited",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "username": {
+                            "name": "username",
+                            "displayName": "username",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "username of requesting user",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "password": {
+                            "name": "password",
+                            "displayName": "password",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "password of requesting user",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "share_with_contacts": {
+                            "name": "share_with_contacts",
+                            "displayName": "share_with_contacts",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Sets if your contacts on SlideShare can view the slideshow. Requires make_slideshow_private to be Y",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "slideshow_tags": {
+                            "name": "slideshow_tags",
+                            "displayName": "slideshow_tags",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Comma separated list of tags",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "allow_embeds": {
+                            "name": "allow_embeds",
+                            "displayName": "allow_embeds",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Sets if other websites should be allowed to embed the slideshow. Requires make_slideshow_private to be Y",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "generate_secret_url": {
+                            "name": "generate_secret_url",
+                            "displayName": "generate_secret_url",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Generate a secret URL for the slideshow. Requires make_slideshow_private to be Y",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "make_slideshow_private": {
+                            "name": "make_slideshow_private",
+                            "displayName": "make_slideshow_private",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Should be Y if you want to make the slideshow private. If this is not set, following tags will not be considered",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "slideshow_title": {
+                            "name": "slideshow_title",
+                            "displayName": "slideshow_title",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Title of the slideshow",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
                                     "displayName": {
@@ -1597,6 +2136,48 @@
                             "required": true,
                             "repeat": false,
                             "description": "Id of slideshow which is being deleted",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "username": {
+                            "name": "username",
+                            "displayName": "username",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "username of requesting user",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "password": {
+                            "name": "password",
+                            "displayName": "password",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "password of requesting user",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
                                     "displayName": {
@@ -1741,6 +2322,189 @@
                                     }
                                 }
                             }
+                        },
+                        "username": {
+                            "name": "username",
+                            "displayName": "username",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "username of requesting user",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "password": {
+                            "name": "password",
+                            "displayName": "password",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "password of requesting user",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "share_with_contacts": {
+                            "name": "share_with_contacts",
+                            "displayName": "share_with_contacts",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Sets if your contacts on SlideShare can view the slideshow. Requires make_slideshow_private to be Y",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "slideshow_tags": {
+                            "name": "slideshow_tags",
+                            "displayName": "slideshow_tags",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Comma separated list of tags",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "allow_embeds": {
+                            "name": "allow_embeds",
+                            "displayName": "allow_embeds",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Sets if other websites should be allowed to embed the slideshow. Requires make_slideshow_private to be Y",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "generate_secret_url": {
+                            "name": "generate_secret_url",
+                            "displayName": "generate_secret_url",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Generate a secret URL for the slideshow. Requires make_slideshow_private to be Y",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "make_slideshow_private": {
+                            "name": "make_slideshow_private",
+                            "displayName": "make_slideshow_private",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Should be Y if you want to make the slideshow private. If this is not set, following tags will not be considered",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "slideshow_title": {
+                            "name": "slideshow_title",
+                            "displayName": "slideshow_title",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "Title of the slideshow",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
                         }
                     },
                     "description": "Upload a slideshow",
@@ -1808,6 +2572,72 @@
                     "securedBy": [
                         "apiKey"
                     ],
+                    "queryParameters": {
+                        "username": {
+                            "name": "username",
+                            "displayName": "username",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "username of requesting user",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "password": {
+                            "name": "password",
+                            "displayName": "password",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "password of requesting user",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "username_for": {
+                            "name": "username_for",
+                            "displayName": "username_for",
+                            "type": "string",
+                            "required": true,
+                            "example": "rashmi",
+                            "repeat": false,
+                            "description": "username of user whose favorites are being requested",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "Returns user favorites",
                     "method": "get",
                     "is": [
@@ -1873,6 +2703,117 @@
                     "securedBy": [
                         "apiKey"
                     ],
+                    "queryParameters": {
+                        "username": {
+                            "name": "username",
+                            "displayName": "username",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "username of requesting user",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "password": {
+                            "name": "password",
+                            "displayName": "password",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "password of requesting user",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "limit": {
+                            "name": "limit",
+                            "displayName": "limit",
+                            "type": "integer",
+                            "required": false,
+                            "example": "10",
+                            "repeat": false,
+                            "description": "Specify the number of contacts to return",
+                            "minimum": 1,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "offset": {
+                            "name": "offset",
+                            "displayName": "offset",
+                            "type": "integer",
+                            "required": false,
+                            "repeat": false,
+                            "description": "specify offset",
+                            "minimum": 0,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "username_for": {
+                            "name": "username_for",
+                            "displayName": "username_for",
+                            "type": "string",
+                            "required": true,
+                            "example": "rashmi",
+                            "repeat": false,
+                            "description": "username of user whose contacts are being requested",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "Returns user contacts",
                     "method": "get",
                     "is": [
@@ -1943,6 +2884,72 @@
                     "securedBy": [
                         "apiKey"
                     ],
+                    "queryParameters": {
+                        "username": {
+                            "name": "username",
+                            "displayName": "username",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "username of requesting user",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "password": {
+                            "name": "password",
+                            "displayName": "password",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "password of requesting user",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "username_for": {
+                            "name": "username_for",
+                            "displayName": "username_for",
+                            "type": "string",
+                            "required": true,
+                            "example": "rashmi",
+                            "repeat": false,
+                            "description": "username of user whose groups are being requested",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "Returns user groups",
                     "method": "get",
                     "is": [
@@ -2008,6 +3015,50 @@
                     "securedBy": [
                         "apiKey"
                     ],
+                    "queryParameters": {
+                        "username": {
+                            "name": "username",
+                            "displayName": "username",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "username of requesting user",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "password": {
+                            "name": "password",
+                            "displayName": "password",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "password of requesting user",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "Returns user tags",
                     "method": "get",
                     "is": [
@@ -2076,6 +3127,48 @@
                             "required": true,
                             "repeat": false,
                             "description": "Slideshow which is being checked",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "username": {
+                            "name": "username",
+                            "displayName": "username",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "username of requesting user",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "password": {
+                            "name": "password",
+                            "displayName": "password",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "password of requesting user",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
                                     "displayName": {
@@ -2172,6 +3265,48 @@
                                     }
                                 }
                             }
+                        },
+                        "username": {
+                            "name": "username",
+                            "displayName": "username",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "username of requesting user",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "password": {
+                            "name": "password",
+                            "displayName": "password",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "password of requesting user",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
                         }
                     },
                     "description": "Favorites slideshow (identified by slideshow_id)",
@@ -2255,6 +3390,96 @@
                                     }
                                 }
                             }
+                        },
+                        "username": {
+                            "name": "username",
+                            "displayName": "username",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "username of requesting user",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "password": {
+                            "name": "password",
+                            "displayName": "password",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "password of requesting user",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "end": {
+                            "name": "end",
+                            "displayName": "end",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "only get leads collected before this UTC date: YYYYMMDDHHMM",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "begin": {
+                            "name": "begin",
+                            "displayName": "begin",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "only get leads collected after this UTC date: YYYYMMDDHHMM",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
                         }
                     },
                     "description": "Get user campaign leads",
@@ -2322,6 +3547,50 @@
                     "securedBy": [
                         "apiKey"
                     ],
+                    "queryParameters": {
+                        "username": {
+                            "name": "username",
+                            "displayName": "username",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "username of requesting user",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "password": {
+                            "name": "password",
+                            "displayName": "password",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "password of requesting user",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "Get user campaigns",
                     "method": "get",
                     "is": [
@@ -2382,6 +3651,98 @@
                     "securedBy": [
                         "apiKey"
                     ],
+                    "queryParameters": {
+                        "username": {
+                            "name": "username",
+                            "displayName": "username",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "username of requesting user",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "password": {
+                            "name": "password",
+                            "displayName": "password",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "password of requesting user",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "end": {
+                            "name": "end",
+                            "displayName": "end",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "only get leads collected before this UTC date: YYYYMMDDHHMM",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "begin": {
+                            "name": "begin",
+                            "displayName": "begin",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "only get leads collected after this UTC date: YYYYMMDDHHMM",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "Get user leads",
                     "method": "get",
                     "is": [

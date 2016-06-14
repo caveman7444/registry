@@ -124,6 +124,83 @@
                     "protocols": [
                         "HTTPS"
                     ],
+                    "queryParameters": {
+                        "orderby": {
+                            "name": "orderby",
+                            "displayName": "orderby",
+                            "type": "string",
+                            "required": false,
+                            "example": "orderby=<orderbyfield>",
+                            "repeat": false,
+                            "description": "Establishes sort order for a given query result set.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "top": {
+                            "name": "top",
+                            "displayName": "top",
+                            "type": "string",
+                            "required": false,
+                            "example": "top=<row_limit>",
+                            "repeat": false,
+                            "description": "Establishes the number of items returned starting from the top of a given query result set.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "skiptoken": {
+                            "name": "skiptoken",
+                            "displayName": "skiptoken",
+                            "type": "string",
+                            "required": false,
+                            "example": "orderby=<orderbyfield>&skiptoken=<skiptokenvalue>&$take=100",
+                            "repeat": false,
+                            "description": "Skip token",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "Recursively retrieves a list of all files and folder that reside in the default document library.",
                     "method": "get",
                     "is": [
@@ -492,6 +569,28 @@
                             }
                         }
                     },
+                    "methods": [
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201",
+                                    "description": "The request has been fulfilled and resulted in the creation of a new resource."
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "Working on a file from source location to target location. Note that if the target already exists and you have set overwrite to false, then the operation throws an error.",
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
                     "displayName": "/MoveTo{file_path}{overwrite}",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
@@ -557,6 +656,28 @@
                             }
                         }
                     },
+                    "methods": [
+                        {
+                            "responses": {
+                                "201": {
+                                    "code": "201",
+                                    "description": "The request has been fulfilled and resulted in the creation of a new resource."
+                                }
+                            },
+                            "protocols": [
+                                "HTTPS"
+                            ],
+                            "description": "Working on a file from source location to target location. Note that if the target already exists and you have set overwrite to false, then the operation throws an error.",
+                            "method": "post",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "protocols": {
+                                        "calculated": true
+                                    }
+                                }
+                            }
+                        }
+                    ],
                     "displayName": "/CopyTo{file_path}{overwrite}",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
@@ -727,6 +848,83 @@
                             "protocols": [
                                 "HTTPS"
                             ],
+                            "queryParameters": {
+                                "orderby": {
+                                    "name": "orderby",
+                                    "displayName": "orderby",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "orderby=<orderbyfield>",
+                                    "repeat": false,
+                                    "description": "Establishes sort order for a given query result set.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "top": {
+                                    "name": "top",
+                                    "displayName": "top",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "top=<row_limit>",
+                                    "repeat": false,
+                                    "description": "Establishes the number of items returned starting from the top of a given query result set.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "skiptoken": {
+                                    "name": "skiptoken",
+                                    "displayName": "skiptoken",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "orderby=<orderbyfield>&skiptoken=<skiptokenvalue>&$take=100",
+                                    "repeat": false,
+                                    "description": "Skip token",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Retrieves the files and/or folders that are direct children of the specified folder.",
                             "method": "get",
                             "is": [

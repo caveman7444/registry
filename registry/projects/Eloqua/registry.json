@@ -1,14 +1,30 @@
-{"apis": [
+{"apis": {"RAMLFiles": [
     {
         "name": "Eloqua",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Eloqua/master/api.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Eloqua/master/api.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Eloqua/master/api.json",
+        "baseUri": "https://secure.eloqua.com",
+        "securitySchemes": [{"basic": {
+            "name": "basic",
+            "type": "Basic Authentication"
+        }}],
+        "resourcesCount": 549,
+        "methodsCount": 575
     },
     {
         "name": "Eloqua",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Eloqua/staging/api.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Eloqua/staging/api.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Eloqua/staging/api.json",
+        "baseUri": "https://secure.eloqua.com",
+        "securitySchemes": [{"basic": {
+            "name": "basic",
+            "type": "Basic Authentication"
+        }}],
+        "resourcesCount": 549,
+        "methodsCount": 575
     }
-]}
+]}}

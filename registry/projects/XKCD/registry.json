@@ -1,16 +1,27 @@
-{"apis": [
-    {
-        "name": "XKCD",
-        "RAMLVersion": "0.8",
-        "location": "https://raw.githubusercontent.com/raml-apis/XKCD/production/api.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/XKCD/production/api.json",
-        "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/XKCD/logo.png"
-    },
-    {
-        "name": "XKCD",
-        "RAMLVersion": "1.0",
-        "location": "https://raw.githubusercontent.com/raml-apis/XKCD/raml1.0/api.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/XKCD/raml1.0/api.json",
-        "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/XKCD/logo.png"
-    }
-]}
+{"apis": {
+    "logo": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/XKCD/logo.png",
+    "RAMLFiles": [
+        {
+            "name": "XKCD",
+            "description": "descriptionexamle",
+            "RAMLVersion": "0.8",
+            "location": "https://raw.githubusercontent.com/raml-apis/XKCD/production/api.raml",
+            "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/XKCD/production/api.json",
+            "baseUri": "http://xkcd.com",
+            "resourcesCount": 2,
+            "methodsCount": 2,
+            "developerPortalURI": "http://xkcd.com/about"
+        },
+        {
+            "name": "XKCD",
+            "description": "descriptionexamle",
+            "RAMLVersion": "1.0",
+            "location": "https://raw.githubusercontent.com/raml-apis/XKCD/raml1.0/api.raml",
+            "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/XKCD/raml1.0/api.json",
+            "baseUri": "http://xkcd.com",
+            "resourcesCount": 2,
+            "methodsCount": 2,
+            "developerPortalURI": "http://xkcd.com/about"
+        }
+    ]
+}}

@@ -537,6 +537,56 @@
                     "securedBy": [
                         "api_key"
                     ],
+                    "queryParameters": {
+                        "language": {
+                            "name": "language",
+                            "displayName": "language",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "language code",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "details": {
+                            "name": "details",
+                            "displayName": "details",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "true or false",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "Alerts by LocationKey",
                     "method": "get",
                     "__METADATA__": {
@@ -696,6 +746,32 @@
                     "securedBy": [
                         "api_key"
                     ],
+                    "queryParameters": {
+                        "language": {
+                            "name": "language",
+                            "displayName": "language",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "language code",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "Period's Weather Alarms by Location Key ",
                     "method": "get",
                     "__METADATA__": {
@@ -830,6 +906,32 @@
                     "securedBy": [
                         "api_key"
                     ],
+                    "queryParameters": {
+                        "language": {
+                            "name": "language",
+                            "displayName": "language",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "language code",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "Radar and Satellite Images by LocationKey",
                     "method": "get",
                     "__METADATA__": {
@@ -982,6 +1084,56 @@
                                     "securedBy": [
                                         "api_key"
                                     ],
+                                    "queryParameters": {
+                                        "language": {
+                                            "name": "language",
+                                            "displayName": "language",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "language code",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "offset": {
+                                            "name": "offset",
+                                            "displayName": "offset",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "zero based page number",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Administrative Areas List",
                                     "method": "get",
                                     "__METADATA__": {
@@ -1092,6 +1244,53 @@
                                     "securedBy": [
                                         "api_key"
                                     ],
+                                    "queryParameters": {
+                                        "language": {
+                                            "name": "language",
+                                            "displayName": "language",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "language code",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "q": {
+                                            "name": "q",
+                                            "displayName": "q",
+                                            "type": "string",
+                                            "required": true,
+                                            "repeat": false,
+                                            "description": "search text",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Administrative Areas Search",
                                     "method": "get",
                                     "__METADATA__": {
@@ -1219,6 +1418,56 @@
                             "securedBy": [
                                 "api_key"
                             ],
+                            "queryParameters": {
+                                "language": {
+                                    "name": "language",
+                                    "displayName": "language",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "language code",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "details": {
+                                    "name": "details",
+                                    "displayName": "details",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "true or false",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Location Key Searching",
                             "method": "get",
                             "__METADATA__": {
@@ -1374,6 +1623,75 @@
                                             }
                                         }
                                     }
+                                },
+                                "language": {
+                                    "name": "language",
+                                    "displayName": "language",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "language code",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "details": {
+                                    "name": "details",
+                                    "displayName": "details",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "true or false",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "q": {
+                                    "name": "q",
+                                    "displayName": "q",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "description": "search text",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
                                 }
                             },
                             "description": "Points of Interest Searching",
@@ -1477,6 +1795,77 @@
                                     "securedBy": [
                                         "api_key"
                                     ],
+                                    "queryParameters": {
+                                        "language": {
+                                            "name": "language",
+                                            "displayName": "language",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "language code",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "details": {
+                                            "name": "details",
+                                            "displayName": "details",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "true or false",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "q": {
+                                            "name": "q",
+                                            "displayName": "q",
+                                            "type": "string",
+                                            "required": true,
+                                            "repeat": false,
+                                            "description": "search text",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "GeoPosition (Latitude and Longitude) Searching",
                                     "method": "get",
                                     "__METADATA__": {
@@ -1565,6 +1954,77 @@
                                     "securedBy": [
                                         "api_key"
                                     ],
+                                    "queryParameters": {
+                                        "language": {
+                                            "name": "language",
+                                            "displayName": "language",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "language code",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "details": {
+                                            "name": "details",
+                                            "displayName": "details",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "true or false",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "q": {
+                                            "name": "q",
+                                            "displayName": "q",
+                                            "type": "string",
+                                            "required": true,
+                                            "repeat": false,
+                                            "description": "search text",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "IP Address Searching",
                                     "method": "get",
                                     "__METADATA__": {
@@ -1702,6 +2162,125 @@
                                     "securedBy": [
                                         "api_key"
                                     ],
+                                    "queryParameters": {
+                                        "language": {
+                                            "name": "language",
+                                            "displayName": "language",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "language code",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "details": {
+                                            "name": "details",
+                                            "displayName": "details",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "true or false",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "q": {
+                                            "name": "q",
+                                            "displayName": "q",
+                                            "type": "string",
+                                            "required": true,
+                                            "repeat": false,
+                                            "description": "search text",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "offset": {
+                                            "name": "offset",
+                                            "displayName": "offset",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "zero based page number",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "alias": {
+                                            "name": "alias",
+                                            "displayName": "alias",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "always or never",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "City Searching",
                                     "method": "get",
                                     "__METADATA__": {
@@ -1790,6 +2369,53 @@
                                     "securedBy": [
                                         "api_key"
                                     ],
+                                    "queryParameters": {
+                                        "language": {
+                                            "name": "language",
+                                            "displayName": "language",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "language code",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "q": {
+                                            "name": "q",
+                                            "displayName": "q",
+                                            "type": "string",
+                                            "required": true,
+                                            "repeat": false,
+                                            "description": "search text",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Autocomplete",
                                     "method": "get",
                                     "__METADATA__": {
@@ -1887,6 +2513,9 @@
                                                     "schema": "cityNeighbors",
                                                     "example": "[\n  {\n    \"Version\" : 1 ,\n    \"Key\" : \"133695\" ,\n    \"Type\" : \"City\" ,\n    \"Rank\" : 53 ,\n    \"LocalizedName\" : \"Montrouge\" ,\n    \"EnglishName\" : \"Montrouge\" ,\n    \"PrimaryPostalCode\" : \"\" ,\n    \"Region\" : {\n      \"ID\" : \"EUR\" ,\n      \"LocalizedName\" : \"Europe\" ,\n      \"EnglishName\" : \"Europe\"\n    } ,\n    \"Country\" : {\n      \"ID\" : \"FR\" ,\n      \"LocalizedName\" : \"France\" ,\n      \"EnglishName\" : \"France\"\n    } ,\n    \"AdministrativeArea\" : {\n      \"ID\" : \"92\" ,\n      \"LocalizedName\" : \"Seine Heights\" ,\n      \"EnglishName\" : \"Seine Heights\" ,\n      \"Level\" : 1 ,\n      \"LocalizedType\" : \"Department\" ,\n      \"EnglishType\" : \"Department\" ,\n      \"CountryID\" : \"FR\"\n    } ,\n    \"TimeZone\" : {\n      \"Code\" : \"CET\" ,\n      \"Name\" : \"Europe/Paris\" ,\n      \"GmtOffset\" : 1 ,\n      \"IsDaylightSaving\" : false ,\n      \"NextOffsetChange\" : \"2014-03-30T01:00:00Z\"\n    } ,\n    \"GeoPosition\" : {\n      \"Latitude\" : 48.82 ,\n      \"Longitude\" : 2.32 ,\n      \"Elevation\" : {\n        \"Metric\" : {\n          \"Value\" : 76 ,\n          \"Unit\" : \"m\" ,\n          \"UnitType\" : 5\n        } ,\n        \"Imperial\" : {\n          \"Value\" : 249 ,\n          \"Unit\" : \"ft\" ,\n          \"UnitType\" : 0\n        }\n      }\n    } ,\n    \"IsAlias\" : false ,\n    \"SupplementalAdminAreas\" : [\n      {\n        \"Level\" : 2 ,\n        \"LocalizedName\" : \"Antony\" ,\n        \"EnglishName\" : \"Antony\"\n      }\n    ]\n  } , {\n    \"Version\" : 1 ,\n    \"Key\" : \"133599\" ,\n    \"Type\" : \"City\" ,\n    \"Rank\" : 53 ,\n    \"LocalizedName\" : \"Bagnolet\" ,\n    \"EnglishName\" : \"Bagnolet\" ,\n    \"PrimaryPostalCode\" : \"\" ,\n    \"Region\" : {\n      \"ID\" : \"EUR\" ,\n      \"LocalizedName\" : \"Europe\" ,\n      \"EnglishName\" : \"Europe\"\n    } ,\n    \"Country\" : {\n      \"ID\" : \"FR\" ,\n      \"LocalizedName\" : \"France\" ,\n      \"EnglishName\" : \"France\"\n    } ,\n    \"AdministrativeArea\" : {\n      \"ID\" : \"93\" ,\n      \"LocalizedName\" : \"Seine-Saint-Denis\" ,\n      \"EnglishName\" : \"Seine-Saint-Denis\" ,\n      \"Level\" : 1 ,\n      \"LocalizedType\" : \"Department\" ,\n      \"EnglishType\" : \"Department\" ,\n      \"CountryID\" : \"FR\"\n    } ,\n    \"TimeZone\" : {\n      \"Code\" : \"CET\" ,\n      \"Name\" : \"Europe/Paris\" ,\n      \"GmtOffset\" : 1 ,\n      \"IsDaylightSaving\" : false ,\n      \"NextOffsetChange\" : \"2014-03-30T01:00:00Z\"\n    } ,\n    \"GeoPosition\" : {\n      \"Latitude\" : 48.87 ,\n      \"Longitude\" : 2.42 ,\n      \"Elevation\" : {\n        \"Metric\" : {\n          \"Value\" : 109 ,\n          \"Unit\" : \"m\" ,\n          \"UnitType\" : 5\n        } ,\n        \"Imperial\" : {\n          \"Value\" : 358 ,\n          \"Unit\" : \"ft\" ,\n          \"UnitType\" : 0\n        }\n      }\n    } ,\n    \"IsAlias\" : false ,\n    \"SupplementalAdminAreas\" : [\n      {\n        \"Level\" : 2 ,\n        \"LocalizedName\" : \"Bobigny\" ,\n        \"EnglishName\" : \"Bobigny\"\n      }\n    ]\n  }\n]",
                                                     "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"object\" ,\n      \"properties\" : {\n        \"Version\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"Key\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Type\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Rank\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"LocalizedName\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"EnglishName\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"PrimaryPostalCode\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Region\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"ID\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"LocalizedName\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"EnglishName\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        } ,\n        \"Country\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"ID\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"LocalizedName\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"EnglishName\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        } ,\n        \"AdministrativeArea\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"ID\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"LocalizedName\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"EnglishName\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"Level\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"LocalizedType\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"EnglishType\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"CountryID\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        } ,\n        \"TimeZone\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"Code\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"Name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"GmtOffset\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"IsDaylightSaving\" : {\n              \"type\" : \"boolean\" ,\n              \"required\" : false\n            } ,\n            \"NextOffsetChange\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        } ,\n        \"GeoPosition\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"Latitude\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"Longitude\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"Elevation\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"Metric\" : {\n                  \"type\" : \"object\" ,\n                  \"required\" : false ,\n                  \"properties\" : {\n                    \"Value\" : {\n                      \"type\" : \"number\" ,\n                      \"required\" : false\n                    } ,\n                    \"Unit\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"UnitType\" : {\n                      \"type\" : \"number\" ,\n                      \"required\" : false\n                    }\n                  }\n                } ,\n                \"Imperial\" : {\n                  \"type\" : \"object\" ,\n                  \"required\" : false ,\n                  \"properties\" : {\n                    \"Value\" : {\n                      \"type\" : \"number\" ,\n                      \"required\" : false\n                    } ,\n                    \"Unit\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"UnitType\" : {\n                      \"type\" : \"number\" ,\n                      \"required\" : false\n                    }\n                  }\n                }\n              }\n            }\n          }\n        } ,\n        \"IsAlias\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"SupplementalAdminAreas\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"object\" ,\n              \"properties\" : {\n                \"Level\" : {\n                  \"type\" : \"number\" ,\n                  \"required\" : false\n                } ,\n                \"LocalizedName\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"EnglishName\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            }\n          ]\n        }\n      }\n    }\n  ]\n}"
+                                                },
+                                                "application/xml": {
+                                                    "name": "application/xml"
                                                 }
                                             }
                                         }
@@ -1897,6 +2526,56 @@
                                     "securedBy": [
                                         "api_key"
                                     ],
+                                    "queryParameters": {
+                                        "language": {
+                                            "name": "language",
+                                            "displayName": "language",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "language code",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "details": {
+                                            "name": "details",
+                                            "displayName": "details",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "true or false",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "City Neighbors",
                                     "method": "get",
                                     "__METADATA__": {
@@ -2028,6 +2707,77 @@
                             "securedBy": [
                                 "api_key"
                             ],
+                            "queryParameters": {
+                                "language": {
+                                    "name": "language",
+                                    "displayName": "language",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "language code",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "details": {
+                                    "name": "details",
+                                    "displayName": "details",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "true or false",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "q": {
+                                    "name": "q",
+                                    "displayName": "q",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "description": "search text",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Postal Code Searching",
                             "method": "get",
                             "__METADATA__": {
@@ -2121,6 +2871,32 @@
                                     "securedBy": [
                                         "api_key"
                                     ],
+                                    "queryParameters": {
+                                        "language": {
+                                            "name": "language",
+                                            "displayName": "language",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "language code",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Countries Search",
                                     "method": "get",
                                     "__METADATA__": {
@@ -2236,6 +3012,32 @@
                                     "securedBy": [
                                         "api_key"
                                     ],
+                                    "queryParameters": {
+                                        "language": {
+                                            "name": "language",
+                                            "displayName": "language",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "language code",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Countries List",
                                     "method": "get",
                                     "__METADATA__": {
@@ -2382,6 +3184,125 @@
                             "securedBy": [
                                 "api_key"
                             ],
+                            "queryParameters": {
+                                "language": {
+                                    "name": "language",
+                                    "displayName": "language",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "language code",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "details": {
+                                    "name": "details",
+                                    "displayName": "details",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "true or false",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "q": {
+                                    "name": "q",
+                                    "displayName": "q",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "description": "search text",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "offset": {
+                                    "name": "offset",
+                                    "displayName": "offset",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "zero based page number",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "alias": {
+                                    "name": "alias",
+                                    "displayName": "alias",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "always or never",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Text Searching",
                             "method": "get",
                             "is": [
@@ -2500,6 +3421,32 @@
                             "securedBy": [
                                 "api_key"
                             ],
+                            "queryParameters": {
+                                "language": {
+                                    "name": "language",
+                                    "displayName": "language",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "language code",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Regions List",
                             "method": "get",
                             "__METADATA__": {
@@ -2574,6 +3521,9 @@
                                             "schema": "topcities",
                                             "example": "[\n  {\n    \"Version\" : 1 ,\n    \"Key\" : \"7894\" ,\n    \"Type\" : \"City\" ,\n    \"Rank\" : 10 ,\n    \"LocalizedName\" : \"Buenos Aires\" ,\n    \"EnglishName\" : \"Buenos Aires\" ,\n    \"PrimaryPostalCode\" : \"\" ,\n    \"Region\" : {\n      \"ID\" : \"SAM\" ,\n      \"LocalizedName\" : \"South America\" ,\n      \"EnglishName\" : \"South America\"\n    } ,\n    \"Country\" : {\n      \"ID\" : \"AR\" ,\n      \"LocalizedName\" : \"Argentina\" ,\n      \"EnglishName\" : \"Argentina\"\n    } ,\n    \"AdministrativeArea\" : {\n      \"ID\" : \"C\" ,\n      \"LocalizedName\" : \"Buenos Aires - Capital Federal\" ,\n      \"EnglishName\" : \"Buenos Aires - Capital Federal\" ,\n      \"Level\" : 1 ,\n      \"LocalizedType\" : \"Autonomous City\" ,\n      \"EnglishType\" : \"Autonomous City\" ,\n      \"CountryID\" : \"AR\"\n    } ,\n    \"TimeZone\" : {\n      \"Code\" : \"ART\" ,\n      \"Name\" : \"America/Argentina/Buenos_Aires\" ,\n      \"GmtOffset\" : -3 ,\n      \"IsDaylightSaving\" : false ,\n      \"NextOffsetChange\" : null\n    } ,\n    \"GeoPosition\" : {\n      \"Latitude\" : -34.62 ,\n      \"Longitude\" : -58.42 ,\n      \"Elevation\" : {\n        \"Metric\" : {\n          \"Value\" : 26 ,\n          \"Unit\" : \"m\" ,\n          \"UnitType\" : 5\n        } ,\n        \"Imperial\" : {\n          \"Value\" : 85 ,\n          \"Unit\" : \"ft\" ,\n          \"UnitType\" : 0\n        }\n      }\n    } ,\n    \"IsAlias\" : false ,\n    \"SupplementalAdminAreas\" : [\n      {\n        \"Level\" : 2 ,\n        \"LocalizedName\" : \"5\" ,\n        \"EnglishName\" : \"5\"\n      }\n    ]\n  } , {\n    \"Version\" : 1 ,\n    \"Key\" : \"28143\" ,\n    \"Type\" : \"City\" ,\n    \"Rank\" : 10 ,\n    \"LocalizedName\" : \"Dhaka\" ,\n    \"EnglishName\" : \"Dhaka\" ,\n    \"PrimaryPostalCode\" : \"\" ,\n    \"Region\" : {\n      \"ID\" : \"ASI\" ,\n      \"LocalizedName\" : \"Asia\" ,\n      \"EnglishName\" : \"Asia\"\n    } ,\n    \"Country\" : {\n      \"ID\" : \"BD\" ,\n      \"LocalizedName\" : \"Bangladesh\" ,\n      \"EnglishName\" : \"Bangladesh\"\n    } ,\n    \"AdministrativeArea\" : {\n      \"ID\" : \"C\" ,\n      \"LocalizedName\" : \"Dhaka\" ,\n      \"EnglishName\" : \"Dhaka\" ,\n      \"Level\" : 1 ,\n      \"LocalizedType\" : \"Division\" ,\n      \"EnglishType\" : \"Division\" ,\n      \"CountryID\" : \"BD\"\n    } ,\n    \"TimeZone\" : {\n      \"Code\" : \"BDT\" ,\n      \"Name\" : \"Asia/Dhaka\" ,\n      \"GmtOffset\" : 6 ,\n      \"IsDaylightSaving\" : false ,\n      \"NextOffsetChange\" : null\n    } ,\n    \"GeoPosition\" : {\n      \"Latitude\" : 23.71 ,\n      \"Longitude\" : 90.41 ,\n      \"Elevation\" : {\n        \"Metric\" : {\n          \"Value\" : 4 ,\n          \"Unit\" : \"m\" ,\n          \"UnitType\" : 5\n        } ,\n        \"Imperial\" : {\n          \"Value\" : 14 ,\n          \"Unit\" : \"ft\" ,\n          \"UnitType\" : 0\n        }\n      }\n    } ,\n    \"IsAlias\" : false ,\n    \"SupplementalAdminAreas\" : [\n    ]\n  }\n]",
                                             "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"object\" ,\n      \"properties\" : {\n        \"Version\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"Key\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Type\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Rank\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"LocalizedName\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"EnglishName\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"PrimaryPostalCode\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Region\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"ID\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"LocalizedName\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"EnglishName\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        } ,\n        \"Country\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"ID\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"LocalizedName\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"EnglishName\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        } ,\n        \"AdministrativeArea\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"ID\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"LocalizedName\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"EnglishName\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"Level\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"LocalizedType\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"EnglishType\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"CountryID\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        } ,\n        \"TimeZone\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"Code\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"Name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"GmtOffset\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"IsDaylightSaving\" : {\n              \"type\" : \"boolean\" ,\n              \"required\" : false\n            } ,\n            \"NextOffsetChange\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false\n            }\n          }\n        } ,\n        \"GeoPosition\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"Latitude\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"Longitude\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"Elevation\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"Metric\" : {\n                  \"type\" : \"object\" ,\n                  \"required\" : false ,\n                  \"properties\" : {\n                    \"Value\" : {\n                      \"type\" : \"number\" ,\n                      \"required\" : false\n                    } ,\n                    \"Unit\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"UnitType\" : {\n                      \"type\" : \"number\" ,\n                      \"required\" : false\n                    }\n                  }\n                } ,\n                \"Imperial\" : {\n                  \"type\" : \"object\" ,\n                  \"required\" : false ,\n                  \"properties\" : {\n                    \"Value\" : {\n                      \"type\" : \"number\" ,\n                      \"required\" : false\n                    } ,\n                    \"Unit\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"UnitType\" : {\n                      \"type\" : \"number\" ,\n                      \"required\" : false\n                    }\n                  }\n                }\n              }\n            }\n          }\n        } ,\n        \"IsAlias\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"SupplementalAdminAreas\" : {\n          \"type\" : \"array\" ,\n          \"required\" : false ,\n          \"items\" : [\n            {\n              \"type\" : \"object\" ,\n              \"properties\" : {\n                \"Level\" : {\n                  \"type\" : \"number\" ,\n                  \"required\" : false\n                } ,\n                \"LocalizedName\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"EnglishName\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            }\n          ]\n        }\n      }\n    }\n  ]\n}"
+                                        },
+                                        "application/xml": {
+                                            "name": "application/xml"
                                         }
                                     }
                                 }
@@ -2584,6 +3534,56 @@
                             "securedBy": [
                                 "api_key"
                             ],
+                            "queryParameters": {
+                                "language": {
+                                    "name": "language",
+                                    "displayName": "language",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "language code",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "details": {
+                                    "name": "details",
+                                    "displayName": "details",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "true or false",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Top City List",
                             "method": "get",
                             "__METADATA__": {
@@ -2792,6 +3792,54 @@
                                             }
                                         }
                                     }
+                                },
+                                "language": {
+                                    "name": "language",
+                                    "displayName": "language",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "language code",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "details": {
+                                    "name": "details",
+                                    "displayName": "details",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "true or false",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
                                 }
                             },
                             "description": "Hourly Forecasts by Location Key",
@@ -2937,6 +3985,54 @@
                                     "type": "string",
                                     "required": false,
                                     "example": "metric={true or false}",
+                                    "repeat": false,
+                                    "description": "true or false",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "language": {
+                                    "name": "language",
+                                    "displayName": "language",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "language code",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "details": {
+                                    "name": "details",
+                                    "displayName": "details",
+                                    "type": "string",
+                                    "required": false,
                                     "repeat": false,
                                     "description": "true or false",
                                     "__METADATA__": {
@@ -3186,6 +4282,32 @@
                                     "securedBy": [
                                         "api_key"
                                     ],
+                                    "queryParameters": {
+                                        "language": {
+                                            "name": "language",
+                                            "displayName": "language",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "language code",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "List of Translations for a Specific Group",
                                     "method": "get",
                                     "__METADATA__": {
@@ -3268,6 +4390,9 @@
                                             "schema": "allLanguages",
                                             "example": "[\n  {\n    \"DisplayName\" : \"Arabic\" ,\n    \"ID\" : 26 ,\n    \"ISO\" : \"ar\" ,\n    \"LanguageType\" : 26 ,\n    \"LocalizedName\" : \"عربي\" ,\n    \"MicroSoftCode\" : \"ar\" ,\n    \"MicroSoftName\" : \"Arabic\" ,\n    \"Name\" : \"ARABIC\"\n  } , {\n    \"DisplayName\" : \"Arabic\" ,\n    \"ID\" : 26 ,\n    \"ISO\" : \"ar-ae\" ,\n    \"LanguageType\" : 26 ,\n    \"LocalizedName\" : \"عربي\" ,\n    \"MicroSoftCode\" : \"ar-ae\" ,\n    \"MicroSoftName\" : \"Arabic (U.A.E.)\" ,\n    \"Name\" : \"ARABIC\"\n  } , {\n    \"DisplayName\" : \"Arabic\" ,\n    \"ID\" : 26 ,\n    \"ISO\" : \"ar-bh\" ,\n    \"LanguageType\" : 26 ,\n    \"LocalizedName\" : \"عربي\" ,\n    \"MicroSoftCode\" : \"ar-bh\" ,\n    \"MicroSoftName\" : \"Arabic (Bahrain)\" ,\n    \"Name\" : \"ARABIC\"\n  }\n]",
                                             "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"object\" ,\n      \"properties\" : {\n        \"DisplayName\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"ID\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"ISO\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"LanguageType\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"LocalizedName\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"MicroSoftCode\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"MicroSoftName\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Name\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  ]\n}"
+                                        },
+                                        "application/xml": {
+                                            "name": "application/xml"
                                         }
                                     }
                                 }
@@ -3378,6 +4503,9 @@
                                             "schema": "phrase",
                                             "example": "{\n  \"EnglishText\" : \"Evening Weather\" ,\n  \"LanguageCode\" : \"es\" ,\n  \"PhraseCode\" : \"EveningWeather\" ,\n  \"PhraseId\" : \"319\" ,\n  \"Text\" : \"Tiempo para la noche\"\n}",
                                             "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"EnglishText\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"LanguageCode\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"PhraseCode\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"PhraseId\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"Text\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
+                                        },
+                                        "application/xml": {
+                                            "name": "application/xml"
                                         }
                                     }
                                 }
@@ -3388,6 +4516,32 @@
                             "securedBy": [
                                 "api_key"
                             ],
+                            "queryParameters": {
+                                "language": {
+                                    "name": "language",
+                                    "displayName": "language",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "language code",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Translation of a Specific Phrase for a Specific Language",
                             "method": "get",
                             "__METADATA__": {
@@ -3464,6 +4618,9 @@
                                             "schema": "UFDBPhrase",
                                             "example": "[\n  {\n    \"PhraseId\" : \"61\" ,\n    \"Text\" : \"Nubosidad en aumento\"\n  } , {\n    \"PhraseId\" : \"62\" ,\n    \"Text\" : \"Parcialmente nublado\"\n  } , {\n    \"PhraseId\" : \"63\" ,\n    \"Text\" : \"Parcialmente soleado\"\n  } , {\n    \"PhraseId\" : \"64\" ,\n    \"Text\" : \"Muy nublado\"\n  }\n]",
                                             "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"object\" ,\n      \"properties\" : {\n        \"PhraseId\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Text\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  ]\n}"
+                                        },
+                                        "application/xml": {
+                                            "name": "application/xml"
                                         }
                                     }
                                 }
@@ -3483,6 +4640,30 @@
                                     "example": "phraseToTranslate=Variable cloudiness",
                                     "repeat": false,
                                     "description": "phraseToTranslate",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "language": {
+                                    "name": "language",
+                                    "displayName": "language",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "language code",
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
                                             "displayName": {
@@ -3577,6 +4758,9 @@
                                             "schema": "searchTerms",
                                             "example": "[\n  {\n    \"EnglishText\" : \"Empty Search Text\" ,\n    \"LanguageCode\" : \"ar\" ,\n    \"LanguageId\" : 26 ,\n    \"PhraseCode\" : \"EmptySearchText\" ,\n    \"PhraseId\" : \"304\" ,\n    \"Text\" : \"?? ????? ????\"\n  } , {\n    \"EnglishText\" : \"Empty Search Text\" ,\n    \"LanguageCode\" : \"bg\" ,\n    \"LanguageId\" : 37 ,\n    \"PhraseCode\" : \"EmptySearchText\" ,\n    \"PhraseId\" : \"304\" ,\n    \"Text\" : \"\"\n  } , {\n    \"EnglishText\" : \"Empty Search Text\" ,\n    \"LanguageCode\" : \"ca\" ,\n    \"LanguageId\" : 22 ,\n    \"PhraseCode\" : \"EmptySearchText\" ,\n    \"PhraseId\" : \"304\" ,\n    \"Text\" : \"No s'ha introdu?t text de cerca\"\n  } , {\n    \"EnglishText\" : \"Empty Search Text\" ,\n    \"LanguageCode\" : \"cs\" ,\n    \"LanguageId\" : 19 ,\n    \"PhraseCode\" : \"EmptySearchText\" ,\n    \"PhraseId\" : \"304\" ,\n    \"Text\" : \"Nebyl zad?n text vyhled?v?n?\"\n  }\n]",
                                             "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"object\" ,\n      \"properties\" : {\n        \"EnglishText\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"LanguageCode\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"LanguageId\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"PhraseCode\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"PhraseId\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Text\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  ]\n}"
+                                        },
+                                        "application/xml": {
+                                            "name": "application/xml"
                                         }
                                     }
                                 }
@@ -3587,6 +4771,29 @@
                             "securedBy": [
                                 "api_key"
                             ],
+                            "queryParameters": {
+                                "q": {
+                                    "name": "q",
+                                    "displayName": "q",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "description": "search text",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "List of Phrases matching a search term",
                             "method": "get",
                             "__METADATA__": {
@@ -3684,6 +4891,9 @@
                                             "schema": "listSpecificLanguages",
                                             "example": "[\n  {\n    \"EnglishText\" : \"911 Telephone Outage\" ,\n    \"LanguageCode\" : \"es\" ,\n    \"PhraseCode\" : \"911TelephoneOutage\" ,\n    \"Text\" : \"Teléfono en caso de apagones 911\"\n  } , {\n    \"EnglishText\" : \"Menu\" ,\n    \"LanguageCode\" : \"es\" ,\n    \"PhraseCode\" : \"Abbr_Menu\" ,\n    \"Text\" : \"Menú\"\n  } , {\n    \"EnglishText\" : \"About\" ,\n    \"LanguageCode\" : \"es\" ,\n    \"PhraseCode\" : \"About\" ,\n    \"Text\" : \"Acerca de\"\n  } , {\n    \"EnglishText\" : \"Accept\" ,\n    \"LanguageCode\" : \"es\" ,\n    \"PhraseCode\" : \"Accept\" ,\n    \"Text\" : \"Aceptar\"\n  }\n]",
                                             "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"object\" ,\n      \"properties\" : {\n        \"EnglishText\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"LanguageCode\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"PhraseCode\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Text\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  ]\n}"
+                                        },
+                                        "application/xml": {
+                                            "name": "application/xml"
                                         }
                                     }
                                 }
@@ -3791,6 +5001,9 @@
                                             "schema": "listSpecificPhrases",
                                             "example": "[\n  {\n    \"EnglishText\" : \"Sunny\" ,\n    \"LanguageCode\" : \"en-us\" ,\n    \"LanguageId\" : 1 ,\n    \"PhraseCode\" : \"Sunny\" ,\n    \"Text\" : \"Sunny\"\n  } , {\n    \"EnglishText\" : \"Sunny\" ,\n    \"LanguageCode\" : \"es\" ,\n    \"LanguageId\" : 2 ,\n    \"PhraseCode\" : \"Sunny\" ,\n    \"Text\" : \"Soleado\"\n  } , {\n    \"EnglishText\" : \"Sunny\" ,\n    \"LanguageCode\" : \"fr\" ,\n    \"LanguageId\" : 3 ,\n    \"PhraseCode\" : \"Sunny\" ,\n    \"Text\" : \"Ensoleillé\"\n  } , {\n    \"EnglishText\" : \"Sunny\" ,\n    \"LanguageCode\" : \"da\" ,\n    \"LanguageId\" : 4 ,\n    \"PhraseCode\" : \"Sunny\" ,\n    \"Text\" : \"Solskin\"\n  }\n]",
                                             "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"object\" ,\n      \"properties\" : {\n        \"EnglishText\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"LanguageCode\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"LanguageId\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"PhraseCode\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Text\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  ]\n}"
+                                        },
+                                        "application/xml": {
+                                            "name": "application/xml"
                                         }
                                     }
                                 }
@@ -4179,6 +5392,56 @@
                             "securedBy": [
                                 "api_key"
                             ],
+                            "queryParameters": {
+                                "language": {
+                                    "name": "language",
+                                    "displayName": "language",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "language code",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "details": {
+                                    "name": "details",
+                                    "displayName": "details",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "true or false",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Current Conditions by LocationKey",
                             "method": "get",
                             "__METADATA__": {
@@ -4289,6 +5552,56 @@
                             "securedBy": [
                                 "api_key"
                             ],
+                            "queryParameters": {
+                                "language": {
+                                    "name": "language",
+                                    "displayName": "language",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "language code",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "details": {
+                                    "name": "details",
+                                    "displayName": "details",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "true or false",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Historical Current Conditions by LocationKey",
                             "method": "get",
                             "__METADATA__": {
@@ -4383,6 +5696,9 @@
                                             "schema": "currentConditionsTopCities",
                                             "example": "[\n  {\n    \"Key\" : \"7894\" ,\n    \"LocalizedName\" : \"Buenos Aires\" ,\n    \"EnglishName\" : \"Buenos Aires\" ,\n    \"Country\" : {\n      \"ID\" : \"AR\" ,\n      \"LocalizedName\" : \"Argentina\" ,\n      \"EnglishName\" : \"Argentina\"\n    } ,\n    \"TimeZone\" : {\n      \"Code\" : \"ART\" ,\n      \"Name\" : \"America/Argentina/Buenos_Aires\" ,\n      \"GmtOffset\" : -3 ,\n      \"IsDaylightSaving\" : false ,\n      \"NextOffsetChange\" : null\n    } ,\n    \"GeoPosition\" : {\n      \"Latitude\" : -34.61 ,\n      \"Longitude\" : -58.41 ,\n      \"Elevation\" : {\n        \"Metric\" : {\n          \"Value\" : 26 ,\n          \"Unit\" : \"m\" ,\n          \"UnitType\" : 5\n        } ,\n        \"Imperial\" : {\n          \"Value\" : 85 ,\n          \"Unit\" : \"ft\" ,\n          \"UnitType\" : 0\n        }\n      }\n    } ,\n    \"LocalObservationDateTime\" : \"2014-03-17T12:35:00-03:00\" ,\n    \"EpochTime\" : 1395070500 ,\n    \"WeatherText\" : \"Sunny\" ,\n    \"WeatherIcon\" : 1 ,\n    \"IsDayTime\" : true ,\n    \"Temperature\" : {\n      \"Metric\" : {\n        \"Value\" : 23.9 ,\n        \"Unit\" : \"C\" ,\n        \"UnitType\" : 17\n      } ,\n      \"Imperial\" : {\n        \"Value\" : 75 ,\n        \"Unit\" : \"F\" ,\n        \"UnitType\" : 18\n      }\n    } ,\n    \"MobileLink\" : \"http://m.accuweather.com/en/ar/buenos-aires/7894/current-weather/7894?lang=en-us\" ,\n    \"Link\" : \"http://www.accuweather.com/en/ar/buenos-aires/7894/current-weather/7894?lang=en-us\"\n  } , {\n    \"Key\" : \"28143\" ,\n    \"LocalizedName\" : \"Dhaka\" ,\n    \"EnglishName\" : \"Dhaka\" ,\n    \"Country\" : {\n      \"ID\" : \"BD\" ,\n      \"LocalizedName\" : \"Bangladesh\" ,\n      \"EnglishName\" : \"Bangladesh\"\n    } ,\n    \"TimeZone\" : {\n      \"Code\" : \"BDT\" ,\n      \"Name\" : \"Asia/Dhaka\" ,\n      \"GmtOffset\" : 6 ,\n      \"IsDaylightSaving\" : false ,\n      \"NextOffsetChange\" : null\n    } ,\n    \"GeoPosition\" : {\n      \"Latitude\" : 23.7 ,\n      \"Longitude\" : 90.4 ,\n      \"Elevation\" : {\n        \"Metric\" : {\n          \"Value\" : 4 ,\n          \"Unit\" : \"m\" ,\n          \"UnitType\" : 5\n        } ,\n        \"Imperial\" : {\n          \"Value\" : 14 ,\n          \"Unit\" : \"ft\" ,\n          \"UnitType\" : 0\n        }\n      }\n    } ,\n    \"LocalObservationDateTime\" : \"2014-03-17T21:20:00+06:00\" ,\n    \"EpochTime\" : 1395069600 ,\n    \"WeatherText\" : \"Clear\" ,\n    \"WeatherIcon\" : 33 ,\n    \"IsDayTime\" : false ,\n    \"Temperature\" : {\n      \"Metric\" : {\n        \"Value\" : 25.7 ,\n        \"Unit\" : \"C\" ,\n        \"UnitType\" : 17\n      } ,\n      \"Imperial\" : {\n        \"Value\" : 78 ,\n        \"Unit\" : \"F\" ,\n        \"UnitType\" : 18\n      }\n    } ,\n    \"MobileLink\" : \"http://m.accuweather.com/en/bd/dhaka/28143/current-weather/28143?lang=en-us\" ,\n    \"Link\" : \"http://www.accuweather.com/en/bd/dhaka/28143/current-weather/28143?lang=en-us\"\n  }\n]\n",
                                             "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"object\" ,\n      \"properties\" : {\n        \"Key\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"LocalizedName\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"EnglishName\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Country\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"ID\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"LocalizedName\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"EnglishName\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        } ,\n        \"TimeZone\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"Code\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"Name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"GmtOffset\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"IsDaylightSaving\" : {\n              \"type\" : \"boolean\" ,\n              \"required\" : false\n            } ,\n            \"NextOffsetChange\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false\n            }\n          }\n        } ,\n        \"GeoPosition\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"Latitude\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"Longitude\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"Elevation\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"Metric\" : {\n                  \"type\" : \"object\" ,\n                  \"required\" : false ,\n                  \"properties\" : {\n                    \"Value\" : {\n                      \"type\" : \"number\" ,\n                      \"required\" : false\n                    } ,\n                    \"Unit\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"UnitType\" : {\n                      \"type\" : \"number\" ,\n                      \"required\" : false\n                    }\n                  }\n                } ,\n                \"Imperial\" : {\n                  \"type\" : \"object\" ,\n                  \"required\" : false ,\n                  \"properties\" : {\n                    \"Value\" : {\n                      \"type\" : \"number\" ,\n                      \"required\" : false\n                    } ,\n                    \"Unit\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"UnitType\" : {\n                      \"type\" : \"number\" ,\n                      \"required\" : false\n                    }\n                  }\n                }\n              }\n            }\n          }\n        } ,\n        \"LocalObservationDateTime\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"EpochTime\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"WeatherText\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"WeatherIcon\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"IsDayTime\" : {\n          \"type\" : \"boolean\" ,\n          \"required\" : false\n        } ,\n        \"Temperature\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"Metric\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"Value\" : {\n                  \"type\" : \"number\" ,\n                  \"required\" : false\n                } ,\n                \"Unit\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"UnitType\" : {\n                  \"type\" : \"number\" ,\n                  \"required\" : false\n                }\n              }\n            } ,\n            \"Imperial\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"Value\" : {\n                  \"type\" : \"number\" ,\n                  \"required\" : false\n                } ,\n                \"Unit\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"UnitType\" : {\n                  \"type\" : \"number\" ,\n                  \"required\" : false\n                }\n              }\n            }\n          }\n        } ,\n        \"MobileLink\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"Link\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  ]\n}"
+                                        },
+                                        "application/xml": {
+                                            "name": "application/xml"
                                         }
                                     }
                                 }
@@ -4532,6 +5848,32 @@
                             "securedBy": [
                                 "api_key"
                             ],
+                            "queryParameters": {
+                                "language": {
+                                    "name": "language",
+                                    "displayName": "language",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "language code",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Metadata List of Daily Indices",
                             "method": "get",
                             "__METADATA__": {
@@ -4715,6 +6057,56 @@
                                     "securedBy": [
                                         "api_key"
                                     ],
+                                    "queryParameters": {
+                                        "language": {
+                                            "name": "language",
+                                            "displayName": "language",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "language code",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "details": {
+                                            "name": "details",
+                                            "displayName": "details",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "true or false",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Daily Indices By LocationKey for period",
                                     "method": "get",
                                     "__METADATA__": {
@@ -4803,6 +6195,32 @@
                                     "securedBy": [
                                         "api_key"
                                     ],
+                                    "queryParameters": {
+                                        "language": {
+                                            "name": "language",
+                                            "displayName": "language",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "language code",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Metadata List of a Index Groups",
                                     "method": "get",
                                     "__METADATA__": {
@@ -4912,6 +6330,32 @@
                                     "securedBy": [
                                         "api_key"
                                     ],
+                                    "queryParameters": {
+                                        "language": {
+                                            "name": "language",
+                                            "displayName": "language",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "language code",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Metadata List of a Indices in a Specific Group",
                                     "method": "get",
                                     "__METADATA__": {
@@ -5022,6 +6466,32 @@
                                     "securedBy": [
                                         "api_key"
                                     ],
+                                    "queryParameters": {
+                                        "language": {
+                                            "name": "language",
+                                            "displayName": "language",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "language code",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Metadata of a Specific Index",
                                     "method": "get",
                                     "__METADATA__": {

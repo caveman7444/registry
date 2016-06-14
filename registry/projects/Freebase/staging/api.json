@@ -241,6 +241,17 @@
                                     "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"status\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"result\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"mid\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"notable\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"name\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"id\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            } ,\n            \"lang\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"score\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            }\n          }\n        } , {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"mid\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"lang\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"score\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    } ,\n    \"cursor\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"cost\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"hits\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    }\n  }\n}"
                                 }
                             }
+                        },
+                        "401": {
+                            "code": "401",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "error",
+                                    "example": "{\n  \"error\" : {\n    \"errors\" : [\n      {\n        \"domain\" : \"global\" ,\n        \"reason\" : \"required\" ,\n        \"message\" : \"Login Required\" ,\n        \"locationType\" : \"header\" ,\n        \"location\" : \"Authorization\"\n      }\n    ] ,\n    \"code\" : 401 ,\n    \"message\" : \"Login Required\"\n  }\n}",
+                                    "schemaContent": "error"
+                                }
+                            }
                         }
                     },
                     "protocols": [
@@ -593,6 +604,127 @@
                                     }
                                 }
                             }
+                        },
+                        "lang": {
+                            "name": "lang",
+                            "displayName": "lang",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The code of the language with which to run the query. Default is 'en'.\nThe language you'd like the content in - a Freebase /type/lang language key. \nLanguages for names and values. First language is used for display. Default is 'en'.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "limit": {
+                            "name": "limit",
+                            "displayName": "limit",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Maximum number of candidates to return. Defaults to 3.\nThe maximum number of property values to return for each property. Must be a positive integer. Default is 10.\nMaximum number of results to return. By default, 20 matches in decreasing order of relevance are returned, if that many exist. Fewer or more matches may be requested by using the limit parameter with a different value. (Example.)\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "callback": {
+                            "name": "callback",
+                            "displayName": "callback",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "JS method name for JSONP callbacks.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "indent": {
+                            "name": "indent",
+                            "displayName": "indent",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Whether to indent the JSON results or not.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "query": {
+                            "name": "query",
+                            "displayName": "query",
+                            "type": "string",
+                            "required": false,
+                            "example": "query=bob",
+                            "repeat": false,
+                            "description": "Query term to search for.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
                         }
                     },
                     "description": "The Search API provides access to Freebase data given a free text query. Please consult Search Overview and the Search Cookbook for more information on how to construct detailed search queries.",
@@ -637,6 +769,17 @@
                                     "schema": "reconcile",
                                     "example": "{\n  \"candidate\" : [\n    {\n      \"mid\" : \"/m/02ktj7\" ,\n      \"confidence\" : 0.8762683 ,\n      \"name\" : \"King Kong\" ,\n      \"notable\" : {\n        \"name\" : \"Film\" ,\n        \"id\" : \"/film/film\"\n      } ,\n      \"lang\" : \"en\"\n    } , {\n      \"mid\" : \"/m/02dr9j\" ,\n      \"confidence\" : 0.058297582 ,\n      \"name\" : \"King Kong\" ,\n      \"notable\" : {\n        \"name\" : \"Film\" ,\n        \"id\" : \"/film/film\"\n      } ,\n      \"lang\" : \"en\"\n    } , {\n      \"mid\" : \"/m/0gzlzqq\" ,\n      \"confidence\" : 0.022297567 ,\n      \"name\" : \"King Kong\" ,\n      \"notable\" : {\n        \"name\" : \"Film\" ,\n        \"id\" : \"/film/film\"\n      } ,\n      \"lang\" : \"en\"\n    }\n  ] ,\n  \"costs\" : {\n    \"ms\" : 11 ,\n    \"hits\" : 24\n  }\n}",
                                     "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"candidate\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"mid\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"confidence\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"notable\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"name\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"id\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            } ,\n            \"lang\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    } ,\n    \"costs\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"ms\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"hits\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+                                }
+                            }
+                        },
+                        "401": {
+                            "code": "401",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "error",
+                                    "example": "{\n  \"error\" : {\n    \"errors\" : [\n      {\n        \"domain\" : \"global\" ,\n        \"reason\" : \"required\" ,\n        \"message\" : \"Login Required\" ,\n        \"locationType\" : \"header\" ,\n        \"location\" : \"Authorization\"\n      }\n    ] ,\n    \"code\" : 401 ,\n    \"message\" : \"Login Required\"\n  }\n}",
+                                    "schemaContent": "error"
                                 }
                             }
                         }
@@ -735,6 +878,54 @@
                                     }
                                 }
                             }
+                        },
+                        "lang": {
+                            "name": "lang",
+                            "displayName": "lang",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The code of the language with which to run the query. Default is 'en'.\nThe language you'd like the content in - a Freebase /type/lang language key. \nLanguages for names and values. First language is used for display. Default is 'en'.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "limit": {
+                            "name": "limit",
+                            "displayName": "limit",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Maximum number of candidates to return. Defaults to 3.\nThe maximum number of property values to return for each property. Must be a positive integer. Default is 10.\nMaximum number of results to return. By default, 20 matches in decreasing order of relevance are returned, if that many exist. Fewer or more matches may be requested by using the limit parameter with a different value. (Example.)\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
                         }
                     },
                     "description": "The Reconciliation API matches structured data about entities against potential matching entiities in Freebase. Please consult Reconciliation Overview for more information on how to reconcile your data.",
@@ -778,6 +969,17 @@
                                     "schema": "mqlread",
                                     "example": "{\n  \"result\" : {\n    \"type\" : \"/music/album\" ,\n    \"id\" : \"/en/keep_it_turned_on\" ,\n    \"artist\" : \"Rick Astley\"\n  }\n}",
                                     "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"result\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"type\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"artist\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
+                                }
+                            }
+                        },
+                        "401": {
+                            "code": "401",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "error",
+                                    "example": "{\n  \"error\" : {\n    \"errors\" : [\n      {\n        \"domain\" : \"global\" ,\n        \"reason\" : \"required\" ,\n        \"message\" : \"Login Required\" ,\n        \"locationType\" : \"header\" ,\n        \"location\" : \"Authorization\"\n      }\n    ] ,\n    \"code\" : 401 ,\n    \"message\" : \"Login Required\"\n  }\n}",
+                                    "schemaContent": "error"
                                 }
                             }
                         }
@@ -927,6 +1129,103 @@
                                     }
                                 }
                             }
+                        },
+                        "lang": {
+                            "name": "lang",
+                            "displayName": "lang",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The code of the language with which to run the query. Default is 'en'.\nThe language you'd like the content in - a Freebase /type/lang language key. \nLanguages for names and values. First language is used for display. Default is 'en'.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "callback": {
+                            "name": "callback",
+                            "displayName": "callback",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "JS method name for JSONP callbacks.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "indent": {
+                            "name": "indent",
+                            "displayName": "indent",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Whether to indent the JSON results or not.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "query": {
+                            "name": "query",
+                            "displayName": "query",
+                            "type": "string",
+                            "required": false,
+                            "example": "query=bob",
+                            "repeat": false,
+                            "description": "Query term to search for.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
                         }
                     },
                     "description": "The mqlread API provides access to the Freebase database using the Metaweb query language (MQL).",
@@ -969,6 +1268,17 @@
                                     "name": "application/json"
                                 }
                             }
+                        },
+                        "401": {
+                            "code": "401",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "error",
+                                    "example": "{\n  \"error\" : {\n    \"errors\" : [\n      {\n        \"domain\" : \"global\" ,\n        \"reason\" : \"required\" ,\n        \"message\" : \"Login Required\" ,\n        \"locationType\" : \"header\" ,\n        \"location\" : \"Authorization\"\n      }\n    ] ,\n    \"code\" : 401 ,\n    \"message\" : \"Login Required\"\n  }\n}",
+                                    "schemaContent": "error"
+                                }
+                            }
                         }
                     },
                     "protocols": [
@@ -1006,6 +1316,79 @@
                             "required": false,
                             "repeat": false,
                             "description": "Use the same permission node of the object with the specified id.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "callback": {
+                            "name": "callback",
+                            "displayName": "callback",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "JS method name for JSONP callbacks.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "indent": {
+                            "name": "indent",
+                            "displayName": "indent",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Whether to indent the JSON results or not.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "query": {
+                            "name": "query",
+                            "displayName": "query",
+                            "type": "string",
+                            "required": false,
+                            "example": "query=bob",
+                            "repeat": false,
+                            "description": "Query term to search for.",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
                                     "displayName": {
@@ -1081,6 +1464,19 @@
             },
             "methods": [
                 {
+                    "responses": {
+                        "401": {
+                            "code": "401",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "error",
+                                    "example": "{\n  \"error\" : {\n    \"errors\" : [\n      {\n        \"domain\" : \"global\" ,\n        \"reason\" : \"required\" ,\n        \"message\" : \"Login Required\" ,\n        \"locationType\" : \"header\" ,\n        \"location\" : \"Authorization\"\n      }\n    ] ,\n    \"code\" : 401 ,\n    \"message\" : \"Login Required\"\n  }\n}",
+                                    "schemaContent": "error"
+                                }
+                            }
+                        }
+                    },
                     "protocols": [
                         "HTTPS"
                     ],
@@ -1151,6 +1547,17 @@
                                 }
                             },
                             "description": ""
+                        },
+                        "401": {
+                            "code": "401",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "error",
+                                    "example": "{\n  \"error\" : {\n    \"errors\" : [\n      {\n        \"domain\" : \"global\" ,\n        \"reason\" : \"required\" ,\n        \"message\" : \"Login Required\" ,\n        \"locationType\" : \"header\" ,\n        \"location\" : \"Authorization\"\n      }\n    ] ,\n    \"code\" : 401 ,\n    \"message\" : \"Login Required\"\n  }\n}",
+                                    "schemaContent": "error"
+                                }
+                            }
                         }
                     },
                     "protocols": [
@@ -1216,6 +1623,54 @@
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "lang": {
+                            "name": "lang",
+                            "displayName": "lang",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The code of the language with which to run the query. Default is 'en'.\nThe language you'd like the content in - a Freebase /type/lang language key. \nLanguages for names and values. First language is used for display. Default is 'en'.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "limit": {
+                            "name": "limit",
+                            "displayName": "limit",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Maximum number of candidates to return. Defaults to 3.\nThe maximum number of property values to return for each property. Must be a positive integer. Default is 10.\nMaximum number of results to return. By default, 20 matches in decreasing order of relevance are returned, if that many exist. Fewer or more matches may be requested by using the limit parameter with a different value. (Example.)\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
                                     },
                                     "required": {
                                         "insertedAsDefault": true

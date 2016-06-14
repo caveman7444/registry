@@ -555,6 +555,92 @@
                             "securedBy": [
                                 "oauth_2_0"
                             ],
+                            "queryParameters": {
+                                "end_latitude": {
+                                    "name": "end_latitude",
+                                    "displayName": "end_latitude",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "description": "Latitude component of end location.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "end_longitude": {
+                                    "name": "end_longitude",
+                                    "displayName": "end_longitude",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "description": "Longitude component of end location.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "start_latitude": {
+                                    "name": "start_latitude",
+                                    "displayName": "start_latitude",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "description": "Latitude component of start location.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "start_longitude": {
+                                    "name": "start_longitude",
+                                    "displayName": "start_longitude",
+                                    "type": "string",
+                                    "required": true,
+                                    "repeat": false,
+                                    "description": "Longitude component of start location.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "The Price Estimates endpoint returns an estimated price range for each product offered at a given location. The price estimate is provided as a formatted string with the full price range and the localized currency symbol.\n\nThe response also includes low and high estimates, and the ISO 4217 currency code for situations requiring currency conversion. When surge is active for a particular product, its surge_multiplier will be greater than 1, but the price estimate already factors in this multiplier.\n",
                             "method": "get",
                             "is": [
@@ -770,6 +856,92 @@
                     "securedBy": [
                         "oauth_2_0"
                     ],
+                    "queryParameters": {
+                        "end_latitude": {
+                            "name": "end_latitude",
+                            "displayName": "end_latitude",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "Latitude component of end location.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "end_longitude": {
+                            "name": "end_longitude",
+                            "displayName": "end_longitude",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "Longitude component of end location.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "start_latitude": {
+                            "name": "start_latitude",
+                            "displayName": "start_latitude",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "Latitude component of start location.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "start_longitude": {
+                            "name": "start_longitude",
+                            "displayName": "start_longitude",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "Longitude component of start location.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "The Promotions endpoint returns information about the promotion that will be available to a new user based on their activity's location. These promotions do not apply for existing users.",
                     "method": "get",
                     "is": [
@@ -932,6 +1104,90 @@
                                         "insertedAsDefault": true
                                     },
                                     "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "end_latitude": {
+                            "name": "end_latitude",
+                            "displayName": "end_latitude",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "Latitude component of end location.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "end_longitude": {
+                            "name": "end_longitude",
+                            "displayName": "end_longitude",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "Longitude component of end location.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "start_latitude": {
+                            "name": "start_latitude",
+                            "displayName": "start_latitude",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "Latitude component of start location.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "start_longitude": {
+                            "name": "start_longitude",
+                            "displayName": "start_longitude",
+                            "type": "string",
+                            "required": true,
+                            "repeat": false,
+                            "description": "Longitude component of start location.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
                                         "insertedAsDefault": true
                                     },
                                     "repeat": {

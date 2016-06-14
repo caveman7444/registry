@@ -602,6 +602,198 @@
                                     }
                                 }
                             }
+                        },
+                        "convert": {
+                            "name": "convert",
+                            "displayName": "convert",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Whether to convert this file to the corresponding Google Docs format. (Default: false)",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "ocr": {
+                            "name": "ocr",
+                            "displayName": "ocr",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Whether to attempt OCR on .jpg, .png, .gif, or .pdf uploads. (Default: false)",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "ocrLanguage": {
+                            "name": "ocrLanguage",
+                            "displayName": "ocrLanguage",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "If ocr is true, hints at the language to use. Valid values are ISO 639-1 codes.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "pinned": {
+                            "name": "pinned",
+                            "displayName": "pinned",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Whether to pin the head revision of the uploaded file. A file can have a maximum of 200 pinned revisions. (Default: false)\nWhether to pin the new revision. A file can have a maximum of 200 pinned revisions. (Default: false)\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "timedTextLanguage": {
+                            "name": "timedTextLanguage",
+                            "displayName": "timedTextLanguage",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The language of the timed text.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "timedTextTrackName": {
+                            "name": "timedTextTrackName",
+                            "displayName": "timedTextTrackName",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The timed text track name.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "useContentAsIndexableText": {
+                            "name": "useContentAsIndexableText",
+                            "displayName": "useContentAsIndexableText",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Whether to use the content as indexable text. (Default: false)",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "visibility": {
+                            "name": "visibility",
+                            "displayName": "visibility",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The visibility of the property.\nThe visibility of the new file. This parameter is only relevant when convert=false. \n\nAcceptable values are:\n\"DEFAULT\": The visibility of the new file is determined by the user's default visibility/sharing policies. (default)\n\"PRIVATE\": The new file will be visible to only the owner.\n\nThe visibility of the new file. This parameter is only relevant when the source is not a native Google Doc and convert=false. \n\nAcceptable values are:\n\"DEFAULT\": The visibility of the new file is determined by the user's default visibility/sharing policies. (default)\n\"PRIVATE\": The new file will be visible to only the owner.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
                         }
                     },
                     "headers": {
@@ -1064,6 +1256,174 @@
                                             }
                                         }
                                     }
+                                },
+                                "convert": {
+                                    "name": "convert",
+                                    "displayName": "convert",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Whether to convert this file to the corresponding Google Docs format. (Default: false)",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "ocr": {
+                                    "name": "ocr",
+                                    "displayName": "ocr",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Whether to attempt OCR on .jpg, .png, .gif, or .pdf uploads. (Default: false)",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "ocrLanguage": {
+                                    "name": "ocrLanguage",
+                                    "displayName": "ocrLanguage",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "If ocr is true, hints at the language to use. Valid values are ISO 639-1 codes.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "pinned": {
+                                    "name": "pinned",
+                                    "displayName": "pinned",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Whether to pin the head revision of the uploaded file. A file can have a maximum of 200 pinned revisions. (Default: false)\nWhether to pin the new revision. A file can have a maximum of 200 pinned revisions. (Default: false)\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "timedTextLanguage": {
+                                    "name": "timedTextLanguage",
+                                    "displayName": "timedTextLanguage",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The language of the timed text.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "timedTextTrackName": {
+                                    "name": "timedTextTrackName",
+                                    "displayName": "timedTextTrackName",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The timed text track name.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "useContentAsIndexableText": {
+                                    "name": "useContentAsIndexableText",
+                                    "displayName": "useContentAsIndexableText",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Whether to use the content as indexable text. (Default: false)",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
                                 }
                             },
                             "description": "Updates file metadata. This method supports patch semantics.",
@@ -1240,6 +1600,174 @@
                                         "primitiveValuesMeta": {
                                             "displayName": {
                                                 "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "convert": {
+                                    "name": "convert",
+                                    "displayName": "convert",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Whether to convert this file to the corresponding Google Docs format. (Default: false)",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "ocr": {
+                                    "name": "ocr",
+                                    "displayName": "ocr",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Whether to attempt OCR on .jpg, .png, .gif, or .pdf uploads. (Default: false)",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "ocrLanguage": {
+                                    "name": "ocrLanguage",
+                                    "displayName": "ocrLanguage",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "If ocr is true, hints at the language to use. Valid values are ISO 639-1 codes.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "pinned": {
+                                    "name": "pinned",
+                                    "displayName": "pinned",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Whether to pin the head revision of the uploaded file. A file can have a maximum of 200 pinned revisions. (Default: false)\nWhether to pin the new revision. A file can have a maximum of 200 pinned revisions. (Default: false)\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "timedTextLanguage": {
+                                    "name": "timedTextLanguage",
+                                    "displayName": "timedTextLanguage",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The language of the timed text.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "timedTextTrackName": {
+                                    "name": "timedTextTrackName",
+                                    "displayName": "timedTextTrackName",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The timed text track name.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "useContentAsIndexableText": {
+                                    "name": "useContentAsIndexableText",
+                                    "displayName": "useContentAsIndexableText",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Whether to use the content as indexable text. (Default: false)",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
                                             },
                                             "required": {
                                                 "insertedAsDefault": true
@@ -1506,6 +2034,30 @@
                                             "required": false,
                                             "repeat": false,
                                             "description": "The timed text track name.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "visibility": {
+                                            "name": "visibility",
+                                            "displayName": "visibility",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "The visibility of the property.\nThe visibility of the new file. This parameter is only relevant when convert=false. \n\nAcceptable values are:\n\"DEFAULT\": The visibility of the new file is determined by the user's default visibility/sharing policies. (default)\n\"PRIVATE\": The new file will be visible to only the owner.\n\nThe visibility of the new file. This parameter is only relevant when the source is not a native Google Doc and convert=false. \n\nAcceptable values are:\n\"DEFAULT\": The visibility of the new file is determined by the user's default visibility/sharing policies. (default)\n\"PRIVATE\": The new file will be visible to only the owner.\n",
                                             "__METADATA__": {
                                                 "primitiveValuesMeta": {
                                                     "displayName": {
@@ -2660,6 +3212,78 @@
                                                     }
                                                 }
                                             }
+                                        },
+                                        "includeDeleted": {
+                                            "name": "includeDeleted",
+                                            "displayName": "includeDeleted",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "If set, all replies, including deleted replies (with content stripped) will be returned. (Default: false)\nWhether to include deleted items. (Default: true)\nIf set, all comments and replies, including deleted comments and replies (with content stripped) will be returned. (Default: false)\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "maxResults": {
+                                            "name": "maxResults",
+                                            "displayName": "maxResults",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "The maximum number of replies to include in the response, used for paging. Acceptable values are 0 to 100, inclusive. (Default: 20)\nMaximum number of changes to return. Acceptable values are 0 to 1000, inclusive. (Default: 100)\nThe maximum number of discussions to include in the response, used for paging. Acceptable values are 0 to 100, inclusive. (Default: 20)\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "pageToken": {
+                                            "name": "pageToken",
+                                            "displayName": "pageToken",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Page token for changes.\nThe continuation token, used to page through large result sets. To get the next page of results, set this parameter to the value of \"nextPageToken\" from the previous response.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
                                         }
                                     },
                                     "description": "Lists a file's comments.",
@@ -2941,6 +3565,80 @@
                                                     "securedBy": [
                                                         "oauth_2_0"
                                                     ],
+                                                    "queryParameters": {
+                                                        "includeDeleted": {
+                                                            "name": "includeDeleted",
+                                                            "displayName": "includeDeleted",
+                                                            "type": "string",
+                                                            "required": false,
+                                                            "repeat": false,
+                                                            "description": "If set, all replies, including deleted replies (with content stripped) will be returned. (Default: false)\nWhether to include deleted items. (Default: true)\nIf set, all comments and replies, including deleted comments and replies (with content stripped) will be returned. (Default: false)\n",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "type": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "maxResults": {
+                                                            "name": "maxResults",
+                                                            "displayName": "maxResults",
+                                                            "type": "string",
+                                                            "required": false,
+                                                            "repeat": false,
+                                                            "description": "The maximum number of replies to include in the response, used for paging. Acceptable values are 0 to 100, inclusive. (Default: 20)\nMaximum number of changes to return. Acceptable values are 0 to 1000, inclusive. (Default: 100)\nThe maximum number of discussions to include in the response, used for paging. Acceptable values are 0 to 100, inclusive. (Default: 20)\n",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "type": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "pageToken": {
+                                                            "name": "pageToken",
+                                                            "displayName": "pageToken",
+                                                            "type": "string",
+                                                            "required": false,
+                                                            "repeat": false,
+                                                            "description": "Page token for changes.\nThe continuation token, used to page through large result sets. To get the next page of results, set this parameter to the value of \"nextPageToken\" from the previous response.\n",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "type": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    },
                                                     "description": "Lists all of the replies to a comment.",
                                                     "method": "get",
                                                     "is": [
@@ -3472,6 +4170,32 @@
                                             "securedBy": [
                                                 "oauth_2_0"
                                             ],
+                                            "queryParameters": {
+                                                "visibility": {
+                                                    "name": "visibility",
+                                                    "displayName": "visibility",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "The visibility of the property.\nThe visibility of the new file. This parameter is only relevant when convert=false. \n\nAcceptable values are:\n\"DEFAULT\": The visibility of the new file is determined by the user's default visibility/sharing policies. (default)\n\"PRIVATE\": The new file will be visible to only the owner.\n\nThe visibility of the new file. This parameter is only relevant when the source is not a native Google Doc and convert=false. \n\nAcceptable values are:\n\"DEFAULT\": The visibility of the new file is determined by the user's default visibility/sharing policies. (default)\n\"PRIVATE\": The new file will be visible to only the owner.\n",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
                                             "description": "Gets a property by its key.",
                                             "method": "get",
                                             "is": [
@@ -3516,6 +4240,32 @@
                                             "securedBy": [
                                                 "oauth_2_0"
                                             ],
+                                            "queryParameters": {
+                                                "visibility": {
+                                                    "name": "visibility",
+                                                    "displayName": "visibility",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "The visibility of the property.\nThe visibility of the new file. This parameter is only relevant when convert=false. \n\nAcceptable values are:\n\"DEFAULT\": The visibility of the new file is determined by the user's default visibility/sharing policies. (default)\n\"PRIVATE\": The new file will be visible to only the owner.\n\nThe visibility of the new file. This parameter is only relevant when the source is not a native Google Doc and convert=false. \n\nAcceptable values are:\n\"DEFAULT\": The visibility of the new file is determined by the user's default visibility/sharing policies. (default)\n\"PRIVATE\": The new file will be visible to only the owner.\n",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
                                             "description": "Updates a property.",
                                             "method": "put",
                                             "is": [
@@ -3544,6 +4294,32 @@
                                             "securedBy": [
                                                 "oauth_2_0"
                                             ],
+                                            "queryParameters": {
+                                                "visibility": {
+                                                    "name": "visibility",
+                                                    "displayName": "visibility",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "The visibility of the property.\nThe visibility of the new file. This parameter is only relevant when convert=false. \n\nAcceptable values are:\n\"DEFAULT\": The visibility of the new file is determined by the user's default visibility/sharing policies. (default)\n\"PRIVATE\": The new file will be visible to only the owner.\n\nThe visibility of the new file. This parameter is only relevant when the source is not a native Google Doc and convert=false. \n\nAcceptable values are:\n\"DEFAULT\": The visibility of the new file is determined by the user's default visibility/sharing policies. (default)\n\"PRIVATE\": The new file will be visible to only the owner.\n",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
                                             "description": "Deletes a property.",
                                             "method": "delete",
                                             "is": [
@@ -3588,6 +4364,32 @@
                                             "securedBy": [
                                                 "oauth_2_0"
                                             ],
+                                            "queryParameters": {
+                                                "visibility": {
+                                                    "name": "visibility",
+                                                    "displayName": "visibility",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "The visibility of the property.\nThe visibility of the new file. This parameter is only relevant when convert=false. \n\nAcceptable values are:\n\"DEFAULT\": The visibility of the new file is determined by the user's default visibility/sharing policies. (default)\n\"PRIVATE\": The new file will be visible to only the owner.\n\nThe visibility of the new file. This parameter is only relevant when the source is not a native Google Doc and convert=false. \n\nAcceptable values are:\n\"DEFAULT\": The visibility of the new file is determined by the user's default visibility/sharing policies. (default)\n\"PRIVATE\": The new file will be visible to only the owner.\n",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
                                             "description": "Updates a property. This method supports patch semantics.",
                                             "method": "patch",
                                             "is": [
@@ -4205,6 +5007,78 @@
                                 "primitiveValuesMeta": {
                                     "displayName": {
                                         "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "includeDeleted": {
+                            "name": "includeDeleted",
+                            "displayName": "includeDeleted",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "If set, all replies, including deleted replies (with content stripped) will be returned. (Default: false)\nWhether to include deleted items. (Default: true)\nIf set, all comments and replies, including deleted comments and replies (with content stripped) will be returned. (Default: false)\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "maxResults": {
+                            "name": "maxResults",
+                            "displayName": "maxResults",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The maximum number of replies to include in the response, used for paging. Acceptable values are 0 to 100, inclusive. (Default: 20)\nMaximum number of changes to return. Acceptable values are 0 to 1000, inclusive. (Default: 100)\nThe maximum number of discussions to include in the response, used for paging. Acceptable values are 0 to 100, inclusive. (Default: 20)\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "pageToken": {
+                            "name": "pageToken",
+                            "displayName": "pageToken",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Page token for changes.\nThe continuation token, used to page through large result sets. To get the next page of results, set this parameter to the value of \"nextPageToken\" from the previous response.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
                                     },
                                     "required": {
                                         "insertedAsDefault": true

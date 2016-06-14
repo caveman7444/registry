@@ -1,14 +1,118 @@
-{"apis": [
+{"apis": {"RAMLFiles": [
     {
         "name": "Google Drive",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/GoogleDrive/production/api.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GoogleDrive/production/api.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GoogleDrive/production/api.json",
+        "baseUri": "https://www.googleapis.com/drive/{version}",
+        "version": "v2",
+        "securitySchemes": [{"oauth_2_0": {
+            "name": "oauth_2_0",
+            "type": "OAuth 2.0",
+            "description": "Google recommend using OAuth 2.0 to authorize requests.\n",
+            "describedBy": {
+                "responses": {"401": {
+                    "code": "401",
+                    "description": "Authorization error.\n"
+                }},
+                "securedBy": ["oauth_2_0"],
+                "queryParameters": {"access_token": {
+                    "name": "access_token",
+                    "displayName": "access_token",
+                    "type": "string",
+                    "required": false,
+                    "repeat": false,
+                    "description": "Used to send a valid OAuth 2 access token\n",
+                    "__METADATA__": {"primitiveValuesMeta": {
+                        "displayName": {"calculated": true},
+                        "type": {"insertedAsDefault": true},
+                        "required": {"insertedAsDefault": true},
+                        "repeat": {"insertedAsDefault": true}
+                    }}
+                }},
+                "headers": {"Authorization": {
+                    "name": "Authorization",
+                    "displayName": "Authorization",
+                    "type": "string",
+                    "required": false,
+                    "repeat": false,
+                    "description": "Used to send a valid OAuth 2 access token.\n",
+                    "__METADATA__": {"primitiveValuesMeta": {
+                        "displayName": {"calculated": true},
+                        "type": {"insertedAsDefault": true},
+                        "required": {"insertedAsDefault": true},
+                        "repeat": {"insertedAsDefault": true}
+                    }}
+                }},
+                "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
+            },
+            "settings": {
+                "accessTokenUri": "https://accounts.google.com/o/oauth2/token",
+                "authorizationUri": "https://accounts.google.com/o/oauth2/auth",
+                "authorizationGrants": ["code"],
+                "scopes": ["https://www.googleapis.com/auth/drive"]
+            }
+        }}],
+        "resourcesCount": 31,
+        "methodsCount": 58
     },
     {
         "name": "Google Drive Upload",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/GoogleDrive/production/uploadApi.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GoogleDrive/production/uploadApi.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/GoogleDrive/production/uploadApi.json",
+        "baseUri": "https://www.googleapis.com/upload/drive/{version}",
+        "version": "v2",
+        "securitySchemes": [{"oauth_2_0": {
+            "name": "oauth_2_0",
+            "type": "OAuth 2.0",
+            "description": "Google recommend using OAuth 2.0 to authorize requests.\n",
+            "describedBy": {
+                "responses": {"401": {
+                    "code": "401",
+                    "description": "Authorization error.\n"
+                }},
+                "securedBy": ["oauth_2_0"],
+                "queryParameters": {"access_token": {
+                    "name": "access_token",
+                    "displayName": "access_token",
+                    "type": "string",
+                    "required": false,
+                    "repeat": false,
+                    "description": "Used to send a valid OAuth 2 access token\n",
+                    "__METADATA__": {"primitiveValuesMeta": {
+                        "displayName": {"calculated": true},
+                        "type": {"insertedAsDefault": true},
+                        "required": {"insertedAsDefault": true},
+                        "repeat": {"insertedAsDefault": true}
+                    }}
+                }},
+                "headers": {"Authorization": {
+                    "name": "Authorization",
+                    "displayName": "Authorization",
+                    "type": "string",
+                    "required": false,
+                    "repeat": false,
+                    "description": "Used to send a valid OAuth 2 access token.\n",
+                    "__METADATA__": {"primitiveValuesMeta": {
+                        "displayName": {"calculated": true},
+                        "type": {"insertedAsDefault": true},
+                        "required": {"insertedAsDefault": true},
+                        "repeat": {"insertedAsDefault": true}
+                    }}
+                }},
+                "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
+            },
+            "settings": {
+                "accessTokenUri": "https://accounts.google.com/o/oauth2/token",
+                "authorizationUri": "https://accounts.google.com/o/oauth2/auth",
+                "authorizationGrants": ["code"],
+                "scopes": ["https://www.googleapis.com/auth/drive"]
+            }
+        }}],
+        "resourcesCount": 3,
+        "methodsCount": 3
     }
-]}
+]}}

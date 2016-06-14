@@ -856,6 +856,102 @@
                                     }
                                 }
                             }
+                        },
+                        "address_street2": {
+                            "name": "address_street2",
+                            "displayName": "address_street2",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The second address line typically used for apartment or suite numbers. This is automatically normalized.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "ip_address": {
+                            "name": "ip_address",
+                            "displayName": "ip_address",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Your customers' IP address can be passed to us for storage purposes. Soon we will be using this information for anti-fraud and verification purposes. With this information we will be able to back-test your verifications when this feature is released.\nBoth IPv4 and IPv6 style IP addresses are acceptable.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "note": {
+                            "name": "note",
+                            "displayName": "note",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "You can store additional information about the candidate here such as your internal system's identifier for this individual. This will allow you to keep track of them.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "phone_number": {
+                            "name": "phone_number",
+                            "displayName": "phone_number",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "If you pass in the phone number, we will use it as an additional 'positive' data point for the consumer. That is, if it is provided, it will help us identify them, but if we cannot, they will not be penalized.\nExtra characters like parenthesis and dashes are accepted - can either contain the country code or not.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
                         }
                     },
                     "description": "This endpoint creates a new person. The information will be run through our verification process and then returned with additional information that will help you determine the authenticity of the information given.",
@@ -1757,6 +1853,102 @@
                                     }
                                 }
                             }
+                        },
+                        "address_street2": {
+                            "name": "address_street2",
+                            "displayName": "address_street2",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The second address line typically used for apartment or suite numbers. This is automatically normalized.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "ip_address": {
+                            "name": "ip_address",
+                            "displayName": "ip_address",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Your customers' IP address can be passed to us for storage purposes. Soon we will be using this information for anti-fraud and verification purposes. With this information we will be able to back-test your verifications when this feature is released.\nBoth IPv4 and IPv6 style IP addresses are acceptable.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "note": {
+                            "name": "note",
+                            "displayName": "note",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "You can store additional information about the candidate here such as your internal system's identifier for this individual. This will allow you to keep track of them.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "phone_number": {
+                            "name": "phone_number",
+                            "displayName": "phone_number",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "If you pass in the phone number, we will use it as an additional 'positive' data point for the consumer. That is, if it is provided, it will help us identify them, but if we cannot, they will not be penalized.\nExtra characters like parenthesis and dashes are accepted - can either contain the country code or not.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
                         }
                     },
                     "description": "Create a new company\n\nThis endpoint creates a new company. The information will be run through our company verification process and then returned with additional information that will help you determine the authenticity of the information given.\n\nPlease be aware that the response time can sometimes be more than 6 seconds due to the speed of some government data sources.\n",
@@ -1933,6 +2125,320 @@
                     "securedBy": [
                         "basic"
                     ],
+                    "queryParameters": {
+                        "address_city": {
+                            "name": "address_city",
+                            "displayName": "address_city",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The city name of the customer. This is automatically normalized.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "address_country_code": {
+                            "name": "address_country_code",
+                            "displayName": "address_country_code",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The country of the customer. Should be of the ISO code form.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "address_postal_code": {
+                            "name": "address_postal_code",
+                            "displayName": "address_postal_code",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The postal code of the person. Also known as a ZIP code.\nThe country of the customer. Should be of the ISO code form.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "address_street1": {
+                            "name": "address_street1",
+                            "displayName": "address_street1",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The primary street address of the customer. This is automatically normalized.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "address_street2": {
+                            "name": "address_street2",
+                            "displayName": "address_street2",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The second address line typically used for apartment or suite numbers. This is automatically normalized.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "address_subdivision": {
+                            "name": "address_subdivision",
+                            "displayName": "address_subdivision",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The subdivision of the entered country. For instance in the United States, this would be a 'state'.\nThe state of the customer. Should be of the FIPS code form. For example California would be CA.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "note": {
+                            "name": "note",
+                            "displayName": "note",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "You can store additional information about the candidate here such as your internal system's identifier for this individual. This will allow you to keep track of them.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "date_of_birth": {
+                            "name": "date_of_birth",
+                            "displayName": "date_of_birth",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The date of birth of the candidate in ISO form.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "name_first": {
+                            "name": "name_first",
+                            "displayName": "name_first",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The legal first name of the customer.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "name_last": {
+                            "name": "name_last",
+                            "displayName": "name_last",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The legal middle name of the customer.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "name_middle": {
+                            "name": "name_middle",
+                            "displayName": "name_middle",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The legal middle name of the customer.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "passport": {
+                            "name": "passport",
+                            "displayName": "passport",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The passport number of the individual being verified. This is only used for verifying non-US customers.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "ssn": {
+                            "name": "ssn",
+                            "displayName": "ssn",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "This can be either the last 4 digits of the US Social Security Number or the whole SSN.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "Create a new candidate.\nThis endpoint creates a new candidate.\n",
                     "method": "post",
                     "is": [
@@ -2037,6 +2543,320 @@
                             "securedBy": [
                                 "basic"
                             ],
+                            "queryParameters": {
+                                "address_city": {
+                                    "name": "address_city",
+                                    "displayName": "address_city",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The city name of the customer. This is automatically normalized.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "address_country_code": {
+                                    "name": "address_country_code",
+                                    "displayName": "address_country_code",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The country of the customer. Should be of the ISO code form.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "address_postal_code": {
+                                    "name": "address_postal_code",
+                                    "displayName": "address_postal_code",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The postal code of the person. Also known as a ZIP code.\nThe country of the customer. Should be of the ISO code form.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "address_street1": {
+                                    "name": "address_street1",
+                                    "displayName": "address_street1",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The primary street address of the customer. This is automatically normalized.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "address_street2": {
+                                    "name": "address_street2",
+                                    "displayName": "address_street2",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The second address line typically used for apartment or suite numbers. This is automatically normalized.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "address_subdivision": {
+                                    "name": "address_subdivision",
+                                    "displayName": "address_subdivision",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The subdivision of the entered country. For instance in the United States, this would be a 'state'.\nThe state of the customer. Should be of the FIPS code form. For example California would be CA.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "note": {
+                                    "name": "note",
+                                    "displayName": "note",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "You can store additional information about the candidate here such as your internal system's identifier for this individual. This will allow you to keep track of them.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "date_of_birth": {
+                                    "name": "date_of_birth",
+                                    "displayName": "date_of_birth",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The date of birth of the candidate in ISO form.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "name_first": {
+                                    "name": "name_first",
+                                    "displayName": "name_first",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The legal first name of the customer.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "name_last": {
+                                    "name": "name_last",
+                                    "displayName": "name_last",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The legal middle name of the customer.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "name_middle": {
+                                    "name": "name_middle",
+                                    "displayName": "name_middle",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The legal middle name of the customer.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "passport": {
+                                    "name": "passport",
+                                    "displayName": "passport",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The passport number of the individual being verified. This is only used for verifying non-US customers.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "ssn": {
+                                    "name": "ssn",
+                                    "displayName": "ssn",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "This can be either the last 4 digits of the US Social Security Number or the whole SSN.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Edit a candidate\nIf you'd like to amend the information associated with a candidate, you can modify it using this route. For instance, if your candidate changes addresses or you learn additional information about them. Only the information you send us will be updated - the rest will remain the same.\n",
                             "method": "patch",
                             "is": [

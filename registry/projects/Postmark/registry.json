@@ -1,14 +1,22 @@
-{"apis": [
+{"apis": {"RAMLFiles": [
     {
         "name": "Postmark",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Postmark/master/api.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Postmark/master/api.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Postmark/master/api.json",
+        "baseUri": "http://api.postmarkapp.com",
+        "resourcesCount": 9,
+        "methodsCount": 9
     },
     {
         "name": "Postmark",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Postmark/staging/api.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Postmark/staging/api.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Postmark/staging/api.json",
+        "baseUri": "http://api.postmarkapp.com",
+        "resourcesCount": 9,
+        "methodsCount": 9
     }
-]}
+]}}

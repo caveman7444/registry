@@ -1,14 +1,44 @@
-{"apis": [
+{"apis": {"RAMLFiles": [
     {
         "name": "Twitter API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Twitter/production/api.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Twitter/production/api.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Twitter/production/api.json",
+        "baseUri": "https://api.twitter.com/{version}/",
+        "version": "1.1",
+        "securitySchemes": [{"oauth_1_0": {
+            "name": "oauth_1_0",
+            "type": "OAuth 1.0",
+            "description": "Twitter offers applications the ability to issue authenticated requests on\nbehalf of the application itself (as opposed to on behalf of a specific user).\n",
+            "settings": {
+                "requestTokenUri": "https://api.twitter.com/oauth/request_token",
+                "authorizationUri": "https://api.twitter.com/oauth/authorize",
+                "tokenCredentialsUri": "https://api.twitter.com/oauth/access_token"
+            }
+        }}],
+        "resourcesCount": 113,
+        "methodsCount": 96
     },
     {
         "name": "Twitter Streaming API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Twitter/production/userstreamApi.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Twitter/production/userstreamApi.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Twitter/production/userstreamApi.json",
+        "baseUri": "https://{userstream}.twitter.com/{version}",
+        "version": "1.1",
+        "securitySchemes": [{"oauth_1_0": {
+            "name": "oauth_1_0",
+            "type": "OAuth 1.0",
+            "description": "Twitter offers applications the ability to issue authenticated requests on\nbehalf of the application itself (as opposed to on behalf of a specific user).\n",
+            "settings": {
+                "requestTokenUri": "https://api.twitter.com/oauth/request_token",
+                "authorizationUri": "https://api.twitter.com/oauth/authorize",
+                "tokenCredentialsUri": "https://api.twitter.com/oauth/access_token"
+            }
+        }}],
+        "resourcesCount": 1,
+        "methodsCount": 1
     }
-]}
+]}}

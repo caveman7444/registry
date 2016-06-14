@@ -1,14 +1,24 @@
-{"apis": [
+{"apis": {"RAMLFiles": [
     {
         "name": "Weather Underground",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/WeatherUnderground/production/wunderground.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/WeatherUnderground/production/wunderground.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/WeatherUnderground/production/wunderground.json",
+        "baseUri": "http://api.wunderground.com/api/{api_key}",
+        "version": "v1",
+        "resourcesCount": 63,
+        "methodsCount": 42
     },
     {
         "name": "Weather Underground AutoComplete",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/WeatherUnderground/production/wundergroundAutocompleteApi.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/WeatherUnderground/production/wundergroundAutocompleteApi.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/WeatherUnderground/production/wundergroundAutocompleteApi.json",
+        "baseUri": "http://autocomplete.wunderground.com",
+        "version": "v1",
+        "resourcesCount": 1,
+        "methodsCount": 1
     }
-]}
+]}}

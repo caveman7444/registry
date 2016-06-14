@@ -489,6 +489,32 @@
                                             }
                                         }
                                     }
+                                },
+                                "If-Match": {
+                                    "name": "If-Match",
+                                    "displayName": "If-Match",
+                                    "type": [
+                                        "string"
+                                    ],
+                                    "repeat": false,
+                                    "required": false,
+                                    "description": "If-Match header let you ensure that your app only alters files/folders\non Box if you have the current version.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
                                 }
                             },
                             "responses": {
@@ -518,6 +544,26 @@
                                             }
                                         }
                                     }
+                                },
+                                "201": {
+                                    "code": "201",
+                                    "description": "The request has been fulfilled and resulted in a new resource being\ncreated.\n"
+                                },
+                                "403": {
+                                    "code": "403",
+                                    "description": "Forbidden. The server understood the request, but is refusing to\nfulfill it.\n"
+                                },
+                                "405": {
+                                    "code": "405",
+                                    "description": "Method Not Allowed. The method specified in the Request-Line is not\nallowed for the resource identified by the Request-URI.\n"
+                                },
+                                "409": {
+                                    "code": "409",
+                                    "description": "Conflict. The request could not be completed due to a conflict with\nthe current state of the resource. Often happened because of file\nnames duplication.\n"
+                                },
+                                "429": {
+                                    "code": "429",
+                                    "description": "Your application is sending too many simultaneous requests."
                                 }
                             },
                             "body": {
@@ -710,6 +756,32 @@
                                             }
                                         }
                                     }
+                                },
+                                "Content-MD5": {
+                                    "name": "Content-MD5",
+                                    "displayName": "Content-MD5",
+                                    "type": [
+                                        "string"
+                                    ],
+                                    "repeat": false,
+                                    "required": true,
+                                    "description": "The SHA1 hash of the file.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
                                 }
                             },
                             "responses": {
@@ -739,6 +811,26 @@
                                             }
                                         }
                                     }
+                                },
+                                "201": {
+                                    "code": "201",
+                                    "description": "The request has been fulfilled and resulted in a new resource being\ncreated.\n"
+                                },
+                                "403": {
+                                    "code": "403",
+                                    "description": "Forbidden. The server understood the request, but is refusing to\nfulfill it.\n"
+                                },
+                                "405": {
+                                    "code": "405",
+                                    "description": "Method Not Allowed. The method specified in the Request-Line is not\nallowed for the resource identified by the Request-URI.\n"
+                                },
+                                "409": {
+                                    "code": "409",
+                                    "description": "Conflict. The request could not be completed due to a conflict with\nthe current state of the resource. Often happened because of file\nnames duplication.\n"
+                                },
+                                "429": {
+                                    "code": "429",
+                                    "description": "Your application is sending too many simultaneous requests."
                                 }
                             },
                             "body": {

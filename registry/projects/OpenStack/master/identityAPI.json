@@ -1751,6 +1751,30 @@
                                     }
                                 }
                             },
+                            "headers": {
+                                "X-Auth-Token": {
+                                    "name": "X-Auth-Token",
+                                    "displayName": "X-Auth-Token",
+                                    "type": "string",
+                                    "required": true,
+                                    "example": "1dd7e3",
+                                    "repeat": false,
+                                    "description": "A valid authentication token for an administrative user.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "List credentials",
                             "method": "get",
                             "is": [
@@ -6914,6 +6938,30 @@
                                     "protocols": [
                                         "HTTP"
                                     ],
+                                    "headers": {
+                                        "X-Auth-Token": {
+                                            "name": "X-Auth-Token",
+                                            "displayName": "X-Auth-Token",
+                                            "type": "string",
+                                            "required": true,
+                                            "example": "1dd7e3",
+                                            "repeat": false,
+                                            "description": "A valid authentication token for an administrative user.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Show policy details",
                                     "method": "get",
                                     "is": [
@@ -7050,6 +7098,30 @@
                                     "protocols": [
                                         "HTTP"
                                     ],
+                                    "headers": {
+                                        "X-Auth-Token": {
+                                            "name": "X-Auth-Token",
+                                            "displayName": "X-Auth-Token",
+                                            "type": "string",
+                                            "required": true,
+                                            "example": "1dd7e3",
+                                            "repeat": false,
+                                            "description": "A valid authentication token for an administrative user.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Update policy",
                                     "method": "patch",
                                     "is": [
@@ -7170,6 +7242,30 @@
                                     "protocols": [
                                         "HTTP"
                                     ],
+                                    "headers": {
+                                        "X-Auth-Token": {
+                                            "name": "X-Auth-Token",
+                                            "displayName": "X-Auth-Token",
+                                            "type": "string",
+                                            "required": true,
+                                            "example": "1dd7e3",
+                                            "repeat": false,
+                                            "description": "A valid authentication token for an administrative user.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Delete policy",
                                     "method": "delete",
                                     "is": [
@@ -8153,6 +8249,30 @@
                                                             "protocols": [
                                                                 "HTTP"
                                                             ],
+                                                            "headers": {
+                                                                "X-Auth-Token": {
+                                                                    "name": "X-Auth-Token",
+                                                                    "displayName": "X-Auth-Token",
+                                                                    "type": "string",
+                                                                    "required": true,
+                                                                    "example": "1dd7e3",
+                                                                    "repeat": false,
+                                                                    "description": "A valid authentication token for an administrative user.",
+                                                                    "__METADATA__": {
+                                                                        "primitiveValuesMeta": {
+                                                                            "displayName": {
+                                                                                "calculated": true
+                                                                            },
+                                                                            "type": {
+                                                                                "insertedAsDefault": true
+                                                                            },
+                                                                            "repeat": {
+                                                                                "insertedAsDefault": true
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
                                                             "description": "List roles for project group",
                                                             "method": "get",
                                                             "is": [
@@ -8304,6 +8424,30 @@
                                                                     "protocols": [
                                                                         "HTTP"
                                                                     ],
+                                                                    "headers": {
+                                                                        "X-Auth-Token": {
+                                                                            "name": "X-Auth-Token",
+                                                                            "displayName": "X-Auth-Token",
+                                                                            "type": "string",
+                                                                            "required": true,
+                                                                            "example": "1dd7e3",
+                                                                            "repeat": false,
+                                                                            "description": "A valid authentication token for an administrative user.",
+                                                                            "__METADATA__": {
+                                                                                "primitiveValuesMeta": {
+                                                                                    "displayName": {
+                                                                                        "calculated": true
+                                                                                    },
+                                                                                    "type": {
+                                                                                        "insertedAsDefault": true
+                                                                                    },
+                                                                                    "repeat": {
+                                                                                        "insertedAsDefault": true
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    },
                                                                     "description": "Grant role to project group",
                                                                     "method": "put",
                                                                     "is": [
@@ -8424,6 +8568,30 @@
                                                                     "protocols": [
                                                                         "HTTP"
                                                                     ],
+                                                                    "headers": {
+                                                                        "X-Auth-Token": {
+                                                                            "name": "X-Auth-Token",
+                                                                            "displayName": "X-Auth-Token",
+                                                                            "type": "string",
+                                                                            "required": true,
+                                                                            "example": "1dd7e3",
+                                                                            "repeat": false,
+                                                                            "description": "A valid authentication token for an administrative user.",
+                                                                            "__METADATA__": {
+                                                                                "primitiveValuesMeta": {
+                                                                                    "displayName": {
+                                                                                        "calculated": true
+                                                                                    },
+                                                                                    "type": {
+                                                                                        "insertedAsDefault": true
+                                                                                    },
+                                                                                    "repeat": {
+                                                                                        "insertedAsDefault": true
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    },
                                                                     "description": "Check role for project group",
                                                                     "method": "head",
                                                                     "is": [
@@ -8544,6 +8712,30 @@
                                                                     "protocols": [
                                                                         "HTTP"
                                                                     ],
+                                                                    "headers": {
+                                                                        "X-Auth-Token": {
+                                                                            "name": "X-Auth-Token",
+                                                                            "displayName": "X-Auth-Token",
+                                                                            "type": "string",
+                                                                            "required": true,
+                                                                            "example": "1dd7e3",
+                                                                            "repeat": false,
+                                                                            "description": "A valid authentication token for an administrative user.",
+                                                                            "__METADATA__": {
+                                                                                "primitiveValuesMeta": {
+                                                                                    "displayName": {
+                                                                                        "calculated": true
+                                                                                    },
+                                                                                    "type": {
+                                                                                        "insertedAsDefault": true
+                                                                                    },
+                                                                                    "repeat": {
+                                                                                        "insertedAsDefault": true
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    },
                                                                     "description": "Revoke role from project group",
                                                                     "method": "delete",
                                                                     "is": [
@@ -11433,6 +11625,30 @@
                             "protocols": [
                                 "HTTP"
                             ],
+                            "headers": {
+                                "X-Auth-Token": {
+                                    "name": "X-Auth-Token",
+                                    "displayName": "X-Auth-Token",
+                                    "type": "string",
+                                    "required": true,
+                                    "example": "1dd7e3",
+                                    "repeat": false,
+                                    "description": "A valid authentication token for an administrative user.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Add user",
                             "method": "post",
                             "is": [
@@ -11869,6 +12085,30 @@
                                     "protocols": [
                                         "HTTP"
                                     ],
+                                    "headers": {
+                                        "X-Auth-Token": {
+                                            "name": "X-Auth-Token",
+                                            "displayName": "X-Auth-Token",
+                                            "type": "string",
+                                            "required": true,
+                                            "example": "1dd7e3",
+                                            "repeat": false,
+                                            "description": "A valid authentication token for an administrative user.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Show user details",
                                     "method": "get",
                                     "is": [
@@ -12005,6 +12245,30 @@
                                     "protocols": [
                                         "HTTP"
                                     ],
+                                    "headers": {
+                                        "X-Auth-Token": {
+                                            "name": "X-Auth-Token",
+                                            "displayName": "X-Auth-Token",
+                                            "type": "string",
+                                            "required": true,
+                                            "example": "1dd7e3",
+                                            "repeat": false,
+                                            "description": "A valid authentication token for an administrative user.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Update user",
                                     "method": "patch",
                                     "is": [
@@ -12125,6 +12389,30 @@
                                     "protocols": [
                                         "HTTP"
                                     ],
+                                    "headers": {
+                                        "X-Auth-Token": {
+                                            "name": "X-Auth-Token",
+                                            "displayName": "X-Auth-Token",
+                                            "type": "string",
+                                            "required": true,
+                                            "example": "1dd7e3",
+                                            "repeat": false,
+                                            "description": "A valid authentication token for an administrative user.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Delete user",
                                     "method": "delete",
                                     "is": [
@@ -12258,6 +12546,30 @@
                                             "protocols": [
                                                 "HTTP"
                                             ],
+                                            "headers": {
+                                                "X-Auth-Token": {
+                                                    "name": "X-Auth-Token",
+                                                    "displayName": "X-Auth-Token",
+                                                    "type": "string",
+                                                    "required": true,
+                                                    "example": "1dd7e3",
+                                                    "repeat": false,
+                                                    "description": "A valid authentication token for an administrative user.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
                                             "description": "List groups for user",
                                             "method": "get",
                                             "is": [
@@ -12402,6 +12714,30 @@
                                             "protocols": [
                                                 "HTTP"
                                             ],
+                                            "headers": {
+                                                "X-Auth-Token": {
+                                                    "name": "X-Auth-Token",
+                                                    "displayName": "X-Auth-Token",
+                                                    "type": "string",
+                                                    "required": true,
+                                                    "example": "1dd7e3",
+                                                    "repeat": false,
+                                                    "description": "A valid authentication token for an administrative user.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
                                             "description": "List projects for user",
                                             "method": "get",
                                             "is": [

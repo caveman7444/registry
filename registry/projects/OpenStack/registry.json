@@ -1,134 +1,244 @@
-{"apis": [
+{"apis": {"RAMLFiles": [
     {
         "name": "OpenStack Compute API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/master/computeAPI.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/master/computeAPI.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/master/computeAPI.json",
+        "baseUri": "https://servers.api.openstack.com",
+        "version": "v2.1",
+        "resourcesCount": 77,
+        "methodsCount": 90
     },
     {
         "name": "OpenStack Database Service API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/master/databasesAPI.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/master/databasesAPI.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/master/databasesAPI.json",
+        "baseUri": "http://docs.openstack.org/database/api",
+        "version": "v1.0",
+        "resourcesCount": 13,
+        "methodsCount": 17
     },
     {
         "name": "OpenStack Data Processing API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/master/dataprocessingAPI.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/master/dataprocessingAPI.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/master/dataprocessingAPI.json",
+        "baseUri": "https://servers.api.openstack.com",
+        "version": "v1.1",
+        "resourcesCount": 30,
+        "methodsCount": 44
     },
     {
         "name": "OpenStack Identity API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/master/identityAPI.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/master/identityAPI.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/master/identityAPI.json",
+        "baseUri": "http://localhost:35357",
+        "version": "v3",
+        "resourcesCount": 46,
+        "methodsCount": 74
     },
     {
         "name": "OpenStack Identity API extensions",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/master/identityExtensionsAPI.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/master/identityExtensionsAPI.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/master/identityExtensionsAPI.json",
+        "baseUri": "http://localhost:35357",
+        "version": "v3",
+        "resourcesCount": 15,
+        "methodsCount": 12
     },
     {
         "name": "OpenStack Image Service API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/master/imageAPI.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/master/imageAPI.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/master/imageAPI.json",
+        "baseUri": "https://glance.example.com/",
+        "version": "v2",
+        "resourcesCount": 14,
+        "methodsCount": 19
     },
     {
         "name": "OpenStack Networking API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/master/netconnAPI.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/master/netconnAPI.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/master/netconnAPI.json",
+        "baseUri": "https://servers.api.openstack.com/",
+        "version": "v2.0",
+        "resourcesCount": 57,
+        "methodsCount": 117
     },
     {
         "name": "OpenStack Object Storage API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/master/objectAPI.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/master/objectAPI.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/master/objectAPI.json",
+        "baseUri": "https://storage.swiftdrive.com/",
+        "version": "v1",
+        "resourcesCount": 4,
+        "methodsCount": 13
     },
     {
         "name": "OpenStack Orchestration API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/master/orchestrationAPI.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/master/orchestrationAPI.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/master/orchestrationAPI.json",
+        "baseUri": "https://heat.example.com/",
+        "version": "v1",
+        "resourcesCount": 33,
+        "methodsCount": 40
     },
     {
         "name": "OpenStack Telemetry API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/master/telemetryAPI.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/master/telemetryAPI.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/master/telemetryAPI.json",
+        "baseUri": "http://www.example.com",
+        "version": "v2",
+        "resourcesCount": 13,
+        "methodsCount": 17
     },
     {
         "name": "OpenStack Block Storage API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/master/volumeAPI.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/master/volumeAPI.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/master/volumeAPI.json",
+        "baseUri": "https://volume.example.com/",
+        "version": "v2",
+        "resourcesCount": 37,
+        "methodsCount": 50
     },
     {
         "name": "OpenStack Compute API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/staging/computeAPI.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/staging/computeAPI.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/staging/computeAPI.json",
+        "baseUri": "https://servers.api.openstack.com",
+        "version": "v2.1",
+        "resourcesCount": 77,
+        "methodsCount": 87
     },
     {
         "name": "OpenStack Database Service API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/staging/databasesAPI.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/staging/databasesAPI.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/staging/databasesAPI.json",
+        "baseUri": "http://docs.openstack.org/database/api",
+        "version": "v1.0",
+        "resourcesCount": 13,
+        "methodsCount": 15
     },
     {
         "name": "OpenStack Data Processing API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/staging/dataprocessingAPI.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/staging/dataprocessingAPI.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/staging/dataprocessingAPI.json",
+        "baseUri": "https://servers.api.openstack.com",
+        "version": "v1.1",
+        "resourcesCount": 30,
+        "methodsCount": 42
     },
     {
         "name": "OpenStack Identity API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/staging/identityAPI.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/staging/identityAPI.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/staging/identityAPI.json",
+        "baseUri": "http://localhost:35357",
+        "version": "v3",
+        "resourcesCount": 43,
+        "methodsCount": 64
     },
     {
         "name": "OpenStack Identity API extensions",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/staging/identityExtensionsAPI.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/staging/identityExtensionsAPI.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/staging/identityExtensionsAPI.json",
+        "baseUri": "http://localhost:35357",
+        "version": "v3",
+        "resourcesCount": 15,
+        "methodsCount": 11
     },
     {
         "name": "OpenStack Image Service API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/staging/imageAPI.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/staging/imageAPI.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/staging/imageAPI.json",
+        "baseUri": "https://glance.example.com/",
+        "version": "v2",
+        "resourcesCount": 14,
+        "methodsCount": 18
     },
     {
         "name": "OpenStack Networking API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/staging/netconnAPI.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/staging/netconnAPI.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/staging/netconnAPI.json",
+        "baseUri": "https://servers.api.openstack.com/",
+        "version": "v2.0",
+        "resourcesCount": 57,
+        "methodsCount": 114
     },
     {
         "name": "OpenStack Object Storage API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/staging/objectAPI.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/staging/objectAPI.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/staging/objectAPI.json",
+        "baseUri": "https://storage.swiftdrive.com/",
+        "version": "v1",
+        "resourcesCount": 4,
+        "methodsCount": 13
     },
     {
         "name": "OpenStack Orchestration API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/staging/orchestrationAPI.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/staging/orchestrationAPI.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/staging/orchestrationAPI.json",
+        "baseUri": "https://heat.example.com/",
+        "version": "v1",
+        "resourcesCount": 33,
+        "methodsCount": 39
     },
     {
         "name": "OpenStack Telemetry API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/staging/telemetryAPI.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/staging/telemetryAPI.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/staging/telemetryAPI.json",
+        "baseUri": "http://www.example.com",
+        "version": "v2",
+        "resourcesCount": 13,
+        "methodsCount": 17
     },
     {
         "name": "OpenStack Block Storage API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/OpenStack/staging/volumeAPI.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/staging/volumeAPI.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/OpenStack/staging/volumeAPI.json",
+        "baseUri": "https://volume.example.com/",
+        "version": "v2",
+        "resourcesCount": 37,
+        "methodsCount": 48
     }
-]}
+]}}

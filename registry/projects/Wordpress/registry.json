@@ -1,14 +1,86 @@
-{"apis": [
+{"apis": {"RAMLFiles": [
     {
         "name": "WordPress API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Wordpress/master/wordpress.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Wordpress/master/wordpress.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Wordpress/master/wordpress.json",
+        "baseUri": "https://public-api.wordpress.com/rest/{version}",
+        "version": "v1.1",
+        "securitySchemes": [{"oauth_2_0": {
+            "name": "oauth_2_0",
+            "type": "OAuth 2.0",
+            "description": "WordPress supports OAuth 2.0 for authenticating all API requests.\n\n**Receiving an Access Token**\nTo act on a user's behalf and make calls from our API you will need an access token. To get an access token you need to go through the access token flow and prompt the user to authorize your application to act on his or her behalf.\n\nAccess tokens are currently per blog per user for most of our endpoints. This means that you will need a separate access token for each blog that a user owns and that you want access to. There are certain endpoints like likes and follows where you can use a users token on any blog to act on their behalf.\n\nTo begin, you will need to send the user to the authorization endpoint.\n\nhttps://public-api.wordpress.com/oauth2/authorize?client_id=your_client_id&redirect_uri=your_url&response_type=code\n\nclient_id should be set to your application's client id. response_type should always be set to 'code'. redirect_uri should be set to the URL that the user will be redirected back to after the request is authorized. The redirect_uri should be set in the applications manager.\n\nThe redirect to your application will include a code which you will need in the next step. If the user has denied access to your app, the redirect will include ?error=access_denied\n\nOptionally you may also pass along a blog parameter (&blog=) with the URL to a WordPress.com blog or Jetpack site. If you do not pass along a URL, or if the user does not have administrative access to manage the blog you passed along, then the user will be prompted to select the blog they are granting you access to.\n\nOnce the user has authorized the request, he or she will be redirected to the redirect_url. The request will look like the following:\n\nhttp://developer.wordpress.com/?code=cw9hk1xG9k\n\nThis is a time-limited code that your application can exchange for a full authorization token. To do this you will need to pass the code to the token endpoint by making a POST request to the token endpoint: https://public-api.wordpress.com/oauth2/token.\n\n<pre><code>$curl = curl_init( \"https://public-api.wordpress.com/oauth2/token\" );\ncurl_setopt( $curl, CURLOPT_POST, true );\ncurl_setopt( $curl, CURLOPT_POSTFIELDS, array(\n    'client_id' => your_client_id,\n    'redirect_uri' => your_redirect_url,\n    'client_secret' => your_client_secret_key,\n    'code' => $_GET['code'], // The code from the previous request\n    'grant_type' => 'authorization_code'\n) );\ncurl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1);\n$auth = curl_exec( $curl );\n$secret = json_decode($auth);\n$access_key = $secret->access_token;</pre></code>\n\nYou are required to pass client_id, client_secret, and redirect_uri for web applications. These parameters have to match the details for your application, and the redirect_uri must match the redirect_uri used during the Authorize step (above). grant_type has to be set to 'authorization_code'. code must match the code you received in the redirect.\n\nIf everything works correctly and the user grants authorization, you will get back a JSON-encoded string containing the token and some basic information about the blog:\n\n<pre><code>{\n    \"access_token\": \"YOUR_API_TOKEN\",\n    \"blog_id\": \"blog id\",\n    \"blog_url\": \"blog url\",\n    \"token_type\": \"bearer\"\n}</pre></code>\nYou now have an access token which should be stored securely with the blog id and blog url. This access token allows our application to act on the behalf of the user on this specific blog.\n",
+            "describedBy": {
+                "securedBy": ["oauth_2_0"],
+                "headers": {"Authorization": {
+                    "name": "Authorization",
+                    "displayName": "Authorization",
+                    "type": "string",
+                    "required": false,
+                    "repeat": false,
+                    "description": "Used to send a valid OAuth 2 access token. In order to make an authenticated call to your APIS, you need to include your access token with the call. OAuth2 uses a BEARER token that is passed along in an Authorization header.\n\nThis sould contain the string \"Bearer\" and your API token joined with the space char:\n\"Bearer \" + YOUR_API_TOKEN.\n\nExample:\n<pre><code><?php\n  $access_key = \"YOUR_API_TOKEN\";\n  $curl = curl_init( \"https://public-api.wordpress.com/rest/v1/sites/33534099/posts/43/?pretty=true\" );\n  curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 'Authorization: Bearer ' . $access_key ) );\n  curl_exec( $curl );\n?></code></pre>\n\nThe above example would return blog post '43' from the developer blog.\n",
+                    "__METADATA__": {"primitiveValuesMeta": {
+                        "displayName": {"calculated": true},
+                        "type": {"insertedAsDefault": true},
+                        "required": {"insertedAsDefault": true},
+                        "repeat": {"insertedAsDefault": true}
+                    }}
+                }},
+                "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
+            },
+            "settings": {
+                "accessTokenUri": "https://public-api.wordpress.com/oauth2/token",
+                "authorizationUri": "https://public-api.wordpress.com/oauth2/authorize",
+                "authorizationGrants": [
+                    "code",
+                    "token"
+                ]
+            }
+        }}],
+        "resourcesCount": 56,
+        "methodsCount": 53
     },
     {
         "name": "WordPress API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Wordpress/staging/wordpress.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Wordpress/staging/wordpress.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Wordpress/staging/wordpress.json",
+        "baseUri": "https://public-api.wordpress.com/rest/{version}",
+        "version": "v1.1",
+        "securitySchemes": [{"oauth_2_0": {
+            "name": "oauth_2_0",
+            "type": "OAuth 2.0",
+            "description": "WordPress supports OAuth 2.0 for authenticating all API requests.\n\n**Receiving an Access Token**\nTo act on a user's behalf and make calls from our API you will need an access token. To get an access token you need to go through the access token flow and prompt the user to authorize your application to act on his or her behalf.\n\nAccess tokens are currently per blog per user for most of our endpoints. This means that you will need a separate access token for each blog that a user owns and that you want access to. There are certain endpoints like likes and follows where you can use a users token on any blog to act on their behalf.\n\nTo begin, you will need to send the user to the authorization endpoint.\n\nhttps://public-api.wordpress.com/oauth2/authorize?client_id=your_client_id&redirect_uri=your_url&response_type=code\n\nclient_id should be set to your application's client id. response_type should always be set to 'code'. redirect_uri should be set to the URL that the user will be redirected back to after the request is authorized. The redirect_uri should be set in the applications manager.\n\nThe redirect to your application will include a code which you will need in the next step. If the user has denied access to your app, the redirect will include ?error=access_denied\n\nOptionally you may also pass along a blog parameter (&blog=) with the URL to a WordPress.com blog or Jetpack site. If you do not pass along a URL, or if the user does not have administrative access to manage the blog you passed along, then the user will be prompted to select the blog they are granting you access to.\n\nOnce the user has authorized the request, he or she will be redirected to the redirect_url. The request will look like the following:\n\nhttp://developer.wordpress.com/?code=cw9hk1xG9k\n\nThis is a time-limited code that your application can exchange for a full authorization token. To do this you will need to pass the code to the token endpoint by making a POST request to the token endpoint: https://public-api.wordpress.com/oauth2/token.\n\n<pre><code>$curl = curl_init( \"https://public-api.wordpress.com/oauth2/token\" );\ncurl_setopt( $curl, CURLOPT_POST, true );\ncurl_setopt( $curl, CURLOPT_POSTFIELDS, array(\n    'client_id' => your_client_id,\n    'redirect_uri' => your_redirect_url,\n    'client_secret' => your_client_secret_key,\n    'code' => $_GET['code'], // The code from the previous request\n    'grant_type' => 'authorization_code'\n) );\ncurl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1);\n$auth = curl_exec( $curl );\n$secret = json_decode($auth);\n$access_key = $secret->access_token;</pre></code>\n\nYou are required to pass client_id, client_secret, and redirect_uri for web applications. These parameters have to match the details for your application, and the redirect_uri must match the redirect_uri used during the Authorize step (above). grant_type has to be set to 'authorization_code'. code must match the code you received in the redirect.\n\nIf everything works correctly and the user grants authorization, you will get back a JSON-encoded string containing the token and some basic information about the blog:\n\n<pre><code>{\n    \"access_token\": \"YOUR_API_TOKEN\",\n    \"blog_id\": \"blog id\",\n    \"blog_url\": \"blog url\",\n    \"token_type\": \"bearer\"\n}</pre></code>\nYou now have an access token which should be stored securely with the blog id and blog url. This access token allows our application to act on the behalf of the user on this specific blog.\n",
+            "describedBy": {
+                "securedBy": ["oauth_2_0"],
+                "headers": {"Authorization": {
+                    "name": "Authorization",
+                    "displayName": "Authorization",
+                    "type": "string",
+                    "required": false,
+                    "repeat": false,
+                    "description": "Used to send a valid OAuth 2 access token. In order to make an authenticated call to your APIS, you need to include your access token with the call. OAuth2 uses a BEARER token that is passed along in an Authorization header.\n\nThis sould contain the string \"Bearer\" and your API token joined with the space char:\n\"Bearer \" + YOUR_API_TOKEN.\n\nExample:\n<pre><code><?php\n  $access_key = \"YOUR_API_TOKEN\";\n  $curl = curl_init( \"https://public-api.wordpress.com/rest/v1/sites/33534099/posts/43/?pretty=true\" );\n  curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 'Authorization: Bearer ' . $access_key ) );\n  curl_exec( $curl );\n?></code></pre>\n\nThe above example would return blog post '43' from the developer blog.\n",
+                    "__METADATA__": {"primitiveValuesMeta": {
+                        "displayName": {"calculated": true},
+                        "type": {"insertedAsDefault": true},
+                        "required": {"insertedAsDefault": true},
+                        "repeat": {"insertedAsDefault": true}
+                    }}
+                }},
+                "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
+            },
+            "settings": {
+                "accessTokenUri": "https://public-api.wordpress.com/oauth2/token",
+                "authorizationUri": "https://public-api.wordpress.com/oauth2/authorize",
+                "authorizationGrants": [
+                    "code",
+                    "token"
+                ]
+            }
+        }}],
+        "resourcesCount": 56,
+        "methodsCount": 53
     }
-]}
+]}}

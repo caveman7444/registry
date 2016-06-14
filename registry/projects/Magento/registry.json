@@ -1,14 +1,44 @@
-{"apis": [
+{"apis": {"RAMLFiles": [
     {
         "name": "Magento",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Magento/master/api.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Magento/master/api.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Magento/master/api.json",
+        "baseUri": "{protocol}://{domain}/api/rest",
+        "version": "1",
+        "securitySchemes": [{"oauth_1_0": {
+            "name": "oauth_1_0",
+            "type": "OAuth 1.0",
+            "description": "",
+            "settings": {
+                "requestTokenUri": "{protocol}://{domain}/oauth/initiate",
+                "authorizationUri": "{protocol}://{domain}/oauth/oauth_authorize",
+                "tokenCredentialsUri": "{protocol}://{domain}/oauth/token"
+            }
+        }}],
+        "resourcesCount": 24,
+        "methodsCount": 43
     },
     {
         "name": "Magento",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Magento/staging/api.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Magento/staging/api.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Magento/staging/api.json",
+        "baseUri": "{protocol}://{domain}/api/rest",
+        "version": "1",
+        "securitySchemes": [{"oauth_1_0": {
+            "name": "oauth_1_0",
+            "type": "OAuth 1.0",
+            "description": "",
+            "settings": {
+                "requestTokenUri": "{protocol}://{domain}/oauth/initiate",
+                "authorizationUri": "{protocol}://{domain}/oauth/oauth_authorize",
+                "tokenCredentialsUri": "{protocol}://{domain}/oauth/token"
+            }
+        }}],
+        "resourcesCount": 24,
+        "methodsCount": 43
     }
-]}
+]}}

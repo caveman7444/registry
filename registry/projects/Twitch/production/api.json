@@ -309,7 +309,8 @@
                                     "example": "{\r\n  \"token\" : {\r\n    \"authorization\" : {\r\n      \"scopes\" : [\r\n        \"user_read\" ,\r\n        \"channel_read\" ,\r\n        \"channel_commercial\" ,\r\n        \"user_read\"\r\n      ] ,\r\n      \"created_at\" : \"2012-05-08T21:55:12Z\" ,\r\n      \"updated_at\" : \"2012-05-17T21:32:13Z\"\r\n    } ,\r\n    \"user_name\" : \"test_user1\" ,\r\n    \"valid\" : true\r\n  } ,\r\n  \"_links\" : {\r\n    \"channel\" : \"https://api.twitch.tv/kraken/channel\" ,\r\n    \"users\" : \"https://api.twitch.tv/kraken/users/test_user1\" ,\r\n    \"user\" : \"https://api.twitch.tv/kraken/user\" ,\r\n    \"channels\" : \"https://api.twitch.tv/kraken/channels/test_user1\" ,\r\n    \"chat\" : \"https://api.twitch.tv/kraken/chat/test_user1\" ,\r\n    \"streams\" : \"https://api.twitch.tv/kraken/streams\" ,\r\n    \"ingests\" : \"https://api.twitch.tv/kraken/ingests\"\r\n  }\r\n}",
                                     "schemaContent": "basic"
                                 }
-                            }
+                            },
+                            "description": "Successful"
                         }
                     },
                     "protocols": [
@@ -418,7 +419,8 @@
                                     "example": "{\r\n  \"name\" : \"test_user1\" ,\r\n  \"game\" : \"World of Warcraft: Cataclysm\" ,\r\n  \"created_at\" : \"2011-02-24T01:38:43Z\" ,\r\n  \"teams\" : [\r\n    {\r\n      \"name\" : \"staff\" ,\r\n      \"created_at\" : \"2011-10-25T23:55:47Z\" ,\r\n      \"updated_at\" : \"2011-11-14T19:48:21Z\" ,\r\n      \"background\" : null ,\r\n      \"banner\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/team-staff-banner_image-1e028d6b6aec8e6a-640x125.jpeg\" ,\r\n      \"logo\" : null ,\r\n      \"_links\" : {\r\n        \"self\" : \"https://api.twitch.tv/kraken/teams/staff\"\r\n      } ,\r\n      \"_id\" : 10 ,\r\n      \"info\" : \"We save the world..\" ,\r\n      \"display_name\" : \"TwitchTV Staff\"\r\n    }\r\n  ] ,\r\n  \"title\" : \"test_user1\" ,\r\n  \"updated_at\" : \"2012-06-18T05:22:53Z\" ,\r\n  \"banner\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_header_image-7d10ec1bfbef2988-640x125.png\" ,\r\n  \"video_banner\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_offline_image-bdcb1260130fa0cb.png\" ,\r\n  \"background\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_background_image-eebc4eabf0686bb9.png\" ,\r\n  \"_links\" : {\r\n    \"self\" : \"https://api.twitch.tv/kraken/channels/test_user1\" ,\r\n    \"chat\" : \"https://api.twitch.tv/kraken/chat/test_user1\" ,\r\n    \"videos\" : \"https://api.twitch.tv/kraken/channels/test_user1/videos\" ,\r\n    \"video_status\" : \"https://api.twitch.tv/kraken/channels/test_user1/video_status\" ,\r\n    \"commercial\" : \"https://api.twitch.tv/kraken/channels/test_user1/commercial\"\r\n  } ,\r\n  \"logo\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-profile_image-7243b004a2ec3720-300x300.png\" ,\r\n  \"_id\" : 20694610 ,\r\n  \"mature\" : true ,\r\n  \"url\" : \"http://www.twitch.tv/test_user1\" ,\r\n  \"display_name\" : \"test_user1\"\r\n}",
                                     "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"name\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"game\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"created_at\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"teams\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"name\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"created_at\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"updated_at\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"background\" : {\r\n              \"type\" : \"object\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"banner\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"logo\" : {\r\n              \"type\" : \"object\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"_links\" : {\r\n              \"type\" : \"object\" ,\r\n              \"required\" : false ,\r\n              \"properties\" : {\r\n                \"self\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                }\r\n              }\r\n            } ,\r\n            \"_id\" : {\r\n              \"type\" : \"number\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"info\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"display_name\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            }\r\n          }\r\n        }\r\n      \r\n    } ,\r\n    \"title\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"updated_at\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"banner\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"video_banner\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"background\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"_links\" : {\r\n      \"type\" : \"object\" ,\r\n      \"required\" : false ,\r\n      \"properties\" : {\r\n        \"self\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"chat\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"videos\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"video_status\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"commercial\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        }\r\n      }\r\n    } ,\r\n    \"logo\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"_id\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"mature\" : {\r\n      \"type\" : \"boolean\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"url\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"display_name\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    }\r\n  }\r\n}"
                                 }
-                            }
+                            },
+                            "description": "Successful"
                         }
                     },
                     "protocols": [
@@ -451,7 +453,8 @@
                                             "example": "{\r\n  \"_links\" : {\r\n    \"self\" : \"http://api.twitch.tv/kraken/channels/test_user1/editors\"\r\n  } ,\r\n  \"users\" : [\r\n    {\r\n      \"_links\" : {\r\n        \"self\" : \"http://staging.twitch.tv/kraken/users/test_user_editor1\"\r\n      } ,\r\n      \"created_at\" : \"2013-02-06T21:21:57Z\" ,\r\n      \"name\" : \"test_user_editor1\" ,\r\n      \"updated_at\" : \"2013-02-13T20:59:42Z\" ,\r\n      \"_id\" : 40091581 ,\r\n      \"display_name\" : \"test_user_editor1\" ,\r\n      \"logo\" : null ,\r\n      \"staff\" : false\r\n    } , {\r\n      \"_links\" : {\r\n        \"self\" : \"http://staging.twitch.tv/kraken/users/test_user_editor1\"\r\n      } ,\r\n      \"created_at\" : \"2013-02-06T21:21:57Z\" ,\r\n      \"name\" : \"test_user_editor1\" ,\r\n      \"updated_at\" : \"2013-02-13T20:59:42Z\" ,\r\n      \"_id\" : 40091581 ,\r\n      \"display_name\" : \"test_user_editor1\" ,\r\n      \"logo\" : null ,\r\n      \"staff\" : false\r\n    }\r\n  ]\r\n}",
                                             "schemaContent": "users"
                                         }
-                                    }
+                                    },
+                                    "description": "Successful"
                                 }
                             },
                             "protocols": [
@@ -495,7 +498,8 @@
                                             "example": "{\n  \"videos\" : [\n    {\n      \"title\" : \"ETF2L Week 1: Epsilon vs. Dignitas\" ,\n      \"recorded_at\" : \"2011-10-02T19:57:06Z\" ,\n      \"_id\" : \"a296529186\" ,\n      \"_links\" : {\n        \"self\" : \"https://api.twitch.tv/kraken/videos/a296529186\" ,\n        \"owner\" : \"https://api.twitch.tv/kraken/channels/vanillatv\"\n      } ,\n      \"embed\" : \"<object type=\"application/x-shockwave-flash\" height=\"300\" width=\"400\" id=\"clip_embed_player_flash\" data=\"http://www.justin.tv/widgets/archive_embed_player.swf\" bgcolor=\"#000000\">\n              <param name=\"movie\" value=\"http://www.justin.tv/widgets/archive_embed_player.swf\" />\n              <param name=\"allowScriptAccess\" value=\"always\" />\n              <param name=\"allowNetworking\" value=\"all\" />\n              <param name=\"allowFullScreen\" value=\"true\" />\n              <param name=\"flashvars\" value=\"channel=vanillatv&title=VanillaTV - Sweden vs Russia - ETF2L Nations Cup - Snakewater [Map3] - Part 3&auto_play=false&archive_id=328087483&start_volume=25\" />\n          </object>\" ,\n      \"url\" : \"http://www.twitch.tv/vanillatv/b/296529186\" ,\n      \"views\" : 1 ,\n      \"preview\" : \"http://static-cdn.jtvnw.net/jtv.thumbs/archive-296529186-320x240.jpg\" ,\n      \"length\" : 23 ,\n      \"game\" : \"Team Fortress 2\" ,\n      \"description\" : null\n    } , {\n      \"title\" : \"ETF2L Week 1: Epsilon vs. Dignitas\" ,\n      \"recorded_at\" : \"2011-10-02T19:01:23Z\" ,\n      \"_id\" : \"a296526250\" ,\n      \"_links\" : {\n        \"self\" : \"https://api.twitch.tv/kraken/videos/a296526250\" ,\n        \"owner\" : \"https://api.twitch.tv/kraken/channels/vanillatv\"\n      } ,\n      \"embed\" : \"<object type=\"application/x-shockwave-flash\" height=\"300\" width=\"400\" id=\"clip_embed_player_flash\" data=\"http://www.justin.tv/widgets/archive_embed_player.swf\" bgcolor=\"#000000\">\n              <param name=\"movie\" value=\"http://www.justin.tv/widgets/archive_embed_player.swf\" />\n              <param name=\"allowScriptAccess\" value=\"always\" />\n              <param name=\"allowNetworking\" value=\"all\" />\n              <param name=\"allowFullScreen\" value=\"true\" />\n              <param name=\"flashvars\" value=\"channel=vanillatv&title=VanillaTV - Sweden vs Russia - ETF2L Nations Cup - Snakewater [Map3] - Part 3&auto_play=false&archive_id=328087483&start_volume=25\" />\n          </object>\" ,\n      \"url\" : \"http://www.twitch.tv/vanillatv/b/296526250\" ,\n      \"views\" : 1 ,\n      \"preview\" : \"http://static-cdn.jtvnw.net/jtv.thumbs/archive-296526250-320x240.jpg\" ,\n      \"length\" : 1296 ,\n      \"game\" : \"Team Fortress 2\" ,\n      \"description\" : null\n    }\n  ] ,\n  \"_links\" : {\n    \"self\" : \"https://api.twitch.tv/kraken/channels/vanillatv/videos?limit=10&offset=0\" ,\n    \"next\" : \"https://api.twitch.tv/kraken/channels/vanillatv/videos?limit=10&offset=10\"\n  }\n}",
                                             "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"videos\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"title\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"recorded_at\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"_id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"_links\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"self\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"owner\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            } ,\n            \"embed\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"url\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"views\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"preview\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"length\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"game\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"description\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    } ,\n    \"_links\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"self\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"next\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  }\n}"
                                         }
-                                    }
+                                    },
+                                    "description": "Successful"
                                 }
                             },
                             "protocols": [
@@ -509,6 +513,50 @@
                                     "required": false,
                                     "repeat": false,
                                     "description": "Returns only broadcasts when true. Otherwise only highlights are returned. Default is false.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "limit": {
+                                    "name": "limit",
+                                    "displayName": "limit",
+                                    "type": "integer",
+                                    "required": false,
+                                    "default": 25,
+                                    "repeat": false,
+                                    "description": "Maximum number of objects in array. Default is 25. Maximum is 100.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "offset": {
+                                    "name": "offset",
+                                    "displayName": "offset",
+                                    "type": "integer",
+                                    "required": false,
+                                    "default": 0,
+                                    "repeat": false,
+                                    "description": "Object offset for pagination. Default is 0.",
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
                                             "displayName": {
@@ -565,12 +613,59 @@
                                             "example": "{\r\n  \"_links\" : {\r\n    \"next\" : \"https://api.twitch.tv/kraken/channels/test_user1/follows?limit=25&offset=25\" ,\r\n    \"self\" : \"https://api.twitch.tv/kraken/channels/test_user1/follows?limit=25&offset=0\"\r\n  } ,\r\n  \"follows\" : [\r\n    {\r\n      \"_links\" : {\r\n        \"self\" : \"https://api.twitch.tv/kraken/users/test_user2/follows/channels/test_user1\"\r\n      } ,\r\n      \"user\" : {\r\n        \"_links\" : {\r\n          \"self\" : \"https://api.twitch.tv/kraken/users/test_user2\"\r\n        } ,\r\n        \"staff\" : false ,\r\n        \"logo\" : null ,\r\n        \"display_name\" : \"test_user2\" ,\r\n        \"created_at\" : \"2013-02-06T21:21:57Z\" ,\r\n        \"updated_at\" : \"2013-02-13T20:59:42Z\" ,\r\n        \"_id\" : 40091581 ,\r\n        \"name\" : \"test_user2\"\r\n      }\r\n    } , {\r\n      \"_links\" : {\r\n        \"self\" : \"https://api.twitch.tv/kraken/users/test_user2/follows/channels/test_user1\"\r\n      } ,\r\n      \"user\" : {\r\n        \"_links\" : {\r\n          \"self\" : \"https://api.twitch.tv/kraken/users/test_user2\"\r\n        } ,\r\n        \"staff\" : false ,\r\n        \"logo\" : null ,\r\n        \"display_name\" : \"test_user2\" ,\r\n        \"created_at\" : \"2013-02-06T21:21:57Z\" ,\r\n        \"updated_at\" : \"2013-02-13T20:59:42Z\" ,\r\n        \"_id\" : 40091581 ,\r\n        \"name\" : \"test_user2\"\r\n      }\r\n    }\r\n  ]\r\n}",
                                             "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"_links\" : {\r\n      \"type\" : \"object\" ,\r\n      \"required\" : false ,\r\n      \"properties\" : {\r\n        \"next\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"self\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        }\r\n      }\r\n    } ,\r\n    \"follows\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"_links\" : {\r\n              \"type\" : \"object\" ,\r\n              \"required\" : false ,\r\n              \"properties\" : {\r\n                \"self\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                }\r\n              }\r\n            } ,\r\n            \"user\" : {\r\n              \"type\" : \"object\" ,\r\n              \"required\" : false ,\r\n              \"properties\" : {\r\n                \"_links\" : {\r\n                  \"type\" : \"object\" ,\r\n                  \"required\" : false ,\r\n                  \"properties\" : {\r\n                    \"self\" : {\r\n                      \"type\" : \"string\" ,\r\n                      \"required\" : false\r\n                    }\r\n                  }\r\n                } ,\r\n                \"staff\" : {\r\n                  \"type\" : \"boolean\" ,\r\n                  \"required\" : false\r\n                } ,\r\n                \"logo\" : {\r\n                  \"type\" : \"object\" ,\r\n                  \"required\" : false\r\n                } ,\r\n                \"display_name\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                } ,\r\n                \"created_at\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                } ,\r\n                \"updated_at\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                } ,\r\n                \"_id\" : {\r\n                  \"type\" : \"number\" ,\r\n                  \"required\" : false\r\n                } ,\r\n                \"name\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                }\r\n              }\r\n            }\r\n          }\r\n        }\r\n      \r\n    }\r\n  }\r\n}"
                                         }
-                                    }
+                                    },
+                                    "description": "Successful"
                                 }
                             },
                             "protocols": [
                                 "HTTPS"
                             ],
+                            "queryParameters": {
+                                "limit": {
+                                    "name": "limit",
+                                    "displayName": "limit",
+                                    "type": "integer",
+                                    "required": false,
+                                    "default": 25,
+                                    "repeat": false,
+                                    "description": "Maximum number of objects in array. Default is 25. Maximum is 100.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "offset": {
+                                    "name": "offset",
+                                    "displayName": "offset",
+                                    "type": "integer",
+                                    "required": false,
+                                    "default": 0,
+                                    "repeat": false,
+                                    "description": "Object offset for pagination. Default is 0.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Get channel's list of following users",
                             "method": "get",
                             "is": [
@@ -604,6 +699,16 @@
                             "scope": "channel_stream"
                         }
                     },
+                    "securedBy": [
+                        {
+                            "oauth_2_0": {
+                                "scopes": [
+                                    "channel_stream"
+                                ],
+                                "clientId": []
+                            }
+                        }
+                    ],
                     "methods": [
                         {
                             "responses": {
@@ -614,11 +719,24 @@
                             "protocols": [
                                 "HTTPS"
                             ],
+                            "securedBy": [
+                                {
+                                    "oauth_2_0": {
+                                        "scopes": [
+                                            "channel_stream"
+                                        ],
+                                        "clientId": []
+                                    }
+                                }
+                            ],
                             "description": "Resets channel's stream key.",
                             "method": "delete",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
                                     "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
                                         "calculated": true
                                     }
                                 }
@@ -730,7 +848,8 @@
                                             "example": "{\r\n  \"_total\" : 3 ,\r\n  \"_links\" : {\r\n    \"next\" : \"https://api.twitch.tv/kraken/channels/test_channel/subscriptions?limit=25&offset=25\" ,\r\n    \"self\" : \"https://api.twitch.tv/kraken/channels/test_channel/subscriptions?limit=25&offset=0\"\r\n  } ,\r\n  \"subscriptions\" : [\r\n    {\r\n      \"_id\" : \"88d4621871b7274c34d5c3eb5dad6780c8533318\" ,\r\n      \"user\" : {\r\n        \"_id\" : 38248673 ,\r\n        \"logo\" : null ,\r\n        \"staff\" : false ,\r\n        \"created_at\" : \"2012-12-06T00:32:36Z\" ,\r\n        \"name\" : \"testuser\" ,\r\n        \"updated_at\" : \"2013-02-06T21:27:46Z\" ,\r\n        \"display_name\" : \"testuser\" ,\r\n        \"_links\" : {\r\n          \"self\" : \"https://api.twitch.tv/kraken/users/testuser\"\r\n        }\r\n      } ,\r\n      \"created_at\" : \"2013-02-06T21:33:33Z\" ,\r\n      \"_links\" : {\r\n        \"self\" : \"https://api.twitch.tv/kraken/channels/test_channel/subscriptions/testuser\"\r\n      }\r\n    } , {\r\n      \"_id\" : \"88d4621871b7274c34d5c3eb5dad6780c8533318\" ,\r\n      \"user\" : {\r\n        \"_id\" : 38248673 ,\r\n        \"logo\" : null ,\r\n        \"staff\" : false ,\r\n        \"created_at\" : \"2012-12-06T00:32:36Z\" ,\r\n        \"name\" : \"testuser\" ,\r\n        \"updated_at\" : \"2013-02-06T21:27:46Z\" ,\r\n        \"display_name\" : \"testuser\" ,\r\n        \"_links\" : {\r\n          \"self\" : \"https://api.twitch.tv/kraken/users/testuser\"\r\n        }\r\n      } ,\r\n      \"created_at\" : \"2013-02-06T21:33:33Z\" ,\r\n      \"_links\" : {\r\n        \"self\" : \"https://api.twitch.tv/kraken/channels/test_channel/subscriptions/testuser\"\r\n      }\r\n    }\r\n  ]\r\n}",
                                             "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"_total\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"_links\" : {\r\n      \"type\" : \"object\" ,\r\n      \"required\" : false ,\r\n      \"properties\" : {\r\n        \"next\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"self\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        }\r\n      }\r\n    } ,\r\n    \"subscriptions\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"_id\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"user\" : {\r\n              \"type\" : \"object\" ,\r\n              \"required\" : false ,\r\n              \"properties\" : {\r\n                \"_id\" : {\r\n                  \"type\" : \"number\" ,\r\n                  \"required\" : false\r\n                } ,\r\n                \"logo\" : {\r\n                  \"type\" : \"object\" ,\r\n                  \"required\" : false\r\n                } ,\r\n                \"staff\" : {\r\n                  \"type\" : \"boolean\" ,\r\n                  \"required\" : false\r\n                } ,\r\n                \"created_at\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                } ,\r\n                \"name\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                } ,\r\n                \"updated_at\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                } ,\r\n                \"display_name\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                } ,\r\n                \"_links\" : {\r\n                  \"type\" : \"object\" ,\r\n                  \"required\" : false ,\r\n                  \"properties\" : {\r\n                    \"self\" : {\r\n                      \"type\" : \"string\" ,\r\n                      \"required\" : false\r\n                    }\r\n                  }\r\n                }\r\n              }\r\n            } ,\r\n            \"created_at\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"_links\" : {\r\n              \"type\" : \"object\" ,\r\n              \"required\" : false ,\r\n              \"properties\" : {\r\n                \"self\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                }\r\n              }\r\n            }\r\n          }\r\n        }\r\n      \r\n    }\r\n  }\r\n}"
                                         }
-                                    }
+                                    },
+                                    "description": "Successful"
                                 }
                             },
                             "protocols": [
@@ -765,6 +884,50 @@
                                             },
                                             "type": {
                                                 "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "limit": {
+                                    "name": "limit",
+                                    "displayName": "limit",
+                                    "type": "integer",
+                                    "required": false,
+                                    "default": 25,
+                                    "repeat": false,
+                                    "description": "Maximum number of objects in array. Default is 25. Maximum is 100.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "offset": {
+                                    "name": "offset",
+                                    "displayName": "offset",
+                                    "type": "integer",
+                                    "required": false,
+                                    "default": 0,
+                                    "repeat": false,
+                                    "description": "Object offset for pagination. Default is 0.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
                                             },
                                             "required": {
                                                 "insertedAsDefault": true
@@ -832,7 +995,8 @@
                                                     "example": "{\r\n  \"_id\" : \"88d4621871b7274c34d5c3eb5dad6780c8533318\" ,\r\n  \"user\" : {\r\n    \"_id\" : 38248673 ,\r\n    \"logo\" : null ,\r\n    \"staff\" : false ,\r\n    \"created_at\" : \"2012-12-06T00:32:36Z\" ,\r\n    \"name\" : \"testuser\" ,\r\n    \"updated_at\" : \"2013-02-06T21:27:46Z\" ,\r\n    \"display_name\" : \"testuser\" ,\r\n    \"_links\" : {\r\n      \"self\" : \"https://api.twitch.tv/kraken/users/testuser\"\r\n    }\r\n  } ,\r\n  \"created_at\" : \"2013-02-06T21:33:33Z\" ,\r\n  \"_links\" : {\r\n    \"self\" : \"https://api.twitch.tv/kraken/channels/test_channel/subscriptions/testuser\"\r\n  }\r\n}",
                                                     "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"_id\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"user\" : {\r\n      \"type\" : \"object\" ,\r\n      \"required\" : false ,\r\n      \"properties\" : {\r\n        \"_id\" : {\r\n          \"type\" : \"number\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"logo\" : {\r\n          \"type\" : \"object\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"staff\" : {\r\n          \"type\" : \"boolean\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"created_at\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"name\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"updated_at\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"display_name\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"_links\" : {\r\n          \"type\" : \"object\" ,\r\n          \"required\" : false ,\r\n          \"properties\" : {\r\n            \"self\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            }\r\n          }\r\n        }\r\n      }\r\n    } ,\r\n    \"created_at\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"_links\" : {\r\n      \"type\" : \"object\" ,\r\n      \"required\" : false ,\r\n      \"properties\" : {\r\n        \"self\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        }\r\n      }\r\n    }\r\n  }\r\n}"
                                                 }
-                                            }
+                                            },
+                                            "description": "Successful"
                                         },
                                         "404": {
                                             "code": "404",
@@ -916,7 +1080,8 @@
                                     "example": "{\r\n  \"name\" : \"test_user1\" ,\r\n  \"game\" : \"World of Warcraft: Cataclysm\" ,\r\n  \"created_at\" : \"2011-02-24T01:38:43Z\" ,\r\n  \"teams\" : [\r\n    {\r\n      \"name\" : \"staff\" ,\r\n      \"created_at\" : \"2011-10-25T23:55:47Z\" ,\r\n      \"updated_at\" : \"2011-11-14T19:48:21Z\" ,\r\n      \"background\" : null ,\r\n      \"banner\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/team-staff-banner_image-1e028d6b6aec8e6a-640x125.jpeg\" ,\r\n      \"logo\" : null ,\r\n      \"_links\" : {\r\n        \"self\" : \"https://api.twitch.tv/kraken/teams/staff\"\r\n      } ,\r\n      \"_id\" : 10 ,\r\n      \"info\" : \"We save the world..\" ,\r\n      \"display_name\" : \"TwitchTV Staff\"\r\n    }\r\n  ] ,\r\n  \"title\" : \"test_user1\" ,\r\n  \"updated_at\" : \"2012-06-18T05:22:53Z\" ,\r\n  \"banner\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_header_image-7d10ec1bfbef2988-640x125.png\" ,\r\n  \"video_banner\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_offline_image-bdcb1260130fa0cb.png\" ,\r\n  \"background\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_background_image-eebc4eabf0686bb9.png\" ,\r\n  \"_links\" : {\r\n    \"self\" : \"https://api.twitch.tv/kraken/channels/test_user1\" ,\r\n    \"chat\" : \"https://api.twitch.tv/kraken/chat/test_user1\" ,\r\n    \"videos\" : \"https://api.twitch.tv/kraken/channels/test_user1/videos\" ,\r\n    \"video_status\" : \"https://api.twitch.tv/kraken/channels/test_user1/video_status\" ,\r\n    \"commercial\" : \"https://api.twitch.tv/kraken/channels/test_user1/commercial\"\r\n  } ,\r\n  \"logo\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-profile_image-7243b004a2ec3720-300x300.png\" ,\r\n  \"_id\" : 20694610 ,\r\n  \"mature\" : true ,\r\n  \"url\" : \"http://www.twitch.tv/test_user1\" ,\r\n  \"display_name\" : \"test_user1\"\r\n}",
                                     "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"name\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"game\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"created_at\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"teams\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"name\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"created_at\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"updated_at\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"background\" : {\r\n              \"type\" : \"object\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"banner\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"logo\" : {\r\n              \"type\" : \"object\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"_links\" : {\r\n              \"type\" : \"object\" ,\r\n              \"required\" : false ,\r\n              \"properties\" : {\r\n                \"self\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                }\r\n              }\r\n            } ,\r\n            \"_id\" : {\r\n              \"type\" : \"number\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"info\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"display_name\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            }\r\n          }\r\n        }\r\n      \r\n    } ,\r\n    \"title\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"updated_at\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"banner\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"video_banner\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"background\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"_links\" : {\r\n      \"type\" : \"object\" ,\r\n      \"required\" : false ,\r\n      \"properties\" : {\r\n        \"self\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"chat\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"videos\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"video_status\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"commercial\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        }\r\n      }\r\n    } ,\r\n    \"logo\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"_id\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"mature\" : {\r\n      \"type\" : \"boolean\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"url\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"display_name\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    }\r\n  }\r\n}"
                                 }
-                            }
+                            },
+                            "description": "Successful"
                         }
                     },
                     "protocols": [
@@ -990,7 +1155,8 @@
                                             "example": "{\r\n  \"_links\" : {\r\n    \"self\" : \"https://api.twitch.tv/kraken/chat/kraken_test_user\" ,\r\n    \"emoticons\" : \"https://api.twitch.tv/kraken/chat/kraken_test_user/emoticons\" ,\r\n    \"badges\" : \"https://api.twitch.tv/kraken/chat/kraken_test_user/badges\"\r\n  }\r\n}",
                                             "schemaContent": "chat"
                                         }
-                                    }
+                                    },
+                                    "description": "Successful"
                                 }
                             },
                             "protocols": [
@@ -1023,7 +1189,8 @@
                                                     "example": "{\r\n  \"emoticons\" : [\r\n    {\r\n      \"regex\" : \"MeoW\" ,\r\n      \"url\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/chansub-test_user1-emoticon-30bc1522fa392415-28x32.png\" ,\r\n      \"height\" : 32 ,\r\n      \"width\" : 28 ,\r\n      \"subscriber_only\" : true\r\n    } , {\r\n      \"regex\" : \"&lt;3\" ,\r\n      \"url\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/chansub-global-emoticon-67cde8d0b7916e57-24x18.png\" ,\r\n      \"height\" : 18 ,\r\n      \"width\" : 24 ,\r\n      \"subscriber_only\" : false\r\n    }\r\n  ] ,\r\n  \"_links\" : {\r\n    \"self\" : \"https://api.twitch.tv/kraken/chat/test_user1/emoticons\"\r\n  }\r\n}",
                                                     "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"emoticons\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"regex\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"url\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"height\" : {\r\n              \"type\" : \"number\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"width\" : {\r\n              \"type\" : \"number\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"subscriber_only\" : {\r\n              \"type\" : \"boolean\" ,\r\n              \"required\" : false\r\n            }\r\n          }\r\n        }\r\n      \r\n    } ,\r\n    \"_links\" : {\r\n      \"type\" : \"object\" ,\r\n      \"required\" : false ,\r\n      \"properties\" : {\r\n        \"self\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        }\r\n      }\r\n    }\r\n  }\r\n}"
                                                 }
-                                            }
+                                            },
+                                            "description": "Successful"
                                         }
                                     },
                                     "protocols": [
@@ -1080,7 +1247,8 @@
                                             "example": "{\n  \"_links\" : {\n    \"self\" : \"https://api.twitch.tv/kraken/chat/emoticons\"\n  } ,\n  \"emoticons\" : [\n    {\n      \"regex\" : \":-?(\" ,\n      \"images\" : [\n        {\n          \"emoticon_set\" : null ,\n          \"height\" : 18 ,\n          \"width\" : 24 ,\n          \"url\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/chansub-global-emoticon-d570c4b3b8d8fc4d-24x18.png\"\n        } , {\n          \"emoticon_set\" : 33 ,\n          \"height\" : 18 ,\n          \"width\" : 21 ,\n          \"url\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/chansub-global-emoticon-c41c5c6c88f481cd-21x18.png\"\n        }\n      ]\n    }\n  ]\n}",
                                             "schemaContent": "{\n  \"type\": \"object\",\n  \"required\": true,\n  \"$schema\": \"http://json-schema.org/draft-03/schema\",\n  \"properties\": {\n    \"_links\": {\n      \"type\": \"object\",\n      \"required\": false,\n      \"properties\": {\n        \"self\": {\n          \"type\": \"string\",\n          \"required\": false\n        }\n      }\n    },\n    \"emoticons\": {\n      \"type\": \"array\",\n      \"required\": false,\n      \"items\": {\n        \"type\": \"array\",\n        \"items\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"regex\": {\n              \"type\": \"string\",\n              \"required\": false\n            },\n            \"images\": {\n              \"type\": \"array\",\n              \"required\": false,\n              \"items\": {\n                \"type\": \"array\",\n                \"items\": {\n                  \"type\": \"object\",\n                  \"properties\": {\n                    \"emoticon_set\": {\n                      \"type\": \"object\",\n                      \"required\": false\n                    },\n                    \"height\": {\n                      \"type\": \"number\",\n                      \"required\": false\n                    },\n                    \"width\": {\n                      \"type\": \"number\",\n                      \"required\": false\n                    },\n                    \"url\": {\n                      \"type\": \"string\",\n                      \"required\": false\n                    }\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
                                         }
-                                    }
+                                    },
+                                    "description": "Successful"
                                 }
                             },
                             "protocols": [
@@ -1137,7 +1305,8 @@
                                     "example": "{\r\n  \"streams\" : [\r\n    {\r\n      \"broadcaster\" : \"fme\" ,\r\n      \"_id\" : 5019229776 ,\r\n      \"preview\" : \"http://static-cdn.jtvnw.net/previews-ttv/live_user_zisss-320x200.jpg\" ,\r\n      \"game\" : \"Diablo III\" ,\r\n      \"channel\" : {\r\n        \"mature\" : null ,\r\n        \"background\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/zisss-channel_background_image-06a9d8c1113e5b45.jpeg\" ,\r\n        \"updated_at\" : \"2013-03-04T05:27:27Z\" ,\r\n        \"_id\" : 31795858 ,\r\n        \"status\" : \"Barb sets giveaway and making 500m DH set... Join Zisspire, earn Zeny, collect prizes!\" ,\r\n        \"logo\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/zisss-profile_image-502d7c865c5e3a54-300x300.jpeg\" ,\r\n        \"teams\" : [\r\n        ] ,\r\n        \"url\" : \"http://www.twitch.tv/zisss\" ,\r\n        \"display_name\" : \"Zisss\" ,\r\n        \"game\" : \"Diablo III\" ,\r\n        \"banner\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/zisss-channel_header_image-997348d7f0658115-640x125.jpeg\" ,\r\n        \"name\" : \"zisss\" ,\r\n        \"video_banner\" : null ,\r\n        \"_links\" : {\r\n          \"chat\" : \"https://api.twitch.tv/kraken/chat/zisss\" ,\r\n          \"subscriptions\" : \"https://api.twitch.tv/kraken/channels/zisss/subscriptions\" ,\r\n          \"features\" : \"https://api.twitch.tv/kraken/channels/zisss/features\" ,\r\n          \"commercial\" : \"https://api.twitch.tv/kraken/channels/zisss/commercial\" ,\r\n          \"stream_key\" : \"https://api.twitch.tv/kraken/channels/zisss/stream_key\" ,\r\n          \"editors\" : \"https://api.twitch.tv/kraken/channels/zisss/editors\" ,\r\n          \"videos\" : \"https://api.twitch.tv/kraken/channels/zisss/videos\" ,\r\n          \"self\" : \"https://api.twitch.tv/kraken/channels/zisss\" ,\r\n          \"follows\" : \"https://api.twitch.tv/kraken/channels/zisss/follows\"\r\n        } ,\r\n        \"created_at\" : \"2012-07-01T21:09:58Z\"\r\n      } ,\r\n      \"name\" : \"live_user_zisss\" ,\r\n      \"viewers\" : 775 ,\r\n      \"_links\" : {\r\n        \"self\" : \"https://api.twitch.tv/kraken/streams/zisss\"\r\n      }\r\n    }\r\n  ] ,\r\n  \"_links\" : {\r\n    \"summary\" : \"https://api.twitch.tv/kraken/streams/summary\" ,\r\n    \"followed\" : \"https://api.twitch.tv/kraken/streams/followed\" ,\r\n    \"next\" : \"https://api.twitch.tv/kraken/streams?channel=zisss%2Cvoyboy&game=Diablo+III&limit=100&offset=100\" ,\r\n    \"featured\" : \"https://api.twitch.tv/kraken/streams/featured\" ,\r\n    \"self\" : \"https://api.twitch.tv/kraken/streams?channel=zisss%2Cvoyboy&game=Diablo+III&limit=100&offset=0\"\r\n  }\r\n}",
                                     "schemaContent": "{\n  \"type\": \"object\",\n  \"required\": true,\n  \"$schema\": \"http://json-schema.org/draft-03/schema\",\n  \"properties\": {\n    \"streams\": {\n      \"type\": \"array\",\n      \"required\": false,\n      \"items\": {\n        \"type\": \"array\",\n        \"items\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"broadcaster\": {\n              \"type\": \"string\",\n              \"required\": false\n            },\n            \"_id\": {\n              \"type\": \"number\",\n              \"required\": false\n            },\n            \"preview\": {\n              \"type\": \"string\",\n              \"required\": false\n            },\n            \"game\": {\n              \"type\": \"string\",\n              \"required\": false\n            },\n            \"channel\": {\n              \"type\": \"object\",\n              \"required\": false,\n              \"properties\": {\n                \"mature\": {\n                  \"type\": \"object\",\n                  \"required\": false\n                },\n                \"background\": {\n                  \"type\": \"string\",\n                  \"required\": false\n                },\n                \"updated_at\": {\n                  \"type\": \"string\",\n                  \"required\": false\n                },\n                \"_id\": {\n                  \"type\": \"number\",\n                  \"required\": false\n                },\n                \"status\": {\n                  \"type\": \"string\",\n                  \"required\": false\n                },\n                \"logo\": {\n                  \"type\": \"string\",\n                  \"required\": false\n                },\n                \"teams\": {\n                  \"type\": \"array\",\n                  \"required\": false,\n                  \"items\": {\n                    \"type\": \"array\"\n                  }\n                },\n                \"url\": {\n                  \"type\": \"string\",\n                  \"required\": false\n                },\n                \"display_name\": {\n                  \"type\": \"string\",\n                  \"required\": false\n                },\n                \"game\": {\n                  \"type\": \"string\",\n                  \"required\": false\n                },\n                \"banner\": {\n                  \"type\": \"string\",\n                  \"required\": false\n                },\n                \"name\": {\n                  \"type\": \"string\",\n                  \"required\": false\n                },\n                \"video_banner\": {\n                  \"type\": \"object\",\n                  \"required\": false\n                },\n                \"_links\": {\n                  \"type\": \"object\",\n                  \"required\": false,\n                  \"properties\": {\n                    \"chat\": {\n                      \"type\": \"string\",\n                      \"required\": false\n                    },\n                    \"subscriptions\": {\n                      \"type\": \"string\",\n                      \"required\": false\n                    },\n                    \"features\": {\n                      \"type\": \"string\",\n                      \"required\": false\n                    },\n                    \"commercial\": {\n                      \"type\": \"string\",\n                      \"required\": false\n                    },\n                    \"stream_key\": {\n                      \"type\": \"string\",\n                      \"required\": false\n                    },\n                    \"editors\": {\n                      \"type\": \"string\",\n                      \"required\": false\n                    },\n                    \"videos\": {\n                      \"type\": \"string\",\n                      \"required\": false\n                    },\n                    \"self\": {\n                      \"type\": \"string\",\n                      \"required\": false\n                    },\n                    \"follows\": {\n                      \"type\": \"string\",\n                      \"required\": false\n                    }\n                  }\n                },\n                \"created_at\": {\n                  \"type\": \"string\",\n                  \"required\": false\n                }\n              }\n            },\n            \"name\": {\n              \"type\": \"string\",\n              \"required\": false\n            },\n            \"viewers\": {\n              \"type\": \"number\",\n              \"required\": false\n            },\n            \"_links\": {\n              \"type\": \"object\",\n              \"required\": false,\n              \"properties\": {\n                \"self\": {\n                  \"type\": \"string\",\n                  \"required\": false\n                }\n              }\n            }\n          }\n        }\n      }\n    },\n    \"_links\": {\n      \"type\": \"object\",\n      \"required\": false,\n      \"properties\": {\n        \"summary\": {\n          \"type\": \"string\",\n          \"required\": false\n        },\n        \"followed\": {\n          \"type\": \"string\",\n          \"required\": false\n        },\n        \"next\": {\n          \"type\": \"string\",\n          \"required\": false\n        },\n        \"featured\": {\n          \"type\": \"string\",\n          \"required\": false\n        },\n        \"self\": {\n          \"type\": \"string\",\n          \"required\": false\n        }\n      }\n    }\n  }\n}"
                                 }
-                            }
+                            },
+                            "description": "Successful"
                         }
                     },
                     "protocols": [
@@ -1235,6 +1404,50 @@
                                     }
                                 }
                             }
+                        },
+                        "limit": {
+                            "name": "limit",
+                            "displayName": "limit",
+                            "type": "integer",
+                            "required": false,
+                            "default": 25,
+                            "repeat": false,
+                            "description": "Maximum number of objects in array. Default is 25. Maximum is 100.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "offset": {
+                            "name": "offset",
+                            "displayName": "offset",
+                            "type": "integer",
+                            "required": false,
+                            "default": 0,
+                            "repeat": false,
+                            "description": "Object offset for pagination. Default is 0.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
                         }
                     },
                     "description": "Returns a list of stream objects that are queried by a number of parameters sorted by number of viewers descending.",
@@ -1259,6 +1472,16 @@
                             "scope": "user_read"
                         }
                     },
+                    "securedBy": [
+                        {
+                            "oauth_2_0": {
+                                "scopes": [
+                                    "user_read"
+                                ],
+                                "clientId": []
+                            }
+                        }
+                    ],
                     "methods": [
                         {
                             "responses": {
@@ -1277,11 +1500,24 @@
                             "protocols": [
                                 "HTTPS"
                             ],
+                            "securedBy": [
+                                {
+                                    "oauth_2_0": {
+                                        "scopes": [
+                                            "user_read"
+                                        ],
+                                        "clientId": []
+                                    }
+                                }
+                            ],
                             "description": "Returns a list of stream objects that the authenticated user is following.",
                             "method": "get",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
                                     "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
                                         "calculated": true
                                     }
                                 }
@@ -1341,7 +1577,8 @@
                                             "example": "{\r\n  \"stream\" : null ,\r\n  \"_links\" : {\r\n    \"self\" : \"https://api.twitch.tv/kraken/streams/test_channel\" ,\r\n    \"channel\" : \"https://api.twitch.tv/kraken/channels/test_channel\"\r\n  }\r\n}",
                                             "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"stream\" : {\r\n      \"type\" : \"object\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"_links\" : {\r\n      \"type\" : \"object\" ,\r\n      \"required\" : false ,\r\n      \"properties\" : {\r\n        \"self\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"channel\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        }\r\n      }\r\n    }\r\n  }\r\n}"
                                         }
-                                    }
+                                    },
+                                    "description": "Successful"
                                 }
                             },
                             "protocols": [
@@ -1385,7 +1622,8 @@
                                             "example": "{\r\n  \"_links\" : {\r\n    \"self\" : \"https://api.twitch.tv/kraken/streams/featured?limit=25&offset=0\" ,\r\n    \"next\" : \"https://api.twitch.tv/kraken/streams/featured?limit=25&offset=25\"\r\n  } ,\r\n  \"featured\" : [\r\n    {\r\n      \"image\" : \"http://s.jtvnw.net/jtv_user_pictures/hosted_images/therun.jpg\" ,\r\n      \"text\" : \"This is the run! Watch as multi-time world record Super Mario 64 gamer, Siglemic, pushes the N64 classic to its absolute limits.\" ,\r\n      \"stream\" : {\r\n      }\r\n    } , {\r\n      \"image\" : \"http://s.jtvnw.net/jtv_user_pictures/hosted_images/therun.jpg\" ,\r\n      \"text\" : \"This is the run! Watch as multi-time world record Super Mario 64 gamer, Siglemic, pushes the N64 classic to its absolute limits.\" ,\r\n      \"stream\" : {\r\n      }\r\n    }\r\n  ]\r\n}",
                                             "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"_links\" : {\r\n      \"type\" : \"object\" ,\r\n      \"required\" : false ,\r\n      \"properties\" : {\r\n        \"self\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"next\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        }\r\n      }\r\n    } ,\r\n    \"featured\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"image\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"text\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"stream\" : {\r\n              \"type\" : \"object\" ,\r\n              \"required\" : false\r\n            }\r\n          }\r\n        }\r\n      \r\n    }\r\n  }\r\n}"
                                         }
-                                    }
+                                    },
+                                    "description": "Successful"
                                 }
                             },
                             "protocols": [
@@ -1399,6 +1637,50 @@
                                     "required": false,
                                     "repeat": false,
                                     "description": "If set to true, only returns streams using HLS",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "limit": {
+                                    "name": "limit",
+                                    "displayName": "limit",
+                                    "type": "integer",
+                                    "required": false,
+                                    "default": 25,
+                                    "repeat": false,
+                                    "description": "Maximum number of objects in array. Default is 25. Maximum is 100.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "offset": {
+                                    "name": "offset",
+                                    "displayName": "offset",
+                                    "type": "integer",
+                                    "required": false,
+                                    "default": 0,
+                                    "repeat": false,
+                                    "description": "Object offset for pagination. Default is 0.",
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
                                             "displayName": {
@@ -1455,7 +1737,8 @@
                                             "example": "{\r\n  \"viewers\" : 194774 ,\r\n  \"_links\" : {\r\n    \"self\" : \"https://api.twitch.tv/kraken/streams/summary\"\r\n  } ,\r\n  \"channels\" : 4144\r\n}",
                                             "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"viewers\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"_links\" : {\r\n      \"type\" : \"object\" ,\r\n      \"required\" : false ,\r\n      \"properties\" : {\r\n        \"self\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        }\r\n      }\r\n    } ,\r\n    \"channels\" : {\r\n      \"type\" : \"number\" ,\r\n      \"required\" : false\r\n    }\r\n  }\r\n}"
                                         }
-                                    }
+                                    },
+                                    "description": "Successful"
                                 }
                             },
                             "protocols": [
@@ -1469,6 +1752,50 @@
                                     "required": false,
                                     "repeat": false,
                                     "description": "If set to true, only returns streams using HLS",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "limit": {
+                                    "name": "limit",
+                                    "displayName": "limit",
+                                    "type": "integer",
+                                    "required": false,
+                                    "default": 25,
+                                    "repeat": false,
+                                    "description": "Maximum number of objects in array. Default is 25. Maximum is 100.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "offset": {
+                                    "name": "offset",
+                                    "displayName": "offset",
+                                    "type": "integer",
+                                    "required": false,
+                                    "default": 0,
+                                    "repeat": false,
+                                    "description": "Object offset for pagination. Default is 0.",
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
                                             "displayName": {
@@ -1564,7 +1891,8 @@
                                     "example": "{\r\n  \"name\" : \"test_user1\" ,\r\n  \"created_at\" : \"2011-06-03T17:49:19Z\" ,\r\n  \"updated_at\" : \"2012-06-18T17:19:57Z\" ,\r\n  \"_links\" : {\r\n    \"self\" : \"https://api.twitch.tv/kraken/users/test_user1\"\r\n  } ,\r\n  \"logo\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-profile_image-62e8318af864d6d7-300x300.jpeg\" ,\r\n  \"_id\" : 22761313 ,\r\n  \"display_name\" : \"test_user1\" ,\r\n  \"email\" : \"asdf@asdf.com\" ,\r\n  \"partnered\" : true\r\n}",
                                     "schemaContent": "user"
                                 }
-                            }
+                            },
+                            "description": "Successful"
                         }
                     },
                     "protocols": [
@@ -1589,6 +1917,16 @@
                             "scope": "user_blocks_read"
                         }
                     },
+                    "securedBy": [
+                        {
+                            "oauth_2_0": {
+                                "scopes": [
+                                    "user_blocks_read"
+                                ],
+                                "clientId": []
+                            }
+                        }
+                    ],
                     "methods": [
                         {
                             "responses": {
@@ -1607,6 +1945,62 @@
                             "protocols": [
                                 "HTTPS"
                             ],
+                            "securedBy": [
+                                {
+                                    "oauth_2_0": {
+                                        "scopes": [
+                                            "user_blocks_read"
+                                        ],
+                                        "clientId": []
+                                    }
+                                }
+                            ],
+                            "queryParameters": {
+                                "limit": {
+                                    "name": "limit",
+                                    "displayName": "limit",
+                                    "type": "integer",
+                                    "required": false,
+                                    "default": 25,
+                                    "repeat": false,
+                                    "description": "Maximum number of objects in array. Default is 25. Maximum is 100.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "offset": {
+                                    "name": "offset",
+                                    "displayName": "offset",
+                                    "type": "integer",
+                                    "required": false,
+                                    "default": 0,
+                                    "repeat": false,
+                                    "description": "Object offset for pagination. Default is 0.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Returns a list of blocks objects on :login's block list. List sorted by recency, newest first.",
                             "method": "get",
                             "is": [
@@ -1615,6 +2009,9 @@
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
                                     "protocols": {
+                                        "calculated": true
+                                    },
+                                    "securedBy": {
                                         "calculated": true
                                     }
                                 }
@@ -1629,6 +2026,16 @@
                                     "scope": "user_blocks_edit"
                                 }
                             },
+                            "securedBy": [
+                                {
+                                    "oauth_2_0": {
+                                        "scopes": [
+                                            "user_blocks_edit"
+                                        ],
+                                        "clientId": []
+                                    }
+                                }
+                            ],
                             "uriParameters": {
                                 "targetId": {
                                     "name": "targetId",
@@ -1673,11 +2080,24 @@
                                     "protocols": [
                                         "HTTPS"
                                     ],
+                                    "securedBy": [
+                                        {
+                                            "oauth_2_0": {
+                                                "scopes": [
+                                                    "user_blocks_edit"
+                                                ],
+                                                "clientId": []
+                                            }
+                                        }
+                                    ],
                                     "description": "Adds :target to :user's block list. :user is the authenticated user and :target is user to be blocked. Returns a blocks object.",
                                     "method": "put",
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
                                             "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
                                                 "calculated": true
                                             }
                                         }
@@ -1701,11 +2121,24 @@
                                     "protocols": [
                                         "HTTPS"
                                     ],
+                                    "securedBy": [
+                                        {
+                                            "oauth_2_0": {
+                                                "scopes": [
+                                                    "user_blocks_edit"
+                                                ],
+                                                "clientId": []
+                                            }
+                                        }
+                                    ],
                                     "description": "Removes :target from :user's block list. :user is the authenticated user and :target is user to be unblocked.",
                                     "method": "delete",
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
                                             "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
                                                 "calculated": true
                                             }
                                         }
@@ -1752,7 +2185,8 @@
                                             "example": "{\r\n  \"_links\" : {\r\n    \"next\" : \"https://api.twitch.tv/kraken/channels/test_user1/follows?limit=25&offset=25\" ,\r\n    \"self\" : \"https://api.twitch.tv/kraken/channels/test_user1/follows?limit=25&offset=0\"\r\n  } ,\r\n  \"follows\" : [\r\n    {\r\n      \"_links\" : {\r\n        \"self\" : \"https://api.twitch.tv/kraken/users/test_user2/follows/channels/test_user1\"\r\n      } ,\r\n      \"user\" : {\r\n        \"_links\" : {\r\n          \"self\" : \"https://api.twitch.tv/kraken/users/test_user2\"\r\n        } ,\r\n        \"staff\" : false ,\r\n        \"logo\" : null ,\r\n        \"display_name\" : \"test_user2\" ,\r\n        \"created_at\" : \"2013-02-06T21:21:57Z\" ,\r\n        \"updated_at\" : \"2013-02-13T20:59:42Z\" ,\r\n        \"_id\" : 40091581 ,\r\n        \"name\" : \"test_user2\"\r\n      }\r\n    } , {\r\n      \"_links\" : {\r\n        \"self\" : \"https://api.twitch.tv/kraken/users/test_user2/follows/channels/test_user1\"\r\n      } ,\r\n      \"user\" : {\r\n        \"_links\" : {\r\n          \"self\" : \"https://api.twitch.tv/kraken/users/test_user2\"\r\n        } ,\r\n        \"staff\" : false ,\r\n        \"logo\" : null ,\r\n        \"display_name\" : \"test_user2\" ,\r\n        \"created_at\" : \"2013-02-06T21:21:57Z\" ,\r\n        \"updated_at\" : \"2013-02-13T20:59:42Z\" ,\r\n        \"_id\" : 40091581 ,\r\n        \"name\" : \"test_user2\"\r\n      }\r\n    }\r\n  ]\r\n}",
                                             "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"_links\" : {\r\n      \"type\" : \"object\" ,\r\n      \"required\" : false ,\r\n      \"properties\" : {\r\n        \"next\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"self\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        }\r\n      }\r\n    } ,\r\n    \"follows\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"_links\" : {\r\n              \"type\" : \"object\" ,\r\n              \"required\" : false ,\r\n              \"properties\" : {\r\n                \"self\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                }\r\n              }\r\n            } ,\r\n            \"user\" : {\r\n              \"type\" : \"object\" ,\r\n              \"required\" : false ,\r\n              \"properties\" : {\r\n                \"_links\" : {\r\n                  \"type\" : \"object\" ,\r\n                  \"required\" : false ,\r\n                  \"properties\" : {\r\n                    \"self\" : {\r\n                      \"type\" : \"string\" ,\r\n                      \"required\" : false\r\n                    }\r\n                  }\r\n                } ,\r\n                \"staff\" : {\r\n                  \"type\" : \"boolean\" ,\r\n                  \"required\" : false\r\n                } ,\r\n                \"logo\" : {\r\n                  \"type\" : \"object\" ,\r\n                  \"required\" : false\r\n                } ,\r\n                \"display_name\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                } ,\r\n                \"created_at\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                } ,\r\n                \"updated_at\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                } ,\r\n                \"_id\" : {\r\n                  \"type\" : \"number\" ,\r\n                  \"required\" : false\r\n                } ,\r\n                \"name\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                }\r\n              }\r\n            }\r\n          }\r\n        }\r\n      \r\n    }\r\n  }\r\n}"
                                         }
-                                    }
+                                    },
+                                    "description": "Successful"
                                 },
                                 "404": {
                                     "code": "404",
@@ -1762,6 +2196,52 @@
                             "protocols": [
                                 "HTTPS"
                             ],
+                            "queryParameters": {
+                                "limit": {
+                                    "name": "limit",
+                                    "displayName": "limit",
+                                    "type": "integer",
+                                    "required": false,
+                                    "default": 25,
+                                    "repeat": false,
+                                    "description": "Maximum number of objects in array. Default is 25. Maximum is 100.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "offset": {
+                                    "name": "offset",
+                                    "displayName": "offset",
+                                    "type": "integer",
+                                    "required": false,
+                                    "default": 0,
+                                    "repeat": false,
+                                    "description": "Object offset for pagination. Default is 0.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Returns a list of follows objects.",
                             "method": "get",
                             "is": [
@@ -1818,7 +2298,8 @@
                                                     "example": "{\r\n  \"_links\" : {\r\n    \"self\" : \"https://api.twitch.tv/kraken/users/test_user1/follows/channels/test_channel\"\r\n  } ,\r\n  \"channel\" : {\r\n    \"name\" : \"test_channel\" ,\r\n    \"game\" : null ,\r\n    \"created_at\" : \"2011-05-01T14:50:12Z\" ,\r\n    \"teams\" : [\r\n    ] ,\r\n    \"background\" : null ,\r\n    \"updated_at\" : \"2012-10-13T18:18:43Z\" ,\r\n    \"banner\" : null ,\r\n    \"logo\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-profile_image-9bd02ad8f4f5bc97-300x300.jpeg\" ,\r\n    \"url\" : \"http://www.twitch.tv/test_channel\" ,\r\n    \"_links\" : {\r\n      \"stream_key\" : \"https://api.twitch.tv/kraken/channels/test_channel/stream_key\" ,\r\n      \"self\" : \"https://api.twitch.tv/kraken/channels/test_channel\" ,\r\n      \"chat\" : \"https://api.twitch.tv/kraken/chat/test_channel\" ,\r\n      \"commercial\" : \"https://api.twitch.tv/kraken/channels/test_channel/commercial\" ,\r\n      \"videos\" : \"https://api.twitch.tv/kraken/channels/test_channel/videos\" ,\r\n      \"features\" : \"https://api.twitch.tv/kraken/channels/test_channel/features\"\r\n    } ,\r\n    \"_id\" : 22125774 ,\r\n    \"mature\" : true ,\r\n    \"video_banner\" : null ,\r\n    \"display_name\" : \"test_channel\" ,\r\n    \"status\" : \"Not Live\"\r\n  }\r\n}",
                                                     "schemaContent": "{\n  \"type\": \"object\",\n  \"required\": true,\n  \"$schema\": \"http://json-schema.org/draft-03/schema\",\n  \"properties\": {\n    \"_links\": {\n      \"type\": \"object\",\n      \"required\": false,\n      \"properties\": {\n        \"self\": {\n          \"type\": \"string\",\n          \"required\": false\n        }\n      }\n    },\n    \"channel\": {\n      \"type\": \"object\",\n      \"required\": false,\n      \"properties\": {\n        \"name\": {\n          \"type\": \"string\",\n          \"required\": false\n        },\n        \"game\": {\n          \"type\": \"object\",\n          \"required\": false\n        },\n        \"created_at\": {\n          \"type\": \"string\",\n          \"required\": false\n        },\n        \"teams\": {\n          \"type\": \"array\",\n          \"required\": false,\n          \"items\": {\n            \"type\": \"array\"\n          }\n        },\n        \"background\": {\n          \"type\": \"object\",\n          \"required\": false\n        },\n        \"updated_at\": {\n          \"type\": \"string\",\n          \"required\": false\n        },\n        \"banner\": {\n          \"type\": \"object\",\n          \"required\": false\n        },\n        \"logo\": {\n          \"type\": \"string\",\n          \"required\": false\n        },\n        \"url\": {\n          \"type\": \"string\",\n          \"required\": false\n        },\n        \"_links\": {\n          \"type\": \"object\",\n          \"required\": false,\n          \"properties\": {\n            \"stream_key\": {\n              \"type\": \"string\",\n              \"required\": false\n            },\n            \"self\": {\n              \"type\": \"string\",\n              \"required\": false\n            },\n            \"chat\": {\n              \"type\": \"string\",\n              \"required\": false\n            },\n            \"commercial\": {\n              \"type\": \"string\",\n              \"required\": false\n            },\n            \"videos\": {\n              \"type\": \"string\",\n              \"required\": false\n            },\n            \"features\": {\n              \"type\": \"string\",\n              \"required\": false\n            }\n          }\n        },\n        \"_id\": {\n          \"type\": \"number\",\n          \"required\": false\n        },\n        \"mature\": {\n          \"type\": \"boolean\",\n          \"required\": false\n        },\n        \"video_banner\": {\n          \"type\": \"object\",\n          \"required\": false\n        },\n        \"display_name\": {\n          \"type\": \"string\",\n          \"required\": false\n        },\n        \"status\": {\n          \"type\": \"string\",\n          \"required\": false\n        }\n      }\n    }\n  }\n}"
                                                 }
-                                            }
+                                            },
+                                            "description": "Successful"
                                         },
                                         "404": {
                                             "code": "404",
@@ -1979,7 +2460,8 @@
                                             "example": "{\r\n  \"_links\" : {\r\n    \"self\" : \"https://api.twitch.tv/kraken/users/test_user/subscriptions/test_channel\"\r\n  } ,\r\n  \"channel\" : {\r\n    \"logo\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-profile_image-db450d501aa3e884-300x300.jpeg\" ,\r\n    \"_links\" : {\r\n      \"subscriptions\" : \"https://api.twitch.tv/kraken/channels/test_channel/subscriptions\" ,\r\n      \"commercial\" : \"https://api.twitch.tv/kraken/channels/test_channel/commercial\" ,\r\n      \"editors\" : \"https://api.twitch.tv/kraken/channels/test_channel/editors\" ,\r\n      \"videos\" : \"https://api.twitch.tv/kraken/channels/test_channel/videos\" ,\r\n      \"stream_key\" : \"https://api.twitch.tv/kraken/channels/test_channel/stream_key\" ,\r\n      \"follows\" : \"https://api.twitch.tv/kraken/channels/test_channel/follows\" ,\r\n      \"teams\" : \"https://api.twitch.tv/kraken/channels/test_channel/teams\" ,\r\n      \"self\" : \"https://api.twitch.tv/kraken/channels/test_channel\" ,\r\n      \"chat\" : \"https://api.twitch.tv/kraken/chat/test_channel\" ,\r\n      \"features\" : \"https://api.twitch.tv/kraken/channels/test_channel/features\"\r\n    } ,\r\n    \"updated_at\" : \"2013-07-16T22:58:51Z\" ,\r\n    \"background\" : null ,\r\n    \"status\" : \"Game Dev Tycoon Time!\" ,\r\n    \"game\" : \"Game Dev Tycoon\" ,\r\n    \"profile_banner\" : null ,\r\n    \"banner\" : null ,\r\n    \"display_name\" : \"test_channel\" ,\r\n    \"_id\" : 188563 ,\r\n    \"url\" : \"https://www.twitch.tv/test_channel\" ,\r\n    \"video_banner\" : null ,\r\n    \"delay\" : 0 ,\r\n    \"name\" : \"test_channel\" ,\r\n    \"mature\" : true ,\r\n    \"created_at\" : \"2007-11-29T05:17:53Z\"\r\n  } ,\r\n  \"_id\" : \"ba93ea2a1046081cf8621e3811b435c403479aa2\" ,\r\n  \"created_at\" : \"2013-07-16T21:46:27Z\"\r\n}",
                                             "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"_links\" : {\r\n      \"type\" : \"object\" ,\r\n      \"required\" : false ,\r\n      \"properties\" : {\r\n        \"self\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        }\r\n      }\r\n    } ,\r\n    \"channel\" : {\r\n      \"type\" : \"object\" ,\r\n      \"required\" : false ,\r\n      \"properties\" : {\r\n        \"logo\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"_links\" : {\r\n          \"type\" : \"object\" ,\r\n          \"required\" : false ,\r\n          \"properties\" : {\r\n            \"subscriptions\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"commercial\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"editors\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"videos\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"stream_key\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"follows\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"teams\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"self\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"chat\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"features\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            }\r\n          }\r\n        } ,\r\n        \"updated_at\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"background\" : {\r\n          \"type\" : \"object\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"status\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"game\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"profile_banner\" : {\r\n          \"type\" : \"object\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"banner\" : {\r\n          \"type\" : \"object\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"display_name\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"_id\" : {\r\n          \"type\" : \"number\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"url\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"video_banner\" : {\r\n          \"type\" : \"object\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"delay\" : {\r\n          \"type\" : \"number\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"name\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"mature\" : {\r\n          \"type\" : \"boolean\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"created_at\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        }\r\n      }\r\n    } ,\r\n    \"_id\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    } ,\r\n    \"created_at\" : {\r\n      \"type\" : \"string\" ,\r\n      \"required\" : false\r\n    }\r\n  }\r\n}"
                                         }
-                                    }
+                                    },
+                                    "description": "Successful"
                                 },
                                 "404": {
                                     "code": "404",
@@ -2055,7 +2537,8 @@
                                     "example": "{\r\n  \"name\" : \"test_user1\" ,\r\n  \"created_at\" : \"2011-06-03T17:49:19Z\" ,\r\n  \"updated_at\" : \"2012-06-18T17:19:57Z\" ,\r\n  \"_links\" : {\r\n    \"self\" : \"https://api.twitch.tv/kraken/users/test_user1\"\r\n  } ,\r\n  \"logo\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-profile_image-62e8318af864d6d7-300x300.jpeg\" ,\r\n  \"_id\" : 22761313 ,\r\n  \"display_name\" : \"test_user1\" ,\r\n  \"email\" : \"asdf@asdf.com\" ,\r\n  \"partnered\" : true\r\n}",
                                     "schemaContent": "user"
                                 }
-                            }
+                            },
+                            "description": "Successful"
                         }
                     },
                     "protocols": [
@@ -2099,7 +2582,8 @@
                                     "example": "{\r\n  \"_links\" : {\r\n    \"self\" : \"https://api.twitch.tv/kraken/games/top?limit=25&offset=0\" ,\r\n    \"next\" : \"https://api.twitch.tv/kraken/games/top?limit=25&offset=25\"\r\n  } ,\r\n  \"_total\" : 322 ,\r\n  \"top\" : [\r\n    {\r\n      \"game\" : {\r\n        \"name\" : \"League of Legends\" ,\r\n        \"box\" : {\r\n          \"large\" : \"http://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends.jpg?w=272&h=380&fit=scale\" ,\r\n          \"medium\" : \"http://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends.jpg?w=136&h=190&fit=scale\" ,\r\n          \"small\" : \"http://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends.jpg?w=52&h=72&fit=scale\" ,\r\n          \"template\" : \"http://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends.jpg?w={width}&h={height}&fit=scale\"\r\n        } ,\r\n        \"logo\" : {\r\n          \"large\" : \"http://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends.jpg?w=240&h=144&fit=scale\" ,\r\n          \"medium\" : \"http://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends.jpg?w=120&h=72&fit=scale\" ,\r\n          \"small\" : \"http://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends.jpg?w=60&h=36&fit=scale\" ,\r\n          \"template\" : \"http://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends.jpg?w={width}&h={height}&fit=scale\"\r\n        } ,\r\n        \"_links\" : {\r\n        } ,\r\n        \"_id\" : 21779 ,\r\n        \"giantbomb_id\" : 24024\r\n      } ,\r\n      \"viewers\" : 23873 ,\r\n      \"channels\" : 305\r\n    } , {\r\n      \"game\" : {\r\n        \"name\" : \"League of Legends\" ,\r\n        \"box\" : {\r\n          \"large\" : \"http://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends.jpg?w=272&h=380&fit=scale\" ,\r\n          \"medium\" : \"http://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends.jpg?w=136&h=190&fit=scale\" ,\r\n          \"small\" : \"http://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends.jpg?w=52&h=72&fit=scale\" ,\r\n          \"template\" : \"http://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends.jpg?w={width}&h={height}&fit=scale\"\r\n        } ,\r\n        \"logo\" : {\r\n          \"large\" : \"http://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends.jpg?w=240&h=144&fit=scale\" ,\r\n          \"medium\" : \"http://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends.jpg?w=120&h=72&fit=scale\" ,\r\n          \"small\" : \"http://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends.jpg?w=60&h=36&fit=scale\" ,\r\n          \"template\" : \"http://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends.jpg?w={width}&h={height}&fit=scale\"\r\n        } ,\r\n        \"_links\" : {\r\n        } ,\r\n        \"_id\" : 21779 ,\r\n        \"giantbomb_id\" : 24024\r\n      } ,\r\n      \"viewers\" : 23873 ,\r\n      \"channels\" : 305\r\n    }\r\n  ]\r\n}",
                                     "schemaContent": "games"
                                 }
-                            }
+                            },
+                            "description": "Successful"
                         },
                         "503": {
                             "code": "503",
@@ -2117,6 +2601,50 @@
                             "required": false,
                             "repeat": false,
                             "description": "If set to true, only returns game objects with streams using HLS",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "limit": {
+                            "name": "limit",
+                            "displayName": "limit",
+                            "type": "integer",
+                            "required": false,
+                            "default": 25,
+                            "repeat": false,
+                            "description": "Maximum number of objects in array. Default is 25. Maximum is 100.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "offset": {
+                            "name": "offset",
+                            "displayName": "offset",
+                            "type": "integer",
+                            "required": false,
+                            "default": 0,
+                            "repeat": false,
+                            "description": "Object offset for pagination. Default is 0.",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
                                     "displayName": {
@@ -2174,7 +2702,8 @@
                                     "example": "{\r\n  \"_links\" : {\r\n    \"self\" : \"https://api.twitch.tv/kraken/ingests\"\r\n  } ,\r\n  \"ingests\" : [\r\n    {\r\n      \"name\" : \"EU: Amsterdam, NL\" ,\r\n      \"default\" : false ,\r\n      \"_id\" : 24 ,\r\n      \"url_template\" : \"rtmp://live-ams.twitch.tv/app/{stream_key}\" ,\r\n      \"availability\" : 1\r\n    } , {\r\n      \"name\" : \"EU: Amsterdam, NL\" ,\r\n      \"default\" : false ,\r\n      \"_id\" : 24 ,\r\n      \"url_template\" : \"rtmp://live-ams.twitch.tv/app/{stream_key}\" ,\r\n      \"availability\" : 1\r\n    }\r\n  ]\r\n}",
                                     "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"_links\" : {\r\n      \"type\" : \"object\" ,\r\n      \"required\" : false ,\r\n      \"properties\" : {\r\n        \"self\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        }\r\n      }\r\n    } ,\r\n    \"ingests\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"name\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"default\" : {\r\n              \"type\" : \"boolean\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"_id\" : {\r\n              \"type\" : \"number\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"url_template\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"availability\" : {\r\n              \"type\" : \"number\" ,\r\n              \"required\" : false\r\n            }\r\n          }\r\n        }\r\n      \r\n    }\r\n  }\r\n}"
                                 }
-                            }
+                            },
+                            "description": "Successful"
                         },
                         "503": {
                             "code": "503",
@@ -2226,7 +2755,8 @@
                                             "example": "{\r\n  \"_links\" : {\r\n    \"self\" : \"https://api.twitch.tv/kraken/streams/followed?limit=25&offset=0\" ,\r\n    \"next\" : \"https://api.twitch.tv/kraken/streams/followed?limit=25&offset=25\"\r\n  } ,\r\n  \"streams\" : [\r\n    \"...\"\r\n  ]\r\n}",
                                             "schemaContent": "{\n  \"type\": \"object\",\n  \"required\": true,\n  \"$schema\": \"http://json-schema.org/draft-03/schema\",\n  \"properties\": {\n    \"_links\": {\n      \"type\": \"object\",\n      \"required\": false,\n      \"properties\": {\n        \"channel\": {\n          \"type\": \"string\",\n          \"required\": false\n        },\n        \"self\": {\n          \"type\": \"string\",\n          \"required\": false\n        }\n      }\n    },\n    \"stream\": {\n      \"type\": \"object\",\n      \"required\": false,\n      \"properties\": {\n        \"_links\": {\n          \"type\": \"object\",\n          \"required\": false,\n          \"properties\": {\n            \"self\": {\n              \"type\": \"string\",\n              \"required\": false\n            }\n          }\n        },\n        \"broadcaster\": {\n          \"type\": \"string\",\n          \"required\": false\n        },\n        \"preview\": {\n          \"type\": \"string\",\n          \"required\": false\n        },\n        \"_id\": {\n          \"type\": \"number\",\n          \"required\": false\n        },\n        \"viewers\": {\n          \"type\": \"number\",\n          \"required\": false\n        },\n        \"channel\": {\n          \"type\": \"object\",\n          \"required\": false,\n          \"properties\": {\n            \"display_name\": {\n              \"type\": \"string\",\n              \"required\": false\n            },\n            \"_links\": {\n              \"type\": \"object\",\n              \"required\": false,\n              \"properties\": {\n                \"stream_key\": {\n                  \"type\": \"string\",\n                  \"required\": false\n                },\n                \"editors\": {\n                  \"type\": \"string\",\n                  \"required\": false\n                },\n                \"subscriptions\": {\n                  \"type\": \"string\",\n                  \"required\": false\n                },\n                \"commercial\": {\n                  \"type\": \"string\",\n                  \"required\": false\n                },\n                \"videos\": {\n                  \"type\": \"string\",\n                  \"required\": false\n                },\n                \"follows\": {\n                  \"type\": \"string\",\n                  \"required\": false\n                },\n                \"self\": {\n                  \"type\": \"string\",\n                  \"required\": false\n                },\n                \"chat\": {\n                  \"type\": \"string\",\n                  \"required\": false\n                },\n                \"features\": {\n                  \"type\": \"string\",\n                  \"required\": false\n                }\n              }\n            },\n            \"teams\": {\n              \"type\": \"array\",\n              \"required\": false,\n              \"items\": {\n                \"type\": \"array\"\n              }\n            },\n            \"status\": {\n              \"type\": \"string\",\n              \"required\": false\n            },\n            \"created_at\": {\n              \"type\": \"string\",\n              \"required\": false\n            },\n            \"logo\": {\n              \"type\": \"string\",\n              \"required\": false\n            },\n            \"updated_at\": {\n              \"type\": \"string\",\n              \"required\": false\n            },\n            \"mature\": {\n              \"type\": \"object\",\n              \"required\": false\n            },\n            \"video_banner\": {\n              \"type\": \"object\",\n              \"required\": false\n            },\n            \"_id\": {\n              \"type\": \"number\",\n              \"required\": false\n            },\n            \"background\": {\n              \"type\": \"string\",\n              \"required\": false\n            },\n            \"banner\": {\n              \"type\": \"string\",\n              \"required\": false\n            },\n            \"name\": {\n              \"type\": \"string\",\n              \"required\": false\n            },\n            \"url\": {\n              \"type\": \"string\",\n              \"required\": false\n            },\n            \"game\": {\n              \"type\": \"string\",\n              \"required\": false\n            }\n          }\n        },\n        \"name\": {\n          \"type\": \"string\",\n          \"required\": false\n        },\n        \"game\": {\n          \"type\": \"string\",\n          \"required\": false\n        }\n      }\n    }\n  }\n}"
                                         }
-                                    }
+                                    },
+                                    "description": "Successful"
                                 },
                                 "503": {
                                     "code": "503",
@@ -2251,6 +2781,50 @@
                                                 "calculated": true
                                             },
                                             "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "limit": {
+                                    "name": "limit",
+                                    "displayName": "limit",
+                                    "type": "integer",
+                                    "required": false,
+                                    "default": 25,
+                                    "repeat": false,
+                                    "description": "Maximum number of objects in array. Default is 25. Maximum is 100.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "offset": {
+                                    "name": "offset",
+                                    "displayName": "offset",
+                                    "type": "integer",
+                                    "required": false,
+                                    "default": 0,
+                                    "repeat": false,
+                                    "description": "Object offset for pagination. Default is 0.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
                                                 "insertedAsDefault": true
                                             },
                                             "repeat": {
@@ -2301,7 +2875,8 @@
                                             "example": "{\r\n  \"_links\" : {\r\n    \"self\" : \"https://api.twitch.tv/kraken/games/top?limit=25&offset=0\" ,\r\n    \"next\" : \"https://api.twitch.tv/kraken/games/top?limit=25&offset=25\"\r\n  } ,\r\n  \"_total\" : 322 ,\r\n  \"top\" : [\r\n    {\r\n      \"game\" : {\r\n        \"name\" : \"League of Legends\" ,\r\n        \"box\" : {\r\n          \"large\" : \"http://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends.jpg?w=272&h=380&fit=scale\" ,\r\n          \"medium\" : \"http://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends.jpg?w=136&h=190&fit=scale\" ,\r\n          \"small\" : \"http://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends.jpg?w=52&h=72&fit=scale\" ,\r\n          \"template\" : \"http://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends.jpg?w={width}&h={height}&fit=scale\"\r\n        } ,\r\n        \"logo\" : {\r\n          \"large\" : \"http://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends.jpg?w=240&h=144&fit=scale\" ,\r\n          \"medium\" : \"http://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends.jpg?w=120&h=72&fit=scale\" ,\r\n          \"small\" : \"http://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends.jpg?w=60&h=36&fit=scale\" ,\r\n          \"template\" : \"http://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends.jpg?w={width}&h={height}&fit=scale\"\r\n        } ,\r\n        \"_links\" : {\r\n        } ,\r\n        \"_id\" : 21779 ,\r\n        \"giantbomb_id\" : 24024\r\n      } ,\r\n      \"viewers\" : 23873 ,\r\n      \"channels\" : 305\r\n    } , {\r\n      \"game\" : {\r\n        \"name\" : \"League of Legends\" ,\r\n        \"box\" : {\r\n          \"large\" : \"http://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends.jpg?w=272&h=380&fit=scale\" ,\r\n          \"medium\" : \"http://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends.jpg?w=136&h=190&fit=scale\" ,\r\n          \"small\" : \"http://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends.jpg?w=52&h=72&fit=scale\" ,\r\n          \"template\" : \"http://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends.jpg?w={width}&h={height}&fit=scale\"\r\n        } ,\r\n        \"logo\" : {\r\n          \"large\" : \"http://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends.jpg?w=240&h=144&fit=scale\" ,\r\n          \"medium\" : \"http://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends.jpg?w=120&h=72&fit=scale\" ,\r\n          \"small\" : \"http://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends.jpg?w=60&h=36&fit=scale\" ,\r\n          \"template\" : \"http://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends.jpg?w={width}&h={height}&fit=scale\"\r\n        } ,\r\n        \"_links\" : {\r\n        } ,\r\n        \"_id\" : 21779 ,\r\n        \"giantbomb_id\" : 24024\r\n      } ,\r\n      \"viewers\" : 23873 ,\r\n      \"channels\" : 305\r\n    }\r\n  ]\r\n}",
                                             "schemaContent": "games"
                                         }
-                                    }
+                                    },
+                                    "description": "Successful"
                                 }
                             },
                             "protocols": [
@@ -2425,7 +3000,8 @@
                                     "example": "{\r\n  \"_links\" : {\r\n    \"next\" : \"https://api.twitch.tv/kraken/teams?limit=25&offset=25\" ,\r\n    \"self\" : \"https://api.twitch.tv/kraken/teams?limit=25&offset=0\"\r\n  } ,\r\n  \"teams\" : [\r\n    {\r\n      \"info\" : \"I love working for Twitch!\" ,\r\n      \"_links\" : {\r\n        \"self\" : \"https://api.twitch.tv/kraken/teams/testteam\"\r\n      } ,\r\n      \"background\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/team-testteam-background_image-c72e038f428c9c7d.png\" ,\r\n      \"banner\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/team-testteam-banner_image-cc318b0f084cb67c-640x125.jpeg\" ,\r\n      \"name\" : \"testteam\" ,\r\n      \"_id\" : 1 ,\r\n      \"updated_at\" : \"2012-11-14T01:30:00Z\" ,\r\n      \"display_name\" : \"test\" ,\r\n      \"created_at\" : \"2011-10-11T22:49:05Z\" ,\r\n      \"logo\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/team-testteam-team_logo_image-46943237490be5e7-300x300.jpeg\"\r\n    } , {\r\n      \"info\" : \"Team Info\" ,\r\n      \"_links\" : {\r\n        \"self\" : \"https://api.twitch.tv/kraken/teams/eg\"\r\n      } ,\r\n      \"background\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/team-eg-background_image-da36973b6d829ac6.png\" ,\r\n      \"banner\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/team-eg-banner_image-1ad9c4738f4698b1-640x125.png\" ,\r\n      \"name\" : \"eg\" ,\r\n      \"_id\" : 2 ,\r\n      \"updated_at\" : \"2012-10-03T01:48:25Z\" ,\r\n      \"display_name\" : \"Evil Geniuses\" ,\r\n      \"created_at\" : \"2011-10-11T23:59:43Z\" ,\r\n      \"logo\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/team-eg-team_logo_image-9107b874d4c3fc3b-300x300.jpeg\"\r\n    }\r\n  ]\r\n}",
                                     "schemaContent": "teams"
                                 }
-                            }
+                            },
+                            "description": "Successful"
                         }
                     },
                     "protocols": [
@@ -2484,7 +3060,8 @@
                                             "example": "{\r\n  \"_id\" : 2 ,\r\n  \"created_at\" : \"2011-10-11T23:59:43Z\" ,\r\n  \"info\" : \"Team Info\" ,\r\n  \"updated_at\" : \"2012-01-15T19:43:40Z\" ,\r\n  \"background\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/team-eg-background_image-089a407eb59fe3b2.png\" ,\r\n  \"banner\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/team-eg-banner_image-8089b058e6ffe4cd-640x125.png\" ,\r\n  \"logo\" : \"http://static-cdn.jtvnw.net/jtv_user_pictures/team-eg-team_logo_image-53eaf029dad7d5c9-300x300.png\" ,\r\n  \"_links\" : {\r\n    \"self\" : \"https://api.twitch.tv/kraken/teams/eg\"\r\n  } ,\r\n  \"display_name\" : \"Evil Geniuses\" ,\r\n  \"name\" : \"eg\"\r\n}",
                                             "schemaContent": "team"
                                         }
-                                    }
+                                    },
+                                    "description": "Successful"
                                 }
                             },
                             "protocols": [
@@ -2571,7 +3148,8 @@
                                             "example": "{\r\n  \"recorded_at\" : \"2012-08-09T20:49:47Z\" ,\r\n  \"title\" : \"VanillaTV - Sweden vs Russia - ETF2L Nations Cup - Snakewater [Map3] - Part 3\" ,\r\n  \"url\" : \"http://www.twitch.tv/vanillatv/b/328087483\" ,\r\n  \"_id\" : \"a328087483\" ,\r\n  \"_links\" : {\r\n    \"self\" : \"https://api.twitch.tv/kraken/videos/a328087483\" ,\r\n    \"owner\" : \"https://api.twitch.tv/kraken/channels/vanillatv\"\r\n  } ,\r\n  \"embed\" : \"{\r\n  \"recorded_at\": \"2012-08-09T20:49:47Z\",\r\n  \"title\": \"VanillaTV - Sweden vs Russia - ETF2L Nations Cup - Snakewater [Map3] - Part 3\",\r\n  \"url\": \"http://www.twitch.tv/vanillatv/b/328087483\",\r\n  \"_id\": \"a328087483\",\r\n  \"_links\": {\r\n      \"self\": \"https://api.twitch.tv/kraken/videos/a328087483\",\r\n      \"owner\": \"https://api.twitch.tv/kraken/channels/vanillatv\"\r\n  },\r\n  \"embed\": \"<object type=\"application/x-shockwave-flash\" height=\"300\" width=\"400\" id=\"clip_embed_player_flash\" data=\"http://www.justin.tv/widgets/archive_embed_player.swf\" bgcolor=\"#000000\">\r\n      <param name=\"movie\" value=\"http://www.justin.tv/widgets/archive_embed_player.swf\" />\r\n      <param name=\"allowScriptAccess\" value=\"always\" />\r\n      <param name=\"allowNetworking\" value=\"all\" />\r\n      <param name=\"allowFullScreen\" value=\"true\" />\r\n      <param name=\"flashvars\" value=\"channel=vanillatv&title=VanillaTV - Sweden vs Russia - ETF2L Nations Cup - Snakewater [Map3] - Part 3&auto_play=false&archive_id=328087483&start_volume=25\" />\r\n  </object>\",\r\n  \"views\": 93,\r\n  \"description\": \"VanillaTV - Sweden vs Russia - ETF2L Nations Cup - Snakewater [Map3] - Part 3\",\r\n  \"length\": 204,\r\n  \"game\": null,\r\n  \"preview\": \"http://static-cdn.jtvnw.net/jtv.thumbs/archive-328087483-320x240.jpg\"\r\n}\" ,\r\n  \"views\" : 93 ,\r\n  \"description\" : \"VanillaTV - Sweden vs Russia - ETF2L Nations Cup - Snakewater [Map3] - Part 3\" ,\r\n  \"length\" : 204 ,\r\n  \"game\" : null ,\r\n  \"preview\" : \"http://static-cdn.jtvnw.net/jtv.thumbs/archive-328087483-320x240.jpg\"\r\n}",
                                             "schemaContent": "video"
                                         }
-                                    }
+                                    },
+                                    "description": "Successful"
                                 }
                             },
                             "protocols": [
@@ -2615,7 +3193,8 @@
                                             "example": "{\r\n  \"_links\" : {\r\n    \"next\" : \"https://api.twitch.tv/kraken/videos/top?game=League+of+Legends&limit=10&offset=10&period=month\" ,\r\n    \"self\" : \"https://api.twitch.tv/kraken/videos/top?game=League+of+Legends&limit=10&offset=0&period=month\"\r\n  } ,\r\n  \"videos\" : [\r\n    {\r\n      \"recorded_at\" : \"2013-03-13T09:51:31Z\" ,\r\n      \"preview\" : \"http://static-cdn.jtvnw.net/jtv.thumbs/archive-377199700-320x240.jpg\" ,\r\n      \"description\" : \"dat trist jump\" ,\r\n      \"url\" : \"http://www.twitch.tv/chaoxlol/c/2023831\" ,\r\n      \"title\" : \"Almost the great escape\" ,\r\n      \"channel\" : {\r\n        \"name\" : \"chaoxlol\" ,\r\n        \"display_name\" : \"chaoxlol\"\r\n      } ,\r\n      \"length\" : 71 ,\r\n      \"game\" : \"League of Legends\" ,\r\n      \"views\" : 66436 ,\r\n      \"_id\" : \"c2023831\" ,\r\n      \"_links\" : {\r\n        \"channel\" : \"https://api.twitch.tv/kraken/channels/chaoxlol\" ,\r\n        \"self\" : \"https://api.twitch.tv/kraken/videos/c2023831\"\r\n      }\r\n    } , {\r\n      \"recorded_at\" : \"2013-03-13T09:51:31Z\" ,\r\n      \"preview\" : \"http://static-cdn.jtvnw.net/jtv.thumbs/archive-377199700-320x240.jpg\" ,\r\n      \"description\" : \"dat trist jump\" ,\r\n      \"url\" : \"http://www.twitch.tv/chaoxlol/c/2023831\" ,\r\n      \"title\" : \"Almost the great escape\" ,\r\n      \"channel\" : {\r\n        \"name\" : \"chaoxlol\" ,\r\n        \"display_name\" : \"chaoxlol\"\r\n      } ,\r\n      \"length\" : 71 ,\r\n      \"game\" : \"League of Legends\" ,\r\n      \"views\" : 66436 ,\r\n      \"_id\" : \"c2023831\" ,\r\n      \"_links\" : {\r\n        \"channel\" : \"https://api.twitch.tv/kraken/channels/chaoxlol\" ,\r\n        \"self\" : \"https://api.twitch.tv/kraken/videos/c2023831\"\r\n      }\r\n    }\r\n  ]\r\n}",
                                             "schemaContent": "{\r\n  \"required\" : true ,\r\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\r\n  \"type\" : \"object\" ,\r\n  \"properties\" : {\r\n    \"_links\" : {\r\n      \"type\" : \"object\" ,\r\n      \"required\" : false ,\r\n      \"properties\" : {\r\n        \"next\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        } ,\r\n        \"self\" : {\r\n          \"type\" : \"string\" ,\r\n          \"required\" : false\r\n        }\r\n      }\r\n    } ,\r\n    \"videos\" : {\r\n      \"type\" : \"array\" ,\r\n      \"required\" : false ,\r\n      \"items\" : \r\n        {\r\n          \"type\" : \"object\" ,\r\n          \"properties\" : {\r\n            \"recorded_at\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"preview\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"description\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"url\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"title\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"channel\" : {\r\n              \"type\" : \"object\" ,\r\n              \"required\" : false ,\r\n              \"properties\" : {\r\n                \"name\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                } ,\r\n                \"display_name\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                }\r\n              }\r\n            } ,\r\n            \"length\" : {\r\n              \"type\" : \"number\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"game\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"views\" : {\r\n              \"type\" : \"number\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"_id\" : {\r\n              \"type\" : \"string\" ,\r\n              \"required\" : false\r\n            } ,\r\n            \"_links\" : {\r\n              \"type\" : \"object\" ,\r\n              \"required\" : false ,\r\n              \"properties\" : {\r\n                \"channel\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                } ,\r\n                \"self\" : {\r\n                  \"type\" : \"string\" ,\r\n                  \"required\" : false\r\n                }\r\n              }\r\n            }\r\n          }\r\n        }\r\n      \r\n    }\r\n  }\r\n}"
                                         }
-                                    }
+                                    },
+                                    "description": "Successful"
                                 }
                             },
                             "protocols": [
@@ -2668,6 +3247,50 @@
                                             },
                                             "type": {
                                                 "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "limit": {
+                                    "name": "limit",
+                                    "displayName": "limit",
+                                    "type": "integer",
+                                    "required": false,
+                                    "default": 25,
+                                    "repeat": false,
+                                    "description": "Maximum number of objects in array. Default is 25. Maximum is 100.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "offset": {
+                                    "name": "offset",
+                                    "displayName": "offset",
+                                    "type": "integer",
+                                    "required": false,
+                                    "default": 0,
+                                    "repeat": false,
+                                    "description": "Object offset for pagination. Default is 0.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
                                             },
                                             "required": {
                                                 "insertedAsDefault": true

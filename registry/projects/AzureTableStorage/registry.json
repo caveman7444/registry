@@ -1,6 +1,29 @@
-{"apis": [{
+{"apis": {"RAMLFiles": [{
     "name": "Azure Table Storage",
+    "description": "descriptionexamle",
     "RAMLVersion": "0.8",
     "location": "https://raw.githubusercontent.com/raml-apis/AzureTableStorage/production/tablestorage.raml",
-    "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/AzureTableStorage/production/tablestorage.json"
-}]}
+    "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/AzureTableStorage/production/tablestorage.json",
+    "baseUri": "https://{accountName}.table.core.windows.net",
+    "version": "v1",
+    "securitySchemes": [{"customSchema": {
+        "name": "customSchema",
+        "type": "x-custom",
+        "describedBy": {"headers": {"Authorization": {
+            "name": "Authorization",
+            "displayName": "Authorization",
+            "type": "string",
+            "required": true,
+            "repeat": false,
+            "description": "Specifies the authentication scheme, account name, and signature. For more information, see Authentication for the Windows Azure Storage Services.",
+            "__METADATA__": {"primitiveValuesMeta": {
+                "displayName": {"calculated": true},
+                "type": {"insertedAsDefault": true},
+                "repeat": {"insertedAsDefault": true}
+            }}
+        }}}
+    }}],
+    "resourcesCount": 7,
+    "methodsCount": 14,
+    "developerPortalURI": "http://msdn.microsoft.com/en-us/library/azure/dd179423.aspx​"
+}]}}

@@ -1,14 +1,208 @@
-{"apis": [
+{"apis": {"RAMLFiles": [
     {
         "name": "Xero.com API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Xero/master/xeroAPI.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Xero/master/xeroAPI.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Xero/master/xeroAPI.json",
+        "baseUri": "https://api.xero.com/api.xro/2.0",
+        "version": "2.35",
+        "securitySchemes": [
+            {"public": {
+                "name": "public",
+                "type": "OAuth 1.0",
+                "description": "Public applications use the standard 3 legged OAuth process where a user can authorise your application to have access to their Xero organisation. Public applications can either be web based or desktop/mobile installed. Access tokens expire after 30 minutes.\n",
+                "describedBy": {
+                    "securedBy": [
+                        "public",
+                        "private"
+                    ],
+                    "queryParameters": {"access_token": {
+                        "name": "access_token",
+                        "displayName": "access_token",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
+                        "__METADATA__": {"primitiveValuesMeta": {
+                            "displayName": {"calculated": true},
+                            "type": {"insertedAsDefault": true},
+                            "required": {"insertedAsDefault": true},
+                            "repeat": {"insertedAsDefault": true}
+                        }}
+                    }},
+                    "headers": {"Authorization": {
+                        "name": "Authorization",
+                        "displayName": "Authorization",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Used to send a valid OAuth access token. Do not use together with\nthe \"access_token\" query string parameter.\n",
+                        "__METADATA__": {"primitiveValuesMeta": {
+                            "displayName": {"calculated": true},
+                            "type": {"insertedAsDefault": true},
+                            "required": {"insertedAsDefault": true},
+                            "repeat": {"insertedAsDefault": true}
+                        }}
+                    }},
+                    "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
+                },
+                "settings": {
+                    "requestTokenUri": "https://api.xero.com/oauth/RequestToken",
+                    "authorizationUri": "https://api.xero.com/oauth/Authorize",
+                    "tokenCredentialsUri": "https://api.xero.com/oauth/AccessToken"
+                }
+            }},
+            {"private": {
+                "name": "private",
+                "type": "OAuth 1.0",
+                "description": "Private applications use 2 legged OAuth and bypass the user authorization workflow in the standard OAuth process. Private applications are linked to a single Xero organisation which is chosen when you register your application. Access tokens for private applications don't expire unless the application is deleted or disconnected from within the Xero organisation.\nYou can create a maximum of 2 private applications against a single Xero organisation.\n",
+                "describedBy": {
+                    "securedBy": [
+                        "public",
+                        "private"
+                    ],
+                    "queryParameters": {"access_token": {
+                        "name": "access_token",
+                        "displayName": "access_token",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
+                        "__METADATA__": {"primitiveValuesMeta": {
+                            "displayName": {"calculated": true},
+                            "type": {"insertedAsDefault": true},
+                            "required": {"insertedAsDefault": true},
+                            "repeat": {"insertedAsDefault": true}
+                        }}
+                    }},
+                    "headers": {"Authorization": {
+                        "name": "Authorization",
+                        "displayName": "Authorization",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"access_token\" query string parameter.\n",
+                        "__METADATA__": {"primitiveValuesMeta": {
+                            "displayName": {"calculated": true},
+                            "type": {"insertedAsDefault": true},
+                            "required": {"insertedAsDefault": true},
+                            "repeat": {"insertedAsDefault": true}
+                        }}
+                    }},
+                    "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
+                },
+                "settings": {
+                    "requestTokenUri": "https://api.xero.com/oauth/RequestToken",
+                    "authorizationUri": "https://api.xero.com/oauth/Authorize",
+                    "tokenCredentialsUri": "https://api.xero.com/oauth/AccessToken"
+                }
+            }}
+        ],
+        "resourcesCount": 47,
+        "methodsCount": 71
     },
     {
         "name": "Xero.com API",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Xero/staging/xeroAPI.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Xero/staging/xeroAPI.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Xero/staging/xeroAPI.json",
+        "baseUri": "https://api.xero.com/api.xro/2.0",
+        "version": "2.35",
+        "securitySchemes": [
+            {"public": {
+                "name": "public",
+                "type": "OAuth 1.0",
+                "description": "Public applications use the standard 3 legged OAuth process where a user can authorise your application to have access to their Xero organisation. Public applications can either be web based or desktop/mobile installed. Access tokens expire after 30 minutes.\n",
+                "describedBy": {
+                    "securedBy": [
+                        "public",
+                        "private"
+                    ],
+                    "queryParameters": {"access_token": {
+                        "name": "access_token",
+                        "displayName": "access_token",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
+                        "__METADATA__": {"primitiveValuesMeta": {
+                            "displayName": {"calculated": true},
+                            "type": {"insertedAsDefault": true},
+                            "required": {"insertedAsDefault": true},
+                            "repeat": {"insertedAsDefault": true}
+                        }}
+                    }},
+                    "headers": {"Authorization": {
+                        "name": "Authorization",
+                        "displayName": "Authorization",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Used to send a valid OAuth access token. Do not use together with\nthe \"access_token\" query string parameter.\n",
+                        "__METADATA__": {"primitiveValuesMeta": {
+                            "displayName": {"calculated": true},
+                            "type": {"insertedAsDefault": true},
+                            "required": {"insertedAsDefault": true},
+                            "repeat": {"insertedAsDefault": true}
+                        }}
+                    }},
+                    "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
+                },
+                "settings": {
+                    "requestTokenUri": "https://api.xero.com/oauth/RequestToken",
+                    "authorizationUri": "https://api.xero.com/oauth/Authorize",
+                    "tokenCredentialsUri": "https://api.xero.com/oauth/AccessToken"
+                }
+            }},
+            {"private": {
+                "name": "private",
+                "type": "OAuth 1.0",
+                "description": "Private applications use 2 legged OAuth and bypass the user authorization workflow in the standard OAuth process. Private applications are linked to a single Xero organisation which is chosen when you register your application. Access tokens for private applications don't expire unless the application is deleted or disconnected from within the Xero organisation.\nYou can create a maximum of 2 private applications against a single Xero organisation.\n",
+                "describedBy": {
+                    "securedBy": [
+                        "public",
+                        "private"
+                    ],
+                    "queryParameters": {"access_token": {
+                        "name": "access_token",
+                        "displayName": "access_token",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"Authorization\" header\n",
+                        "__METADATA__": {"primitiveValuesMeta": {
+                            "displayName": {"calculated": true},
+                            "type": {"insertedAsDefault": true},
+                            "required": {"insertedAsDefault": true},
+                            "repeat": {"insertedAsDefault": true}
+                        }}
+                    }},
+                    "headers": {"Authorization": {
+                        "name": "Authorization",
+                        "displayName": "Authorization",
+                        "type": "string",
+                        "required": false,
+                        "repeat": false,
+                        "description": "Used to send a valid OAuth 2 access token. Do not use together with\nthe \"access_token\" query string parameter.\n",
+                        "__METADATA__": {"primitiveValuesMeta": {
+                            "displayName": {"calculated": true},
+                            "type": {"insertedAsDefault": true},
+                            "required": {"insertedAsDefault": true},
+                            "repeat": {"insertedAsDefault": true}
+                        }}
+                    }},
+                    "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
+                },
+                "settings": {
+                    "requestTokenUri": "https://api.xero.com/oauth/RequestToken",
+                    "authorizationUri": "https://api.xero.com/oauth/Authorize",
+                    "tokenCredentialsUri": "https://api.xero.com/oauth/AccessToken"
+                }
+            }}
+        ],
+        "resourcesCount": 47,
+        "methodsCount": 71
     }
-]}
+]}}

@@ -680,6 +680,9 @@
         {
             "relativeUri": "/contacts/{userEmail}/full",
             "type": "emailed",
+            "is": [
+                "versioned"
+            ],
             "securedBy": [
                 "oauth_2_0",
                 "oauth_1_0"
@@ -687,20 +690,14 @@
             "uriParameters": {
                 "userEmail": {
                     "name": "userEmail",
-                    "displayName": "userEmail",
+                    "displayName": "User e-mail",
                     "type": "string",
                     "required": true,
                     "repeat": false,
+                    "description": "User e-mail for performing operations.\n**Note**: The special userEmail value __default__ can be used to refer to the authenticated user.\n",
                     "__METADATA__": {
-                        "calculated": true,
                         "primitiveValuesMeta": {
-                            "displayName": {
-                                "calculated": true
-                            },
                             "type": {
-                                "insertedAsDefault": true
-                            },
-                            "required": {
                                 "insertedAsDefault": true
                             },
                             "repeat": {
@@ -718,7 +715,9 @@
                             "body": {
                                 "application/atom+xml": {
                                     "name": "application/atom+xml",
-                                    "example": "<?xml version='1.0' encoding='UTF-8'?>\n<feed xmlns='http://www.w3.org/2005/Atom'\n    xmlns:openSearch='http://a9.com/-/spec/opensearch/1.1/'\n    xmlns:gContact='http://schemas.google.com/contact/2008'\n    xmlns:batch='http://schemas.google.com/gdata/batch'\n    xmlns:gd='http://schemas.google.com/g/2005'\n    gd:etag='feedEtag'>\n  <id>userEmail</id>\n  <updated>2008-12-10T10:04:15.446Z</updated>\n  <category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/contact/2008#contact'/>\n  <title>User's Contacts</title>\n  <link rel='http://schemas.google.com/g/2005#feed' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/contacts/userEmail/full'/>\n  <link rel='http://schemas.google.com/g/2005#post' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/contacts/userEmail/full'/>\n  <link rel='http://schemas.google.com/g/2005#batch' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/contacts/userEmail/full/batch'/>\n  <link rel='self' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/contacts/userEmail/full?max-results=25'/>\n  <author>\n    <name>User</name>\n    <email>userEmail</email>\n  </author>\n  <generator version='1.0' uri='http://www.google.com/m8/feeds'>\n    Contacts\n  </generator>\n  <openSearch:totalResults>1</openSearch:totalResults>\n  <openSearch:startIndex>1</openSearch:startIndex>\n  <openSearch:itemsPerPage>25</openSearch:itemsPerPage>\n  <entry gd:etag='contactEtag'>\n    <id>\n      http://www.google.com/m8/feeds/contacts/userEmail/base/contactId\n    </id>\n    <updated>2008-12-10T04:45:03.331Z</updated>\n    <app:edited xmlns:app='http://www.w3.org/2007/app'>2008-12-10T04:45:03.331Z</app:edited>\n    <category scheme='http://schemas.google.com/g/2005#kind'\n        term='http://schemas.google.com/contact/2008#contact'/>\n    <title>Fitzwilliam Darcy</title>\n    <gd:name>\n      <gd:fullName>Fitzwilliam Darcy</gd:fullName>\n    </gd:name>\n    <link rel='http://schemas.google.com/contacts/2008/rel#photo' type='image/*'\n        href='https://www.google.com/m8/feeds/photos/media/userEmail/contactId'\n        gd:etag='photoEtag'/>\n    <link rel='self' type='application/atom+xml'\n        href='https://www.google.com/m8/feeds/contacts/userEmail/full/contactId'/>\n    <link rel='edit' type='application/atom+xml'\n        href='https://www.google.com/m8/feeds/contacts/userEmail/full/contactId'/>\n    <gd:phoneNumber rel='http://schemas.google.com/g/2005#home'\n        primary='true'>\n      456\n    </gd:phoneNumber>\n    <gd:extendedProperty name='pet' value='hamster'/>\n    <gContact:groupMembershipInfo deleted='false'\n        href='http://www.google.com/m8/feeds/groups/userEmail/base/groupId'/>\n  </entry>\n  <entry gd:etag='contactEtag'>\n    <id>\n      http://www.google.com/m8/feeds/contacts/userEmail/base/contactId2\n    </id>\n    <updated>2008-12-10T04:45:03.331Z</updated>\n    <app:edited xmlns:app='http://www.w3.org/2007/app'>2008-12-10T04:45:03.331Z</app:edited>\n    <category scheme='http://schemas.google.com/g/2005#kind'\n        term='http://schemas.google.com/contact/2008#contact'/>\n    <title>John Doe</title>\n    <gd:name>\n      <gd:fullName>John Doe</gd:fullName>\n    </gd:name>\n    <link rel='http://schemas.google.com/contacts/2008/rel#photo' type='image/*'\n        href='https://www.google.com/m8/feeds/photos/media/userEmail/contactId2'\n        gd:etag='photoEtag'/>\n    <link rel='self' type='application/atom+xml'\n        href='https://www.google.com/m8/feeds/contacts/userEmail/full/contactId2'/>\n    <link rel='edit' type='application/atom+xml'\n        href='https://www.google.com/m8/feeds/contacts/userEmail/full/contactId2'/>\n    <gd:phoneNumber rel='http://schemas.google.com/g/2005#home'\n        primary='true'>\n      872364827\n    </gd:phoneNumber>\n    <gd:extendedProperty name='pet' value='hamster'/>\n    <gContact:groupMembershipInfo deleted='false'\n        href='http://www.google.com/m8/feeds/groups/userEmail/base/groupId'/>\n  </entry>\n</feed>\n"
+                                    "schema": "atom",
+                                    "example": "<?xml version='1.0' encoding='UTF-8'?>\n<feed xmlns='http://www.w3.org/2005/Atom'\n    xmlns:openSearch='http://a9.com/-/spec/opensearch/1.1/'\n    xmlns:gContact='http://schemas.google.com/contact/2008'\n    xmlns:batch='http://schemas.google.com/gdata/batch'\n    xmlns:gd='http://schemas.google.com/g/2005'\n    gd:etag='feedEtag'>\n  <id>userEmail</id>\n  <updated>2008-12-10T10:04:15.446Z</updated>\n  <category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/contact/2008#contact'/>\n  <title>User's Contacts</title>\n  <link rel='http://schemas.google.com/g/2005#feed' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/contacts/userEmail/full'/>\n  <link rel='http://schemas.google.com/g/2005#post' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/contacts/userEmail/full'/>\n  <link rel='http://schemas.google.com/g/2005#batch' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/contacts/userEmail/full/batch'/>\n  <link rel='self' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/contacts/userEmail/full?max-results=25'/>\n  <author>\n    <name>User</name>\n    <email>userEmail</email>\n  </author>\n  <generator version='1.0' uri='http://www.google.com/m8/feeds'>\n    Contacts\n  </generator>\n  <openSearch:totalResults>1</openSearch:totalResults>\n  <openSearch:startIndex>1</openSearch:startIndex>\n  <openSearch:itemsPerPage>25</openSearch:itemsPerPage>\n  <entry gd:etag='contactEtag'>\n    <id>\n      http://www.google.com/m8/feeds/contacts/userEmail/base/contactId\n    </id>\n    <updated>2008-12-10T04:45:03.331Z</updated>\n    <app:edited xmlns:app='http://www.w3.org/2007/app'>2008-12-10T04:45:03.331Z</app:edited>\n    <category scheme='http://schemas.google.com/g/2005#kind'\n        term='http://schemas.google.com/contact/2008#contact'/>\n    <title>Fitzwilliam Darcy</title>\n    <gd:name>\n      <gd:fullName>Fitzwilliam Darcy</gd:fullName>\n    </gd:name>\n    <link rel='http://schemas.google.com/contacts/2008/rel#photo' type='image/*'\n        href='https://www.google.com/m8/feeds/photos/media/userEmail/contactId'\n        gd:etag='photoEtag'/>\n    <link rel='self' type='application/atom+xml'\n        href='https://www.google.com/m8/feeds/contacts/userEmail/full/contactId'/>\n    <link rel='edit' type='application/atom+xml'\n        href='https://www.google.com/m8/feeds/contacts/userEmail/full/contactId'/>\n    <gd:phoneNumber rel='http://schemas.google.com/g/2005#home'\n        primary='true'>\n      456\n    </gd:phoneNumber>\n    <gd:extendedProperty name='pet' value='hamster'/>\n    <gContact:groupMembershipInfo deleted='false'\n        href='http://www.google.com/m8/feeds/groups/userEmail/base/groupId'/>\n  </entry>\n  <entry gd:etag='contactEtag'>\n    <id>\n      http://www.google.com/m8/feeds/contacts/userEmail/base/contactId2\n    </id>\n    <updated>2008-12-10T04:45:03.331Z</updated>\n    <app:edited xmlns:app='http://www.w3.org/2007/app'>2008-12-10T04:45:03.331Z</app:edited>\n    <category scheme='http://schemas.google.com/g/2005#kind'\n        term='http://schemas.google.com/contact/2008#contact'/>\n    <title>John Doe</title>\n    <gd:name>\n      <gd:fullName>John Doe</gd:fullName>\n    </gd:name>\n    <link rel='http://schemas.google.com/contacts/2008/rel#photo' type='image/*'\n        href='https://www.google.com/m8/feeds/photos/media/userEmail/contactId2'\n        gd:etag='photoEtag'/>\n    <link rel='self' type='application/atom+xml'\n        href='https://www.google.com/m8/feeds/contacts/userEmail/full/contactId2'/>\n    <link rel='edit' type='application/atom+xml'\n        href='https://www.google.com/m8/feeds/contacts/userEmail/full/contactId2'/>\n    <gd:phoneNumber rel='http://schemas.google.com/g/2005#home'\n        primary='true'>\n      872364827\n    </gd:phoneNumber>\n    <gd:extendedProperty name='pet' value='hamster'/>\n    <gContact:groupMembershipInfo deleted='false'\n        href='http://www.google.com/m8/feeds/groups/userEmail/base/groupId'/>\n  </entry>\n</feed>\n",
+                                    "schemaContent": "atom"
                                 }
                             }
                         }
@@ -730,6 +729,306 @@
                         "oauth_2_0",
                         "oauth_1_0"
                     ],
+                    "queryParameters": {
+                        "alt": {
+                            "name": "alt",
+                            "displayName": "alt",
+                            "type": "string",
+                            "required": false,
+                            "default": "atom",
+                            "repeat": false,
+                            "description": "The type of feed to return, such as atom (the default), rss, or json.\n",
+                            "enum": [
+                                "atom",
+                                "rss",
+                                "json"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "q": {
+                            "name": "q",
+                            "displayName": "q",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Fulltext query on contacts data fields. The API currently supports simple search queries such as q=term1 term2 term3 and\nexact search queries such as q=\"term1 term2 term3\"\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "max-results": {
+                            "name": "max-results",
+                            "displayName": "max-results",
+                            "type": "integer",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The maximum number of entries to return. If you want to receive all of the contacts, rather than only the default maximum,\nyou can specify a very large number for max-results.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "start-index": {
+                            "name": "start-index",
+                            "displayName": "start-index",
+                            "type": "integer",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The 1-based index of the first result to be retrieved (for paging).\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "updated-min": {
+                            "name": "updated-min",
+                            "displayName": "updated-min",
+                            "type": "date",
+                            "required": false,
+                            "example": "2007-03-16T00:00:00",
+                            "repeat": false,
+                            "description": "The lower bound on entry update dates.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "orderby": {
+                            "name": "orderby",
+                            "displayName": "orderby",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Sorting criterion.\n",
+                            "enum": [
+                                "lastmodified"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "showdeleted": {
+                            "name": "showdeleted",
+                            "displayName": "showdeleted",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Include deleted contacts in the returned contacts feed. Deleted contacts are shown as entries that contain nothing\nbut an <atom:id> element and a <gd:deleted> element.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "requirealldeleted": {
+                            "name": "requirealldeleted",
+                            "displayName": "requirealldeleted",
+                            "type": "string",
+                            "required": false,
+                            "default": false,
+                            "repeat": false,
+                            "description": "Only relevant if showdeleted and updated-min are also provided. It dictates the behavior of the server in case i\ndetects that placeholders of some entries deleted since the point in time specified as updated-min may have been lost.\nIf requirealldeleted is false, the server simply returns all the placeholders it still knows about. If true, the server\nreturns the 410 HTTP response code.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "sortorder": {
+                            "name": "sortorder",
+                            "displayName": "sortorder",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Sorting order direction.\n",
+                            "enum": [
+                                "ascending",
+                                "descending"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "group": {
+                            "name": "group",
+                            "displayName": "group",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Constrains the results to only the contacts belonging to the group specified. Value of this parameter specifies group ID\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "v": {
+                            "name": "v",
+                            "displayName": "v",
+                            "type": "string",
+                            "required": false,
+                            "example": "3.0",
+                            "repeat": false,
+                            "description": "Alternatively, if you can't set HTTP headers, you can specify v=3.0 as a query parameter in the URL.\nThe HTTP header is preferred where possible.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "headers": {
+                        "GData-Version": {
+                            "name": "GData-Version",
+                            "displayName": "GData-Version",
+                            "type": "string",
+                            "required": false,
+                            "example": "3.0",
+                            "repeat": false,
+                            "description": "Version of Google Contacts API\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "To retrieve all of a user's contacts, send an authorized GET request.\n",
                     "method": "get",
                     "is": [
@@ -753,7 +1052,9 @@
                             "body": {
                                 "application/atom+xml": {
                                     "name": "application/atom+xml",
-                                    "example": "<?xml version='1.0' encoding='UTF-8'?>\n<atom:entry xmlns:atom='http://www.w3.org/2005/Atom'\n    xmlns:gd='http://schemas.google.com/g/2005'>\n  <id>http://www.google.com/m8/feeds/contacts/userEmail/base/contactId</id>\n  <updated>2008-12-10T04:45:03.331Z</updated>\n  <app:edited xmlns:app='http://www.w3.org/2007/app'>2008-12-10T04:45:03.331Z</app:edited>\n  <category scheme='http://schemas.google.com/g/2005#kind'\n    term='http://schemas.google.com/contact/2008#contact'/>\n  <title>Elizabeth Bennet</title>\n  <gd:name>\n     <gd:givenName>Elizabeth</gd:givenName>\n     <gd:familyName>Bennet</gd:familyName>\n     <gd:fullName>Elizabeth Bennet</gd:fullName>\n  </gd:name>\n  <link rel='http://schemas.google.com/contacts/2008/rel#photo' type='image/*'\n    href='https://www.google.com/m8/feeds/photos/media/userEmail/contactId'/>\n  <link rel='self' type='application/atom+xml'\n    href='https://www.google.com/m8/feeds/contacts/userEmail/full/contactId'/>\n  <link rel='edit' type='application/atom+xml'\n    href='https://www.google.com/m8/feeds/contacts/userEmail/full/contactId'/>\n  <atom:content type='text'>Notes</atom:content>\n  <gd:email rel='http://schemas.google.com/g/2005#work'\n    primary='true'\n    address='liz@gmail.com' displayName='E. Bennet'/>\n  <gd:email rel='http://schemas.google.com/g/2005#home'\n    address='liz@example.org'/>\n  <gd:phoneNumber rel='http://schemas.google.com/g/2005#work'\n    primary='true'>\n    (206)555-1212\n  </gd:phoneNumber>\n  <gd:phoneNumber rel='http://schemas.google.com/g/2005#home'>\n    (206)555-1213\n  </gd:phoneNumber>\n  <gd:im address='liz@gmail.com'\n    protocol='http://schemas.google.com/g/2005#GOOGLE_TALK'\n    primary='true'\n    rel='http://schemas.google.com/g/2005#home'/>\n  <gd:structuredPostalAddress\n      rel='http://schemas.google.com/g/2005#work'\n      primary='true'>\n    <gd:city>Mountain View</gd:city>\n    <gd:street>1600 Amphitheatre Pkwy</gd:street>\n    <gd:region>CA</gd:region>\n    <gd:postcode>94043</gd:postcode>\n    <gd:country>United States</gd:country>\n    <gd:formattedAddress>\n      1600 Amphitheatre Pkwy Mountain View\n    </gd:formattedAddress>\n  </gd:structuredPostalAddress>\n</atom:entry>\n"
+                                    "schema": "atom",
+                                    "example": "<?xml version='1.0' encoding='UTF-8'?>\n<atom:entry xmlns:atom='http://www.w3.org/2005/Atom'\n    xmlns:gd='http://schemas.google.com/g/2005'>\n  <id>http://www.google.com/m8/feeds/contacts/userEmail/base/contactId</id>\n  <updated>2008-12-10T04:45:03.331Z</updated>\n  <app:edited xmlns:app='http://www.w3.org/2007/app'>2008-12-10T04:45:03.331Z</app:edited>\n  <category scheme='http://schemas.google.com/g/2005#kind'\n    term='http://schemas.google.com/contact/2008#contact'/>\n  <title>Elizabeth Bennet</title>\n  <gd:name>\n     <gd:givenName>Elizabeth</gd:givenName>\n     <gd:familyName>Bennet</gd:familyName>\n     <gd:fullName>Elizabeth Bennet</gd:fullName>\n  </gd:name>\n  <link rel='http://schemas.google.com/contacts/2008/rel#photo' type='image/*'\n    href='https://www.google.com/m8/feeds/photos/media/userEmail/contactId'/>\n  <link rel='self' type='application/atom+xml'\n    href='https://www.google.com/m8/feeds/contacts/userEmail/full/contactId'/>\n  <link rel='edit' type='application/atom+xml'\n    href='https://www.google.com/m8/feeds/contacts/userEmail/full/contactId'/>\n  <atom:content type='text'>Notes</atom:content>\n  <gd:email rel='http://schemas.google.com/g/2005#work'\n    primary='true'\n    address='liz@gmail.com' displayName='E. Bennet'/>\n  <gd:email rel='http://schemas.google.com/g/2005#home'\n    address='liz@example.org'/>\n  <gd:phoneNumber rel='http://schemas.google.com/g/2005#work'\n    primary='true'>\n    (206)555-1212\n  </gd:phoneNumber>\n  <gd:phoneNumber rel='http://schemas.google.com/g/2005#home'>\n    (206)555-1213\n  </gd:phoneNumber>\n  <gd:im address='liz@gmail.com'\n    protocol='http://schemas.google.com/g/2005#GOOGLE_TALK'\n    primary='true'\n    rel='http://schemas.google.com/g/2005#home'/>\n  <gd:structuredPostalAddress\n      rel='http://schemas.google.com/g/2005#work'\n      primary='true'>\n    <gd:city>Mountain View</gd:city>\n    <gd:street>1600 Amphitheatre Pkwy</gd:street>\n    <gd:region>CA</gd:region>\n    <gd:postcode>94043</gd:postcode>\n    <gd:country>United States</gd:country>\n    <gd:formattedAddress>\n      1600 Amphitheatre Pkwy Mountain View\n    </gd:formattedAddress>\n  </gd:structuredPostalAddress>\n</atom:entry>\n",
+                                    "schemaContent": "atom"
                                 }
                             },
                             "description": "Created"
@@ -772,6 +1073,60 @@
                         "oauth_2_0",
                         "oauth_1_0"
                     ],
+                    "queryParameters": {
+                        "v": {
+                            "name": "v",
+                            "displayName": "v",
+                            "type": "string",
+                            "required": false,
+                            "example": "3.0",
+                            "repeat": false,
+                            "description": "Alternatively, if you can't set HTTP headers, you can specify v=3.0 as a query parameter in the URL.\nThe HTTP header is preferred where possible.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "headers": {
+                        "GData-Version": {
+                            "name": "GData-Version",
+                            "displayName": "GData-Version",
+                            "type": "string",
+                            "required": false,
+                            "example": "3.0",
+                            "repeat": false,
+                            "description": "Version of Google Contacts API\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "To create a new contact, send an authorized POST request to the user's contacts feed URL with contact data in the body.\n",
                     "method": "post",
                     "__METADATA__": {
@@ -790,6 +1145,9 @@
                 {
                     "relativeUri": "/{contactId}",
                     "type": "base",
+                    "is": [
+                        "versioned"
+                    ],
                     "securedBy": [
                         "oauth_2_0",
                         "oauth_1_0"
@@ -822,7 +1180,9 @@
                                     "body": {
                                         "application/atom+xml": {
                                             "name": "application/atom+xml",
-                                            "example": "<?xml version='1.0' encoding='UTF-8'?>\n<atom:entry xmlns:atom='http://www.w3.org/2005/Atom'\n    xmlns:gd='http://schemas.google.com/g/2005'>\n  <id>http://www.google.com/m8/feeds/contacts/userEmail/base/contactId</id>\n  <updated>2008-12-10T04:45:03.331Z</updated>\n  <app:edited xmlns:app='http://www.w3.org/2007/app'>2008-12-10T04:45:03.331Z</app:edited>\n  <category scheme='http://schemas.google.com/g/2005#kind'\n    term='http://schemas.google.com/contact/2008#contact'/>\n  <title>Elizabeth Bennet</title>\n  <gd:name>\n     <gd:givenName>Elizabeth</gd:givenName>\n     <gd:familyName>Bennet</gd:familyName>\n     <gd:fullName>Elizabeth Bennet</gd:fullName>\n  </gd:name>\n  <link rel='http://schemas.google.com/contacts/2008/rel#photo' type='image/*'\n    href='https://www.google.com/m8/feeds/photos/media/userEmail/contactId'/>\n  <link rel='self' type='application/atom+xml'\n    href='https://www.google.com/m8/feeds/contacts/userEmail/full/contactId'/>\n  <link rel='edit' type='application/atom+xml'\n    href='https://www.google.com/m8/feeds/contacts/userEmail/full/contactId'/>\n  <atom:content type='text'>Notes</atom:content>\n  <gd:email rel='http://schemas.google.com/g/2005#work'\n    primary='true'\n    address='liz@gmail.com' displayName='E. Bennet'/>\n  <gd:email rel='http://schemas.google.com/g/2005#home'\n    address='liz@example.org'/>\n  <gd:phoneNumber rel='http://schemas.google.com/g/2005#work'\n    primary='true'>\n    (206)555-1212\n  </gd:phoneNumber>\n  <gd:phoneNumber rel='http://schemas.google.com/g/2005#home'>\n    (206)555-1213\n  </gd:phoneNumber>\n  <gd:im address='liz@gmail.com'\n    protocol='http://schemas.google.com/g/2005#GOOGLE_TALK'\n    primary='true'\n    rel='http://schemas.google.com/g/2005#home'/>\n  <gd:structuredPostalAddress\n      rel='http://schemas.google.com/g/2005#work'\n      primary='true'>\n    <gd:city>Mountain View</gd:city>\n    <gd:street>1600 Amphitheatre Pkwy</gd:street>\n    <gd:region>CA</gd:region>\n    <gd:postcode>94043</gd:postcode>\n    <gd:country>United States</gd:country>\n    <gd:formattedAddress>\n      1600 Amphitheatre Pkwy Mountain View\n    </gd:formattedAddress>\n  </gd:structuredPostalAddress>\n</atom:entry>\n"
+                                            "schema": "atom",
+                                            "example": "<?xml version='1.0' encoding='UTF-8'?>\n<atom:entry xmlns:atom='http://www.w3.org/2005/Atom'\n    xmlns:gd='http://schemas.google.com/g/2005'>\n  <id>http://www.google.com/m8/feeds/contacts/userEmail/base/contactId</id>\n  <updated>2008-12-10T04:45:03.331Z</updated>\n  <app:edited xmlns:app='http://www.w3.org/2007/app'>2008-12-10T04:45:03.331Z</app:edited>\n  <category scheme='http://schemas.google.com/g/2005#kind'\n    term='http://schemas.google.com/contact/2008#contact'/>\n  <title>Elizabeth Bennet</title>\n  <gd:name>\n     <gd:givenName>Elizabeth</gd:givenName>\n     <gd:familyName>Bennet</gd:familyName>\n     <gd:fullName>Elizabeth Bennet</gd:fullName>\n  </gd:name>\n  <link rel='http://schemas.google.com/contacts/2008/rel#photo' type='image/*'\n    href='https://www.google.com/m8/feeds/photos/media/userEmail/contactId'/>\n  <link rel='self' type='application/atom+xml'\n    href='https://www.google.com/m8/feeds/contacts/userEmail/full/contactId'/>\n  <link rel='edit' type='application/atom+xml'\n    href='https://www.google.com/m8/feeds/contacts/userEmail/full/contactId'/>\n  <atom:content type='text'>Notes</atom:content>\n  <gd:email rel='http://schemas.google.com/g/2005#work'\n    primary='true'\n    address='liz@gmail.com' displayName='E. Bennet'/>\n  <gd:email rel='http://schemas.google.com/g/2005#home'\n    address='liz@example.org'/>\n  <gd:phoneNumber rel='http://schemas.google.com/g/2005#work'\n    primary='true'>\n    (206)555-1212\n  </gd:phoneNumber>\n  <gd:phoneNumber rel='http://schemas.google.com/g/2005#home'>\n    (206)555-1213\n  </gd:phoneNumber>\n  <gd:im address='liz@gmail.com'\n    protocol='http://schemas.google.com/g/2005#GOOGLE_TALK'\n    primary='true'\n    rel='http://schemas.google.com/g/2005#home'/>\n  <gd:structuredPostalAddress\n      rel='http://schemas.google.com/g/2005#work'\n      primary='true'>\n    <gd:city>Mountain View</gd:city>\n    <gd:street>1600 Amphitheatre Pkwy</gd:street>\n    <gd:region>CA</gd:region>\n    <gd:postcode>94043</gd:postcode>\n    <gd:country>United States</gd:country>\n    <gd:formattedAddress>\n      1600 Amphitheatre Pkwy Mountain View\n    </gd:formattedAddress>\n  </gd:structuredPostalAddress>\n</atom:entry>\n",
+                                            "schemaContent": "atom"
                                         }
                                     }
                                 }
@@ -834,6 +1194,60 @@
                                 "oauth_2_0",
                                 "oauth_1_0"
                             ],
+                            "queryParameters": {
+                                "v": {
+                                    "name": "v",
+                                    "displayName": "v",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "3.0",
+                                    "repeat": false,
+                                    "description": "Alternatively, if you can't set HTTP headers, you can specify v=3.0 as a query parameter in the URL.\nThe HTTP header is preferred where possible.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "headers": {
+                                "GData-Version": {
+                                    "name": "GData-Version",
+                                    "displayName": "GData-Version",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "3.0",
+                                    "repeat": false,
+                                    "description": "Version of Google Contacts API\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "To retrieve a single contact, send an authorized GET request to the contact's selfLink URL.\n",
                             "method": "get",
                             "__METADATA__": {
@@ -854,9 +1268,15 @@
                                     "body": {
                                         "application/atom+xml": {
                                             "name": "application/atom+xml",
-                                            "example": "<?xml version='1.0' encoding='UTF-8'?>\n<atom:entry xmlns:atom='http://www.w3.org/2005/Atom'\n    xmlns:gd='http://schemas.google.com/g/2005'>\n  <id>http://www.google.com/m8/feeds/contacts/userEmail/base/contactId</id>\n  <updated>2008-12-10T04:45:03.331Z</updated>\n  <app:edited xmlns:app='http://www.w3.org/2007/app'>2008-12-10T04:45:03.331Z</app:edited>\n  <category scheme='http://schemas.google.com/g/2005#kind'\n    term='http://schemas.google.com/contact/2008#contact'/>\n  <title>Elizabeth Bennet</title>\n  <gd:name>\n     <gd:givenName>Elizabeth</gd:givenName>\n     <gd:familyName>Bennet</gd:familyName>\n     <gd:fullName>Elizabeth Bennet</gd:fullName>\n  </gd:name>\n  <link rel='http://schemas.google.com/contacts/2008/rel#photo' type='image/*'\n    href='https://www.google.com/m8/feeds/photos/media/userEmail/contactId'/>\n  <link rel='self' type='application/atom+xml'\n    href='https://www.google.com/m8/feeds/contacts/userEmail/full/contactId'/>\n  <link rel='edit' type='application/atom+xml'\n    href='https://www.google.com/m8/feeds/contacts/userEmail/full/contactId'/>\n  <atom:content type='text'>Notes</atom:content>\n  <gd:email rel='http://schemas.google.com/g/2005#work'\n    primary='true'\n    address='liz@gmail.com' displayName='E. Bennet'/>\n  <gd:email rel='http://schemas.google.com/g/2005#home'\n    address='liz@example.org'/>\n  <gd:phoneNumber rel='http://schemas.google.com/g/2005#work'\n    primary='true'>\n    (206)555-1212\n  </gd:phoneNumber>\n  <gd:phoneNumber rel='http://schemas.google.com/g/2005#home'>\n    (206)555-1213\n  </gd:phoneNumber>\n  <gd:im address='liz@gmail.com'\n    protocol='http://schemas.google.com/g/2005#GOOGLE_TALK'\n    primary='true'\n    rel='http://schemas.google.com/g/2005#home'/>\n  <gd:structuredPostalAddress\n      rel='http://schemas.google.com/g/2005#work'\n      primary='true'>\n    <gd:city>Mountain View</gd:city>\n    <gd:street>1600 Amphitheatre Pkwy</gd:street>\n    <gd:region>CA</gd:region>\n    <gd:postcode>94043</gd:postcode>\n    <gd:country>United States</gd:country>\n    <gd:formattedAddress>\n      1600 Amphitheatre Pkwy Mountain View\n    </gd:formattedAddress>\n  </gd:structuredPostalAddress>\n</atom:entry>\n"
+                                            "schema": "atom",
+                                            "example": "<?xml version='1.0' encoding='UTF-8'?>\n<atom:entry xmlns:atom='http://www.w3.org/2005/Atom'\n    xmlns:gd='http://schemas.google.com/g/2005'>\n  <id>http://www.google.com/m8/feeds/contacts/userEmail/base/contactId</id>\n  <updated>2008-12-10T04:45:03.331Z</updated>\n  <app:edited xmlns:app='http://www.w3.org/2007/app'>2008-12-10T04:45:03.331Z</app:edited>\n  <category scheme='http://schemas.google.com/g/2005#kind'\n    term='http://schemas.google.com/contact/2008#contact'/>\n  <title>Elizabeth Bennet</title>\n  <gd:name>\n     <gd:givenName>Elizabeth</gd:givenName>\n     <gd:familyName>Bennet</gd:familyName>\n     <gd:fullName>Elizabeth Bennet</gd:fullName>\n  </gd:name>\n  <link rel='http://schemas.google.com/contacts/2008/rel#photo' type='image/*'\n    href='https://www.google.com/m8/feeds/photos/media/userEmail/contactId'/>\n  <link rel='self' type='application/atom+xml'\n    href='https://www.google.com/m8/feeds/contacts/userEmail/full/contactId'/>\n  <link rel='edit' type='application/atom+xml'\n    href='https://www.google.com/m8/feeds/contacts/userEmail/full/contactId'/>\n  <atom:content type='text'>Notes</atom:content>\n  <gd:email rel='http://schemas.google.com/g/2005#work'\n    primary='true'\n    address='liz@gmail.com' displayName='E. Bennet'/>\n  <gd:email rel='http://schemas.google.com/g/2005#home'\n    address='liz@example.org'/>\n  <gd:phoneNumber rel='http://schemas.google.com/g/2005#work'\n    primary='true'>\n    (206)555-1212\n  </gd:phoneNumber>\n  <gd:phoneNumber rel='http://schemas.google.com/g/2005#home'>\n    (206)555-1213\n  </gd:phoneNumber>\n  <gd:im address='liz@gmail.com'\n    protocol='http://schemas.google.com/g/2005#GOOGLE_TALK'\n    primary='true'\n    rel='http://schemas.google.com/g/2005#home'/>\n  <gd:structuredPostalAddress\n      rel='http://schemas.google.com/g/2005#work'\n      primary='true'>\n    <gd:city>Mountain View</gd:city>\n    <gd:street>1600 Amphitheatre Pkwy</gd:street>\n    <gd:region>CA</gd:region>\n    <gd:postcode>94043</gd:postcode>\n    <gd:country>United States</gd:country>\n    <gd:formattedAddress>\n      1600 Amphitheatre Pkwy Mountain View\n    </gd:formattedAddress>\n  </gd:structuredPostalAddress>\n</atom:entry>\n",
+                                            "schemaContent": "atom"
                                         }
                                     }
+                                },
+                                "412": {
+                                    "code": "412",
+                                    "description": "If the Etag is outdated, the server responds with an HTTP 412 Precondition Failed status code.\n"
                                 }
                             },
                             "body": {
@@ -872,6 +1292,84 @@
                                 "oauth_2_0",
                                 "oauth_1_0"
                             ],
+                            "queryParameters": {
+                                "v": {
+                                    "name": "v",
+                                    "displayName": "v",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "3.0",
+                                    "repeat": false,
+                                    "description": "Alternatively, if you can't set HTTP headers, you can specify v=3.0 as a query parameter in the URL.\nThe HTTP header is preferred where possible.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "headers": {
+                                "If-Match": {
+                                    "name": "If-Match",
+                                    "displayName": "If-Match",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "To ensure that the data sent to the API doesn't overwrite another client's changes, the contact entry's Etag should be\nprovided in the request header.\n**Note**: The special Etag value \"*\" can be used to bypass this verification and process the update regardless of updates\nfrom other clients.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "GData-Version": {
+                                    "name": "GData-Version",
+                                    "displayName": "GData-Version",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "3.0",
+                                    "repeat": false,
+                                    "description": "Version of Google Contacts API\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "To update a contact, first retrieve the contact entry, modify the data and send an authorized PUT reques\nto the contact's edit URL with the modified contact entry in the body.\n**Note**: To ensure forward compatibility, be sure that when you PUT an updated entry you preserve all the XML that was present\nwhen you retrieved the entry from the server. Otherwise the ignored elements will be deleted\n",
                             "method": "put",
                             "is": [
@@ -893,6 +1391,10 @@
                                 "200": {
                                     "code": "200",
                                     "description": "Contact deleted\n"
+                                },
+                                "412": {
+                                    "code": "412",
+                                    "description": "If the Etag is outdated, the server responds with an HTTP 412 Precondition Failed status code.\n"
                                 }
                             },
                             "protocols": [
@@ -902,6 +1404,84 @@
                                 "oauth_2_0",
                                 "oauth_1_0"
                             ],
+                            "queryParameters": {
+                                "v": {
+                                    "name": "v",
+                                    "displayName": "v",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "3.0",
+                                    "repeat": false,
+                                    "description": "Alternatively, if you can't set HTTP headers, you can specify v=3.0 as a query parameter in the URL.\nThe HTTP header is preferred where possible.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "headers": {
+                                "If-Match": {
+                                    "name": "If-Match",
+                                    "displayName": "If-Match",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "To ensure that the data sent to the API doesn't overwrite another client's changes, the contact entry's Etag should be\nprovided in the request header.\n**Note**: The special Etag value \"*\" can be used to bypass this verification and process the update regardless of updates\nfrom other clients.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "GData-Version": {
+                                    "name": "GData-Version",
+                                    "displayName": "GData-Version",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "3.0",
+                                    "repeat": false,
+                                    "description": "Version of Google Contacts API\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "To delete a contact, send an authorized DELETE request to the contact's edit URL.\n",
                             "method": "delete",
                             "is": [
@@ -935,6 +1515,9 @@
                 {
                     "relativeUri": "/batch",
                     "type": "base",
+                    "is": [
+                        "versioned"
+                    ],
                     "securedBy": [
                         "oauth_2_0",
                         "oauth_1_0"
@@ -947,7 +1530,9 @@
                                     "body": {
                                         "application/atom+xml": {
                                             "name": "application/atom+xml",
-                                            "example": "<?xml version='1.0' encoding='UTF-8'?>\n<feed xmlns='http://www.w3.org/2005/Atom'\n      xmlns:gContact='http://schemas.google.com/contact/2008'\n      xmlns:gd='http://schemas.google.com/g/2005'\n      xmlns:batch='http://schemas.google.com/gdata/batch'>\n  <entry gd:etag='retrieveContactEtag'>\n    <batch:id>retrieve</batch:id>\n    <batch:operation type='query'/>\n    <batch:status code='200' reason='Success'/>\n    <id>\n      http://www.google.com/m8/feeds/contacts/userEmail/base/retrieveContactId\n    </id>\n    <updated>2008-12-10T04:45:03.331Z</updated>\n    <app:edited xmlns:app='http://www.w3.org/2007/app'>2008-12-10T04:45:03.331Z</app:edited>\n    <category scheme='http://schemas.google.com/g/2005#kind'\n      term='http://schemas.google.com/contact/2008#contact'/>\n    <title>Fitzwilliam Darcy</title>\n    <gd:name>\n      <gd:fullName>Fitzwilliam Darcy</gd:fullName>\n    </gd:name>\n    <link rel='http://schemas.google.com/contacts/2008/rel#photo' type='image/*'\n      href='https://www.google.com/m8/feeds/photos/media/userEmail/retrieveContactId'\n      gd:etag='photoEtag'/>\n    <link rel='self' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/contacts/userEmail/full/retrieveContactId'/>\n    <link rel='edit' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/contacts/userEmail/full/retrieveContactId'/>\n    <gd:phoneNumber rel='http://schemas.google.com/g/2005#home'\n      primary='true'>\n      456\n    </gd:phoneNumber>\n    <gd:extendedProperty name='pet' value='hamster'/>\n    <gContact:groupMembershipInfo deleted='false'\n      href='http://www.google.com/m8/feeds/groups/userEmail/base/groupId'/>\n  </entry>\n  <entry gd:etag='createContactEtag'>\n    <batch:id>create</batch:id>\n    <batch:operation type='insert'/>\n    <batch:status code='201' reason='Created'/>\n    <id>http://www.google.com/m8/feeds/contacts/userEmail/base/createContactId</id>\n    <updated>2008-12-10T04:45:03.331Z</updated>\n    <app:edited xmlns:app='http://www.w3.org/2007/app'>2008-12-10T04:45:03.331Z</app:edited>\n    <category scheme='http://schemas.google.com/g/2005#kind'\n      term='http://schemas.google.com/contact/2008#contact'/>\n    <title>Elizabeth Bennet</title>\n    <gd:name>\n       <gd:givenName>Elizabeth</gd:givenName>\n       <gd:familyName>Bennet</gd:familyName>\n       <gd:fullName>Elizabeth Bennet</gd:fullName>\n    </gd:name>\n    <link rel='http://schemas.google.com/contacts/2008/rel#photo' type='image/*'\n      href='https://www.google.com/m8/feeds/photos/media/userEmail/createContactId'/>\n    <link rel='self' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/contacts/userEmail/full/createContactId'/>\n    <link rel='edit' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/contacts/userEmail/full/createContactId'/>\n    <gd:email rel='http://schemas.google.com/g/2005#work' primary='true' address='liz@gmail.com'/>\n  </entry>\n  <entry gd:etag='newUpdateContactEtag'>\n    <batch:id>update</batch:id>\n    <batch:operation type='update'/>\n    <batch:status code='200' reason='Success'/>\n    <updated>2011-05-11T09:30:00.000Z</updated>\n    <category scheme='http://schemas.google.com/g/2005#kind'\n      term='http://schemas.google.com/contact/2008#contact'/>\n    <title type='text'>New Name</title>\n    <gd:name>\n      <gd:givenName>New</gd:givenName>\n      <gd:familyName>Name</gd:familyName>\n      <gd:fullName>New Name</gd:fullName>\n    </gd:name>\n    <content type='text'>Notes</content>\n    <link rel='http://schemas.google.com/contacts/2008/rel#photo' type='image/*'\n      href='https://www.google.com/m8/feeds/photos/media/userEmail/updateContactId'/>\n    <link rel='self' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/contacts/userEmail/full/updateContactId'/>\n    <link rel='edit' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/contacts/userEmail/full/updateContactId'/>\n    <gd:phoneNumber rel='http://schemas.google.com/g/2005#other'\n      primary='true'>456-123-2133</gd:phoneNumber>\n    <gd:extendedProperty name='pet' value='hamster'/>\n    <gContact:groupMembershipInfo deleted='false'\n      href='http://www.google.com/m8/feeds/groups/userEmail/base/groupId'/>\n  </entry>\n  <entry>\n    <batch:id>delete</batch:id>\n    <batch:operation type='delete'/>\n    <batch:status code='200' reason='Success'/>\n    <updated>2011-05-11T09:30:00.000Z</updated>\n    <content type='text'>Deleted</content>\n    <id>https://www.google.com/m8/feeds/contacts/default/full/deleteContactId</id>\n  </entry>\n</feed>"
+                                            "schema": "atom",
+                                            "example": "<?xml version='1.0' encoding='UTF-8'?>\n<feed xmlns='http://www.w3.org/2005/Atom'\n      xmlns:gContact='http://schemas.google.com/contact/2008'\n      xmlns:gd='http://schemas.google.com/g/2005'\n      xmlns:batch='http://schemas.google.com/gdata/batch'>\n  <entry gd:etag='retrieveContactEtag'>\n    <batch:id>retrieve</batch:id>\n    <batch:operation type='query'/>\n    <batch:status code='200' reason='Success'/>\n    <id>\n      http://www.google.com/m8/feeds/contacts/userEmail/base/retrieveContactId\n    </id>\n    <updated>2008-12-10T04:45:03.331Z</updated>\n    <app:edited xmlns:app='http://www.w3.org/2007/app'>2008-12-10T04:45:03.331Z</app:edited>\n    <category scheme='http://schemas.google.com/g/2005#kind'\n      term='http://schemas.google.com/contact/2008#contact'/>\n    <title>Fitzwilliam Darcy</title>\n    <gd:name>\n      <gd:fullName>Fitzwilliam Darcy</gd:fullName>\n    </gd:name>\n    <link rel='http://schemas.google.com/contacts/2008/rel#photo' type='image/*'\n      href='https://www.google.com/m8/feeds/photos/media/userEmail/retrieveContactId'\n      gd:etag='photoEtag'/>\n    <link rel='self' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/contacts/userEmail/full/retrieveContactId'/>\n    <link rel='edit' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/contacts/userEmail/full/retrieveContactId'/>\n    <gd:phoneNumber rel='http://schemas.google.com/g/2005#home'\n      primary='true'>\n      456\n    </gd:phoneNumber>\n    <gd:extendedProperty name='pet' value='hamster'/>\n    <gContact:groupMembershipInfo deleted='false'\n      href='http://www.google.com/m8/feeds/groups/userEmail/base/groupId'/>\n  </entry>\n  <entry gd:etag='createContactEtag'>\n    <batch:id>create</batch:id>\n    <batch:operation type='insert'/>\n    <batch:status code='201' reason='Created'/>\n    <id>http://www.google.com/m8/feeds/contacts/userEmail/base/createContactId</id>\n    <updated>2008-12-10T04:45:03.331Z</updated>\n    <app:edited xmlns:app='http://www.w3.org/2007/app'>2008-12-10T04:45:03.331Z</app:edited>\n    <category scheme='http://schemas.google.com/g/2005#kind'\n      term='http://schemas.google.com/contact/2008#contact'/>\n    <title>Elizabeth Bennet</title>\n    <gd:name>\n       <gd:givenName>Elizabeth</gd:givenName>\n       <gd:familyName>Bennet</gd:familyName>\n       <gd:fullName>Elizabeth Bennet</gd:fullName>\n    </gd:name>\n    <link rel='http://schemas.google.com/contacts/2008/rel#photo' type='image/*'\n      href='https://www.google.com/m8/feeds/photos/media/userEmail/createContactId'/>\n    <link rel='self' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/contacts/userEmail/full/createContactId'/>\n    <link rel='edit' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/contacts/userEmail/full/createContactId'/>\n    <gd:email rel='http://schemas.google.com/g/2005#work' primary='true' address='liz@gmail.com'/>\n  </entry>\n  <entry gd:etag='newUpdateContactEtag'>\n    <batch:id>update</batch:id>\n    <batch:operation type='update'/>\n    <batch:status code='200' reason='Success'/>\n    <updated>2011-05-11T09:30:00.000Z</updated>\n    <category scheme='http://schemas.google.com/g/2005#kind'\n      term='http://schemas.google.com/contact/2008#contact'/>\n    <title type='text'>New Name</title>\n    <gd:name>\n      <gd:givenName>New</gd:givenName>\n      <gd:familyName>Name</gd:familyName>\n      <gd:fullName>New Name</gd:fullName>\n    </gd:name>\n    <content type='text'>Notes</content>\n    <link rel='http://schemas.google.com/contacts/2008/rel#photo' type='image/*'\n      href='https://www.google.com/m8/feeds/photos/media/userEmail/updateContactId'/>\n    <link rel='self' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/contacts/userEmail/full/updateContactId'/>\n    <link rel='edit' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/contacts/userEmail/full/updateContactId'/>\n    <gd:phoneNumber rel='http://schemas.google.com/g/2005#other'\n      primary='true'>456-123-2133</gd:phoneNumber>\n    <gd:extendedProperty name='pet' value='hamster'/>\n    <gContact:groupMembershipInfo deleted='false'\n      href='http://www.google.com/m8/feeds/groups/userEmail/base/groupId'/>\n  </entry>\n  <entry>\n    <batch:id>delete</batch:id>\n    <batch:operation type='delete'/>\n    <batch:status code='200' reason='Success'/>\n    <updated>2011-05-11T09:30:00.000Z</updated>\n    <content type='text'>Deleted</content>\n    <id>https://www.google.com/m8/feeds/contacts/default/full/deleteContactId</id>\n  </entry>\n</feed>",
+                                            "schemaContent": "atom"
                                         }
                                     }
                                 }
@@ -965,6 +1550,60 @@
                                 "oauth_2_0",
                                 "oauth_1_0"
                             ],
+                            "queryParameters": {
+                                "v": {
+                                    "name": "v",
+                                    "displayName": "v",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "3.0",
+                                    "repeat": false,
+                                    "description": "Alternatively, if you can't set HTTP headers, you can specify v=3.0 as a query parameter in the URL.\nThe HTTP header is preferred where possible.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "headers": {
+                                "GData-Version": {
+                                    "name": "GData-Version",
+                                    "displayName": "GData-Version",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "3.0",
+                                    "repeat": false,
+                                    "description": "Version of Google Contacts API\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "To send a batch request for operations on contacts, send an authorized POST request to the contacts batch feed URL with the\nbatch feed data in the body.\n",
                             "method": "post",
                             "__METADATA__": {
@@ -1011,6 +1650,9 @@
         {
             "relativeUri": "/photos/media/{userEmail}/{contactId}",
             "type": "emailed",
+            "is": [
+                "versioned"
+            ],
             "securedBy": [
                 "oauth_2_0",
                 "oauth_1_0"
@@ -1018,20 +1660,14 @@
             "uriParameters": {
                 "userEmail": {
                     "name": "userEmail",
-                    "displayName": "userEmail",
+                    "displayName": "User e-mail",
                     "type": "string",
                     "required": true,
                     "repeat": false,
+                    "description": "User e-mail for performing operations.\n**Note**: The special userEmail value __default__ can be used to refer to the authenticated user.\n",
                     "__METADATA__": {
-                        "calculated": true,
                         "primitiveValuesMeta": {
-                            "displayName": {
-                                "calculated": true
-                            },
                             "type": {
-                                "insertedAsDefault": true
-                            },
-                            "required": {
                                 "insertedAsDefault": true
                             },
                             "repeat": {
@@ -1067,6 +1703,11 @@
                             "body": {
                                 "image/*": {
                                     "name": "image/*"
+                                },
+                                "application/atom+xml": {
+                                    "name": "application/atom+xml",
+                                    "schema": "atom",
+                                    "schemaContent": "atom"
                                 }
                             }
                         }
@@ -1078,6 +1719,60 @@
                         "oauth_2_0",
                         "oauth_1_0"
                     ],
+                    "queryParameters": {
+                        "v": {
+                            "name": "v",
+                            "displayName": "v",
+                            "type": "string",
+                            "required": false,
+                            "example": "3.0",
+                            "repeat": false,
+                            "description": "Alternatively, if you can't set HTTP headers, you can specify v=3.0 as a query parameter in the URL.\nThe HTTP header is preferred where possible.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "headers": {
+                        "GData-Version": {
+                            "name": "GData-Version",
+                            "displayName": "GData-Version",
+                            "type": "string",
+                            "required": false,
+                            "example": "3.0",
+                            "repeat": false,
+                            "description": "Version of Google Contacts API\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "To retrieve a contact's photo, send an authorized GET request to the contact's photo link URL.\n",
                     "method": "get",
                     "__METADATA__": {
@@ -1095,7 +1790,18 @@
                     "responses": {
                         "200": {
                             "code": "200",
+                            "body": {
+                                "application/atom+xml": {
+                                    "name": "application/atom+xml",
+                                    "schema": "atom",
+                                    "schemaContent": "atom"
+                                }
+                            },
                             "description": "Photo added/updated.\n"
+                        },
+                        "412": {
+                            "code": "412",
+                            "description": "If the Etag is outdated, the server responds with an HTTP 412 Precondition Failed status code.\n"
                         }
                     },
                     "body": {
@@ -1110,6 +1816,84 @@
                         "oauth_2_0",
                         "oauth_1_0"
                     ],
+                    "queryParameters": {
+                        "v": {
+                            "name": "v",
+                            "displayName": "v",
+                            "type": "string",
+                            "required": false,
+                            "example": "3.0",
+                            "repeat": false,
+                            "description": "Alternatively, if you can't set HTTP headers, you can specify v=3.0 as a query parameter in the URL.\nThe HTTP header is preferred where possible.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "headers": {
+                        "If-Match": {
+                            "name": "If-Match",
+                            "displayName": "If-Match",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "To ensure that the data sent to the API doesn't overwrite another client's changes, the contact entry's Etag should be\nprovided in the request header.\n**Note**: The special Etag value \"*\" can be used to bypass this verification and process the update regardless of updates\nfrom other clients.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "GData-Version": {
+                            "name": "GData-Version",
+                            "displayName": "GData-Version",
+                            "type": "string",
+                            "required": false,
+                            "example": "3.0",
+                            "repeat": false,
+                            "description": "Version of Google Contacts API\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "To add or update a photo for a contact, send an authorized PUT request to the contact's photo\nURL with the photo data bytes in the body.\n",
                     "method": "put",
                     "is": [
@@ -1131,6 +1915,10 @@
                         "200": {
                             "code": "200",
                             "description": "Contact's photo deleted\n"
+                        },
+                        "412": {
+                            "code": "412",
+                            "description": "If the Etag is outdated, the server responds with an HTTP 412 Precondition Failed status code.\n"
                         }
                     },
                     "protocols": [
@@ -1140,6 +1928,84 @@
                         "oauth_2_0",
                         "oauth_1_0"
                     ],
+                    "queryParameters": {
+                        "v": {
+                            "name": "v",
+                            "displayName": "v",
+                            "type": "string",
+                            "required": false,
+                            "example": "3.0",
+                            "repeat": false,
+                            "description": "Alternatively, if you can't set HTTP headers, you can specify v=3.0 as a query parameter in the URL.\nThe HTTP header is preferred where possible.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "headers": {
+                        "If-Match": {
+                            "name": "If-Match",
+                            "displayName": "If-Match",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "To ensure that the data sent to the API doesn't overwrite another client's changes, the contact entry's Etag should be\nprovided in the request header.\n**Note**: The special Etag value \"*\" can be used to bypass this verification and process the update regardless of updates\nfrom other clients.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "GData-Version": {
+                            "name": "GData-Version",
+                            "displayName": "GData-Version",
+                            "type": "string",
+                            "required": false,
+                            "example": "3.0",
+                            "repeat": false,
+                            "description": "Version of Google Contacts API\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "To delete a contact's photo, send an authorized DELETE request to the contact's photo URL.\n",
                     "method": "delete",
                     "is": [
@@ -1176,6 +2042,9 @@
         {
             "relativeUri": "/groups/{userEmail}/full",
             "type": "emailed",
+            "is": [
+                "versioned"
+            ],
             "securedBy": [
                 "oauth_2_0",
                 "oauth_1_0"
@@ -1183,20 +2052,14 @@
             "uriParameters": {
                 "userEmail": {
                     "name": "userEmail",
-                    "displayName": "userEmail",
+                    "displayName": "User e-mail",
                     "type": "string",
                     "required": true,
                     "repeat": false,
+                    "description": "User e-mail for performing operations.\n**Note**: The special userEmail value __default__ can be used to refer to the authenticated user.\n",
                     "__METADATA__": {
-                        "calculated": true,
                         "primitiveValuesMeta": {
-                            "displayName": {
-                                "calculated": true
-                            },
                             "type": {
-                                "insertedAsDefault": true
-                            },
-                            "required": {
                                 "insertedAsDefault": true
                             },
                             "repeat": {
@@ -1214,7 +2077,9 @@
                             "body": {
                                 "application/atom+xml": {
                                     "name": "application/atom+xml",
-                                    "example": "<?xml version='1.0' encoding='UTF-8'?>\n<feed xmlns='http://www.w3.org/2005/Atom'\n    xmlns:openSearch='http://a9.com/-/spec/opensearch/1.1/'\n    xmlns:gContact='http://schemas.google.com/contact/2008'\n    xmlns:batch='http://schemas.google.com/gdata/batch'\n    xmlns:gd='http://schemas.google.com/g/2005'\n    gd:etag='feedEtag'>\n  <id>jo@gmail.com</id>\n  <updated>2008-12-10T10:44:43.955Z</updated>\n  <category scheme='http://schemas.google.com/g/2005#kind'\n    term='http://schemas.google.com/contact/2008#group'/>\n  <title>Jo March's Contact Groups</title>\n  <link rel='alternate' type='text/html'\n    href='http://www.google.com/'/>\n  <link rel='http://schemas.google.com/g/2005#feed'\n    type='application/atom+xml'\n    href='https://www.google.com/m8/feeds/groups/userEmail/full'/>\n  <link rel='http://schemas.google.com/g/2005#post'\n    type='application/atom+xml'\n    href='https://www.google.com/m8/feeds/groups/userEmail/full'/>\n  <link rel='http://schemas.google.com/g/2005#batch'\n    type='application/atom+xml'\n    href='https://www.google.com/m8/feeds/groups/userEmail/full/batch'/>\n  <link rel='self'\n    type='application/atom+xml'\n    href='https://www.google.com/m8/feeds/groups/userEmail/full?max-results=25'/>\n  <author>\n    <name>Jo March</name>\n    <email>jo@gmail.com</email>\n  </author>\n  <generator version='1.0'\n    uri='http://www.google.com/m8/feeds'>Contacts</generator>\n  <openSearch:totalResults>5</openSearch:totalResults>\n  <openSearch:startIndex>1</openSearch:startIndex>\n  <openSearch:itemsPerPage>25</openSearch:itemsPerPage>\n  <entry>\n    <id>http://www.google.com/m8/feeds/groups/userEmail/base/6</id>\n    <updated>1970-01-01T00:00:00.000Z</updated>\n    <category scheme='http://schemas.google.com/g/2005#kind'\n      term='http://schemas.google.com/contact/2008#group'/>\n    <title>System Group: My Contacts</title>\n    <content>System Group: My Contacts</content>\n    <link rel='self' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/groups/userEmail/full/6'/>\n    <gContact:systemGroup id='Contacts'/>\n  </entry>\n</feed>"
+                                    "schema": "atom",
+                                    "example": "<?xml version='1.0' encoding='UTF-8'?>\n<feed xmlns='http://www.w3.org/2005/Atom'\n    xmlns:openSearch='http://a9.com/-/spec/opensearch/1.1/'\n    xmlns:gContact='http://schemas.google.com/contact/2008'\n    xmlns:batch='http://schemas.google.com/gdata/batch'\n    xmlns:gd='http://schemas.google.com/g/2005'\n    gd:etag='feedEtag'>\n  <id>jo@gmail.com</id>\n  <updated>2008-12-10T10:44:43.955Z</updated>\n  <category scheme='http://schemas.google.com/g/2005#kind'\n    term='http://schemas.google.com/contact/2008#group'/>\n  <title>Jo March's Contact Groups</title>\n  <link rel='alternate' type='text/html'\n    href='http://www.google.com/'/>\n  <link rel='http://schemas.google.com/g/2005#feed'\n    type='application/atom+xml'\n    href='https://www.google.com/m8/feeds/groups/userEmail/full'/>\n  <link rel='http://schemas.google.com/g/2005#post'\n    type='application/atom+xml'\n    href='https://www.google.com/m8/feeds/groups/userEmail/full'/>\n  <link rel='http://schemas.google.com/g/2005#batch'\n    type='application/atom+xml'\n    href='https://www.google.com/m8/feeds/groups/userEmail/full/batch'/>\n  <link rel='self'\n    type='application/atom+xml'\n    href='https://www.google.com/m8/feeds/groups/userEmail/full?max-results=25'/>\n  <author>\n    <name>Jo March</name>\n    <email>jo@gmail.com</email>\n  </author>\n  <generator version='1.0'\n    uri='http://www.google.com/m8/feeds'>Contacts</generator>\n  <openSearch:totalResults>5</openSearch:totalResults>\n  <openSearch:startIndex>1</openSearch:startIndex>\n  <openSearch:itemsPerPage>25</openSearch:itemsPerPage>\n  <entry>\n    <id>http://www.google.com/m8/feeds/groups/userEmail/base/6</id>\n    <updated>1970-01-01T00:00:00.000Z</updated>\n    <category scheme='http://schemas.google.com/g/2005#kind'\n      term='http://schemas.google.com/contact/2008#group'/>\n    <title>System Group: My Contacts</title>\n    <content>System Group: My Contacts</content>\n    <link rel='self' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/groups/userEmail/full/6'/>\n    <gContact:systemGroup id='Contacts'/>\n  </entry>\n</feed>",
+                                    "schemaContent": "atom"
                                 }
                             }
                         }
@@ -1226,6 +2091,306 @@
                         "oauth_2_0",
                         "oauth_1_0"
                     ],
+                    "queryParameters": {
+                        "alt": {
+                            "name": "alt",
+                            "displayName": "alt",
+                            "type": "string",
+                            "required": false,
+                            "default": "atom",
+                            "repeat": false,
+                            "description": "The type of feed to return, such as atom (the default), rss, or json.\n",
+                            "enum": [
+                                "atom",
+                                "rss",
+                                "json"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "q": {
+                            "name": "q",
+                            "displayName": "q",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Fulltext query on contacts data fields. The API currently supports simple search queries such as q=term1 term2 term3 and\nexact search queries such as q=\"term1 term2 term3\"\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "max-results": {
+                            "name": "max-results",
+                            "displayName": "max-results",
+                            "type": "integer",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The maximum number of entries to return. If you want to receive all of the contacts, rather than only the default maximum,\nyou can specify a very large number for max-results.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "start-index": {
+                            "name": "start-index",
+                            "displayName": "start-index",
+                            "type": "integer",
+                            "required": false,
+                            "repeat": false,
+                            "description": "The 1-based index of the first result to be retrieved (for paging).\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "updated-min": {
+                            "name": "updated-min",
+                            "displayName": "updated-min",
+                            "type": "date",
+                            "required": false,
+                            "example": "2007-03-16T00:00:00",
+                            "repeat": false,
+                            "description": "The lower bound on entry update dates.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "orderby": {
+                            "name": "orderby",
+                            "displayName": "orderby",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Sorting criterion.\n",
+                            "enum": [
+                                "lastmodified"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "showdeleted": {
+                            "name": "showdeleted",
+                            "displayName": "showdeleted",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Include deleted contacts in the returned contacts feed. Deleted contacts are shown as entries that contain nothing\nbut an <atom:id> element and a <gd:deleted> element.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "requirealldeleted": {
+                            "name": "requirealldeleted",
+                            "displayName": "requirealldeleted",
+                            "type": "string",
+                            "required": false,
+                            "default": false,
+                            "repeat": false,
+                            "description": "Only relevant if showdeleted and updated-min are also provided. It dictates the behavior of the server in case i\ndetects that placeholders of some entries deleted since the point in time specified as updated-min may have been lost.\nIf requirealldeleted is false, the server simply returns all the placeholders it still knows about. If true, the server\nreturns the 410 HTTP response code.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "sortorder": {
+                            "name": "sortorder",
+                            "displayName": "sortorder",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Sorting order direction.\n",
+                            "enum": [
+                                "ascending",
+                                "descending"
+                            ],
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "group": {
+                            "name": "group",
+                            "displayName": "group",
+                            "type": "string",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Constrains the results to only the contacts belonging to the group specified. Value of this parameter specifies group ID\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "v": {
+                            "name": "v",
+                            "displayName": "v",
+                            "type": "string",
+                            "required": false,
+                            "example": "3.0",
+                            "repeat": false,
+                            "description": "Alternatively, if you can't set HTTP headers, you can specify v=3.0 as a query parameter in the URL.\nThe HTTP header is preferred where possible.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "headers": {
+                        "GData-Version": {
+                            "name": "GData-Version",
+                            "displayName": "GData-Version",
+                            "type": "string",
+                            "required": false,
+                            "example": "3.0",
+                            "repeat": false,
+                            "description": "Version of Google Contacts API\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "To retrieve the user's contact groups, send an authorized GET request to the contact groups feed URL.\n",
                     "method": "get",
                     "is": [
@@ -1249,7 +2414,9 @@
                             "body": {
                                 "application/atom+xml": {
                                     "name": "application/atom+xml",
-                                    "example": "<?xml version='1.0' encoding='UTF-8'?>\n<entry xmlns:atom='http://www.w3.org/2005/Atom'\n    xmlns:gd='http://schemas.google.com/g/2005' gd:etag='ETAG'>\n  <id>http://www.google.com/m8/feeds/groups/userEmail/base/groupID</id>\n  <updated>2008-12-10T04:44:37.324Z</updated>\n  <category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/contact/2008#group'/>\n  <atom:title type=\"text\">Salsa group</atom:title>\n  <gd:extendedProperty name=\"more info about the group\">\n    <info>Nice people.</info>\n  </gd:extendedProperty>\n  <link rel='self' type='application/atom+xml' href='https://www.google.com/m8/feeds/groups/userEmail/full/groupID'/>\n  <link rel='edit' type='application/atom+xml' href='https://www.google.com/m8/feeds/groups/userEmail/full/groupID'/>\n</entry>"
+                                    "schema": "atom",
+                                    "example": "<?xml version='1.0' encoding='UTF-8'?>\n<entry xmlns:atom='http://www.w3.org/2005/Atom'\n    xmlns:gd='http://schemas.google.com/g/2005' gd:etag='ETAG'>\n  <id>http://www.google.com/m8/feeds/groups/userEmail/base/groupID</id>\n  <updated>2008-12-10T04:44:37.324Z</updated>\n  <category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/contact/2008#group'/>\n  <atom:title type=\"text\">Salsa group</atom:title>\n  <gd:extendedProperty name=\"more info about the group\">\n    <info>Nice people.</info>\n  </gd:extendedProperty>\n  <link rel='self' type='application/atom+xml' href='https://www.google.com/m8/feeds/groups/userEmail/full/groupID'/>\n  <link rel='edit' type='application/atom+xml' href='https://www.google.com/m8/feeds/groups/userEmail/full/groupID'/>\n</entry>",
+                                    "schemaContent": "atom"
                                 }
                             },
                             "description": "Created"
@@ -1268,6 +2435,60 @@
                         "oauth_2_0",
                         "oauth_1_0"
                     ],
+                    "queryParameters": {
+                        "v": {
+                            "name": "v",
+                            "displayName": "v",
+                            "type": "string",
+                            "required": false,
+                            "example": "3.0",
+                            "repeat": false,
+                            "description": "Alternatively, if you can't set HTTP headers, you can specify v=3.0 as a query parameter in the URL.\nThe HTTP header is preferred where possible.\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "headers": {
+                        "GData-Version": {
+                            "name": "GData-Version",
+                            "displayName": "GData-Version",
+                            "type": "string",
+                            "required": false,
+                            "example": "3.0",
+                            "repeat": false,
+                            "description": "Version of Google Contacts API\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "To create a new contact group, send an authorized POST request to the contact groups feed URL with the contact group entry data in the body.\n",
                     "method": "post",
                     "__METADATA__": {
@@ -1286,6 +2507,9 @@
                 {
                     "relativeUri": "/{groupId}",
                     "type": "base",
+                    "is": [
+                        "versioned"
+                    ],
                     "securedBy": [
                         "oauth_2_0",
                         "oauth_1_0"
@@ -1318,7 +2542,9 @@
                                     "body": {
                                         "application/atom+xml": {
                                             "name": "application/atom+xml",
-                                            "example": "<?xml version='1.0' encoding='UTF-8'?>\n<entry xmlns:atom='http://www.w3.org/2005/Atom'\n    xmlns:gd='http://schemas.google.com/g/2005' gd:etag='ETAG'>\n  <id>http://www.google.com/m8/feeds/groups/userEmail/base/groupID</id>\n  <updated>2008-12-10T04:44:37.324Z</updated>\n  <category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/contact/2008#group'/>\n  <atom:title type=\"text\">Salsa group</atom:title>\n  <gd:extendedProperty name=\"more info about the group\">\n    <info>Nice people.</info>\n  </gd:extendedProperty>\n  <link rel='self' type='application/atom+xml' href='https://www.google.com/m8/feeds/groups/userEmail/full/groupID'/>\n  <link rel='edit' type='application/atom+xml' href='https://www.google.com/m8/feeds/groups/userEmail/full/groupID'/>\n</entry>"
+                                            "schema": "atom",
+                                            "example": "<?xml version='1.0' encoding='UTF-8'?>\n<entry xmlns:atom='http://www.w3.org/2005/Atom'\n    xmlns:gd='http://schemas.google.com/g/2005' gd:etag='ETAG'>\n  <id>http://www.google.com/m8/feeds/groups/userEmail/base/groupID</id>\n  <updated>2008-12-10T04:44:37.324Z</updated>\n  <category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/contact/2008#group'/>\n  <atom:title type=\"text\">Salsa group</atom:title>\n  <gd:extendedProperty name=\"more info about the group\">\n    <info>Nice people.</info>\n  </gd:extendedProperty>\n  <link rel='self' type='application/atom+xml' href='https://www.google.com/m8/feeds/groups/userEmail/full/groupID'/>\n  <link rel='edit' type='application/atom+xml' href='https://www.google.com/m8/feeds/groups/userEmail/full/groupID'/>\n</entry>",
+                                            "schemaContent": "atom"
                                         }
                                     }
                                 }
@@ -1330,6 +2556,60 @@
                                 "oauth_2_0",
                                 "oauth_1_0"
                             ],
+                            "queryParameters": {
+                                "v": {
+                                    "name": "v",
+                                    "displayName": "v",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "3.0",
+                                    "repeat": false,
+                                    "description": "Alternatively, if you can't set HTTP headers, you can specify v=3.0 as a query parameter in the URL.\nThe HTTP header is preferred where possible.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "headers": {
+                                "GData-Version": {
+                                    "name": "GData-Version",
+                                    "displayName": "GData-Version",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "3.0",
+                                    "repeat": false,
+                                    "description": "Version of Google Contacts API\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "To retrieve a single group, send an authorized HTTP GET request to the contact group's edit URL.\n",
                             "method": "get",
                             "__METADATA__": {
@@ -1350,9 +2630,15 @@
                                     "body": {
                                         "application/atom+xml": {
                                             "name": "application/atom+xml",
-                                            "example": "<?xml version='1.0' encoding='UTF-8'?>\n<entry xmlns:atom='http://www.w3.org/2005/Atom'\n    xmlns:gd='http://schemas.google.com/g/2005' gd:etag='ETAG'>\n  <id>http://www.google.com/m8/feeds/groups/userEmail/base/groupID</id>\n  <updated>2008-12-10T04:44:37.324Z</updated>\n  <category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/contact/2008#group'/>\n  <atom:title type=\"text\">Salsa group</atom:title>\n  <gd:extendedProperty name=\"more info about the group\">\n    <info>Nice people.</info>\n  </gd:extendedProperty>\n  <link rel='self' type='application/atom+xml' href='https://www.google.com/m8/feeds/groups/userEmail/full/groupID'/>\n  <link rel='edit' type='application/atom+xml' href='https://www.google.com/m8/feeds/groups/userEmail/full/groupID'/>\n</entry>"
+                                            "schema": "atom",
+                                            "example": "<?xml version='1.0' encoding='UTF-8'?>\n<entry xmlns:atom='http://www.w3.org/2005/Atom'\n    xmlns:gd='http://schemas.google.com/g/2005' gd:etag='ETAG'>\n  <id>http://www.google.com/m8/feeds/groups/userEmail/base/groupID</id>\n  <updated>2008-12-10T04:44:37.324Z</updated>\n  <category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/contact/2008#group'/>\n  <atom:title type=\"text\">Salsa group</atom:title>\n  <gd:extendedProperty name=\"more info about the group\">\n    <info>Nice people.</info>\n  </gd:extendedProperty>\n  <link rel='self' type='application/atom+xml' href='https://www.google.com/m8/feeds/groups/userEmail/full/groupID'/>\n  <link rel='edit' type='application/atom+xml' href='https://www.google.com/m8/feeds/groups/userEmail/full/groupID'/>\n</entry>",
+                                            "schemaContent": "atom"
                                         }
                                     }
+                                },
+                                "412": {
+                                    "code": "412",
+                                    "description": "If the Etag is outdated, the server responds with an HTTP 412 Precondition Failed status code.\n"
                                 }
                             },
                             "body": {
@@ -1368,6 +2654,84 @@
                                 "oauth_2_0",
                                 "oauth_1_0"
                             ],
+                            "queryParameters": {
+                                "v": {
+                                    "name": "v",
+                                    "displayName": "v",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "3.0",
+                                    "repeat": false,
+                                    "description": "Alternatively, if you can't set HTTP headers, you can specify v=3.0 as a query parameter in the URL.\nThe HTTP header is preferred where possible.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "headers": {
+                                "If-Match": {
+                                    "name": "If-Match",
+                                    "displayName": "If-Match",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "To ensure that the data sent to the API doesn't overwrite another client's changes, the contact entry's Etag should be\nprovided in the request header.\n**Note**: The special Etag value \"*\" can be used to bypass this verification and process the update regardless of updates\nfrom other clients.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "GData-Version": {
+                                    "name": "GData-Version",
+                                    "displayName": "GData-Version",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "3.0",
+                                    "repeat": false,
+                                    "description": "Version of Google Contacts API\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "To update a contact group, first retrieve the group entry, modify the data and send an authorized PUT request to the contac\ngroup's edit URL with the updated contact group's entry in the body.\n",
                             "method": "put",
                             "is": [
@@ -1389,6 +2753,10 @@
                                 "200": {
                                     "code": "200",
                                     "description": "Contact's group deleted\n"
+                                },
+                                "412": {
+                                    "code": "412",
+                                    "description": "If the Etag is outdated, the server responds with an HTTP 412 Precondition Failed status code.\n"
                                 }
                             },
                             "protocols": [
@@ -1398,6 +2766,84 @@
                                 "oauth_2_0",
                                 "oauth_1_0"
                             ],
+                            "queryParameters": {
+                                "v": {
+                                    "name": "v",
+                                    "displayName": "v",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "3.0",
+                                    "repeat": false,
+                                    "description": "Alternatively, if you can't set HTTP headers, you can specify v=3.0 as a query parameter in the URL.\nThe HTTP header is preferred where possible.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "headers": {
+                                "If-Match": {
+                                    "name": "If-Match",
+                                    "displayName": "If-Match",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "To ensure that the data sent to the API doesn't overwrite another client's changes, the contact entry's Etag should be\nprovided in the request header.\n**Note**: The special Etag value \"*\" can be used to bypass this verification and process the update regardless of updates\nfrom other clients.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "GData-Version": {
+                                    "name": "GData-Version",
+                                    "displayName": "GData-Version",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "3.0",
+                                    "repeat": false,
+                                    "description": "Version of Google Contacts API\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "To delete a contact group, send an authorized DELETE request to the contact group's edit URL.\n",
                             "method": "delete",
                             "is": [
@@ -1431,6 +2877,9 @@
                 {
                     "relativeUri": "/batch",
                     "type": "base",
+                    "is": [
+                        "versioned"
+                    ],
                     "securedBy": [
                         "oauth_2_0",
                         "oauth_1_0"
@@ -1443,7 +2892,9 @@
                                     "body": {
                                         "application/atom+xml": {
                                             "name": "application/atom+xml",
-                                            "example": "<?xml version='1.0' encoding='UTF-8'?>\n<feed xmlns='http://www.w3.org/2005/Atom'\n      xmlns:gContact='http://schemas.google.com/contact/2008'\n      xmlns:gd='http://schemas.google.com/g/2005'\n      xmlns:batch='http://schemas.google.com/gdata/batch'\n      xmlns:atom='http://www.w3.org/2005/Atom'>\n  <entry gd:etag='retrieveContactGroupEtag'>\n    <batch:id>retrieve</batch:id>\n    <batch:operation type='query'/>\n    <batch:status code='200' reason='Success'/>\n    <id>http://www.google.com/m8/feeds/groups/userEmail/base/retrieveContactGroupId</id>\n    <updated>2008-12-10T04:44:37.324Z</updated>\n    <category scheme='http://schemas.google.com/g/2005#kind'\n      term='http://schemas.google.com/contact/2008#group'/>\n    <title>joggers</title>\n    <content>joggers</content>\n    <link rel='self' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/groups/userEmail/full/retrieveContactGroupId'/>\n    <link rel='edit' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/groups/userEmail/full/retrieveContactGroupId'/>\n  </entry>\n  <entry gd:etag='createContactGroupEtag'>\n    <batch:id>create</batch:id>\n    <batch:operation type='insert'/>\n    <batch:status code='201' reason='Created'/>\n    <id>http://www.google.com/m8/feeds/groups/userEmail/base/createContactGroupID</id>\n    <updated>2008-12-10T04:44:37.324Z</updated>\n    <category scheme='http://schemas.google.com/g/2005#kind'\n      term='http://schemas.google.com/contact/2008#group'/>\n    <atom:title type=\"text\">Salsa group</atom:title>\n    <gd:extendedProperty name=\"more info about the group\">\n      <info>Nice people.</info>\n    </gd:extendedProperty>\n    <link rel='self' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/groups/userEmail/full/createContactGroupID'/>\n    <link rel='edit' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/groups/userEmail/full/createContactGroupID'/>\n  </entry>\n  <entry gd:etag='newUpdateContactGroupEtag'>\n    <batch:id>update</batch:id>\n    <batch:operation type='update'/>\n    <batch:status code='200' reason='Success'/>\n    <category scheme=\"http://schemas.google.com/g/2005#kind\"\n      term=\"http://schemas.google.com/g/2005#group\"/>\n    <id>http://www.google.com/feeds/groups/userEmail/base/updateContactGroupId</id>\n    <published>2005-01-18T21:00:00Z</published>\n    <updated>2011-05-11T00:00:00Z</updated>\n    <title type=\"text\">New Group Title</title>\n    <content type=\"text\">New Group Content</content>\n    <link rel='self' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/groups/userEmail/full/updateContactGroupId'/>\n    <link rel='edit' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/groups/userEmail/full/updateContactGroupId'/>\n  </entry>\n  <entry>\n    <batch:id>delete</batch:id>\n    <batch:operation type='delete'/>\n    <batch:status code='200' reason='Success'/>\n    <updated>2011-05-11T09:30:00.000Z</updated>\n    <content type='text'>Deleted</content>\n    <id>https://www.google.com/m8/feeds/groups/default/full/deleteContactGroupId</id>\n  </entry>\n</feed>"
+                                            "schema": "atom",
+                                            "example": "<?xml version='1.0' encoding='UTF-8'?>\n<feed xmlns='http://www.w3.org/2005/Atom'\n      xmlns:gContact='http://schemas.google.com/contact/2008'\n      xmlns:gd='http://schemas.google.com/g/2005'\n      xmlns:batch='http://schemas.google.com/gdata/batch'\n      xmlns:atom='http://www.w3.org/2005/Atom'>\n  <entry gd:etag='retrieveContactGroupEtag'>\n    <batch:id>retrieve</batch:id>\n    <batch:operation type='query'/>\n    <batch:status code='200' reason='Success'/>\n    <id>http://www.google.com/m8/feeds/groups/userEmail/base/retrieveContactGroupId</id>\n    <updated>2008-12-10T04:44:37.324Z</updated>\n    <category scheme='http://schemas.google.com/g/2005#kind'\n      term='http://schemas.google.com/contact/2008#group'/>\n    <title>joggers</title>\n    <content>joggers</content>\n    <link rel='self' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/groups/userEmail/full/retrieveContactGroupId'/>\n    <link rel='edit' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/groups/userEmail/full/retrieveContactGroupId'/>\n  </entry>\n  <entry gd:etag='createContactGroupEtag'>\n    <batch:id>create</batch:id>\n    <batch:operation type='insert'/>\n    <batch:status code='201' reason='Created'/>\n    <id>http://www.google.com/m8/feeds/groups/userEmail/base/createContactGroupID</id>\n    <updated>2008-12-10T04:44:37.324Z</updated>\n    <category scheme='http://schemas.google.com/g/2005#kind'\n      term='http://schemas.google.com/contact/2008#group'/>\n    <atom:title type=\"text\">Salsa group</atom:title>\n    <gd:extendedProperty name=\"more info about the group\">\n      <info>Nice people.</info>\n    </gd:extendedProperty>\n    <link rel='self' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/groups/userEmail/full/createContactGroupID'/>\n    <link rel='edit' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/groups/userEmail/full/createContactGroupID'/>\n  </entry>\n  <entry gd:etag='newUpdateContactGroupEtag'>\n    <batch:id>update</batch:id>\n    <batch:operation type='update'/>\n    <batch:status code='200' reason='Success'/>\n    <category scheme=\"http://schemas.google.com/g/2005#kind\"\n      term=\"http://schemas.google.com/g/2005#group\"/>\n    <id>http://www.google.com/feeds/groups/userEmail/base/updateContactGroupId</id>\n    <published>2005-01-18T21:00:00Z</published>\n    <updated>2011-05-11T00:00:00Z</updated>\n    <title type=\"text\">New Group Title</title>\n    <content type=\"text\">New Group Content</content>\n    <link rel='self' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/groups/userEmail/full/updateContactGroupId'/>\n    <link rel='edit' type='application/atom+xml'\n      href='https://www.google.com/m8/feeds/groups/userEmail/full/updateContactGroupId'/>\n  </entry>\n  <entry>\n    <batch:id>delete</batch:id>\n    <batch:operation type='delete'/>\n    <batch:status code='200' reason='Success'/>\n    <updated>2011-05-11T09:30:00.000Z</updated>\n    <content type='text'>Deleted</content>\n    <id>https://www.google.com/m8/feeds/groups/default/full/deleteContactGroupId</id>\n  </entry>\n</feed>",
+                                            "schemaContent": "atom"
                                         }
                                     }
                                 }
@@ -1461,6 +2912,60 @@
                                 "oauth_2_0",
                                 "oauth_1_0"
                             ],
+                            "queryParameters": {
+                                "v": {
+                                    "name": "v",
+                                    "displayName": "v",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "3.0",
+                                    "repeat": false,
+                                    "description": "Alternatively, if you can't set HTTP headers, you can specify v=3.0 as a query parameter in the URL.\nThe HTTP header is preferred where possible.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "headers": {
+                                "GData-Version": {
+                                    "name": "GData-Version",
+                                    "displayName": "GData-Version",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "3.0",
+                                    "repeat": false,
+                                    "description": "Version of Google Contacts API\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "To send a batch request for operations on contact groups, send an authorized POST request to the contact groups batch feed URL\nwith the batch feed data in the body\n",
                             "method": "post",
                             "__METADATA__": {

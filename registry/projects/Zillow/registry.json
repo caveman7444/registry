@@ -1,6 +1,33 @@
-{"apis": [{
+{"apis": {"RAMLFiles": [{
     "name": "Zillow",
+    "description": "descriptionexamle",
     "RAMLVersion": "0.8",
     "location": "https://raw.githubusercontent.com/raml-apis/Zillow/production/api.raml",
-    "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Zillow/production/api.json"
-}]}
+    "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Zillow/production/api.json",
+    "baseUri": "http://www.zillow.com/webservice",
+    "securitySchemes": [{"zwsIdSchema": {
+        "name": "zwsIdSchema",
+        "type": "x-zws-id-schema",
+        "describedBy": {
+            "securedBy": ["zwsIdSchema"],
+            "queryParameters": {"zws-id": {
+                "name": "zws-id",
+                "displayName": "zws-id",
+                "type": "string",
+                "required": false,
+                "repeat": false,
+                "description": "The Zillow Web Service Identifier. Each subscriber to Zillow Web Services is uniquely\nidentified by an ID sequence and every request to Web services requires this ID.\n",
+                "__METADATA__": {"primitiveValuesMeta": {
+                    "displayName": {"calculated": true},
+                    "type": {"insertedAsDefault": true},
+                    "required": {"insertedAsDefault": true},
+                    "repeat": {"insertedAsDefault": true}
+                }}
+            }},
+            "__METADATA__": {"primitiveValuesMeta": {"securedBy": {"calculated": true}}}
+        }
+    }}],
+    "resourcesCount": 14,
+    "methodsCount": 13,
+    "developerPortalURI": "http://www.zillow.com/howto/api/APIOverview.htm"
+}]}}

@@ -580,6 +580,30 @@
                                             }
                                         }
                                     }
+                                },
+                                "view": {
+                                    "name": "view",
+                                    "displayName": "view",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Acceptable values are:\n\"ADMIN\": Admin level detail\n\"AUTHOR\": Author level detail\n\"READER\": Admin level detail\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
                                 }
                             },
                             "description": "Retrieves a list of blogs.",
@@ -717,6 +741,224 @@
                                             "securedBy": [
                                                 "oauth_2_0"
                                             ],
+                                            "queryParameters": {
+                                                "endDate": {
+                                                    "name": "endDate",
+                                                    "displayName": "endDate",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "Latest date of comment to fetch, a date-time with RFC 3339 formatting.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "fetchBodies": {
+                                                    "name": "fetchBodies",
+                                                    "displayName": "fetchBodies",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "Whether the body content of the comments is included.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "maxResults": {
+                                                    "name": "maxResults",
+                                                    "displayName": "maxResults",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "Maximum number of comments to include in the result.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "pageToken": {
+                                                    "name": "pageToken",
+                                                    "displayName": "pageToken",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "Continuation token if request is paged.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "startDate": {
+                                                    "name": "startDate",
+                                                    "displayName": "startDate",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "Earliest date of comment to fetch, a date-time with RFC 3339 formatting.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "status": {
+                                                    "name": "status",
+                                                    "displayName": "status",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "Acceptable values are:\n\"emptied\": Comments that have had their content removed\n\"live\": Comments that are publicly visible\n\"pending\": Comments that are awaiting administrator approval\n\"spam\": Comments marked as spam by the administrator\n",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "view": {
+                                                    "name": "view",
+                                                    "displayName": "view",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "Acceptable values are:\n\"ADMIN\": Admin level detail\n\"AUTHOR\": Author level detail\n\"READER\": Admin level detail\n",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "labels": {
+                                                    "name": "labels",
+                                                    "displayName": "labels",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "Comma-separated list of labels to search for.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "orderBy": {
+                                                    "name": "orderBy",
+                                                    "displayName": "orderBy",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "Sort order applied to search results. Default is published. \n\nAcceptable values are:\n\"published\": Order by the date the post was published\n\"updated\": Order by the date the post was last updated\n",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
                                             "description": "Retrieves a list of post and post user info pairs, possibly filtered. The post user info contains per-user information about the post, such as access rights, specific to the user.",
                                             "method": "get",
                                             "is": [
@@ -1324,6 +1566,30 @@
                                                     }
                                                 }
                                             }
+                                        },
+                                        "view": {
+                                            "name": "view",
+                                            "displayName": "view",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Acceptable values are:\n\"ADMIN\": Admin level detail\n\"AUTHOR\": Author level detail\n\"READER\": Admin level detail\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
                                         }
                                     },
                                     "description": "Retrieves the list of pages for a blog.",
@@ -1437,6 +1703,32 @@
                                             "securedBy": [
                                                 "oauth_2_0"
                                             ],
+                                            "queryParameters": {
+                                                "view": {
+                                                    "name": "view",
+                                                    "displayName": "view",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "Acceptable values are:\n\"ADMIN\": Admin level detail\n\"AUTHOR\": Author level detail\n\"READER\": Admin level detail\n",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
                                             "description": "Retrieves one pages resource by its page ID.",
                                             "method": "get",
                                             "is": [
@@ -1640,6 +1932,222 @@
                                                     }
                                                 }
                                             }
+                                        },
+                                        "endDate": {
+                                            "name": "endDate",
+                                            "displayName": "endDate",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Latest date of comment to fetch, a date-time with RFC 3339 formatting.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "fetchBodies": {
+                                            "name": "fetchBodies",
+                                            "displayName": "fetchBodies",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Whether the body content of the comments is included.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "maxResults": {
+                                            "name": "maxResults",
+                                            "displayName": "maxResults",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Maximum number of comments to include in the result.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "pageToken": {
+                                            "name": "pageToken",
+                                            "displayName": "pageToken",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Continuation token if request is paged.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "startDate": {
+                                            "name": "startDate",
+                                            "displayName": "startDate",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Earliest date of comment to fetch, a date-time with RFC 3339 formatting.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "status": {
+                                            "name": "status",
+                                            "displayName": "status",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Acceptable values are:\n\"emptied\": Comments that have had their content removed\n\"live\": Comments that are publicly visible\n\"pending\": Comments that are awaiting administrator approval\n\"spam\": Comments marked as spam by the administrator\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "view": {
+                                            "name": "view",
+                                            "displayName": "view",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Acceptable values are:\n\"ADMIN\": Admin level detail\n\"AUTHOR\": Author level detail\n\"READER\": Admin level detail\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "labels": {
+                                            "name": "labels",
+                                            "displayName": "labels",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Comma-separated list of labels to search for.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "orderBy": {
+                                            "name": "orderBy",
+                                            "displayName": "orderBy",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Sort order applied to search results. Default is published. \n\nAcceptable values are:\n\"published\": Order by the date the post was published\n\"updated\": Order by the date the post was last updated\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
                                         }
                                     },
                                     "description": "Retrieves a list of posts.",
@@ -1791,6 +2299,30 @@
                                                         "primitiveValuesMeta": {
                                                             "displayName": {
                                                                 "calculated": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "view": {
+                                                    "name": "view",
+                                                    "displayName": "view",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "Acceptable values are:\n\"ADMIN\": Admin level detail\n\"AUTHOR\": Author level detail\n\"READER\": Admin level detail\n",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
                                                             },
                                                             "required": {
                                                                 "insertedAsDefault": true
@@ -1953,6 +2485,176 @@
                                                     "securedBy": [
                                                         "oauth_2_0"
                                                     ],
+                                                    "queryParameters": {
+                                                        "endDate": {
+                                                            "name": "endDate",
+                                                            "displayName": "endDate",
+                                                            "type": "string",
+                                                            "required": false,
+                                                            "repeat": false,
+                                                            "description": "Latest date of comment to fetch, a date-time with RFC 3339 formatting.",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "type": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "fetchBodies": {
+                                                            "name": "fetchBodies",
+                                                            "displayName": "fetchBodies",
+                                                            "type": "string",
+                                                            "required": false,
+                                                            "repeat": false,
+                                                            "description": "Whether the body content of the comments is included.",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "type": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "maxResults": {
+                                                            "name": "maxResults",
+                                                            "displayName": "maxResults",
+                                                            "type": "string",
+                                                            "required": false,
+                                                            "repeat": false,
+                                                            "description": "Maximum number of comments to include in the result.",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "type": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "pageToken": {
+                                                            "name": "pageToken",
+                                                            "displayName": "pageToken",
+                                                            "type": "string",
+                                                            "required": false,
+                                                            "repeat": false,
+                                                            "description": "Continuation token if request is paged.",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "type": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "startDate": {
+                                                            "name": "startDate",
+                                                            "displayName": "startDate",
+                                                            "type": "string",
+                                                            "required": false,
+                                                            "repeat": false,
+                                                            "description": "Earliest date of comment to fetch, a date-time with RFC 3339 formatting.",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "type": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "status": {
+                                                            "name": "status",
+                                                            "displayName": "status",
+                                                            "type": "string",
+                                                            "required": false,
+                                                            "repeat": false,
+                                                            "description": "Acceptable values are:\n\"emptied\": Comments that have had their content removed\n\"live\": Comments that are publicly visible\n\"pending\": Comments that are awaiting administrator approval\n\"spam\": Comments marked as spam by the administrator\n",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "type": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "view": {
+                                                            "name": "view",
+                                                            "displayName": "view",
+                                                            "type": "string",
+                                                            "required": false,
+                                                            "repeat": false,
+                                                            "description": "Acceptable values are:\n\"ADMIN\": Admin level detail\n\"AUTHOR\": Author level detail\n\"READER\": Admin level detail\n",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "type": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    },
                                                     "description": "Retrieves the list of comments for a post.",
                                                     "method": "get",
                                                     "is": [
@@ -2596,6 +3298,30 @@
                                                         "primitiveValuesMeta": {
                                                             "displayName": {
                                                                 "calculated": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "view": {
+                                                    "name": "view",
+                                                    "displayName": "view",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "Acceptable values are:\n\"ADMIN\": Admin level detail\n\"AUTHOR\": Author level detail\n\"READER\": Admin level detail\n",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
                                                             },
                                                             "required": {
                                                                 "insertedAsDefault": true

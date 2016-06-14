@@ -451,6 +451,10 @@
             "methods": [
                 {
                     "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "OK - The request you sent was successful (and there is content in the body of the response).\n"
+                        },
                         "201": {
                             "code": "201",
                             "body": {
@@ -460,7 +464,8 @@
                                     "example": "{\n  \"url\" : \"http://www.quizlet.com/class/NEW_CLASS_ID/\" ,\n  \"class_id\" : \"NEW_CLASS_ID\"\n}",
                                     "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"url\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"class_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
                                 }
-                            }
+                            },
+                            "description": "Created - You created a new resource (e.g. you created a new set) and it was successful. The HTTP response will include the location of the new resource you created.\n"
                         }
                     },
                     "protocols": [
@@ -668,14 +673,128 @@
                                             "example": "{\n  \"id\" : 103561 ,\n  \"name\" : \"¡Old School learns español!\" ,\n  \"set_count\" : 17 ,\n  \"user_count\" : 10 ,\n  \"created_date\" : 1314037887 ,\n  \"is_public\" : false ,\n  \"admin_only\" : true ,\n  \"description\" : \"¡Vamos a estudiar español! Starting with the basics. SPANISH!!\"\n}",
                                             "schemaContent": "class"
                                         }
-                                    }
+                                    },
+                                    "description": "OK - The request you sent was successful (and there is content in the body of the response).\n"
+                                },
+                                "400": {
+                                    "code": "400",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error",
+                                            "example": "{\n  \"http_code\" : 400 ,\n  \"error\" : \"validation_errors\" ,\n  \"error_title\" : \"Set Creation Error\" ,\n  \"error_description\" : \"The following validation errors occurred: You must have a title Both the terms and definitions are mandatory\" ,\n  \"validation_errors\" : [\n    \"You must have a title\" ,\n    \"Both the terms and definitions are mandatory\" ,\n    \"You must specify the terms language\" ,\n    \"You must specify the definitions language\"\n  ]\n}",
+                                            "schemaContent": "error"
+                                        }
+                                    },
+                                    "description": "Bad Request - There is something wrong with the data you provided (e.g. You didn't send a \"title\" when creating a new set).\n"
+                                },
+                                "401": {
+                                    "code": "401",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Unauthorized - The access token you provided does not have permission to do what you asked (e.g. Viewing a private set using a public access token)\n"
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Not Found - The resource you specified doesn't exist (e.g. the set id you provided doesn't exist or has been deleted).\n"
+                                },
+                                "405": {
+                                    "code": "405",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Method Not Allowed - The resource exists, but what you requested is not allowed (e.g. we don't allow deleting users via the API).\n"
+                                },
+                                "500": {
+                                    "code": "500",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Server Error - An unknown internal error occurred. We're automatically notified of these.\n"
                                 }
                             },
                             "protocols": [
                                 "HTTPS"
                             ],
+                            "queryParameters": {
+                                "whitespace": {
+                                    "name": "whitespace",
+                                    "displayName": "whitespace",
+                                    "type": "boolean",
+                                    "required": false,
+                                    "default": 0,
+                                    "example": "whitespace=1",
+                                    "repeat": false,
+                                    "description": "Add this parameter (whitespace=1) to indent the results for easier human reading of the raw results. This can make testing/debugging easier, and has no effect on the results. Without this parameter, Quizlet will minimize whitespace and network traffic.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "callback": {
+                                    "name": "callback",
+                                    "displayName": "callback",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "callback=foo",
+                                    "repeat": false,
+                                    "description": "A javascript function name for use inside a web application, using the JSON-P method. callback=foo will wrap the response in the foo function: foo({...data...})",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Returns the class details. The amount of detail returns depends on the authenticated user's permissions.",
                             "method": "get",
+                            "is": [
+                                "commonMethods"
+                            ],
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
                                     "protocols": {
@@ -695,7 +814,12 @@
                                             "example": "{\n  \"url\" : \"http://quizlet.com/class/CLASS_ID/\"\n}",
                                             "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"url\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
                                         }
-                                    }
+                                    },
+                                    "description": "OK - The request you sent was successful (and there is content in the body of the response).\n"
+                                },
+                                "204": {
+                                    "code": "204",
+                                    "description": "The request you sent was successful, and there is no content in the body of the response (this is common with delete and some edit actions).\n"
                                 }
                             },
                             "protocols": [
@@ -770,6 +894,30 @@
                                             }
                                         }
                                     }
+                                },
+                                "description": {
+                                    "name": "description",
+                                    "displayName": "description",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "A text description of the set.\n\nThe definition of the term\nBlock of text describing the class.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
                                 }
                             },
                             "description": "Edits an existing Class",
@@ -786,6 +934,12 @@
                             }
                         },
                         {
+                            "responses": {
+                                "204": {
+                                    "code": "204",
+                                    "description": "The request you sent was successful, and there is no content in the body of the response (this is common with delete and some edit actions).\n"
+                                }
+                            },
                             "protocols": [
                                 "HTTPS"
                             ],
@@ -806,10 +960,156 @@
                             "type": "setsType",
                             "methods": [
                                 {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "setsGet",
+                                                    "example": "[\n  {\n    \"id\" : 25954510 ,\n    \"url\" : \"http://api.quizlet.com/25954510/kitkat-flash-cards/\" ,\n    \"title\" : \"KitKat\" ,\n    \"created_by\" : \"sophiabk\" ,\n    \"term_count\" : 4 ,\n    \"created_date\" : 1378853418 ,\n    \"modified_date\" : 1381798690 ,\n    \"has_images\" : true ,\n    \"subjects\" : [\n    ] ,\n    \"visibility\" : \"public\" ,\n    \"editable\" : \"only_me\" ,\n    \"has_access\" : true ,\n    \"description\" : \"Android 4.4 :)\" ,\n    \"has_discussion\" : true ,\n    \"lang_terms\" : \"en\" ,\n    \"lang_definitions\" : \"en\" ,\n    \"creator\" : {\n      \"username\" : \"sophiabk\" ,\n      \"account_type\" : \"plus\" ,\n      \"profile_image\" : \"https://fbquizlet-quizletllc.netdna-ssl.com/hprofile-ak-prn2/203022_2900976_1217779431_n.jpg\" ,\n      \"id\" : 2890983\n    } ,\n    \"class_ids\" : [\n      103561\n    ] ,\n    \"terms\" : [\n      {\n        \"id\" : 901761014 ,\n        \"term\" : \"...\" ,\n        \"definition\" : \"\" ,\n        \"image\" : {\n          \"url\" : \"https://d42f9g3milbb1.cloudfront.net/5OAQ9xw3lUITwxQZh6uQTQ_m.jpg\" ,\n          \"width\" : 240 ,\n          \"height\" : 240\n        }\n      } , {\n        \"id\" : 901761015 ,\n        \"term\" : \"KitKat\" ,\n        \"definition\" : \"...\" ,\n        \"image\" : {\n          \"url\" : \"https://d42f9g3milbb1.cloudfront.net/UnOf61Il.sKNN5FKE4cubA_m.jpg\" ,\n          \"width\" : 240 ,\n          \"height\" : 159\n        }\n      }\n    ]\n  }\n]",
+                                                    "schemaContent": "setsGet"
+                                                }
+                                            },
+                                            "description": "OK - The request you sent was successful (and there is content in the body of the response).\n"
+                                        },
+                                        "400": {
+                                            "code": "400",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "error",
+                                                    "example": "{\n  \"http_code\" : 400 ,\n  \"error\" : \"validation_errors\" ,\n  \"error_title\" : \"Set Creation Error\" ,\n  \"error_description\" : \"The following validation errors occurred: You must have a title Both the terms and definitions are mandatory\" ,\n  \"validation_errors\" : [\n    \"You must have a title\" ,\n    \"Both the terms and definitions are mandatory\" ,\n    \"You must specify the terms language\" ,\n    \"You must specify the definitions language\"\n  ]\n}",
+                                                    "schemaContent": "error"
+                                                }
+                                            },
+                                            "description": "Bad Request - There is something wrong with the data you provided (e.g. You didn't send a \"title\" when creating a new set).\n"
+                                        },
+                                        "401": {
+                                            "code": "401",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "error401-500",
+                                                    "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                                    "schemaContent": "error401-500"
+                                                }
+                                            },
+                                            "description": "Unauthorized - The access token you provided does not have permission to do what you asked (e.g. Viewing a private set using a public access token)\n"
+                                        },
+                                        "404": {
+                                            "code": "404",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "error401-500",
+                                                    "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                                    "schemaContent": "error401-500"
+                                                }
+                                            },
+                                            "description": "Not Found - The resource you specified doesn't exist (e.g. the set id you provided doesn't exist or has been deleted).\n"
+                                        },
+                                        "405": {
+                                            "code": "405",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "error401-500",
+                                                    "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                                    "schemaContent": "error401-500"
+                                                }
+                                            },
+                                            "description": "Method Not Allowed - The resource exists, but what you requested is not allowed (e.g. we don't allow deleting users via the API).\n"
+                                        },
+                                        "500": {
+                                            "code": "500",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "error401-500",
+                                                    "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                                    "schemaContent": "error401-500"
+                                                }
+                                            },
+                                            "description": "Server Error - An unknown internal error occurred. We're automatically notified of these.\n"
+                                        }
+                                    },
                                     "protocols": [
                                         "HTTPS"
                                     ],
+                                    "queryParameters": {
+                                        "modified_since": {
+                                            "name": "modified_since",
+                                            "displayName": "Modified Since",
+                                            "type": "date",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Limits results to sets that have been modified since the specified [UNIX timestamp](http://en.wikipedia.org/wiki/Unix_time)\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "whitespace": {
+                                            "name": "whitespace",
+                                            "displayName": "whitespace",
+                                            "type": "boolean",
+                                            "required": false,
+                                            "default": 0,
+                                            "example": "whitespace=1",
+                                            "repeat": false,
+                                            "description": "Add this parameter (whitespace=1) to indent the results for easier human reading of the raw results. This can make testing/debugging easier, and has no effect on the results. Without this parameter, Quizlet will minimize whitespace and network traffic.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "callback": {
+                                            "name": "callback",
+                                            "displayName": "callback",
+                                            "type": "string",
+                                            "required": false,
+                                            "example": "callback=foo",
+                                            "repeat": false,
+                                            "description": "A javascript function name for use inside a web application, using the JSON-P method. callback=foo will wrap the response in the foo function: foo({...data...})",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "description": "Returns the full details of all the sets in a class.",
                                     "method": "get",
+                                    "is": [
+                                        "commonMethods"
+                                    ],
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
                                             "protocols": {
@@ -851,6 +1151,16 @@
                                     },
                                     "methods": [
                                         {
+                                            "responses": {
+                                                "200": {
+                                                    "code": "200",
+                                                    "description": "OK - The request you sent was successful (and there is content in the body of the response).\n"
+                                                },
+                                                "204": {
+                                                    "code": "204",
+                                                    "description": "The request you sent was successful, and there is no content in the body of the response (this is common with delete and some edit actions).\n"
+                                                }
+                                            },
                                             "protocols": [
                                                 "HTTPS"
                                             ],
@@ -865,6 +1175,12 @@
                                             }
                                         },
                                         {
+                                            "responses": {
+                                                "204": {
+                                                    "code": "204",
+                                                    "description": "The request you sent was successful, and there is no content in the body of the response (this is common with delete and some edit actions).\n"
+                                                }
+                                            },
                                             "protocols": [
                                                 "HTTPS"
                                             ],
@@ -931,7 +1247,12 @@
                                                     "example": "{\n  \"username\" : \"catchdave\" ,\n  \"role\" : \"applicant\" ,\n  \"email_notification\" : true\n}",
                                                     "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"username\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"role\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"email_notification\" : {\n      \"type\" : \"boolean\" ,\n      \"required\" : false\n    }\n  }\n}"
                                                 }
-                                            }
+                                            },
+                                            "description": "OK - The request you sent was successful (and there is content in the body of the response).\n"
+                                        },
+                                        "204": {
+                                            "code": "204",
+                                            "description": "The request you sent was successful, and there is no content in the body of the response (this is common with delete and some edit actions).\n"
                                         }
                                     },
                                     "protocols": [
@@ -971,6 +1292,12 @@
                                     }
                                 },
                                 {
+                                    "responses": {
+                                        "204": {
+                                            "code": "204",
+                                            "description": "The request you sent was successful, and there is no content in the body of the response (this is common with delete and some edit actions).\n"
+                                        }
+                                    },
                                     "protocols": [
                                         "HTTPS"
                                     ],
@@ -1018,7 +1345,12 @@
                                     "example": "[\n  {\n    \"id\" : \"aGFzaD04WEFtRGQxcVh5M2VLcXo2RW92S0t3JmFzcGVjdD0yNDB4MTYw\" ,\n    \"url\" : \"http://o.quizlet.com/i/8XAmDd1qXy3eKqz6EovKKw_m.jpg\"\n  } , {\n    \"id\" : \"aGFzaD00Q3RPNk5Ma3N2bnB2RFZVd1BPdlJBJmFzcGVjdD0yNDB4MTgw\" ,\n    \"url\" : \"http://o.quizlet.com/i/4CtO6NLksvnpvDVUwPOvRA_m.jpg\"\n  }\n]",
                                     "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"object\" ,\n      \"properties\" : {\n        \"id\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"url\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        }\n      }\n    }\n  ]\n}"
                                 }
-                            }
+                            },
+                            "description": "OK - The request you sent was successful (and there is content in the body of the response).\n"
+                        },
+                        "201": {
+                            "code": "201",
+                            "description": "Created - You created a new resource (e.g. you created a new set) and it was successful. The HTTP response will include the location of the new resource you created.\n"
                         }
                     },
                     "body": {
@@ -1091,7 +1423,68 @@
                                             "example": "{\n  \"total_results\" : 60 ,\n  \"total_pages\" : 2 ,\n  \"image_set_count\" : 35 ,\n  \"page\" : 1 ,\n  \"sets\" : [\n    {\n      \"id\" : 6009523 ,\n      \"url\" : \"http://quizlet.com/6009523/french-animals-30-flash-cards/\" ,\n      \"title\" : \"french animals 3.0\" ,\n      \"created_by\" : \"catchdave\" ,\n      \"term_count\" : 13 ,\n      \"created_date\" : 1310497102 ,\n      \"modified_date\" : 1310497363 ,\n      \"has_images\" : true ,\n      \"subjects\" : [\n        \"french\" ,\n        \"animals\"\n      ]\n    }\n  ]\n}",
                                             "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"total_results\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"total_pages\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"image_set_count\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"page\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"sets\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"id\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"url\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"title\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"created_by\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"term_count\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"created_date\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"modified_date\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"has_images\" : {\n              \"type\" : \"boolean\" ,\n              \"required\" : false\n            } ,\n            \"subjects\" : {\n              \"type\" : \"array\" ,\n              \"required\" : false ,\n              \"items\" : [\n                {\n                  \"type\" : \"string\"\n                }\n              ]\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
                                         }
-                                    }
+                                    },
+                                    "description": "OK - The request you sent was successful (and there is content in the body of the response).\n"
+                                },
+                                "400": {
+                                    "code": "400",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error",
+                                            "example": "{\n  \"http_code\" : 400 ,\n  \"error\" : \"validation_errors\" ,\n  \"error_title\" : \"Set Creation Error\" ,\n  \"error_description\" : \"The following validation errors occurred: You must have a title Both the terms and definitions are mandatory\" ,\n  \"validation_errors\" : [\n    \"You must have a title\" ,\n    \"Both the terms and definitions are mandatory\" ,\n    \"You must specify the terms language\" ,\n    \"You must specify the definitions language\"\n  ]\n}",
+                                            "schemaContent": "error"
+                                        }
+                                    },
+                                    "description": "Bad Request - There is something wrong with the data you provided (e.g. You didn't send a \"title\" when creating a new set).\n"
+                                },
+                                "401": {
+                                    "code": "401",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Unauthorized - The access token you provided does not have permission to do what you asked (e.g. Viewing a private set using a public access token)\n"
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Not Found - The resource you specified doesn't exist (e.g. the set id you provided doesn't exist or has been deleted).\n"
+                                },
+                                "405": {
+                                    "code": "405",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Method Not Allowed - The resource exists, but what you requested is not allowed (e.g. we don't allow deleting users via the API).\n"
+                                },
+                                "500": {
+                                    "code": "500",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Server Error - An unknown internal error occurred. We're automatically notified of these.\n"
                                 }
                             },
                             "protocols": [
@@ -1205,6 +1598,150 @@
                                             }
                                         }
                                     }
+                                },
+                                "page": {
+                                    "name": "page",
+                                    "displayName": "page",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The page of the result set to display.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "per_page": {
+                                    "name": "per_page",
+                                    "displayName": "per_page",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The number of sets to display per page (must be between 1 and 50).\n\nThe number of classes to display per page (must be between 1 and 50).\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "description": {
+                                    "name": "description",
+                                    "displayName": "description",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "A text description of the set.\n\nThe definition of the term\nBlock of text describing the class.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "term": {
+                                    "name": "term",
+                                    "displayName": "term",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Return sets that have the specified term in them.\n\nThe actual term (front side of card)\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "whitespace": {
+                                    "name": "whitespace",
+                                    "displayName": "whitespace",
+                                    "type": "boolean",
+                                    "required": false,
+                                    "default": 0,
+                                    "example": "whitespace=1",
+                                    "repeat": false,
+                                    "description": "Add this parameter (whitespace=1) to indent the results for easier human reading of the raw results. This can make testing/debugging easier, and has no effect on the results. Without this parameter, Quizlet will minimize whitespace and network traffic.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "callback": {
+                                    "name": "callback",
+                                    "displayName": "callback",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "callback=foo",
+                                    "repeat": false,
+                                    "description": "A javascript function name for use inside a web application, using the JSON-P method. callback=foo will wrap the response in the foo function: foo({...data...})",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
                                 }
                             },
                             "description": "Search for sets by title, description, or term. Returns limited information\n",
@@ -1212,7 +1749,8 @@
                             "is": [
                                 "pageable",
                                 "hasDescription",
-                                "hasTerm"
+                                "hasTerm",
+                                "commonMethods"
                             ],
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
@@ -1243,7 +1781,68 @@
                                             "example": "{\n  \"official_definitions\" : [\n    {\n      \"word\" : \"draw\" ,\n      \"speech_part\" : \"verb\" ,\n      \"definition\" : \"allow a draft\" ,\n      \"examples\" : [\n        \"This chimney draws very well\"\n      ]\n    } , {\n      \"word\" : \"draw\" ,\n      \"speech_part\" : \"verb\" ,\n      \"definition\" : \"engage in drawing\" ,\n      \"examples\" : [\n        \"He spent the day drawing in the garden\"\n      ]\n    }\n  ] ,\n  \"user_definitions\" : [\n    {\n      \"definition\" : \"dibujar\" ,\n      \"set_count\" : 154\n    } , {\n      \"definition\" : \"drew\" ,\n      \"set_count\" : 64\n    }\n  ]\n}",
                                             "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"official_definitions\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"word\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"speech_part\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"definition\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"examples\" : {\n              \"type\" : \"array\" ,\n              \"required\" : false ,\n              \"items\" : [\n                {\n                  \"type\" : \"string\"\n                }\n              ]\n            }\n          }\n        }\n      ]\n    } ,\n    \"user_definitions\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"definition\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"set_count\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
                                         }
-                                    }
+                                    },
+                                    "description": "OK - The request you sent was successful (and there is content in the body of the response).\n"
+                                },
+                                "400": {
+                                    "code": "400",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error",
+                                            "example": "{\n  \"http_code\" : 400 ,\n  \"error\" : \"validation_errors\" ,\n  \"error_title\" : \"Set Creation Error\" ,\n  \"error_description\" : \"The following validation errors occurred: You must have a title Both the terms and definitions are mandatory\" ,\n  \"validation_errors\" : [\n    \"You must have a title\" ,\n    \"Both the terms and definitions are mandatory\" ,\n    \"You must specify the terms language\" ,\n    \"You must specify the definitions language\"\n  ]\n}",
+                                            "schemaContent": "error"
+                                        }
+                                    },
+                                    "description": "Bad Request - There is something wrong with the data you provided (e.g. You didn't send a \"title\" when creating a new set).\n"
+                                },
+                                "401": {
+                                    "code": "401",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Unauthorized - The access token you provided does not have permission to do what you asked (e.g. Viewing a private set using a public access token)\n"
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Not Found - The resource you specified doesn't exist (e.g. the set id you provided doesn't exist or has been deleted).\n"
+                                },
+                                "405": {
+                                    "code": "405",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Method Not Allowed - The resource exists, but what you requested is not allowed (e.g. we don't allow deleting users via the API).\n"
+                                },
+                                "500": {
+                                    "code": "500",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Server Error - An unknown internal error occurred. We're automatically notified of these.\n"
                                 }
                             },
                             "protocols": [
@@ -1308,10 +1907,61 @@
                                             }
                                         }
                                     }
+                                },
+                                "whitespace": {
+                                    "name": "whitespace",
+                                    "displayName": "whitespace",
+                                    "type": "boolean",
+                                    "required": false,
+                                    "default": 0,
+                                    "example": "whitespace=1",
+                                    "repeat": false,
+                                    "description": "Add this parameter (whitespace=1) to indent the results for easier human reading of the raw results. This can make testing/debugging easier, and has no effect on the results. Without this parameter, Quizlet will minimize whitespace and network traffic.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "callback": {
+                                    "name": "callback",
+                                    "displayName": "callback",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "callback=foo",
+                                    "repeat": false,
+                                    "description": "A javascript function name for use inside a web application, using the JSON-P method. callback=foo will wrap the response in the foo function: foo({...data...})",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
                                 }
                             },
                             "description": "Find the definitions of a word.",
                             "method": "get",
+                            "is": [
+                                "commonMethods"
+                            ],
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
                                     "protocols": {
@@ -1341,7 +1991,68 @@
                                             "example": "{\n  \"total_results\" : 13 ,\n  \"total_pages\" : 1 ,\n  \"page\" : 1 ,\n  \"classes\" : [\n    {\n      \"id\" : 555 ,\n      \"name\" : \"Laboratory Sciences\" ,\n      \"set_count\" : 0 ,\n      \"user_count\" : 2 ,\n      \"created_date\" : 1295632729 ,\n      \"is_public\" : false ,\n      \"has_access\" : true ,\n      \"description\" : \"Mr Phillip's Physics Lab class for year 8\"\n    }\n  ]\n}",
                                             "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"total_results\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"total_pages\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"page\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"classes\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"id\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"set_count\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"user_count\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"created_date\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"is_public\" : {\n              \"type\" : \"boolean\" ,\n              \"required\" : false\n            } ,\n            \"has_access\" : {\n              \"type\" : \"boolean\" ,\n              \"required\" : false\n            } ,\n            \"description\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
                                         }
-                                    }
+                                    },
+                                    "description": "OK - The request you sent was successful (and there is content in the body of the response).\n"
+                                },
+                                "400": {
+                                    "code": "400",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error",
+                                            "example": "{\n  \"http_code\" : 400 ,\n  \"error\" : \"validation_errors\" ,\n  \"error_title\" : \"Set Creation Error\" ,\n  \"error_description\" : \"The following validation errors occurred: You must have a title Both the terms and definitions are mandatory\" ,\n  \"validation_errors\" : [\n    \"You must have a title\" ,\n    \"Both the terms and definitions are mandatory\" ,\n    \"You must specify the terms language\" ,\n    \"You must specify the definitions language\"\n  ]\n}",
+                                            "schemaContent": "error"
+                                        }
+                                    },
+                                    "description": "Bad Request - There is something wrong with the data you provided (e.g. You didn't send a \"title\" when creating a new set).\n"
+                                },
+                                "401": {
+                                    "code": "401",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Unauthorized - The access token you provided does not have permission to do what you asked (e.g. Viewing a private set using a public access token)\n"
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Not Found - The resource you specified doesn't exist (e.g. the set id you provided doesn't exist or has been deleted).\n"
+                                },
+                                "405": {
+                                    "code": "405",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Method Not Allowed - The resource exists, but what you requested is not allowed (e.g. we don't allow deleting users via the API).\n"
+                                },
+                                "500": {
+                                    "code": "500",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Server Error - An unknown internal error occurred. We're automatically notified of these.\n"
                                 }
                             },
                             "protocols": [
@@ -1365,12 +2076,109 @@
                                             }
                                         }
                                     }
+                                },
+                                "page": {
+                                    "name": "page",
+                                    "displayName": "page",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The page of the result set to display.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "per_page": {
+                                    "name": "per_page",
+                                    "displayName": "per_page",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The number of sets to display per page (must be between 1 and 50).\n\nThe number of classes to display per page (must be between 1 and 50).\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "whitespace": {
+                                    "name": "whitespace",
+                                    "displayName": "whitespace",
+                                    "type": "boolean",
+                                    "required": false,
+                                    "default": 0,
+                                    "example": "whitespace=1",
+                                    "repeat": false,
+                                    "description": "Add this parameter (whitespace=1) to indent the results for easier human reading of the raw results. This can make testing/debugging easier, and has no effect on the results. Without this parameter, Quizlet will minimize whitespace and network traffic.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "callback": {
+                                    "name": "callback",
+                                    "displayName": "callback",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "callback=foo",
+                                    "repeat": false,
+                                    "description": "A javascript function name for use inside a web application, using the JSON-P method. callback=foo will wrap the response in the foo function: foo({...data...})",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
                                 }
                             },
                             "description": "General way to search for classes. Returns minimal information about classes.\n",
                             "method": "get",
                             "is": [
-                                "pageable"
+                                "pageable",
+                                "commonMethods"
                             ],
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
@@ -1403,6 +2211,66 @@
                                         }
                                     },
                                     "description": "Item object: The returned item objects are identical to the user, class, and set items returned in other areas of the API, with the exception that there is also a type field included with all returned items indicating whether the item is a class, set, or user. In all cases, only minimal information is returned about each item in the resulting JSON.\n"
+                                },
+                                "400": {
+                                    "code": "400",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error",
+                                            "example": "{\n  \"http_code\" : 400 ,\n  \"error\" : \"validation_errors\" ,\n  \"error_title\" : \"Set Creation Error\" ,\n  \"error_description\" : \"The following validation errors occurred: You must have a title Both the terms and definitions are mandatory\" ,\n  \"validation_errors\" : [\n    \"You must have a title\" ,\n    \"Both the terms and definitions are mandatory\" ,\n    \"You must specify the terms language\" ,\n    \"You must specify the definitions language\"\n  ]\n}",
+                                            "schemaContent": "error"
+                                        }
+                                    },
+                                    "description": "Bad Request - There is something wrong with the data you provided (e.g. You didn't send a \"title\" when creating a new set).\n"
+                                },
+                                "401": {
+                                    "code": "401",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Unauthorized - The access token you provided does not have permission to do what you asked (e.g. Viewing a private set using a public access token)\n"
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Not Found - The resource you specified doesn't exist (e.g. the set id you provided doesn't exist or has been deleted).\n"
+                                },
+                                "405": {
+                                    "code": "405",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Method Not Allowed - The resource exists, but what you requested is not allowed (e.g. we don't allow deleting users via the API).\n"
+                                },
+                                "500": {
+                                    "code": "500",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Server Error - An unknown internal error occurred. We're automatically notified of these.\n"
                                 }
                             },
                             "protocols": [
@@ -1426,12 +2294,109 @@
                                             }
                                         }
                                     }
+                                },
+                                "page": {
+                                    "name": "page",
+                                    "displayName": "page",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The page of the result set to display.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "per_page": {
+                                    "name": "per_page",
+                                    "displayName": "per_page",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "The number of sets to display per page (must be between 1 and 50).\n\nThe number of classes to display per page (must be between 1 and 50).\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "whitespace": {
+                                    "name": "whitespace",
+                                    "displayName": "whitespace",
+                                    "type": "boolean",
+                                    "required": false,
+                                    "default": 0,
+                                    "example": "whitespace=1",
+                                    "repeat": false,
+                                    "description": "Add this parameter (whitespace=1) to indent the results for easier human reading of the raw results. This can make testing/debugging easier, and has no effect on the results. Without this parameter, Quizlet will minimize whitespace and network traffic.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "callback": {
+                                    "name": "callback",
+                                    "displayName": "callback",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "callback=foo",
+                                    "repeat": false,
+                                    "description": "A javascript function name for use inside a web application, using the JSON-P method. callback=foo will wrap the response in the foo function: foo({...data...})",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
                                 }
                             },
                             "description": "General way to search for classes, sets, and users all in one.\n",
                             "method": "get",
                             "is": [
-                                "pageable"
+                                "pageable",
+                                "commonMethods"
                             ],
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
@@ -1504,14 +2469,128 @@
                                             "example": "{\n  \"username\" : \"catchdave\" ,\n  \"account_type\" : \"plus\" ,\n  \"sign_up_date\" : 1300591868 ,\n  \"profile_image\" : \"https://fbquizlet-quizletllc.netdna-ssl.com/hprofile-ak-snc4/572892_1030920097_1174590349_n.jpg\" ,\n  \"statistics\" : {\n    \"study_session_count\" : 6 ,\n    \"message_count\" : 1 ,\n    \"total_answer_count\" : 15 ,\n    \"public_sets_created\" : 19 ,\n    \"public_terms_entered\" : 59 ,\n    \"total_sets_created\" : 19 ,\n    \"total_terms_entered\" : 59\n  } ,\n  \"sets\" : [\n    {\n      \"id\" : 6009523 ,\n      \"url\" : \"http://quizlet.com/6009523/french-animals-30-flash-cards/\" ,\n      \"title\" : \"french animals 3.0\" ,\n      \"created_by\" : \"catchdave\" ,\n      \"term_count\" : 13 ,\n      \"created_date\" : 1310497102 ,\n      \"modified_date\" : 1310497363 ,\n      \"has_images\" : true ,\n      \"subjects\" : [\n      ]\n    }\n  ] ,\n  \"favorite_sets\" : [\n    {\n      \"id\" : 6009523 ,\n      \"url\" : \"http://quizlet.com/6009523/french-animals-30-flash-cards/\" ,\n      \"title\" : \"french animals 3.0\" ,\n      \"created_by\" : \"catchdave\" ,\n      \"term_count\" : 13 ,\n      \"created_date\" : 1310497102 ,\n      \"modified_date\" : 1310497363 ,\n      \"has_images\" : true ,\n      \"subjects\" : [\n      ]\n    }\n  ] ,\n  \"studied\" : [\n    {\n      \"mode\" : \"speller\" ,\n      \"last_studied_date\" : 1308719871 ,\n      \"finished_date\" : 0 ,\n      \"score\" : 1674 ,\n      \"set\" : {\n        \"id\" : 415 ,\n        \"url\" : \"http://quizlet.com/415/us-state-capitals-flash-cards/\" ,\n        \"title\" : \"U.S. State Capitals\" ,\n        \"created_by\" : \"jalenack\" ,\n        \"term_count\" : 50 ,\n        \"created_date\" : 1144296408 ,\n        \"modified_date\" : 1308066716 ,\n        \"has_images\" : false ,\n        \"subjects\" : [\n        ]\n      }\n    }\n  ] ,\n  \"classes\" : [\n    {\n      \"id\" : 103561 ,\n      \"name\" : \"¡Old School learns español!\" ,\n      \"set_count\" : 1 ,\n      \"user_count\" : 8 ,\n      \"created_date\" : 1310425248 ,\n      \"is_public\" : true\n    }\n  ]\n}",
                                             "schemaContent": "user"
                                         }
-                                    }
+                                    },
+                                    "description": "OK - The request you sent was successful (and there is content in the body of the response).\n"
+                                },
+                                "400": {
+                                    "code": "400",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error",
+                                            "example": "{\n  \"http_code\" : 400 ,\n  \"error\" : \"validation_errors\" ,\n  \"error_title\" : \"Set Creation Error\" ,\n  \"error_description\" : \"The following validation errors occurred: You must have a title Both the terms and definitions are mandatory\" ,\n  \"validation_errors\" : [\n    \"You must have a title\" ,\n    \"Both the terms and definitions are mandatory\" ,\n    \"You must specify the terms language\" ,\n    \"You must specify the definitions language\"\n  ]\n}",
+                                            "schemaContent": "error"
+                                        }
+                                    },
+                                    "description": "Bad Request - There is something wrong with the data you provided (e.g. You didn't send a \"title\" when creating a new set).\n"
+                                },
+                                "401": {
+                                    "code": "401",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Unauthorized - The access token you provided does not have permission to do what you asked (e.g. Viewing a private set using a public access token)\n"
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Not Found - The resource you specified doesn't exist (e.g. the set id you provided doesn't exist or has been deleted).\n"
+                                },
+                                "405": {
+                                    "code": "405",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Method Not Allowed - The resource exists, but what you requested is not allowed (e.g. we don't allow deleting users via the API).\n"
+                                },
+                                "500": {
+                                    "code": "500",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Server Error - An unknown internal error occurred. We're automatically notified of these.\n"
                                 }
                             },
                             "protocols": [
                                 "HTTPS"
                             ],
+                            "queryParameters": {
+                                "whitespace": {
+                                    "name": "whitespace",
+                                    "displayName": "whitespace",
+                                    "type": "boolean",
+                                    "required": false,
+                                    "default": 0,
+                                    "example": "whitespace=1",
+                                    "repeat": false,
+                                    "description": "Add this parameter (whitespace=1) to indent the results for easier human reading of the raw results. This can make testing/debugging easier, and has no effect on the results. Without this parameter, Quizlet will minimize whitespace and network traffic.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "callback": {
+                                    "name": "callback",
+                                    "displayName": "callback",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "callback=foo",
+                                    "repeat": false,
+                                    "description": "A javascript function name for use inside a web application, using the JSON-P method. callback=foo will wrap the response in the foo function: foo({...data...})",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Returns all the user's details, and minimal information of all their sets, classes, favorites and 25 most recent study sessions.\n",
                             "method": "get",
+                            "is": [
+                                "commonMethods"
+                            ],
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
                                     "protocols": {
@@ -1527,11 +2606,156 @@
                             "type": "setsType",
                             "methods": [
                                 {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "setsGet",
+                                                    "example": "[\n  {\n    \"id\" : 25954510 ,\n    \"url\" : \"http://api.quizlet.com/25954510/kitkat-flash-cards/\" ,\n    \"title\" : \"KitKat\" ,\n    \"created_by\" : \"sophiabk\" ,\n    \"term_count\" : 4 ,\n    \"created_date\" : 1378853418 ,\n    \"modified_date\" : 1381798690 ,\n    \"has_images\" : true ,\n    \"subjects\" : [\n    ] ,\n    \"visibility\" : \"public\" ,\n    \"editable\" : \"only_me\" ,\n    \"has_access\" : true ,\n    \"description\" : \"Android 4.4 :)\" ,\n    \"has_discussion\" : true ,\n    \"lang_terms\" : \"en\" ,\n    \"lang_definitions\" : \"en\" ,\n    \"creator\" : {\n      \"username\" : \"sophiabk\" ,\n      \"account_type\" : \"plus\" ,\n      \"profile_image\" : \"https://fbquizlet-quizletllc.netdna-ssl.com/hprofile-ak-prn2/203022_2900976_1217779431_n.jpg\" ,\n      \"id\" : 2890983\n    } ,\n    \"class_ids\" : [\n      103561\n    ] ,\n    \"terms\" : [\n      {\n        \"id\" : 901761014 ,\n        \"term\" : \"...\" ,\n        \"definition\" : \"\" ,\n        \"image\" : {\n          \"url\" : \"https://d42f9g3milbb1.cloudfront.net/5OAQ9xw3lUITwxQZh6uQTQ_m.jpg\" ,\n          \"width\" : 240 ,\n          \"height\" : 240\n        }\n      } , {\n        \"id\" : 901761015 ,\n        \"term\" : \"KitKat\" ,\n        \"definition\" : \"...\" ,\n        \"image\" : {\n          \"url\" : \"https://d42f9g3milbb1.cloudfront.net/UnOf61Il.sKNN5FKE4cubA_m.jpg\" ,\n          \"width\" : 240 ,\n          \"height\" : 159\n        }\n      }\n    ]\n  }\n]",
+                                                    "schemaContent": "setsGet"
+                                                }
+                                            },
+                                            "description": "OK - The request you sent was successful (and there is content in the body of the response).\n"
+                                        },
+                                        "400": {
+                                            "code": "400",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "error",
+                                                    "example": "{\n  \"http_code\" : 400 ,\n  \"error\" : \"validation_errors\" ,\n  \"error_title\" : \"Set Creation Error\" ,\n  \"error_description\" : \"The following validation errors occurred: You must have a title Both the terms and definitions are mandatory\" ,\n  \"validation_errors\" : [\n    \"You must have a title\" ,\n    \"Both the terms and definitions are mandatory\" ,\n    \"You must specify the terms language\" ,\n    \"You must specify the definitions language\"\n  ]\n}",
+                                                    "schemaContent": "error"
+                                                }
+                                            },
+                                            "description": "Bad Request - There is something wrong with the data you provided (e.g. You didn't send a \"title\" when creating a new set).\n"
+                                        },
+                                        "401": {
+                                            "code": "401",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "error401-500",
+                                                    "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                                    "schemaContent": "error401-500"
+                                                }
+                                            },
+                                            "description": "Unauthorized - The access token you provided does not have permission to do what you asked (e.g. Viewing a private set using a public access token)\n"
+                                        },
+                                        "404": {
+                                            "code": "404",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "error401-500",
+                                                    "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                                    "schemaContent": "error401-500"
+                                                }
+                                            },
+                                            "description": "Not Found - The resource you specified doesn't exist (e.g. the set id you provided doesn't exist or has been deleted).\n"
+                                        },
+                                        "405": {
+                                            "code": "405",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "error401-500",
+                                                    "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                                    "schemaContent": "error401-500"
+                                                }
+                                            },
+                                            "description": "Method Not Allowed - The resource exists, but what you requested is not allowed (e.g. we don't allow deleting users via the API).\n"
+                                        },
+                                        "500": {
+                                            "code": "500",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "error401-500",
+                                                    "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                                    "schemaContent": "error401-500"
+                                                }
+                                            },
+                                            "description": "Server Error - An unknown internal error occurred. We're automatically notified of these.\n"
+                                        }
+                                    },
                                     "protocols": [
                                         "HTTPS"
                                     ],
+                                    "queryParameters": {
+                                        "modified_since": {
+                                            "name": "modified_since",
+                                            "displayName": "Modified Since",
+                                            "type": "date",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Limits results to sets that have been modified since the specified [UNIX timestamp](http://en.wikipedia.org/wiki/Unix_time)\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "whitespace": {
+                                            "name": "whitespace",
+                                            "displayName": "whitespace",
+                                            "type": "boolean",
+                                            "required": false,
+                                            "default": 0,
+                                            "example": "whitespace=1",
+                                            "repeat": false,
+                                            "description": "Add this parameter (whitespace=1) to indent the results for easier human reading of the raw results. This can make testing/debugging easier, and has no effect on the results. Without this parameter, Quizlet will minimize whitespace and network traffic.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "callback": {
+                                            "name": "callback",
+                                            "displayName": "callback",
+                                            "type": "string",
+                                            "required": false,
+                                            "example": "callback=foo",
+                                            "repeat": false,
+                                            "description": "A javascript function name for use inside a web application, using the JSON-P method. callback=foo will wrap the response in the foo function: foo({...data...})",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Returns full details about sets they created.",
                                     "method": "get",
+                                    "is": [
+                                        "commonMethods"
+                                    ],
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
                                             "protocols": {
@@ -1551,11 +2775,156 @@
                             "type": "setsType",
                             "methods": [
                                 {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "setsGet",
+                                                    "example": "[\n  {\n    \"id\" : 25954510 ,\n    \"url\" : \"http://api.quizlet.com/25954510/kitkat-flash-cards/\" ,\n    \"title\" : \"KitKat\" ,\n    \"created_by\" : \"sophiabk\" ,\n    \"term_count\" : 4 ,\n    \"created_date\" : 1378853418 ,\n    \"modified_date\" : 1381798690 ,\n    \"has_images\" : true ,\n    \"subjects\" : [\n    ] ,\n    \"visibility\" : \"public\" ,\n    \"editable\" : \"only_me\" ,\n    \"has_access\" : true ,\n    \"description\" : \"Android 4.4 :)\" ,\n    \"has_discussion\" : true ,\n    \"lang_terms\" : \"en\" ,\n    \"lang_definitions\" : \"en\" ,\n    \"creator\" : {\n      \"username\" : \"sophiabk\" ,\n      \"account_type\" : \"plus\" ,\n      \"profile_image\" : \"https://fbquizlet-quizletllc.netdna-ssl.com/hprofile-ak-prn2/203022_2900976_1217779431_n.jpg\" ,\n      \"id\" : 2890983\n    } ,\n    \"class_ids\" : [\n      103561\n    ] ,\n    \"terms\" : [\n      {\n        \"id\" : 901761014 ,\n        \"term\" : \"...\" ,\n        \"definition\" : \"\" ,\n        \"image\" : {\n          \"url\" : \"https://d42f9g3milbb1.cloudfront.net/5OAQ9xw3lUITwxQZh6uQTQ_m.jpg\" ,\n          \"width\" : 240 ,\n          \"height\" : 240\n        }\n      } , {\n        \"id\" : 901761015 ,\n        \"term\" : \"KitKat\" ,\n        \"definition\" : \"...\" ,\n        \"image\" : {\n          \"url\" : \"https://d42f9g3milbb1.cloudfront.net/UnOf61Il.sKNN5FKE4cubA_m.jpg\" ,\n          \"width\" : 240 ,\n          \"height\" : 159\n        }\n      }\n    ]\n  }\n]",
+                                                    "schemaContent": "setsGet"
+                                                }
+                                            },
+                                            "description": "OK - The request you sent was successful (and there is content in the body of the response).\n"
+                                        },
+                                        "400": {
+                                            "code": "400",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "error",
+                                                    "example": "{\n  \"http_code\" : 400 ,\n  \"error\" : \"validation_errors\" ,\n  \"error_title\" : \"Set Creation Error\" ,\n  \"error_description\" : \"The following validation errors occurred: You must have a title Both the terms and definitions are mandatory\" ,\n  \"validation_errors\" : [\n    \"You must have a title\" ,\n    \"Both the terms and definitions are mandatory\" ,\n    \"You must specify the terms language\" ,\n    \"You must specify the definitions language\"\n  ]\n}",
+                                                    "schemaContent": "error"
+                                                }
+                                            },
+                                            "description": "Bad Request - There is something wrong with the data you provided (e.g. You didn't send a \"title\" when creating a new set).\n"
+                                        },
+                                        "401": {
+                                            "code": "401",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "error401-500",
+                                                    "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                                    "schemaContent": "error401-500"
+                                                }
+                                            },
+                                            "description": "Unauthorized - The access token you provided does not have permission to do what you asked (e.g. Viewing a private set using a public access token)\n"
+                                        },
+                                        "404": {
+                                            "code": "404",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "error401-500",
+                                                    "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                                    "schemaContent": "error401-500"
+                                                }
+                                            },
+                                            "description": "Not Found - The resource you specified doesn't exist (e.g. the set id you provided doesn't exist or has been deleted).\n"
+                                        },
+                                        "405": {
+                                            "code": "405",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "error401-500",
+                                                    "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                                    "schemaContent": "error401-500"
+                                                }
+                                            },
+                                            "description": "Method Not Allowed - The resource exists, but what you requested is not allowed (e.g. we don't allow deleting users via the API).\n"
+                                        },
+                                        "500": {
+                                            "code": "500",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "error401-500",
+                                                    "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                                    "schemaContent": "error401-500"
+                                                }
+                                            },
+                                            "description": "Server Error - An unknown internal error occurred. We're automatically notified of these.\n"
+                                        }
+                                    },
                                     "protocols": [
                                         "HTTPS"
                                     ],
+                                    "queryParameters": {
+                                        "modified_since": {
+                                            "name": "modified_since",
+                                            "displayName": "Modified Since",
+                                            "type": "date",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Limits results to sets that have been modified since the specified [UNIX timestamp](http://en.wikipedia.org/wiki/Unix_time)\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "whitespace": {
+                                            "name": "whitespace",
+                                            "displayName": "whitespace",
+                                            "type": "boolean",
+                                            "required": false,
+                                            "default": 0,
+                                            "example": "whitespace=1",
+                                            "repeat": false,
+                                            "description": "Add this parameter (whitespace=1) to indent the results for easier human reading of the raw results. This can make testing/debugging easier, and has no effect on the results. Without this parameter, Quizlet will minimize whitespace and network traffic.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "callback": {
+                                            "name": "callback",
+                                            "displayName": "callback",
+                                            "type": "string",
+                                            "required": false,
+                                            "example": "callback=foo",
+                                            "repeat": false,
+                                            "description": "A javascript function name for use inside a web application, using the JSON-P method. callback=foo will wrap the response in the foo function: foo({...data...})",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Returns full details of all the user's favorite sets.",
                                     "method": "get",
+                                    "is": [
+                                        "commonMethods"
+                                    ],
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
                                             "protocols": {
@@ -1597,6 +2966,16 @@
                                     },
                                     "methods": [
                                         {
+                                            "responses": {
+                                                "200": {
+                                                    "code": "200",
+                                                    "description": "OK - The request you sent was successful (and there is content in the body of the response).\n"
+                                                },
+                                                "204": {
+                                                    "code": "204",
+                                                    "description": "The request you sent was successful, and there is no content in the body of the response (this is common with delete and some edit actions).\n"
+                                                }
+                                            },
                                             "protocols": [
                                                 "HTTPS"
                                             ],
@@ -1611,6 +2990,12 @@
                                             }
                                         },
                                         {
+                                            "responses": {
+                                                "204": {
+                                                    "code": "204",
+                                                    "description": "The request you sent was successful, and there is no content in the body of the response (this is common with delete and some edit actions).\n"
+                                                }
+                                            },
                                             "protocols": [
                                                 "HTTPS"
                                             ],
@@ -1651,14 +3036,128 @@
                                                     "example": "[\n  {\n    \"mode\" : \"speller\" ,\n    \"last_studied_date\" : 1308719871 ,\n    \"finished_date\" : 0 ,\n    \"score\" : 1674 ,\n    \"set\" : {\n      \"id\" : 415 ,\n      \"url\" : \"http://quizlet.com/415/us-state-capitals-flash-cards/\" ,\n      \"title\" : \"U.S. State Capitals\" ,\n      \"created_by\" : \"jalenack\" ,\n      \"term_count\" : 50 ,\n      \"created_date\" : 1144296408 ,\n      \"modified_date\" : 1308066716 ,\n      \"has_images\" : false ,\n      \"subjects\" : [\n      ]\n    }\n  }\n]",
                                                     "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"array\" ,\n  \"items\" : [\n    {\n      \"type\" : \"object\" ,\n      \"properties\" : {\n        \"mode\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"last_studied_date\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"finished_date\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"score\" : {\n          \"type\" : \"number\" ,\n          \"required\" : false\n        } ,\n        \"set\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"id\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"url\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"title\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"created_by\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"term_count\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"created_date\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"modified_date\" : {\n              \"type\" : \"number\" ,\n              \"required\" : false\n            } ,\n            \"has_images\" : {\n              \"type\" : \"boolean\" ,\n              \"required\" : false\n            } ,\n            \"subjects\" : {\n              \"type\" : \"array\" ,\n              \"required\" : false ,\n              \"items\" : [\n              ]\n            }\n          }\n        }\n      }\n    }\n  ]\n}"
                                                 }
-                                            }
+                                            },
+                                            "description": "OK - The request you sent was successful (and there is content in the body of the response).\n"
+                                        },
+                                        "400": {
+                                            "code": "400",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "error",
+                                                    "example": "{\n  \"http_code\" : 400 ,\n  \"error\" : \"validation_errors\" ,\n  \"error_title\" : \"Set Creation Error\" ,\n  \"error_description\" : \"The following validation errors occurred: You must have a title Both the terms and definitions are mandatory\" ,\n  \"validation_errors\" : [\n    \"You must have a title\" ,\n    \"Both the terms and definitions are mandatory\" ,\n    \"You must specify the terms language\" ,\n    \"You must specify the definitions language\"\n  ]\n}",
+                                                    "schemaContent": "error"
+                                                }
+                                            },
+                                            "description": "Bad Request - There is something wrong with the data you provided (e.g. You didn't send a \"title\" when creating a new set).\n"
+                                        },
+                                        "401": {
+                                            "code": "401",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "error401-500",
+                                                    "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                                    "schemaContent": "error401-500"
+                                                }
+                                            },
+                                            "description": "Unauthorized - The access token you provided does not have permission to do what you asked (e.g. Viewing a private set using a public access token)\n"
+                                        },
+                                        "404": {
+                                            "code": "404",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "error401-500",
+                                                    "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                                    "schemaContent": "error401-500"
+                                                }
+                                            },
+                                            "description": "Not Found - The resource you specified doesn't exist (e.g. the set id you provided doesn't exist or has been deleted).\n"
+                                        },
+                                        "405": {
+                                            "code": "405",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "error401-500",
+                                                    "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                                    "schemaContent": "error401-500"
+                                                }
+                                            },
+                                            "description": "Method Not Allowed - The resource exists, but what you requested is not allowed (e.g. we don't allow deleting users via the API).\n"
+                                        },
+                                        "500": {
+                                            "code": "500",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "error401-500",
+                                                    "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                                    "schemaContent": "error401-500"
+                                                }
+                                            },
+                                            "description": "Server Error - An unknown internal error occurred. We're automatically notified of these.\n"
                                         }
                                     },
                                     "protocols": [
                                         "HTTPS"
                                     ],
+                                    "queryParameters": {
+                                        "whitespace": {
+                                            "name": "whitespace",
+                                            "displayName": "whitespace",
+                                            "type": "boolean",
+                                            "required": false,
+                                            "default": 0,
+                                            "example": "whitespace=1",
+                                            "repeat": false,
+                                            "description": "Add this parameter (whitespace=1) to indent the results for easier human reading of the raw results. This can make testing/debugging easier, and has no effect on the results. Without this parameter, Quizlet will minimize whitespace and network traffic.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "callback": {
+                                            "name": "callback",
+                                            "displayName": "callback",
+                                            "type": "string",
+                                            "required": false,
+                                            "example": "callback=foo",
+                                            "repeat": false,
+                                            "description": "A javascript function name for use inside a web application, using the JSON-P method. callback=foo will wrap the response in the foo function: foo({...data...})",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "description": "Returns full details for their 100 most recent study sessions.\n",
                                     "method": "get",
+                                    "is": [
+                                        "commonMethods"
+                                    ],
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
                                             "protocols": {
@@ -1698,6 +3197,10 @@
             "methods": [
                 {
                     "responses": {
+                        "200": {
+                            "code": "200",
+                            "description": "OK - The request you sent was successful (and there is content in the body of the response).\n"
+                        },
                         "201": {
                             "code": "201",
                             "body": {
@@ -1707,7 +3210,8 @@
                                     "example": "{\n  \"url\" : \"https://quizlet.com/5559169/my-first-set-via-the-api-flash-cards/\" ,\n  \"term_count\" : 2 ,\n  \"set_id\" : 5559169\n}",
                                     "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"url\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"term_count\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"set_id\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    }\n  }\n}"
                                 }
-                            }
+                            },
+                            "description": "Created - You created a new resource (e.g. you created a new set) and it was successful. The HTTP response will include the location of the new resource you created.\n"
                         }
                     },
                     "body": {
@@ -2042,11 +3546,156 @@
                     }
                 },
                 {
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "setsGet",
+                                    "example": "[\n  {\n    \"id\" : 25954510 ,\n    \"url\" : \"http://api.quizlet.com/25954510/kitkat-flash-cards/\" ,\n    \"title\" : \"KitKat\" ,\n    \"created_by\" : \"sophiabk\" ,\n    \"term_count\" : 4 ,\n    \"created_date\" : 1378853418 ,\n    \"modified_date\" : 1381798690 ,\n    \"has_images\" : true ,\n    \"subjects\" : [\n    ] ,\n    \"visibility\" : \"public\" ,\n    \"editable\" : \"only_me\" ,\n    \"has_access\" : true ,\n    \"description\" : \"Android 4.4 :)\" ,\n    \"has_discussion\" : true ,\n    \"lang_terms\" : \"en\" ,\n    \"lang_definitions\" : \"en\" ,\n    \"creator\" : {\n      \"username\" : \"sophiabk\" ,\n      \"account_type\" : \"plus\" ,\n      \"profile_image\" : \"https://fbquizlet-quizletllc.netdna-ssl.com/hprofile-ak-prn2/203022_2900976_1217779431_n.jpg\" ,\n      \"id\" : 2890983\n    } ,\n    \"class_ids\" : [\n      103561\n    ] ,\n    \"terms\" : [\n      {\n        \"id\" : 901761014 ,\n        \"term\" : \"...\" ,\n        \"definition\" : \"\" ,\n        \"image\" : {\n          \"url\" : \"https://d42f9g3milbb1.cloudfront.net/5OAQ9xw3lUITwxQZh6uQTQ_m.jpg\" ,\n          \"width\" : 240 ,\n          \"height\" : 240\n        }\n      } , {\n        \"id\" : 901761015 ,\n        \"term\" : \"KitKat\" ,\n        \"definition\" : \"...\" ,\n        \"image\" : {\n          \"url\" : \"https://d42f9g3milbb1.cloudfront.net/UnOf61Il.sKNN5FKE4cubA_m.jpg\" ,\n          \"width\" : 240 ,\n          \"height\" : 159\n        }\n      }\n    ]\n  }\n]",
+                                    "schemaContent": "setsGet"
+                                }
+                            },
+                            "description": "OK - The request you sent was successful (and there is content in the body of the response).\n"
+                        },
+                        "400": {
+                            "code": "400",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "error",
+                                    "example": "{\n  \"http_code\" : 400 ,\n  \"error\" : \"validation_errors\" ,\n  \"error_title\" : \"Set Creation Error\" ,\n  \"error_description\" : \"The following validation errors occurred: You must have a title Both the terms and definitions are mandatory\" ,\n  \"validation_errors\" : [\n    \"You must have a title\" ,\n    \"Both the terms and definitions are mandatory\" ,\n    \"You must specify the terms language\" ,\n    \"You must specify the definitions language\"\n  ]\n}",
+                                    "schemaContent": "error"
+                                }
+                            },
+                            "description": "Bad Request - There is something wrong with the data you provided (e.g. You didn't send a \"title\" when creating a new set).\n"
+                        },
+                        "401": {
+                            "code": "401",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "error401-500",
+                                    "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                    "schemaContent": "error401-500"
+                                }
+                            },
+                            "description": "Unauthorized - The access token you provided does not have permission to do what you asked (e.g. Viewing a private set using a public access token)\n"
+                        },
+                        "404": {
+                            "code": "404",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "error401-500",
+                                    "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                    "schemaContent": "error401-500"
+                                }
+                            },
+                            "description": "Not Found - The resource you specified doesn't exist (e.g. the set id you provided doesn't exist or has been deleted).\n"
+                        },
+                        "405": {
+                            "code": "405",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "error401-500",
+                                    "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                    "schemaContent": "error401-500"
+                                }
+                            },
+                            "description": "Method Not Allowed - The resource exists, but what you requested is not allowed (e.g. we don't allow deleting users via the API).\n"
+                        },
+                        "500": {
+                            "code": "500",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "schema": "error401-500",
+                                    "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                    "schemaContent": "error401-500"
+                                }
+                            },
+                            "description": "Server Error - An unknown internal error occurred. We're automatically notified of these.\n"
+                        }
+                    },
                     "protocols": [
                         "HTTPS"
                     ],
+                    "queryParameters": {
+                        "modified_since": {
+                            "name": "modified_since",
+                            "displayName": "Modified Since",
+                            "type": "date",
+                            "required": false,
+                            "repeat": false,
+                            "description": "Limits results to sets that have been modified since the specified [UNIX timestamp](http://en.wikipedia.org/wiki/Unix_time)\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "whitespace": {
+                            "name": "whitespace",
+                            "displayName": "whitespace",
+                            "type": "boolean",
+                            "required": false,
+                            "default": 0,
+                            "example": "whitespace=1",
+                            "repeat": false,
+                            "description": "Add this parameter (whitespace=1) to indent the results for easier human reading of the raw results. This can make testing/debugging easier, and has no effect on the results. Without this parameter, Quizlet will minimize whitespace and network traffic.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "callback": {
+                            "name": "callback",
+                            "displayName": "callback",
+                            "type": "string",
+                            "required": false,
+                            "example": "callback=foo",
+                            "repeat": false,
+                            "description": "A javascript function name for use inside a web application, using the JSON-P method. callback=foo will wrap the response in the foo function: foo({...data...})",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "description": "Returns multiple unrelated sets.",
                     "method": "get",
+                    "is": [
+                        "commonMethods"
+                    ],
                     "__METADATA__": {
                         "primitiveValuesMeta": {
                             "protocols": {
@@ -2098,7 +3747,12 @@
                                             "example": "{\n  \"url\" : \"http://quizlet.com/SET_ID/SET_URL_TITLE/\" ,\n  \"term_count\" : \"TERM_COUNT\"\n}",
                                             "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"url\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"term_count\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
                                         }
-                                    }
+                                    },
+                                    "description": "OK - The request you sent was successful (and there is content in the body of the response).\n"
+                                },
+                                "204": {
+                                    "code": "204",
+                                    "description": "The request you sent was successful, and there is no content in the body of the response (this is common with delete and some edit actions).\n"
                                 }
                             },
                             "protocols": [
@@ -2385,6 +4039,30 @@
                                             }
                                         }
                                     }
+                                },
+                                "description": {
+                                    "name": "description",
+                                    "displayName": "description",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "A text description of the set.\n\nThe definition of the term\nBlock of text describing the class.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
                                 }
                             },
                             "description": "Edit an existing se\n",
@@ -2401,6 +4079,12 @@
                             }
                         },
                         {
+                            "responses": {
+                                "204": {
+                                    "code": "204",
+                                    "description": "The request you sent was successful, and there is no content in the body of the response (this is common with delete and some edit actions).\n"
+                                }
+                            },
                             "protocols": [
                                 "HTTPS"
                             ],
@@ -2425,11 +4109,72 @@
                                             "example": "{\n  \"id\" : 6009523 ,\n  \"url\" : \"http://quizlet.com/6009523/french-animals-30-flash-cards/\" ,\n  \"title\" : \"french animals 3.0\" ,\n  \"created_by\" : \"catchdave\" ,\n  \"term_count\" : 13 ,\n  \"created_date\" : 1310497102 ,\n  \"modified_date\" : 1310497363 ,\n  \"has_images\" : true ,\n  \"subjects\" : [\n    \"french\" ,\n    \"animals\"\n  ] ,\n  \"visibility\" : \"public\" ,\n  \"editable\" : \"only_me\" ,\n  \"has_access\" : true ,\n  \"has_discussion\" : true ,\n  \"description\" : \"\" ,\n  \"lang_terms\" : \"en\" ,\n  \"lang_definitions\" : \"en\" ,\n  \"terms\" : [\n    {\n      \"id\" : 190713940 ,\n      \"term\" : \"une grenouille\" ,\n      \"definition\" : \"a frog\" ,\n      \"image\" : {\n        \"url\" : \"http://farm1.staticflickr.com/74/179791578_70992b1821.jpg\" ,\n        \"width\" : 180 ,\n        \"height\" : 240\n      }\n    } , {\n      \"id\" : 190713941 ,\n      \"term\" : \"un crapaud\" ,\n      \"definition\" : \"a toad\" ,\n      \"image\" : {\n        \"url\" : \"http://farm4.staticflickr.com/3267/2874355931_da7c0bbdaa.jpg\" ,\n        \"width\" : 240 ,\n        \"height\" : 213\n      }\n    } , {\n      \"id\" : 190713942 ,\n      \"term\" : \"un poisson\" ,\n      \"definition\" : \"a fish (no image)\" ,\n      \"image\" : null\n    }\n  ]\n}",
                                             "schemaContent": "set"
                                         }
-                                    }
+                                    },
+                                    "description": "OK - The request you sent was successful (and there is content in the body of the response).\n"
                                 },
                                 "304": {
                                     "code": "304",
                                     "description": "Not Modified\nExample output when specifying modified_since\n"
+                                },
+                                "400": {
+                                    "code": "400",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error",
+                                            "example": "{\n  \"http_code\" : 400 ,\n  \"error\" : \"validation_errors\" ,\n  \"error_title\" : \"Set Creation Error\" ,\n  \"error_description\" : \"The following validation errors occurred: You must have a title Both the terms and definitions are mandatory\" ,\n  \"validation_errors\" : [\n    \"You must have a title\" ,\n    \"Both the terms and definitions are mandatory\" ,\n    \"You must specify the terms language\" ,\n    \"You must specify the definitions language\"\n  ]\n}",
+                                            "schemaContent": "error"
+                                        }
+                                    },
+                                    "description": "Bad Request - There is something wrong with the data you provided (e.g. You didn't send a \"title\" when creating a new set).\n"
+                                },
+                                "401": {
+                                    "code": "401",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Unauthorized - The access token you provided does not have permission to do what you asked (e.g. Viewing a private set using a public access token)\n"
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Not Found - The resource you specified doesn't exist (e.g. the set id you provided doesn't exist or has been deleted).\n"
+                                },
+                                "405": {
+                                    "code": "405",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Method Not Allowed - The resource exists, but what you requested is not allowed (e.g. we don't allow deleting users via the API).\n"
+                                },
+                                "500": {
+                                    "code": "500",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "error401-500",
+                                            "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                            "schemaContent": "error401-500"
+                                        }
+                                    },
+                                    "description": "Server Error - An unknown internal error occurred. We're automatically notified of these.\n"
                                 }
                             },
                             "protocols": [
@@ -2453,10 +4198,61 @@
                                             }
                                         }
                                     }
+                                },
+                                "whitespace": {
+                                    "name": "whitespace",
+                                    "displayName": "whitespace",
+                                    "type": "boolean",
+                                    "required": false,
+                                    "default": 0,
+                                    "example": "whitespace=1",
+                                    "repeat": false,
+                                    "description": "Add this parameter (whitespace=1) to indent the results for easier human reading of the raw results. This can make testing/debugging easier, and has no effect on the results. Without this parameter, Quizlet will minimize whitespace and network traffic.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "callback": {
+                                    "name": "callback",
+                                    "displayName": "callback",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "callback=foo",
+                                    "repeat": false,
+                                    "description": "A javascript function name for use inside a web application, using the JSON-P method. callback=foo will wrap the response in the foo function: foo({...data...})",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
                                 }
                             },
                             "description": "View complete details (including all terms) of a single set.\n",
                             "method": "get",
+                            "is": [
+                                "commonMethods"
+                            ],
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
                                     "protocols": {
@@ -2482,10 +4278,71 @@
                                                     "example": "{\n  \"terms\" : [\n    {\n      \"id\" : 190713940 ,\n      \"term\" : \"une grenouille\" ,\n      \"definition\" : \"a frog\" ,\n      \"image\" : {\n        \"url\" : \"http://farm1.staticflickr.com/74/179791578_70992b1821.jpg\" ,\n        \"width\" : 180 ,\n        \"height\" : 240\n      }\n    } , {\n      \"id\" : 190713941 ,\n      \"term\" : \"un crapaud\" ,\n      \"definition\" : \"a toad\" ,\n      \"image\" : {\n        \"url\" : \"http://farm4.staticflickr.com/3267/2874355931_da7c0bbdaa.jpg\" ,\n        \"width\" : 240 ,\n        \"height\" : 213\n      }\n    } , {\n      \"id\" : 190713942 ,\n      \"term\" : \"un poisson\" ,\n      \"definition\" : \"a fish (no image)\" ,\n      \"image\" : null\n    }\n  ]\n}",
                                                     "schemaContent": "terms"
                                                 }
-                                            }
+                                            },
+                                            "description": "OK - The request you sent was successful (and there is content in the body of the response).\n"
                                         },
                                         "304": {
                                             "code": "304"
+                                        },
+                                        "400": {
+                                            "code": "400",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "error",
+                                                    "example": "{\n  \"http_code\" : 400 ,\n  \"error\" : \"validation_errors\" ,\n  \"error_title\" : \"Set Creation Error\" ,\n  \"error_description\" : \"The following validation errors occurred: You must have a title Both the terms and definitions are mandatory\" ,\n  \"validation_errors\" : [\n    \"You must have a title\" ,\n    \"Both the terms and definitions are mandatory\" ,\n    \"You must specify the terms language\" ,\n    \"You must specify the definitions language\"\n  ]\n}",
+                                                    "schemaContent": "error"
+                                                }
+                                            },
+                                            "description": "Bad Request - There is something wrong with the data you provided (e.g. You didn't send a \"title\" when creating a new set).\n"
+                                        },
+                                        "401": {
+                                            "code": "401",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "error401-500",
+                                                    "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                                    "schemaContent": "error401-500"
+                                                }
+                                            },
+                                            "description": "Unauthorized - The access token you provided does not have permission to do what you asked (e.g. Viewing a private set using a public access token)\n"
+                                        },
+                                        "404": {
+                                            "code": "404",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "error401-500",
+                                                    "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                                    "schemaContent": "error401-500"
+                                                }
+                                            },
+                                            "description": "Not Found - The resource you specified doesn't exist (e.g. the set id you provided doesn't exist or has been deleted).\n"
+                                        },
+                                        "405": {
+                                            "code": "405",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "error401-500",
+                                                    "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                                    "schemaContent": "error401-500"
+                                                }
+                                            },
+                                            "description": "Method Not Allowed - The resource exists, but what you requested is not allowed (e.g. we don't allow deleting users via the API).\n"
+                                        },
+                                        "500": {
+                                            "code": "500",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "error401-500",
+                                                    "example": "{\n  \"http_code\" : 404 ,\n  \"error\" : \"item_not_found\" ,\n  \"error_title\" : \"User Not Found\" ,\n  \"error_description\" : \"There is no user with username foobar\"\n}",
+                                                    "schemaContent": "error401-500"
+                                                }
+                                            },
+                                            "description": "Server Error - An unknown internal error occurred. We're automatically notified of these.\n"
                                         }
                                     },
                                     "protocols": [
@@ -2512,10 +4369,61 @@
                                                     }
                                                 }
                                             }
+                                        },
+                                        "whitespace": {
+                                            "name": "whitespace",
+                                            "displayName": "whitespace",
+                                            "type": "boolean",
+                                            "required": false,
+                                            "default": 0,
+                                            "example": "whitespace=1",
+                                            "repeat": false,
+                                            "description": "Add this parameter (whitespace=1) to indent the results for easier human reading of the raw results. This can make testing/debugging easier, and has no effect on the results. Without this parameter, Quizlet will minimize whitespace and network traffic.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "callback": {
+                                            "name": "callback",
+                                            "displayName": "callback",
+                                            "type": "string",
+                                            "required": false,
+                                            "example": "callback=foo",
+                                            "repeat": false,
+                                            "description": "A javascript function name for use inside a web application, using the JSON-P method. callback=foo will wrap the response in the foo function: foo({...data...})",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
                                         }
                                     },
                                     "description": "View just the terms in a single set.\n",
                                     "method": "get",
+                                    "is": [
+                                        "commonMethods"
+                                    ],
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
                                             "protocols": {
@@ -2525,6 +4433,16 @@
                                     }
                                 },
                                 {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "description": "OK - The request you sent was successful (and there is content in the body of the response).\n"
+                                        },
+                                        "201": {
+                                            "code": "201",
+                                            "description": "Created - You created a new resource (e.g. you created a new set) and it was successful. The HTTP response will include the location of the new resource you created.\n"
+                                        }
+                                    },
                                     "protocols": [
                                         "HTTPS"
                                     ],
@@ -2538,6 +4456,54 @@
                                             "description": "The identifier of the image for the term. You get image identifiers when you upload images.",
                                             "__METADATA__": {
                                                 "primitiveValuesMeta": {
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "description": {
+                                            "name": "description",
+                                            "displayName": "description",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "A text description of the set.\n\nThe definition of the term\nBlock of text describing the class.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "term": {
+                                            "name": "term",
+                                            "displayName": "term",
+                                            "type": "string",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Return sets that have the specified term in them.\n\nThe actual term (front side of card)\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
                                                     "type": {
                                                         "insertedAsDefault": true
                                                     },
@@ -2598,6 +4564,16 @@
                                     },
                                     "methods": [
                                         {
+                                            "responses": {
+                                                "200": {
+                                                    "code": "200",
+                                                    "description": "OK - The request you sent was successful (and there is content in the body of the response).\n"
+                                                },
+                                                "204": {
+                                                    "code": "204",
+                                                    "description": "The request you sent was successful, and there is no content in the body of the response (this is common with delete and some edit actions).\n"
+                                                }
+                                            },
                                             "protocols": [
                                                 "HTTPS"
                                             ],
@@ -2611,6 +4587,54 @@
                                                     "description": "The identifier of the image for the term. You get image identifiers when you upload images.",
                                                     "__METADATA__": {
                                                         "primitiveValuesMeta": {
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "description": {
+                                                    "name": "description",
+                                                    "displayName": "description",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "A text description of the set.\n\nThe definition of the term\nBlock of text describing the class.\n",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "term": {
+                                                    "name": "term",
+                                                    "displayName": "term",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "Return sets that have the specified term in them.\n\nThe actual term (front side of card)\n",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
                                                             "type": {
                                                                 "insertedAsDefault": true
                                                             },
@@ -2639,6 +4663,12 @@
                                             }
                                         },
                                         {
+                                            "responses": {
+                                                "204": {
+                                                    "code": "204",
+                                                    "description": "The request you sent was successful, and there is no content in the body of the response (this is common with delete and some edit actions).\n"
+                                                }
+                                            },
                                             "protocols": [
                                                 "HTTPS"
                                             ],
@@ -2652,6 +4682,54 @@
                                                     "description": "The identifier of the image for the term. You get image identifiers when you upload images.",
                                                     "__METADATA__": {
                                                         "primitiveValuesMeta": {
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "description": {
+                                                    "name": "description",
+                                                    "displayName": "description",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "A text description of the set.\n\nThe definition of the term\nBlock of text describing the class.\n",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "term": {
+                                                    "name": "term",
+                                                    "displayName": "term",
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "repeat": false,
+                                                    "description": "Return sets that have the specified term in them.\n\nThe actual term (front side of card)\n",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
                                                             "type": {
                                                                 "insertedAsDefault": true
                                                             },
@@ -2696,6 +4774,16 @@
                             "type": "base",
                             "methods": [
                                 {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "description": "OK - The request you sent was successful (and there is content in the body of the response).\n"
+                                        },
+                                        "201": {
+                                            "code": "201",
+                                            "description": "Created - You created a new resource (e.g. you created a new set) and it was successful. The HTTP response will include the location of the new resource you created.\n"
+                                        }
+                                    },
                                     "protocols": [
                                         "HTTPS"
                                     ],

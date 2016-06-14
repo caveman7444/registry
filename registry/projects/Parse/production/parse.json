@@ -568,6 +568,9 @@
                             "resourceName": "classes"
                         }
                     },
+                    "is": [
+                        "allowsBasicAuthentication"
+                    ],
                     "uriParameters": {
                         "className": {
                             "name": "className",
@@ -637,6 +640,144 @@
                                                     }
                                                 }
                                             }
+                                        },
+                                        "where": {
+                                            "name": "where",
+                                            "displayName": "where",
+                                            "type": "string",
+                                            "required": false,
+                                            "example": "where={\"cheatMode\":false,\"score\":{\"$gte\":1000,\"$lte\":3000}}",
+                                            "repeat": false,
+                                            "description": "Provides query parameters. The value should be JSON.\n|Key         |Operation                                    |\n|------------|---------------------------------------------|\n|$lt         |Less Than                                    |\n|$lte        |Less Than Or Equal To                        |\n|$gt         |Greater Than                                 |\n|$gte        |Greater Than Or Equal To                     |\n|$ne         |Not Equal To                                 |\n|$in         |Contained In                                 |\n|$nin        |Not Contained in                             |\n|$exists     |A value is set for the key                   |\n|$select     |This matches a value for a key in the result of a different query|\n|$dontSelect |Requires that a key's value not match a value for a key in the result of a different query|\n|$all        |Contains all of the given values             |\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "order": {
+                                            "name": "order",
+                                            "displayName": "order",
+                                            "type": "string",
+                                            "required": false,
+                                            "example": "order=score,-name",
+                                            "repeat": false,
+                                            "description": "Specifies a field to sort by. Use '-' to obtain descending order. Accepts multiple fields.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "limit": {
+                                            "name": "limit",
+                                            "displayName": "limit",
+                                            "type": "integer",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Pagination parameter. Maximal size of the results array.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "skip": {
+                                            "name": "skip",
+                                            "displayName": "skip",
+                                            "type": "integer",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "Pagination parameter. Offset used to form the results array.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "keys": {
+                                            "name": "keys",
+                                            "displayName": "keys",
+                                            "type": "string",
+                                            "required": false,
+                                            "example": "keys=score,playerName",
+                                            "repeat": false,
+                                            "description": "Restricts returned fields.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "name": "count",
+                                            "displayName": "count",
+                                            "type": "integer",
+                                            "required": false,
+                                            "repeat": false,
+                                            "description": "If you are limiting your query, or if there are a very large number of results, and you want to\nknow how many total results there are without returning them all, you can use the count parameter.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -645,10 +786,14 @@
                                 "HTTPS"
                             ],
                             "securedBy": [
-                                "commonSchema"
+                                "commonSchema",
+                                "basic"
                             ],
                             "description": "Retreives objects. The response body is a JSON object containing all the user-provided fields,\nplus the createdAt, updatedAt, and objectId fields.\n",
                             "method": "get",
+                            "is": [
+                                "allowsQuery"
+                            ],
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
                                     "protocols": {
@@ -682,6 +827,10 @@
                             "protocols": [
                                 "HTTPS"
                             ],
+                            "securedBy": [
+                                "commonSchema",
+                                "basic"
+                            ],
                             "description": "Creates an object. When the creation is successful, the HTTP response is a 201 Created\nand the Location header contains the object URL for the new object.\n",
                             "method": "post",
                             "__METADATA__": {
@@ -701,6 +850,9 @@
                                     "objectType": "instance"
                                 }
                             },
+                            "is": [
+                                "allowsBasicAuthentication"
+                            ],
                             "uriParameters": {
                                 "objectId": {
                                     "name": "objectId",
@@ -745,6 +897,11 @@
                                     "protocols": [
                                         "HTTPS"
                                     ],
+                                    "securedBy": [
+                                        "commonSchema",
+                                        "basic"
+                                    ],
+                                    "description": "Retreive instance by objectId",
                                     "method": "get",
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
@@ -755,6 +912,19 @@
                                     }
                                 },
                                 {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "collectionPutResponse",
+                                                    "example": "{\n\t\"updatedAt\" : \"2011-08-21T18:02:52.248Z\"\n}",
+                                                    "schemaContent": "collectionPutResponse"
+                                                }
+                                            }
+                                        }
+                                    },
                                     "body": {
                                         "application/json": {
                                             "name": "application/json",
@@ -767,7 +937,8 @@
                                         "HTTPS"
                                     ],
                                     "securedBy": [
-                                        "commonSchema"
+                                        "commonSchema",
+                                        "basic"
                                     ],
                                     "description": "Updates an object. Any keys you don't specify will remain unchanged, so you can update just a subset of the object's data.\n",
                                     "method": "put",
@@ -780,12 +951,19 @@
                                     }
                                 },
                                 {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200"
+                                        }
+                                    },
                                     "protocols": [
                                         "HTTPS"
                                     ],
                                     "securedBy": [
-                                        "commonSchema"
+                                        "commonSchema",
+                                        "basic"
                                     ],
+                                    "description": "Delete instance by objectId\n",
                                     "method": "delete",
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
@@ -897,6 +1075,9 @@
                     "resourceName": "users"
                 }
             },
+            "is": [
+                "allowsBasicAuthentication"
+            ],
             "methods": [
                 {
                     "responses": {
@@ -912,13 +1093,163 @@
                             }
                         }
                     },
+                    "body": {
+                        "application/x-www-form-urlencoded": {
+                            "name": "application/x-www-form-urlencoded",
+                            "formParameters": {
+                                "where": {
+                                    "name": "where",
+                                    "displayName": "where",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "where={\"cheatMode\":false,\"score\":{\"$gte\":1000,\"$lte\":3000}}",
+                                    "repeat": false,
+                                    "description": "Provides query parameters. The value should be JSON.\n|Key         |Operation                                    |\n|------------|---------------------------------------------|\n|$lt         |Less Than                                    |\n|$lte        |Less Than Or Equal To                        |\n|$gt         |Greater Than                                 |\n|$gte        |Greater Than Or Equal To                     |\n|$ne         |Not Equal To                                 |\n|$in         |Contained In                                 |\n|$nin        |Not Contained in                             |\n|$exists     |A value is set for the key                   |\n|$select     |This matches a value for a key in the result of a different query|\n|$dontSelect |Requires that a key's value not match a value for a key in the result of a different query|\n|$all        |Contains all of the given values             |\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "order": {
+                                    "name": "order",
+                                    "displayName": "order",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "order=score,-name",
+                                    "repeat": false,
+                                    "description": "Specifies a field to sort by. Use '-' to obtain descending order. Accepts multiple fields.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "limit": {
+                                    "name": "limit",
+                                    "displayName": "limit",
+                                    "type": "integer",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Pagination parameter. Maximal size of the results array.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "skip": {
+                                    "name": "skip",
+                                    "displayName": "skip",
+                                    "type": "integer",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Pagination parameter. Offset used to form the results array.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "keys": {
+                                    "name": "keys",
+                                    "displayName": "keys",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "keys=score,playerName",
+                                    "repeat": false,
+                                    "description": "Restricts returned fields.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "count": {
+                                    "name": "count",
+                                    "displayName": "count",
+                                    "type": "integer",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "If you are limiting your query, or if there are a very large number of results, and you want to\nknow how many total results there are without returning them all, you can use the count parameter.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "protocols": [
                         "HTTPS"
                     ],
                     "securedBy": [
-                        "commonSchema"
+                        "commonSchema",
+                        "basic"
                     ],
+                    "description": "Get all users, optionally filtered",
                     "method": "get",
+                    "is": [
+                        "allowsQuery"
+                    ],
                     "__METADATA__": {
                         "primitiveValuesMeta": {
                             "protocols": {
@@ -951,6 +1282,10 @@
                     },
                     "protocols": [
                         "HTTPS"
+                    ],
+                    "securedBy": [
+                        "commonSchema",
+                        "basic"
                     ],
                     "description": "Signs up a new user.\n",
                     "method": "post",
@@ -1018,6 +1353,9 @@
                             "objectType": "user"
                         }
                     },
+                    "is": [
+                        "allowsBasicAuthentication"
+                    ],
                     "uriParameters": {
                         "objectId": {
                             "name": "objectId",
@@ -1062,6 +1400,10 @@
                             "protocols": [
                                 "HTTPS"
                             ],
+                            "securedBy": [
+                                "commonSchema",
+                                "basic"
+                            ],
                             "description": "Retreive a user by objectId. Response body is a JSON object containing all the user-provided fields except password.\nIt also contains the createdAt, updatedAt, and objectId fields\n",
                             "method": "get",
                             "__METADATA__": {
@@ -1073,6 +1415,19 @@
                             }
                         },
                         {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "collectionPutResponse",
+                                            "example": "{\n\t\"updatedAt\" : \"2011-08-21T18:02:52.248Z\"\n}",
+                                            "schemaContent": "collectionPutResponse"
+                                        }
+                                    }
+                                }
+                            },
                             "body": {
                                 "application/json": {
                                     "name": "application/json",
@@ -1086,7 +1441,8 @@
                             ],
                             "securedBy": [
                                 "sessionTokenSchema",
-                                "masterSchema"
+                                "masterSchema",
+                                "basic"
                             ],
                             "description": "Updates a user. Any keys you don't specify will remain unchanged, so you can update just a subset of the object's data.\n",
                             "method": "put",
@@ -1099,13 +1455,21 @@
                             }
                         },
                         {
+                            "responses": {
+                                "200": {
+                                    "code": "200"
+                                }
+                            },
                             "protocols": [
                                 "HTTPS"
                             ],
                             "securedBy": [
                                 "sessionTokenSchema",
-                                "masterSchema"
+                                "masterSchema",
+                                "commonSchema",
+                                "basic"
                             ],
+                            "description": "Delete user by objectId\n",
                             "method": "delete",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
@@ -1130,6 +1494,7 @@
                 }
             ],
             "displayName": "/users",
+            "description": "The collection of users",
             "__METADATA__": {
                 "primitiveValuesMeta": {
                     "displayName": {
@@ -1289,6 +1654,9 @@
                     "resourceName": "roles"
                 }
             },
+            "is": [
+                "allowsBasicAuthentication"
+            ],
             "methods": [
                 {
                     "responses": {
@@ -1304,13 +1672,163 @@
                             }
                         }
                     },
+                    "body": {
+                        "application/x-www-form-urlencoded": {
+                            "name": "application/x-www-form-urlencoded",
+                            "formParameters": {
+                                "where": {
+                                    "name": "where",
+                                    "displayName": "where",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "where={\"cheatMode\":false,\"score\":{\"$gte\":1000,\"$lte\":3000}}",
+                                    "repeat": false,
+                                    "description": "Provides query parameters. The value should be JSON.\n|Key         |Operation                                    |\n|------------|---------------------------------------------|\n|$lt         |Less Than                                    |\n|$lte        |Less Than Or Equal To                        |\n|$gt         |Greater Than                                 |\n|$gte        |Greater Than Or Equal To                     |\n|$ne         |Not Equal To                                 |\n|$in         |Contained In                                 |\n|$nin        |Not Contained in                             |\n|$exists     |A value is set for the key                   |\n|$select     |This matches a value for a key in the result of a different query|\n|$dontSelect |Requires that a key's value not match a value for a key in the result of a different query|\n|$all        |Contains all of the given values             |\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "order": {
+                                    "name": "order",
+                                    "displayName": "order",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "order=score,-name",
+                                    "repeat": false,
+                                    "description": "Specifies a field to sort by. Use '-' to obtain descending order. Accepts multiple fields.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "limit": {
+                                    "name": "limit",
+                                    "displayName": "limit",
+                                    "type": "integer",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Pagination parameter. Maximal size of the results array.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "skip": {
+                                    "name": "skip",
+                                    "displayName": "skip",
+                                    "type": "integer",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Pagination parameter. Offset used to form the results array.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "keys": {
+                                    "name": "keys",
+                                    "displayName": "keys",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "keys=score,playerName",
+                                    "repeat": false,
+                                    "description": "Restricts returned fields.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "count": {
+                                    "name": "count",
+                                    "displayName": "count",
+                                    "type": "integer",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "If you are limiting your query, or if there are a very large number of results, and you want to\nknow how many total results there are without returning them all, you can use the count parameter.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "protocols": [
                         "HTTPS"
                     ],
                     "securedBy": [
-                        "commonSchema"
+                        "commonSchema",
+                        "basic"
                     ],
+                    "description": "Get all roles, optionally filtered",
                     "method": "get",
+                    "is": [
+                        "allowsQuery"
+                    ],
                     "__METADATA__": {
                         "primitiveValuesMeta": {
                             "protocols": {
@@ -1344,6 +1862,11 @@
                     "protocols": [
                         "HTTPS"
                     ],
+                    "securedBy": [
+                        "commonSchema",
+                        "basic"
+                    ],
+                    "description": "Create a new role",
                     "method": "post",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
@@ -1362,6 +1885,9 @@
                             "objectType": "role"
                         }
                     },
+                    "is": [
+                        "allowsBasicAuthentication"
+                    ],
                     "uriParameters": {
                         "objectId": {
                             "name": "objectId",
@@ -1406,6 +1932,11 @@
                             "protocols": [
                                 "HTTPS"
                             ],
+                            "securedBy": [
+                                "commonSchema",
+                                "basic"
+                            ],
+                            "description": "Retreive role by objectId",
                             "method": "get",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
@@ -1416,6 +1947,19 @@
                             }
                         },
                         {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "collectionPutResponse",
+                                            "example": "{\n\t\"updatedAt\" : \"2011-08-21T18:02:52.248Z\"\n}",
+                                            "schemaContent": "collectionPutResponse"
+                                        }
+                                    }
+                                }
+                            },
                             "body": {
                                 "application/json": {
                                     "name": "application/json",
@@ -1428,8 +1972,10 @@
                                 "HTTPS"
                             ],
                             "securedBy": [
-                                "masterSchema"
+                                "masterSchema",
+                                "basic"
                             ],
+                            "description": "Update role",
                             "method": "put",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
@@ -1440,12 +1986,19 @@
                             }
                         },
                         {
+                            "responses": {
+                                "200": {
+                                    "code": "200"
+                                }
+                            },
                             "protocols": [
                                 "HTTPS"
                             ],
                             "securedBy": [
                                 "sessionTokenSchema",
-                                "masterSchema"
+                                "masterSchema",
+                                "commonSchema",
+                                "basic"
                             ],
                             "description": "Delete role. Allows both authorized and master access.",
                             "method": "delete",
@@ -1472,6 +2025,7 @@
                 }
             ],
             "displayName": "/roles",
+            "description": "The collection of roles",
             "__METADATA__": {
                 "primitiveValuesMeta": {
                     "displayName": {
@@ -1771,6 +2325,9 @@
                     "resourceName": "installations"
                 }
             },
+            "is": [
+                "allowsBasicAuthentication"
+            ],
             "methods": [
                 {
                     "responses": {
@@ -1786,13 +2343,164 @@
                             }
                         }
                     },
+                    "body": {
+                        "application/x-www-form-urlencoded": {
+                            "name": "application/x-www-form-urlencoded",
+                            "formParameters": {
+                                "where": {
+                                    "name": "where",
+                                    "displayName": "where",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "where={\"cheatMode\":false,\"score\":{\"$gte\":1000,\"$lte\":3000}}",
+                                    "repeat": false,
+                                    "description": "Provides query parameters. The value should be JSON.\n|Key         |Operation                                    |\n|------------|---------------------------------------------|\n|$lt         |Less Than                                    |\n|$lte        |Less Than Or Equal To                        |\n|$gt         |Greater Than                                 |\n|$gte        |Greater Than Or Equal To                     |\n|$ne         |Not Equal To                                 |\n|$in         |Contained In                                 |\n|$nin        |Not Contained in                             |\n|$exists     |A value is set for the key                   |\n|$select     |This matches a value for a key in the result of a different query|\n|$dontSelect |Requires that a key's value not match a value for a key in the result of a different query|\n|$all        |Contains all of the given values             |\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "order": {
+                                    "name": "order",
+                                    "displayName": "order",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "order=score,-name",
+                                    "repeat": false,
+                                    "description": "Specifies a field to sort by. Use '-' to obtain descending order. Accepts multiple fields.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "limit": {
+                                    "name": "limit",
+                                    "displayName": "limit",
+                                    "type": "integer",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Pagination parameter. Maximal size of the results array.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "skip": {
+                                    "name": "skip",
+                                    "displayName": "skip",
+                                    "type": "integer",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Pagination parameter. Offset used to form the results array.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "keys": {
+                                    "name": "keys",
+                                    "displayName": "keys",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "keys=score,playerName",
+                                    "repeat": false,
+                                    "description": "Restricts returned fields.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "count": {
+                                    "name": "count",
+                                    "displayName": "count",
+                                    "type": "integer",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "If you are limiting your query, or if there are a very large number of results, and you want to\nknow how many total results there are without returning them all, you can use the count parameter.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "protocols": [
                         "HTTPS"
                     ],
                     "securedBy": [
-                        "masterSchema"
+                        "masterSchema",
+                        "commonSchema",
+                        "basic"
                     ],
+                    "description": "Get all installations, optionally filtered",
                     "method": "get",
+                    "is": [
+                        "allowsQuery"
+                    ],
                     "__METADATA__": {
                         "primitiveValuesMeta": {
                             "protocols": {
@@ -1826,6 +2534,11 @@
                     "protocols": [
                         "HTTPS"
                     ],
+                    "securedBy": [
+                        "commonSchema",
+                        "basic"
+                    ],
+                    "description": "Create a new installation",
                     "method": "post",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
@@ -1844,6 +2557,9 @@
                             "objectType": "installation"
                         }
                     },
+                    "is": [
+                        "allowsBasicAuthentication"
+                    ],
                     "uriParameters": {
                         "objectId": {
                             "name": "objectId",
@@ -1888,6 +2604,11 @@
                             "protocols": [
                                 "HTTPS"
                             ],
+                            "securedBy": [
+                                "commonSchema",
+                                "basic"
+                            ],
+                            "description": "Retreive installation by objectId",
                             "method": "get",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
@@ -1898,6 +2619,19 @@
                             }
                         },
                         {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "collectionPutResponse",
+                                            "example": "{\n\t\"updatedAt\" : \"2011-08-21T18:02:52.248Z\"\n}",
+                                            "schemaContent": "collectionPutResponse"
+                                        }
+                                    }
+                                }
+                            },
                             "body": {
                                 "application/json": {
                                     "name": "application/json",
@@ -1910,8 +2644,10 @@
                                 "HTTPS"
                             ],
                             "securedBy": [
-                                "commonSchema"
+                                "commonSchema",
+                                "basic"
                             ],
+                            "description": "Update installation",
                             "method": "put",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
@@ -1922,12 +2658,20 @@
                             }
                         },
                         {
+                            "responses": {
+                                "200": {
+                                    "code": "200"
+                                }
+                            },
                             "protocols": [
                                 "HTTPS"
                             ],
                             "securedBy": [
-                                "masterSchema"
+                                "masterSchema",
+                                "commonSchema",
+                                "basic"
                             ],
+                            "description": "Delete installation by objectId\n",
                             "method": "delete",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {

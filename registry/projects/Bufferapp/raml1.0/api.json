@@ -215,6 +215,30 @@
                                     }
                                 }
                             }
+                        },
+                        "400": {
+                            "code": "400",
+                            "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                        },
+                        "403": {
+                            "code": "403",
+                            "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                        },
+                        "404": {
+                            "code": "404",
+                            "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                        },
+                        "405": {
+                            "code": "405",
+                            "description": "405  Method not allowed.\n"
+                        },
+                        "406": {
+                            "code": "406",
+                            "description": "1005  Unsupported response format.\n"
+                        },
+                        "500": {
+                            "code": "500",
+                            "description": "An unknown error occurred.\n"
                         }
                     },
                     "protocols": [
@@ -269,9 +293,6 @@
             "displayName": "/user{mediaTypeExtension}",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }
@@ -311,6 +332,30 @@
                                     }
                                 }
                             }
+                        },
+                        "400": {
+                            "code": "400",
+                            "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                        },
+                        "403": {
+                            "code": "403",
+                            "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                        },
+                        "404": {
+                            "code": "404",
+                            "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                        },
+                        "405": {
+                            "code": "405",
+                            "description": "405  Method not allowed.\n"
+                        },
+                        "406": {
+                            "code": "406",
+                            "description": "1005  Unsupported response format.\n"
+                        },
+                        "500": {
+                            "code": "500",
+                            "description": "An unknown error occurred.\n"
                         }
                     },
                     "protocols": [
@@ -365,9 +410,6 @@
             "displayName": "/profiles{mediaTypeExtension}",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }
@@ -414,6 +456,30 @@
                                             }
                                         }
                                     }
+                                },
+                                "400": {
+                                    "code": "400",
+                                    "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                },
+                                "403": {
+                                    "code": "403",
+                                    "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                },
+                                "405": {
+                                    "code": "405",
+                                    "description": "405  Method not allowed.\n"
+                                },
+                                "406": {
+                                    "code": "406",
+                                    "description": "1005  Unsupported response format.\n"
+                                },
+                                "500": {
+                                    "code": "500",
+                                    "description": "An unknown error occurred.\n"
                                 }
                             },
                             "protocols": [
@@ -494,9 +560,6 @@
                     "displayName": "/{id}{mediaTypeExtension}",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
-                            "securedBy": {
-                                "calculated": true
-                            },
                             "displayName": {
                                 "calculated": true
                             }
@@ -571,6 +634,30 @@
                                                     }
                                                 }
                                             }
+                                        },
+                                        "400": {
+                                            "code": "400",
+                                            "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                        },
+                                        "403": {
+                                            "code": "403",
+                                            "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                        },
+                                        "404": {
+                                            "code": "404",
+                                            "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                        },
+                                        "405": {
+                                            "code": "405",
+                                            "description": "405  Method not allowed.\n"
+                                        },
+                                        "406": {
+                                            "code": "406",
+                                            "description": "1005  Unsupported response format.\n"
+                                        },
+                                        "500": {
+                                            "code": "500",
+                                            "description": "An unknown error occurred.\n"
                                         }
                                     },
                                     "protocols": [
@@ -625,9 +712,6 @@
                             "displayName": "/schedules{mediaTypeExtension}",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -667,6 +751,30 @@
                                                     }
                                                 }
                                             }
+                                        },
+                                        "400": {
+                                            "code": "400",
+                                            "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                        },
+                                        "403": {
+                                            "code": "403",
+                                            "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                        },
+                                        "404": {
+                                            "code": "404",
+                                            "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                        },
+                                        "405": {
+                                            "code": "405",
+                                            "description": "405  Method not allowed.\n"
+                                        },
+                                        "406": {
+                                            "code": "406",
+                                            "description": "1005  Unsupported response format.\n"
+                                        },
+                                        "500": {
+                                            "code": "500",
+                                            "description": "An unknown error occurred."
                                         }
                                     },
                                     "body": {
@@ -780,9 +888,6 @@
                             "displayName": "/schedules/update{mediaTypeExtension}",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -924,6 +1029,30 @@
                                                             }
                                                         }
                                                     }
+                                                },
+                                                "400": {
+                                                    "code": "400",
+                                                    "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                                },
+                                                "403": {
+                                                    "code": "403",
+                                                    "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                                },
+                                                "404": {
+                                                    "code": "404",
+                                                    "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                                },
+                                                "405": {
+                                                    "code": "405",
+                                                    "description": "405  Method not allowed.\n"
+                                                },
+                                                "406": {
+                                                    "code": "406",
+                                                    "description": "1005  Unsupported response format.\n"
+                                                },
+                                                "500": {
+                                                    "code": "500",
+                                                    "description": "An unknown error occurred.\n"
                                                 }
                                             },
                                             "protocols": [
@@ -978,9 +1107,6 @@
                                     "displayName": "/pending{mediaTypeExtension}",
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
-                                            "securedBy": {
-                                                "calculated": true
-                                            },
                                             "displayName": {
                                                 "calculated": true
                                             }
@@ -1114,6 +1240,30 @@
                                                             }
                                                         }
                                                     }
+                                                },
+                                                "400": {
+                                                    "code": "400",
+                                                    "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                                },
+                                                "403": {
+                                                    "code": "403",
+                                                    "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                                },
+                                                "404": {
+                                                    "code": "404",
+                                                    "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                                },
+                                                "405": {
+                                                    "code": "405",
+                                                    "description": "405  Method not allowed.\n"
+                                                },
+                                                "406": {
+                                                    "code": "406",
+                                                    "description": "1005  Unsupported response format.\n"
+                                                },
+                                                "500": {
+                                                    "code": "500",
+                                                    "description": "An unknown error occurred.\n"
                                                 }
                                             },
                                             "protocols": [
@@ -1168,9 +1318,6 @@
                                     "displayName": "/sent{mediaTypeExtension}",
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
-                                            "securedBy": {
-                                                "calculated": true
-                                            },
                                             "displayName": {
                                                 "calculated": true
                                             }
@@ -1210,6 +1357,30 @@
                                                             }
                                                         }
                                                     }
+                                                },
+                                                "400": {
+                                                    "code": "400",
+                                                    "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                                },
+                                                "403": {
+                                                    "code": "403",
+                                                    "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                                },
+                                                "404": {
+                                                    "code": "404",
+                                                    "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                                },
+                                                "405": {
+                                                    "code": "405",
+                                                    "description": "405  Method not allowed.\n"
+                                                },
+                                                "406": {
+                                                    "code": "406",
+                                                    "description": "1005  Unsupported response format.\n"
+                                                },
+                                                "500": {
+                                                    "code": "500",
+                                                    "description": "An unknown error occurred."
                                                 }
                                             },
                                             "body": {
@@ -1362,9 +1533,6 @@
                                     "displayName": "/reorder{mediaTypeExtension}",
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
-                                            "securedBy": {
-                                                "calculated": true
-                                            },
                                             "displayName": {
                                                 "calculated": true
                                             }
@@ -1404,6 +1572,30 @@
                                                             }
                                                         }
                                                     }
+                                                },
+                                                "400": {
+                                                    "code": "400",
+                                                    "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                                },
+                                                "403": {
+                                                    "code": "403",
+                                                    "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                                },
+                                                "404": {
+                                                    "code": "404",
+                                                    "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                                },
+                                                "405": {
+                                                    "code": "405",
+                                                    "description": "405  Method not allowed.\n"
+                                                },
+                                                "406": {
+                                                    "code": "406",
+                                                    "description": "1005  Unsupported response format.\n"
+                                                },
+                                                "500": {
+                                                    "code": "500",
+                                                    "description": "An unknown error occurred."
                                                 }
                                             },
                                             "body": {
@@ -1533,9 +1725,6 @@
                                     "displayName": "/shuffle{mediaTypeExtension}",
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
-                                            "securedBy": {
-                                                "calculated": true
-                                            },
                                             "displayName": {
                                                 "calculated": true
                                             }
@@ -1627,6 +1816,30 @@
                                             }
                                         }
                                     }
+                                },
+                                "400": {
+                                    "code": "400",
+                                    "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                },
+                                "403": {
+                                    "code": "403",
+                                    "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                },
+                                "405": {
+                                    "code": "405",
+                                    "description": "405  Method not allowed.\n"
+                                },
+                                "406": {
+                                    "code": "406",
+                                    "description": "1005  Unsupported response format.\n"
+                                },
+                                "500": {
+                                    "code": "500",
+                                    "description": "An unknown error occurred.\n"
                                 }
                             },
                             "protocols": [
@@ -1707,9 +1920,6 @@
                     "displayName": "/{id}{mediaTypeExtension}",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
-                            "securedBy": {
-                                "calculated": true
-                            },
                             "displayName": {
                                 "calculated": true
                             }
@@ -1855,6 +2065,30 @@
                                                     }
                                                 }
                                             }
+                                        },
+                                        "400": {
+                                            "code": "400",
+                                            "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                        },
+                                        "403": {
+                                            "code": "403",
+                                            "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                        },
+                                        "404": {
+                                            "code": "404",
+                                            "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                        },
+                                        "405": {
+                                            "code": "405",
+                                            "description": "405  Method not allowed.\n"
+                                        },
+                                        "406": {
+                                            "code": "406",
+                                            "description": "1005  Unsupported response format.\n"
+                                        },
+                                        "500": {
+                                            "code": "500",
+                                            "description": "An unknown error occurred.\n"
                                         }
                                     },
                                     "protocols": [
@@ -1909,9 +2143,6 @@
                             "displayName": "/interactions{mediaTypeExtension}",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -1951,6 +2182,30 @@
                                                     }
                                                 }
                                             }
+                                        },
+                                        "400": {
+                                            "code": "400",
+                                            "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                        },
+                                        "403": {
+                                            "code": "403",
+                                            "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                        },
+                                        "404": {
+                                            "code": "404",
+                                            "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                        },
+                                        "405": {
+                                            "code": "405",
+                                            "description": "405  Method not allowed.\n"
+                                        },
+                                        "406": {
+                                            "code": "406",
+                                            "description": "1005  Unsupported response format.\n"
+                                        },
+                                        "500": {
+                                            "code": "500",
+                                            "description": "An unknown error occurred."
                                         }
                                     },
                                     "body": {
@@ -2155,9 +2410,6 @@
                             "displayName": "/update{mediaTypeExtension}",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -2197,6 +2449,30 @@
                                                     }
                                                 }
                                             }
+                                        },
+                                        "400": {
+                                            "code": "400",
+                                            "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                        },
+                                        "403": {
+                                            "code": "403",
+                                            "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                        },
+                                        "404": {
+                                            "code": "404",
+                                            "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                        },
+                                        "405": {
+                                            "code": "405",
+                                            "description": "405  Method not allowed.\n"
+                                        },
+                                        "406": {
+                                            "code": "406",
+                                            "description": "1005  Unsupported response format.\n"
+                                        },
+                                        "500": {
+                                            "code": "500",
+                                            "description": "An unknown error occurred."
                                         }
                                     },
                                     "protocols": [
@@ -2251,9 +2527,6 @@
                             "displayName": "/share{mediaTypeExtension}",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -2293,6 +2566,30 @@
                                                     }
                                                 }
                                             }
+                                        },
+                                        "400": {
+                                            "code": "400",
+                                            "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                        },
+                                        "403": {
+                                            "code": "403",
+                                            "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                        },
+                                        "404": {
+                                            "code": "404",
+                                            "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                        },
+                                        "405": {
+                                            "code": "405",
+                                            "description": "405  Method not allowed.\n"
+                                        },
+                                        "406": {
+                                            "code": "406",
+                                            "description": "1005  Unsupported response format.\n"
+                                        },
+                                        "500": {
+                                            "code": "500",
+                                            "description": "An unknown error occurred."
                                         }
                                     },
                                     "protocols": [
@@ -2347,9 +2644,6 @@
                             "displayName": "/destroy{mediaTypeExtension}",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -2389,6 +2683,30 @@
                                                     }
                                                 }
                                             }
+                                        },
+                                        "400": {
+                                            "code": "400",
+                                            "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                        },
+                                        "403": {
+                                            "code": "403",
+                                            "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                        },
+                                        "404": {
+                                            "code": "404",
+                                            "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                        },
+                                        "405": {
+                                            "code": "405",
+                                            "description": "405  Method not allowed.\n"
+                                        },
+                                        "406": {
+                                            "code": "406",
+                                            "description": "1005  Unsupported response format.\n"
+                                        },
+                                        "500": {
+                                            "code": "500",
+                                            "description": "An unknown error occurred."
                                         }
                                     },
                                     "protocols": [
@@ -2443,9 +2761,6 @@
                             "displayName": "/move_to_top{mediaTypeExtension}",
                             "__METADATA__": {
                                 "primitiveValuesMeta": {
-                                    "securedBy": {
-                                        "calculated": true
-                                    },
                                     "displayName": {
                                         "calculated": true
                                     }
@@ -2500,6 +2815,30 @@
                                             }
                                         }
                                     }
+                                },
+                                "400": {
+                                    "code": "400",
+                                    "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                                },
+                                "403": {
+                                    "code": "403",
+                                    "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                                },
+                                "404": {
+                                    "code": "404",
+                                    "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                                },
+                                "405": {
+                                    "code": "405",
+                                    "description": "405  Method not allowed.\n"
+                                },
+                                "406": {
+                                    "code": "406",
+                                    "description": "1005  Unsupported response format.\n"
+                                },
+                                "500": {
+                                    "code": "500",
+                                    "description": "An unknown error occurred."
                                 }
                             },
                             "body": {
@@ -2773,9 +3112,6 @@
                     "displayName": "/create{mediaTypeExtension}",
                     "__METADATA__": {
                         "primitiveValuesMeta": {
-                            "securedBy": {
-                                "calculated": true
-                            },
                             "displayName": {
                                 "calculated": true
                             }
@@ -2862,6 +3198,30 @@
                                     }
                                 }
                             }
+                        },
+                        "400": {
+                            "code": "400",
+                            "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                        },
+                        "403": {
+                            "code": "403",
+                            "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                        },
+                        "404": {
+                            "code": "404",
+                            "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                        },
+                        "405": {
+                            "code": "405",
+                            "description": "405  Method not allowed.\n"
+                        },
+                        "406": {
+                            "code": "406",
+                            "description": "1005  Unsupported response format.\n"
+                        },
+                        "500": {
+                            "code": "500",
+                            "description": "An unknown error occurred.\n"
                         }
                     },
                     "protocols": [
@@ -2916,9 +3276,6 @@
             "displayName": "/links/shares{mediaTypeExtension}",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }
@@ -2959,6 +3316,30 @@
                                     }
                                 }
                             }
+                        },
+                        "400": {
+                            "code": "400",
+                            "description": "1003  Parameter not recognized.\n1004  Required parameter missing.\n1006  Parameter value not within bounds.\n1012  Profile did not save successfully.\n1016  Profile buffer could not be emptied.\n1022  Update did not save successfully.\n1025  Update was recently posted, can't post duplicate content.\n1026  Update must be in error status to requeue.\n1027  Update must be in buffer and not custom scheduled in order to move to top.\n1029  Event type not supported.\n1030  Media filetype not supported.\n1031  Media filesize out of acceptable range.\n1032  Unable to post image to LinkedIn group(s).\n1034  Cannot schedule updates in the past.\n1033  Comments can only be posted to Facebook at this time.\n1042  User did not save successfully.\n"
+                        },
+                        "403": {
+                            "code": "403",
+                            "description": "403  Permission denied.\n1001  Access token required.\n1002  Not within application scope.\n1011  No authorization to access profile.\n1013  Profile schedule limit reached.\n1014  Profile limit for user has been reached.\n1015  Profile could not be destroyed.\n1021  No authorization to access update.\n1023  Update limit for profile has been reached.\n1024  Update limit for team profile has been reached.\n1028  Update soft limit for profile reached.\n1051  No authorization to access client.\n"
+                        },
+                        "404": {
+                            "code": "404",
+                            "description": "404  Endpoint not found.\n1010  Profile could not be found.\n1020  Update could not be found.\n1050  Client could not be found.\n"
+                        },
+                        "405": {
+                            "code": "405",
+                            "description": "405  Method not allowed.\n"
+                        },
+                        "406": {
+                            "code": "406",
+                            "description": "1005  Unsupported response format.\n"
+                        },
+                        "500": {
+                            "code": "500",
+                            "description": "An unknown error occurred.\n"
                         }
                     },
                     "protocols": [
@@ -3013,9 +3394,6 @@
             "displayName": "/info/configuration{mediaTypeExtension}",
             "__METADATA__": {
                 "primitiveValuesMeta": {
-                    "securedBy": {
-                        "calculated": true
-                    },
                     "displayName": {
                         "calculated": true
                     }

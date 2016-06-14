@@ -661,6 +661,292 @@
         {
             "methods": [
                 {
+                    "queryParameters": {
+                        "channel": {
+                            "name": "channel",
+                            "displayName": "channel",
+                            "type": [
+                                "string"
+                            ],
+                            "example": "C1234567890",
+                            "repeat": false,
+                            "required": true,
+                            "description": "Channel to fetch history for.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            },
+                            "structuredExample": {
+                                "value": "C1234567890",
+                                "strict": true,
+                                "name": null,
+                                "structuredValue": "C1234567890"
+                            }
+                        },
+                        "latest": {
+                            "name": "latest",
+                            "displayName": "latest",
+                            "type": [
+                                "string"
+                            ],
+                            "default": "now",
+                            "example": 1234567890.123456,
+                            "repeat": false,
+                            "required": true,
+                            "description": "Timestamp of the oldest recent seen message.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            },
+                            "structuredExample": {
+                                "value": 1234567890.123456,
+                                "strict": true,
+                                "name": null,
+                                "structuredValue": 1234567890.123456
+                            }
+                        },
+                        "oldest": {
+                            "name": "oldest",
+                            "displayName": "oldest",
+                            "type": [
+                                "string"
+                            ],
+                            "default": 0,
+                            "example": 1234567890.123456,
+                            "repeat": false,
+                            "required": true,
+                            "description": "Timestamp of the latest previously seen message.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            },
+                            "structuredExample": {
+                                "value": 1234567890.123456,
+                                "strict": true,
+                                "name": null,
+                                "structuredValue": 1234567890.123456
+                            }
+                        },
+                        "count": {
+                            "name": "count",
+                            "displayName": "count",
+                            "type": [
+                                "number"
+                            ],
+                            "default": 100,
+                            "example": 100,
+                            "repeat": false,
+                            "required": true,
+                            "description": "Number of messages to return, between 1 and 1000.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            },
+                            "structuredExample": {
+                                "value": 100,
+                                "strict": true,
+                                "name": null,
+                                "structuredValue": 100
+                            }
+                        },
+                        "has_more": {
+                            "name": "has_more",
+                            "displayName": "has_more",
+                            "type": [
+                                "boolean"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "is_limited": {
+                            "name": "is_limited",
+                            "displayName": "is_limited",
+                            "type": [
+                                "boolean"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "schema": [
+                                        "channelsHistory"
+                                    ],
+                                    "example": {
+                                        "ok": true,
+                                        "latest": "1358547726.000003",
+                                        "messages": [
+                                            {
+                                                "type": "message",
+                                                "ts": "1358546515.000008",
+                                                "user": "U2147483896",
+                                                "text": "Hello"
+                                            },
+                                            {
+                                                "type": "message",
+                                                "ts": "1358546515.000007",
+                                                "user": "U2147483896",
+                                                "text": "World",
+                                                "is_starred": true
+                                            },
+                                            {
+                                                "type": "something_else",
+                                                "ts": "1358546515.000007",
+                                                "wibblr": true
+                                            }
+                                        ],
+                                        "has_more": false
+                                    },
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    },
+                                    "structuredExample": {
+                                        "value": {
+                                            "ok": true,
+                                            "latest": "1358547726.000003",
+                                            "messages": [
+                                                {
+                                                    "type": "message",
+                                                    "ts": "1358546515.000008",
+                                                    "user": "U2147483896",
+                                                    "text": "Hello"
+                                                },
+                                                {
+                                                    "type": "message",
+                                                    "ts": "1358546515.000007",
+                                                    "user": "U2147483896",
+                                                    "text": "World",
+                                                    "is_starred": true
+                                                },
+                                                {
+                                                    "type": "something_else",
+                                                    "ts": "1358546515.000007",
+                                                    "wibblr": true
+                                                }
+                                            ],
+                                            "has_more": false
+                                        },
+                                        "strict": true,
+                                        "name": null,
+                                        "structuredValue": {
+                                            "ok": true,
+                                            "latest": "1358547726.000003",
+                                            "messages": [
+                                                {
+                                                    "type": "message",
+                                                    "ts": "1358546515.000008",
+                                                    "user": "U2147483896",
+                                                    "text": "Hello"
+                                                },
+                                                {
+                                                    "type": "message",
+                                                    "ts": "1358546515.000007",
+                                                    "user": "U2147483896",
+                                                    "text": "World",
+                                                    "is_starred": true
+                                                },
+                                                {
+                                                    "type": "something_else",
+                                                    "ts": "1358546515.000007",
+                                                    "wibblr": true
+                                                }
+                                            ],
+                                            "has_more": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "protocols": [
                         "HTTPS"
                     ],
@@ -1250,6 +1536,113 @@
         {
             "methods": [
                 {
+                    "queryParameters": {
+                        "channel": {
+                            "name": "channel",
+                            "displayName": "channel",
+                            "type": [
+                                "string"
+                            ],
+                            "example": "C1234567890",
+                            "repeat": false,
+                            "required": true,
+                            "description": "Channel to fetch history for.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            },
+                            "structuredExample": {
+                                "value": "C1234567890",
+                                "strict": true,
+                                "name": null,
+                                "structuredValue": "C1234567890"
+                            }
+                        },
+                        "ts": {
+                            "name": "ts",
+                            "displayName": "ts",
+                            "type": [
+                                "string"
+                            ],
+                            "example": 1234567890.123456,
+                            "repeat": false,
+                            "required": true,
+                            "description": "Timestamp of the most recently seen message.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            },
+                            "structuredExample": {
+                                "value": 1234567890.123456,
+                                "strict": true,
+                                "name": null,
+                                "structuredValue": 1234567890.123456
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "schema": [
+                                        "ok"
+                                    ],
+                                    "example": {
+                                        "ok": true
+                                    },
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    },
+                                    "structuredExample": {
+                                        "value": {
+                                            "ok": true
+                                        },
+                                        "strict": true,
+                                        "name": null,
+                                        "structuredValue": {
+                                            "ok": true
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "protocols": [
                         "HTTPS"
                     ],
@@ -1297,6 +1690,116 @@
         {
             "methods": [
                 {
+                    "queryParameters": {
+                        "channel": {
+                            "name": "channel",
+                            "displayName": "channel",
+                            "type": [
+                                "string"
+                            ],
+                            "example": "C1234567890",
+                            "repeat": false,
+                            "required": true,
+                            "description": "Channel to fetch history for.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            },
+                            "structuredExample": {
+                                "value": "C1234567890",
+                                "strict": true,
+                                "name": null,
+                                "structuredValue": "C1234567890"
+                            }
+                        },
+                        "purpose": {
+                            "name": "purpose",
+                            "displayName": "purpose",
+                            "type": [
+                                "string"
+                            ],
+                            "example": "My Purpose",
+                            "repeat": false,
+                            "required": true,
+                            "description": "The new purpose",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            },
+                            "structuredExample": {
+                                "value": "My Purpose",
+                                "strict": true,
+                                "name": null,
+                                "structuredValue": "My Purpose"
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "schema": [
+                                        "purpose"
+                                    ],
+                                    "example": {
+                                        "ok": true,
+                                        "purpose": "This is the new purpose!"
+                                    },
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    },
+                                    "structuredExample": {
+                                        "value": {
+                                            "ok": true,
+                                            "purpose": "This is the new purpose!"
+                                        },
+                                        "strict": true,
+                                        "name": null,
+                                        "structuredValue": {
+                                            "ok": true,
+                                            "purpose": "This is the new purpose!"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "protocols": [
                         "HTTPS"
                     ],
@@ -2895,6 +3398,292 @@
         {
             "methods": [
                 {
+                    "queryParameters": {
+                        "channel": {
+                            "name": "channel",
+                            "displayName": "channel",
+                            "type": [
+                                "string"
+                            ],
+                            "example": "C1234567890",
+                            "repeat": false,
+                            "required": true,
+                            "description": "Group to fetch history for.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            },
+                            "structuredExample": {
+                                "value": "C1234567890",
+                                "strict": true,
+                                "name": null,
+                                "structuredValue": "C1234567890"
+                            }
+                        },
+                        "latest": {
+                            "name": "latest",
+                            "displayName": "latest",
+                            "type": [
+                                "string"
+                            ],
+                            "default": "now",
+                            "example": 1234567890.123456,
+                            "repeat": false,
+                            "required": true,
+                            "description": "Timestamp of the oldest recent seen message.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            },
+                            "structuredExample": {
+                                "value": 1234567890.123456,
+                                "strict": true,
+                                "name": null,
+                                "structuredValue": 1234567890.123456
+                            }
+                        },
+                        "oldest": {
+                            "name": "oldest",
+                            "displayName": "oldest",
+                            "type": [
+                                "string"
+                            ],
+                            "default": 0,
+                            "example": 1234567890.123456,
+                            "repeat": false,
+                            "required": true,
+                            "description": "Timestamp of the latest previously seen message.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            },
+                            "structuredExample": {
+                                "value": 1234567890.123456,
+                                "strict": true,
+                                "name": null,
+                                "structuredValue": 1234567890.123456
+                            }
+                        },
+                        "count": {
+                            "name": "count",
+                            "displayName": "count",
+                            "type": [
+                                "number"
+                            ],
+                            "default": 100,
+                            "example": 100,
+                            "repeat": false,
+                            "required": true,
+                            "description": "Number of messages to return, between 1 and 1000.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            },
+                            "structuredExample": {
+                                "value": 100,
+                                "strict": true,
+                                "name": null,
+                                "structuredValue": 100
+                            }
+                        },
+                        "has_more": {
+                            "name": "has_more",
+                            "displayName": "has_more",
+                            "type": [
+                                "boolean"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "is_limited": {
+                            "name": "is_limited",
+                            "displayName": "is_limited",
+                            "type": [
+                                "boolean"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "schema": [
+                                        "channelsHistory"
+                                    ],
+                                    "example": {
+                                        "ok": true,
+                                        "latest": "1358547726.000003",
+                                        "messages": [
+                                            {
+                                                "type": "message",
+                                                "ts": "1358546515.000008",
+                                                "user": "U2147483896",
+                                                "text": "Hello"
+                                            },
+                                            {
+                                                "type": "message",
+                                                "ts": "1358546515.000007",
+                                                "user": "U2147483896",
+                                                "text": "World",
+                                                "is_starred": true
+                                            },
+                                            {
+                                                "type": "something_else",
+                                                "ts": "1358546515.000007",
+                                                "wibblr": true
+                                            }
+                                        ],
+                                        "has_more": false
+                                    },
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    },
+                                    "structuredExample": {
+                                        "value": {
+                                            "ok": true,
+                                            "latest": "1358547726.000003",
+                                            "messages": [
+                                                {
+                                                    "type": "message",
+                                                    "ts": "1358546515.000008",
+                                                    "user": "U2147483896",
+                                                    "text": "Hello"
+                                                },
+                                                {
+                                                    "type": "message",
+                                                    "ts": "1358546515.000007",
+                                                    "user": "U2147483896",
+                                                    "text": "World",
+                                                    "is_starred": true
+                                                },
+                                                {
+                                                    "type": "something_else",
+                                                    "ts": "1358546515.000007",
+                                                    "wibblr": true
+                                                }
+                                            ],
+                                            "has_more": false
+                                        },
+                                        "strict": true,
+                                        "name": null,
+                                        "structuredValue": {
+                                            "ok": true,
+                                            "latest": "1358547726.000003",
+                                            "messages": [
+                                                {
+                                                    "type": "message",
+                                                    "ts": "1358546515.000008",
+                                                    "user": "U2147483896",
+                                                    "text": "Hello"
+                                                },
+                                                {
+                                                    "type": "message",
+                                                    "ts": "1358546515.000007",
+                                                    "user": "U2147483896",
+                                                    "text": "World",
+                                                    "is_starred": true
+                                                },
+                                                {
+                                                    "type": "something_else",
+                                                    "ts": "1358546515.000007",
+                                                    "wibblr": true
+                                                }
+                                            ],
+                                            "has_more": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "protocols": [
                         "HTTPS"
                     ],
@@ -3049,6 +3838,113 @@
         {
             "methods": [
                 {
+                    "queryParameters": {
+                        "channel": {
+                            "name": "channel",
+                            "displayName": "channel",
+                            "type": [
+                                "string"
+                            ],
+                            "example": "C1234567890",
+                            "repeat": false,
+                            "required": true,
+                            "description": "Group to fetch history for.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            },
+                            "structuredExample": {
+                                "value": "C1234567890",
+                                "strict": true,
+                                "name": null,
+                                "structuredValue": "C1234567890"
+                            }
+                        },
+                        "ts": {
+                            "name": "ts",
+                            "displayName": "ts",
+                            "type": [
+                                "string"
+                            ],
+                            "example": 1234567890.123456,
+                            "repeat": false,
+                            "required": true,
+                            "description": "Timestamp of the most recently seen message.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            },
+                            "structuredExample": {
+                                "value": 1234567890.123456,
+                                "strict": true,
+                                "name": null,
+                                "structuredValue": 1234567890.123456
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "schema": [
+                                        "ok"
+                                    ],
+                                    "example": {
+                                        "ok": true
+                                    },
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    },
+                                    "structuredExample": {
+                                        "value": {
+                                            "ok": true
+                                        },
+                                        "strict": true,
+                                        "name": null,
+                                        "structuredValue": {
+                                            "ok": true
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "protocols": [
                         "HTTPS"
                     ],
@@ -3096,6 +3992,116 @@
         {
             "methods": [
                 {
+                    "queryParameters": {
+                        "channel": {
+                            "name": "channel",
+                            "displayName": "channel",
+                            "type": [
+                                "string"
+                            ],
+                            "example": "C1234567890",
+                            "repeat": false,
+                            "required": true,
+                            "description": "Group to fetch history for.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            },
+                            "structuredExample": {
+                                "value": "C1234567890",
+                                "strict": true,
+                                "name": null,
+                                "structuredValue": "C1234567890"
+                            }
+                        },
+                        "purpose": {
+                            "name": "purpose",
+                            "displayName": "purpose",
+                            "type": [
+                                "string"
+                            ],
+                            "example": "My Purpose",
+                            "repeat": false,
+                            "required": true,
+                            "description": "The new purpose",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            },
+                            "structuredExample": {
+                                "value": "My Purpose",
+                                "strict": true,
+                                "name": null,
+                                "structuredValue": "My Purpose"
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "schema": [
+                                        "purpose"
+                                    ],
+                                    "example": {
+                                        "ok": true,
+                                        "purpose": "This is the new purpose!"
+                                    },
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    },
+                                    "structuredExample": {
+                                        "value": {
+                                            "ok": true,
+                                            "purpose": "This is the new purpose!"
+                                        },
+                                        "strict": true,
+                                        "name": null,
+                                        "structuredValue": {
+                                            "ok": true,
+                                            "purpose": "This is the new purpose!"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "protocols": [
                         "HTTPS"
                     ],
@@ -3276,6 +4282,292 @@
         {
             "methods": [
                 {
+                    "queryParameters": {
+                        "channel": {
+                            "name": "channel",
+                            "displayName": "channel",
+                            "type": [
+                                "string"
+                            ],
+                            "example": "C1234567890",
+                            "repeat": false,
+                            "required": true,
+                            "description": "Direct message channel to fetch history for.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            },
+                            "structuredExample": {
+                                "value": "C1234567890",
+                                "strict": true,
+                                "name": null,
+                                "structuredValue": "C1234567890"
+                            }
+                        },
+                        "latest": {
+                            "name": "latest",
+                            "displayName": "latest",
+                            "type": [
+                                "string"
+                            ],
+                            "default": "now",
+                            "example": 1234567890.123456,
+                            "repeat": false,
+                            "required": true,
+                            "description": "Timestamp of the oldest recent seen message.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            },
+                            "structuredExample": {
+                                "value": 1234567890.123456,
+                                "strict": true,
+                                "name": null,
+                                "structuredValue": 1234567890.123456
+                            }
+                        },
+                        "oldest": {
+                            "name": "oldest",
+                            "displayName": "oldest",
+                            "type": [
+                                "string"
+                            ],
+                            "default": 0,
+                            "example": 1234567890.123456,
+                            "repeat": false,
+                            "required": true,
+                            "description": "Timestamp of the latest previously seen message.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            },
+                            "structuredExample": {
+                                "value": 1234567890.123456,
+                                "strict": true,
+                                "name": null,
+                                "structuredValue": 1234567890.123456
+                            }
+                        },
+                        "count": {
+                            "name": "count",
+                            "displayName": "count",
+                            "type": [
+                                "number"
+                            ],
+                            "default": 100,
+                            "example": 100,
+                            "repeat": false,
+                            "required": true,
+                            "description": "Number of messages to return, between 1 and 1000.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            },
+                            "structuredExample": {
+                                "value": 100,
+                                "strict": true,
+                                "name": null,
+                                "structuredValue": 100
+                            }
+                        },
+                        "has_more": {
+                            "name": "has_more",
+                            "displayName": "has_more",
+                            "type": [
+                                "boolean"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "is_limited": {
+                            "name": "is_limited",
+                            "displayName": "is_limited",
+                            "type": [
+                                "boolean"
+                            ],
+                            "repeat": false,
+                            "required": true,
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "code": "200",
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json",
+                                    "displayName": "application/json",
+                                    "schema": [
+                                        "channelsHistory"
+                                    ],
+                                    "example": {
+                                        "ok": true,
+                                        "latest": "1358547726.000003",
+                                        "messages": [
+                                            {
+                                                "type": "message",
+                                                "ts": "1358546515.000008",
+                                                "user": "U2147483896",
+                                                "text": "Hello"
+                                            },
+                                            {
+                                                "type": "message",
+                                                "ts": "1358546515.000007",
+                                                "user": "U2147483896",
+                                                "text": "World",
+                                                "is_starred": true
+                                            },
+                                            {
+                                                "type": "something_else",
+                                                "ts": "1358546515.000007",
+                                                "wibblr": true
+                                            }
+                                        ],
+                                        "has_more": false
+                                    },
+                                    "repeat": false,
+                                    "required": true,
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    },
+                                    "structuredExample": {
+                                        "value": {
+                                            "ok": true,
+                                            "latest": "1358547726.000003",
+                                            "messages": [
+                                                {
+                                                    "type": "message",
+                                                    "ts": "1358546515.000008",
+                                                    "user": "U2147483896",
+                                                    "text": "Hello"
+                                                },
+                                                {
+                                                    "type": "message",
+                                                    "ts": "1358546515.000007",
+                                                    "user": "U2147483896",
+                                                    "text": "World",
+                                                    "is_starred": true
+                                                },
+                                                {
+                                                    "type": "something_else",
+                                                    "ts": "1358546515.000007",
+                                                    "wibblr": true
+                                                }
+                                            ],
+                                            "has_more": false
+                                        },
+                                        "strict": true,
+                                        "name": null,
+                                        "structuredValue": {
+                                            "ok": true,
+                                            "latest": "1358547726.000003",
+                                            "messages": [
+                                                {
+                                                    "type": "message",
+                                                    "ts": "1358546515.000008",
+                                                    "user": "U2147483896",
+                                                    "text": "Hello"
+                                                },
+                                                {
+                                                    "type": "message",
+                                                    "ts": "1358546515.000007",
+                                                    "user": "U2147483896",
+                                                    "text": "World",
+                                                    "is_starred": true
+                                                },
+                                                {
+                                                    "type": "something_else",
+                                                    "ts": "1358546515.000007",
+                                                    "wibblr": true
+                                                }
+                                            ],
+                                            "has_more": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "protocols": [
                         "HTTPS"
                     ],
@@ -3463,9 +4755,12 @@
                                 "application/json": {
                                     "name": "application/json",
                                     "displayName": "application/json",
-                                    "type": [
-                                        "types.Ok"
+                                    "schema": [
+                                        "ok"
                                     ],
+                                    "example": {
+                                        "ok": true
+                                    },
                                     "repeat": false,
                                     "required": true,
                                     "__METADATA__": {
@@ -3479,6 +4774,16 @@
                                             "required": {
                                                 "insertedAsDefault": true
                                             }
+                                        }
+                                    },
+                                    "structuredExample": {
+                                        "value": {
+                                            "ok": true
+                                        },
+                                        "strict": true,
+                                        "name": null,
+                                        "structuredValue": {
+                                            "ok": true
                                         }
                                     }
                                 }

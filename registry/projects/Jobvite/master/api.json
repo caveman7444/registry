@@ -270,6 +270,172 @@
                     "protocols": [
                         "HTTPS"
                     ],
+                    "queryParameters": {
+                        "api": {
+                            "name": "api",
+                            "displayName": "api",
+                            "type": "string",
+                            "required": true,
+                            "example": "api=jobvite",
+                            "repeat": false,
+                            "description": "The API key issued by Jobvite.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "secret": {
+                            "name": "secret",
+                            "displayName": "secret",
+                            "type": "string",
+                            "required": true,
+                            "example": "secret=test",
+                            "repeat": false,
+                            "description": "The secret for this service, issued by Jobvite.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "action": {
+                            "name": "action",
+                            "displayName": "action",
+                            "type": "string",
+                            "required": true,
+                            "example": "action=getNewHires",
+                            "repeat": false,
+                            "description": "The action to perform. \"getNewHires\", \"getCandidates\"",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "format": {
+                            "name": "format",
+                            "displayName": "format",
+                            "type": "string",
+                            "required": true,
+                            "example": "format=hrxml",
+                            "repeat": false,
+                            "description": "The format of the data (HRXML)",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "datestart": {
+                            "name": "datestart",
+                            "displayName": "datestart",
+                            "type": "string",
+                            "required": false,
+                            "example": "datestart=08-01-2009",
+                            "repeat": false,
+                            "description": "The date after which the candidate was last updated for filtering purposes.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "dateend": {
+                            "name": "dateend",
+                            "displayName": "dateend",
+                            "type": "string",
+                            "required": false,
+                            "example": "dateend=2009-08-15T11:21:33-0700",
+                            "repeat": false,
+                            "description": "The date before which the candidate was last updated for filtering purposes.",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        },
+                        "dateFormat": {
+                            "name": "dateFormat",
+                            "displayName": "dateFormat",
+                            "type": "string",
+                            "required": false,
+                            "default": "dateFormat=MM-dd-yyyy",
+                            "example": "dateFormat",
+                            "repeat": false,
+                            "description": "The format of the dates. The supported defaults are: \"MM/dd/yyyy\", \"MM-dd-yyyy\", \" yyyy-MM-dd'T'HH:mm:ssZ\".\n",
+                            "__METADATA__": {
+                                "primitiveValuesMeta": {
+                                    "displayName": {
+                                        "calculated": true
+                                    },
+                                    "type": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "required": {
+                                        "insertedAsDefault": true
+                                    },
+                                    "repeat": {
+                                        "insertedAsDefault": true
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "method": "get",
                     "is": [
                         "candidateGet"

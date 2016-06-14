@@ -1308,7 +1308,8 @@
                                             "example": "{\n  \"payments\" : [\n    {\n      \"id\" : \"PAY-4D099447DD202993VKEFMRJQ\" ,\n      \"create_time\" : \"2013-01-31T19:40:22Z\" ,\n      \"update_time\" : \"2013-01-31T19:40:24Z\" ,\n      \"state\" : \"approved\" ,\n      \"intent\" : \"sale\" ,\n      \"payer\" : {\n        \"payment_method\" : \"credit_card\" ,\n        \"funding_instruments\" : [\n          {\n            \"credit_card\" : {\n              \"type\" : \"visa\" ,\n              \"number\" : \"xxxxxxxxxxxx0331\" ,\n              \"expire_month\" : \"10\" ,\n              \"expire_year\" : \"2018\" ,\n              \"first_name\" : \"Betsy\" ,\n              \"last_name\" : \"Buyer\" ,\n              \"billing_address\" : {\n                \"line1\" : \"111 First Street\" ,\n                \"city\" : \"Saratoga\" ,\n                \"state\" : \"CA\" ,\n                \"postal_code\" : \"95070\" ,\n                \"country_code\" : \"US\"\n              }\n            }\n          }\n        ]\n      } ,\n      \"transactions\" : [\n        {\n          \"amount\" : {\n            \"total\" : \"110.54\" ,\n            \"currency\" : \"USD\"\n          } ,\n          \"description\" : \"This is the payment transaction description.\" ,\n          \"related_resources\" : [\n            {\n              \"sale\" : {\n                \"id\" : \"1D971400A7097562W\" ,\n                \"create_time\" : \"2013-01-31T19:40:23Z\" ,\n                \"update_time\" : \"2013-01-31T19:40:25Z\" ,\n                \"state\" : \"completed\" ,\n                \"amount\" : {\n                  \"total\" : \"110.54\" ,\n                  \"currency\" : \"USD\"\n                } ,\n                \"parent_payment\" : \"PAY-4D099447DD202993VKEFMRJQ\" ,\n                \"links\" : [\n                  {\n                    \"href\" : \"https://api.sandbox.paypal.com/v1/payments/sale/1D971400A7097562W\" ,\n                    \"rel\" : \"self\" ,\n                    \"method\" : \"GET\"\n                  } , {\n                    \"href\" : \"https://api.sandbox.paypal.com/v1/payments/sale/1D971400A7097562W/refund\" ,\n                    \"rel\" : \"refund\" ,\n                    \"method\" : \"POST\"\n                  } , {\n                    \"href\" : \"https://api.sandbox.paypal.com/v1/payments/payment/PAY-4D099447DD202993VKEFMRJQ\" ,\n                    \"rel\" : \"parent_payment\" ,\n                    \"method\" : \"GET\"\n                  }\n                ]\n              }\n            }\n          ]\n        }\n      ] ,\n      \"links\" : [\n        {\n          \"href\" : \"https://api.sandbox.paypal.com/v1/payments/payment/PAY-4D099447DD202993VKEFMRJQ\" ,\n          \"rel\" : \"self\" ,\n          \"method\" : \"GET\"\n        }\n      ]\n    }\n  ]\n}",
                                             "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"payments\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"create_time\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"update_time\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"state\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"intent\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"payer\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"payment_method\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"funding_instruments\" : {\n                  \"type\" : \"array\" ,\n                  \"required\" : false ,\n                  \"items\" : [\n                    {\n                      \"type\" : \"object\" ,\n                      \"properties\" : {\n                        \"credit_card\" : {\n                          \"type\" : \"object\" ,\n                          \"required\" : false ,\n                          \"properties\" : {\n                            \"type\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"number\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"expire_month\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"expire_year\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"first_name\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"last_name\" : {\n                              \"type\" : \"string\" ,\n                              \"required\" : false\n                            } ,\n                            \"billing_address\" : {\n                              \"type\" : \"object\" ,\n                              \"required\" : false ,\n                              \"properties\" : {\n                                \"line1\" : {\n                                  \"type\" : \"string\" ,\n                                  \"required\" : false\n                                } ,\n                                \"city\" : {\n                                  \"type\" : \"string\" ,\n                                  \"required\" : false\n                                } ,\n                                \"state\" : {\n                                  \"type\" : \"string\" ,\n                                  \"required\" : false\n                                } ,\n                                \"postal_code\" : {\n                                  \"type\" : \"string\" ,\n                                  \"required\" : false\n                                } ,\n                                \"country_code\" : {\n                                  \"type\" : \"string\" ,\n                                  \"required\" : false\n                                }\n                              }\n                            }\n                          }\n                        }\n                      }\n                    }\n                  ]\n                }\n              }\n            } ,\n            \"transactions\" : {\n              \"type\" : \"array\" ,\n              \"required\" : false ,\n              \"items\" : [\n                {\n                  \"type\" : \"object\" ,\n                  \"properties\" : {\n                    \"amount\" : {\n                      \"type\" : \"object\" ,\n                      \"required\" : false ,\n                      \"properties\" : {\n                        \"total\" : {\n                          \"type\" : \"string\" ,\n                          \"required\" : false\n                        } ,\n                        \"currency\" : {\n                          \"type\" : \"string\" ,\n                          \"required\" : false\n                        }\n                      }\n                    } ,\n                    \"description\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"related_resources\" : {\n                      \"type\" : \"array\" ,\n                      \"required\" : false ,\n                      \"items\" : [\n                        {\n                          \"type\" : \"object\" ,\n                          \"properties\" : {\n                            \"sale\" : {\n                              \"type\" : \"object\" ,\n                              \"required\" : false ,\n                              \"properties\" : {\n                                \"id\" : {\n                                  \"type\" : \"string\" ,\n                                  \"required\" : false\n                                } ,\n                                \"create_time\" : {\n                                  \"type\" : \"string\" ,\n                                  \"required\" : false\n                                } ,\n                                \"update_time\" : {\n                                  \"type\" : \"string\" ,\n                                  \"required\" : false\n                                } ,\n                                \"state\" : {\n                                  \"type\" : \"string\" ,\n                                  \"required\" : false\n                                } ,\n                                \"amount\" : {\n                                  \"type\" : \"object\" ,\n                                  \"required\" : false ,\n                                  \"properties\" : {\n                                    \"total\" : {\n                                      \"type\" : \"string\" ,\n                                      \"required\" : false\n                                    } ,\n                                    \"currency\" : {\n                                      \"type\" : \"string\" ,\n                                      \"required\" : false\n                                    }\n                                  }\n                                } ,\n                                \"parent_payment\" : {\n                                  \"type\" : \"string\" ,\n                                  \"required\" : false\n                                } ,\n                                \"links\" : {\n                                  \"type\" : \"array\" ,\n                                  \"required\" : false ,\n                                  \"items\" : [\n                                    {\n                                      \"type\" : \"object\" ,\n                                      \"properties\" : {\n                                        \"href\" : {\n                                          \"type\" : \"string\" ,\n                                          \"required\" : false\n                                        } ,\n                                        \"rel\" : {\n                                          \"type\" : \"string\" ,\n                                          \"required\" : false\n                                        } ,\n                                        \"method\" : {\n                                          \"type\" : \"string\" ,\n                                          \"required\" : false\n                                        }\n                                      }\n                                    }\n                                  ]\n                                }\n                              }\n                            }\n                          }\n                        }\n                      ]\n                    }\n                  }\n                }\n              ]\n            } ,\n            \"links\" : {\n              \"type\" : \"array\" ,\n              \"required\" : false ,\n              \"items\" : [\n                {\n                  \"type\" : \"object\" ,\n                  \"properties\" : {\n                    \"href\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"rel\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    } ,\n                    \"method\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    }\n                  }\n                }\n              ]\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
                                         }
-                                    }
+                                    },
+                                    "description": "Request OK"
                                 }
                             },
                             "protocols": [
@@ -1317,6 +1318,187 @@
                             "securedBy": [
                                 "oauth_2_0"
                             ],
+                            "queryParameters": {
+                                "count": {
+                                    "name": "count",
+                                    "displayName": "count",
+                                    "type": "string",
+                                    "required": false,
+                                    "default": 10,
+                                    "repeat": false,
+                                    "description": "Number of items to return. Default is 10 with a maximum value of 20.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "start_id": {
+                                    "name": "start_id",
+                                    "displayName": "start_id",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Resource ID that indicates the starting resource to return. When results are paged, you can use the next_id response value as the start_id to continue with the next set of results.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "start_index": {
+                                    "name": "start_index",
+                                    "displayName": "start_index",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "2",
+                                    "repeat": false,
+                                    "description": "Start index of the resources to be returned. Typically used to jump to a specific position in the resource history based on its order.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "start_time": {
+                                    "name": "start_time",
+                                    "displayName": "start_time",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "2013-03-06T11:00:00Z",
+                                    "repeat": false,
+                                    "description": "Resource creation time as defined in RFC 3339 Section 5.6 that indicates the start of a range of results",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "end_time": {
+                                    "name": "end_time",
+                                    "displayName": "end_time",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Resource creation time that indicates the end of a range of results.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "sort_by": {
+                                    "name": "sort_by",
+                                    "displayName": "sort_by",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Sort based on create_time or update_time.",
+                                    "enum": [
+                                        "update_time",
+                                        "create_time"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "sort_order": {
+                                    "name": "sort_order",
+                                    "displayName": "sort_order",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Sort based on order of results. Options include asc for ascending order or desc for descending order (default).",
+                                    "enum": [
+                                        "desc",
+                                        "asc"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Use this call to get a list of payments in any state (created, approved, failed, etc.). The payments returned are the payments made to the merchant making the call.",
                             "method": "get",
                             "is": [
@@ -1336,7 +1518,16 @@
                         {
                             "responses": {
                                 "201": {
-                                    "code": "201"
+                                    "code": "201",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "payment",
+                                            "example": "{\n  \"id\" : \"PAY-17S8410768582940NKEE66EQ\" ,\n  \"create_time\" : \"2013-01-31T04:12:02Z\" ,\n  \"update_time\" : \"2013-01-31T04:12:04Z\" ,\n  \"state\" : \"approved\" ,\n  \"intent\" : \"sale\" ,\n  \"payer\" : {\n    \"payment_method\" : \"credit_card\" ,\n    \"funding_instruments\" : [\n      {\n        \"credit_card\" : {\n          \"type\" : \"visa\" ,\n          \"number\" : \"xxxxxxxxxxxx0331\" ,\n          \"expire_month\" : \"11\" ,\n          \"expire_year\" : \"2018\" ,\n          \"first_name\" : \"Betsy\" ,\n          \"last_name\" : \"Buyer\" ,\n          \"billing_address\" : {\n            \"line1\" : \"111 First Street\" ,\n            \"city\" : \"Saratoga\" ,\n            \"state\" : \"CA\" ,\n            \"postal_code\" : \"95070\" ,\n            \"country_code\" : \"US\"\n          }\n        }\n      }\n    ]\n  } ,\n  \"transactions\" : [\n    {\n      \"amount\" : {\n        \"total\" : \"7.47\" ,\n        \"currency\" : \"USD\" ,\n        \"details\" : {\n          \"tax\" : \"0.03\" ,\n          \"shipping\" : \"0.03\"\n        }\n      } ,\n      \"description\" : \"This is the payment transaction description.\" ,\n      \"related_resources\" : [\n        {\n          \"sale\" : {\n            \"id\" : \"4RR959492F879224U\" ,\n            \"create_time\" : \"2013-01-31T04:12:02Z\" ,\n            \"update_time\" : \"2013-01-31T04:12:04Z\" ,\n            \"state\" : \"completed\" ,\n            \"amount\" : {\n              \"total\" : \"7.47\" ,\n              \"currency\" : \"USD\"\n            } ,\n            \"parent_payment\" : \"PAY-17S8410768582940NKEE66EQ\" ,\n            \"links\" : [\n              {\n                \"href\" : \"https://api.sandbox.paypal.com/v1/payments/sale/4RR959492F879224U\" ,\n                \"rel\" : \"self\" ,\n                \"method\" : \"GET\"\n              } , {\n                \"href\" : \"https://api.sandbox.paypal.com/v1/payments/sale/4RR959492F879224U/refund\" ,\n                \"rel\" : \"refund\" ,\n                \"method\" : \"POST\"\n              } , {\n                \"href\" : \"https://api.sandbox.paypal.com/v1/payments/payment/PAY-17S8410768582940NKEE66EQ\" ,\n                \"rel\" : \"parent_payment\" ,\n                \"method\" : \"GET\"\n              }\n            ]\n          }\n        }\n      ]\n    }\n  ] ,\n  \"links\" : [\n    {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/payment/PAY-17S8410768582940NKEE66EQ\" ,\n      \"rel\" : \"self\" ,\n      \"method\" : \"GET\"\n    }\n  ]\n}",
+                                            "schemaContent": "payment"
+                                        }
+                                    },
+                                    "description": "Resource created"
                                 }
                             },
                             "body": {
@@ -1404,7 +1595,16 @@
                                 {
                                     "responses": {
                                         "200": {
-                                            "code": "200"
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "payment",
+                                                    "example": "{\n  \"id\" : \"PAY-17S8410768582940NKEE66EQ\" ,\n  \"create_time\" : \"2013-01-31T04:12:02Z\" ,\n  \"update_time\" : \"2013-01-31T04:12:04Z\" ,\n  \"state\" : \"approved\" ,\n  \"intent\" : \"sale\" ,\n  \"payer\" : {\n    \"payment_method\" : \"credit_card\" ,\n    \"funding_instruments\" : [\n      {\n        \"credit_card\" : {\n          \"type\" : \"visa\" ,\n          \"number\" : \"xxxxxxxxxxxx0331\" ,\n          \"expire_month\" : \"11\" ,\n          \"expire_year\" : \"2018\" ,\n          \"first_name\" : \"Betsy\" ,\n          \"last_name\" : \"Buyer\" ,\n          \"billing_address\" : {\n            \"line1\" : \"111 First Street\" ,\n            \"city\" : \"Saratoga\" ,\n            \"state\" : \"CA\" ,\n            \"postal_code\" : \"95070\" ,\n            \"country_code\" : \"US\"\n          }\n        }\n      }\n    ]\n  } ,\n  \"transactions\" : [\n    {\n      \"amount\" : {\n        \"total\" : \"7.47\" ,\n        \"currency\" : \"USD\" ,\n        \"details\" : {\n          \"tax\" : \"0.03\" ,\n          \"shipping\" : \"0.03\"\n        }\n      } ,\n      \"description\" : \"This is the payment transaction description.\" ,\n      \"related_resources\" : [\n        {\n          \"sale\" : {\n            \"id\" : \"4RR959492F879224U\" ,\n            \"create_time\" : \"2013-01-31T04:12:02Z\" ,\n            \"update_time\" : \"2013-01-31T04:12:04Z\" ,\n            \"state\" : \"completed\" ,\n            \"amount\" : {\n              \"total\" : \"7.47\" ,\n              \"currency\" : \"USD\"\n            } ,\n            \"parent_payment\" : \"PAY-17S8410768582940NKEE66EQ\" ,\n            \"links\" : [\n              {\n                \"href\" : \"https://api.sandbox.paypal.com/v1/payments/sale/4RR959492F879224U\" ,\n                \"rel\" : \"self\" ,\n                \"method\" : \"GET\"\n              } , {\n                \"href\" : \"https://api.sandbox.paypal.com/v1/payments/sale/4RR959492F879224U/refund\" ,\n                \"rel\" : \"refund\" ,\n                \"method\" : \"POST\"\n              } , {\n                \"href\" : \"https://api.sandbox.paypal.com/v1/payments/payment/PAY-17S8410768582940NKEE66EQ\" ,\n                \"rel\" : \"parent_payment\" ,\n                \"method\" : \"GET\"\n              }\n            ]\n          }\n        }\n      ]\n    }\n  ] ,\n  \"links\" : [\n    {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/payment/PAY-17S8410768582940NKEE66EQ\" ,\n      \"rel\" : \"self\" ,\n      \"method\" : \"GET\"\n    }\n  ]\n}",
+                                                    "schemaContent": "payment"
+                                                }
+                                            },
+                                            "description": "Request OK"
                                         }
                                     },
                                     "protocols": [
@@ -1438,7 +1638,16 @@
                                         {
                                             "responses": {
                                                 "201": {
-                                                    "code": "201"
+                                                    "code": "201",
+                                                    "body": {
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "schema": "payment",
+                                                            "example": "{\n  \"id\" : \"PAY-17S8410768582940NKEE66EQ\" ,\n  \"create_time\" : \"2013-01-31T04:12:02Z\" ,\n  \"update_time\" : \"2013-01-31T04:12:04Z\" ,\n  \"state\" : \"approved\" ,\n  \"intent\" : \"sale\" ,\n  \"payer\" : {\n    \"payment_method\" : \"credit_card\" ,\n    \"funding_instruments\" : [\n      {\n        \"credit_card\" : {\n          \"type\" : \"visa\" ,\n          \"number\" : \"xxxxxxxxxxxx0331\" ,\n          \"expire_month\" : \"11\" ,\n          \"expire_year\" : \"2018\" ,\n          \"first_name\" : \"Betsy\" ,\n          \"last_name\" : \"Buyer\" ,\n          \"billing_address\" : {\n            \"line1\" : \"111 First Street\" ,\n            \"city\" : \"Saratoga\" ,\n            \"state\" : \"CA\" ,\n            \"postal_code\" : \"95070\" ,\n            \"country_code\" : \"US\"\n          }\n        }\n      }\n    ]\n  } ,\n  \"transactions\" : [\n    {\n      \"amount\" : {\n        \"total\" : \"7.47\" ,\n        \"currency\" : \"USD\" ,\n        \"details\" : {\n          \"tax\" : \"0.03\" ,\n          \"shipping\" : \"0.03\"\n        }\n      } ,\n      \"description\" : \"This is the payment transaction description.\" ,\n      \"related_resources\" : [\n        {\n          \"sale\" : {\n            \"id\" : \"4RR959492F879224U\" ,\n            \"create_time\" : \"2013-01-31T04:12:02Z\" ,\n            \"update_time\" : \"2013-01-31T04:12:04Z\" ,\n            \"state\" : \"completed\" ,\n            \"amount\" : {\n              \"total\" : \"7.47\" ,\n              \"currency\" : \"USD\"\n            } ,\n            \"parent_payment\" : \"PAY-17S8410768582940NKEE66EQ\" ,\n            \"links\" : [\n              {\n                \"href\" : \"https://api.sandbox.paypal.com/v1/payments/sale/4RR959492F879224U\" ,\n                \"rel\" : \"self\" ,\n                \"method\" : \"GET\"\n              } , {\n                \"href\" : \"https://api.sandbox.paypal.com/v1/payments/sale/4RR959492F879224U/refund\" ,\n                \"rel\" : \"refund\" ,\n                \"method\" : \"POST\"\n              } , {\n                \"href\" : \"https://api.sandbox.paypal.com/v1/payments/payment/PAY-17S8410768582940NKEE66EQ\" ,\n                \"rel\" : \"parent_payment\" ,\n                \"method\" : \"GET\"\n              }\n            ]\n          }\n        }\n      ]\n    }\n  ] ,\n  \"links\" : [\n    {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/payment/PAY-17S8410768582940NKEE66EQ\" ,\n      \"rel\" : \"self\" ,\n      \"method\" : \"GET\"\n    }\n  ]\n}",
+                                                            "schemaContent": "payment"
+                                                        }
+                                                    },
+                                                    "description": "Resource created"
                                                 }
                                             },
                                             "body": {
@@ -1554,7 +1763,8 @@
                                             "example": "{\n  \"id\" : \"36C38912MN9658832\" ,\n  \"create_time\" : \"2013-02-19T22:01:53Z\" ,\n  \"update_time\" : \"2013-02-19T22:01:55Z\" ,\n  \"state\" : \"completed\" ,\n  \"amount\" : {\n    \"total\" : \"7.47\" ,\n    \"currency\" : \"USD\"\n  } ,\n  \"parent_payment\" : \"PAY-5YK922393D847794YKER7MUI\" ,\n  \"links\" : [\n    {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/sale/36C38912MN9658832\" ,\n      \"rel\" : \"self\" ,\n      \"method\" : \"GET\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/sale/36C38912MN9658832/refund\" ,\n      \"rel\" : \"refund\" ,\n      \"method\" : \"POST\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/payment/PAY-5YK922393D847794YKER7MUI\" ,\n      \"rel\" : \"parent_payment\" ,\n      \"method\" : \"GET\"\n    }\n  ]\n}",
                                             "schemaContent": "sale"
                                         }
-                                    }
+                                    },
+                                    "description": "Request OK"
                                 }
                             },
                             "protocols": [
@@ -1588,7 +1798,16 @@
                                 {
                                     "responses": {
                                         "201": {
-                                            "code": "201"
+                                            "code": "201",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "refund",
+                                                    "example": "{\n  \"id\" : \"4CF18861HF410323U\" ,\n  \"create_time\" : \"2013-01-31T04:13:34Z\" ,\n  \"update_time\" : \"2013-01-31T04:13:36Z\" ,\n  \"state\" : \"completed\" ,\n  \"amount\" : {\n    \"total\" : \"2.34\" ,\n    \"currency\" : \"USD\"\n  } ,\n  \"parent_payment\" : \"PAY-46E69296BH2194803KEE662Y\" ,\n  \"links\" : [\n    {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/refund/4CF18861HF410323U\" ,\n      \"rel\" : \"self\" ,\n      \"method\" : \"GET\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/payment/PAY-46E69296BH2194803KEE662Y\" ,\n      \"rel\" : \"parent_payment\" ,\n      \"method\" : \"GET\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/sale/2MU78835H4515710F\" ,\n      \"rel\" : \"sale\" ,\n      \"method\" : \"GET\"\n    }\n  ]\n}",
+                                                    "schemaContent": "refund"
+                                                }
+                                            },
+                                            "description": "Resource created"
                                         }
                                     },
                                     "body": {
@@ -1687,7 +1906,16 @@
                         {
                             "responses": {
                                 "200": {
-                                    "code": "200"
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "refund",
+                                            "example": "{\n  \"id\" : \"4CF18861HF410323U\" ,\n  \"create_time\" : \"2013-01-31T04:13:34Z\" ,\n  \"update_time\" : \"2013-01-31T04:13:36Z\" ,\n  \"state\" : \"completed\" ,\n  \"amount\" : {\n    \"total\" : \"2.34\" ,\n    \"currency\" : \"USD\"\n  } ,\n  \"parent_payment\" : \"PAY-46E69296BH2194803KEE662Y\" ,\n  \"links\" : [\n    {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/refund/4CF18861HF410323U\" ,\n      \"rel\" : \"self\" ,\n      \"method\" : \"GET\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/payment/PAY-46E69296BH2194803KEE662Y\" ,\n      \"rel\" : \"parent_payment\" ,\n      \"method\" : \"GET\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/sale/2MU78835H4515710F\" ,\n      \"rel\" : \"sale\" ,\n      \"method\" : \"GET\"\n    }\n  ]\n}",
+                                            "schemaContent": "refund"
+                                        }
+                                    },
+                                    "description": "Request OK"
                                 }
                             },
                             "protocols": [
@@ -1762,7 +1990,16 @@
                         {
                             "responses": {
                                 "200": {
-                                    "code": "200"
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "capture",
+                                            "example": "{\n  \"id\" : \"6BA17599X0950293U\" ,\n  \"create_time\" : \"2013-05-06T22:32:24Z\" ,\n  \"update_time\" : \"2013-05-06T22:32:25Z\" ,\n  \"amount\" : {\n    \"total\" : \"4.54\" ,\n    \"currency\" : \"USD\"\n  } ,\n  \"is_final_capture\" : true ,\n  \"state\" : \"completed\" ,\n  \"parent_payment\" : \"PAY-44664305570317015KGEC5DI\" ,\n  \"links\" : [\n    {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/capture/6BA17599X0950293U\" ,\n      \"rel\" : \"self\" ,\n      \"method\" : \"GET\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/capture/6BA17599X0950293U/refund\" ,\n      \"rel\" : \"refund\" ,\n      \"method\" : \"POST\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/authorization/5RA45624N3531924N\" ,\n      \"rel\" : \"authorization\" ,\n      \"method\" : \"GET\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/payment/PAY-44664305570317015KGEC5DI\" ,\n      \"rel\" : \"parent_payment\" ,\n      \"method\" : \"GET\"\n    }\n  ]\n}",
+                                            "schemaContent": "capture"
+                                        }
+                                    },
+                                    "description": "Request OK"
                                 }
                             },
                             "protocols": [
@@ -1796,7 +2033,16 @@
                                 {
                                     "responses": {
                                         "201": {
-                                            "code": "201"
+                                            "code": "201",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "refund",
+                                                    "example": "{\n  \"id\" : \"4CF18861HF410323U\" ,\n  \"create_time\" : \"2013-01-31T04:13:34Z\" ,\n  \"update_time\" : \"2013-01-31T04:13:36Z\" ,\n  \"state\" : \"completed\" ,\n  \"amount\" : {\n    \"total\" : \"2.34\" ,\n    \"currency\" : \"USD\"\n  } ,\n  \"parent_payment\" : \"PAY-46E69296BH2194803KEE662Y\" ,\n  \"links\" : [\n    {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/refund/4CF18861HF410323U\" ,\n      \"rel\" : \"self\" ,\n      \"method\" : \"GET\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/payment/PAY-46E69296BH2194803KEE662Y\" ,\n      \"rel\" : \"parent_payment\" ,\n      \"method\" : \"GET\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/sale/2MU78835H4515710F\" ,\n      \"rel\" : \"sale\" ,\n      \"method\" : \"GET\"\n    }\n  ]\n}",
+                                                    "schemaContent": "refund"
+                                                }
+                                            },
+                                            "description": "Resource created"
                                         }
                                     },
                                     "body": {
@@ -1877,7 +2123,8 @@
                                             "example": "{\n  \"plans\" : [\n    {\n      \"id\" : \"P-8DY604244K970170GOALWR3I\" ,\n      \"state\" : \"CREATED\" ,\n      \"name\" : \"Fast Speed Plan\" ,\n      \"description\" : \"Template creation.\" ,\n      \"type\" : \"FIXED\" ,\n      \"payee\" : {\n        \"merchant_id\" : \"1515831003405719294\"\n      } ,\n      \"create_time\" : \"2014-06-06T07:32:00.877Z\" ,\n      \"update_time\" : \"2014-06-06T07:32:00.877Z\" ,\n      \"links\" : [\n        {\n          \"href\" : \"https://api.sandbox.paypal.com/v1/payments/billing-plans/P-8DY604244K970170GOALWR3I\" ,\n          \"rel\" : \"self\" ,\n          \"method\" : \"GET\"\n        }\n      ]\n    } , {\n      \"id\" : \"P-5DG449941S849481HOANAHEY\" ,\n      \"state\" : \"CREATED\" ,\n      \"name\" : \"Fast Speed Plan\" ,\n      \"description\" : \"Template creation.\" ,\n      \"type\" : \"INFINITE\" ,\n      \"payee\" : {\n        \"merchant_id\" : \"1515831003405719294\"\n      } ,\n      \"create_time\" : \"2014-06-06T07:34:51.539Z\" ,\n      \"update_time\" : \"2014-06-06T07:34:51.539Z\" ,\n      \"links\" : [\n        {\n          \"href\" : \"https://api.sandbox.paypal.com/v1/payments/billing-plans/P-5DG449941S849481HOANAHEY\" ,\n          \"rel\" : \"self\" ,\n          \"method\" : \"GET\"\n        }\n      ]\n    } , {\n      \"id\" : \"P-72813841X1545245COAM5OAQ\" ,\n      \"state\" : \"CREATED\" ,\n      \"name\" : \"Fast Speed Plan\" ,\n      \"description\" : \"Template creation.\" ,\n      \"type\" : \"INFINITE\" ,\n      \"payee\" : {\n        \"merchant_id\" : \"1515831003405719294\"\n      } ,\n      \"create_time\" : \"2014-06-06T07:34:40.130Z\" ,\n      \"update_time\" : \"2014-06-06T07:34:40.130Z\" ,\n      \"links\" : [\n        {\n          \"href\" : \"https://api.sandbox.paypal.com/v1/payments/billing-plans/P-72813841X1545245COAM5OAQ\" ,\n          \"rel\" : \"self\" ,\n          \"method\" : \"GET\"\n        }\n      ]\n    } , {\n      \"id\" : \"P-01D75598YC3824520OAMZ44Q\" ,\n      \"state\" : \"CREATED\" ,\n      \"name\" : \"Fast Speed Plan\" ,\n      \"description\" : \"Template creation.\" ,\n      \"type\" : \"INFINITE\" ,\n      \"payee\" : {\n        \"merchant_id\" : \"1515831003405719294\"\n      } ,\n      \"create_time\" : \"2014-06-06T07:34:25.650Z\" ,\n      \"update_time\" : \"2014-06-06T07:34:25.650Z\" ,\n      \"links\" : [\n        {\n          \"href\" : \"https://api.sandbox.paypal.com/v1/payments/billing-plans/P-01D75598YC3824520OAMZ44Q\" ,\n          \"rel\" : \"self\" ,\n          \"method\" : \"GET\"\n        }\n      ]\n    } , {\n      \"id\" : \"P-7T4654075U514300LOAMDWUA\" ,\n      \"state\" : \"CREATED\" ,\n      \"name\" : \"Fast Speed Plan\" ,\n      \"description\" : \"Template creation.\" ,\n      \"type\" : \"INFINITE\" ,\n      \"payee\" : {\n        \"merchant_id\" : \"1515831003405719294\"\n      } ,\n      \"create_time\" : \"2014-06-06T07:32:54.736Z\" ,\n      \"update_time\" : \"2014-06-06T07:32:54.736Z\" ,\n      \"links\" : [\n        {\n          \"href\" : \"https://api.sandbox.paypal.com/v1/payments/billing-plans/P-7T4654075U514300LOAMDWUA\" ,\n          \"rel\" : \"self\" ,\n          \"method\" : \"GET\"\n        }\n      ]\n    } , {\n      \"id\" : \"P-4J557194H86981423OAAJPYY\" ,\n      \"state\" : \"CREATED\" ,\n      \"name\" : \"Fast Speed Plan\" ,\n      \"description\" : \"Template creation.\" ,\n      \"type\" : \"FIXED\" ,\n      \"payee\" : {\n        \"merchant_id\" : \"1515831003405719294\"\n      } ,\n      \"create_time\" : \"2014-06-06T07:07:05.571Z\" ,\n      \"update_time\" : \"2014-06-06T07:07:05.571Z\" ,\n      \"links\" : [\n        {\n          \"href\" : \"https://api.sandbox.paypal.com/v1/payments/billing-plans/P-4J557194H86981423OAAJPYY\" ,\n          \"rel\" : \"self\" ,\n          \"method\" : \"GET\"\n        }\n      ]\n    } , {\n      \"id\" : \"P-44049660G8624215XN77ODSA\" ,\n      \"state\" : \"CREATED\" ,\n      \"name\" : \"Fast Speed Plan\" ,\n      \"description\" : \"Template creation.\" ,\n      \"type\" : \"FIXED\" ,\n      \"payee\" : {\n        \"merchant_id\" : \"1515831003405719294\"\n      } ,\n      \"create_time\" : \"2014-06-06T07:05:13.416Z\" ,\n      \"update_time\" : \"2014-06-06T07:05:13.416Z\" ,\n      \"links\" : [\n        {\n          \"href\" : \"https://api.sandbox.paypal.com/v1/payments/billing-plans/P-44049660G8624215XN77ODSA\" ,\n          \"rel\" : \"self\" ,\n          \"method\" : \"GET\"\n        }\n      ]\n    } , {\n      \"id\" : \"P-7XA68785WX8747635N55DG4A\" ,\n      \"state\" : \"CREATED\" ,\n      \"name\" : \"Plan with multi pymt def\" ,\n      \"description\" : \"Plan with multiple payment definition\" ,\n      \"type\" : \"FIXED\" ,\n      \"payee\" : {\n        \"merchant_id\" : \"1515831003405719294\"\n      } ,\n      \"create_time\" : \"2014-06-06T04:40:18.032Z\" ,\n      \"update_time\" : \"2014-06-06T04:40:31.287Z\" ,\n      \"links\" : [\n        {\n          \"href\" : \"https://api.sandbox.paypal.com/v1/payments/billing-plans/P-7XA68785WX8747635N55DG4A\" ,\n          \"rel\" : \"self\" ,\n          \"method\" : \"GET\"\n        }\n      ]\n    } , {\n      \"id\" : \"P-7AB8522151191562KN5ZRZJY\" ,\n      \"state\" : \"CREATED\" ,\n      \"name\" : \"Plan with multi pymt def\" ,\n      \"description\" : \"Plan with multiple payment definition\" ,\n      \"type\" : \"FIXED\" ,\n      \"payee\" : {\n        \"merchant_id\" : \"1515831003405719294\"\n      } ,\n      \"create_time\" : \"2014-06-06T04:32:33.447Z\" ,\n      \"update_time\" : \"2014-06-06T04:32:33.447Z\" ,\n      \"links\" : [\n        {\n          \"href\" : \"https://api.sandbox.paypal.com/v1/payments/billing-plans/P-7AB8522151191562KN5ZRZJY\" ,\n          \"rel\" : \"self\" ,\n          \"method\" : \"GET\"\n        }\n      ]\n    } , {\n      \"id\" : \"P-1V9487606L2793837N4YISZI\" ,\n      \"state\" : \"CREATED\" ,\n      \"name\" : \"Fast Speed Plan\" ,\n      \"description\" : \"Template creation.\" ,\n      \"type\" : \"FIXED\" ,\n      \"payee\" : {\n        \"merchant_id\" : \"1515831003405719294\"\n      } ,\n      \"create_time\" : \"2014-06-06T03:19:50.373Z\" ,\n      \"update_time\" : \"2014-06-06T03:19:50.373Z\" ,\n      \"links\" : [\n        {\n          \"href\" : \"https://api.sandbox.paypal.com/v1/payments/billing-plans/P-1V9487606L2793837N4YISZI\" ,\n          \"rel\" : \"self\" ,\n          \"method\" : \"GET\"\n        }\n      ]\n    }\n  ] ,\n  \"links\" : [\n    {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/templates?start_id=10&sort_order=desc&status=CREATED\" ,\n      \"rel\" : \"next_page\" ,\n      \"method\" : \"GET\"\n    }\n  ]\n}",
                                             "schemaContent": "plans"
                                         }
-                                    }
+                                    },
+                                    "description": "Request OK"
                                 }
                             },
                             "protocols": [
@@ -1900,6 +2147,185 @@
                                         "INACTIVE",
                                         "CREATED",
                                         "ACTIVE"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "count": {
+                                    "name": "count",
+                                    "displayName": "count",
+                                    "type": "string",
+                                    "required": false,
+                                    "default": 10,
+                                    "repeat": false,
+                                    "description": "Number of items to return. Default is 10 with a maximum value of 20.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "start_id": {
+                                    "name": "start_id",
+                                    "displayName": "start_id",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Resource ID that indicates the starting resource to return. When results are paged, you can use the next_id response value as the start_id to continue with the next set of results.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "start_index": {
+                                    "name": "start_index",
+                                    "displayName": "start_index",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "2",
+                                    "repeat": false,
+                                    "description": "Start index of the resources to be returned. Typically used to jump to a specific position in the resource history based on its order.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "start_time": {
+                                    "name": "start_time",
+                                    "displayName": "start_time",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "2013-03-06T11:00:00Z",
+                                    "repeat": false,
+                                    "description": "Resource creation time as defined in RFC 3339 Section 5.6 that indicates the start of a range of results",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "end_time": {
+                                    "name": "end_time",
+                                    "displayName": "end_time",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Resource creation time that indicates the end of a range of results.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "sort_by": {
+                                    "name": "sort_by",
+                                    "displayName": "sort_by",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Sort based on create_time or update_time.",
+                                    "enum": [
+                                        "update_time",
+                                        "create_time"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "sort_order": {
+                                    "name": "sort_order",
+                                    "displayName": "sort_order",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Sort based on order of results. Options include asc for ascending order or desc for descending order (default).",
+                                    "enum": [
+                                        "desc",
+                                        "asc"
                                     ],
                                     "__METADATA__": {
                                         "primitiveValuesMeta": {
@@ -1946,7 +2372,8 @@
                                             "example": "{\n  \"id\" : \"P-8DY604244K970170GOALWR3I\" ,\n  \"state\" : \"CREATED\" ,\n  \"name\" : \"Fast Speed Plan\" ,\n  \"description\" : \"Template creation.\" ,\n  \"type\" : \"FIXED\" ,\n  \"payee\" : {\n    \"merchant_id\" : \"1515831003405719294\"\n  } ,\n  \"payment_definitions\" : [\n    {\n      \"id\" : \"PD-8DY604244K970170GOALWR5Y\" ,\n      \"name\" : \"Payment Definition-1\" ,\n      \"type\" : \"REGULAR\" ,\n      \"frequency\" : \"Month\" ,\n      \"frequency_interval\" : \"2\" ,\n      \"amount\" : {\n        \"currency\" : \"USD\" ,\n        \"value\" : \"100\"\n      } ,\n      \"cycles\" : \"12\" ,\n      \"charge_models\" : [\n        {\n          \"id\" : \"CHM-8DY604244K970170GOALWR5Y\" ,\n          \"type\" : \"SHIPPING\" ,\n          \"amount\" : {\n            \"currency\" : \"USD\" ,\n            \"value\" : \"10\"\n          }\n        } , {\n          \"id\" : \"CHM-0NJ10521L3680291SOALWR5Y\" ,\n          \"type\" : \"TAX\" ,\n          \"amount\" : {\n            \"currency\" : \"USD\" ,\n            \"value\" : \"12\"\n          }\n        }\n      ]\n    }\n  ] ,\n  \"merchant_preferences\" : {\n    \"setup_fee\" : {\n      \"currency\" : \"USD\" ,\n      \"value\" : \"1\"\n    } ,\n    \"auto_bill_amount\" : \"YES\" ,\n    \"initial_fail_amount_action\" : \"CONTINUE\" ,\n    \"max_fail_attempts\" : \"0\" ,\n    \"return_url\" : \"http://www.paypal.com\" ,\n    \"cancel_url\" : \"http://www.yahoo.com\"\n  } ,\n  \"create_time\" : \"2014-06-06T07:32:00.877Z\" ,\n  \"update_time\" : \"2014-06-06T07:32:00.877Z\" ,\n  \"links\" : [\n    {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/billing-plans/P-8DY604244K970170GOALWR3I\" ,\n      \"rel\" : \"self\" ,\n      \"method\" : \"GET\"\n    }\n  ]\n}",
                                             "schemaContent": "plan"
                                         }
-                                    }
+                                    },
+                                    "description": "Request OK"
                                 }
                             },
                             "body": {
@@ -2022,7 +2449,8 @@
                                                     "example": "{\n  \"id\" : \"P-8DY604244K970170GOALWR3I\" ,\n  \"state\" : \"CREATED\" ,\n  \"name\" : \"Fast Speed Plan\" ,\n  \"description\" : \"Template creation.\" ,\n  \"type\" : \"FIXED\" ,\n  \"payee\" : {\n    \"merchant_id\" : \"1515831003405719294\"\n  } ,\n  \"payment_definitions\" : [\n    {\n      \"id\" : \"PD-8DY604244K970170GOALWR5Y\" ,\n      \"name\" : \"Payment Definition-1\" ,\n      \"type\" : \"REGULAR\" ,\n      \"frequency\" : \"Month\" ,\n      \"frequency_interval\" : \"2\" ,\n      \"amount\" : {\n        \"currency\" : \"USD\" ,\n        \"value\" : \"100\"\n      } ,\n      \"cycles\" : \"12\" ,\n      \"charge_models\" : [\n        {\n          \"id\" : \"CHM-8DY604244K970170GOALWR5Y\" ,\n          \"type\" : \"SHIPPING\" ,\n          \"amount\" : {\n            \"currency\" : \"USD\" ,\n            \"value\" : \"10\"\n          }\n        } , {\n          \"id\" : \"CHM-0NJ10521L3680291SOALWR5Y\" ,\n          \"type\" : \"TAX\" ,\n          \"amount\" : {\n            \"currency\" : \"USD\" ,\n            \"value\" : \"12\"\n          }\n        }\n      ]\n    }\n  ] ,\n  \"merchant_preferences\" : {\n    \"setup_fee\" : {\n      \"currency\" : \"USD\" ,\n      \"value\" : \"1\"\n    } ,\n    \"auto_bill_amount\" : \"YES\" ,\n    \"initial_fail_amount_action\" : \"CONTINUE\" ,\n    \"max_fail_attempts\" : \"0\" ,\n    \"return_url\" : \"http://www.paypal.com\" ,\n    \"cancel_url\" : \"http://www.yahoo.com\"\n  } ,\n  \"create_time\" : \"2014-06-06T07:32:00.877Z\" ,\n  \"update_time\" : \"2014-06-06T07:32:00.877Z\" ,\n  \"links\" : [\n    {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/billing-plans/P-8DY604244K970170GOALWR3I\" ,\n      \"rel\" : \"self\" ,\n      \"method\" : \"GET\"\n    }\n  ]\n}",
                                                     "schemaContent": "plan"
                                                 }
-                                            }
+                                            },
+                                            "description": "Request OK"
                                         }
                                     },
                                     "protocols": [
@@ -2120,7 +2548,16 @@
                         {
                             "responses": {
                                 "201": {
-                                    "code": "201"
+                                    "code": "201",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "agreement",
+                                            "example": "{\n  \"description\" : \"Agreement for Fast Speed Plan\" ,\n  \"links\" : [\n    {\n      \"href\" : \"https://localhost/cgi-bin/webscr?cmd=_express-checkout&token=EC-7MD89916KU283780J\" ,\n      \"rel\" : \"approval_url\" ,\n      \"method\" : \"REDIRECT\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/billing-agreements/EC-7MD89916KU283780J/agreement-execute\" ,\n      \"rel\" : \"execute\" ,\n      \"method\" : \"POST\"\n    }\n  ] ,\n  \"start_date\" : \"2015-02-19T00:37:04Z\" ,\n  \"plan\" : {\n    \"id\" : \"P-0NJ10521L3680291SOAQIVTQ\" ,\n    \"state\" : \"ACTIVE\" ,\n    \"name\" : \"Fast Speed Plan\" ,\n    \"description\" : \"Template creation.\" ,\n    \"type\" : \"FIXED\" ,\n    \"payment_definitions\" : [\n      {\n        \"id\" : \"PD-0NJ10521L3680291SOAQIVTQ\" ,\n        \"name\" : \"Payment Definition-1\" ,\n        \"type\" : \"REGULAR\" ,\n        \"frequency\" : \"Month\" ,\n        \"frequency_interval\" : \"2\" ,\n        \"amount\" : {\n          \"value\" : \"100\" ,\n          \"currency\" : \"USD\"\n        } ,\n        \"cycles\" : \"12\" ,\n        \"charge_models\" : [\n          {\n            \"id\" : \"CHM-4J874305Y03154608OAQIVTQ\" ,\n            \"type\" : \"SHIPPING\" ,\n            \"amount\" : {\n              \"value\" : \"10\" ,\n              \"currency\" : \"USD\"\n            }\n          } , {\n            \"id\" : \"CHM-694072065W722980MOAQIVTQ\" ,\n            \"type\" : \"TAX\" ,\n            \"amount\" : {\n              \"value\" : \"12\" ,\n              \"currency\" : \"USD\"\n            }\n          }\n        ]\n      } , {\n        \"id\" : \"PD-4J874305Y03154608OAQIVTQ\" ,\n        \"name\" : \"Payment Definition-1\" ,\n        \"type\" : \"TRIAL\" ,\n        \"frequency\" : \"Month\" ,\n        \"frequency_interval\" : \"2\" ,\n        \"amount\" : {\n          \"value\" : \"100\" ,\n          \"currency\" : \"USD\"\n        } ,\n        \"cycles\" : \"12\" ,\n        \"charge_models\" : [\n          {\n            \"id\" : \"CHM-7EF88706AP068633TOAQIVTQ\" ,\n            \"type\" : \"SHIPPING\" ,\n            \"amount\" : {\n              \"value\" : \"10\" ,\n              \"currency\" : \"USD\"\n            }\n          } , {\n            \"id\" : \"CHM-3T289804JP1858048OAQIVTQ\" ,\n            \"type\" : \"TAX\" ,\n            \"amount\" : {\n              \"value\" : \"12\" ,\n              \"currency\" : \"USD\"\n            }\n          }\n        ]\n      }\n    ] ,\n    \"merchant_preferences\" : {\n      \"setup_fee\" : {\n        \"value\" : \"22\" ,\n        \"currency\" : \"USD\"\n      } ,\n      \"auto_bill_amount\" : \"YES\" ,\n      \"initial_fail_amount_action\" : \"CONTINUE\" ,\n      \"max_fail_attempts\" : \"0\" ,\n      \"return_url\" : \"http://www.paypal.com\" ,\n      \"cancel_url\" : \"http://www.paypal123.com\"\n    }\n  }\n}",
+                                            "schemaContent": "agreement"
+                                        }
+                                    },
+                                    "description": "Resource created"
                                 }
                             },
                             "body": {
@@ -2188,7 +2625,21 @@
                                 {
                                     "responses": {
                                         "201": {
-                                            "code": "201"
+                                            "code": "201",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "agreement",
+                                                    "example": "{\n  \"description\" : \"Agreement for Fast Speed Plan\" ,\n  \"links\" : [\n    {\n      \"href\" : \"https://localhost/cgi-bin/webscr?cmd=_express-checkout&token=EC-7MD89916KU283780J\" ,\n      \"rel\" : \"approval_url\" ,\n      \"method\" : \"REDIRECT\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/billing-agreements/EC-7MD89916KU283780J/agreement-execute\" ,\n      \"rel\" : \"execute\" ,\n      \"method\" : \"POST\"\n    }\n  ] ,\n  \"start_date\" : \"2015-02-19T00:37:04Z\" ,\n  \"plan\" : {\n    \"id\" : \"P-0NJ10521L3680291SOAQIVTQ\" ,\n    \"state\" : \"ACTIVE\" ,\n    \"name\" : \"Fast Speed Plan\" ,\n    \"description\" : \"Template creation.\" ,\n    \"type\" : \"FIXED\" ,\n    \"payment_definitions\" : [\n      {\n        \"id\" : \"PD-0NJ10521L3680291SOAQIVTQ\" ,\n        \"name\" : \"Payment Definition-1\" ,\n        \"type\" : \"REGULAR\" ,\n        \"frequency\" : \"Month\" ,\n        \"frequency_interval\" : \"2\" ,\n        \"amount\" : {\n          \"value\" : \"100\" ,\n          \"currency\" : \"USD\"\n        } ,\n        \"cycles\" : \"12\" ,\n        \"charge_models\" : [\n          {\n            \"id\" : \"CHM-4J874305Y03154608OAQIVTQ\" ,\n            \"type\" : \"SHIPPING\" ,\n            \"amount\" : {\n              \"value\" : \"10\" ,\n              \"currency\" : \"USD\"\n            }\n          } , {\n            \"id\" : \"CHM-694072065W722980MOAQIVTQ\" ,\n            \"type\" : \"TAX\" ,\n            \"amount\" : {\n              \"value\" : \"12\" ,\n              \"currency\" : \"USD\"\n            }\n          }\n        ]\n      } , {\n        \"id\" : \"PD-4J874305Y03154608OAQIVTQ\" ,\n        \"name\" : \"Payment Definition-1\" ,\n        \"type\" : \"TRIAL\" ,\n        \"frequency\" : \"Month\" ,\n        \"frequency_interval\" : \"2\" ,\n        \"amount\" : {\n          \"value\" : \"100\" ,\n          \"currency\" : \"USD\"\n        } ,\n        \"cycles\" : \"12\" ,\n        \"charge_models\" : [\n          {\n            \"id\" : \"CHM-7EF88706AP068633TOAQIVTQ\" ,\n            \"type\" : \"SHIPPING\" ,\n            \"amount\" : {\n              \"value\" : \"10\" ,\n              \"currency\" : \"USD\"\n            }\n          } , {\n            \"id\" : \"CHM-3T289804JP1858048OAQIVTQ\" ,\n            \"type\" : \"TAX\" ,\n            \"amount\" : {\n              \"value\" : \"12\" ,\n              \"currency\" : \"USD\"\n            }\n          }\n        ]\n      }\n    ] ,\n    \"merchant_preferences\" : {\n      \"setup_fee\" : {\n        \"value\" : \"22\" ,\n        \"currency\" : \"USD\"\n      } ,\n      \"auto_bill_amount\" : \"YES\" ,\n      \"initial_fail_amount_action\" : \"CONTINUE\" ,\n      \"max_fail_attempts\" : \"0\" ,\n      \"return_url\" : \"http://www.paypal.com\" ,\n      \"cancel_url\" : \"http://www.paypal123.com\"\n    }\n  }\n}",
+                                                    "schemaContent": "agreement"
+                                                }
+                                            },
+                                            "description": "Resource created"
+                                        }
+                                    },
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json"
                                         }
                                     },
                                     "protocols": [
@@ -2263,7 +2714,16 @@
                                 {
                                     "responses": {
                                         "200": {
-                                            "code": "200"
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "agreement",
+                                                    "example": "{\n  \"description\" : \"Agreement for Fast Speed Plan\" ,\n  \"links\" : [\n    {\n      \"href\" : \"https://localhost/cgi-bin/webscr?cmd=_express-checkout&token=EC-7MD89916KU283780J\" ,\n      \"rel\" : \"approval_url\" ,\n      \"method\" : \"REDIRECT\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/billing-agreements/EC-7MD89916KU283780J/agreement-execute\" ,\n      \"rel\" : \"execute\" ,\n      \"method\" : \"POST\"\n    }\n  ] ,\n  \"start_date\" : \"2015-02-19T00:37:04Z\" ,\n  \"plan\" : {\n    \"id\" : \"P-0NJ10521L3680291SOAQIVTQ\" ,\n    \"state\" : \"ACTIVE\" ,\n    \"name\" : \"Fast Speed Plan\" ,\n    \"description\" : \"Template creation.\" ,\n    \"type\" : \"FIXED\" ,\n    \"payment_definitions\" : [\n      {\n        \"id\" : \"PD-0NJ10521L3680291SOAQIVTQ\" ,\n        \"name\" : \"Payment Definition-1\" ,\n        \"type\" : \"REGULAR\" ,\n        \"frequency\" : \"Month\" ,\n        \"frequency_interval\" : \"2\" ,\n        \"amount\" : {\n          \"value\" : \"100\" ,\n          \"currency\" : \"USD\"\n        } ,\n        \"cycles\" : \"12\" ,\n        \"charge_models\" : [\n          {\n            \"id\" : \"CHM-4J874305Y03154608OAQIVTQ\" ,\n            \"type\" : \"SHIPPING\" ,\n            \"amount\" : {\n              \"value\" : \"10\" ,\n              \"currency\" : \"USD\"\n            }\n          } , {\n            \"id\" : \"CHM-694072065W722980MOAQIVTQ\" ,\n            \"type\" : \"TAX\" ,\n            \"amount\" : {\n              \"value\" : \"12\" ,\n              \"currency\" : \"USD\"\n            }\n          }\n        ]\n      } , {\n        \"id\" : \"PD-4J874305Y03154608OAQIVTQ\" ,\n        \"name\" : \"Payment Definition-1\" ,\n        \"type\" : \"TRIAL\" ,\n        \"frequency\" : \"Month\" ,\n        \"frequency_interval\" : \"2\" ,\n        \"amount\" : {\n          \"value\" : \"100\" ,\n          \"currency\" : \"USD\"\n        } ,\n        \"cycles\" : \"12\" ,\n        \"charge_models\" : [\n          {\n            \"id\" : \"CHM-7EF88706AP068633TOAQIVTQ\" ,\n            \"type\" : \"SHIPPING\" ,\n            \"amount\" : {\n              \"value\" : \"10\" ,\n              \"currency\" : \"USD\"\n            }\n          } , {\n            \"id\" : \"CHM-3T289804JP1858048OAQIVTQ\" ,\n            \"type\" : \"TAX\" ,\n            \"amount\" : {\n              \"value\" : \"12\" ,\n              \"currency\" : \"USD\"\n            }\n          }\n        ]\n      }\n    ] ,\n    \"merchant_preferences\" : {\n      \"setup_fee\" : {\n        \"value\" : \"22\" ,\n        \"currency\" : \"USD\"\n      } ,\n      \"auto_bill_amount\" : \"YES\" ,\n      \"initial_fail_amount_action\" : \"CONTINUE\" ,\n      \"max_fail_attempts\" : \"0\" ,\n      \"return_url\" : \"http://www.paypal.com\" ,\n      \"cancel_url\" : \"http://www.paypal123.com\"\n    }\n  }\n}",
+                                                    "schemaContent": "agreement"
+                                                }
+                                            },
+                                            "description": "Request OK"
                                         }
                                     },
                                     "protocols": [
@@ -2623,7 +3083,8 @@
                                                             "example": "{\n  \"agreement_transaction_list\" : [\n    {\n      \"transaction_id\" : \"I-XEV0M1AYVDVX\" ,\n      \"status\" : \"Created\" ,\n      \"transaction_type\" : \"Recurring Payment\" ,\n      \"payer_email\" : \"\" ,\n      \"payer_name\" : \"Jose Ramirez\" ,\n      \"time_stamp\" : \"2014-06-09T09:29:36Z\" ,\n      \"time_zone\" : \"GMT\"\n    } , {\n      \"transaction_id\" : \"928415314Y5640008\" ,\n      \"status\" : \"Completed\" ,\n      \"transaction_type\" : \"Recurring Payment\" ,\n      \"amount\" : {\n        \"currency\" : \"USD\" ,\n        \"value\" : \"1.00\"\n      } ,\n      \"fee_amount\" : {\n        \"currency\" : \"USD\" ,\n        \"value\" : \"-0.33\"\n      } ,\n      \"net_amount\" : {\n        \"currency\" : \"USD\" ,\n        \"value\" : \"0.67\"\n      } ,\n      \"payer_email\" : \"sai@paypal.com\" ,\n      \"payer_name\" : \"Jose Ramirez\" ,\n      \"time_stamp\" : \"2014-06-09T09:42:47Z\" ,\n      \"time_zone\" : \"GMT\"\n    } , {\n      \"transaction_id\" : \"I-XEV0M1AYVDVX\" ,\n      \"status\" : \"Suspended\" ,\n      \"transaction_type\" : \"Recurring Payment\" ,\n      \"payer_email\" : \"\" ,\n      \"payer_name\" : \"Jose Ramirez\" ,\n      \"time_stamp\" : \"2014-06-09T11:18:34Z\" ,\n      \"time_zone\" : \"GMT\"\n    } , {\n      \"transaction_id\" : \"I-XEV0M1AYVDVX\" ,\n      \"status\" : \"Reactivated\" ,\n      \"transaction_type\" : \"Recurring Payment\" ,\n      \"payer_email\" : \"\" ,\n      \"payer_name\" : \"Jose Ramirez\" ,\n      \"time_stamp\" : \"2014-06-09T11:18:48Z\" ,\n      \"time_zone\" : \"GMT\"\n    }\n  ]\n}",
                                                             "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"agreement_transaction_list\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"transaction_id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"status\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"transaction_type\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"payer_email\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"payer_name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"time_stamp\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"time_zone\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        } , {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"transaction_id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"status\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"transaction_type\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"amount\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"currency\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"value\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            } ,\n            \"fee_amount\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"currency\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"value\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            } ,\n            \"net_amount\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"currency\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"value\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            } ,\n            \"payer_email\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"payer_name\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"time_stamp\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"time_zone\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
                                                         }
-                                                    }
+                                                    },
+                                                    "description": "Request OK"
                                                 }
                                             },
                                             "protocols": [
@@ -2737,7 +3198,8 @@
                                             "example": "{\n  \"id\" : \"O-3SP845109F051535C\" ,\n  \"create_time\" : \"2014-07-01T16:56:58Z\" ,\n  \"update_time\" : \"2014-07-01T17:05:41Z\" ,\n  \"state\" : \"pending\" ,\n  \"amount\" : {\n    \"total\" : \"41.15\" ,\n    \"currency\" : \"USD\" ,\n    \"details\" : {\n      \"subtotal\" : \"30.00\" ,\n      \"tax\" : \"0.15\" ,\n      \"shipping\" : \"11.00\"\n    }\n  } ,\n  \"pending_reason\" : \"order\" ,\n  \"parent_payment\" : \"PAY-9N9834337A9191208KOZOQWI\" ,\n  \"links\" : [\n    {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/orders/O-3SP845109F051535C\" ,\n      \"rel\" : \"self\" ,\n      \"method\" : \"GET\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/payment/PAY-9N9834337A9191208KOZOQWI\" ,\n      \"rel\" : \"parent_payment\" ,\n      \"method\" : \"GET\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/orders/O-3SP845109F051535C/void\" ,\n      \"rel\" : \"void\" ,\n      \"method\" : \"POST\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/orders/O-3SP845109F051535C/authorize\" ,\n      \"rel\" : \"authorization\" ,\n      \"method\" : \"POST\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/orders/O-3SP845109F051535C/capture\" ,\n      \"rel\" : \"capture\" ,\n      \"method\" : \"POST\"\n    }\n  ]\n}",
                                             "schemaContent": "order"
                                         }
-                                    }
+                                    },
+                                    "description": "Request OK"
                                 }
                             },
                             "protocols": [
@@ -2779,7 +3241,8 @@
                                                     "example": "{\n  \"id\" : \"6CR34526N64144512\" ,\n  \"create_time\" : \"2013-05-06T21:56:50Z\" ,\n  \"update_time\" : \"2013-05-06T21:57:51Z\" ,\n  \"state\" : \"voided\" ,\n  \"amount\" : {\n    \"total\" : \"110.54\" ,\n    \"currency\" : \"USD\" ,\n    \"details\" : {\n      \"subtotal\" : \"110.54\"\n    }\n  } ,\n  \"parent_payment\" : \"PAY-0PL82432AD7432233KGECOIQ\" ,\n  \"links\" : [\n    {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/authorization/6CR34526N64144512\" ,\n      \"rel\" : \"self\" ,\n      \"method\" : \"GET\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/payment/PAY-0PL82432AD7432233KGECOIQ\" ,\n      \"rel\" : \"parent_payment\" ,\n      \"method\" : \"GET\"\n    }\n  ]\n}",
                                                     "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"create_time\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"update_time\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"state\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"amount\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"total\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"currency\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"details\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"subtotal\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      }\n    } ,\n    \"parent_payment\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"links\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"href\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"rel\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"method\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
                                                 }
-                                            }
+                                            },
+                                            "description": "Resource created"
                                         }
                                     },
                                     "body": {
@@ -2835,7 +3298,16 @@
                                 {
                                     "responses": {
                                         "201": {
-                                            "code": "201"
+                                            "code": "201",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "capture",
+                                                    "example": "{\n  \"id\" : \"6BA17599X0950293U\" ,\n  \"create_time\" : \"2013-05-06T22:32:24Z\" ,\n  \"update_time\" : \"2013-05-06T22:32:25Z\" ,\n  \"amount\" : {\n    \"total\" : \"4.54\" ,\n    \"currency\" : \"USD\"\n  } ,\n  \"is_final_capture\" : true ,\n  \"state\" : \"completed\" ,\n  \"parent_payment\" : \"PAY-44664305570317015KGEC5DI\" ,\n  \"links\" : [\n    {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/capture/6BA17599X0950293U\" ,\n      \"rel\" : \"self\" ,\n      \"method\" : \"GET\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/capture/6BA17599X0950293U/refund\" ,\n      \"rel\" : \"refund\" ,\n      \"method\" : \"POST\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/authorization/5RA45624N3531924N\" ,\n      \"rel\" : \"authorization\" ,\n      \"method\" : \"GET\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/payment/PAY-44664305570317015KGEC5DI\" ,\n      \"rel\" : \"parent_payment\" ,\n      \"method\" : \"GET\"\n    }\n  ]\n}",
+                                                    "schemaContent": "capture"
+                                                }
+                                            },
+                                            "description": "Resource created"
                                         }
                                     },
                                     "body": {
@@ -2899,7 +3371,13 @@
                                                     "example": "{\n  \"id\" : \"O-3SP845109F051535C\" ,\n  \"create_time\" : \"2014-07-01T16:56:58Z\" ,\n  \"update_time\" : \"2014-07-01T17:05:41Z\" ,\n  \"state\" : \"pending\" ,\n  \"amount\" : {\n    \"total\" : \"41.15\" ,\n    \"currency\" : \"USD\" ,\n    \"details\" : {\n      \"subtotal\" : \"30.00\" ,\n      \"tax\" : \"0.15\" ,\n      \"shipping\" : \"11.00\"\n    }\n  } ,\n  \"pending_reason\" : \"order\" ,\n  \"parent_payment\" : \"PAY-9N9834337A9191208KOZOQWI\" ,\n  \"links\" : [\n    {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/orders/O-3SP845109F051535C\" ,\n      \"rel\" : \"self\" ,\n      \"method\" : \"GET\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/payment/PAY-9N9834337A9191208KOZOQWI\" ,\n      \"rel\" : \"parent_payment\" ,\n      \"method\" : \"GET\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/orders/O-3SP845109F051535C/void\" ,\n      \"rel\" : \"void\" ,\n      \"method\" : \"POST\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/orders/O-3SP845109F051535C/authorize\" ,\n      \"rel\" : \"authorization\" ,\n      \"method\" : \"POST\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/orders/O-3SP845109F051535C/capture\" ,\n      \"rel\" : \"capture\" ,\n      \"method\" : \"POST\"\n    }\n  ]\n}",
                                                     "schemaContent": "order"
                                                 }
-                                            }
+                                            },
+                                            "description": "Request OK"
+                                        }
+                                    },
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json"
                                         }
                                     },
                                     "protocols": [
@@ -2998,7 +3476,8 @@
                                             "example": "{\n  \"id\" : \"6CR34526N64144512\" ,\n  \"create_time\" : \"2013-05-06T21:56:50Z\" ,\n  \"update_time\" : \"2013-05-06T21:57:51Z\" ,\n  \"state\" : \"voided\" ,\n  \"amount\" : {\n    \"total\" : \"110.54\" ,\n    \"currency\" : \"USD\" ,\n    \"details\" : {\n      \"subtotal\" : \"110.54\"\n    }\n  } ,\n  \"parent_payment\" : \"PAY-0PL82432AD7432233KGECOIQ\" ,\n  \"links\" : [\n    {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/authorization/6CR34526N64144512\" ,\n      \"rel\" : \"self\" ,\n      \"method\" : \"GET\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/payment/PAY-0PL82432AD7432233KGECOIQ\" ,\n      \"rel\" : \"parent_payment\" ,\n      \"method\" : \"GET\"\n    }\n  ]\n}",
                                             "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"create_time\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"update_time\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"state\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"amount\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"total\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"currency\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"details\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"subtotal\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      }\n    } ,\n    \"parent_payment\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"links\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"href\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"rel\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"method\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
                                         }
-                                    }
+                                    },
+                                    "description": "Request OK"
                                 }
                             },
                             "protocols": [
@@ -3032,7 +3511,16 @@
                                 {
                                     "responses": {
                                         "201": {
-                                            "code": "201"
+                                            "code": "201",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "capture",
+                                                    "example": "{\n  \"id\" : \"6BA17599X0950293U\" ,\n  \"create_time\" : \"2013-05-06T22:32:24Z\" ,\n  \"update_time\" : \"2013-05-06T22:32:25Z\" ,\n  \"amount\" : {\n    \"total\" : \"4.54\" ,\n    \"currency\" : \"USD\"\n  } ,\n  \"is_final_capture\" : true ,\n  \"state\" : \"completed\" ,\n  \"parent_payment\" : \"PAY-44664305570317015KGEC5DI\" ,\n  \"links\" : [\n    {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/capture/6BA17599X0950293U\" ,\n      \"rel\" : \"self\" ,\n      \"method\" : \"GET\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/capture/6BA17599X0950293U/refund\" ,\n      \"rel\" : \"refund\" ,\n      \"method\" : \"POST\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/authorization/5RA45624N3531924N\" ,\n      \"rel\" : \"authorization\" ,\n      \"method\" : \"GET\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/payment/PAY-44664305570317015KGEC5DI\" ,\n      \"rel\" : \"parent_payment\" ,\n      \"method\" : \"GET\"\n    }\n  ]\n}",
+                                                    "schemaContent": "capture"
+                                                }
+                                            },
+                                            "description": "Resource created"
                                         }
                                     },
                                     "body": {
@@ -3096,7 +3584,13 @@
                                                     "example": "{\n  \"id\" : \"6CR34526N64144512\" ,\n  \"create_time\" : \"2013-05-06T21:56:50Z\" ,\n  \"update_time\" : \"2013-05-06T21:57:51Z\" ,\n  \"state\" : \"voided\" ,\n  \"amount\" : {\n    \"total\" : \"110.54\" ,\n    \"currency\" : \"USD\" ,\n    \"details\" : {\n      \"subtotal\" : \"110.54\"\n    }\n  } ,\n  \"parent_payment\" : \"PAY-0PL82432AD7432233KGECOIQ\" ,\n  \"links\" : [\n    {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/authorization/6CR34526N64144512\" ,\n      \"rel\" : \"self\" ,\n      \"method\" : \"GET\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/payment/PAY-0PL82432AD7432233KGECOIQ\" ,\n      \"rel\" : \"parent_payment\" ,\n      \"method\" : \"GET\"\n    }\n  ]\n}",
                                                     "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"create_time\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"update_time\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"state\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"amount\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"total\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"currency\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"details\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"subtotal\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      }\n    } ,\n    \"parent_payment\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"links\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"href\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"rel\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"method\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
                                                 }
-                                            }
+                                            },
+                                            "description": "Request OK"
+                                        }
+                                    },
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json"
                                         }
                                     },
                                     "protocols": [
@@ -3152,7 +3646,8 @@
                                                     "example": "{\n  \"id\" : \"6CR34526N64144512\" ,\n  \"create_time\" : \"2013-05-06T21:56:50Z\" ,\n  \"update_time\" : \"2013-05-06T21:57:51Z\" ,\n  \"state\" : \"voided\" ,\n  \"amount\" : {\n    \"total\" : \"110.54\" ,\n    \"currency\" : \"USD\" ,\n    \"details\" : {\n      \"subtotal\" : \"110.54\"\n    }\n  } ,\n  \"parent_payment\" : \"PAY-0PL82432AD7432233KGECOIQ\" ,\n  \"links\" : [\n    {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/authorization/6CR34526N64144512\" ,\n      \"rel\" : \"self\" ,\n      \"method\" : \"GET\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/payments/payment/PAY-0PL82432AD7432233KGECOIQ\" ,\n      \"rel\" : \"parent_payment\" ,\n      \"method\" : \"GET\"\n    }\n  ]\n}",
                                                     "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"create_time\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"update_time\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"state\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"amount\" : {\n      \"type\" : \"object\" ,\n      \"required\" : false ,\n      \"properties\" : {\n        \"total\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"currency\" : {\n          \"type\" : \"string\" ,\n          \"required\" : false\n        } ,\n        \"details\" : {\n          \"type\" : \"object\" ,\n          \"required\" : false ,\n          \"properties\" : {\n            \"subtotal\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      }\n    } ,\n    \"parent_payment\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"links\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"href\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"rel\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"method\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
                                                 }
-                                            }
+                                            },
+                                            "description": "Request OK"
                                         }
                                     },
                                     "body": {
@@ -3249,7 +3744,8 @@
                                     "example": "{\n  \"id\" : \"CARD-1MD19612EW4364010KGFNJQI\" ,\n  \"valid_until\" : \"2016-05-07T00:00:00Z\" ,\n  \"state\" : \"ok\" ,\n  \"payer_id\" : \"user12345\" ,\n  \"type\" : \"visa\" ,\n  \"number\" : \"xxxxxxxxxxxx0331\" ,\n  \"expire_month\" : \"11\" ,\n  \"expire_year\" : \"2018\" ,\n  \"first_name\" : \"Betsy\" ,\n  \"last_name\" : \"Buyer\" ,\n  \"links\" : [\n    {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/vault/credit-card/CARD-1MD19612EW4364010KGFNJQI\" ,\n      \"rel\" : \"self\" ,\n      \"method\" : \"GET\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/vault/credit-card/CARD-1MD19612EW4364010KGFNJQI\" ,\n      \"rel\" : \"delete\" ,\n      \"method\" : \"DELETE\"\n    }\n  ]\n}",
                                     "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"valid_until\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"state\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"payer_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"type\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"number\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"expire_month\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"expire_year\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"first_name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"last_name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"links\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"href\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"rel\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"method\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
                                 }
-                            }
+                            },
+                            "description": "Request OK"
                         }
                     },
                     "body": {
@@ -3325,7 +3821,8 @@
                                             "example": "{\n  \"id\" : \"CARD-1MD19612EW4364010KGFNJQI\" ,\n  \"valid_until\" : \"2016-05-07T00:00:00Z\" ,\n  \"state\" : \"ok\" ,\n  \"payer_id\" : \"user12345\" ,\n  \"type\" : \"visa\" ,\n  \"number\" : \"xxxxxxxxxxxx0331\" ,\n  \"expire_month\" : \"11\" ,\n  \"expire_year\" : \"2018\" ,\n  \"first_name\" : \"Betsy\" ,\n  \"last_name\" : \"Buyer\" ,\n  \"links\" : [\n    {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/vault/credit-card/CARD-1MD19612EW4364010KGFNJQI\" ,\n      \"rel\" : \"self\" ,\n      \"method\" : \"GET\"\n    } , {\n      \"href\" : \"https://api.sandbox.paypal.com/v1/vault/credit-card/CARD-1MD19612EW4364010KGFNJQI\" ,\n      \"rel\" : \"delete\" ,\n      \"method\" : \"DELETE\"\n    }\n  ]\n}",
                                             "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"valid_until\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"state\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"payer_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"type\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"number\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"expire_month\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"expire_year\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"first_name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"last_name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"links\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"href\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"rel\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"method\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
                                         }
-                                    }
+                                    },
+                                    "description": "Request OK"
                                 }
                             },
                             "protocols": [
@@ -3351,6 +3848,11 @@
                             "responses": {
                                 "204": {
                                     "code": "204"
+                                }
+                            },
+                            "body": {
+                                "application/json": {
+                                    "name": "application/json"
                                 }
                             },
                             "protocols": [
@@ -3470,7 +3972,8 @@
                                             "example": "{\n  \"token_type\" : \"Bearer\" ,\n  \"expires_in\" : \"900\" ,\n  \"refresh_token\" : \"{refreshToken}\" ,\n  \"access_token\" : \"{accessToken}\"\n}",
                                             "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"token_type\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"expires_in\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"refresh_token\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"access_token\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
                                         }
-                                    }
+                                    },
+                                    "description": "Request OK"
                                 }
                             },
                             "body": {
@@ -3550,6 +4053,9 @@
                                             }
                                         }
                                     }
+                                },
+                                "application/json": {
+                                    "name": "application/json"
                                 }
                             },
                             "protocols": [
@@ -3605,7 +4111,8 @@
                                             "example": "{\n  \"user_id\" : \"https://www.paypal.com/webapps/auth/server/64ghr894040044\" ,\n  \"name\" : \"Peter Pepper\" ,\n  \"given_name\" : \"Peter\" ,\n  \"family_name\" : \"Pepper\" ,\n  \"email\" : \"ppuser@example.com\"\n}",
                                             "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"user_id\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"given_name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"family_name\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    } ,\n    \"email\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
                                         }
-                                    }
+                                    },
+                                    "description": "Request OK"
                                 }
                             },
                             "protocols": [
@@ -3704,12 +4211,207 @@
                     ],
                     "methods": [
                         {
+                            "responses": {
+                                "200": {
+                                    "code": "200",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "invoices",
+                                            "example": "{\n  \"total_count\" : 24827 ,\n  \"invoices\" : [\n    {\n      \"id\" : \"INV2-2NB5-UJ7A-YSUJ-ABCD\" ,\n      \"number\" : \"9879878979003791\" ,\n      \"status\" : \"DRAFT\" ,\n      \"merchant_info\" : {\n        \"email\" : \"sample@sample.com\"\n      } ,\n      \"billing_info\" : [\n        {\n          \"email\" : \"example@example.com\"\n        }\n      ] ,\n      \"shipping_info\" : {\n        \"email\" : \"example@example.com\" ,\n        \"first_name\" : \"Sally\" ,\n        \"last_name\" : \"Patient\" ,\n        \"business_name\" : \"Not applicable\"\n      } ,\n      \"invoice_date\" : \"2014-02-27 PST\" ,\n      \"note\" : \"Medical Invoice 16 Jul, 2013 PST\" ,\n      \"total_amount\" : {\n        \"currency\" : \"USD\" ,\n        \"value\" : \"0.00\"\n      } ,\n      \"metadata\" : {\n        \"created_date\" : \"2014-02-27 23:55:58 PST\"\n      }\n    } , {\n      \"id\" : \"INV2-5AYC-UE5K-XXEG-ABCD\" ,\n      \"number\" : \"9879878979003790\" ,\n      \"status\" : \"DRAFT\" ,\n      \"merchant_info\" : {\n        \"email\" : \"sample@sample.com\"\n      } ,\n      \"billing_info\" : [\n        {\n          \"email\" : \"example@example.com\"\n        }\n      ] ,\n      \"shipping_info\" : {\n        \"email\" : \"example@example.com\" ,\n        \"first_name\" : \"Sally\" ,\n        \"last_name\" : \"Patient\" ,\n        \"business_name\" : \"Not applicable\"\n      } ,\n      \"invoice_date\" : \"2014-02-27 PST\" ,\n      \"note\" : \"Medical Invoice 16 Jul, 2013 PST\" ,\n      \"total_amount\" : {\n        \"currency\" : \"USD\" ,\n        \"value\" : \"0.00\"\n      } ,\n      \"metadata\" : {\n        \"created_date\" : \"2014-02-27 19:41:56 PST\"\n      }\n    } , {\n      \"id\" : \"INV2-C4QH-KEKM-C5QE-ABCD\" ,\n      \"number\" : \"9879878979003789\" ,\n      \"status\" : \"DRAFT\" ,\n      \"merchant_info\" : {\n        \"email\" : \"sample@sample.com\"\n      } ,\n      \"billing_info\" : [\n        {\n          \"email\" : \"example@example.com\"\n        }\n      ] ,\n      \"shipping_info\" : {\n        \"email\" : \"example@example.com\" ,\n        \"first_name\" : \"Sally\" ,\n        \"last_name\" : \"Patient\" ,\n        \"business_name\" : \"Not applicable\"\n      } ,\n      \"invoice_date\" : \"2014-02-27 PST\" ,\n      \"note\" : \"Medical Invoice 16 Jul, 2013 PST\" ,\n      \"total_amount\" : {\n        \"currency\" : \"USD\" ,\n        \"value\" : \"0.00\"\n      } ,\n      \"metadata\" : {\n        \"created_date\" : \"2014-02-27 15:34:11 PST\"\n      }\n    } , {\n      \"id\" : \"INV2-YP6Y-9LJU-9NFS-ABCD\" ,\n      \"number\" : \"9879878979003788\" ,\n      \"status\" : \"DRAFT\" ,\n      \"merchant_info\" : {\n        \"email\" : \"sample@sample.com\"\n      } ,\n      \"billing_info\" : [\n        {\n          \"email\" : \"example@example.com\"\n        }\n      ] ,\n      \"shipping_info\" : {\n        \"email\" : \"example@example.com\" ,\n        \"first_name\" : \"Sally\" ,\n        \"last_name\" : \"Patient\" ,\n        \"business_name\" : \"Not applicable\"\n      } ,\n      \"invoice_date\" : \"2014-02-27 PST\" ,\n      \"note\" : \"Medical Invoice 16 Jul, 2013 PST\" ,\n      \"total_amount\" : {\n        \"currency\" : \"USD\" ,\n        \"value\" : \"12.00\"\n      } ,\n      \"metadata\" : {\n        \"created_date\" : \"2014-02-27 15:34:01 PST\"\n      }\n    }\n  ]\n}",
+                                            "schemaContent": "invoices"
+                                        }
+                                    },
+                                    "description": "Request OK"
+                                }
+                            },
                             "protocols": [
                                 "HTTPS"
                             ],
                             "securedBy": [
                                 "oauth_2_0"
                             ],
+                            "queryParameters": {
+                                "count": {
+                                    "name": "count",
+                                    "displayName": "count",
+                                    "type": "string",
+                                    "required": false,
+                                    "default": 10,
+                                    "repeat": false,
+                                    "description": "Number of items to return. Default is 10 with a maximum value of 20.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "start_id": {
+                                    "name": "start_id",
+                                    "displayName": "start_id",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Resource ID that indicates the starting resource to return. When results are paged, you can use the next_id response value as the start_id to continue with the next set of results.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "start_index": {
+                                    "name": "start_index",
+                                    "displayName": "start_index",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "2",
+                                    "repeat": false,
+                                    "description": "Start index of the resources to be returned. Typically used to jump to a specific position in the resource history based on its order.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "start_time": {
+                                    "name": "start_time",
+                                    "displayName": "start_time",
+                                    "type": "string",
+                                    "required": false,
+                                    "example": "2013-03-06T11:00:00Z",
+                                    "repeat": false,
+                                    "description": "Resource creation time as defined in RFC 3339 Section 5.6 that indicates the start of a range of results",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "end_time": {
+                                    "name": "end_time",
+                                    "displayName": "end_time",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Resource creation time that indicates the end of a range of results.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "sort_by": {
+                                    "name": "sort_by",
+                                    "displayName": "sort_by",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Sort based on create_time or update_time.",
+                                    "enum": [
+                                        "update_time",
+                                        "create_time"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "sort_order": {
+                                    "name": "sort_order",
+                                    "displayName": "sort_order",
+                                    "type": "string",
+                                    "required": false,
+                                    "repeat": false,
+                                    "description": "Sort based on order of results. Options include asc for ascending order or desc for descending order (default).",
+                                    "enum": [
+                                        "desc",
+                                        "asc"
+                                    ],
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "description": "Returns invoices that belong to the merchant who makes the call.",
                             "method": "get",
                             "is": [
@@ -3729,7 +4431,16 @@
                         {
                             "responses": {
                                 "201": {
-                                    "code": "201"
+                                    "code": "201",
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "invoices",
+                                            "example": "{\n  \"total_count\" : 24827 ,\n  \"invoices\" : [\n    {\n      \"id\" : \"INV2-2NB5-UJ7A-YSUJ-ABCD\" ,\n      \"number\" : \"9879878979003791\" ,\n      \"status\" : \"DRAFT\" ,\n      \"merchant_info\" : {\n        \"email\" : \"sample@sample.com\"\n      } ,\n      \"billing_info\" : [\n        {\n          \"email\" : \"example@example.com\"\n        }\n      ] ,\n      \"shipping_info\" : {\n        \"email\" : \"example@example.com\" ,\n        \"first_name\" : \"Sally\" ,\n        \"last_name\" : \"Patient\" ,\n        \"business_name\" : \"Not applicable\"\n      } ,\n      \"invoice_date\" : \"2014-02-27 PST\" ,\n      \"note\" : \"Medical Invoice 16 Jul, 2013 PST\" ,\n      \"total_amount\" : {\n        \"currency\" : \"USD\" ,\n        \"value\" : \"0.00\"\n      } ,\n      \"metadata\" : {\n        \"created_date\" : \"2014-02-27 23:55:58 PST\"\n      }\n    } , {\n      \"id\" : \"INV2-5AYC-UE5K-XXEG-ABCD\" ,\n      \"number\" : \"9879878979003790\" ,\n      \"status\" : \"DRAFT\" ,\n      \"merchant_info\" : {\n        \"email\" : \"sample@sample.com\"\n      } ,\n      \"billing_info\" : [\n        {\n          \"email\" : \"example@example.com\"\n        }\n      ] ,\n      \"shipping_info\" : {\n        \"email\" : \"example@example.com\" ,\n        \"first_name\" : \"Sally\" ,\n        \"last_name\" : \"Patient\" ,\n        \"business_name\" : \"Not applicable\"\n      } ,\n      \"invoice_date\" : \"2014-02-27 PST\" ,\n      \"note\" : \"Medical Invoice 16 Jul, 2013 PST\" ,\n      \"total_amount\" : {\n        \"currency\" : \"USD\" ,\n        \"value\" : \"0.00\"\n      } ,\n      \"metadata\" : {\n        \"created_date\" : \"2014-02-27 19:41:56 PST\"\n      }\n    } , {\n      \"id\" : \"INV2-C4QH-KEKM-C5QE-ABCD\" ,\n      \"number\" : \"9879878979003789\" ,\n      \"status\" : \"DRAFT\" ,\n      \"merchant_info\" : {\n        \"email\" : \"sample@sample.com\"\n      } ,\n      \"billing_info\" : [\n        {\n          \"email\" : \"example@example.com\"\n        }\n      ] ,\n      \"shipping_info\" : {\n        \"email\" : \"example@example.com\" ,\n        \"first_name\" : \"Sally\" ,\n        \"last_name\" : \"Patient\" ,\n        \"business_name\" : \"Not applicable\"\n      } ,\n      \"invoice_date\" : \"2014-02-27 PST\" ,\n      \"note\" : \"Medical Invoice 16 Jul, 2013 PST\" ,\n      \"total_amount\" : {\n        \"currency\" : \"USD\" ,\n        \"value\" : \"0.00\"\n      } ,\n      \"metadata\" : {\n        \"created_date\" : \"2014-02-27 15:34:11 PST\"\n      }\n    } , {\n      \"id\" : \"INV2-YP6Y-9LJU-9NFS-ABCD\" ,\n      \"number\" : \"9879878979003788\" ,\n      \"status\" : \"DRAFT\" ,\n      \"merchant_info\" : {\n        \"email\" : \"sample@sample.com\"\n      } ,\n      \"billing_info\" : [\n        {\n          \"email\" : \"example@example.com\"\n        }\n      ] ,\n      \"shipping_info\" : {\n        \"email\" : \"example@example.com\" ,\n        \"first_name\" : \"Sally\" ,\n        \"last_name\" : \"Patient\" ,\n        \"business_name\" : \"Not applicable\"\n      } ,\n      \"invoice_date\" : \"2014-02-27 PST\" ,\n      \"note\" : \"Medical Invoice 16 Jul, 2013 PST\" ,\n      \"total_amount\" : {\n        \"currency\" : \"USD\" ,\n        \"value\" : \"12.00\"\n      } ,\n      \"metadata\" : {\n        \"created_date\" : \"2014-02-27 15:34:01 PST\"\n      }\n    }\n  ]\n}",
+                                            "schemaContent": "invoices"
+                                        }
+                                    },
+                                    "description": "Resource created"
                                 }
                             },
                             "body": {
@@ -3795,6 +4506,20 @@
                             },
                             "methods": [
                                 {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "invoices",
+                                                    "example": "{\n  \"total_count\" : 24827 ,\n  \"invoices\" : [\n    {\n      \"id\" : \"INV2-2NB5-UJ7A-YSUJ-ABCD\" ,\n      \"number\" : \"9879878979003791\" ,\n      \"status\" : \"DRAFT\" ,\n      \"merchant_info\" : {\n        \"email\" : \"sample@sample.com\"\n      } ,\n      \"billing_info\" : [\n        {\n          \"email\" : \"example@example.com\"\n        }\n      ] ,\n      \"shipping_info\" : {\n        \"email\" : \"example@example.com\" ,\n        \"first_name\" : \"Sally\" ,\n        \"last_name\" : \"Patient\" ,\n        \"business_name\" : \"Not applicable\"\n      } ,\n      \"invoice_date\" : \"2014-02-27 PST\" ,\n      \"note\" : \"Medical Invoice 16 Jul, 2013 PST\" ,\n      \"total_amount\" : {\n        \"currency\" : \"USD\" ,\n        \"value\" : \"0.00\"\n      } ,\n      \"metadata\" : {\n        \"created_date\" : \"2014-02-27 23:55:58 PST\"\n      }\n    } , {\n      \"id\" : \"INV2-5AYC-UE5K-XXEG-ABCD\" ,\n      \"number\" : \"9879878979003790\" ,\n      \"status\" : \"DRAFT\" ,\n      \"merchant_info\" : {\n        \"email\" : \"sample@sample.com\"\n      } ,\n      \"billing_info\" : [\n        {\n          \"email\" : \"example@example.com\"\n        }\n      ] ,\n      \"shipping_info\" : {\n        \"email\" : \"example@example.com\" ,\n        \"first_name\" : \"Sally\" ,\n        \"last_name\" : \"Patient\" ,\n        \"business_name\" : \"Not applicable\"\n      } ,\n      \"invoice_date\" : \"2014-02-27 PST\" ,\n      \"note\" : \"Medical Invoice 16 Jul, 2013 PST\" ,\n      \"total_amount\" : {\n        \"currency\" : \"USD\" ,\n        \"value\" : \"0.00\"\n      } ,\n      \"metadata\" : {\n        \"created_date\" : \"2014-02-27 19:41:56 PST\"\n      }\n    } , {\n      \"id\" : \"INV2-C4QH-KEKM-C5QE-ABCD\" ,\n      \"number\" : \"9879878979003789\" ,\n      \"status\" : \"DRAFT\" ,\n      \"merchant_info\" : {\n        \"email\" : \"sample@sample.com\"\n      } ,\n      \"billing_info\" : [\n        {\n          \"email\" : \"example@example.com\"\n        }\n      ] ,\n      \"shipping_info\" : {\n        \"email\" : \"example@example.com\" ,\n        \"first_name\" : \"Sally\" ,\n        \"last_name\" : \"Patient\" ,\n        \"business_name\" : \"Not applicable\"\n      } ,\n      \"invoice_date\" : \"2014-02-27 PST\" ,\n      \"note\" : \"Medical Invoice 16 Jul, 2013 PST\" ,\n      \"total_amount\" : {\n        \"currency\" : \"USD\" ,\n        \"value\" : \"0.00\"\n      } ,\n      \"metadata\" : {\n        \"created_date\" : \"2014-02-27 15:34:11 PST\"\n      }\n    } , {\n      \"id\" : \"INV2-YP6Y-9LJU-9NFS-ABCD\" ,\n      \"number\" : \"9879878979003788\" ,\n      \"status\" : \"DRAFT\" ,\n      \"merchant_info\" : {\n        \"email\" : \"sample@sample.com\"\n      } ,\n      \"billing_info\" : [\n        {\n          \"email\" : \"example@example.com\"\n        }\n      ] ,\n      \"shipping_info\" : {\n        \"email\" : \"example@example.com\" ,\n        \"first_name\" : \"Sally\" ,\n        \"last_name\" : \"Patient\" ,\n        \"business_name\" : \"Not applicable\"\n      } ,\n      \"invoice_date\" : \"2014-02-27 PST\" ,\n      \"note\" : \"Medical Invoice 16 Jul, 2013 PST\" ,\n      \"total_amount\" : {\n        \"currency\" : \"USD\" ,\n        \"value\" : \"12.00\"\n      } ,\n      \"metadata\" : {\n        \"created_date\" : \"2014-02-27 15:34:01 PST\"\n      }\n    }\n  ]\n}",
+                                                    "schemaContent": "invoices"
+                                                }
+                                            },
+                                            "description": "Request OK"
+                                        }
+                                    },
                                     "protocols": [
                                         "HTTPS"
                                     ],
@@ -3815,6 +4540,27 @@
                                     }
                                 },
                                 {
+                                    "responses": {
+                                        "200": {
+                                            "code": "200",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "schema": "invoice",
+                                                    "example": "{\n  \"id\" : \"INV2-35FM-LH48-9WKF-P2XS\" ,\n  \"number\" : \"12345\" ,\n  \"status\" : \"DRAFT\" ,\n  \"merchant_info\" : {\n    \"email\" : \"dennis@sample.com\" ,\n    \"first_name\" : \"Dennis\" ,\n    \"last_name\" : \"Doctor\" ,\n    \"business_name\" : \"Medical Professionals, LLC\" ,\n    \"phone\" : {\n      \"country_code\" : \"US\" ,\n      \"national_number\" : \"5032141716\"\n    } ,\n    \"address\" : {\n      \"line1\" : \"1234 Main St.\" ,\n      \"city\" : \"Portland\" ,\n      \"state\" : \"OR\" ,\n      \"postal_code\" : \"97217\" ,\n      \"country_code\" : \"US\"\n    }\n  } ,\n  \"billing_info\" : [\n    {\n      \"email\" : \"sally-patient@example.com\"\n    }\n  ] ,\n  \"shipping_info\" : {\n    \"first_name\" : \"Sally\" ,\n    \"last_name\" : \"Patient\" ,\n    \"business_name\" : \"Not applicable\" ,\n    \"address\" : {\n      \"line1\" : \"1234 Broad St.\" ,\n      \"city\" : \"Portland\" ,\n      \"state\" : \"OR\" ,\n      \"postal_code\" : \"97216\" ,\n      \"country_code\" : \"US\"\n    }\n  } ,\n  \"items\" : [\n    {\n      \"name\" : \"Sutures\" ,\n      \"quantity\" : 100 ,\n      \"unit_price\" : {\n        \"currency\" : \"USD\" ,\n        \"value\" : \"250\"\n      }\n    }\n  ] ,\n  \"invoice_date\" : \"2014-01-07 PST\" ,\n  \"payment_term\" : {\n    \"term_type\" : \"NO_DUE_DATE\"\n  } ,\n  \"tax_calculated_after_discount\" : false ,\n  \"tax_inclusive\" : false ,\n  \"note\" : \"Medical Invoice 16 Jul, 2013 PST\" ,\n  \"total_amount\" : {\n    \"currency\" : \"USD\" ,\n    \"value\" : \"250\"\n  }\n}",
+                                                    "schemaContent": "invoice"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "schema": "invoice",
+                                            "example": "{\n  \"id\" : \"INV2-35FM-LH48-9WKF-P2XS\" ,\n  \"number\" : \"12345\" ,\n  \"status\" : \"DRAFT\" ,\n  \"merchant_info\" : {\n    \"email\" : \"dennis@sample.com\" ,\n    \"first_name\" : \"Dennis\" ,\n    \"last_name\" : \"Doctor\" ,\n    \"business_name\" : \"Medical Professionals, LLC\" ,\n    \"phone\" : {\n      \"country_code\" : \"US\" ,\n      \"national_number\" : \"5032141716\"\n    } ,\n    \"address\" : {\n      \"line1\" : \"1234 Main St.\" ,\n      \"city\" : \"Portland\" ,\n      \"state\" : \"OR\" ,\n      \"postal_code\" : \"97217\" ,\n      \"country_code\" : \"US\"\n    }\n  } ,\n  \"billing_info\" : [\n    {\n      \"email\" : \"sally-patient@example.com\"\n    }\n  ] ,\n  \"shipping_info\" : {\n    \"first_name\" : \"Sally\" ,\n    \"last_name\" : \"Patient\" ,\n    \"business_name\" : \"Not applicable\" ,\n    \"address\" : {\n      \"line1\" : \"1234 Broad St.\" ,\n      \"city\" : \"Portland\" ,\n      \"state\" : \"OR\" ,\n      \"postal_code\" : \"97216\" ,\n      \"country_code\" : \"US\"\n    }\n  } ,\n  \"items\" : [\n    {\n      \"name\" : \"Sutures\" ,\n      \"quantity\" : 100 ,\n      \"unit_price\" : {\n        \"currency\" : \"USD\" ,\n        \"value\" : \"250\"\n      }\n    }\n  ] ,\n  \"invoice_date\" : \"2014-01-07 PST\" ,\n  \"payment_term\" : {\n    \"term_type\" : \"NO_DUE_DATE\"\n  } ,\n  \"tax_calculated_after_discount\" : false ,\n  \"tax_inclusive\" : false ,\n  \"note\" : \"Medical Invoice 16 Jul, 2013 PST\" ,\n  \"total_amount\" : {\n    \"currency\" : \"USD\" ,\n    \"value\" : \"250\"\n  }\n}",
+                                            "schemaContent": "invoice"
+                                        }
+                                    },
                                     "protocols": [
                                         "HTTPS"
                                     ],
@@ -3838,6 +4584,11 @@
                                     "responses": {
                                         "204": {
                                             "code": "204"
+                                        }
+                                    },
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json"
                                         }
                                     },
                                     "protocols": [
@@ -3879,7 +4630,8 @@
                                                             "example": "{\n  \"image\" : \"iVBORw...SuQmCC\"\n}",
                                                             "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"image\" : {\n      \"type\" : \"string\" ,\n      \"required\" : false\n    }\n  }\n}"
                                                         }
-                                                    }
+                                                    },
+                                                    "description": "Request OK"
                                                 }
                                             },
                                             "protocols": [
@@ -4009,6 +4761,11 @@
                                                 "202": {
                                                     "code": "202",
                                                     "description": "Returns an HTTP response message with status code 202 (Accepted)."
+                                                }
+                                            },
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json"
                                                 }
                                             },
                                             "protocols": [
@@ -4322,7 +5079,8 @@
                                             "example": "{\n  \"total_count\" : 1 ,\n  \"invoices\" : [\n    {\n      \"id\" : \"INV2-KXVU-7Z64-DT6W-MG2X\" ,\n      \"number\" : \"0001\" ,\n      \"status\" : \"SENT\" ,\n      \"merchant_info\" : {\n        \"email\" : \"dennis@sample.com\"\n      } ,\n      \"billing_info\" : [\n        {\n          \"email\" : \"sally-patient@example.com\"\n        }\n      ] ,\n      \"shipping_info\" : {\n        \"email\" : \"sally-patient@example.com\"\n      } ,\n      \"invoice_date\" : \"2012-05-09 PST\" ,\n      \"payment_term\" : {\n        \"due_date\" : \"2012-05-24 PST\"\n      } ,\n      \"total_amount\" : {\n        \"currency\" : \"USD\" ,\n        \"value\" : \"250\"\n      } ,\n      \"metadata\" : {\n        \"created_date\" : \"2012-05-09 04:48:57 PST\"\n      }\n    }\n  ]\n}",
                                             "schemaContent": "{\n  \"required\" : true ,\n  \"$schema\" : \"http://json-schema.org/draft-03/schema\" ,\n  \"type\" : \"object\" ,\n  \"properties\" : {\n    \"total_count\" : {\n      \"type\" : \"number\" ,\n      \"required\" : false\n    } ,\n    \"invoices\" : {\n      \"type\" : \"array\" ,\n      \"required\" : false ,\n      \"items\" : [\n        {\n          \"type\" : \"object\" ,\n          \"properties\" : {\n            \"id\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"number\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"status\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"merchant_info\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"email\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            } ,\n            \"billing_info\" : {\n              \"type\" : \"array\" ,\n              \"required\" : false ,\n              \"items\" : [\n                {\n                  \"type\" : \"object\" ,\n                  \"properties\" : {\n                    \"email\" : {\n                      \"type\" : \"string\" ,\n                      \"required\" : false\n                    }\n                  }\n                }\n              ]\n            } ,\n            \"shipping_info\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"email\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            } ,\n            \"invoice_date\" : {\n              \"type\" : \"string\" ,\n              \"required\" : false\n            } ,\n            \"payment_term\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"due_date\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            } ,\n            \"total_amount\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"currency\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                } ,\n                \"value\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            } ,\n            \"metadata\" : {\n              \"type\" : \"object\" ,\n              \"required\" : false ,\n              \"properties\" : {\n                \"created_date\" : {\n                  \"type\" : \"string\" ,\n                  \"required\" : false\n                }\n              }\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
                                         }
-                                    }
+                                    },
+                                    "description": "Request OK"
                                 }
                             },
                             "body": {

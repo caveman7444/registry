@@ -915,6 +915,136 @@
                         {
                             "methods": [
                                 {
+                                    "queryParameters": {
+                                        "pageToken": {
+                                            "name": "pageToken",
+                                            "displayName": "pageToken",
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "example": 1416406191979000,
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "Token specifying which result page to return. Optional.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            },
+                                            "structuredExample": {
+                                                "value": 1416406191979000,
+                                                "strict": true,
+                                                "name": null,
+                                                "structuredValue": 1416406191979000
+                                            }
+                                        },
+                                        "showDeleted": {
+                                            "name": "showDeleted",
+                                            "displayName": "showDeleted",
+                                            "type": [
+                                                "boolean"
+                                            ],
+                                            "default": false,
+                                            "example": true,
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "Whether to include deleted events (with status equals \"cancelled\") in the result. Cancelled instances of recurring events (but not the underlying recurring event) will still be included if showDeleted and singleEvents are both False. If showDeleted and singleEvents are both True, only single instances of deleted events (but not the underlying recurring events) are returned. Optional. The default is False.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            },
+                                            "structuredExample": {
+                                                "value": true,
+                                                "strict": true,
+                                                "name": null,
+                                                "structuredValue": true
+                                            }
+                                        },
+                                        "syncToken": {
+                                            "name": "syncToken",
+                                            "displayName": "syncToken",
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "example": 1416406191979000,
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. If only read-only fields such as calendar properties or ACLs have changed, the entry won't be returned. All entries deleted and hidden since the previous list request will always be in the result set and it is not allowed to set showDeleted neither showHidden to False.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            },
+                                            "structuredExample": {
+                                                "value": 1416406191979000,
+                                                "strict": true,
+                                                "name": null,
+                                                "structuredValue": 1416406191979000
+                                            }
+                                        },
+                                        "maxResults": {
+                                            "name": "maxResults",
+                                            "displayName": "maxResults",
+                                            "type": [
+                                                "integer"
+                                            ],
+                                            "default": 100,
+                                            "example": 50,
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.\nMaximum number of events returned on one result page. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            },
+                                            "structuredExample": {
+                                                "value": 50,
+                                                "strict": true,
+                                                "name": null,
+                                                "structuredValue": 50
+                                            }
+                                        }
+                                    },
                                     "responses": {
                                         "200": {
                                             "code": "200",
@@ -1320,6 +1450,145 @@
                                     ]
                                 },
                                 {
+                                    "methods": [
+                                        {
+                                            "responses": {
+                                                "201": {
+                                                    "code": "201",
+                                                    "body": {
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "displayName": "application/json",
+                                                            "schema": [
+                                                                "watchResponse"
+                                                            ],
+                                                            "example": {
+                                                                "kind": "api#channel",
+                                                                "id": "string",
+                                                                "resourceId": "string",
+                                                                "resourceUri": "string",
+                                                                "token": "string",
+                                                                "expiration": "long"
+                                                            },
+                                                            "repeat": false,
+                                                            "required": true,
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "type": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            },
+                                                            "structuredExample": {
+                                                                "value": {
+                                                                    "kind": "api#channel",
+                                                                    "id": "string",
+                                                                    "resourceId": "string",
+                                                                    "resourceUri": "string",
+                                                                    "token": "string",
+                                                                    "expiration": "long"
+                                                                },
+                                                                "strict": true,
+                                                                "name": null,
+                                                                "structuredValue": {
+                                                                    "kind": "api#channel",
+                                                                    "id": "string",
+                                                                    "resourceId": "string",
+                                                                    "resourceUri": "string",
+                                                                    "token": "string",
+                                                                    "expiration": "long"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "displayName": "application/json",
+                                                    "schema": [
+                                                        "watchRequest"
+                                                    ],
+                                                    "example": {
+                                                        "id": "string",
+                                                        "token": "string",
+                                                        "type": "string",
+                                                        "address": "string",
+                                                        "params": {
+                                                            "ttl": "string"
+                                                        }
+                                                    },
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    },
+                                                    "structuredExample": {
+                                                        "value": {
+                                                            "id": "string",
+                                                            "token": "string",
+                                                            "type": "string",
+                                                            "address": "string",
+                                                            "params": {
+                                                                "ttl": "string"
+                                                            }
+                                                        },
+                                                        "strict": true,
+                                                        "name": null,
+                                                        "structuredValue": {
+                                                            "id": "string",
+                                                            "token": "string",
+                                                            "type": "string",
+                                                            "address": "string",
+                                                            "params": {
+                                                                "ttl": "string"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "protocols": [
+                                                "HTTPS"
+                                            ],
+                                            "securedBy": [
+                                                "oauth_2_0"
+                                            ],
+                                            "method": "post",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "protocols": {
+                                                        "calculated": true
+                                                    },
+                                                    "securedBy": {
+                                                        "calculated": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ],
                                     "type": "watch",
                                     "securedBy": [
                                         "oauth_2_0"
@@ -1435,6 +1704,37 @@
                                                 "strict": true,
                                                 "name": null,
                                                 "structuredValue": 15
+                                            }
+                                        },
+                                        "sendNotifications": {
+                                            "name": "sendNotifications",
+                                            "displayName": "sendNotifications",
+                                            "type": [
+                                                "boolean"
+                                            ],
+                                            "default": false,
+                                            "example": true,
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "Whether to send notifications about the creation of the new event. Optional. The default is False.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            },
+                                            "structuredExample": {
+                                                "value": true,
+                                                "strict": true,
+                                                "name": null,
+                                                "structuredValue": true
                                             }
                                         }
                                     },
@@ -1879,6 +2179,164 @@
                                                     }
                                                 }
                                             }
+                                        },
+                                        "alwaysIncludeEmail": {
+                                            "name": "alwaysIncludeEmail",
+                                            "displayName": "alwaysIncludeEmail",
+                                            "type": [
+                                                "boolean"
+                                            ],
+                                            "default": false,
+                                            "example": true,
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            },
+                                            "structuredExample": {
+                                                "value": true,
+                                                "strict": true,
+                                                "name": null,
+                                                "structuredValue": true
+                                            }
+                                        },
+                                        "maxAttendees": {
+                                            "name": "maxAttendees",
+                                            "displayName": "maxAttendees",
+                                            "type": [
+                                                "integer"
+                                            ],
+                                            "example": 15,
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            },
+                                            "structuredExample": {
+                                                "value": 15,
+                                                "strict": true,
+                                                "name": null,
+                                                "structuredValue": 15
+                                            }
+                                        },
+                                        "pageToken": {
+                                            "name": "pageToken",
+                                            "displayName": "pageToken",
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "example": 1416406191979000,
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "Token specifying which result page to return. Optional.",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            },
+                                            "structuredExample": {
+                                                "value": 1416406191979000,
+                                                "strict": true,
+                                                "name": null,
+                                                "structuredValue": 1416406191979000
+                                            }
+                                        },
+                                        "showDeleted": {
+                                            "name": "showDeleted",
+                                            "displayName": "showDeleted",
+                                            "type": [
+                                                "boolean"
+                                            ],
+                                            "default": false,
+                                            "example": true,
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "Whether to include deleted events (with status equals \"cancelled\") in the result. Cancelled instances of recurring events (but not the underlying recurring event) will still be included if showDeleted and singleEvents are both False. If showDeleted and singleEvents are both True, only single instances of deleted events (but not the underlying recurring events) are returned. Optional. The default is False.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            },
+                                            "structuredExample": {
+                                                "value": true,
+                                                "strict": true,
+                                                "name": null,
+                                                "structuredValue": true
+                                            }
+                                        },
+                                        "syncToken": {
+                                            "name": "syncToken",
+                                            "displayName": "syncToken",
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "example": 1416406191979000,
+                                            "repeat": false,
+                                            "required": true,
+                                            "description": "Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. If only read-only fields such as calendar properties or ACLs have changed, the entry won't be returned. All entries deleted and hidden since the previous list request will always be in the result set and it is not allowed to set showDeleted neither showHidden to False.\n",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            },
+                                            "structuredExample": {
+                                                "value": 1416406191979000,
+                                                "strict": true,
+                                                "name": null,
+                                                "structuredValue": 1416406191979000
+                                            }
                                         }
                                     },
                                     "responses": {
@@ -2071,6 +2529,67 @@
                                                         "name": null,
                                                         "structuredValue": "UTC"
                                                     }
+                                                },
+                                                "alwaysIncludeEmail": {
+                                                    "name": "alwaysIncludeEmail",
+                                                    "displayName": "alwaysIncludeEmail",
+                                                    "type": [
+                                                        "boolean"
+                                                    ],
+                                                    "default": false,
+                                                    "example": true,
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "description": "Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    },
+                                                    "structuredExample": {
+                                                        "value": true,
+                                                        "strict": true,
+                                                        "name": null,
+                                                        "structuredValue": true
+                                                    }
+                                                },
+                                                "maxAttendees": {
+                                                    "name": "maxAttendees",
+                                                    "displayName": "maxAttendees",
+                                                    "type": [
+                                                        "integer"
+                                                    ],
+                                                    "example": 15,
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "description": "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    },
+                                                    "structuredExample": {
+                                                        "value": 15,
+                                                        "strict": true,
+                                                        "name": null,
+                                                        "structuredValue": 15
+                                                    }
                                                 }
                                             },
                                             "responses": {
@@ -2125,6 +2644,100 @@
                                             }
                                         },
                                         {
+                                            "queryParameters": {
+                                                "alwaysIncludeEmail": {
+                                                    "name": "alwaysIncludeEmail",
+                                                    "displayName": "alwaysIncludeEmail",
+                                                    "type": [
+                                                        "boolean"
+                                                    ],
+                                                    "default": false,
+                                                    "example": true,
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "description": "Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    },
+                                                    "structuredExample": {
+                                                        "value": true,
+                                                        "strict": true,
+                                                        "name": null,
+                                                        "structuredValue": true
+                                                    }
+                                                },
+                                                "maxAttendees": {
+                                                    "name": "maxAttendees",
+                                                    "displayName": "maxAttendees",
+                                                    "type": [
+                                                        "integer"
+                                                    ],
+                                                    "example": 15,
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "description": "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    },
+                                                    "structuredExample": {
+                                                        "value": 15,
+                                                        "strict": true,
+                                                        "name": null,
+                                                        "structuredValue": 15
+                                                    }
+                                                },
+                                                "sendNotifications": {
+                                                    "name": "sendNotifications",
+                                                    "displayName": "sendNotifications",
+                                                    "type": [
+                                                        "boolean"
+                                                    ],
+                                                    "default": false,
+                                                    "example": true,
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "description": "Whether to send notifications about the creation of the new event. Optional. The default is False.\n",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    },
+                                                    "structuredExample": {
+                                                        "value": true,
+                                                        "strict": true,
+                                                        "name": null,
+                                                        "structuredValue": true
+                                                    }
+                                                }
+                                            },
                                             "responses": {
                                                 "200": {
                                                     "code": "200",
@@ -2202,6 +2815,39 @@
                                             }
                                         },
                                         {
+                                            "queryParameters": {
+                                                "sendNotifications": {
+                                                    "name": "sendNotifications",
+                                                    "displayName": "sendNotifications",
+                                                    "type": [
+                                                        "boolean"
+                                                    ],
+                                                    "default": false,
+                                                    "example": true,
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "description": "Whether to send notifications about the creation of the new event. Optional. The default is False.\n",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    },
+                                                    "structuredExample": {
+                                                        "value": true,
+                                                        "strict": true,
+                                                        "name": null,
+                                                        "structuredValue": true
+                                                    }
+                                                }
+                                            },
                                             "responses": {
                                                 "200": {
                                                     "code": "200",
@@ -2285,6 +2931,37 @@
                                                         "strict": true,
                                                         "name": null,
                                                         "structuredValue": 15
+                                                    }
+                                                },
+                                                "sendNotifications": {
+                                                    "name": "sendNotifications",
+                                                    "displayName": "sendNotifications",
+                                                    "type": [
+                                                        "boolean"
+                                                    ],
+                                                    "default": false,
+                                                    "example": true,
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "description": "Whether to send notifications about the creation of the new event. Optional. The default is False.\n",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    },
+                                                    "structuredExample": {
+                                                        "value": true,
+                                                        "strict": true,
+                                                        "name": null,
+                                                        "structuredValue": true
                                                     }
                                                 }
                                             },
@@ -2590,6 +3267,98 @@
                                                                 "name": null,
                                                                 "structuredValue": "UTC"
                                                             }
+                                                        },
+                                                        "alwaysIncludeEmail": {
+                                                            "name": "alwaysIncludeEmail",
+                                                            "displayName": "alwaysIncludeEmail",
+                                                            "type": [
+                                                                "boolean"
+                                                            ],
+                                                            "default": false,
+                                                            "example": true,
+                                                            "repeat": false,
+                                                            "required": true,
+                                                            "description": "Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            },
+                                                            "structuredExample": {
+                                                                "value": true,
+                                                                "strict": true,
+                                                                "name": null,
+                                                                "structuredValue": true
+                                                            }
+                                                        },
+                                                        "maxAttendees": {
+                                                            "name": "maxAttendees",
+                                                            "displayName": "maxAttendees",
+                                                            "type": [
+                                                                "integer"
+                                                            ],
+                                                            "example": 15,
+                                                            "repeat": false,
+                                                            "required": true,
+                                                            "description": "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            },
+                                                            "structuredExample": {
+                                                                "value": 15,
+                                                                "strict": true,
+                                                                "name": null,
+                                                                "structuredValue": 15
+                                                            }
+                                                        },
+                                                        "maxResults": {
+                                                            "name": "maxResults",
+                                                            "displayName": "maxResults",
+                                                            "type": [
+                                                                "integer"
+                                                            ],
+                                                            "default": 100,
+                                                            "example": 50,
+                                                            "repeat": false,
+                                                            "required": true,
+                                                            "description": "Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.\nMaximum number of events returned on one result page. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.\n",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            },
+                                                            "structuredExample": {
+                                                                "value": 50,
+                                                                "strict": true,
+                                                                "name": null,
+                                                                "structuredValue": 50
+                                                            }
                                                         }
                                                     },
                                                     "responses": {
@@ -2689,6 +3458,37 @@
                                                                         "insertedAsDefault": true
                                                                     }
                                                                 }
+                                                            }
+                                                        },
+                                                        "sendNotifications": {
+                                                            "name": "sendNotifications",
+                                                            "displayName": "sendNotifications",
+                                                            "type": [
+                                                                "boolean"
+                                                            ],
+                                                            "default": false,
+                                                            "example": true,
+                                                            "repeat": false,
+                                                            "required": true,
+                                                            "description": "Whether to send notifications about the creation of the new event. Optional. The default is False.\n",
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            },
+                                                            "structuredExample": {
+                                                                "value": true,
+                                                                "strict": true,
+                                                                "name": null,
+                                                                "structuredValue": true
                                                             }
                                                         }
                                                     },
@@ -2811,6 +3611,37 @@
                                                         "name": null,
                                                         "structuredValue": "My event"
                                                     }
+                                                },
+                                                "sendNotifications": {
+                                                    "name": "sendNotifications",
+                                                    "displayName": "sendNotifications",
+                                                    "type": [
+                                                        "boolean"
+                                                    ],
+                                                    "default": false,
+                                                    "example": true,
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "description": "Whether to send notifications about the creation of the new event. Optional. The default is False.\n",
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    },
+                                                    "structuredExample": {
+                                                        "value": true,
+                                                        "strict": true,
+                                                        "name": null,
+                                                        "structuredValue": true
+                                                    }
                                                 }
                                             },
                                             "responses": {
@@ -2885,6 +3716,145 @@
                                     ]
                                 },
                                 {
+                                    "methods": [
+                                        {
+                                            "responses": {
+                                                "201": {
+                                                    "code": "201",
+                                                    "body": {
+                                                        "application/json": {
+                                                            "name": "application/json",
+                                                            "displayName": "application/json",
+                                                            "schema": [
+                                                                "watchResponse"
+                                                            ],
+                                                            "example": {
+                                                                "kind": "api#channel",
+                                                                "id": "string",
+                                                                "resourceId": "string",
+                                                                "resourceUri": "string",
+                                                                "token": "string",
+                                                                "expiration": "long"
+                                                            },
+                                                            "repeat": false,
+                                                            "required": true,
+                                                            "__METADATA__": {
+                                                                "primitiveValuesMeta": {
+                                                                    "displayName": {
+                                                                        "calculated": true
+                                                                    },
+                                                                    "type": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "repeat": {
+                                                                        "insertedAsDefault": true
+                                                                    },
+                                                                    "required": {
+                                                                        "insertedAsDefault": true
+                                                                    }
+                                                                }
+                                                            },
+                                                            "structuredExample": {
+                                                                "value": {
+                                                                    "kind": "api#channel",
+                                                                    "id": "string",
+                                                                    "resourceId": "string",
+                                                                    "resourceUri": "string",
+                                                                    "token": "string",
+                                                                    "expiration": "long"
+                                                                },
+                                                                "strict": true,
+                                                                "name": null,
+                                                                "structuredValue": {
+                                                                    "kind": "api#channel",
+                                                                    "id": "string",
+                                                                    "resourceId": "string",
+                                                                    "resourceUri": "string",
+                                                                    "token": "string",
+                                                                    "expiration": "long"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "displayName": "application/json",
+                                                    "schema": [
+                                                        "watchRequest"
+                                                    ],
+                                                    "example": {
+                                                        "id": "string",
+                                                        "token": "string",
+                                                        "type": "string",
+                                                        "address": "string",
+                                                        "params": {
+                                                            "ttl": "string"
+                                                        }
+                                                    },
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    },
+                                                    "structuredExample": {
+                                                        "value": {
+                                                            "id": "string",
+                                                            "token": "string",
+                                                            "type": "string",
+                                                            "address": "string",
+                                                            "params": {
+                                                                "ttl": "string"
+                                                            }
+                                                        },
+                                                        "strict": true,
+                                                        "name": null,
+                                                        "structuredValue": {
+                                                            "id": "string",
+                                                            "token": "string",
+                                                            "type": "string",
+                                                            "address": "string",
+                                                            "params": {
+                                                                "ttl": "string"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "protocols": [
+                                                "HTTPS"
+                                            ],
+                                            "securedBy": [
+                                                "oauth_2_0"
+                                            ],
+                                            "method": "post",
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "protocols": {
+                                                        "calculated": true
+                                                    },
+                                                    "securedBy": {
+                                                        "calculated": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ],
                                     "type": "watch",
                                     "securedBy": [
                                         "oauth_2_0"
@@ -3266,6 +4236,37 @@
                                         "name": null,
                                         "structuredValue": "00001416406191979000"
                                     }
+                                },
+                                "maxResults": {
+                                    "name": "maxResults",
+                                    "displayName": "maxResults",
+                                    "type": [
+                                        "integer"
+                                    ],
+                                    "default": 100,
+                                    "example": 50,
+                                    "repeat": false,
+                                    "required": true,
+                                    "description": "Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.\nMaximum number of events returned on one result page. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    },
+                                    "structuredExample": {
+                                        "value": 50,
+                                        "strict": true,
+                                        "name": null,
+                                        "structuredValue": 50
+                                    }
                                 }
                             },
                             "responses": {
@@ -3327,6 +4328,145 @@
                     "displayName": "/settings",
                     "resources": [
                         {
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "201": {
+                                            "code": "201",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "displayName": "application/json",
+                                                    "schema": [
+                                                        "watchResponse"
+                                                    ],
+                                                    "example": {
+                                                        "kind": "api#channel",
+                                                        "id": "string",
+                                                        "resourceId": "string",
+                                                        "resourceUri": "string",
+                                                        "token": "string",
+                                                        "expiration": "long"
+                                                    },
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    },
+                                                    "structuredExample": {
+                                                        "value": {
+                                                            "kind": "api#channel",
+                                                            "id": "string",
+                                                            "resourceId": "string",
+                                                            "resourceUri": "string",
+                                                            "token": "string",
+                                                            "expiration": "long"
+                                                        },
+                                                        "strict": true,
+                                                        "name": null,
+                                                        "structuredValue": {
+                                                            "kind": "api#channel",
+                                                            "id": "string",
+                                                            "resourceId": "string",
+                                                            "resourceUri": "string",
+                                                            "token": "string",
+                                                            "expiration": "long"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "displayName": "application/json",
+                                            "schema": [
+                                                "watchRequest"
+                                            ],
+                                            "example": {
+                                                "id": "string",
+                                                "token": "string",
+                                                "type": "string",
+                                                "address": "string",
+                                                "params": {
+                                                    "ttl": "string"
+                                                }
+                                            },
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            },
+                                            "structuredExample": {
+                                                "value": {
+                                                    "id": "string",
+                                                    "token": "string",
+                                                    "type": "string",
+                                                    "address": "string",
+                                                    "params": {
+                                                        "ttl": "string"
+                                                    }
+                                                },
+                                                "strict": true,
+                                                "name": null,
+                                                "structuredValue": {
+                                                    "id": "string",
+                                                    "token": "string",
+                                                    "type": "string",
+                                                    "address": "string",
+                                                    "params": {
+                                                        "ttl": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "method": "post",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
                             "type": "watch",
                             "securedBy": [
                                 "oauth_2_0"
@@ -3528,6 +4668,134 @@
                                         "strict": true,
                                         "name": null,
                                         "structuredValue": true
+                                    }
+                                },
+                                "pageToken": {
+                                    "name": "pageToken",
+                                    "displayName": "pageToken",
+                                    "type": [
+                                        "string"
+                                    ],
+                                    "example": 1416406191979000,
+                                    "repeat": false,
+                                    "required": true,
+                                    "description": "Token specifying which result page to return. Optional.",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    },
+                                    "structuredExample": {
+                                        "value": 1416406191979000,
+                                        "strict": true,
+                                        "name": null,
+                                        "structuredValue": 1416406191979000
+                                    }
+                                },
+                                "showDeleted": {
+                                    "name": "showDeleted",
+                                    "displayName": "showDeleted",
+                                    "type": [
+                                        "boolean"
+                                    ],
+                                    "default": false,
+                                    "example": true,
+                                    "repeat": false,
+                                    "required": true,
+                                    "description": "Whether to include deleted events (with status equals \"cancelled\") in the result. Cancelled instances of recurring events (but not the underlying recurring event) will still be included if showDeleted and singleEvents are both False. If showDeleted and singleEvents are both True, only single instances of deleted events (but not the underlying recurring events) are returned. Optional. The default is False.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    },
+                                    "structuredExample": {
+                                        "value": true,
+                                        "strict": true,
+                                        "name": null,
+                                        "structuredValue": true
+                                    }
+                                },
+                                "syncToken": {
+                                    "name": "syncToken",
+                                    "displayName": "syncToken",
+                                    "type": [
+                                        "string"
+                                    ],
+                                    "example": 1416406191979000,
+                                    "repeat": false,
+                                    "required": true,
+                                    "description": "Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. If only read-only fields such as calendar properties or ACLs have changed, the entry won't be returned. All entries deleted and hidden since the previous list request will always be in the result set and it is not allowed to set showDeleted neither showHidden to False.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "type": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    },
+                                    "structuredExample": {
+                                        "value": 1416406191979000,
+                                        "strict": true,
+                                        "name": null,
+                                        "structuredValue": 1416406191979000
+                                    }
+                                },
+                                "maxResults": {
+                                    "name": "maxResults",
+                                    "displayName": "maxResults",
+                                    "type": [
+                                        "integer"
+                                    ],
+                                    "default": 100,
+                                    "example": 50,
+                                    "repeat": false,
+                                    "required": true,
+                                    "description": "Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.\nMaximum number of events returned on one result page. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.\n",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "displayName": {
+                                                "calculated": true
+                                            },
+                                            "repeat": {
+                                                "insertedAsDefault": true
+                                            },
+                                            "required": {
+                                                "insertedAsDefault": true
+                                            }
+                                        }
+                                    },
+                                    "structuredExample": {
+                                        "value": 50,
+                                        "strict": true,
+                                        "name": null,
+                                        "structuredValue": 50
                                     }
                                 }
                             },
@@ -4029,6 +5297,145 @@
                             ]
                         },
                         {
+                            "methods": [
+                                {
+                                    "responses": {
+                                        "201": {
+                                            "code": "201",
+                                            "body": {
+                                                "application/json": {
+                                                    "name": "application/json",
+                                                    "displayName": "application/json",
+                                                    "schema": [
+                                                        "watchResponse"
+                                                    ],
+                                                    "example": {
+                                                        "kind": "api#channel",
+                                                        "id": "string",
+                                                        "resourceId": "string",
+                                                        "resourceUri": "string",
+                                                        "token": "string",
+                                                        "expiration": "long"
+                                                    },
+                                                    "repeat": false,
+                                                    "required": true,
+                                                    "__METADATA__": {
+                                                        "primitiveValuesMeta": {
+                                                            "displayName": {
+                                                                "calculated": true
+                                                            },
+                                                            "type": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "repeat": {
+                                                                "insertedAsDefault": true
+                                                            },
+                                                            "required": {
+                                                                "insertedAsDefault": true
+                                                            }
+                                                        }
+                                                    },
+                                                    "structuredExample": {
+                                                        "value": {
+                                                            "kind": "api#channel",
+                                                            "id": "string",
+                                                            "resourceId": "string",
+                                                            "resourceUri": "string",
+                                                            "token": "string",
+                                                            "expiration": "long"
+                                                        },
+                                                        "strict": true,
+                                                        "name": null,
+                                                        "structuredValue": {
+                                                            "kind": "api#channel",
+                                                            "id": "string",
+                                                            "resourceId": "string",
+                                                            "resourceUri": "string",
+                                                            "token": "string",
+                                                            "expiration": "long"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "body": {
+                                        "application/json": {
+                                            "name": "application/json",
+                                            "displayName": "application/json",
+                                            "schema": [
+                                                "watchRequest"
+                                            ],
+                                            "example": {
+                                                "id": "string",
+                                                "token": "string",
+                                                "type": "string",
+                                                "address": "string",
+                                                "params": {
+                                                    "ttl": "string"
+                                                }
+                                            },
+                                            "repeat": false,
+                                            "required": true,
+                                            "__METADATA__": {
+                                                "primitiveValuesMeta": {
+                                                    "displayName": {
+                                                        "calculated": true
+                                                    },
+                                                    "type": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "repeat": {
+                                                        "insertedAsDefault": true
+                                                    },
+                                                    "required": {
+                                                        "insertedAsDefault": true
+                                                    }
+                                                }
+                                            },
+                                            "structuredExample": {
+                                                "value": {
+                                                    "id": "string",
+                                                    "token": "string",
+                                                    "type": "string",
+                                                    "address": "string",
+                                                    "params": {
+                                                        "ttl": "string"
+                                                    }
+                                                },
+                                                "strict": true,
+                                                "name": null,
+                                                "structuredValue": {
+                                                    "id": "string",
+                                                    "token": "string",
+                                                    "type": "string",
+                                                    "address": "string",
+                                                    "params": {
+                                                        "ttl": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "protocols": [
+                                        "HTTPS"
+                                    ],
+                                    "securedBy": [
+                                        "oauth_2_0"
+                                    ],
+                                    "method": "post",
+                                    "__METADATA__": {
+                                        "primitiveValuesMeta": {
+                                            "protocols": {
+                                                "calculated": true
+                                            },
+                                            "securedBy": {
+                                                "calculated": true
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
                             "type": "watch",
                             "securedBy": [
                                 "oauth_2_0"

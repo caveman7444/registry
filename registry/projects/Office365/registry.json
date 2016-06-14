@@ -1,26 +1,42 @@
-{"apis": [
+{"apis": {"RAMLFiles": [
     {
         "name": "Office 365",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Office365/master/api.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Office365/master/api.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Office365/master/api.json",
+        "baseUri": "https://outlook.office365.com/ews/odata/Me",
+        "resourcesCount": 39,
+        "methodsCount": 67
     },
     {
         "name": "Files REST API in Office 365",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Office365/master/fileAPI.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Office365/master/fileAPI.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Office365/master/fileAPI.json",
+        "baseUri": "https://outlook.office365.com/ews/odata/Me",
+        "resourcesCount": 10,
+        "methodsCount": 13
     },
     {
         "name": "Office 365",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Office365/staging/api.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Office365/staging/api.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Office365/staging/api.json",
+        "baseUri": "https://outlook.office365.com/ews/odata/Me",
+        "resourcesCount": 39,
+        "methodsCount": 67
     },
     {
         "name": "Files REST API in Office 365",
+        "description": "descriptionexamle",
         "RAMLVersion": "0.8",
         "location": "https://raw.githubusercontent.com/raml-apis/Office365/staging/fileAPI.raml",
-        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Office365/staging/fileAPI.json"
+        "raml-1-parser_result": "https://raw.githubusercontent.com/caveman7444/registry/master/registry/projects/Office365/staging/fileAPI.json",
+        "baseUri": "https://outlook.office365.com/ews/odata/Me",
+        "resourcesCount": 10,
+        "methodsCount": 13
     }
-]}
+]}}
